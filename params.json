@@ -1,0 +1,7 @@
+{
+  "name": "DITA Open Toolkit",
+  "tagline": "The DITA Open Toolkit is an implementation of the OASIS DITA XML Specification.",
+  "body": "# About\n\nThe DITA Open Toolkit, or DITA-OT for short, is a set of Java-based, open source tools that provide processing for DITA maps and topic content.\n\nYou can download the OT and install it for free on your computer to get started with topic-based writing and publishing.\n\n## Download\nDownload and install [DITA Open Toolkit 1.8](http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/).\n\n## Read the Docs\nEverything you need to know about [how to use DITA Open Toolkit](http://dita-ot.sourceforge.net/latest/).\n\n## Get Involved\n[Contribute](http://dita-ot.sourceforge.net/get-involved.html) to the community and the project.",
+  "google": "",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
