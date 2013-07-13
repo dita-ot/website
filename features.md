@@ -19,9 +19,7 @@ The following transformation types are supported out of the box with any toolkit
          PDF output is based on a plug-in that produces XSL-FO
          output. The XSL-FO output may be converted to PDF using
          an open source tools (Apache FOP) or using commercial
-         tools such as RenderX or Antenna House Formatter. This
-         transformation type replaced an older demo PDF
-         transform, and is often called "PDF2".
+         tools such as RenderX or Antenna House Formatter.
 
 * **XHTML** -
          XHTML output is supported together with a variety of
@@ -51,8 +49,7 @@ The following transformation types are supported out of the box with any toolkit
 
 * **OpenDocument** -
          ODT is a document format based on the ODF standard, for
-         use with tools like Open Office. Support for ODT was
-         added in DITA-OT 1.5.2.
+         use with tools like Open Office.
 
 * **Rich Text Format** -
          RTF output is supported for basic content, but complex
