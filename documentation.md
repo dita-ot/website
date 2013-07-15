@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "DITA-OT Documentation"
+toc: false
 ---
 
 Latest stable version

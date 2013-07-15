@@ -16,15 +16,25 @@
       <div class="navbar-inner">
         <div class="container-fluid container">
           <a class="brand" href="{{ site.baseurl }}/">{{ site.name }}</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li {% if page.url == "/index.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/index.html">Home</a></li>
+              <li {% if page.url == "/download.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/download.html">Download</a></li>
+              <li {% if page.url == "/documentation.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/documentation.html">Documentation</a></li>
+              <li {% if page.url == "/get-involved.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/get-involved.html">Get Involved</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
     <div id="content" class="container-fluid container">
       <div class="row-fluid">
+        {% if page.toc != false %}
         <toc class="span3">
           {% include toc.html %}
         </toc>
-        <main class="span9">
+        {% endif %}
+        <main class="{% if page.toc != false %} span9 {% else %}  span12 {% endif %}">
           {{ content }}
         </main>
       </div>
