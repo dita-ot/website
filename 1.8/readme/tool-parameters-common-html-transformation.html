@@ -1,0 +1,197 @@
+---
+# Generated from DITA source
+layout: base
+title: "Command-line tool parameters: All HTML-based transformations"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../DITA-OTProjectHome.html">DITA Open Toolkit 1.8</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a><ul class="nav nav-list"><li><a href="../readme/overview-of-dita-ot.html">Overview of the DITA Open Toolkit</a></li><li><a href="../readme/DITA-installation.html">Installing the DITA-OT</a></li><li><a href="../readme/tranforming-dita-content.html">Publishing DITA content</a></li><li><a href="../readme/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../readme/troubleshooting-overview.html">Error messages and troubleshooting</a></li><li><a href="../readme/reference.html">Reference</a><ul class="nav nav-list"><li><a href="../readme/dita-ot_ant_properties.html">Ant parameters</a></li><li><a href="../readme/dita-ot_java_properties.html">Command-line tool parameters</a><ul class="nav nav-list"><li><a href="../readme/tool-parameters-all-transformation.html">All transformations</a></li><li class="active"><a href="../readme/tool-parameters-common-html-transformation.html">All HTML-based transformations</a><ul class="nav nav-list"></ul></li><li><a href="../readme/tool-parameters-eclipsecontent-transformation.html">Eclipse content</a></li><li><a href="../readme/tool-parameters-eclipsehelp-transformation.html">Eclipse help</a></li><li><a href="../readme/tool-parameters-htmlhelp-transformation.html">HTML help</a></li><li><a href="../readme/tool-parameters-javahelp-transformation.html">JavaHelp</a></li><li><a href="../readme/tool-parameters-odt-transformation.html">ODT</a></li><li><a href="../readme/tool-parameters-pdf-transformation.html">PDF transformation</a></li><li><a href="../readme/tool-parameters-xhtml-transformation.html">XHTML</a></li></ul></li><li><a href="../readme/configuration.html">lib/configuration.properties file</a></li></ul></li></ul></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a></li><li><a href="../admin/DITA-OTProjectManagement.html">Project Management Guidelines</a></li><li><a href="../articles/dita-and-dita-ot-resources.html">DITA and DITA-OT resources</a></li></ul></div></nav><main class="span9">
+  <h1 class="title topictitle1">Command-line tool parameters: All HTML-based transformations</h1>
+
+  
+  
+  
+  <div class="body refbody"><p class="shortdesc">Certain parameters apply to all the HTML-based transformation types: Eclipse content,
+    Eclipse help, HTML Help, JavaHelp, TocJS, and XHTML.</p>
+
+    <div class="section">
+      <div class="note note"><span class="notetitle">Note:</span> You must specify an absolute path as the value for the following parameters:<ul class="ul">
+          <li class="li"><span class="keyword parmname">ftr</span></li>
+
+          <li class="li"><span class="keyword parmname">hdr</span></li>
+
+          <li class="li"><span class="keyword parmname">hdf</span></li>
+
+        </ul>
+</div>
+
+      
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Command-line tool parameters: All HTML-based transformations</span></caption>
+          
+          
+          <thead class="thead" align="left">
+            <tr class="row">
+              <th class="entry" valign="top" width="27.27272727272727%" id="d35349e100">Parameters</th>
+
+              <th class="entry" valign="top" width="72.72727272727273%" id="d35349e103">Description</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody class="tbody">
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">args.css</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies the name of a custom .css
+              file.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">artlbl</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies whether to generate a label
+              for each image; the label will contain the image file name. The allowed values are
+                <span class="keyword option">yes</span> and <span class="keyword option">no</span>; the default value is
+                <span class="keyword option">no</span>.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">copycss</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies whether to copy the custom
+              .css file to the output directory.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">csspath</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies the location of a copied .css
+              file relative to the output directory. <span class="ph">Corresponds to
+                XSLT parameter <span class="keyword parmname">CSSPATH</span>.</span></td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">cssroot</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies the directory that contains
+              the custom .css file. DITA-OT will copy the file from this location.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">ftr</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies an XML file that contains content
+              for a running footer. <span class="ph">Corresponds to XSLT parameter
+                  <span class="keyword parmname">FTR</span>.</span><div class="note note"><span class="notetitle">Note:</span> The XML file must contain valid XML. A common
+                practice is to place all content into a &lt;div&gt; element.</div>
+</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">generateouter</span></td>
+
+              
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">hdf</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies an XML file that contains content
+              to be placed in the document head.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">hdr</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies an XML file that contains content
+              for a running header. <span class="ph">Corresponds to the XSLT parameter
+                  <span class="keyword parmname">HDR</span>.</span><div class="note note"><span class="notetitle">Note:</span> The XML file must contain valid XML. A common
+                practice is to place all content into a &lt;div&gt; element.</div>
+</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">indexshow</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies whether the content of
+              &lt;indexterm&gt; elements are rendered in the output. The allowed values are
+                <span class="keyword option">yes</span> and <span class="keyword option">no</span>; the default value is
+                <span class="keyword option">no</span>.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">onlytopicinmap</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies whether files that are
+              linked to, or referenced with a @conref attribute, generate output. If set to
+                <span class="keyword option">yes</span>, only files that are referenced directly from the map will
+              generate output.</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">outercontrol</span></td>
+
+              
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">usetasklabels</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies whether to generate
+              headings for sections within task topics. The allowed values are <span class="keyword option">YES</span>
+              and <span class="keyword option">NO</span>; the default value is <span class="keyword option">NO</span>. <span class="ph">Corresponds to the XSLT parameter
+                  <span class="keyword parmname">GENERATE-TASK-LABELS</span>.</span></td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">xhtmlclass</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies whether to include
+              the DITA class ancestry inside the XHTML elements .For example, the &lt;prereq&gt;
+              element (which is specialized from section) would generate <samp class="ph codeph">class="section
+                prereq</samp>. The allowed values are <span class="keyword option">yes</span> and
+              <span class="keyword option">no</span>; the default value is <span class="keyword option">yes</span>. <span class="ph">Corresponds to the XSLT parameter
+                  <span class="keyword parmname">PRESERVE-DITA-CLASS</span>.</span><div class="note note"><span class="notetitle">Note:</span> Beginning with DITA OT release
+                1.5.2, the default value is <span class="keyword option">yes</span>. For release 1.5 and 1.5.1, the
+                default value was <span class="keyword option">no</span>. </div>
+</td>
+
+            </tr>
+
+            <tr class="row">
+              <td class="entry" valign="top" width="27.27272727272727%" headers="d35349e100 "><span class="keyword parmname">xsl</span></td>
+
+              <td class="entry" valign="top" width="72.72727272727273%" headers="d35349e103 ">Specifies a custom XSL file to be used
+              instead of the default XSL transformation (<span class="ph filepath">xsl\dita2xhtml.xsl</span>).
+              The parameter must specify a fully qualified file name.</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+</div>
+
+    </div>
+
+  </div>
+
+<div class="related-links"><div class="relinfo relref"><strong>Related reference</strong><br>
+<div><a class="link" href="../readme/tool-parameters-eclipsecontent-transformation.html" title="Certain parameters are specific to the Eclipse content transformation.">Command-line tool parameters: Eclipse content transformation</a></div>
+<div><a class="link" href="../readme/tool-parameters-eclipsehelp-transformation.html" title="Certain parameters are specific to the Eclipse help transformation.">Command-line tool parameters: Eclipse help transformation</a></div>
+<div><a class="link" href="../readme/tool-parameters-htmlhelp-transformation.html" title="Certain parameters are specific to the HTML help transformation.">Command-line tool parameters: HTML help transformation</a></div>
+<div><a class="link" href="../readme/tool-parameters-javahelp-transformation.html" title="Certain parameters are specific to the JavaHelp transformation.">Command-line tool parameters: JavaHelp transformation</a></div>
+<div><a class="link" href="../readme/tool-parameters-xhtml-transformation.html" title="Certain parameters are specific to the XHTML transformation.">Command-line tool parameters: XHTML transformation</a></div>
+</div>
+</div>
+</main>

@@ -1,0 +1,56 @@
+---
+# Generated from DITA source
+layout: base
+title: "Managing plug-in dependencies"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../DITA-OTProjectHome.html">DITA Open Toolkit 1.8</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA Open Toolkit</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA Open Toolkit</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA Open Toolkit</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transform type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li class="active"><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li><li><a href="../admin/DITA-OTProjectManagement.html">Project Management Guidelines</a></li><li><a href="../articles/dita-and-dita-ot-resources.html">DITA and DITA-OT resources</a></li></ul></div></nav><main class="span9">
+<h1 class="title topictitle1">Managing plug-in dependencies</h1>
+
+
+<div class="body refbody"><p class="shortdesc">The <samp class="ph codeph">&lt;require&gt;</samp> element in a <span class="ph filepath">plugin.xml</span> file
+is used to create a dependency on another plug-in. The <samp class="ph codeph">&lt;require&gt;</samp> element
+requires the <samp class="ph codeph">plugin</samp> attribute in order to reference
+the dependency.</p>
+
+<div class="section">       <p class="p">If the current plug-in requires a plug-in with <samp class="ph codeph">id="plugin-id"</samp> before
+it can be installed, it would include the         following: </p>
+ 
+     <pre class="pre codeblock">&lt;require plugin="<em class="ph i">plugin-id</em>"&gt;</pre>
+ 
+     <p class="p">Prerequisite plug-ins are integrated before the current plug-in
+is integrated. This does the         right thing with respect to XSLT
+overrides. If your plug-in is a specialization of a         specialization,
+it should <samp class="ph codeph">&lt;require&gt;</samp> its base plug-ins, in order
+from         general to specific. </p>
+       <p class="p">If a prerequisite
+plug-in is missing, a warning will be printed during integration.
+To         suppress this, but keep the integration order if both plug-ins
+are present, add           <samp class="ph codeph">importance="optional"</samp> to
+the <samp class="ph codeph">&lt;require&gt;</samp> element. </p>
+       <p class="p">If your plug-in
+can depend on any one of several optional plug-ins, separate the plug-in
+ids         with a vertical bar. This is most useful when combined
+with importance="optional": </p>
+       </div>
+
+<div class="example"><h2 class="title sectiontitle">Example</h2><p class="p">The following plug-in will only
+be installed if the plug-in with id="com.example.primary" is available.
+If that one is not available, a warning will be generated during the
+integration process.</p>
+<pre class="pre codeblock">&lt;plugin id="com.example.builds-on-primary"&gt;
+  &lt;!-- ...extensions here --&gt;
+  &lt;require plugin="com.example.primary"/&gt;
+&lt;/plugin&gt;</pre>
+<p class="p">The following plug-in will only be installed
+if either the plug-in with id="pluginA" or the plug-in with id="pluginB"
+are available. If neither of those are installed, the current plug-in
+will be ignored.</p>
+<pre class="pre codeblock">&lt;plugin id="pluginC"&gt;
+  &lt;!-- ...extensions here --&gt;
+  &lt;require plugin="pluginA|pluginB" importance="optional"/&gt;
+&lt;/plugin&gt;</pre>
+       </div>
+
+</div>
+
+</main>

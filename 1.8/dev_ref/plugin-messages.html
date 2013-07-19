@@ -1,0 +1,70 @@
+---
+# Generated from DITA source
+layout: base
+title: "Adding diagnostic messages"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../DITA-OTProjectHome.html">DITA Open Toolkit 1.8</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA Open Toolkit</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA Open Toolkit</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA Open Toolkit</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transform type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li class="active"><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li><li><a href="../admin/DITA-OTProjectManagement.html">Project Management Guidelines</a></li><li><a href="../articles/dita-and-dita-ot-resources.html">DITA and DITA-OT resources</a></li></ul></div></nav><main class="span9">
+<h1 class="title topictitle1">Adding diagnostic messages</h1>
+
+
+<div class="body refbody"><p class="shortdesc">Plug-in specific warning and error messages can be added
+to the set of messages supplied by the DITA-OT. These messages can
+then be used by any XSLT override.</p>
+
+<div class="section"><dl class="dl">
+<dt class="dt dlterm"><samp class="ph codeph">dita.xsl.messages</samp></dt>
+
+<dd class="dd">Add new messages to diagnostic message file.</dd>
+
+</dl>
+</div>
+
+<div class="example"><h2 class="title sectiontitle">Example</h2><p class="p">To add your own messages, create
+the new messages in an XML file such as <span class="ph filepath">myMessages.xml</span>:</p>
+<pre class="pre codeblock">&lt;dummy&gt;
+  &lt;!-- See resource/messages.xml for the details. --&gt;
+  &lt;message id="DOTXmy-msg-numW" type="WARN"&gt;
+    &lt;reason&gt;Message text&lt;/reason&gt;
+    &lt;response&gt;How to resolve&lt;/response&gt;
+  &lt;/message&gt;
+&lt;/dummy&gt;</pre>
+<div class="p">There are three components to the message
+ID:<ol class="ol">
+<li class="li">The prefix DOTX is used by all DITA-OT XSLT transforms, and must
+be part of the ID.</li>
+
+<li class="li">This is followed by the message number ("my-msg-num" in the sample above). By convention, this
+            should be a three digit integer.</li>
+
+<li class="li">Finally, a letter corresponds to the severity. This should be
+one of:<ul class="ul">
+<li class="li">I = Informational, used with type="INFO"</li>
+
+<li class="li">W = Warning, used with type="WARN"</li>
+
+<li class="li">E = Error, used with type="ERROR"</li>
+
+<li class="li">F = Fatal, used with type="FATAL"</li>
+
+</ul>
+</li>
+
+</ol>
+</div>
+<p class="p">Once the message file is defined, it is incorporated with
+this extension: </p>
+<pre class="pre codeblock">&lt;plugin id="com.example.newmsg"&gt;
+  &lt;feature extension="dita.xsl.messages" file="myMessages.xml"/&gt;
+&lt;/plugin&gt;</pre>
+<p class="p">XSLT modules can then generate the message
+using the following call: </p>
+<pre class="pre codeblock">&lt;xsl:call-template name="output-message"&gt;
+  &lt;xsl:with-param name="msgnum"&gt;my-msg-num&lt;/xsl:with-param&gt;
+  &lt;xsl:with-param name="msgsev"&gt;W&lt;/xsl:with-param&gt;
+&lt;/xsl:call-template&gt;
+</pre>
+</div>
+
+</div>
+
+</main>

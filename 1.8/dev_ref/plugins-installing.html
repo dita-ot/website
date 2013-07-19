@@ -1,0 +1,60 @@
+---
+# Generated from DITA source
+layout: base
+title: "Installing plug-ins"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../DITA-OTProjectHome.html">DITA Open Toolkit 1.8</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA Open Toolkit</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA Open Toolkit</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/plugins-installing.html">Installing plug-ins</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/plugins-removing.html">Removing plug-ins</a></li><li><a href="../dev_ref/rebuilding-the-dita-ot-documentation.html">Rebuilding the DITA-OT documentation</a></li></ul></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA Open Toolkit</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li><li><a href="../admin/DITA-OTProjectManagement.html">Project Management Guidelines</a></li><li><a href="../articles/dita-and-dita-ot-resources.html">DITA and DITA-OT resources</a></li></ul></div></nav><main class="span9">
+  <h1 class="title topictitle1">Installing plug-ins</h1>
+
+  
+  <div class="body taskbody"><p class="shortdesc">Plug-ins are generally distributed as zip files. There are two steps to installing a
+    plug-in: unzipping and integrating.</p>
+
+    <div class="section context">
+      <p class="p">It is possible to define a plug-in so that it may be installed anywhere, although most
+        expect to be placed in <span class="ph filepath">plugins/</span> directory inside of the DITA-OT. Most
+        plug-ins do not require a specific install directory and can go in either of the default
+        locations, but some may come with instructions for a particular install directory.</p>
+
+    </div>
+
+    <ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">The unzip the plug-in file to <span class="ph filepath">plugins</span> subdirectory.</span>
+        <div class="itemgroup info">The plug-in directory should be named after plug-in ID and version, for example
+            <span class="ph filepath">plugins/com.example.xhtml_1.0.0</span>.</div>
+      </li>
+<li class="li step stepexpand">
+        <span class="ph cmd">Run plug-in integration process.</span>
+        <ul class="ul choices">
+          <li class="li choice">From the toolkit directory, run the following command to integrate all installed
+            plug-ins: <pre class="pre codeblock">ant -f integrator.xml </pre>
+</li>
+
+          <li class="li choice">Any build that uses the Java command line interface automatically runs the integrator
+            before processing begins.</li>
+
+          <li class="li choice">Ant based builds may import the <samp class="ph codeph">integrator.xml</samp> file, and add
+              <samp class="ph codeph">integrate</samp> to the start of the dependency chain for the build. <div class="note note"><span class="notetitle">Note:</span> The integration process in considered part of the installation process and
+              running it before each conversion will incur a performance penalty.</div>
+</li>
+
+        </ul>
+
+        
+        
+        <div class="itemgroup info">
+          <p class="p">The integration process has two modes, lax and strict. In the strict mode the integration process will immediately fail if it encounters errors in plug-in configurations or installation process. In the lax mode, the integration process will continue to finish regardless of errors; the lax mode does not imply error recovery and may leave the DITA-OT installation into a broken state. The default mode is lax due to backwards compatibility, to run the integration in strict mode:</p>
+
+          <pre class="pre codeblock">ant -f integrator.xml strict</pre>
+
+          <p class="p">To get more information about the integration process, run Ant in verbose mode:</p>
+
+          <pre class="pre codeblock">ant -f integrator.xml -verbose strict</pre>
+
+        </div>
+      </li>
+</ol>
+
+  </div>
+
+</main>

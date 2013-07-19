@@ -18,10 +18,20 @@
           <a class="brand" href="{{ site.baseurl }}/">{{ site.name }}</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li {% if page.url == "/index.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/index.html">Home</a></li>
-              <li {% if page.url == "/download.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/download.html">Download</a></li>
-              <li {% if page.url == "/documentation.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/documentation.html">Documentation</a></li>
-              <li {% if page.url == "/get-involved.html" %} class="active" {% endif %}><a href="{{ site.baseurl }}/get-involved.html">Get Involved</a></li>
+              <li><a href="{{ site.baseurl }}/download.html">Download</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ site.baseurl }}/1.8/DITA-OTProjectHome.html">Documentation <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ site.baseurl }}/1.8/DITA-OTProjectHome.html">1.8</a></li>
+                  <li class="divider"></li>
+                  <li><a href="http://dita-ot.sourceforge.net/1.7/">1.7</a></li>
+                  <li><a href="http://dita-ot.sourceforge.net/1.6/">1.6</a></li>
+                  <li><a href="http://dita-ot.sourceforge.net/1.5.4/">1.5.4</a></li>
+                  <li><a href="http://dita-ot.sourceforge.net/1.5.3/">1.5.3</a></li>
+                  <li><a href="http://dita-ot.sourceforge.net/1.5.2/">1.5.2</a></li>
+                </ul>
+              </li>
+              <li><a href="{{ site.baseurl }}/get-involved.html">Get Involved</a></li>
             </ul>
           </div>
         </div>
@@ -29,14 +39,7 @@
     </header>
     <div id="content" class="container-fluid container">
       <div class="row-fluid">
-        {% if page.toc != false %}
-        <toc class="span3">
-          {% include toc.html %}
-        </toc>
-        {% endif %}
-        <main class="{% if page.toc != false %} span9 {% else %}  span12 {% endif %}">
-          {{ content }}
-        </main>
+        {{ content }}
       </div>
     </div>
     {% include footer.html %}

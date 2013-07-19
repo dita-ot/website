@@ -8,3 +8,9 @@ footer {
 	margin-top: 70px;
 	border-top: 1px solid #e5e5e5;
 }
+nav .nav {
+  padding: 0px 10px;
+}
+nav .well {
+  padding: 10px 5px;
+}

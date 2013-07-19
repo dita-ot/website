@@ -1,0 +1,35 @@
+---
+# Generated from DITA source
+layout: base
+title: "JavaHelp processing"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../DITA-OTProjectHome.html">DITA Open Toolkit 1.8</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA Open Toolkit</a><ul class="nav nav-list"><li><a href="../dev_ref/processing-structure.html">DITA-OT processing structure</a></li><li><a href="../dev_ref/processing-pipeline-modules.html">DITA-OT processing modules</a></li><li><a href="../dev_ref/processing-order.html">DITA-OT processing order</a></li><li><a href="../dev_ref/DITA-OTPreprocess.html">Pre-processing modules</a></li><li><a href="../dev_ref/XhtmlWithNavigation.html">XHTML processing modules</a><ul class="nav nav-list"><li><a href="../dev_ref/XhtmlCommon.html">Common XHTML processing</a></li><li><a href="../dev_ref/XhtmlDefault.html">Default XHTML processing</a></li><li><a href="../dev_ref/XhtmlEclipse.html">Eclipse help processing</a></li><li><a href="../dev_ref/XhtmlTocjs.html">TocJS processing</a></li><li><a href="../dev_ref/XhtmlCHM.html">HTML Help processing</a></li><li class="active"><a href="../dev_ref/XhtmlJavahelp.html">JavaHelp processing</a><ul class="nav nav-list"></ul></li></ul></li><li><a href="../dev_ref/PdfDefault.html">PDF processing modules</a></li><li><a href="../dev_ref/OdtDefault.html">Open Document Format processing modules</a></li></ul></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA Open Toolkit</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA Open Toolkit</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li><li><a href="../admin/DITA-OTProjectManagement.html">Project Management Guidelines</a></li><li><a href="../articles/dita-and-dita-ot-resources.html">DITA and DITA-OT resources</a></li></ul></div></nav><main class="span9">
+<h1 class="title topictitle1">JavaHelp processing</h1>
+
+
+<div class="body conbody"><p class="shortdesc">The <span class="keyword option">javahelp</span> transformation runs several additional Ant targets after
+  the XHTML processing is completed in order to create control files for the JavaHelp
+  output.</p>
+
+<div class="section"><div class="p">There are two primary Ant targets:<dl class="dl">
+     
+      <dt class="dt dlterm"><samp class="ph codeph">dita.map.javahelp</samp></dt>
+
+      <dd class="dd">Creates all of the files that are needed to compile JavaHelp, including a table of
+       contents, sorted index, and help map file.</dd>
+
+     
+     
+      <dt class="dt dlterm"><samp class="ph codeph">compile.Java.Help</samp></dt>
+
+      <dd class="dd">Searches for a JavaHelp compiler on the system. If a compiler is found, the help project
+       is compiled.</dd>
+
+     
+    </dl>
+</div>
+</div>
+
+</div>
+
+</main>

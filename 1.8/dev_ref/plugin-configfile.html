@@ -1,0 +1,193 @@
+---
+# Generated from DITA source
+layout: base
+title: "Plug-in configuration file"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../DITA-OTProjectHome.html">DITA Open Toolkit 1.8</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA Open Toolkit</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA Open Toolkit</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA Open Toolkit</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transform type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li><li><a href="../admin/DITA-OTProjectManagement.html">Project Management Guidelines</a></li><li><a href="../articles/dita-and-dita-ot-resources.html">DITA and DITA-OT resources</a></li></ul></div></nav><main class="span9">
+<h1 class="title topictitle1">Plug-in configuration file</h1>
+
+
+<div class="body refbody"><p class="shortdesc">The <span class="ph filepath">plugin.xml</span> controls all aspects
+of a plug-in, making each extension visible to the rest of the toolkit.
+The file uses pre-defined extension points to locate changes, and
+integrates those changes into the core code.</p>
+
+<div class="section">       <p class="p">The root element of the plugin.xml file is <samp class="ph codeph">&lt;plugin&gt;</samp>,
+and must         specify an <samp class="ph codeph">id</samp> attribute. The <samp class="ph codeph">id</samp> attribute
+is used to         identify the plug-in, as well as to identify whether
+pre-requisite plug-ins are available. The           <samp class="ph codeph">id</samp> attribute
+should follow the syntax rules:</p>
+       <pre class="pre codeblock">id    ::= token('.'token)*
+token ::= ( [0..9] | [a..zA..Z] | ’_’ | ’-’ )+</pre>
+       <p class="p">The <samp class="ph codeph">&lt;plugin&gt;</samp> element
+supports the following child elements: </p>
+       <ul class="ul">
+<li class="li">           <p class="p"><samp class="ph codeph">&lt;feature&gt;</samp> defines an <em class="ph i">extension</em> to
+contribute to a defined               <em class="ph i">extension point</em>. The
+following attributes are supported:</p>
+           <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+<th valign="bottom" align="left" id="d6085e64" class="stentry">Attribute</th>
+
+<th valign="bottom" align="left" id="d6085e67" class="stentry">Description</th>
+
+<th valign="bottom" align="left" id="d6085e70" class="stentry">Required</th>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d6085e76" headers="d6085e64" class="stentry"><strong><samp class="ph codeph">extension</samp></strong></td>
+
+<td valign="top" headers="d6085e67 d6085e76" class="stentry">extension point identifier</td>
+
+<td valign="top" headers="d6085e70 d6085e76" class="stentry">yes</td>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d6085e89" headers="d6085e64" class="stentry"><strong><samp class="ph codeph">value</samp></strong></td>
+
+<td valign="top" headers="d6085e67 d6085e89" class="stentry">comma separated string value of the extension</td>
+
+<td valign="top" headers="d6085e70 d6085e89" class="stentry">either <samp class="ph codeph">value</samp> or <samp class="ph codeph">file</samp></td>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d6085e107" headers="d6085e64" class="stentry"><strong><samp class="ph codeph">file</samp></strong></td>
+
+<td valign="top" headers="d6085e67 d6085e107" class="stentry">file path value of the extension, relative to           
+     <span class="ph filepath">plugin.xml</span></td>
+
+<td valign="top" headers="d6085e70 d6085e107" class="stentry">either <samp class="ph codeph">value</samp> or <samp class="ph codeph">file</samp></td>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d6085e127" headers="d6085e64" class="stentry"><strong><samp class="ph codeph">type</samp></strong></td>
+
+<td valign="top" headers="d6085e67 d6085e127" class="stentry">type of the <samp class="ph codeph">value</samp> attribute</td>
+
+<td valign="top" headers="d6085e70 d6085e127" class="stentry">no</td>
+
+</tr>
+</table>
+         </li>
+
+  <li class="li">
+    <p class="p"><samp class="ph codeph">extension-point</samp> defines new a <em class="ph i">extension point</em> that can be used by other plug-ins. The following attributes are supported:</p>
+
+    <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+        <th valign="bottom" align="left" id="d6085e157" class="stentry">Attribute</th>
+
+        <th valign="bottom" align="left" id="d6085e160" class="stentry">Description</th>
+
+        <th valign="bottom" align="left" id="d6085e163" class="stentry">Required</th>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" id="d6085e169" headers="d6085e157" class="stentry"><strong><samp class="ph codeph">id</samp></strong></td>
+
+        <td valign="top" headers="d6085e160 d6085e169" class="stentry">extension point identifier</td>
+
+        <td valign="top" headers="d6085e163 d6085e169" class="stentry">yes</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" id="d6085e182" headers="d6085e157" class="stentry"><strong><samp class="ph codeph">name</samp></strong></td>
+
+        <td valign="top" headers="d6085e160 d6085e182" class="stentry">extension point name</td>
+
+        <td valign="top" headers="d6085e163 d6085e182" class="stentry">no</td>
+
+      </tr>
+</table>
+
+  </li>
+
+<li class="li">           <p class="p"><samp class="ph codeph">&lt;require&gt;</samp> defines plug-in dependencies.
+The following attributes             are supported:</p>
+           <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+<th valign="bottom" align="left" id="d6085e206" class="stentry">Attribute</th>
+
+<th valign="bottom" align="left" id="d6085e209" class="stentry">Description</th>
+
+<th valign="bottom" align="left" id="d6085e212" class="stentry">Required</th>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d6085e218" headers="d6085e206" class="stentry"><strong><samp class="ph codeph">plugin</samp></strong></td>
+
+<td valign="top" headers="d6085e209 d6085e218" class="stentry">vertical bar separated list of plug-ins that are required </td>
+
+<td valign="top" headers="d6085e212 d6085e218" class="stentry">yes</td>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d6085e231" headers="d6085e206" class="stentry"><strong><samp class="ph codeph">importance</samp></strong></td>
+
+<td valign="top" headers="d6085e209 d6085e231" class="stentry">flag whether plug-in is required or optional</td>
+
+<td valign="top" headers="d6085e212 d6085e231" class="stentry">no</td>
+
+</tr>
+</table>
+         </li>
+
+<li class="li">           <p class="p"><samp class="ph codeph">&lt;template&gt;</samp> defines files that
+should be treated as               <em class="ph i">templates</em>. The following
+attributes are supported:</p>
+           <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+<th valign="bottom" align="left" id="d6085e259" class="stentry">Attribute</th>
+
+<th valign="bottom" align="left" id="d6085e262" class="stentry">Description</th>
+
+<th valign="bottom" align="left" id="d6085e265" class="stentry">Required</th>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d6085e271" headers="d6085e259" class="stentry"><strong><samp class="ph codeph">file</samp></strong></td>
+
+<td valign="top" headers="d6085e262 d6085e271" class="stentry">file path to the template, relative to <span class="ph filepath">plugin.xml</span></td>
+
+<td valign="top" headers="d6085e265 d6085e271" class="stentry">yes</td>
+
+</tr>
+</table>
+         </li>
+
+<li class="li">           <p class="p"><samp class="ph codeph">&lt;meta&gt;</samp> defines metadata. The
+following attributes are             supported:</p>
+           <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
+<th valign="bottom" align="left" id="d6085e297" class="stentry">Attribute</th>
+
+<th valign="bottom" align="left" id="d6085e300" class="stentry">Description</th>
+
+<th valign="bottom" align="left" id="d6085e303" class="stentry">Required</th>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d6085e309" headers="d6085e297" class="stentry"><strong><samp class="ph codeph">type</samp></strong></td>
+
+<td valign="top" headers="d6085e300 d6085e309" class="stentry">metadata name </td>
+
+<td valign="top" headers="d6085e303 d6085e309" class="stentry">yes</td>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d6085e322" headers="d6085e297" class="stentry"><strong><samp class="ph codeph">value</samp></strong></td>
+
+<td valign="top" headers="d6085e300 d6085e322" class="stentry">metadata value</td>
+
+<td valign="top" headers="d6085e303 d6085e322" class="stentry">yes</td>
+
+</tr>
+</table>
+         </li>
+
+</ul>
+       <p class="p">Any extension that is not recognized by the DITA-OT
+is ignored; all elements other than           <samp class="ph codeph">&lt;plugin&gt;</samp> are
+optional. Since version 1.5.3 multiple extension         definitions
+within a plug-in configuration file are combined; in older versions
+only the last         extension definition is used. </p>
+       </div>
+
+</div>
+
+</main>

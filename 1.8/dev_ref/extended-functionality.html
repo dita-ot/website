@@ -1,0 +1,54 @@
+---
+# Generated from DITA source
+layout: base
+title: "Extended functionality"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../DITA-OTProjectHome.html">DITA Open Toolkit 1.8</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA Open Toolkit</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA Open Toolkit</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA Open Toolkit</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li class="active"><a href="../dev_ref/extended-functionality.html">Extended functionality</a><ul class="nav nav-list"></ul></li></ul></li><li><a href="../admin/DITA-OTProjectManagement.html">Project Management Guidelines</a></li><li><a href="../articles/dita-and-dita-ot-resources.html">DITA and DITA-OT resources</a></li></ul></div></nav><main class="span9">
+  <h1 class="title topictitle1">Extended functionality</h1>
+
+  <div class="topic reference nested1" id="code-reference">
+    <h2 class="title topictitle2">Code reference processing</h2>
+
+    <div class="body refbody">
+      <div class="section"><h3 class="title sectiontitle">Charset definition</h3>
+        
+        <p class="p">DITA-OT supports defining the code reference target file encoding using the
+            <samp class="ph codeph">format</samp> attribute. The supported format is:</p>
+
+        <pre class="pre codeblock">format (";" space* "charset=" charset)?</pre>
+
+        <p class="p">If charset is not defined system default charset will be used. If charset is not
+          recognized or supported, <span class="keyword">DOTJ052E</span> error is thrown and system default
+          charset is used as a fall-back.</p>
+
+      </div>
+
+      <div class="example">
+        <pre class="pre codeblock">&lt;coderef href="unicode.txt" format="txt; charset=UTF-8"/&gt;</pre>
+
+      </div>
+
+      <div class="section"><h3 class="title sectiontitle">Line range extraction</h3>
+        
+        <p class="p">Code reference can extract only a given line ranges with <samp class="ph codeph">line-range</samp>
+          pointer in the URI fragment. The format is:</p>
+
+       <pre class="pre codeblock">uri ("#line-range(" start ("," end)? ")" )?</pre>
+
+        <p class="p">Start and end line numbers start from 1 and are inclusive. If end range
+           is omitted, range ends in last line of the file.</p>
+
+      </div>
+
+      <div class="example">
+        <pre class="pre codeblock">&lt;coderef href="Parser.scala#line-range(5, 10)" format="scala"/&gt;</pre>
+
+        <p class="p">Only lines from 5 to 10 will be included in the output.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
