@@ -9,7 +9,7 @@ title: "Building your own content using the demo build"
 
 <div class="body taskbody"><p class="shortdesc">You can use the demo build to generate output for your own DITA content.</p>
 
-<ol class="ol steps"><li class="li step stepexpand">
+<div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
                 <span class="ph cmd">If necessary, run the <span class="ph filepath">startcmd</span> file that is applicable for
                     your operating system.</span>
                 <div class="itemgroup info">You do not need to run the <span class="ph filepath">startcmd</span> file if you already
@@ -33,49 +33,49 @@ specify a relative path, for example, <kbd class="ph userinput">doc\userguide.di
 <li class="li step stepexpand"><span class="ph cmd">When prompted, type the value for the transformation type.</span>
 
 <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder">
-<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d13420e68-option">Ouput format</th>
-<th valign="bottom" align="left" id="d13420e68-desc">Value</th></tr></thead>
+<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d15026e68-option">Ouput format</th>
+<th valign="bottom" align="left" id="d15026e68-desc">Value</th></tr></thead>
 <tbody>
 
 <tr class="strow chrow">
-<td valign="top" headers="d13420e68-option" id="d13420e81" class="stentry choption"><strong>Docbook</strong></td>
+<td valign="top" headers="d15026e68-option" id="d15026e81" class="stentry choption"><strong>Docbook</strong></td>
 
-<td valign="top" headers="d13420e68-desc d13420e81" class="stentry chdesc">docbook</td>
-
-</tr>
-
-<tr class="strow chrow">
-<td valign="top" headers="d13420e68-option" id="d13420e90" class="stentry choption"><strong>Eclipse help</strong></td>
-
-<td valign="top" headers="d13420e68-desc d13420e90" class="stentry chdesc">eclipse</td>
+<td valign="top" headers="d15026e68-desc d15026e81" class="stentry chdesc">docbook</td>
 
 </tr>
 
 <tr class="strow chrow">
-<td valign="top" headers="d13420e68-option" id="d13420e99" class="stentry choption"><strong>HTML help</strong></td>
+<td valign="top" headers="d15026e68-option" id="d15026e90" class="stentry choption"><strong>Eclipse help</strong></td>
 
-<td valign="top" headers="d13420e68-desc d13420e99" class="stentry chdesc">htmlhelp</td>
-
-</tr>
-
-<tr class="strow chrow">
-<td valign="top" headers="d13420e68-option" id="d13420e108" class="stentry choption"><strong>PDF</strong></td>
-
-<td valign="top" headers="d13420e68-desc d13420e108" class="stentry chdesc">pdf</td>
+<td valign="top" headers="d15026e68-desc d15026e90" class="stentry chdesc">eclipse</td>
 
 </tr>
 
 <tr class="strow chrow">
-<td valign="top" headers="d13420e68-option" id="d13420e118" class="stentry choption"><strong>XHTML</strong></td>
+<td valign="top" headers="d15026e68-option" id="d15026e99" class="stentry choption"><strong>HTML help</strong></td>
 
-<td valign="top" headers="d13420e68-desc d13420e118" class="stentry chdesc">web</td>
+<td valign="top" headers="d15026e68-desc d15026e99" class="stentry chdesc">htmlhelp</td>
 
 </tr>
 
 <tr class="strow chrow">
-<td valign="top" headers="d13420e68-option" id="d13420e127" class="stentry choption"><strong>XHTML with a JavaScript frame set</strong></td>
+<td valign="top" headers="d15026e68-option" id="d15026e108" class="stentry choption"><strong>PDF</strong></td>
 
-<td valign="top" headers="d13420e68-desc d13420e127" class="stentry chdesc">tocjs</td>
+<td valign="top" headers="d15026e68-desc d15026e108" class="stentry chdesc">pdf</td>
+
+</tr>
+
+<tr class="strow chrow">
+<td valign="top" headers="d15026e68-option" id="d15026e118" class="stentry choption"><strong>XHTML</strong></td>
+
+<td valign="top" headers="d15026e68-desc d15026e118" class="stentry chdesc">web</td>
+
+</tr>
+
+<tr class="strow chrow">
+<td valign="top" headers="d15026e68-option" id="d15026e127" class="stentry choption"><strong>XHTML with a JavaScript frame set</strong></td>
+
+<td valign="top" headers="d15026e68-desc d15026e127" class="stentry chdesc">tocjs</td>
 
 </tr>
 
@@ -84,11 +84,11 @@ specify a relative path, for example, <kbd class="ph userinput">doc\userguide.di
 <li class="li step stepexpand"><span class="ph cmd">When prompted, press <span class="ph uicontrol">Enter</span> to start the transformation.</span></li>
 </ol>
 
-<div class="section result"><p class="p">The DITA-OT generates output for the specified DITA content. It runs the transformation that you
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div><p class="p">The DITA-OT generates output for the specified DITA content. It runs the transformation that you
 specified, and writes the output to the directory that you specified.</p>
 </div>
 
-<div class="section postreq">
+<div class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
 <p class="p">Explore invoking the DITA-OT from either Ant or the command-line tool. This enables you to
 specify a wider array of parameters than those supported by the demo build.</p>
 
@@ -108,4 +108,9 @@ specify a wider array of parameters than those supported by the demo build.</p>
 
 </div>
 
-</main>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../quickstartguide/exploring-the-dita-ot.html" title="The Getting Started Guide is designed to provide a guided exploration of the DITA Open Toolkit. It is geared for an audience that has little or no knowledge of build scripts or DITA-OT parameters. It walks the novice user through installing the full-easy-install version of the toolkit and running a prompted build.">Getting Started with the DITA Open Toolkit</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="../quickstartguide/rundemo.html" title="After you install the full-easy-install package, run the demo build to see the type of output that is produced by the DITA Open Toolkit.">Running the demo build</a></div>
+</div>
+</div></main>

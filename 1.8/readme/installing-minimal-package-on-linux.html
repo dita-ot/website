@@ -10,7 +10,7 @@ title: "Installing the minimal or standard package on Linux or Mac OSX"
     <div class="body taskbody"><p class="shortdesc"> If you already have locally-installed copies of Ant and the other
         required tools, install either the minimal or standard package. </p>
 
-        <div class="section prereq p">
+        <div class="section prereq p"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>
             <div class="p">Ensure that you have the following prerequisite software installed:<ul class="ul">
                     <li class="li">Ant, version <span class="keyword">1.7.1</span> or later</li>
 
@@ -28,26 +28,26 @@ title: "Installing the minimal or standard package on Linux or Mac OSX"
 
         </div>
 
-        <ol class="ol steps"><li class="li step stepexpand">
+        <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
                 <span class="ph cmd">Download the minimal or standard package from
                         <a class="xref" href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/" target="_blank">SourceForge</a>.</span>
                 
 <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder">
-<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d31046e75-option">Package</th>
-<th valign="bottom" align="left" id="d31046e75-desc">File name</th></tr></thead>
+<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d30447e75-option">Package</th>
+<th valign="bottom" align="left" id="d30447e75-desc">File name</th></tr></thead>
 <tbody>
                     
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31046e75-option" id="d31046e88" class="stentry choption" width="20%"><strong>Minimal</strong></td>
+                        <td valign="top" headers="d30447e75-option" id="d30447e88" class="stentry choption" width="20%"><strong>Minimal</strong></td>
 
-                        <td valign="top" headers="d31046e75-desc d31046e88" class="stentry chdesc" width="80%"><span class="ph filepath">DITA-OT<span class="keyword">1.8</span>_minimal_bin.tar.gz</span></td>
+                        <td valign="top" headers="d30447e75-desc d30447e88" class="stentry chdesc" width="80%"><span class="ph filepath">DITA-OT<span class="keyword">1.8.2</span>_minimal_bin.tar.gz</span></td>
 
                     </tr>
 
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31046e75-option" id="d31046e101" class="stentry choption" width="20%"><strong>Standard</strong></td>
+                        <td valign="top" headers="d30447e75-option" id="d30447e101" class="stentry choption" width="20%"><strong>Standard</strong></td>
 
-                        <td valign="top" headers="d31046e75-desc d31046e101" class="stentry chdesc" width="80%"><span class="ph filepath">DITA-OT<span class="keyword">1.8</span>_standard_bin.tar.gz</span></td>
+                        <td valign="top" headers="d30447e75-desc d30447e101" class="stentry chdesc" width="80%"><span class="ph filepath">DITA-OT<span class="keyword">1.8.2</span>_standard_bin.tar.gz</span></td>
 
                     </tr>
 
@@ -117,14 +117,14 @@ export CLASSPATH=$DITA_HOME/lib/commons-codec-<span class="keyword">1.4</span>.j
                 <span class="ph cmd">Set up the XSLT processor:</span>
                 
 <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder">
-<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d31046e231-option">Processor</th>
-<th valign="bottom" align="left" id="d31046e231-desc">Action</th></tr></thead>
+<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d30447e231-option">Processor</th>
+<th valign="bottom" align="left" id="d30447e231-desc">Action</th></tr></thead>
 <tbody>
                     
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31046e231-option" id="d31046e244" class="stentry choption" width="20%"><strong>Saxon</strong></td>
+                        <td valign="top" headers="d30447e231-option" id="d30447e244" class="stentry choption" width="20%"><strong>Saxon</strong></td>
 
-                        <td valign="top" headers="d31046e231-desc d31046e244" class="stentry chdesc" width="80%">
+                        <td valign="top" headers="d30447e231-desc d30447e244" class="stentry chdesc" width="80%">
                             <div class="p">Set up the <var class="keyword varname">CLASSPATH</var> environment variable to
                                 include the Saxon JAR files, for
                                 example:<pre class="pre codeblock">export CLASSPATH=&lt;saxon_dir&gt;/saxon9.jar:&lt;saxon_dir&gt;/saxon9-dom.jar:$CLASSPATH</pre>
@@ -140,9 +140,9 @@ export CLASSPATH=$DITA_HOME/lib/commons-codec-<span class="keyword">1.4</span>.j
                     </tr>
 
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31046e231-option" id="d31046e269" class="stentry choption" width="20%"><strong>Xalan</strong></td>
+                        <td valign="top" headers="d30447e231-option" id="d30447e269" class="stentry choption" width="20%"><strong>Xalan</strong></td>
 
-                        <td valign="top" headers="d31046e231-desc d31046e269" class="stentry chdesc" width="80%">Set up the <var class="keyword varname">CLASSPATH</var> environment variable to
+                        <td valign="top" headers="d30447e231-desc d30447e269" class="stentry chdesc" width="80%">Set up the <var class="keyword varname">CLASSPATH</var> environment variable to
                             include the Xalan JAR files, for example:
                             <pre class="pre codeblock">export CLASSPATH=&lt;xalan_dir&gt;/xalan.jar:$CLASSPATH</pre>
 </td>
@@ -170,14 +170,14 @@ export CLASSPATH=$DITA_HOME/lib/commons-codec-<span class="keyword">1.4</span>.j
                 <span class="ph cmd">For PDF output, set up the XSL-FO processor:</span>
                 
 <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder">
-<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d31046e316-option">Processor</th>
-<th valign="bottom" align="left" id="d31046e316-desc">Action</th></tr></thead>
+<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d30447e316-option">Processor</th>
+<th valign="bottom" align="left" id="d30447e316-desc">Action</th></tr></thead>
 <tbody>
                     
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31046e316-option" id="d31046e329" class="stentry choption" width="20%"><strong>FOP</strong></td>
+                        <td valign="top" headers="d30447e316-option" id="d30447e329" class="stentry choption" width="20%"><strong>FOP</strong></td>
 
-                        <td valign="top" headers="d31046e316-desc d31046e329" class="stentry chdesc" width="80%">
+                        <td valign="top" headers="d30447e316-desc d30447e329" class="stentry chdesc" width="80%">
                             <div class="p">Add the FOP installation directory to the
                                     <span class="ph filepath">local.properties</span> file as the
                                     <span class="keyword option">fop.home</span> property, for
@@ -189,9 +189,9 @@ export CLASSPATH=$DITA_HOME/lib/commons-codec-<span class="keyword">1.4</span>.j
                     </tr>
 
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31046e316-option" id="d31046e349" class="stentry choption" width="20%"><strong>RenderX</strong></td>
+                        <td valign="top" headers="d30447e316-option" id="d30447e349" class="stentry choption" width="20%"><strong>RenderX</strong></td>
 
-                        <td valign="top" headers="d31046e316-desc d31046e349" class="stentry chdesc" width="80%">Add the RenderX installation directory to the
+                        <td valign="top" headers="d30447e316-desc d30447e349" class="stentry chdesc" width="80%">Add the RenderX installation directory to the
                                 <span class="ph filepath">local.properties</span> file as the
                                 <span class="keyword option">xep.dir</span> property, for
                             example:<pre class="pre codeblock">xep.dir=/usr/share/java/xep</pre>
@@ -200,9 +200,9 @@ export CLASSPATH=$DITA_HOME/lib/commons-codec-<span class="keyword">1.4</span>.j
                     </tr>
 
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31046e316-option" id="d31046e366" class="stentry choption" width="20%"><strong>Antenna House</strong></td>
+                        <td valign="top" headers="d30447e316-option" id="d30447e366" class="stentry choption" width="20%"><strong>Antenna House</strong></td>
 
-                        <td valign="top" headers="d31046e316-desc d31046e366" class="stentry chdesc" width="80%">Add the AH Formatter installation directory to the
+                        <td valign="top" headers="d30447e316-desc d30447e366" class="stentry chdesc" width="80%">Add the AH Formatter installation directory to the
                                 <span class="ph filepath">local.properties</span> file as the
                                 <span class="keyword option">axf.path</span> property, for
                             example:<pre class="pre codeblock">axf.path=/usr/share/java/AHFormatterV6</pre>
@@ -218,7 +218,7 @@ export CLASSPATH=$DITA_HOME/lib/commons-codec-<span class="keyword">1.4</span>.j
                 <div class="itemgroup info">The <span class="ph filepath">samples\ant_sample directory</span> contains Ant scripts
                     designed to build various output formats.</div>
                 <div class="itemgroup stepxmp">
-                    <pre class="pre codeblock">/usr/local/share/DITA-OT<span class="keyword">1.8</span>$ ant -f samples/ant_sample/sample_all.xml</pre>
+                    <pre class="pre codeblock">/usr/local/share/DITA-OT<span class="keyword">1.8.2</span>$ ant -f samples/ant_sample/sample_all.xml</pre>
 
                 </div>
                 <div class="itemgroup stepresult">The generated output is written to the
@@ -249,4 +249,8 @@ export CLASSPATH=$DITA_HOME/lib/commons-codec-<span class="keyword">1.4</span>.j
 
     </div>
 
-</main>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../readme/DITA-installation.html" title="You can install the DITA Open Toolkit (DITA-OT) on Linux, Mac OSX, and Windows. The process for installing and setting up the DITA-OT depends on the type of distribution package that you select.">Installing the DITA Open Toolkit</a></div>
+</div>
+</div></main>
