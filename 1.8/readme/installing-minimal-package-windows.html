@@ -33,21 +33,21 @@ title: "Installing the minimal or standard package on Windows"
                         <a class="xref" href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/" target="_blank">SourceForge</a>.</span>
                 
 <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder">
-<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d31239e75-option">Package</th>
-<th valign="bottom" align="left" id="d31239e75-desc">File name</th></tr></thead>
+<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d36550e75-option">Package</th>
+<th valign="bottom" align="left" id="d36550e75-desc">File name</th></tr></thead>
 <tbody>
                     
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31239e75-option" id="d31239e88" class="stentry choption" width="20%"><strong>Minimal</strong></td>
+                        <td valign="top" headers="d36550e75-option" id="d36550e88" class="stentry choption" width="20%"><strong>Minimal</strong></td>
 
-                        <td valign="top" headers="d31239e75-desc d31239e88" class="stentry chdesc" width="80%"><span class="ph filepath">DITA-OT<span class="keyword">1.8.2</span>_minimal_bin.zip</span></td>
+                        <td valign="top" headers="d36550e75-desc d36550e88" class="stentry chdesc" width="80%"><span class="ph filepath">DITA-OT<span class="keyword">1.8.3</span>_minimal_bin.zip</span></td>
 
                     </tr>
 
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31239e75-option" id="d31239e101" class="stentry choption" width="20%"><strong>Standard</strong></td>
+                        <td valign="top" headers="d36550e75-option" id="d36550e101" class="stentry choption" width="20%"><strong>Standard</strong></td>
 
-                        <td valign="top" headers="d31239e75-desc d31239e101" class="stentry chdesc" width="80%"><span class="ph filepath">DITA-OT<span class="keyword">1.8.2</span>_standard_bin.zip</span></td>
+                        <td valign="top" headers="d36550e75-desc d36550e101" class="stentry chdesc" width="80%"><span class="ph filepath">DITA-OT<span class="keyword">1.8.3</span>_standard_bin.zip</span></td>
 
                     </tr>
 
@@ -59,7 +59,7 @@ title: "Installing the minimal or standard package on Windows"
 <li class="li step stepexpand">
                 <span class="ph cmd">Extract the contents of the package into an installation
                     directory.</span>
-                <div class="itemgroup stepxmp">For example, <span class="ph filepath">C:\pkg\DITA-OT<span class="keyword">1.8.2</span>.</span></div>
+                <div class="itemgroup stepxmp">For example, <span class="ph filepath">C:\pkg\DITA-OT<span class="keyword">1.8.3</span>.</span></div>
             </li>
 <li class="li step stepexpand">
                 <span class="ph cmd">Verify that the <var class="keyword varname">JAVA_HOME</var> environment variable is set. </span>
@@ -113,14 +113,14 @@ set CLASSPATH=%DITA_HOME%\lib\commons-codec-<span class="keyword">1.4</span>.jar
                 <span class="ph cmd">Set up the XSLT processor:</span>
                 
 <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder">
-<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d31239e230-option">Processor</th>
-<th valign="bottom" align="left" id="d31239e230-desc">Action</th></tr></thead>
+<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d36550e230-option">Processor</th>
+<th valign="bottom" align="left" id="d36550e230-desc">Action</th></tr></thead>
 <tbody>
                     
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31239e230-option" id="d31239e243" class="stentry choption" width="20%"><strong>Saxon</strong></td>
+                        <td valign="top" headers="d36550e230-option" id="d36550e243" class="stentry choption" width="20%"><strong>Saxon</strong></td>
 
-                        <td valign="top" headers="d31239e230-desc d31239e243" class="stentry chdesc" width="80%">
+                        <td valign="top" headers="d36550e230-desc d36550e243" class="stentry chdesc" width="80%">
                             <div class="p">Set up the <var class="keyword varname">CLASSPATH</var> environment variable to
                                 include the Saxon JAR files, for
                                 example:<pre class="pre codeblock">set CLASSPATH=&lt;saxon_dir&gt;\saxon9.jar;&lt;saxon_dir&gt;\saxon9-dom.jar;%CLASSPATH%</pre>
@@ -136,9 +136,9 @@ set CLASSPATH=%DITA_HOME%\lib\commons-codec-<span class="keyword">1.4</span>.jar
                     </tr>
 
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31239e230-option" id="d31239e268" class="stentry choption" width="20%"><strong>Xalan</strong></td>
+                        <td valign="top" headers="d36550e230-option" id="d36550e268" class="stentry choption" width="20%"><strong>Xalan</strong></td>
 
-                        <td valign="top" headers="d31239e230-desc d31239e268" class="stentry chdesc" width="80%">Set up the <var class="keyword varname">CLASSPATH</var> environment variable to
+                        <td valign="top" headers="d36550e230-desc d36550e268" class="stentry chdesc" width="80%">Set up the <var class="keyword varname">CLASSPATH</var> environment variable to
                             include the Xalan JAR files, for example:
                             <pre class="pre codeblock">set CLASSPATH=&lt;xalan_dir&gt;\xalan.jar;%CLASSPATH%</pre>
 </td>
@@ -175,14 +175,14 @@ set CLASSPATH=%DITA_HOME%\lib\commons-codec-<span class="keyword">1.4</span>.jar
                 <span class="ph cmd">For PDF output, set up the XSL-FO processor:</span>
                 
 <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder">
-<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d31239e333-option">Processor</th>
-<th valign="bottom" align="left" id="d31239e333-desc">Action</th></tr></thead>
+<thead><tr class="sthead chhead"><th valign="bottom" align="left" id="d36550e333-option">Processor</th>
+<th valign="bottom" align="left" id="d36550e333-desc">Action</th></tr></thead>
 <tbody>
                     
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31239e333-option" id="d31239e346" class="stentry choption" width="20%"><strong>FOP</strong></td>
+                        <td valign="top" headers="d36550e333-option" id="d36550e346" class="stentry choption" width="20%"><strong>FOP</strong></td>
 
-                        <td valign="top" headers="d31239e333-desc d31239e346" class="stentry chdesc" width="80%">
+                        <td valign="top" headers="d36550e333-desc d36550e346" class="stentry chdesc" width="80%">
                             <div class="p">Add the FOP installation directory to the
                                     <span class="ph filepath">local.properties</span> file as the
                                     <span class="keyword option">fop.home</span> property, for
@@ -194,9 +194,9 @@ set CLASSPATH=%DITA_HOME%\lib\commons-codec-<span class="keyword">1.4</span>.jar
                     </tr>
 
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31239e333-option" id="d31239e366" class="stentry choption" width="20%"><strong>RenderX</strong></td>
+                        <td valign="top" headers="d36550e333-option" id="d36550e366" class="stentry choption" width="20%"><strong>RenderX</strong></td>
 
-                        <td valign="top" headers="d31239e333-desc d31239e366" class="stentry chdesc" width="80%">Add the RenderX installation directory to the
+                        <td valign="top" headers="d36550e333-desc d36550e366" class="stentry chdesc" width="80%">Add the RenderX installation directory to the
                                 <span class="ph filepath">local.properties</span> file as the
                                 <span class="keyword option">xep.dir</span> property, for
                             example:<pre class="pre codeblock">xep.dir=C:\\Program Files\\xep</pre>
@@ -205,9 +205,9 @@ set CLASSPATH=%DITA_HOME%\lib\commons-codec-<span class="keyword">1.4</span>.jar
                     </tr>
 
                     <tr class="strow chrow">
-                        <td valign="top" headers="d31239e333-option" id="d31239e383" class="stentry choption" width="20%"><strong>Antenna House</strong></td>
+                        <td valign="top" headers="d36550e333-option" id="d36550e383" class="stentry choption" width="20%"><strong>Antenna House</strong></td>
 
-                        <td valign="top" headers="d31239e333-desc d31239e383" class="stentry chdesc" width="80%">Add the AH Formatter installation directory to the
+                        <td valign="top" headers="d36550e333-desc d36550e383" class="stentry chdesc" width="80%">Add the AH Formatter installation directory to the
                                 <span class="ph filepath">local.properties</span> file as the
                                 <span class="keyword option">axf.path</span> property, for
                             example:<pre class="pre codeblock">axf.path=C:\\Program Files\\AHFormatterV6</pre>
@@ -223,7 +223,7 @@ set CLASSPATH=%DITA_HOME%\lib\commons-codec-<span class="keyword">1.4</span>.jar
                 <div class="itemgroup info">The <span class="ph filepath">samples\ant_sample directory</span> contains Ant scripts
                     designed to build various output formats.</div>
                 <div class="itemgroup stepxmp">
-                    <pre class="pre codeblock">C:\<var class="keyword varname">DITA-OT</var><span class="keyword">1.8.2</span>&gt;ant -f samples\ant_sample\sample_all.xml</pre>
+                    <pre class="pre codeblock">C:\<var class="keyword varname">DITA-OT</var><span class="keyword">1.8.3</span>&gt;ant -f samples\ant_sample\sample_all.xml</pre>
 
                 </div>
                 <div class="itemgroup stepresult">The generated output is written to the
