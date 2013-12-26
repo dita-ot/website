@@ -1,0 +1,58 @@
+---
+# Generated from DITA source
+layout: base
+title: "Extending the XML Catalog"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA-OT</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li class="active"><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transform type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="span9">
+<h1 class="title topictitle1">Extending the XML Catalog</h1>
+
+
+<div class="body refbody"><p class="shortdesc">The XML Catalogs extension point is used to update the
+XML Catalogs used to resolve DTD or Schema document types, or to add
+URI mappings. This is required in order to support DITA specializations
+or new DITA document type shells.</p>
+
+<div class="section">       <p class="p">To do this, first create a catalog with only  
+      your new values, using the OASIS Catalog format, and place that
+in your plug-in. Local file references in the catalog should be relative
+to the location of the catalog. The following extension points are
+available to work with catalogs.</p>
+<dl class="dl">
+<dt class="dt dlterm"><samp class="ph codeph">dita.specialization.catalog.relative</samp></dt>
+
+<dt class="dt dlterm"><samp class="ph codeph">dita.specialization.catalog</samp></dt>
+
+<dd class="dd">             <p class="p">Adds the content of the catalog file defined in <samp class="ph codeph">file</samp> attribute
+to               main DITA-OT catalog file.</p>
+             <div class="note remember"><span class="remembertitle">Remember:</span> The <samp class="ph codeph">dita.specialization.catalog</samp> extension
+is deprecated. Use <samp class="ph codeph">dita.specialization.catalog.relative</samp> instead.</div>
+ 
+         </dd>
+
+
+<dt class="dt dlterm"><samp class="ph codeph">org.dita.pdf2.catalog.relative</samp></dt>
+
+<dd class="dd">             <p class="p">Adds the content of the catalog file defined in <samp class="ph codeph">file</samp> attribute
+to               main PDF plug-in catalog file.</p>
+           </dd>
+
+</dl>
+       </div>
+
+<div class="example"><h2 class="title sectiontitle">Example</h2><p class="p">This example assumes that "<span class="ph filepath">catalog-dita.xml</span>"
+contains an OASIS catalog for any DTDs or Schemas inside this plug-in.
+The catalog entries inside of <span class="ph filepath">catalog-dita.xml</span> are
+relative to the catalog itself; when the plug-in is integrated, they
+will be added to the core DITA-OT catalog (with the correct path).</p>
+<pre class="pre codeblock">&lt;plugin id="com.example.catalog"&gt;
+  &lt;feature extension="dita.specialization.catalog.relative" file="catalog-dita.xml"/&gt;
+&lt;/plugin&gt;</pre>
+       </div>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/plugins-overview.html" title="The DITA Open Toolkit comes with a built in mechanism for adding in extensions through plug-ins. These plug-ins may do a wide variety of things, such as adding support for specialized DITA DTDs or Schemas, integrating processing overrides, or even providing entirely new output transforms. Plug-ins are the best way to extend the toolkit in a way that is consistent, easily sharable, and easy to preserve through toolkit upgrades.">Creating DITA-OT plug-ins</a></div>
+</div>
+</div></main>

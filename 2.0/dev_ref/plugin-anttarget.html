@@ -1,0 +1,53 @@
+---
+# Generated from DITA source
+layout: base
+title: "Adding new targets to the Ant build process"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA-OT</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li class="active"><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transform type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="span9">
+<h1 class="title topictitle1">Adding new targets to the Ant build process</h1>
+
+
+<div class="body refbody"><p class="shortdesc">The Ant conductor extension point is used to make new targets
+available to the Ant processing pipeline. This may be done as part
+of creating a new transform, extending pre-processing, or simply to
+provide Ant targets for the use of other plug-ins.</p>
+
+<div class="section"> <dl class="dl">
+<dt class="dt dlterm"><samp class="ph codeph">dita.conductor.target.relative</samp></dt>
+
+<dt class="dt dlterm"><samp class="ph codeph">dita.conductor.target</samp></dt>
+
+<dd class="dd">             <p class="p">Add Ant import to main Ant build file.</p>
+   
+         <div class="note remember"><span class="remembertitle">Remember:</span> The <samp class="ph codeph">dita.conductor.target</samp> extension
+is               deprecated. Use <samp class="ph codeph">dita.conductor.target.relative</samp> instead.</div>
+ 
+         </dd>
+
+</dl>
+       </div>
+
+<div class="example"><h2 class="title sectiontitle">Example</h2><p class="p">To extend And processing,
+first place your extensions in an Ant project file within your plug-in,
+such           as <span class="ph filepath">myAntStuff.xml</span>. Next, create
+a small wrapper file <span class="ph filepath">myAntStuffWrapper.xml</span> in
+the same directory: </p>
+<pre class="pre codeblock">&lt;dummy&gt; &lt;import file="myAntStuff.xml"/&gt; &lt;/dummy&gt;</pre>
+<p class="p">Then
+create the following feature: </p>
+<pre class="pre codeblock">&lt;plugin id="com.example.ant"&gt;
+  &lt;feature extension="dita.conductor.target.relative" file="myAntStuffWrapper.xml"/&gt;
+&lt;/plugin&gt;</pre>
+<p class="p">When the plug-in is integrated, the imports
+from <span class="ph filepath">myAntStuffWrapper.xml</span> will be copied into <span class="ph filepath">build.xml</span> (using
+the correct path). This makes targets in <span class="ph filepath">myAntStuff.xml</span> available
+to any other processing.</p>
+</div>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/plugins-overview.html" title="The DITA Open Toolkit comes with a built in mechanism for adding in extensions through plug-ins. These plug-ins may do a wide variety of things, such as adding support for specialized DITA DTDs or Schemas, integrating processing overrides, or even providing entirely new output transforms. Plug-ins are the best way to extend the toolkit in a way that is consistent, easily sharable, and easy to preserve through toolkit upgrades.">Creating DITA-OT plug-ins</a></div>
+</div>
+</div></main>

@@ -1,0 +1,199 @@
+---
+# Generated from DITA source
+layout: base
+title: "Ant parameters: Common HTML-based transformations"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a><ul class="nav nav-list"><li><a href="../readme/overview-of-dita-ot.html">Overview of the DITA Open Toolkit</a></li><li><a href="../readme/DITA-installation.html">Installing the DITA-OT</a></li><li><a href="../readme/tranforming-dita-content.html">Publishing DITA content</a></li><li><a href="../readme/extending-the-dita-ot.html">Extending the DITA-OT</a></li><li><a href="../readme/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../readme/troubleshooting-overview.html">Error messages and troubleshooting</a></li><li><a href="../readme/reference.html">Reference</a><ul class="nav nav-list"><li><a href="../readme/dita-ot_ant_properties.html">Ant parameters</a><ul class="nav nav-list"><li><a href="../readme/ant-parameters-all-transformation-types.html">All transformations</a></li><li class="active"><a href="../readme/ant-parameters-common-html-transtypes.html">All HTML-based transformations</a><ul class="nav nav-list"></ul></li><li><a href="../readme/ant-parameters-eclipse-content-transformation.html">Eclipse content</a></li><li><a href="../readme/ant-parameters-eclipse-help-transformation.html">Eclipse help</a></li><li><a href="../readme/ant-parameters-html-help-transformation.html">HTML Help</a></li><li><a href="../readme/ant-parameters-javahelp-transformation.html">JavaHelp</a></li><li><a href="../readme/ant-parameters-odt-transformation.html">ODT</a></li><li><a href="../readme/ant-parameters-other.html">Other</a></li><li><a href="../readme/ant-parameters-pdf2-transformation.html">PDF</a></li><li><a href="../readme/ant-parameters-xhtml-transformation.html">HTML5 and XHTML</a></li></ul></li><li><a href="../readme/dita-command-properties.html">dita command arguments and options</a></li><li><a href="../readme/dita-ot_java_properties.html">Command-line tool parameters</a></li><li><a href="../readme/configuration.html">lib/configuration.properties file</a></li></ul></li></ul></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a></li></ul></div></nav><main class="span9">
+  <h1 class="title topictitle1">Ant parameters: Common HTML-based transformations</h1>
+
+  
+  
+  
+  <div class="body refbody"><p class="shortdesc">Certain parameters apply to all the HTML-based transformation types: Eclipse help, HTML
+    Help, JavaHelp, TocJS, HTML5, and XHTML. </p>
+
+    <div class="section">
+     <div class="fig fignone"><span class="figcap">Figure 1. Ant parameters: HTML-based transformations</span>
+       
+        <dl class="dl parml">
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.artlbl"><!-- --></a><span class="keyword parmname">args.artlbl</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.artlbl.desc">Specifies whether to generate a label
+              for each image; the label will contain the image file name. The allowed values are
+                <span class="keyword option">yes</span> and <span class="keyword option">no</span>; the default value is
+                <span class="keyword option">no</span>.</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.breadcrumbs"><!-- --></a><span class="keyword parmname">args.breadcrumbs</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.breadcrumbs.desc">Specifies whether to generate
+              breadcrumb links. The allowed values are <span class="keyword option">yes</span> and <span class="keyword option">no</span>;
+              the default value is <span class="keyword option">no</span>. <span class="ph">Corresponds
+                to the XSLT parameter <span class="keyword parmname">BREADCRUMBS</span>.</span>
+            </dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.copycss"><!-- --></a><span class="keyword parmname">args.copycss</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.copycss.desc">Specifies whether to copy the custom
+              .css file to the output directory.</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.css"><!-- --></a><span class="keyword parmname">args.css</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.css.desc">Specifies the name of a custom .css
+              file.</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.csspath"><!-- --></a><span class="keyword parmname">args.csspath</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.csspath.desc">Specifies the location of a copied .css
+              file relative to the output directory. <span class="ph">Corresponds to
+                XSLT parameter <span class="keyword parmname">CSSPATH</span>.</span></dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.cssroot"><!-- --></a><span class="keyword parmname">args.cssroot</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.cssroot.desc">Specifies the directory that contains
+              the custom .css file. DITA-OT will copy the file from this location.</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.dita.locale"><!-- --></a><span class="keyword parmname">args.dita.locale</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.dita.locale.desc">Specifies the language locale file to use for sorting
+              index entries.<div class="note note"><span class="notetitle">Note:</span> This parameter is not available for the XHTML
+                transformation.</div>
+</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.ftr"><!-- --></a><span class="keyword parmname">args.ftr</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.ftr.desc">Specifies an XML file that contains content
+              for a running footer. <span class="ph">Corresponds to XSLT parameter
+                  <span class="keyword parmname">FTR</span>.</span><div class="note note"><span class="notetitle">Note:</span> The XML file must contain valid XML. A common
+                practice is to place all content into a &lt;div&gt; element.</div>
+</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.gen.default.meta"><!-- --></a><span class="keyword parmname">args.gen.default.meta</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.gen.default.meta.desc">Specifies whether to generate
+              extra metadata that targets parental control scanners, meta elements with
+              name="security" and name="Robots". The allowed values are <span class="keyword option">yes</span> and
+                <span class="keyword option">no</span>; the default value is <span class="keyword option">no</span>. <span class="ph">Corresponds to the XSLT parameter
+                  <span class="keyword parmname">genDefMeta</span>.</span></dd>
+
+          
+          
+            <dt class="dt pt dlterm"><span class="keyword parmname">args.gen.task.lbl</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__d10e37">Specifies whether to generate
+              headings for sections within task topics. The allowed values are <span class="keyword option">YES</span>
+              and <span class="keyword option">NO</span>; the default value is <span class="keyword option">NO</span>. <span class="ph">Corresponds to the XSLT parameter
+                  <span class="keyword parmname">GENERATE-TASK-LABELS</span>.</span></dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.hdf"><!-- --></a><span class="keyword parmname">args.hdf</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.hdf.desc">Specifies an XML file that contains content
+              to be placed in the document head.</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.hdr"><!-- --></a><span class="keyword parmname">args.hdr</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.hdr.desc">Specifies an XML file that contains content
+              for a running header. <span class="ph">Corresponds to the XSLT parameter
+                  <span class="keyword parmname">HDR</span>.</span><div class="note note"><span class="notetitle">Note:</span> The XML file must contain valid XML. A common
+                practice is to place all content into a &lt;div&gt; element.</div>
+</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.hide.parent.link"><!-- --></a><span class="keyword parmname">args.hide.parent.link</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.hide.parent.link.desc">Specifies whether to hide
+              links to parent topics in the HTML or XHTML output. The allowed values are
+                <span class="keyword option">yes</span> and <span class="keyword option">no</span>; the default value is
+                <span class="keyword option">no</span>. <span class="ph">Corresponds to the XSLT
+                parameter <span class="keyword parmname">NOPARENTLINK</span>.</span>
+              <div class="note note"><span class="notetitle">Note:</span> This parameter is deprecated in favor of the
+                  <span class="keyword parmname">args.rellinks</span> parameter.</div>
+</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.indexshow"><!-- --></a><span class="keyword parmname">args.indexshow</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.indexshow.desc">Specifies whether the content of
+              &lt;indexterm&gt; elements are rendered in the output. The allowed values are
+                <span class="keyword option">yes</span> and <span class="keyword option">no</span>; the default value is
+                <span class="keyword option">no</span>.</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.outext"><!-- --></a><span class="keyword parmname">args.outext</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.outext.desc">Specifies the file extension for HTML or XHTML output. The
+              default value is <span class="keyword option">html</span>. <span class="ph">Corresponds to
+                XSLT parameter <span class="keyword parmname">OUTEXT</span>.</span>
+            </dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.xhtml.classattr"><!-- --></a><span class="keyword parmname">args.xhtml.classattr</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.xhtml.classattr.desc">Specifies whether to include
+              the DITA class ancestry inside the XHTML elements .For example, the &lt;prereq&gt;
+              element (which is specialized from section) would generate <samp class="ph codeph">class="section
+                prereq</samp>. The allowed values are <span class="keyword option">yes</span> and
+              <span class="keyword option">no</span>; the default value is <span class="keyword option">yes</span>. <span class="ph">Corresponds to the XSLT parameter
+                  <span class="keyword parmname">PRESERVE-DITA-CLASS</span>.</span><div class="note note"><span class="notetitle">Note:</span> Beginning with DITA OT release
+                1.5.2, the default value is <span class="keyword option">yes</span>. For release 1.5 and 1.5.1, the
+                default value was <span class="keyword option">no</span>. </div>
+</dd>
+
+          
+          
+            <dt class="dt pt dlterm"><a name="ant-parameters-common-html-transtypes__args.xsl"><!-- --></a><span class="keyword parmname">args.xsl</span></dt>
+
+            <dd class="dd pd" id="ant-parameters-common-html-transtypes__args.xsl.desc">Specifies a custom XSL file to be used
+              instead of the default XSL transformation (<span class="ph filepath">xsl\dita2xhtml.xsl</span>).
+              The parameter must specify a fully qualified file name.</dd>
+
+          
+        </dl>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="../readme/generate-copy-outer.html">generate.outer.copy parameter</a></strong><br>
+Elaboration on how the <span class="keyword parmname">generate.outer.copy</span> parameter   functions.</li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../readme/dita-ot_ant_properties.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Finally, some parameters apply only to the specific transformation types.">Ant parameters</a></div>
+</div>
+<div class="relinfo relref"><strong>Related reference</strong><br>
+<div><a class="link" href="../readme/ant-parameters-eclipse-content-transformation.html" title="Certain parameters are specific to the Eclipse content transformation.">Ant parameters: Eclipse content transformation</a></div>
+<div><a class="link" href="../readme/ant-parameters-eclipse-help-transformation.html" title="Certain parameters are specific to the Eclipse help transformation.">Ant parameters: Eclipse help transformation</a></div>
+<div><a class="link" href="../readme/ant-parameters-html-help-transformation.html" title="Certain parameters are specific to the HTML Help transformation.">Ant parameters: HTML Help transformation</a></div>
+<div><a class="link" href="../readme/ant-parameters-javahelp-transformation.html" title="Certain parameters are specific to the JavaHelp transformation.">Ant parameters: JavaHelp transformation</a></div>
+<div><a class="link" href="../readme/ant-parameters-xhtml-transformation.html" title="Certain parameters are specific to the HTML5 and XHTML transformation.">Ant parameters: HTML5 and XHTML transformation</a></div>
+</div>
+</div></main>
