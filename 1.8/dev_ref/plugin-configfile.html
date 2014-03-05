@@ -3,7 +3,7 @@
 layout: base
 title: "Plug-in configuration file"
 ---
-<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../index.html">DITA Open Toolkit 1.8</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA Open Toolkit</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA Open Toolkit</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA Open Toolkit</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transform type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="span9">
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../index.html">DITA Open Toolkit 1.8.4</a></li><li><a href="../quickstartguide/exploring-the-dita-ot.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA Open Toolkit</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA Open Toolkit</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA Open Toolkit</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transform type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="span9">
 <h1 class="title topictitle1">Plug-in configuration file</h1>
 
 
@@ -26,44 +26,44 @@ supports the following child elements: </p>
 contribute to a defined               <em class="ph i">extension point</em>. The
 following attributes are supported:</p>
            <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
-<th valign="bottom" align="left" id="d5753e64" class="stentry">Attribute</th>
+<th valign="bottom" align="left" id="d5754e64" class="stentry">Attribute</th>
 
-<th valign="bottom" align="left" id="d5753e67" class="stentry">Description</th>
+<th valign="bottom" align="left" id="d5754e67" class="stentry">Description</th>
 
-<th valign="bottom" align="left" id="d5753e70" class="stentry">Required</th>
-
-</tr>
-<tr class="strow">
-<td valign="top" id="d5753e76" headers="d5753e64" class="stentry"><strong><samp class="ph codeph">extension</samp></strong></td>
-
-<td valign="top" headers="d5753e67 d5753e76" class="stentry">extension point identifier</td>
-
-<td valign="top" headers="d5753e70 d5753e76" class="stentry">yes</td>
+<th valign="bottom" align="left" id="d5754e70" class="stentry">Required</th>
 
 </tr>
 <tr class="strow">
-<td valign="top" id="d5753e89" headers="d5753e64" class="stentry"><strong><samp class="ph codeph">value</samp></strong></td>
+<td valign="top" id="d5754e76" headers="d5754e64" class="stentry"><strong><samp class="ph codeph">extension</samp></strong></td>
 
-<td valign="top" headers="d5753e67 d5753e89" class="stentry">comma separated string value of the extension</td>
+<td valign="top" headers="d5754e67 d5754e76" class="stentry">extension point identifier</td>
 
-<td valign="top" headers="d5753e70 d5753e89" class="stentry">either <samp class="ph codeph">value</samp> or <samp class="ph codeph">file</samp></td>
+<td valign="top" headers="d5754e70 d5754e76" class="stentry">yes</td>
 
 </tr>
 <tr class="strow">
-<td valign="top" id="d5753e107" headers="d5753e64" class="stentry"><strong><samp class="ph codeph">file</samp></strong></td>
+<td valign="top" id="d5754e89" headers="d5754e64" class="stentry"><strong><samp class="ph codeph">value</samp></strong></td>
 
-<td valign="top" headers="d5753e67 d5753e107" class="stentry">file path value of the extension, relative to           
+<td valign="top" headers="d5754e67 d5754e89" class="stentry">comma separated string value of the extension</td>
+
+<td valign="top" headers="d5754e70 d5754e89" class="stentry">either <samp class="ph codeph">value</samp> or <samp class="ph codeph">file</samp></td>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d5754e107" headers="d5754e64" class="stentry"><strong><samp class="ph codeph">file</samp></strong></td>
+
+<td valign="top" headers="d5754e67 d5754e107" class="stentry">file path value of the extension, relative to           
      <span class="ph filepath">plugin.xml</span></td>
 
-<td valign="top" headers="d5753e70 d5753e107" class="stentry">either <samp class="ph codeph">value</samp> or <samp class="ph codeph">file</samp></td>
+<td valign="top" headers="d5754e70 d5754e107" class="stentry">either <samp class="ph codeph">value</samp> or <samp class="ph codeph">file</samp></td>
 
 </tr>
 <tr class="strow">
-<td valign="top" id="d5753e127" headers="d5753e64" class="stentry"><strong><samp class="ph codeph">type</samp></strong></td>
+<td valign="top" id="d5754e127" headers="d5754e64" class="stentry"><strong><samp class="ph codeph">type</samp></strong></td>
 
-<td valign="top" headers="d5753e67 d5753e127" class="stentry">type of the <samp class="ph codeph">value</samp> attribute</td>
+<td valign="top" headers="d5754e67 d5754e127" class="stentry">type of the <samp class="ph codeph">value</samp> attribute</td>
 
-<td valign="top" headers="d5753e70 d5753e127" class="stentry">no</td>
+<td valign="top" headers="d5754e70 d5754e127" class="stentry">no</td>
 
 </tr>
 </table>
@@ -73,27 +73,27 @@ following attributes are supported:</p>
     <p class="p"><samp class="ph codeph">extension-point</samp> defines new a <em class="ph i">extension point</em> that can be used by other plug-ins. The following attributes are supported:</p>
 
     <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
-        <th valign="bottom" align="left" id="d5753e157" class="stentry">Attribute</th>
+        <th valign="bottom" align="left" id="d5754e157" class="stentry">Attribute</th>
 
-        <th valign="bottom" align="left" id="d5753e160" class="stentry">Description</th>
+        <th valign="bottom" align="left" id="d5754e160" class="stentry">Description</th>
 
-        <th valign="bottom" align="left" id="d5753e163" class="stentry">Required</th>
-
-      </tr>
-<tr class="strow">
-        <td valign="top" id="d5753e169" headers="d5753e157" class="stentry"><strong><samp class="ph codeph">id</samp></strong></td>
-
-        <td valign="top" headers="d5753e160 d5753e169" class="stentry">extension point identifier</td>
-
-        <td valign="top" headers="d5753e163 d5753e169" class="stentry">yes</td>
+        <th valign="bottom" align="left" id="d5754e163" class="stentry">Required</th>
 
       </tr>
 <tr class="strow">
-        <td valign="top" id="d5753e182" headers="d5753e157" class="stentry"><strong><samp class="ph codeph">name</samp></strong></td>
+        <td valign="top" id="d5754e169" headers="d5754e157" class="stentry"><strong><samp class="ph codeph">id</samp></strong></td>
 
-        <td valign="top" headers="d5753e160 d5753e182" class="stentry">extension point name</td>
+        <td valign="top" headers="d5754e160 d5754e169" class="stentry">extension point identifier</td>
 
-        <td valign="top" headers="d5753e163 d5753e182" class="stentry">no</td>
+        <td valign="top" headers="d5754e163 d5754e169" class="stentry">yes</td>
+
+      </tr>
+<tr class="strow">
+        <td valign="top" id="d5754e182" headers="d5754e157" class="stentry"><strong><samp class="ph codeph">name</samp></strong></td>
+
+        <td valign="top" headers="d5754e160 d5754e182" class="stentry">extension point name</td>
+
+        <td valign="top" headers="d5754e163 d5754e182" class="stentry">no</td>
 
       </tr>
 </table>
@@ -103,27 +103,27 @@ following attributes are supported:</p>
 <li class="li">           <p class="p"><samp class="ph codeph">&lt;require&gt;</samp> defines plug-in dependencies.
 The following attributes             are supported:</p>
            <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
-<th valign="bottom" align="left" id="d5753e206" class="stentry">Attribute</th>
+<th valign="bottom" align="left" id="d5754e206" class="stentry">Attribute</th>
 
-<th valign="bottom" align="left" id="d5753e209" class="stentry">Description</th>
+<th valign="bottom" align="left" id="d5754e209" class="stentry">Description</th>
 
-<th valign="bottom" align="left" id="d5753e212" class="stentry">Required</th>
-
-</tr>
-<tr class="strow">
-<td valign="top" id="d5753e218" headers="d5753e206" class="stentry"><strong><samp class="ph codeph">plugin</samp></strong></td>
-
-<td valign="top" headers="d5753e209 d5753e218" class="stentry">vertical bar separated list of plug-ins that are required </td>
-
-<td valign="top" headers="d5753e212 d5753e218" class="stentry">yes</td>
+<th valign="bottom" align="left" id="d5754e212" class="stentry">Required</th>
 
 </tr>
 <tr class="strow">
-<td valign="top" id="d5753e231" headers="d5753e206" class="stentry"><strong><samp class="ph codeph">importance</samp></strong></td>
+<td valign="top" id="d5754e218" headers="d5754e206" class="stentry"><strong><samp class="ph codeph">plugin</samp></strong></td>
 
-<td valign="top" headers="d5753e209 d5753e231" class="stentry">flag whether plug-in is required or optional</td>
+<td valign="top" headers="d5754e209 d5754e218" class="stentry">vertical bar separated list of plug-ins that are required </td>
 
-<td valign="top" headers="d5753e212 d5753e231" class="stentry">no</td>
+<td valign="top" headers="d5754e212 d5754e218" class="stentry">yes</td>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d5754e231" headers="d5754e206" class="stentry"><strong><samp class="ph codeph">importance</samp></strong></td>
+
+<td valign="top" headers="d5754e209 d5754e231" class="stentry">flag whether plug-in is required or optional</td>
+
+<td valign="top" headers="d5754e212 d5754e231" class="stentry">no</td>
 
 </tr>
 </table>
@@ -133,19 +133,19 @@ The following attributes             are supported:</p>
 should be treated as               <em class="ph i">templates</em>. The following
 attributes are supported:</p>
            <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
-<th valign="bottom" align="left" id="d5753e259" class="stentry">Attribute</th>
+<th valign="bottom" align="left" id="d5754e259" class="stentry">Attribute</th>
 
-<th valign="bottom" align="left" id="d5753e262" class="stentry">Description</th>
+<th valign="bottom" align="left" id="d5754e262" class="stentry">Description</th>
 
-<th valign="bottom" align="left" id="d5753e265" class="stentry">Required</th>
+<th valign="bottom" align="left" id="d5754e265" class="stentry">Required</th>
 
 </tr>
 <tr class="strow">
-<td valign="top" id="d5753e271" headers="d5753e259" class="stentry"><strong><samp class="ph codeph">file</samp></strong></td>
+<td valign="top" id="d5754e271" headers="d5754e259" class="stentry"><strong><samp class="ph codeph">file</samp></strong></td>
 
-<td valign="top" headers="d5753e262 d5753e271" class="stentry">file path to the template, relative to <span class="ph filepath">plugin.xml</span></td>
+<td valign="top" headers="d5754e262 d5754e271" class="stentry">file path to the template, relative to <span class="ph filepath">plugin.xml</span></td>
 
-<td valign="top" headers="d5753e265 d5753e271" class="stentry">yes</td>
+<td valign="top" headers="d5754e265 d5754e271" class="stentry">yes</td>
 
 </tr>
 </table>
@@ -154,27 +154,27 @@ attributes are supported:</p>
 <li class="li">           <p class="p"><samp class="ph codeph">&lt;meta&gt;</samp> defines metadata. The
 following attributes are             supported:</p>
            <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><tr class="sthead">
-<th valign="bottom" align="left" id="d5753e297" class="stentry">Attribute</th>
+<th valign="bottom" align="left" id="d5754e297" class="stentry">Attribute</th>
 
-<th valign="bottom" align="left" id="d5753e300" class="stentry">Description</th>
+<th valign="bottom" align="left" id="d5754e300" class="stentry">Description</th>
 
-<th valign="bottom" align="left" id="d5753e303" class="stentry">Required</th>
-
-</tr>
-<tr class="strow">
-<td valign="top" id="d5753e309" headers="d5753e297" class="stentry"><strong><samp class="ph codeph">type</samp></strong></td>
-
-<td valign="top" headers="d5753e300 d5753e309" class="stentry">metadata name </td>
-
-<td valign="top" headers="d5753e303 d5753e309" class="stentry">yes</td>
+<th valign="bottom" align="left" id="d5754e303" class="stentry">Required</th>
 
 </tr>
 <tr class="strow">
-<td valign="top" id="d5753e322" headers="d5753e297" class="stentry"><strong><samp class="ph codeph">value</samp></strong></td>
+<td valign="top" id="d5754e309" headers="d5754e297" class="stentry"><strong><samp class="ph codeph">type</samp></strong></td>
 
-<td valign="top" headers="d5753e300 d5753e322" class="stentry">metadata value</td>
+<td valign="top" headers="d5754e300 d5754e309" class="stentry">metadata name </td>
 
-<td valign="top" headers="d5753e303 d5753e322" class="stentry">yes</td>
+<td valign="top" headers="d5754e303 d5754e309" class="stentry">yes</td>
+
+</tr>
+<tr class="strow">
+<td valign="top" id="d5754e322" headers="d5754e297" class="stentry"><strong><samp class="ph codeph">value</samp></strong></td>
+
+<td valign="top" headers="d5754e300 d5754e322" class="stentry">metadata value</td>
+
+<td valign="top" headers="d5754e303 d5754e322" class="stentry">yes</td>
 
 </tr>
 </table>
