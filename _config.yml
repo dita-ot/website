@@ -2,6 +2,7 @@ name: DITA Open Toolkit
 safe: true
 lsi: false
 pygments: true
+markdown: kramdown
 baseurl: ""
 
 release: "1.8"
