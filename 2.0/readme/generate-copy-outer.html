@@ -42,35 +42,8 @@ The DITA map is in the <span class="ph filepath">maps</span>
 The <span class="ph filepath">index.html</span> file contains the navigation structure, but all the links are broken, since no
         HTML5 files were built for the topics.</div>
 
-   <p class="p">How do you fix this? By specifying a value of <span class="keyword option">2</span> or <span class="keyword option">3</span> for the
+   <p class="p">How do you fix this? By specifying a value of <span class="keyword option">3</span> for the
      <span class="keyword parmname">generate.outer.copy</span> parameter. </p>
-
-  </div>
-
-  <div class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.outer.copy</span> parameter to
-    <span class="keyword option">2</span></h2>
-   
-   <div class="p">Let's assume that you run the HTML5 transformation again and specify the following parameters:<ul class="ul">
-          <li class="li">The <span class="keyword parmname">generate.outer.copy</span> parameter is set to <span class="keyword option">2</span>.</li>
-
-          <li class="li">The <span class="keyword parmname">output.dir</span> parameter is set to <span class="ph filepath">C:\A-test</span>.</li>
-
-        </ul>
-</div>
-
-   <div class="p">This is what your output looks like:<pre class="pre">C:\A-test
---- index.html
---- commonltr.css
---- commonrtl.css
-...
-C:\images
-...
-C:\topics</pre>
-</div>
-
-   <p class="p">The links in the output all work properly. However, depending on how many other directories
-    are located at the same level of your build system as the output directory, it might not be easy
-    gather all the output together if you need to copy it elsewhere.</p>
 
   </div>
 
