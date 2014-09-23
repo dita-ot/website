@@ -1,0 +1,61 @@
+---
+# Generated from DITA source
+layout: base
+title: "Building output using the dita command"
+---
+<nav class="span3"><div class="well"><ul class="nav nav-list"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot-client.html">Getting Started</a><ul class="nav nav-list"><li><a href="../quickstartguide/installing-client.html">Installing the client package</a></li><li class="active"><a href="../quickstartguide/using-dita-command.html">Building output using the dita command</a><ul class="nav nav-list"></ul></li></ul></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a></li></ul></div></nav><main class="span9">
+  <h1 class="title topictitle1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
+
+  
+  <div class="body taskbody"><p class="shortdesc">You can invoke DITA-OT and build output using the <span class="keyword cmdname">dita</span> command. </p>
+
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">DITA-OT client is a command-line tool, there is no graphic user interface. Open a terminal window by typing the following in search bar:</span>
+        <div class="itemgroup info">
+          <ul class="ul">
+            <li class="li">On OS X and Linux type <kbd class="ph userinput">Terminal</kbd>.</li>
+
+            <li class="li">On Windows type <kbd class="ph userinput">Command Prompt</kbd></li>
+
+          </ul>
+
+        </div>
+      </li>
+<li class="li step stepexpand">
+        <span class="ph cmd">From the terminal window, issue the following command:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><var class="keyword varname">install-dir</var>/bin/dita -f <var class="keyword varname">transformation-type</var> -i <var class="keyword varname">input-file</var> -o <var class="keyword varname">output-dir</var></pre>
+
+          <p class="p">where:</p>
+
+          <ul class="ul" id="using-command-line-tool__basic-variables">
+            <li class="li"><var class="keyword varname">install-dir</var> is the DITA-OT installation directory path.</li>
+
+            <li class="li"><var class="keyword varname">transformation-type</var> is the transformation type.</li>
+
+            <li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file path that you want to process.</li>
+
+            <li class="li"><var class="keyword varname">output-dir</var> is the output directory path for generated output.</li>
+
+          </ul>
+
+        </div>
+        <div class="itemgroup stepresult" id="using-command-line-tool__running-ditaot-results">If processing is successful, nothing is printed on the terminal window.</div>
+      </li>
+</ol>
+
+    <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
+      <p class="p">The following command generates HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file and specifies the output is written to the <span class="ph filepath">test</span> directory</p>
+
+      <pre class="pre codeblock">dita -f html5 -i samples/sequence.ditamap -o test </pre>
+
+    </div>
+
+  </div>
+
+<nav class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../quickstartguide/exploring-the-dita-ot-client.html" title="The Getting Started Guide is designed to provide a guided exploration of the DITA Open Toolkit. It is geared for an audience that has little or no knowledge of build scripts or DITA-OT parameters. It walks the novice user through installing the client version of the toolkit and running a prompted build.">Getting Started with the DITA Open Toolkit</a></div>
+<div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="../quickstartguide/installing-client.html" title="For the simplest installation experience, install the client package. This package can be installed on Linux, Mac OSX, and Windows. It contains everything that you need to run the DITA-OT except for Java.">Installing the client package</a></div>
+</div>
+</nav></main>
