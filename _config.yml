@@ -5,5 +5,5 @@ pygments: true
 markdown: kramdown
 baseurl: ""
 
-release: "1.8"
-version: "1.8.5"
+release: "2.0"
+version: "2.0.0"
