@@ -16,7 +16,7 @@ title: "Ant parameters: PDF transformation"
         
         <dl class="dl parml">
           
-            <dt class="dt pt dlterm"><a name="ant-parameters-pdf2-transformation__args.bookmap-order"><!-- --></a><span class="keyword parmname">args.bookmap-order</span></dt>
+            <dt class="dt pt dlterm" id="ant-parameters-pdf2-transformation__args.bookmap-order"><span class="keyword parmname">args.bookmap-order</span></dt>
 
             <dd class="dd pd" id="ant-parameters-pdf2-transformation__args.bookmap-order.desc">Specifies if the frontmatter and backmatter content
               order is retained in bookmap. The allowed values are <span class="keyword option">retain</span> and
@@ -24,14 +24,14 @@ title: "Ant parameters: PDF transformation"
 
           
           
-            <dt class="dt pt dlterm"><a name="ant-parameters-pdf2-transformation__args.bookmark.style"><!-- --></a><span class="keyword parmname">args.bookmark.style</span></dt>
+            <dt class="dt pt dlterm" id="ant-parameters-pdf2-transformation__args.bookmark.style"><span class="keyword parmname">args.bookmark.style</span></dt>
 
             <dd class="dd pd" id="ant-parameters-pdf2-transformation__args.bookmark.style.desc">Specifies whether PDF bookmarks are by default expanded or collapsed. The allowed values are
               <span class="keyword option">COLLAPSED</span> and <span class="keyword option">EXPANDED</span>, the default value is <span class="keyword option">COLLAPSE</span>.</dd>
 
           
           
-            <dt class="dt pt dlterm"><a name="ant-parameters-pdf2-transformation__args.chapter.layout"><!-- --></a><span class="keyword parmname">args.chapter.layout</span></dt>
+            <dt class="dt pt dlterm" id="ant-parameters-pdf2-transformation__args.chapter.layout"><span class="keyword parmname">args.chapter.layout</span></dt>
 
             <dd class="dd pd" id="ant-parameters-pdf2-transformation__args.chapter.layout.desc">Specifies whether chapter level TOCs are generated. The allowed values are
               <span class="keyword option">MINITOC</span> and <span class="keyword option">BASIC</span>; the default value is <span class="keyword option">MINITOC</span>.</dd>
@@ -76,7 +76,7 @@ title: "Ant parameters: PDF transformation"
 
           
           
-            <dt class="dt pt dlterm"><a name="ant-parameters-pdf2-transformation__args.xsl.pdf"><!-- --></a><span class="keyword parmname">args.xsl.pdf</span></dt>
+            <dt class="dt pt dlterm" id="ant-parameters-pdf2-transformation__args.xsl.pdf"><span class="keyword parmname">args.xsl.pdf</span></dt>
 
             <dd class="dd pd" id="ant-parameters-pdf2-transformation__args.xsl.pdf.desc">Specifies an XSL file that is used to override the default
               XSL transformation
@@ -85,20 +85,20 @@ title: "Ant parameters: PDF transformation"
 
           
           
-            <dt class="dt pt dlterm"><a name="ant-parameters-pdf2-transformation__custom.xep.config"><!-- --></a><span class="keyword parmname">custom.xep.config</span></dt>
+            <dt class="dt pt dlterm" id="ant-parameters-pdf2-transformation__custom.xep.config"><span class="keyword parmname">custom.xep.config</span></dt>
 
             <dd class="dd pd" id="ant-parameters-pdf2-transformation__custom.xep.config.desc">Specifies the user configuration file for
               RenderX.</dd>
 
           
           
-            <dt class="dt pt dlterm"><a name="ant-parameters-pdf2-transformation__customization.dir"><!-- --></a><span class="keyword parmname">customization.dir</span></dt>
+            <dt class="dt pt dlterm" id="ant-parameters-pdf2-transformation__customization.dir"><span class="keyword parmname">customization.dir</span></dt>
 
             <dd class="dd pd">Specifies the customization directory.</dd>
 
           
           
-            <dt class="dt pt dlterm"><a name="ant-parameters-pdf2-transformation__pdf.formatter"><!-- --></a><span class="keyword parmname">pdf.formatter</span></dt>
+            <dt class="dt pt dlterm" id="ant-parameters-pdf2-transformation__pdf.formatter"><span class="keyword parmname">pdf.formatter</span></dt>
 
             <dd class="dd pd">Specifies the XSL processor. The following values are supported:<ul class="ul">
                 <li class="li"><span class="keyword option">ah</span> – Antenna House Formatter</li>
@@ -108,12 +108,12 @@ title: "Ant parameters: PDF transformation"
                 <li class="li"><span class="keyword option">xep</span> – RenderX XEP Engine</li>
 
               </ul>
-The client and full-easy-install packages come with Apache FOP; other XSL processors must be
+The client package comes with Apache FOP; other XSL processors must be
               separately installed. </dd>
 
           
           
-            <dt class="dt pt dlterm"><a name="ant-parameters-pdf2-transformation__publish.required.cleanup"><!-- --></a><span class="keyword parmname">publish.required.cleanup</span></dt>
+            <dt class="dt pt dlterm" id="ant-parameters-pdf2-transformation__publish.required.cleanup"><span class="keyword parmname">publish.required.cleanup</span></dt>
 
             <dd class="dd pd" id="ant-parameters-pdf2-transformation__publish.required.cleanup.desc">Specifies whether draft-comment and
               required-cleanup elements are included in the output. The allowed values are
@@ -126,7 +126,7 @@ The client and full-easy-install packages come with Apache FOP; other XSL proces
 
           
           
-            <dt class="dt pt dlterm"><a name="ant-parameters-pdf2-transformation__retain.topic.fo"><!-- --></a><span class="keyword parmname">retain.topic.fo</span></dt>
+            <dt class="dt pt dlterm" id="ant-parameters-pdf2-transformation__retain.topic.fo"><span class="keyword parmname">retain.topic.fo</span></dt>
 
             <dd class="dd pd" id="ant-parameters-pdf2-transformation__retain.topic.fo.desc">Specifies whether to retain the generated FO file. The
               allowed values are <span class="keyword option">yes</span> and <span class="keyword option">no</span>; the default value is
@@ -148,10 +148,12 @@ The client and full-easy-install packages come with Apache FOP; other XSL proces
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../readme/dita-ot_ant_properties.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Finally, some parameters apply only to the specific transformation types.">Ant parameters</a></div>
 </div>
-<div class="relinfo relconcepts"><strong>Related concepts</strong><br>
-<div><a class="link" href="../readme/dita2pdf.html" title="The pdf (or pdf2) transformation generates PDF output.">PDF transformation</a></div>
-</div>
-<div class="relinfo relref"><strong>Related reference</strong><br>
-<div><a class="link" href="../readme/ant-parameters-all-transformation-types.html" title="Certain parameters apply to all transformations that are supported by the DITA Open Toolkit.">Ant parameters: All transformations</a></div>
-</div>
+
+<div class="linklist linklist relinfo relconcepts"><strong>Related concepts</strong><br>
+
+<div><a class="link" href="../readme/dita2pdf.html" title="The pdf (or pdf2) transformation generates PDF output.">PDF transformation</a></div></div>
+
+<div class="linklist linklist relinfo relref"><strong>Related reference</strong><br>
+
+<div><a class="link" href="../readme/ant-parameters-all-transformation-types.html" title="Certain parameters apply to all transformations that are supported by the DITA Open Toolkit.">Ant parameters: All transformations</a></div></div>
 </nav></main>
