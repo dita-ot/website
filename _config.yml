@@ -1,7 +1,7 @@
 name: DITA Open Toolkit
 safe: true
 lsi: false
-pygments: true
+highlighter: pygments
 markdown: kramdown
 baseurl: ""
 
