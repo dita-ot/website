@@ -3,14 +3,14 @@
 layout: base
 title: "generate.outer.copy parameter"
 ---
-<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot-client.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a><ul class="nav bs-docs-sidenav"><li><a href="../readme/overview-of-dita-ot.html">Overview of the DITA Open Toolkit</a></li><li><a href="../readme/DITA-installation.html">Installing the DITA-OT</a></li><li><a href="../readme/tranforming-dita-content.html">Publishing DITA content</a></li><li><a href="../readme/extending-the-dita-ot.html">Extending the DITA-OT</a></li><li><a href="../readme/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../readme/troubleshooting-overview.html">Error messages and troubleshooting</a></li><li><a href="../readme/reference.html">Reference</a><ul class="nav bs-docs-sidenav"><li><a href="../readme/dita-ot_ant_properties.html">Ant parameters</a><ul class="nav bs-docs-sidenav"><li><a href="../readme/ant-parameters-all-transformation-types.html">All transformations</a></li><li><a href="../readme/ant-parameters-common-html-transtypes.html">All HTML-based transformations</a><ul class="nav bs-docs-sidenav"></ul></li><li><a href="../readme/ant-parameters-eclipse-content-transformation.html">Eclipse content</a></li><li><a href="../readme/ant-parameters-eclipse-help-transformation.html">Eclipse help</a></li><li><a href="../readme/ant-parameters-html-help-transformation.html">HTML Help</a></li><li><a href="../readme/ant-parameters-javahelp-transformation.html">JavaHelp</a></li><li><a href="../readme/ant-parameters-odt-transformation.html">ODT</a></li><li><a href="../readme/ant-parameters-other.html">Other</a></li><li><a href="../readme/ant-parameters-pdf2-transformation.html">PDF</a></li><li><a href="../readme/ant-parameters-xhtml-transformation.html">HTML5 and XHTML</a></li></ul></li><li><a href="../readme/dita-command-properties.html">dita command arguments and options</a></li><li><a href="../readme/dita-ot_java_properties.html">Command-line tool parameters</a></li><li><a href="../readme/configuration.html">lib/configuration.properties file</a></li></ul></li></ul></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9">
- <h1 class="title topictitle1"><span class="keyword parmname">generate.outer.copy</span> parameter</h1>
+<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot-client.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a><ul class="nav nav-list"><li><a href="../readme/overview-of-dita-ot.html">Overview of the DITA Open Toolkit</a></li><li><a href="../readme/DITA-installation.html">Installing the DITA-OT</a></li><li><a href="../readme/tranforming-dita-content.html">Publishing DITA content</a></li><li><a href="../readme/extending-the-dita-ot.html">Extending the DITA-OT</a></li><li><a href="../readme/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../readme/troubleshooting-overview.html">Error messages and troubleshooting</a></li><li><a href="../readme/reference.html">Reference</a><ul class="nav nav-list"><li><a href="../readme/dita-ot_ant_properties.html">Ant parameters</a><ul class="nav nav-list"><li><a href="../readme/ant-parameters-all-transformation-types.html">All transformations</a></li><li><a href="../readme/ant-parameters-common-html-transtypes.html">All HTML-based transformations</a><ul class="nav nav-list"></ul></li><li><a href="../readme/ant-parameters-eclipse-content-transformation.html">Eclipse content</a></li><li><a href="../readme/ant-parameters-eclipse-help-transformation.html">Eclipse help</a></li><li><a href="../readme/ant-parameters-html-help-transformation.html">HTML Help</a></li><li><a href="../readme/ant-parameters-javahelp-transformation.html">JavaHelp</a></li><li><a href="../readme/ant-parameters-odt-transformation.html">ODT</a></li><li><a href="../readme/ant-parameters-other.html">Other</a></li><li><a href="../readme/ant-parameters-pdf2-transformation.html">PDF</a></li><li><a href="../readme/ant-parameters-xhtml-transformation.html">HTML5 and XHTML</a></li></ul></li><li><a href="../readme/dita-command-properties.html">dita command arguments and options</a></li><li><a href="../readme/dita-ot_java_properties.html">Command-line tool parameters</a></li><li><a href="../readme/configuration.html">lib/configuration.properties file</a></li></ul></li></ul></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9">
+ <h1 class="title topictitle1" id="ariaid-title1"><span class="keyword parmname">generate.outer.copy</span> parameter</h1>
 
  
  <div class="body conbody"><p class="shortdesc">Elaboration on how the <span class="keyword parmname">generate.outer.copy</span> parameter
   functions.</p>
 
-  <div class="section"><h2 class="title sectiontitle">Background</h2>
+  <section class="section"><h2 class="title sectiontitle">Background</h2>
    
    <div class="p">This is an issue in the following situations:<ul class="ul">
      <li class="li">The DITA map is in a directory that is a peer to directories that contain referenced
@@ -29,9 +29,9 @@ images</pre>
 The DITA map is in the <span class="ph filepath">maps</span>
     directory, the topics are in the<span class="ph filepath"> topics</span> directory, and the images are in
     the <span class="ph filepath">images</span> directory.</div>
-</div>
+</section>
 
- <div class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.outer.copy</span> parameter to
+ <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.outer.copy</span> parameter to
         <span class="keyword option">1</span></h2>     
    <div class="p">Let's assume that you run the HTML5 transformation and specify an output directory of <span class="ph filepath">C:\A-test</span>. By default, The DITA-OT uses the <span class="keyword parmname">generate.outer.copy</span>
         parameter with a value of <span class="keyword option">1</span>. Output is not built for the topics. You receive only the following
@@ -45,9 +45,9 @@ The <span class="ph filepath">index.html</span> file contains the navigation str
    <p class="p">How do you fix this? By specifying a value of <span class="keyword option">3</span> for the
      <span class="keyword parmname">generate.outer.copy</span> parameter. </p>
 
-  </div>
+  </section>
 
-  <div class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.outer.copy</span> parameter to
+  <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.outer.copy</span> parameter to
     <span class="keyword option">3</span></h2>
    
    <div class="p">Now your output directory structure looks like this:<pre class="pre">C:\A-test
@@ -57,11 +57,11 @@ The <span class="ph filepath">index.html</span> file contains the navigation str
 The index.html file is in the maps directory, and the CSS and other files are located in
         the output directory, <span class="ph filepath">C:\A-test</span>. Copying the output directory is simplified.</div>
 
-  </div>
+  </section>
 
  </div>
 
-<nav class="related-links">
+<nav role="navigation" class="related-links">
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../readme/ant-parameters-common-html-transtypes.html" title="Certain parameters apply to all the HTML-based transformation types: Eclipse help, HTML Help, JavaHelp, TocJS, HTML5, and XHTML.">Ant parameters: Common HTML-based transformations</a></div>
 </div>

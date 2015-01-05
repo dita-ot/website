@@ -3,8 +3,8 @@
 layout: base
 title: "DITA-OT processing modules"
 ---
-<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot-client.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav bs-docs-sidenav"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA-OT</a><ul class="nav bs-docs-sidenav"><li><a href="../dev_ref/processing-structure.html">DITA-OT processing structure</a></li><li class="active"><a href="../dev_ref/processing-pipeline-modules.html">DITA-OT processing modules</a><ul class="nav bs-docs-sidenav"></ul></li><li><a href="../dev_ref/processing-order.html">DITA-OT processing order</a></li><li><a href="../dev_ref/DITA-OTPreprocess.html">Pre-processing modules</a></li><li><a href="../dev_ref/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../dev_ref/PdfDefault.html">PDF processing modules</a></li><li><a href="../dev_ref/OdtDefault.html">Open Document Format processing modules</a></li></ul></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
-<h1 class="title topictitle1">DITA-OT processing modules</h1>
+<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot-client.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA-OT</a><ul class="nav nav-list"><li><a href="../dev_ref/processing-structure.html">DITA-OT processing structure</a></li><li class="active"><a href="../dev_ref/processing-pipeline-modules.html">DITA-OT processing modules</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/processing-order.html">DITA-OT processing order</a></li><li><a href="../dev_ref/DITA-OTPreprocess.html">Pre-processing modules</a></li><li><a href="../dev_ref/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../dev_ref/PdfDefault.html">PDF processing modules</a></li><li><a href="../dev_ref/OdtDefault.html">Open Document Format processing modules</a></li></ul></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
+<h1 class="title topictitle1" id="ariaid-title1">DITA-OT processing modules</h1>
 
 
 <div class="body conbody"><p class="shortdesc">The DITA-OT processing pipeline is implemented using Ant. Individual modules within the
@@ -13,7 +13,7 @@ requirements for customization. Virtually all Ant and XSLT modules can be extend
 plug-in to the toolkit; new Ant targets may be inserted before or after common processing, and new
 rules may be imported into common XSLT modules to override default processing.</p>
 
-<div class="section"><h2 class="title sectiontitle">XSLT modules</h2>
+<section class="section"><h2 class="title sectiontitle">XSLT modules</h2>
 <p class="p">The XSLT modules use shell files. Typically, each shell file begins by importing common rules
 that apply to all topics. This set of common processing rules may in turn import additional common
 modules, such as those used for reporting errors or determining the document locale. After the
@@ -27,20 +27,20 @@ is imported in order to add default headers to property tables. Additional modul
 tasks, for the highlighting domain, and for several other standard specializations. After the
 standard XSLT overrides occur, plug-ins may add in additional processing rules for local styles or
 for additional specializations.</p>
-</div>
+</section>
 
-<div class="section"><h2 class="title sectiontitle">Java modules</h2>
+<section class="section"><h2 class="title sectiontitle">Java modules</h2>
 
 <p class="p">Java modules are typically used when XSLT is a poor fit, such as for processes that make use of
 standard Java libraries (like those used for index sorting). Java modules are also used in many
 cases where a step involves copying files, such as the initial process where source files are parsed
 and copied to a temporary processing directory.</p>
 
-</div>
+</section>
 
 </div>
 
-<nav class="related-links">
+<nav role="navigation" class="related-links">
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/DITA-OTArchitecture.html" title="The DITA Open Toolkit (DITA-OT) is an open-source implementation of the OASIS specification for the Darwin Information Typing Architecture (DITA). The toolkit uses Ant, XSLT, and Java to transform DITA content (maps and topics) into different deliverable formats.">Architecture of the DITA Open Toolkit</a></div>
 </div>

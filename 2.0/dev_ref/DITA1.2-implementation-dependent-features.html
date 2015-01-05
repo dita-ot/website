@@ -3,11 +3,11 @@
 layout: base
 title: "Implementation dependent features"
 ---
-<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot-client.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav bs-docs-sidenav"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA-OT</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li class="active"><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a><ul class="nav bs-docs-sidenav"></ul></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
-  <h1 class="title topictitle1">Implementation dependent features</h1>
+<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.0</a></li><li><a href="../quickstartguide/exploring-the-dita-ot-client.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA-OT</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/configuring-the-dita-ot.html">Configuring the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a></li><li>Migrating style sheets and XSLT overrides</li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/ant-properties.html">Internal Ant properties</a></li><li class="active"><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a><ul class="nav nav-list"></ul></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
+  <h1 class="title topictitle1" id="ariaid-title1">Implementation dependent features</h1>
 
   <div class="body refbody">
-    <div class="section" id="implementation-dependent-features__section_jla_oqn_qc"><h2 class="title sectiontitle">Chunking</h2>
+    <section class="section" id="implementation-dependent-features__section_jla_oqn_qc"><h2 class="title sectiontitle">Chunking</h2>
       
       <p class="p">Supported chunking methods:</p>
 
@@ -43,9 +43,9 @@ title: "Implementation dependent features"
 
       </ul>
 
-    </div>
+    </section>
 
-    <div class="section" id="implementation-dependent-features__section_zaa_bgs_qc"><h2 class="title sectiontitle">Filtering</h2>
+    <section class="section" id="implementation-dependent-features__section_zaa_bgs_qc"><h2 class="title sectiontitle">Filtering</h2>
       
       <p class="p">Error recovery:</p>
 
@@ -58,9 +58,9 @@ title: "Implementation dependent features"
 
       </ul>
 
-    </div>
+    </section>
 
-    <div class="section" id="implementation-dependent-features__section_kjq_egs_qc"><h2 class="title sectiontitle">Debug attributes</h2>
+    <section class="section" id="implementation-dependent-features__section_kjq_egs_qc"><h2 class="title sectiontitle">Debug attributes</h2>
       
       <p class="p">The debug attributes are populated as follows:</p>
 
@@ -81,42 +81,42 @@ title: "Implementation dependent features"
         
       </dl>
 
-    </div>
+    </section>
 
-    <div class="section" id="implementation-dependent-features__section_dco_qgs_qc"><h2 class="title sectiontitle">Image scaling</h2>
+    <section class="section" id="implementation-dependent-features__section_dco_qgs_qc"><h2 class="title sectiontitle">Image scaling</h2>
       
       <p class="p">If both height and width attributes are given, image is scaled non-uniformly.</p>
 
       <p class="p">If scale attribute is not an unsigned integer, no error or warning is thrown during
         preprocessing.</p>
 
-    </div>
+    </section>
 
-    <div class="section"><h2 class="title sectiontitle">Map processing</h2>
+    <section class="section"><h2 class="title sectiontitle">Map processing</h2>
       
       <p class="p">When a <samp class="ph codeph">topicref</samp> element that references a map contains child
           <samp class="ph codeph">topicref</samp> elements, <span class="keyword msgnum">DOTX068W</span> error is thrown and the
         child <samp class="ph codeph">topicref</samp> elements are ignored. </p>
 
-    </div>
+    </section>
 
-    <div class="section" id="implementation-dependent-features__section_h3h_jsx_1h"><h2 class="title sectiontitle">Link processing</h2>
+    <section class="section" id="implementation-dependent-features__section_h3h_jsx_1h"><h2 class="title sectiontitle">Link processing</h2>
       
       <p class="p">When the value of <samp class="ph codeph">href</samp> attribute is not a valid URI reference, <span class="keyword msgnum">DOTJ054E</span> error is thrown. Depending on
         <a class="xref" href="../readme/configuration.html#configuration__processing-mode">error recover mode</a>, error recover may be attempted.</p>
 
-    </div>
+    </section>
 
-    <div class="section"><h2 class="title sectiontitle">Copy-to processing</h2>
+    <section class="section"><h2 class="title sectiontitle">Copy-to processing</h2>
       
       <p class="p">When the <samp class="ph codeph">copy-to</samp> attribute is specified on a <samp class="ph codeph">topicref</samp>, the content of the
         <samp class="ph codeph">shortdesc</samp> element is not used to override the short description of the topic.</p>
 
-    </div>
+    </section>
 
   </div>
 
-<nav class="related-links">
+<nav role="navigation" class="related-links">
 <div class="familylinks">
 <div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="../dev_ref/developer-reference.html" title="The DITA Open Toolkit Developer Reference is designed to provide more advanced information about the DITA-OT. It is geared to an audience that needs information about the DITA-OT architecture, configuring and extending the DITA-OT, and creating DITA-OT plug-ins.">DITA Open Toolkit Developer Reference</a></div>
 </div>
