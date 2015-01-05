@@ -2,11 +2,11 @@
 layout: base
 ---
 {% if page.toc != false %}
-<nav class="span3">
+<nav class="col-md-3">
   {% include toc.html %}
 </nav>
 {% endif %}
-<main class="{% if page.toc != false %} span9 {% else %}  span12 {% endif %}">
+<main class="{% if page.toc != false %} col-md-9 {% else %}  col-md-12 {% endif %}">
   <h1>{{ page.title }}</h1>
   {{ content }}
 </main>

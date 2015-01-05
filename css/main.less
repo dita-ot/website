@@ -1,20 +1,22 @@
-#content {
-	margin-top: 70px;
-}
 footer {
 	text-align: center;
 	font-size: smaller;
-	padding-top: 30px;
-	margin-top: 70px;
+	padding: 10px 0;
 	border-top: 1px solid #e5e5e5;
 }
-nav .nav {
-  padding: 0px 10px;
+.bs-docs-sidenav li {
+  > a {
+   padding: 3px 15px;
+  }
+  &.active > a {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+    background-color: #08c;
+  }
+  ul {
+    margin-left: 10px;
+  }
 }
-nav .well {
-  padding: 10px 5px;
-}
-
 .parmname {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
   font-size: 12px;
@@ -26,4 +28,7 @@ nav .well {
   white-space: nowrap;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
+}
+.codeblock {
+  background-color: #EEE;
 }
