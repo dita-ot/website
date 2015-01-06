@@ -4,6 +4,8 @@ lsi: false
 highlighter: pygments
 markdown: kramdown
 baseurl: ""
+sass:
+    style: :compressed
 
 # MAJOR.MINOR
 release: "2.0"
