@@ -1,0 +1,161 @@
+---
+# Generated from DITA source
+layout: base
+title: "DITA Open Toolkit 2.1 Release Notes"
+---
+<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"></ul></div></nav><main class="col-md-9">
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit 2.1 Release Notes</h1>
+
+
+  
+  
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="requirements">
+    <h2 class="title topictitle2" id="ariaid-title2">Requirements</h2>
+
+    <div class="body refbody">
+      <section class="section">
+        
+        <p class="p">DITA Open Toolkit Release 2.1 requires the Java Runtime Environment (JRE) or Java Development Kit (JDK),
+          version 7 or later.</p>
+
+      </section>
+
+    </div>
+
+  </article>
+
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="rel2.1.issues">
+    <h2 class="title topictitle2" id="ariaid-title3">Resolved Issues</h2>
+
+    
+    <div class="body refbody"><p class="shortdesc">The following items are included in DITA Open Toolkit Release 2.1. Issue numbers correspond to the
+      tracking number in the <span class="ph"><a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues
+      tracker</a></span>.</p>
+
+      
+      <section class="section"><h3 class="title sectiontitle">Feature Requests</h3>
+        
+        <p class="p">Milestone 1 includes the following new features and changes:</p>
+
+        <ul class="ul">
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1179" target="_blank">1179</a> Added
+            HTML generation extension for body content</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1687" target="_blank">1687</a> More
+            recognized default resource extensions in the plugins base</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1703" target="_blank">1703</a> Link
+            to missing DITAVAL file should show a relevant error code in the console</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1799" target="_blank">1799</a> Move
+            configuration options to runtime properties</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1800" target="_blank">1800</a>
+            Remove old Java command line tool</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1803" target="_blank">1803</a> Use
+            Commons IO</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1832" target="_blank">1832</a>
+            Remove support for args.odt.img.embed</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1837" target="_blank">1837</a>
+            Remove keydef processing from XHTML rendering code</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1847" target="_blank">1847</a>
+            Extension-point for custom DITA parsers</li>
+
+        </ul>
+
+      </section>
+
+      <section class="section"><h3 class="title sectiontitle">Bugs</h3>
+        
+        <p class="p">Milestone 1 provides fixes for the following bugs:</p>
+
+        <ul class="ul">
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1415" target="_blank">1415</a> Filtering
+            doesn't support default for rev flagging</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1840" target="_blank">1840</a>
+            Keyref processing doesn't use only first keyword or term</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1849" target="_blank">1849</a> Some
+            XSLT XPaths do not properly use the @class attribute to select elems</li>
+
+        </ul>
+
+      </section>
+
+      <section class="section"><h3 class="title sectiontitle">Maintenance Release 2.0.1</h3>
+        
+        <div class="note note"><span class="notetitle">Note:</span> 
+          <p class="p">DITA Open Toolkit Release 2.1 Milestone 1 also includes the following bug fixes that were released earlier
+            this year with maintenance version 2.0.1.</p>
+</div>
+
+        <ul class="ul">
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1744" target="_blank">#1744</a>
+            copy-to attribute not processed correctly (error DOTX008E) in XHTML transtype on a topicref included in a
+            child map</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1790" target="_blank">#1790</a> FO:
+            Xref processing does not handle case of key with no remote resource or link text</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1806" target="_blank">#1806</a> IDs
+            are not preserved on &lt;bodydiv&gt; element</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1808" target="_blank">#1808</a>
+            DITA-OT 2.0: PDF bookmarks (TOC, index) not in language indicated in source files</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1810" target="_blank">#1810</a>
+            DITA-OT 2.0: typo in PDF-plugin, xsl/fo/toc.xsl ("boookmap")</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1811" target="_blank">#1811</a>
+            Filtering doesn't support @deliveryTarget</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1813" target="_blank">#1813</a>
+            Mappull step fails with nested concept</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1814" target="_blank">#1814</a> Task
+            with links and nested task fails in XHTML</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1815" target="_blank">#1815</a>
+            Convert String to double Error message when we try to generate pdf</li>
+
+          <li class="li">
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1826" target="_blank">#1826</a> OT
+            2.0: Map with subject scheme and non-below map fails</li>
+
+        </ul>
+
+      </section>
+
+    </div>
+
+  </article>
+
+  
+</main>
