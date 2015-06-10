@@ -3,6 +3,7 @@
 footer {
 	text-align: center;
 	font-size: smaller;
+	margin-top: 30px;
 	padding: 10px 0;
 	border-top: 1px solid #e5e5e5;
 }
@@ -22,13 +23,37 @@ footer {
 .parmname {
 	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 	font-size: 12px;
-	border-radius: 3px;
+	border-radius: 4px;
 	padding: 2px 4px;
-	color: #d14;
+	color: #c7254e;
 	white-space: nowrap;
-	background-color: #f7f7f9;
-	border: 1px solid #e1e1e8;
+	background-color: #f9f2f4;
 }
 .codeblock {
 	background-color: #EEE;
+}
+.filepath, .codeph {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-size: 90%;
+	color: #777;
+}
+.cmdname {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-size: 90%;
+	font-weight: bold;
+	color: #777;
+}
+.notetitle,
+.tiptitle,
+.fastpathtitle,
+.restrictiontitle,
+.importanttitle,
+.remembertitle,
+.attentiontitle,
+.cautiontitle,
+.noticetitle,
+.dangertitle,
+.warningtitle,
+.othertitle {
+	font-weight: bold;
 }
