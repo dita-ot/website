@@ -3,7 +3,7 @@
 layout: base
 title: "Plug-in configuration file"
 ---
-<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA-OT</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transform type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/flagging-migration.html">Migrating style sheets and XSLT overrides</a></li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
+<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/flagging-migration.html">Migrating style sheets and XSLT overrides</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
   <h1 class="title topictitle1" id="ariaid-title1">Plug-in configuration file</h1>
 
   
@@ -125,7 +125,6 @@ token ::= ( [0..9] | [a..zA..Z] | ’_’ | ’-’ )+</pre>
 <tr class="strow">
               <th style="vertical-align:top;" id="d4270e231" headers="d4270e206" class="stentry"><samp class="ph codeph">importance</samp></th>
 
-              
               <td style="vertical-align:top;" headers="d4270e209 d4270e231" class="stentry">flag whether plug-in is required or optional</td>
 
               <td style="vertical-align:top;" headers="d4270e212 d4270e231" class="stentry">no</td>
@@ -140,19 +139,19 @@ token ::= ( [0..9] | [a..zA..Z] | ’_’ | ’-’ )+</pre>
             attributes are supported:</p>
 
           <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-              <th style="vertical-align:bottom;text-align:left;" id="d4270e260" class="stentry">Attribute</th>
+              <th style="vertical-align:bottom;text-align:left;" id="d4270e258" class="stentry">Attribute</th>
 
-              <th style="vertical-align:bottom;text-align:left;" id="d4270e263" class="stentry">Description</th>
+              <th style="vertical-align:bottom;text-align:left;" id="d4270e261" class="stentry">Description</th>
 
-              <th style="vertical-align:bottom;text-align:left;" id="d4270e266" class="stentry">Required</th>
+              <th style="vertical-align:bottom;text-align:left;" id="d4270e264" class="stentry">Required</th>
 
             </tr>
 </thead><tbody><tr class="strow">
-              <th style="vertical-align:top;" id="d4270e272" headers="d4270e260" class="stentry"><samp class="ph codeph">file</samp></th>
+              <th style="vertical-align:top;" id="d4270e270" headers="d4270e258" class="stentry"><samp class="ph codeph">file</samp></th>
 
-              <td style="vertical-align:top;" headers="d4270e263 d4270e272" class="stentry">file path to the template, relative to <span class="ph filepath">plugin.xml</span></td>
+              <td style="vertical-align:top;" headers="d4270e261 d4270e270" class="stentry">file path to the template, relative to <span class="ph filepath">plugin.xml</span></td>
 
-              <td style="vertical-align:top;" headers="d4270e266 d4270e272" class="stentry">yes</td>
+              <td style="vertical-align:top;" headers="d4270e264 d4270e270" class="stentry">yes</td>
 
             </tr>
 </tbody></table>
@@ -163,27 +162,27 @@ token ::= ( [0..9] | [a..zA..Z] | ’_’ | ’-’ )+</pre>
           <p class="p"><samp class="ph codeph">&lt;meta&gt;</samp> defines metadata. The following attributes are supported:</p>
 
           <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-              <th style="vertical-align:bottom;text-align:left;" id="d4270e298" class="stentry">Attribute</th>
+              <th style="vertical-align:bottom;text-align:left;" id="d4270e296" class="stentry">Attribute</th>
 
-              <th style="vertical-align:bottom;text-align:left;" id="d4270e301" class="stentry">Description</th>
+              <th style="vertical-align:bottom;text-align:left;" id="d4270e299" class="stentry">Description</th>
 
-              <th style="vertical-align:bottom;text-align:left;" id="d4270e304" class="stentry">Required</th>
+              <th style="vertical-align:bottom;text-align:left;" id="d4270e302" class="stentry">Required</th>
 
             </tr>
 </thead><tbody><tr class="strow">
-              <th style="vertical-align:top;" id="d4270e310" headers="d4270e298" class="stentry"><samp class="ph codeph">type</samp></th>
+              <th style="vertical-align:top;" id="d4270e308" headers="d4270e296" class="stentry"><samp class="ph codeph">type</samp></th>
 
-              <td style="vertical-align:top;" headers="d4270e301 d4270e310" class="stentry">metadata name </td>
+              <td style="vertical-align:top;" headers="d4270e299 d4270e308" class="stentry">metadata name </td>
 
-              <td style="vertical-align:top;" headers="d4270e304 d4270e310" class="stentry">yes</td>
+              <td style="vertical-align:top;" headers="d4270e302 d4270e308" class="stentry">yes</td>
 
             </tr>
 <tr class="strow">
-              <th style="vertical-align:top;" id="d4270e323" headers="d4270e298" class="stentry"><samp class="ph codeph">value</samp></th>
+              <th style="vertical-align:top;" id="d4270e321" headers="d4270e296" class="stentry"><samp class="ph codeph">value</samp></th>
 
-              <td style="vertical-align:top;" headers="d4270e301 d4270e323" class="stentry">metadata value</td>
+              <td style="vertical-align:top;" headers="d4270e299 d4270e321" class="stentry">metadata value</td>
 
-              <td style="vertical-align:top;" headers="d4270e304 d4270e323" class="stentry">yes</td>
+              <td style="vertical-align:top;" headers="d4270e302 d4270e321" class="stentry">yes</td>
 
             </tr>
 </tbody></table>

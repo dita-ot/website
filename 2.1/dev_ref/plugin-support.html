@@ -3,7 +3,7 @@
 layout: base
 title: "Version and support information"
 ---
-<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../readme/DITA-readme.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/developer-reference.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">Architecture of the DITA-OT</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating DITA-OT plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transform type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li class="active"><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/flagging-migration.html">Migrating style sheets and XSLT overrides</a></li><li><a href="../readme/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
+<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li class="active"><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/flagging-migration.html">Migrating style sheets and XSLT overrides</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
   <h1 class="title topictitle1" id="ariaid-title1">Version and support information</h1>
 
   
@@ -20,10 +20,7 @@ title: "Version and support information"
 
       </ul>
 
-      <div class="note note"><span class="notetitle">Note:</span> 
-        <p class="p">The toolkit does not currently do anything with these values, but may do so in the future.</p>
-
-      </div>
+      <div class="note note"><span class="notetitle">Note:</span> The toolkit does not currently do anything with these values, but may do so in the future.</div>
 
       <p class="p">The <samp class="ph codeph">package.version</samp> value should follow the syntax rules:</p>
 
@@ -38,7 +35,9 @@ qualifier ::= ( [0..9] | [a..zA..Z] | ’_’ | '-' )+</pre>
 
     </section>
 
-    <div class="example"><h2 class="title sectiontitle">Example</h2><pre class="pre codeblock">&lt;plugin id="com.example.WithSupportInfo"&gt;
+    <div class="example"><h2 class="title sectiontitle">Example</h2>
+      
+      <pre class="pre codeblock">&lt;plugin id="com.example.WithSupportInfo"&gt;
   &lt;feature extension="package.support.name" value="Joe the Author"/&gt;
   &lt;feature extension="package.support.email" value="joe@example.com"/&gt;
   &lt;feature extension="package.version" value="1.2.3"/&gt;
