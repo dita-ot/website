@@ -14,9 +14,35 @@ title: "Internal Ant properties"
         
           <dt class="dt pt dlterm"><samp class="ph codeph">include.rellinks</samp></dt>
 
-          <dd class="dd pd">Space separated list of link roles to be output; value token <samp class="ph codeph">#default</samp> denotes default
-            role value. Property default value depends on transformation type. Defined by
-            <samp class="ph codeph">args.rellinks</samp>, but may be overridden directly.</dd>
+          <dd class="dd pd">A space-separated list of link roles to be output; the <samp class="ph codeph">#default</samp> value token represents
+            the default role value, which depends on transformation type. Defined by <samp class="ph codeph">args.rellinks</samp>, but
+            may be overridden directly. Valid roles include: <ul class="ul">
+              <li class="li">parent </li>
+
+              <li class="li">child </li>
+
+              <li class="li">sibling </li>
+
+              <li class="li">friend </li>
+
+              <li class="li">next </li>
+
+              <li class="li">previous </li>
+
+              <li class="li">cousin </li>
+
+              <li class="li">ancestor </li>
+
+              <li class="li">descendant </li>
+
+              <li class="li">sample </li>
+
+              <li class="li">external </li>
+
+              <li class="li">other</li>
+
+            </ul>
+</dd>
 
         
       </dl>
