@@ -8,6 +8,6 @@ sass:
     style: :compressed
 
 # MAJOR.MINOR
-release: "2.0"
+release: "2.1"
 # MAJOR.MINOR.BUG
-version: "2.0.1"
+version: "2.1.0"
