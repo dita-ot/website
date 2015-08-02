@@ -1,0 +1,54 @@
+---
+# Generated from DITA source
+layout: base
+title: "Internal Ant properties"
+---
+<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a><ul class="nav nav-list"><li><a href="../parameters/ant-parameters_intro.html">Ant parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li class="active"><a href="../parameters/internal-ant-properties.html">Internal Ant properties</a></li></ul></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9">
+  <h1 class="title topictitle1" id="ariaid-title1">Internal Ant properties</h1>
+
+  
+  <div class="body refbody"><p class="shortdesc">Reference list of Ant properties used by DITA-OT internally.</p>
+
+    <section class="section">
+      <dl class="dl parml">
+        
+          <dt class="dt pt dlterm"><samp class="ph codeph">include.rellinks</samp></dt>
+
+          <dd class="dd pd">A space-separated list of link roles to be output; the <samp class="ph codeph">#default</samp> value token represents
+            links without an explicit role (those for which no <samp class="ph codeph">@role</samp> attribute is defined). Defined by
+              <samp class="ph codeph">args.rellinks</samp>, but may be overridden directly. Valid roles include: <ul class="ul">
+              <li class="li">parent </li>
+
+              <li class="li">child </li>
+
+              <li class="li">sibling </li>
+
+              <li class="li">friend </li>
+
+              <li class="li">next </li>
+
+              <li class="li">previous </li>
+
+              <li class="li">cousin </li>
+
+              <li class="li">ancestor </li>
+
+              <li class="li">descendant </li>
+
+              <li class="li">sample </li>
+
+              <li class="li">external </li>
+
+              <li class="li">other</li>
+
+            </ul>
+</dd>
+
+        
+      </dl>
+
+    </section>
+
+  </div>
+
+</main>
