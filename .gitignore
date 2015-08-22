@@ -1,2 +1,8 @@
+# Generated site (transformed by Jekyll)
 /_site
+
+# Generated landing pages (copied to `index.html`)
+# Up to 2.1.1 
 DITA-OTProjectHome.html
+# As of 2.1.1+
+introduction.html
