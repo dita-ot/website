@@ -7,11 +7,13 @@ title: "Building output using the dita command"
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
 
   
-  <div class="body taskbody"><p class="shortdesc">You can invoke DITA-OT and build output using the <span class="keyword cmdname">dita</span> command. </p>
+  <div class="body taskbody"><p class="shortdesc">DITA-OT includes a <span class="keyword cmdname">dita</span> command-line tool. You can invoke the DITA-OT from the
+    command-line tool and generate output.</p>
+
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool, there is no graphic user interface.</section>
 
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
-        <span class="ph cmd">The DITA-OT client is a command-line tool, there is no graphic user interface. Open a terminal window by
-          typing the following in the search bar:</span>
+        <span class="ph cmd">Open a terminal window by typing the following in the search bar:</span>
         <div class="itemgroup info">
           <ul class="ul">
             <li class="li">On OS X and Linux, type <kbd class="ph userinput">Terminal</kbd>.</li>
@@ -23,26 +25,30 @@ title: "Building output using the dita command"
         </div>
       </li>
 <li class="li step stepexpand">
-        <span class="ph cmd">From the terminal window, issue the following command:</span>
+        <span class="ph cmd">At the command-line prompt, enter the following command:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock"><var class="keyword varname">install-dir</var>/bin/dita -f <var class="keyword varname">transformation-type</var> -i <var class="keyword varname">input-file</var> -o <var class="keyword varname">output-dir</var></pre>
+          <pre class="pre codeblock"><var class="keyword varname">install-dir</var>/bin/dita -i <var class="keyword varname">input-file</var> -f <var class="keyword varname">format</var> -o <var class="keyword varname">output-dir</var></pre>
 
           <p class="p">where:</p>
 
           <ul class="ul" id="using-command-line-tool__basic-variables">
             <li class="li"><var class="keyword varname">install-dir</var> is the DITA-OT installation directory path.</li>
 
-            <li class="li"><var class="keyword varname">transformation-type</var> is the transformation type.</li>
-
             <li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file path that you want to process.</li>
+
+            <li class="li"><var class="keyword varname">format</var> is the output format (transformation type).</li>
 
             <li class="li"><var class="keyword varname">output-dir</var> is the output directory path for generated output.</li>
 
           </ul>
 
         </div>
-        <div class="itemgroup stepresult" id="using-command-line-tool__running-ditaot-results">If processing is successful, nothing is printed in the terminal
-          window.</div>
+        <div class="itemgroup stepresult" id="using-command-line-tool__running-ditaot-results">
+          <p class="p">If processing is successful, nothing is printed in the terminal window.</p>
+
+          <p class="p">If you do not specify an output directory, the <span class="keyword cmdname">dita</span> command writes output to the
+              <span class="ph filepath">out</span> subdirectory of the current directory.</p>
+</div>
       </li>
 </ol>
 
@@ -52,11 +58,11 @@ title: "Building output using the dita command"
         generates HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file and writes the output to the
           <span class="ph filepath">test</span> directory:</p>
 
-      <pre class="pre codeblock">dita -f html5 -i samples/sequence.ditamap -o test </pre>
+      <pre class="pre codeblock">dita -i samples/sequence.ditamap -f html5 -o test</pre>
 
       <p class="p">If the <span class="keyword cmdname">dita</span> command is not on your <var class="keyword varname">PATH</var>, use the following command:</p>
 
-      <pre class="pre codeblock"><var class="keyword varname">install-dir</var>/bin/dita -f html5 -i samples/sequence.ditamap -o test </pre>
+      <pre class="pre codeblock"><var class="keyword varname">install-dir</var>/bin/dita i samples/sequence.ditamap -f html5 -o test</pre>
 
     </div>
 
@@ -66,4 +72,8 @@ title: "Building output using the dita command"
 <div class="familylinks">
 <div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="../getting-started/installing-client.html" title="The DITA-OT distribution package can be installed on Linux, Mac OS&nbsp;X, and Windows. It contains everything that you need to run the toolkit except for Java.">Installing the distribution package</a></div>
 </div>
+
+<div class="linklist linklist relinfo relref"><strong>Related reference</strong><br>
+
+<div><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content, manage plug-ins, or print information about the command. Options can be used to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></div></div>
 </nav></main>
