@@ -37,8 +37,9 @@ title: "Processing order"
 </div>
 
       <div class="p">If the order of these two steps is reversed, so that conref is evaluated first, it is possible that results
-        will differ. For example, in the code sample above, the @product attribute will override the product setting on
-        the referencing note. Assume that the &lt;note&gt; elements in documentA is defined as follows:
+        will differ. For example, in the code sample above, the @product attribute on the reference target will override
+        the product setting on the referencing note. Assume that the referenced &lt;note&gt; element in documentA is
+        defined as follows:
         <pre class="pre codeblock">&lt;note id="note" product="SomeOtherProduct"&gt;This is an important note!&lt;/note&gt;</pre>
 </div>
 

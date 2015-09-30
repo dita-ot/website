@@ -91,9 +91,9 @@ title: "Ant parameters: Common"
 <dd class="dd pd" id="ant-parameters-base-transformation__onlytopic.in.map.desc">Specifies whether files that are linked to, or referenced with a @conref attribute, generate output. The allowed values are <span class="keyword option">true</span> and <span class="keyword option">false</span>; the default value is <span class="keyword option">false</span>.</dd>
 <dd class="dd pd ddexpand">If set to <span class="keyword option">true</span>, only files that are referenced directly from the map will generate output; the default value is <span class="keyword option">false</span>.</dd>
 <dt class="dt pt dlterm" id="ant-parameters-base-transformation__outer.control"><span class="keyword parmname">outer.control</span></dt>
-<dd class="dd pd" id="ant-parameters-base-transformation__outer.control.desc">Specifies how the DITA OT handles content files that are located in or below the directory containing the master DITA map. The following values are supported:<ul class="ul"><li class="li"><span class="keyword option">fail</span> – Fail quickly if files are going to be generated or copied outside of the directory.</li>
+<dd class="dd pd" id="ant-parameters-base-transformation__outer.control.desc">Specifies how the DITA-OT handles content files that are not located in or below the directory containing the master DITA map. The following values are supported:<ul class="ul"><li class="li"><span class="keyword option">fail</span> – Fail quickly if files are going to be generated or copied outside of the directory.</li>
 <li class="li"><span class="keyword option">warn</span> (default) – Complete the operation if files will be generated or copied outside of the directory, but log a warning.</li>
-<li class="li"><span class="keyword option">quiet</span> – Quietly finish with only those files; do not generate warnings or errors.</li>
+<li class="li"><span class="keyword option">quiet</span> – Quietly finish without generating warnings or errors.</li>
 </ul>
 </dd>
 <dd class="dd pd ddexpand">
