@@ -32,6 +32,8 @@ title: "Integrating a new transformation type"
         
       </dl>
 
+      <p class="p">The <samp class="ph codeph">&lt;transtype&gt;</samp> element is used to define a new transformation type with the parameters that are supported.</p>
+
     </section>
 
     <div class="example"><h2 class="title sectiontitle">Example</h2>
@@ -42,6 +44,7 @@ title: "Integrating a new transformation type"
 
       <pre class="pre codeblock">&lt;plugin id="com.example.newtext"&gt;
   <strong class="ph b">&lt;feature extension="dita.conductor.transtype.check" value="newtext"/&gt;</strong>
+  <strong class="ph b">&lt;transtype name="newtext"&gt;</strong>      
   &lt;feature extension="dita.transtype.print" value="newtext"/&gt;
   &lt;feature extension="dita.conductor.target.relative" file="antWrapper.xml"/&gt;
 &lt;/plugin&gt;</pre>

@@ -1,13 +1,13 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 2.1.1 Release Notes"
+title: "DITA Open Toolkit 2.1.2 Release Notes"
 ---
 <nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.1.1</span> Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.1.2</span> Release Notes</h1>
 
 
-  <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.1.1</span> is a maintenance release that includes fixes for reported
+  <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.1.2</span> is a maintenance release that includes fixes for reported
     issues.</p>
 
 
@@ -38,9 +38,55 @@ title: "DITA Open Toolkit 2.1.1 Release Notes"
           tracker</a></span>.</p>
 
       
-      <section class="section"><h3 class="title sectiontitle">Maintenance Release <span class="keyword">2.1.1</span></h3>
+      <section class="section"><h3 class="title sectiontitle">Maintenance Release <span class="keyword">2.1.2</span></h3>
         
-        <p class="p">DITA Open Toolkit Release <span class="keyword">2.1.1</span> includes the following bug fixes:</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.1.2</span> includes the following bug fixes:</p>
+
+        <ul class="ul">
+          <li class="li">
+            <div class="p">Index terms starting with “Ñ” are no longer dropped from Spanish PDF indexes. They are now handled with
+              the correct Spanish sort order and placed in a group between “N” and “O”, under the “Ñ” heading. <ul class="ul">
+                <li class="li">
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2068" target="_blank">#2068</a> Add support for n-tilde in Spanish index </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+          <li class="li">
+            <div class="p">References to external code samples are now resolved properly when <samp class="ph codeph">@coderef</samp> attributes
+              target non-XML resources and the output directory is shifted by setting the
+                <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">3</span>. <ul class="ul">
+                <li class="li">
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2044" target="_blank">#2044</a> Non-XML coderef fails on outer context </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+          <li class="li">
+            <div class="p">Warnings for deprecated templates are now displayed with the correct message prefix:
+                <samp class="ph codeph">DOTX</samp>. <ul class="ul">
+                <li class="li">
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2043" target="_blank">#2043</a> Warning for deprecated templates fails </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+        </ul>
+
+      </section>
+
+      <section class="section"><h3 class="title sectiontitle">Maintenance Release 2.1.1</h3>
+        
+        <p class="p">DITA Open Toolkit Release 2.1.1 includes the following bug fixes:</p>
 
         <ul class="ul">
           <li class="li">
