@@ -32,6 +32,12 @@ footer {
 .codeblock {
 	background-color: #EEE;
 }
+// Reset Bootstrap’s <code> rules to defaults
+code {
+	background-color: transparent;
+	border-radius: 0; 
+	padding: 0; 
+}
 .filepath, .codeph, .option {
 	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 	font-size: 90%;
