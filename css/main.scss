@@ -1,5 +1,16 @@
 ---
 ---
+
+// Bootstrap font-family for code, kbd, pre, samp 
+$code-fonts: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Common code rules (imported to other classes)
+@mixin codeclass {
+	font-family: $code-fonts;
+	font-size: 90%;
+	color: #777;
+}
+
 footer {
 	text-align: center;
 	font-size: smaller;
@@ -20,10 +31,9 @@ footer {
 		margin-left: 10px;
 	}
 }
+// Based on Bootstrap code rules
 .parmname {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-	font-size: 12px;
-	border-radius: 4px;
+	@include codeclass;
 	padding: 2px 4px;
 	color: #c7254e;
 	white-space: nowrap;
@@ -39,15 +49,11 @@ code {
 	padding: 0; 
 }
 .filepath, .codeph, .option {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-	font-size: 90%;
-	color: #777;
+	@include codeclass;
 }
 .cmdname {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-	font-size: 90%;
+	@include codeclass;
 	font-weight: bold;
-	color: #777;
 }
 .notetitle,
 .tiptitle,
@@ -63,6 +69,7 @@ code {
 .othertitle {
 	font-weight: bold;
 }
+// Fixed w/ https://github.com/dita-ot/dita-ot/pull/2097, remove once all site content has been regenerated thereafter
 col {
 	display: none;
 }
