@@ -78,5 +78,10 @@ col {
 	color: #777; 
 }
 
+// Add bottom margin to nested lists
+li.li ul.ul {
+	margin-bottom: 10px;
+}
+
 // Import partials for vocabulary domains
 @import 'xml-d';
