@@ -3,97 +3,68 @@
 layout: base
 title: "Passing parameters to existing XSLT steps"
 ---
-<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li class="active"><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/flagging-migration.html">Migrating style sheets and XSLT overrides</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
+<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML Catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Override styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li class="active"><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9">
   <h1 class="title topictitle1" id="ariaid-title1">Passing parameters to existing XSLT steps</h1>
-
   
   <div class="body refbody"><p class="shortdesc">Plug-ins can define new parameters to be passed from the Ant build into existing XSLT pipeline stages,
-    usually to have those parameters available as global <samp class="ph codeph">&lt;xsl:param&gt;</samp> values within XSLT
+    usually to have those parameters available as global <code class="ph codeph">&lt;xsl:param&gt;</code> values within XSLT
     overrides.</p>
-
     <section class="section">
       <div class="p">To create new parameters, create a file <span class="ph filepath">insertParameters.xml</span> which contains one or more
-        Ant <samp class="ph codeph">&lt;param&gt;</samp> elements. It also needs a &lt;dummy&gt; wrapper element around the parameters. For
+        Ant <code class="ph codeph">&lt;param&gt;</code> elements. It also needs a &lt;dummy&gt; wrapper element around the parameters. For
         example, the following parameter will be passed in to the XSLT file with a value of
-          <samp class="ph codeph">${antProperty}</samp>, but only if that parameter is
-        defined:<pre class="pre codeblock">&lt;dummy&gt;
+          <code class="ph codeph">${antProperty}</code>, but only if that parameter is
+        defined:<pre class="pre codeblock"><code>&lt;dummy&gt;
   &lt;!-- Any Ant code allowed in xslt task is possible. Common example: --&gt;
   &lt;param name="paramNameinXSLT" expression="${antProperty}" if="antProperty"/&gt;
-&lt;/dummy&gt;</pre>
-</div>
-
-      <p class="p">Pass the value using the following extensions: </p>
-<dl class="dl">
+&lt;/dummy&gt;</code></pre></div>
+      <p class="p">Pass the value using the following extensions: </p><dl class="dl">
         
-          <dt class="dt dlterm"><samp class="ph codeph">dita.conductor.html.param</samp></dt>
-
+          <dt class="dt dlterm"><code class="ph codeph">dita.conductor.html.param</code></dt>
           <dd class="dd">Pass parameters to HTML and HTML Help XSLT</dd>
-
         
         
-          <dt class="dt dlterm"><samp class="ph codeph">dita.conductor.xhtml.param</samp></dt>
-
+          <dt class="dt dlterm"><code class="ph codeph">dita.conductor.xhtml.param</code></dt>
           <dd class="dd">Pass parameters to XHTML and Eclipse Help XSLT</dd>
-
         
         
-          <dt class="dt dlterm"><samp class="ph codeph">dita.conductor.xhtml.toc.param</samp></dt>
-
+          <dt class="dt dlterm"><code class="ph codeph">dita.conductor.xhtml.toc.param</code></dt>
           <dd class="dd">Pass parameters to XHTML TOC XSLT</dd>
-
         
         
-          <dt class="dt dlterm"><samp class="ph codeph">dita.conductor.eclipse.toc.param</samp></dt>
-
+          <dt class="dt dlterm"><code class="ph codeph">dita.conductor.eclipse.toc.param</code></dt>
           <dd class="dd">Pass parameters to Eclipse Help TOC XSLT</dd>
-
         
         
-          <dt class="dt dlterm"><samp class="ph codeph">dita.preprocess.conref.param</samp></dt>
-
+          <dt class="dt dlterm"><code class="ph codeph">dita.preprocess.conref.param</code></dt>
           <dd class="dd">Pass parameters to conref XSLT</dd>
-
         
         
-          <dt class="dt dlterm"><samp class="ph codeph">dita.preprocess.mapref.param</samp></dt>
-
+          <dt class="dt dlterm"><code class="ph codeph">dita.preprocess.mapref.param</code></dt>
           <dd class="dd">Pass parameters to mapref XSLT</dd>
-
         
         
-          <dt class="dt dlterm"><samp class="ph codeph">dita.preprocess.mappull.param</samp></dt>
-
+          <dt class="dt dlterm"><code class="ph codeph">dita.preprocess.mappull.param</code></dt>
           <dd class="dd">Pass parameters to mappull XSLT</dd>
-
         
         
         
-          <dt class="dt dlterm"><samp class="ph codeph">dita.preprocess.topicpull.param</samp></dt>
-
+          <dt class="dt dlterm"><code class="ph codeph">dita.preprocess.topicpull.param</code></dt>
           <dd class="dd">Pass parameters to topicpull XSLT</dd>
-
         
         
-          <dt class="dt dlterm"><samp class="ph codeph">dita.conductor.pdf2.param</samp></dt>
-
+          <dt class="dt dlterm"><code class="ph codeph">dita.conductor.pdf2.param</code></dt>
           <dd class="dd">Pass parameters to PDF2 XSLT</dd>
-
         
       </dl>
-
     </section>
-
     <div class="example"><h2 class="title sectiontitle">Example</h2>
       <p class="p">The following plug-in will pass the parameters defined inside of
           <span class="ph filepath">insertParameter.xml</span> as input to the XHTML process. Generally, an additional XSLT override
         will make use of the parameter to do something new with the generated
-      content.</p>
-<pre class="pre codeblock">&lt;plugin id="com.example.newparam"&gt;
+      content.</p><pre class="pre codeblock"><code>&lt;plugin id="com.example.newparam"&gt;
   &lt;feature extension="dita.conductor.xhtml.param" file="insertParameters.xml"/&gt;
-&lt;/plugin&gt;</pre>
-
+&lt;/plugin&gt;</code></pre>
     </div>
-
   </div>
-
 </main>
