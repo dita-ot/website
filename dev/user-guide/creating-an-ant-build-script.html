@@ -17,7 +17,7 @@ title: "Creating an Ant build script"
   &lt;property name="dita.dir" location="@path-to-DITA-OT@"/&gt;
  
   &lt;target name="@target-name@"&gt;
-    &lt;ant antfile="${dita.dir}${file.separator}build.xml"&gt;
+    &lt;ant antfile="${dita.dir}/build.xml"&gt;
       &lt;property name="args.input" value="@DITA-input@"/&gt;
       &lt;property name="transtype" value="html5"/&gt;
     &lt;/ant&gt;
@@ -63,7 +63,7 @@ title: "Creating an Ant build script"
         file.<pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="Toolkit-documentation" default="all" basedir="."&gt;
     
-    &lt;property name="dita.dir" location="C:\DITA-OT1.6.M5"/&gt;
+    &lt;property name="dita.dir" location="C:\dita-ot"/&gt;
     
     &lt;target name="all" description="build CHM and PDF" depends="chm,pdf"/&gt;
     
@@ -71,7 +71,7 @@ title: "Creating an Ant build script"
         &lt;ant antfile="${dita.dir}\build.xml"&gt;
             &lt;property name="args.input" value="C:\dita-ot\src\main\doc\userguide.ditamap"/&gt;
             &lt;property name="args.gen.task.lbl" value="YES"/&gt;   
-            &lt;property name="output.dir" value="C:\kje\temp\out"/&gt;
+            &lt;property name="output.dir" value="C:\temp\out"/&gt;
             &lt;property name="transtype" value="htmlhelp"/&gt;
         &lt;/ant&gt;
     &lt;/target&gt;
@@ -81,7 +81,7 @@ title: "Creating an Ant build script"
             &lt;property name="args.input" value="C:\dita-ot\src\main\doc\userguide.ditamap"/&gt;
             &lt;property name="args.gen.task.lbl" value="YES"/&gt;   
             &lt;property name="args.rellinks" value="nofamily"/&gt;   
-            &lt;property name="output.dir" value="C:\kje\temp\out"/&gt;
+            &lt;property name="output.dir" value="C:\temp\out"/&gt;
             &lt;property name="transtype" value="pdf"/&gt;
         &lt;/ant&gt;
     &lt;/target&gt;
@@ -102,4 +102,4 @@ title: "Creating an Ant build script"
         <span class="ph filepath">samples/ant_samples</span> directory. This directory contains the Ant build files used by the demo
       build, as well as templates that you can use to create Ant scripts.</section>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist linklist relinfo relconcepts"><strong>Related concepts</strong><br><div><a class="link" href="../user-guide/ant.html" title="Ant is a Java-based, open-source tool that is provided by the Apache Foundation. It can be used to declare a sequence of build actions. It is well suited for both development and document builds. The toolkit ships with a copy of Ant.">Ant</a></div></div><div class="linklist linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../user-guide/building-with-ant.html" title="You can build output by running the ant command and specifying the DITA-OT parameters at the command prompt. You also can use an Ant build script to provide the DITA-OT parameters.">Building output using Ant</a></div></div><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../parameters/ant-parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Finally, some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the -Dparameter-name=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></div><div><a class="link" href="http://ant.apache.org/manual/index.html" target="_blank">Apache Ant documentation</a></div></div></nav></main>
+<nav role="navigation" class="related-links"><div class="linklist linklist relinfo relconcepts"><strong>Related concepts</strong><br><div><a class="link" href="../user-guide/ant.html" title="Ant is a Java-based, open-source tool that is provided by the Apache Foundation. It can be used to declare a sequence of build actions. It is well suited for both development and document builds. The toolkit ships with a copy of Ant.">Ant</a></div></div><div class="linklist linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../user-guide/building-with-ant.html" title="You can build output by using an Ant build script to provide the DITA-OT parameters.">Building output using Ant</a></div></div><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../parameters/ant-parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Finally, some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the -Dparameter-name=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></div><div><a class="link" href="http://ant.apache.org/manual/index.html" target="_blank">Apache Ant documentation</a></div></div></nav></main>

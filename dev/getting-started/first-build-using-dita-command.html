@@ -31,20 +31,22 @@ title: "Building output using the dita command"
           </ul>
           
         </div>
-        <div class="itemgroup stepresult" id="using-command-line-tool__running-ditaot-results">
+        <div class="itemgroup stepresult">
           <p class="p">If processing is successful, nothing is printed in the terminal window.</p>
           <p class="p">If you do not specify an output directory, the <span class="keyword cmdname">dita</span> command writes output to the
               <span class="ph filepath">out</span> subdirectory of the current directory.</p>
-          <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> If you add the <span class="ph filepath"><var class="keyword varname">install-dir</var>/bin</span> directory to the
-              <var class="keyword varname">PATH</var> system variable, you can invoke the <span class="keyword cmdname">dita</span> command without the
-            absolute path.</div>
+          <div class="note tip note_tip" id="using-command-line-tool__d248e95"><span class="note__title tiptitle">Tip:</span> If you add the absolute path for the DITA-OT
+                <span class="ph filepath"><var class="keyword varname">install-dir</var>/bin</span> directory to the <var class="keyword varname">PATH</var>
+            environment variable, you can run the <span class="keyword cmdname">dita</span> command from any location on the file
+            system.</div>
         </div>
       </li></ol>
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">The following command generates HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file and writes the
         output to the <span class="ph filepath">test</span> directory:</p>
       <pre class="pre codeblock"><code>dita -i samples/sequence.ditamap -f html5 -o test</code></pre>
-      <div class="p">If the <span class="keyword cmdname">dita</span> command is not on your <var class="keyword varname">PATH</var>, use the following command:
+      <div class="p">If the <span class="keyword cmdname">dita</span> command is not on your <var class="keyword varname">PATH</var>, use the
+        following command:
         <pre class="pre codeblock"><code><var class="keyword varname">install-dir</var>/bin/dita i samples/sequence.ditamap -f html5 -o test</code></pre>
       </div>
     </div>
