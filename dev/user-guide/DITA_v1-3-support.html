@@ -13,10 +13,10 @@ title: "DITA 1.3 support"
       additional DITA 1.3 features.</span></p>
     <p class="p" id="dita-13-spec-support__p">Because DITA 1.3 is fully backwards compatible with previous DITA DTDs and schemas, DITA-OT 2.2 provides
       the proposed 1.3 materials as the default DTDs for processing. The XML Catalog resolution maps any references for
-      DITA 1.2 doctypes to the 1.3 DTDs, for example. All processing ordinarily dependent on the 1.0, 1.1, or 1.2
-      definitions continues to work as usual, and any documents that make use of the newer DITA 1.3 elements or
-      attributes will be supported with specific new processing.</p>
-    <p class="p">Because this support is based on a yet-to-be-approved version of the proposed OASIS
+      unversioned DITA doctypes to the 1.3 DTDs. All processing ordinarily dependent on the 1.0, 1.1, or 1.2 definitions
+      continues to work as usual, and any documents that make use of the newer DITA 1.3 elements or attributes will be
+      supported with specific new processing.</p>
+    <p class="p">Because this support is based on a yet-to-be-approved (Candidate OASIS Standard 01) version of the proposed
       <a class="xref" href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part3-all-inclusive.html" target="_blank">DITA 1.3 specification</a>, if you choose to investigate any 1.3-based function, be aware that the 1.3
       implementation in this version of the toolkit is preliminary. Upon final approval of the DITA 1.3 standard,
       toolkit developers will review the implementation to make certain that it conforms to the final specification.</p>
@@ -50,10 +50,6 @@ title: "DITA 1.3 support"
           <div class="note important note_important"><span class="note__title importanttitle">Important:</span> The proposed DITA 1.3 grammars are now used as the default DTDs for processing
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2094" target="_blank">#2094</a></div>
         </li>
-        <li class="li" id="dita-13-spec-support__1979">Initial support for DITA 1.3 key scopes
-          <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/1979" target="_blank">#1979</a>,
-          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1648" target="_blank">#1648</a>
-        </li>
         <li class="li" id="dita-13-spec-support__1969">Initial implementation of DITA 1.3 branch filtering
           <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/1969" target="_blank">#1969</a>,
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1637" target="_blank">#1637</a>
@@ -68,21 +64,17 @@ title: "DITA 1.3 support"
             </ul>
           </div>
         </li>
-        <li class="li" id="dita-13-spec-support__2096">The <code class="ph codeph">DOTJ065</code> warning that appeared when branch filter–generated topics were
-          renamed has been changed to an “info” message to clarify that renaming is intentional. The new DITA 1.3
-          elements <code class="keyword markupname xmlelement">&lt;dvrResourcePrefix&gt;</code> and <code class="keyword markupname xmlelement">&lt;dvrResourceSuffix&gt;</code> can be used
-          to control renaming and avoid this message if necessary.
-          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2096" target="_blank">#2096</a>
+        <li class="li" id="dita-13-spec-support__1979">Initial support for DITA 1.3 key scopes, including multiple scope names in a single
+            <code class="keyword markupname xmlatt">@keyscope</code> attribute
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/1979" target="_blank">#1979</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1648" target="_blank">#1648</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2004" target="_blank">#2004</a>
         </li>
-        <li class="li" id="dita-13-spec-support__1968">Processing order has been revised to process same topic fragments before the conref phase, to
-          enable content references to elements in the same topic using a reference such as <code class="ph codeph">&lt;p
-            conref="#./ID"/&gt;</code> as reported in
+        <li class="li" id="dita-13-spec-support__1968">Processing order has been revised to process any same topic fragments used in conrefs before the
+          conref phase, to enable content references to elements in the same topic using a reference such as
+            <code class="ph codeph">&lt;p&nbsp;conref="#./ID"/&gt;</code> as reported in
           <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/1649" target="_blank">#1649</a>.
           <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/1968" target="_blank">#1968</a>
-        </li>
-        <li class="li" id="dita-13-spec-support__2004">Keyref processing has been extended to support multiple scope names in a single
-            <code class="keyword markupname xmlatt">@keyscope</code> attribute
-          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2004" target="_blank">#2004</a>
         </li>
       </ul>
       <div class="note note note_note"><span class="note__title notetitle">Note:</span> For the latest status information on DITA 1.3-related features, see the
