@@ -3,53 +3,84 @@ layout: base
 title: "DITA Open Toolkit"
 toc: false
 ---
-<!--div style="text-align: center; padding-bottom: 10px">
-  <a href="http://www.oxygenxml.com/events/2014/dita-ot_day.html">
-    <img src="http://www.oxygenxml.com/img/banner_meetup_dita_ot_day.jpg" alt="DITA-OT Day 2014">
+<div style="text-align: center; padding-bottom: 10px">
+  <a href="http://www.oxygenxml.com/events/2015/dita-ot_day.html">
+    <img src="http://www.oxygenxml.com/img/banner_meetup_dita_ot_day_2015.jpg" alt="DITA-OT Day 2015"
+         class="img-responsive center-block">
   </a>
-</div-->
+</div>
+
 <div class="jumbotron">
   <h1>{{ page.title }}</h1>
- <p>The DITA Open Toolkit, or DITA-OT for short, is a set of Java-based, open source tools that provide processing for DITA maps and topic content.</p>
- <p>You can download the toolkit and install it for free to get started with topic-based writing and publishing.</p>
-  <a class="btn btn-large btn-success" href="https://github.com/dita-ot/dita-ot/releases/tag/{{site.version}}">Download DITA-OT</a>
+  <p>The DITA Open Toolkit, or DITA-OT for short, is a set of Java-based, open-source tools that provide processing for
+    DITA maps and topic content.</p>
+  <p>You can download the toolkit and install it for free to get started with topic-based writing and publishing.</p>
+  <a class="btn btn-large btn-success" href="{{ site.baseurl }}/download">Download DITA-OT</a>
 </div>
-<h2>Features of the DITA Open Toolkit</h2>
-<p>The DITA Open Toolkit is primarily a publishing tool – it is intended to convert DITA content into various output formats. This topic describes which versions of DITA are supported as input; it also describes the output formats available in a default installation.</p>
+
+<h2>DITA Open Toolkit features</h2>
+<p>The DITA Open Toolkit is primarily a publishing tool used to convert DITA content into various output formats.</p>
+
 <h3 id="supported_versions_of_dita">Supported versions of DITA</h3>
-<p>The toolkit supports all standard versions of DITA, including 1.0, 1.1, and 1.2, with preview support for 1.3. In addition, it will still process documents that were written according to the pre-OASIS version of DITA, often called "dita132".</p>
+<p>The toolkit supports all standard versions of DITA, including 1.0, 1.1, and 1.2, with preview support for 1.3.</p>
+<p>In addition, it will still process documents that were written according to the pre-OASIS version of DITA, often
+  called "dita132".</p>
+
 <h3 id="supported_transformation_types">Supported transformation types</h3>
 <p>The following transformation types are supported out of the box with any toolkit installation:</p>
 <ul>
   <li>
-  <p><strong>PDF</strong> - PDF output is based on a plug-in that produces XSL-FO output. The XSL-FO output may be converted to PDF using an open source tools (Apache FOP) or using commercial tools such as RenderX or Antenna House Formatter.</p>
+    <p><strong>PDF</strong> – PDF output is based on a plug-in that produces XSL Formatting Objects (XSL-FO) output. The
+      XSL-FO output may be converted to PDF using an open-source rendering tool (Apache FOP) or commercial tools such as
+      RenderX XEP or Antenna House Formatter.</p>
   </li>
   <li>
-  <p><strong>HTML5 and XHTML</strong> - HTML output is supported together with a variety of HTML-based navigation types. Navigation is not required. The HTML output contains class values based on the DITA elements so CSS files may be used to customize the output style.</p>
+    <p><strong>HTML</strong> – HTML5 and XHTML output are supported along with a variety of HTML-based navigation types.
+      The HTML output contains class values based on the DITA elements so CSS files may be used to customize the output
+      style.</p>
   </li>
   <li>
-  <p><strong>Eclipse Help</strong> - Eclipse output is an XHTML based format that also produces navigation and index files for use with Eclipse information centers.</p>
+    <p><strong>TocJS</strong> – The TocJS transformation type includes HTML5 output along with JavaScript-based frames
+      for navigation, including table of contents (ToC) sections that expand and collapse.</p>
   </li>
   <li>
-  <p><strong>TocJS</strong> - The TocJS transformation type includes XHTML output along with JavaScript based frames for navigation, including TOC sections that expand and collapse.</p>
+    <p><strong>HTML Help</strong> – Microsoft Compiled HTML Help output produces a compiled help (.chm) file with HTML
+      topics, table of contents, and index.</p>
   </li>
   <li>
-  <p><strong>HTML Help</strong> - Microsoft Compiled HTML Help output produces a compiled help (.chm) file with the XHTML topics, table of contents, and index.</p>
+    <p><strong>Eclipse Help</strong> – Eclipse output is an HTML-based format that also produces navigation and index
+      files for use with Eclipse information centers.</p>
   </li>
   <li>
-  <p><strong>Java Help</strong> - Java Help includes a table of contents and index for use with the Java Help platform.</p>
+    <p><strong>Eclipse Content</strong> – Normalized DITA plus Eclipse project files.</p>
   </li>
   <li>
-  <p><strong>OpenDocument</strong> - ODT is a document format based on the ODF standard, for use with tools like Open Office.</p>
+    <p><strong>Java Help</strong> – HTML topics, table of contents and index for use with the Java Help platform.</p>
   </li>
   <li>
-  <p><strong>Rich Text Format</strong> - RTF output is supported for basic content, but complex markup and some advanced features of DITA may not be supported.</p>
+    <p><strong>ODT</strong> – OpenDocument Text is based on the Open Document Format for Office Applications (ODF)
+      standard, for use with tools like OpenOffice and Google Docs.</p>
   </li>
   <li>
-  <p><strong>troff</strong> - troff based man pages are supported; one man page is generated for each input topic. Note that tables are not supported by this transformation type.</p>
+    <p><strong>Word RTF</strong> – Rich Text Format output is supported for basic content, but complex markup and some
+      advanced features of DITA may not be supported.</p>
+  </li>
+  <li>
+    <p><strong>DocBook</strong> – An earlier semantic markup language for technical documentation.</p>
+  </li>
+  <li>
+    <p><strong>troff</strong> – troff-based man pages are supported; one man page is generated for each input topic.
+      Note that tables are not supported by this transformation type.</p>
   </li>
 </ul>
-<p>The toolkit’s plug-in mechanism allows new transformation types to be added. Note that both TocJS and PDF2 were originally separately installable plug-ins, which became widespread enough that they are now bundled together with the default toolkit installation.</p>
+
+<p>The toolkit’s plug-in mechanism allows new transformation types to be added. TocJS and PDF output was originally
+  provided via separately installable plug-ins, which became widespread enough that they are now bundled together with
+  the default toolkit installation.</p>
+
 <h2>License</h2>
-<p>The DITA Open Toolkit is licensed for use under the Apache License 2.0. A copy of the Apache License 2.0 can be found at the root directory of the DITA Open Toolkit deliverable package.</p>
-<p>If, at the time of use, the Project Management Committee has designated another version of this license or another license as being applicable to the DITA Open Toolkit, user may select to have its subsequent use of the DITA Open Toolkit governed by such other designated license.</p>
+<p>The DITA Open Toolkit is licensed for use under the Apache License 2.0. A copy of the Apache License 2.0 can be found
+  at the root directory of the DITA Open Toolkit deliverable package.</p>
+<p>If, at the time of use, the Project Management Committee has designated another version of this license or another
+  license as being applicable to the DITA Open Toolkit, user may select to have its subsequent use of the DITA Open
+  Toolkit governed by such other designated license.</p>

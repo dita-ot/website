@@ -5,9 +5,10 @@ highlighter: pygments
 markdown: kramdown
 baseurl: ""
 sass:
-    style: :compressed
+    style: compressed
+    sass_dir: css
 
 # MAJOR.MINOR
-release: "2.0"
+release: "2.1"
 # MAJOR.MINOR.BUG
-version: "2.0.1"
+version: "2.1.2"

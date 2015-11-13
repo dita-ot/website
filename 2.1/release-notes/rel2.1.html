@@ -1,13 +1,14 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 2.1 Release Notes"
+title: "DITA Open Toolkit 2.1.2 Release Notes"
 ---
 <nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"></ul></div></nav><main class="col-md-9">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit 2.1 Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.1.2</span> Release Notes</h1>
 
 
-  <p class="shortdesc">DITA Open Toolkit 2.1 is a maintenance release that includes fixes for reported issues.</p>
+  <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.1.2</span> is a maintenance release that includes fixes for reported
+    issues.</p>
 
 
   
@@ -18,8 +19,8 @@ title: "DITA Open Toolkit 2.1 Release Notes"
     <div class="body refbody">
       <section class="section">
         
-        <p class="p">DITA Open Toolkit Release 2.1 requires the Java Runtime Environment (JRE) or Java Development Kit (JDK),
-          version <span class="keyword">7</span> or later.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.1</span> requires the Java Runtime Environment (JRE) or Java
+          Development Kit (JDK), version <span class="keyword">7</span> or later.</p>
 
       </section>
 
@@ -32,25 +33,107 @@ title: "DITA Open Toolkit 2.1 Release Notes"
     <h2 class="title topictitle2" id="ariaid-title3">Resolved issues</h2>
 
     
-    <div class="body refbody"><p class="shortdesc">The following items are included in DITA Open Toolkit Release 2.1. Issue numbers correspond to the
-      tracking number in the <span class="ph"><a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues
-      tracker</a></span>.</p>
+    <div class="body refbody"><p class="shortdesc">The following items are included in DITA Open Toolkit Release <span class="keyword">2.1</span>. Issue numbers
+      correspond to the tracking number in the <span class="ph"><a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues
+          tracker</a></span>.</p>
 
       
-      <section class="section"><h3 class="title sectiontitle">Feature requests and changes</h3>
+      <section class="section"><h3 class="title sectiontitle">Maintenance Release <span class="keyword">2.1.2</span></h3>
         
-        <p class="p">DITA Open Toolkit Release 2.1 includes the following new features and changes:</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.1.2</span> includes the following bug fixes:</p>
 
         <ul class="ul">
           <li class="li">
-            <div class="note attention"><span class="attentiontitle">Attention:</span> The <samp class="ph codeph">startcmd</samp> scripts and bundled Ant binaries have been removed from
-              the distribution package.</div>
+            <div class="p">Index terms starting with “Ñ” are no longer dropped from Spanish PDF indexes. They are now handled with
+              the correct Spanish sort order and placed in a group between “N” and “O”, under the “Ñ” heading. <ul class="ul">
+                <li class="li">
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2068" target="_blank">#2068</a> Add support for n-tilde in Spanish index </li>
 
-            <p class="p">To generate output, use the <span class="keyword cmdname">dita</span> command introduced in DITA-OT 2.0. If your workflow
-              requires Ant for other purposes, it must be installed separately.</p>
+              </ul>
+
+            </div>
 
           </li>
 
+          <li class="li">
+            <div class="p">References to external code samples are now resolved properly when <samp class="ph codeph">@coderef</samp> attributes
+              target non-XML resources and the output directory is shifted by setting the
+                <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">3</span>. <ul class="ul">
+                <li class="li">
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2044" target="_blank">#2044</a> Non-XML coderef fails on outer context </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+          <li class="li">
+            <div class="p">Warnings for deprecated templates are now displayed with the correct message prefix:
+                <samp class="ph codeph">DOTX</samp>. <ul class="ul">
+                <li class="li">
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2043" target="_blank">#2043</a> Warning for deprecated templates fails </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+        </ul>
+
+      </section>
+
+      <section class="section"><h3 class="title sectiontitle">Maintenance Release 2.1.1</h3>
+        
+        <p class="p">DITA Open Toolkit Release 2.1.1 includes the following bug fixes:</p>
+
+        <ul class="ul">
+          <li class="li">
+            <div class="p">Whitespace in <samp class="ph codeph">&lt;image&gt;</samp> elements is now ignored in PDF output to prevent errors when
+              rendering XSL:FO. <ul class="ul">
+                <li class="li">
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1985" target="_blank">#1985</a> XEP&nbsp;error: Element 'fo:external-graphic' must be empty</li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+          <li class="li">
+            <div class="p">Any proportional table column widths expressed in the CALS table model as "*" are now normalized to the
+              equivalent "1*" value to prevent errors while generating XHTML output. <ul class="ul">
+                <li class="li">
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1978" target="_blank">#1978</a> colwidth="*" causes Fatal Error! Cannot convert string "" to a double </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+          <li class="li">
+            <div class="p">In DITA Open Toolkit 2.0.1, the line ending characters in shell files were inadvertently changed to
+              Windows (CRLF) line endings. The correct UNIX (LF) line endings have now been restored.<ul class="ul">
+                <li class="li">
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1954" target="_blank">#1954</a> bin/ant throws errors when executed in Ubuntu shell </li>
+
+              </ul>
+
+            </div>
+
+          </li>
+
+        </ul>
+
+      </section>
+
+      <section class="section"><h3 class="title sectiontitle">Feature requests and changes</h3>
+        
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.1</span> includes the following new features and changes:</p>
+
+        <ul class="ul">
           <li class="li">
             <div class="p">In PDF output, inline <samp class="ph codeph">&lt;codeph&gt;</samp> elements in topic titles now inherit the font size
               from the surrounding title text. <ul class="ul">
@@ -249,7 +332,7 @@ title: "DITA Open Toolkit 2.1 Release Notes"
 
       <section class="section"><h3 class="title sectiontitle">Bugs</h3>
         
-        <p class="p">DITA Open Toolkit Release 2.1 provides fixes for the following bugs:</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.1</span> provides fixes for the following bugs:</p>
 
         <ul class="ul">
           <li class="li"><a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1513" target="_blank">1513</a>
@@ -318,8 +401,8 @@ title: "DITA Open Toolkit 2.1 Release Notes"
 
       <section class="section"><h3 class="title sectiontitle">Maintenance Release 2.0.1</h3>
         
-        <div class="note note"><span class="notetitle">Note:</span> DITA Open Toolkit Release 2.1 also includes the following bug fixes that were released earlier this year
-          with maintenance version 2.0.1.</div>
+        <div class="note note"><span class="notetitle">Note:</span> DITA Open Toolkit Release <span class="keyword">2.1</span> also included the following bug fixes that were
+          released earlier this year with maintenance version 2.0.1.</div>
 
         <ul class="ul">
           <li class="li">

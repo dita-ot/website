@@ -1,5 +1,16 @@
 ---
 ---
+
+// Bootstrap font-family for code, kbd, pre, samp 
+$code-fonts: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Common code rules (imported to other classes)
+@mixin codeclass {
+	font-family: $code-fonts;
+	font-size: 90%;
+	color: #777;
+}
+
 footer {
 	text-align: center;
 	font-size: smaller;
@@ -20,10 +31,9 @@ footer {
 		margin-left: 10px;
 	}
 }
+// Based on Bootstrap code rules
 .parmname {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-	font-size: 12px;
-	border-radius: 4px;
+	@include codeclass;
 	padding: 2px 4px;
 	color: #c7254e;
 	white-space: nowrap;
@@ -32,16 +42,18 @@ footer {
 .codeblock {
 	background-color: #EEE;
 }
-.filepath, .codeph {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-	font-size: 90%;
-	color: #777;
+// Reset Bootstrap’s <code> rules to defaults
+code {
+	background-color: transparent;
+	border-radius: 0; 
+	padding: 0; 
+}
+.filepath, .codeph, .option {
+	@include codeclass;
 }
 .cmdname {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-	font-size: 90%;
+	@include codeclass;
 	font-weight: bold;
-	color: #777;
 }
 .notetitle,
 .tiptitle,
@@ -57,3 +69,19 @@ footer {
 .othertitle {
 	font-weight: bold;
 }
+// Fixed w/ https://github.com/dita-ot/dita-ot/pull/2097, remove once all site content has been regenerated thereafter
+col {
+	display: none;
+}
+.lq {
+	font-size: 14px;
+	color: #777; 
+}
+
+// Add bottom margin to nested lists
+li.li ul.ul {
+	margin-bottom: 10px;
+}
+
+// Import partials for vocabulary domains
+@import 'xml-d';
