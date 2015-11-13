@@ -24,7 +24,8 @@ title: "Integrating a new transformation type"
           <dd class="dd">Declare the transformation type as a print type.</dd>
         
       </dl>
-      <p class="p">The <code class="ph codeph">&lt;transtype&gt;</code> element is used to define a new transformation type with the parameters that are supported.</p>
+      <p class="p">The <code class="ph codeph">&lt;transtype&gt;</code> element is used to define a new transformation type with the parameters
+        that are supported.</p>
     </section>
     <div class="example"><h2 class="title sectiontitle">Example</h2>
       
@@ -33,9 +34,21 @@ title: "Integrating a new transformation type"
         related Ant extension from the third feature:</p>
       <pre class="pre codeblock"><code>&lt;plugin id="com.example.newtext"&gt;
   <strong class="ph b">&lt;feature extension="dita.conductor.transtype.check" value="newtext"/&gt;</strong>
-  <strong class="ph b">&lt;transtype name="newtext"&gt;</strong>      
+  <strong class="ph b">&lt;transtype name="newtext"/&gt;</strong>
   &lt;feature extension="dita.transtype.print" value="newtext"/&gt;
   &lt;feature extension="dita.conductor.target.relative" file="antWrapper.xml"/&gt;
-&lt;/plugin&gt;</code></pre></div>
+&lt;/plugin&gt;</code></pre>
+      <p class="p">The following example shows how the <span class="ph filepath">org.dita.html5</span> plugin uses the
+          <code class="ph codeph">&lt;transtype&gt;</code> element to extend the common HTML transformation with a new
+          <span class="keyword option">html5</span> transformation type and define a new <span class="keyword parmname">nav-toc</span> parameter with three
+        possible values:</p>
+      <pre class="pre codeblock"><code><strong class="ph b">&lt;transtype name="html5" extends="common-html" desc="HTML5"&gt;</strong>
+  &lt;param name="nav-toc" type="enum" 
+         desc="Specifies whether to generate a navigation TOC in topic pages."&gt;
+    &lt;val default="true" desc="No TOC"&gt;none&lt;/val&gt;
+    &lt;val desc="Partial TOC that shows the current topic"&gt;partial&lt;/val&gt;
+    &lt;val desc="Full TOC"&gt;full&lt;/val&gt;
+  &lt;/param&gt;
+&lt;/transtype&gt;</code></pre></div>
   </div>
 <nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../dev_ref/plugin-configfile.html" title="The plugin.xml file controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and integrates those changes into the core code.">Plug-in configuration file</a></div></div></nav></main>

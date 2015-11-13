@@ -12,26 +12,26 @@ title: "Creating an Ant build script"
         <span class="ph cmd">Create an XML file that contains the following content:</span>
         <div class="itemgroup info">
           <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;project name="@project-name@" default="@default-target@" basedir="."&gt;
+&lt;project name="%project-name%" default="%default-target%" basedir="."&gt;
 
-  &lt;property name="dita.dir" location="@path-to-DITA-OT@"/&gt;
+  &lt;property name="dita.dir" location="%path-to-DITA-OT%"/&gt;
  
-  &lt;target name="@target-name@"&gt;
+  &lt;target name="%target-name%"&gt;
     &lt;ant antfile="${dita.dir}/build.xml"&gt;
-      &lt;property name="args.input" value="@DITA-input@"/&gt;
+      &lt;property name="args.input" value="%DITA-input%"/&gt;
       &lt;property name="transtype" value="html5"/&gt;
     &lt;/ant&gt;
   &lt;/target&gt;
 
 &lt;/project&gt;</code></pre>
         </div>
-        <div class="itemgroup info">You will replace the placeholder content (indicated by the @ signs) with content applicable to your
+        <div class="itemgroup info">You will replace the placeholder content (indicated by the % signs) with content applicable to your
           environment.</div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Specify project information:</span>
         <ol type="a" class="ol substeps">
-          <li class="li substep substepexpand">
-            <span class="ph cmd">Set the value of the @name attribute to X.</span>
+          <li class="li substep substepexpand"><strong>Optional: </strong>
+            <span class="ph cmd">Set the value of the @name attribute to the name of your project.</span>
           </li>
           <li class="li substep substepexpand">
             <span class="ph cmd">Set the value of the @default attribute to the name of a target in the build script.</span>
@@ -63,32 +63,33 @@ title: "Creating an Ant build script"
         file.<pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="Toolkit-documentation" default="all" basedir="."&gt;
     
-    &lt;property name="dita.dir" location="C:\dita-ot"/&gt;
-    
-    &lt;target name="all" description="build CHM and PDF" depends="chm,pdf"/&gt;
-    
-    &lt;target name="chm" description="build CHM"&gt;
-        &lt;ant antfile="${dita.dir}\build.xml"&gt;
-            &lt;property name="args.input" value="C:\dita-ot\src\main\doc\userguide.ditamap"/&gt;
-            &lt;property name="args.gen.task.lbl" value="YES"/&gt;   
-            &lt;property name="output.dir" value="C:\temp\out"/&gt;
-            &lt;property name="transtype" value="htmlhelp"/&gt;
-        &lt;/ant&gt;
-    &lt;/target&gt;
-    
-    &lt;target name="pdf" description="build PDF"&gt;
-        &lt;ant antfile="${dita.dir}\build.xml"&gt;
-            &lt;property name="args.input" value="C:\dita-ot\src\main\doc\userguide.ditamap"/&gt;
-            &lt;property name="args.gen.task.lbl" value="YES"/&gt;   
-            &lt;property name="args.rellinks" value="nofamily"/&gt;   
-            &lt;property name="output.dir" value="C:\temp\out"/&gt;
-            &lt;property name="transtype" value="pdf"/&gt;
-        &lt;/ant&gt;
-    &lt;/target&gt;
+  &lt;property name="dita.dir" location="C:\dita-ot"/&gt;
+  
+  &lt;target name="all" description="build CHM and PDF" depends="chm,pdf"/&gt;
+  
+  &lt;target name="chm" description="build CHM"&gt;
+    &lt;ant antfile="${dita.dir}\build.xml"&gt;
+      &lt;property name="args.input" value="C:\dita-ot\src\main\doc\userguide.ditamap"/&gt;
+      &lt;property name="args.gen.task.lbl" value="YES"/&gt;   
+      &lt;property name="output.dir" value="C:\temp\out"/&gt;
+      &lt;property name="transtype" value="htmlhelp"/&gt;
+    &lt;/ant&gt;
+  &lt;/target&gt;
+  
+  &lt;target name="pdf" description="build PDF"&gt;
+    &lt;ant antfile="${dita.dir}\build.xml"&gt;
+      &lt;property name="args.input" value="C:\dita-ot\src\main\doc\userguide.ditamap"/&gt;
+      &lt;property name="args.gen.task.lbl" value="YES"/&gt;   
+      &lt;property name="args.rellinks" value="nofamily"/&gt;   
+      &lt;property name="output.dir" value="C:\temp\out"/&gt;
+      &lt;property name="transtype" value="pdf"/&gt;
+    &lt;/ant&gt;
+  &lt;/target&gt;
     
 &lt;/project&gt;</code></pre></div>
       <div class="p">In addition to the mandatory parameters (<span class="keyword parmname">args.input</span> and <span class="keyword parmname">transtype</span>),
-        the chm and pdf targets each specify some optional parameters:<ul class="ul">
+        the chm and pdf targets each specify some optional parameters:
+        <ul class="ul">
           <li class="li">The <span class="keyword parmname">args.gen.task.lbl</span> property is set to YES, which ensures that headings are
             automatically generated for the sections of task topics.</li>
           <li class="li">The <span class="keyword parmname">output.dir</span> property specifies where the DITA-OT writes the output of the
