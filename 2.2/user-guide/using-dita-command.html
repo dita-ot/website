@@ -1,0 +1,62 @@
+---
+# Generated from DITA source
+layout: base
+title: "Building output using the dita command"
+---
+<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"></ul></div></nav><main class="col-md-9">
+  <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
+  
+  <div class="body taskbody"><p class="shortdesc">DITA-OT includes a <span class="keyword cmdname">dita</span> command-line tool. You can invoke the DITA-OT from the
+    command-line tool and generate output.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool, there is no graphic user interface.</section>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Open a terminal window by typing the following in the search bar:</span>
+        <div class="itemgroup info">
+          <ul class="ul">
+            <li class="li">On OS X and Linux, type <kbd class="ph userinput">Terminal</kbd>.</li>
+            <li class="li">On Windows, type <kbd class="ph userinput">Command Prompt</kbd>.</li>
+          </ul>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">At the command-line prompt, enter the following command:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code><var class="keyword varname">install-dir</var>/bin/dita -i <var class="keyword varname">input-file</var> -f <var class="keyword varname">format</var> -o <var class="keyword varname">output-dir</var></code></pre>
+          <pre class="pre codeblock"><code><var class="keyword varname">install-dir</var>/bin/dita -i <var class="keyword varname">input-file</var> -f <var class="keyword varname">format</var> -D<var class="keyword varname">parameter-name</var>=<var class="keyword varname">value</var> -o <var class="keyword varname">output-dir</var></code></pre>
+          <p class="p">where:</p>
+          <ul class="ul">
+            <li class="li"><var class="keyword varname">install-dir</var> is the DITA-OT installation directory path.</li>
+            <li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to process.</li>
+            <li class="li"><var class="keyword varname">format</var> is the output format (transformation type).</li>
+            <li class="li"><var class="keyword varname">output-dir</var> is the output directory path for generated output.</li>
+          </ul>
+          <ul class="ul">
+            <li class="li"><var class="keyword varname">install-dir</var> is the DITA-OT installation directory path.</li>
+            <li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to process.</li>
+            <li class="li"><var class="keyword varname">format</var> is the output format (transformation type).</li>
+            <li class="li"><var class="keyword varname">parameter-name</var> is the name of an optional parameter.</li>
+            <li class="li"><var class="keyword varname">value</var> is an applicable value for the optional parameter.</li>
+            <li class="li"><var class="keyword varname">output-dir</var> is the output directory path for generated output.</li>
+          </ul>
+        </div>
+        <div class="itemgroup stepresult">
+          <p class="p">If processing is successful, nothing is printed in the terminal window.</p>
+          <p class="p">If you do not specify an output directory, the <span class="keyword cmdname">dita</span> command writes output to the
+              <span class="ph filepath">out</span> subdirectory of the current directory.</p>
+          <div class="note tip note_tip" id="using-command-line-tool__d232e95"><span class="note__title tiptitle">Tip:</span> If you add the absolute path for the DITA-OT
+                <span class="ph filepath"><var class="keyword varname">install-dir</var>/bin</span> directory to the <var class="keyword varname">PATH</var>
+            environment variable, you can run the <span class="keyword cmdname">dita</span> command from any location on the file
+            system.</div>
+        </div>
+      </li></ol>
+    <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
+      <p class="p">The following command generates HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file and writes the
+        output to the <span class="ph filepath">test</span> directory:</p>
+      <pre class="pre codeblock"><code>dita -i samples/sequence.ditamap -f html5 -o test</code></pre>
+      <div class="p">If the <span class="keyword cmdname">dita</span> command is not on your <var class="keyword varname">PATH</var>, use the
+        following command:
+        <pre class="pre codeblock"><code><var class="keyword varname">install-dir</var>/bin/dita i samples/sequence.ditamap -f html5 -o test</code></pre>
+      </div>
+    </div>
+  </div>
+  <nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content, manage plug-ins, or print information about the command. Options can be used to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></div></div></nav>
+</main>
