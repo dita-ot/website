@@ -9,6 +9,6 @@ sass:
     sass_dir: css
 
 # MAJOR.MINOR
-release: "2.1"
+release: "2.2"
 # MAJOR.MINOR.BUG
-version: "2.1.2"
+version: "2.2.0"
