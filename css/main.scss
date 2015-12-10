@@ -56,7 +56,7 @@ code {
 .filepath, .codeph, .option {
 	@include codeclass;
 }
-.cmdname {
+.cmdname, .msgnum {
 	@include codeclass;
 	font-weight: bold;
 }
