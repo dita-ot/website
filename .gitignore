@@ -6,3 +6,6 @@
 DITA-OTProjectHome.html
 # As of 2.1.1+
 introduction.html
+
+# Spurious duplicate Release Notes index
+*/release-notes/index-1.html
