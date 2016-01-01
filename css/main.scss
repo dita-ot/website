@@ -18,19 +18,8 @@ footer {
 	padding: 10px 0;
 	border-top: 1px solid #e5e5e5;
 }
-.bs-docs-sidenav li {
-	> a {
-		padding: 3px 15px;
-	}
-	&.active > a {
-		color: #fff;
-		text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
-		background-color: #08c;
-	}
-	ul {
-		margin-left: 10px;
-	}
-}
+
+@import 'toc';
 
 .navbar-form {
 	padding: 0 
