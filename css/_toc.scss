@@ -1,0 +1,13 @@
+.bs-docs-sidenav li {
+	> a {
+		padding: 3px 15px;
+	}
+	&.active > a {
+		color: #fff;
+		text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+		background-color: #08c;
+	}
+	ul {
+		margin-left: 10px;
+	}
+}
