@@ -10,6 +10,9 @@
 // Import partials for vocabulary domains
 @import 'xml-d';
 
+// Import Bootstrap Note styling
+@import 'notes';
+
 // Bootstrap font-family for code, kbd, pre, samp 
 $code-fonts: Menlo, Monaco, Consolas, "Courier New", monospace;
 
