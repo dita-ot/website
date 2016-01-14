@@ -12,59 +12,7 @@
     <link href="{{ site.baseurl }}/css/main.css" rel="stylesheet" media="screen">
   </head>
   <body>
-    <header class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.name }}</a>
-        </div>
-        <nav class="collapse navbar-collapse bs-navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="{{ site.baseurl }}/download">Download</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="{{ site.baseurl }}/2.2/">Documentation <b class="caret"></b></a>
-              <ul class="dropdown-menu">                
-                <li><a href="{{ site.baseurl }}/dev/">Development</a></li>
-                <li class="divider"></li>
-                <li><a href="{{ site.baseurl }}/2.2/">2.2</a></li>
-                <li><a href="{{ site.baseurl }}/2.1/">2.1</a></li>
-                <li><a href="{{ site.baseurl }}/2.0/">2.0</a></li>
-                <li><a href="{{ site.baseurl }}/1.8/">1.8</a></li>
-                <li><a href="http://dita-ot.sourceforge.net/1.7/">1.7</a></li>
-                <li><a href="http://dita-ot.sourceforge.net/1.6/">1.6</a></li>
-                <li><a href="http://dita-ot.sourceforge.net/1.5.4/">1.5.4</a></li>
-                <li><a href="http://dita-ot.sourceforge.net/1.5.3/">1.5.3</a></li>
-                <li><a href="http://dita-ot.sourceforge.net/1.5.2/">1.5.2</a></li>
-              </ul>
-            </li>
-            <li><a href="{{ site.baseurl }}/get-involved">Get Involved</a></li>
-            <!-- 
-            <li><a title="DITA-OT Day 2015" href="http://www.oxygenxml.com/events/2015/dita-ot_day.html">DITA-OT Day</a></li>
-            -->
-          </ul>
-          <form action="https://duckduckgo.com/" class="navbar-form navbar-right" id="search" method="get" role="search">
-            <div class="form-group">
-              <input type="hidden" name="sites" value="dita-ot.org/dev"/>
-              <input type="hidden" name="ka" value="h"/>
-              <input type="hidden" name="k7" value="#fafafa"/>
-              <input type="hidden" name="kj" value="#3f3f3f"/>
-              <input type="hidden" name="ky" value="#fafafa"/>
-              <input type="hidden" name="kx" value="b"/>
-              <input type="hidden" name="kt" value="Helvetica"/>
-              <input type="hidden" name="kh" value="1"/>
-              <input type="text" name="q" class="form-control pull-right" maxlength="255" placeholder="Search latest docs…" style="background: #eee;"/>
-              <input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" />
-            </div>
-            <!-- <button type="submit" class="btn btn-default">Go!</button> -->
-          </form>
-        </nav>
-      </div>
-    </header>
+    {% include header.html %}
     <div id="content" class="container-fluid container">
       <div class="row">
         {{ content }}
