@@ -1,22 +1,49 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 2.2.1 Release Notes"
+title: "DITA Open Toolkit 2.2.2 Release Notes"
 ---
 <nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.2.1</span> Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.2.2</span> Release Notes</h1>
 
-  <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.2.1</span> is a maintenance release that includes fixes for
-    issues reported in DITA-OT <span class="keyword">2.2</span>, which includes new features and enhancements and provides
-    additional support for the upcoming DITA 1.3 specification.</p>
+  <div class="abstract">
+    <div class="shortdesc">DITA Open Toolkit <span class="keyword">2.2.2</span> is a maintenance release that includes fixes
+      for issues reported in DITA-OT <span class="keyword">2.2</span>, which includes new features and enhancements and
+      provides additional support for the OASIS DITA 1.3 specification.</div>
+    <p class="p">Issue numbers correspond to the tracking number in the <span class="ph">
+        <a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues tracker</a></span>.</p>
+  </div>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="v221">
-    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.2.1</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="v222">
+    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.2.2</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">2.2.1</span> includes the following bug fixes.</p>
-        <p class="p">Issue numbers correspond to the tracking number in the <span class="ph">
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues tracker</a></span>.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.2.2</span> includes the following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v222__2172"><em class="ph i">Windows:</em> The name of the JAR file for Apache Ant has been corrected to fix the
+              <code class="ph codeph">ANT_HOME is set incorrectly or ant could not be located</code> error that appeared when running
+            the bundled Ant version on Windows in DITA-OT 2.2.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2172" target="_blank">#2172</a>
+          </li>
+          <li class="li" id="v222__2181">Two unimplemented extension point declarations were removed from the html5 plugin pending
+            implementation in a future DITA-OT version (
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2181" target="_blank">#2181</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2184" target="_blank">#2184</a>):
+            <ul class="ul">
+              <li class="li"><code class="ph codeph">dita.conductor.html5.param</code></li>
+              <li class="li"><code class="ph codeph">dita.conductor.html5.toc.param</code></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v221">
+    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.2.1</h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release 2.2.1 included the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v221__2170">PDF: Several templates in the <span class="ph filepath">pr-domain.xsl</span> file used
               <code class="ph codeph">value-of</code> rather than <code class="ph codeph">apply-templates</code> to output the element contents.
@@ -39,8 +66,8 @@ title: "DITA Open Toolkit 2.2.1 Release Notes"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="requirements">
-    <h2 class="title topictitle2" id="ariaid-title3">Requirements</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="requirements">
+    <h2 class="title topictitle2" id="ariaid-title4">Requirements</h2>
     <div class="body refbody">
       <section class="section">
         
@@ -50,15 +77,15 @@ title: "DITA Open Toolkit 2.2.1 Release Notes"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="highlights">
-    <h2 class="title topictitle2" id="ariaid-title4">Release Highlights</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="highlights">
+    <h2 class="title topictitle2" id="ariaid-title5">Release Highlights</h2>
     <div class="body refbody">
       <section class="section"><h3 class="title sectiontitle">DITA 1.3 support</h3>
         
-        <p class="p"><span class="ph">DITA Open Toolkit <span class="keyword">2.2</span> provides preliminary processing support
-      for the upcoming OASIS DITA 1.3 specification. Initial preview support for this specification was added in version
-      2.0 of the toolkit; version 2.2 extends this foundation to support key scopes and branch filtering along with
-      additional DITA 1.3 features.</span></p>
+        <p class="p"><span class="ph">DITA Open Toolkit <span class="keyword">2.2</span> provides processing support for the
+      OASIS DITA 1.3 specification. Initial preview support for this specification was added in version 2.0 of the
+      toolkit; version 2.2 extends this foundation to support key scopes and branch filtering along with additional DITA
+      1.3 features.</span></p>
         <p class="p">Because DITA 1.3 is fully backwards compatible with previous DITA DTDs and schemas, DITA-OT 2.2 provides
       the proposed 1.3 materials as the default DTDs for processing. The XML Catalog resolution maps any references for
       unversioned DITA doctypes to the 1.3 DTDs. All processing ordinarily dependent on the 1.0, 1.1, or 1.2 definitions
@@ -66,11 +93,9 @@ title: "DITA Open Toolkit 2.2.1 Release Notes"
       supported with specific new processing.</p>
         <div class="p">DITA Open Toolkit Release <span class="keyword">2.2</span> extends DITA 1.3 support with the following
           enhancements:
+          <div class="note important note_important" id="highlights__2094"><span class="note__title importanttitle">Important:</span> The proposed DITA 1.3 grammars are now used as the default DTDs for processing
+        <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2094" target="_blank">#2094</a></div>
           <ul class="ul">
-            <li class="li" id="highlights__2094">
-          <div class="note important note_important"><span class="note__title importanttitle">Important:</span> The proposed DITA 1.3 grammars are now used as the default DTDs for processing
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2094" target="_blank">#2094</a></div>
-        </li>
             <li class="li" id="highlights__1969">Initial implementation of DITA 1.3 branch filtering
               <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/1969" target="_blank">#1969</a>,
               <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1637" target="_blank">#1637</a>
@@ -139,15 +164,14 @@ title: "DITA Open Toolkit 2.2.1 Release Notes"
         </div>
       </section>
     </div>
-    <nav role="navigation" class="related-links"><div class="linklist linklist relinfo relconcepts"><strong>Related concepts</strong><br><div><a class="link" href="../user-guide/DITA_v1-3-support.html" title="DITA Open Toolkit 2.2 provides preliminary processing support for the upcoming OASIS DITA 1.3 specification. Initial preview support for this specification was added in version 2.0 of the toolkit; version 2.2 extends this foundation to support key scopes and branch filtering along with additional DITA 1.3 features.">DITA 1.3 support</a></div></div><div class="linklist linklist relinfo"><strong>Related information</strong><br><div><a class="link" href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part3-all-inclusive.html" target="_blank">DITA 1.3 specification</a></div></div></nav>
+    <nav role="navigation" class="related-links"><div class="linklist linklist relinfo relconcepts"><strong>Related concepts</strong><br><div><a class="link" href="../user-guide/DITA_v1-3-support.html" title="DITA Open Toolkit 2.2 provides processing support for the OASIS DITA 1.3 specification. Initial preview support for this specification was added in version 2.0 of the toolkit; version 2.2 extends this foundation to support key scopes and branch filtering along with additional DITA 1.3 features.">DITA 1.3 support</a></div></div><div class="linklist linklist relinfo"><strong>Related information</strong><br><div><a class="link" href="http://docs.oasis-open.org/dita/dita/v1.3/os/part3-all-inclusive/dita-v1.3-os-part3-all-inclusive.html" target="_blank">DITA 1.3 specification</a></div></div></nav>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="issues">
-    <h2 class="title topictitle2" id="ariaid-title5">Resolved issues</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="issues">
+    <h2 class="title topictitle2" id="ariaid-title6">Resolved issues</h2>
     
     <div class="body refbody"><p class="shortdesc">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">2.2</span>
-      includes the following changes. Issue numbers correspond to the tracking number in the <span class="ph">
-        <a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues tracker</a></span>.</p>
+      includes the following changes.</p>
       <section class="section" id="issues__features"><h3 class="title sectiontitle">Features</h3>
         
         <p class="p">DITA Open Toolkit Release <span class="keyword">2.2</span> includes the following new features:</p>
