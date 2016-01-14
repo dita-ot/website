@@ -88,3 +88,6 @@ li.li ul.ul {
 	margin-bottom: 10px;
 }
 
+.simpletable {
+	@extend .table;
+}
