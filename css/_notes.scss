@@ -1,0 +1,55 @@
+// Style DITA note elements w/ Bootstrap components
+
+// Copy `.alert` rule from `_alerts.scss`
+div.note, div.important, div.attention {
+  padding: $alert-padding;
+  margin-bottom: $line-height-computed;
+  border: 1px solid transparent;
+  border-radius: $alert-border-radius;
+
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
+    // Specified for the h4 to prevent conflicts of changing $headings-color
+    color: inherit;
+  }
+
+  // Provide class for links that match alerts
+  .alert-link {
+    font-weight: $alert-link-font-weight;
+  }
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+
+  > p + p {
+    margin-top: 5px;
+  }
+}
+
+// Import alert settings for note variants
+
+// Important = alert alert-warning
+// Tip = alert alert-success
+.note.tip {
+  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+}
+
+// Note = alert alert-info
+.note {
+  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+}
+
+// Important = alert alert-warning
+.important {
+  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+}
+
+// Caution, Warning = alert alert-danger
+.caution, .warning {
+  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+}
+
