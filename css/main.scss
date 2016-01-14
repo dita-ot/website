@@ -1,6 +1,18 @@
 ---
 ---
 
+// Import DITA-OT custom subset of Bootstrap modules
+@import 'bootstrap-custom';
+
+// Import navigation
+@import 'toc';
+
+// Import partials for vocabulary domains
+@import 'xml-d';
+
+// Import Bootstrap Note styling
+@import 'notes';
+
 // Bootstrap font-family for code, kbd, pre, samp 
 $code-fonts: Menlo, Monaco, Consolas, "Courier New", monospace;
 
@@ -18,8 +30,6 @@ footer {
 	padding: 10px 0;
 	border-top: 1px solid #e5e5e5;
 }
-
-@import 'toc';
 
 .navbar-form {
 	padding: 0 
@@ -78,5 +88,3 @@ li.li ul.ul {
 	margin-bottom: 10px;
 }
 
-// Import partials for vocabulary domains
-@import 'xml-d';
