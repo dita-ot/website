@@ -5,6 +5,10 @@ div.note, div.important, div.attention {
   @extend .alert;
 }
 
+div.note a, div.important a, div.attention a {
+  @extend .alert-link;
+}
+
 // Import alert settings for note variants
 
 // Important = alert alert-warning
