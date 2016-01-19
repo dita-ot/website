@@ -3,10 +3,9 @@
 // Apply `.alert` rule from `_alerts.scss`
 div.note, div.important, div.attention {
   @extend .alert;
-}
-
-div.note a, div.important a, div.attention a {
-  @extend .alert-link;
+  a {
+    @extend .alert-link;  
+  }
 }
 
 // Import alert settings for note variants
