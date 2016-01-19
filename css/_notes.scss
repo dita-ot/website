@@ -3,6 +3,7 @@
 // Apply `.alert` rule from `_alerts.scss`
 div.note, div.important, div.attention {
   @extend .alert;
+  margin: 1em;
   a {
     @extend .alert-link;  
   }
