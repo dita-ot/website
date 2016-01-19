@@ -60,20 +60,7 @@ code {
 	@include codeclass;
 	font-weight: bold;
 }
-.notetitle,
-.tiptitle,
-.fastpathtitle,
-.restrictiontitle,
-.importanttitle,
-.remembertitle,
-.attentiontitle,
-.cautiontitle,
-.noticetitle,
-.dangertitle,
-.warningtitle,
-.othertitle {
-	font-weight: bold;
-}
+
 // Fixed w/ https://github.com/dita-ot/dita-ot/pull/2097, remove once all site content has been regenerated thereafter
 col {
 	display: none;
