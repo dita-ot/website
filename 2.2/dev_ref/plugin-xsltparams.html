@@ -10,9 +10,9 @@ title: "Passing parameters to existing XSLT steps"
     usually to have those parameters available as global <code class="ph codeph">&lt;xsl:param&gt;</code> values within XSLT
     overrides.</p>
     <section class="section">
-      <div class="p">To create new parameters, create a file <span class="ph filepath">insertParameters.xml</span> which contains one or more
-        Ant <code class="ph codeph">&lt;param&gt;</code> elements. It also needs a &lt;dummy&gt; wrapper element around the parameters. For
-        example, the following parameter will be passed in to the XSLT file with a value of
+      <div class="p">To create new parameters, create a file named <span class="ph filepath">insertParameters.xml</span>, which contains one or
+        more Ant <code class="ph codeph">&lt;param&gt;</code> elements. It also needs a <code class="ph codeph">&lt;dummy&gt;</code> wrapper element
+        around the parameters. For example, the following parameter will be passed in to the XSLT file with a value of
           <code class="ph codeph">${antProperty}</code>, but only if that parameter is
         defined:<pre class="pre codeblock"><code>&lt;dummy&gt;
   &lt;!-- Any Ant code allowed in xslt task is possible. Common example: --&gt;
@@ -59,10 +59,11 @@ title: "Passing parameters to existing XSLT steps"
       </dl>
     </section>
     <div class="example"><h2 class="title sectiontitle">Example</h2>
-      <p class="p">The following plug-in will pass the parameters defined inside of
-          <span class="ph filepath">insertParameter.xml</span> as input to the XHTML process. Generally, an additional XSLT override
-        will make use of the parameter to do something new with the generated
-      content.</p><pre class="pre codeblock"><code>&lt;plugin id="com.example.newparam"&gt;
+      
+      <p class="p">The following plug-in will pass the parameters defined in the <span class="ph filepath">insertParameters.xml</span> file as
+        input to the XHTML process. Generally, an additional XSLT override will make use of the parameter to do
+        something new with the generated content.</p>
+      <pre class="pre codeblock"><code>&lt;plugin id="com.example.newparam"&gt;
   &lt;feature extension="dita.conductor.xhtml.param" file="insertParameters.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
     </div>
