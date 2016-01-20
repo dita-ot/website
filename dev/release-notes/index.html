@@ -20,20 +20,28 @@ title: "DITA Open Toolkit 2.2.2 Release Notes"
       <section class="section">
         <p class="p">DITA Open Toolkit Release <span class="keyword">2.2.2</span> includes the following bug fixes.</p>
         <ul class="ul">
+          <li class="li" id="v222__2023">PDF: In earlier DITA-OT 2.x releases, short description content was not rendered when publishing
+            from a bookmap with the <span class="keyword parmname">args.chapter.layout</span> parameter set to <span class="keyword option">BASIC</span>.
+            Short descriptions are now rendered properly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2023" target="_blank">#2023</a>
+          </li>
           <li class="li" id="v222__2172"><em class="ph i">Windows:</em> The name of the JAR file for Apache Ant has been corrected to fix the
               <code class="ph codeph">ANT_HOME is set incorrectly or ant could not be located</code> error that appeared when running
             the bundled Ant version on Windows in DITA-OT 2.2.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2172" target="_blank">#2172</a>
           </li>
-          <li class="li" id="v222__2181">Two unimplemented extension point declarations were removed from the html5 plugin pending
-            implementation in a future DITA-OT version (
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2181" target="_blank">#2181</a>,
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2184" target="_blank">#2184</a>):
-            <ul class="ul">
-              <li class="li"><code class="ph codeph">dita.conductor.html5.param</code></li>
-              <li class="li"><code class="ph codeph">dita.conductor.html5.toc.param</code></li>
-            </ul>
+          <li class="li" id="v222__2180">The order in which plugins are integrated has been revised to ensure that the base DITA-OT
+            plugins always come first. This allows custom plugins to override base targets as necessary.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2180" target="_blank">#2180</a>
           </li>
+          
+          <li class="li" id="v222__2192">Content references with relative paths were not properly resolved to the target document in some
+            cases. The conref base URI resolution mechanism was fixed to ensure that relative references are now
+            resolved correctly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2192" target="_blank">#2192</a>
+          </li>
+          <li class="li">The documentation has been updated with links to the final
+            <a class="xref" href="http://docs.oasis-open.org/dita/dita/v1.3/os/part3-all-inclusive/dita-v1.3-os-part3-all-inclusive.html" target="_blank">DITA 1.3 specification</a>.</li>
         </ul>
       </section>
     </div>
@@ -87,13 +95,12 @@ title: "DITA Open Toolkit 2.2.2 Release Notes"
       toolkit; version 2.2 extends this foundation to support key scopes and branch filtering along with additional DITA
       1.3 features.</span></p>
         <p class="p">Because DITA 1.3 is fully backwards compatible with previous DITA DTDs and schemas, DITA-OT 2.2 provides
-      the proposed 1.3 materials as the default DTDs for processing. The XML Catalog resolution maps any references for
+      the 1.3 materials as the default DTDs for processing. The XML Catalog resolution maps any references for
       unversioned DITA doctypes to the 1.3 DTDs. All processing ordinarily dependent on the 1.0, 1.1, or 1.2 definitions
       continues to work as usual, and any documents that make use of the newer DITA 1.3 elements or attributes will be
       supported with specific new processing.</p>
         <div class="p">DITA Open Toolkit Release <span class="keyword">2.2</span> extends DITA 1.3 support with the following
-          enhancements:
-          <div class="note important note_important" id="highlights__2094"><span class="note__title importanttitle">Important:</span> The proposed DITA 1.3 grammars are now used as the default DTDs for processing
+          enhancements: <div class="note important note_important" id="highlights__2094"><span class="note__title importanttitle">Important:</span> The DITA 1.3 grammars are now used as the default DTDs for processing
         <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2094" target="_blank">#2094</a></div>
           <ul class="ul">
             <li class="li" id="highlights__1969">Initial implementation of DITA 1.3 branch filtering

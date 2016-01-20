@@ -13,7 +13,7 @@ title: "Conref (conref)"
         locations. This ensures that the values of the @id attribute within the referencing topic remain unique.</p>
       <div class="p">If an element is pulled into a new context along with a cross reference that references the target, both the
         values of the @id and @xref attributes are updated so that they remain valid in the new location. For example, a
-        referenced topic might include a section as in the following example: <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Referenced topic that contains a section and cross reference</figcaption>
+        referenced topic might include a section as in the following example: <figure class="fig fignone"><span class="figcap">Figure 1. Referenced topic that contains a section and cross reference</span>
           
           <pre class="pre codeblock"><code>&lt;topic id="referenced_topic"&gt;
   &lt;title&gt;...&lt;/title&gt;
@@ -30,7 +30,7 @@ title: "Conref (conref)"
       <div class="p">When the section is referenced using a @conref attribute, the value of the @id attribute on the &lt;fig&gt;
         element is modified to ensure that it remains unique in the new context. At the same time, the &lt;xref&gt; element
         is also modified so that it remains valid as a local reference. For example, if the referencing topic has an @id
-        set to "new_topic", then the conrefed &lt;section&gt; element may look like this in the intermediate document.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Resolved conrefed &lt;section&gt; element after the conref step</figcaption>
+        set to "new_topic", then the conrefed &lt;section&gt; element may look like this in the intermediate document.<figure class="fig fignone"><span class="figcap">Figure 2. Resolved conrefed &lt;section&gt; element after the conref step</span>
           
           <pre class="pre codeblock"><code>&lt;section id="sect"&gt;&lt;title&gt;Sample section&lt;/title&gt;
     &lt;p&gt;Figure &lt;xref href="#new_topic/d1e25"/&gt; contains an code sample that demonstrates ... .&lt;/p&gt;

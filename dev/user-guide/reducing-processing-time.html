@@ -4,6 +4,7 @@ layout: base
 title: "Reducing processing time"
 ---
 <nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a><ul class="nav nav-list"><li><a href="../user-guide/overview-of-dita-ot.html">DITA Open Toolkit Overview</a></li><li><a href="../user-guide/installing.html">Installing the DITA-OT</a></li><li><a href="../user-guide/transforming-dita-content.html">Publishing DITA content</a></li><li><a href="../user-guide/AvailableTransforms.html">Output formats</a></li><li><a href="../user-guide/extending-the-dita-ot.html">Extending the DITA-OT</a></li><li><a href="../user-guide/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../user-guide/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li><a href="../user-guide/DITA-messages.html">DITA-OT error messages</a></li><li><a href="../user-guide/other-errors.html">Other error messages</a></li><li><a href="../user-guide/log-files.html">Log files</a></li><li><a href="../user-guide/dita-command-help.html">Accessing help for the dita command</a></li><li><a href="../user-guide/determining-version-of-ditaot.html">Checking the DITA-OT version</a></li><li><a href="../user-guide/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../user-guide/increasing-the-jvm.html">Increasing Java memory allocation</a></li><li class="active"><a href="../user-guide/reducing-processing-time.html">Reducing processing time</a></li></ul></li></ul></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9">
+   
    <h1 class="title topictitle1" id="ariaid-title1">Reducing processing time</h1>
    
 
@@ -17,15 +18,20 @@ title: "Reducing processing time"
             reduce the size of the temporary files. As a result, XML parsing will take less time and overall processing
             time will be reduced.</p>
       </section>
+      <section class="section"><h2 class="title sectiontitle">Switch the order of conref and keyref processing</h2>
+         
+         <p class="p">If your DITA source uses a lot of conrefs that in turn contain a lot of keyrefs, it may speed up processing
+            if you reverse the order of the two in preprocessing. You simply need to have a copy of the
+               <code class="ph codeph">preprocess</code> Ant target in your plug-in and change the order there. The DITA specification
+            is a good example of this, as the processing time is reduced to less than half of the original time.</p>
+         <div class="note note note_note"><span class="note__title notetitle" othertype="Update">:</span> Since DITA-OT 2.0, this is the default processing order.</div>
+      </section>
       <section class="section"><h2 class="title sectiontitle">Use a fast disk for the temporary directory</h2>
          
          <p class="p">DITA-OT keeps topic and map files as separate files and processes each file multiple times during
             preprocessing. Thus reading from disk, parsing XML, serializing XML, and writing to disk makes processing
-            quite IO intensive. Use either an
-            <a class="xref" href="http://en.wikipedia.org/wiki/Solid-state_drive" target="_blank">SSD</a> or a
-            <a class="xref" href="http://en.wikipedia.org/wiki/RAM_drive" target="_blank">RAM disk</a> for
-            temporary files, and never use a temporary directory that is not located on the same machine as where the
-            processing takes place.</p>
+            quite IO intensive. Use either an <a class="xref" href="http://en.wikipedia.org/wiki/Solid-state_drive" target="_blank">SSD</a> or a <a class="xref" href="http://en.wikipedia.org/wiki/RAM_drive" target="_blank">RAM disk</a> for temporary files, and never use a temporary directory
+            that is not located on the same machine as where the processing takes place.</p>
       </section>
       <section class="section"><h2 class="title sectiontitle">Reuse the JVM instance</h2>
          

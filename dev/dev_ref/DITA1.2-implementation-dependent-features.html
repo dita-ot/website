@@ -19,7 +19,7 @@ title: "Implementation dependent features"
         <li class="li">to-navigation.</li>
       </ul>
       <p class="p">When no chunk attribute values are given, no chunking is performed.</p>
-      <div class="note note note_note"><span class="note__title notetitle">Note:</span> For HTML-based transformation types, this is effectively equivalent to select-document and by-document
+      <div class="note note note_note"><span class="note__title notetitle">Note:</span> In effect, for HTML based transformation types this is equivalent to select-document and by-document
         defaults.</div>
       <p class="p">Error recovery:</p>
       <ul class="ul">
@@ -34,7 +34,7 @@ title: "Implementation dependent features"
         <li class="li">When there are multiple <code class="ph codeph">revprop</code> elements with the same val attribute, no error or warning
           is thrown</li>
         <li class="li">When multiple prop elements define a duplicate attribute and value combination, attribute default, or
-          fall-back behavior, the <span class="keyword msgnum">DOTJ007E</span> error is thrown.</li>
+          fall-back behaviour, <span class="keyword msgnum">DOTJ007E</span> error is thrown.</li>
       </ul>
     </section>
     <section class="section" id="implementation-dependent-features__section_kjq_egs_qc"><h2 class="title sectiontitle">Debug attributes</h2>
@@ -54,33 +54,25 @@ title: "Implementation dependent features"
     </section>
     <section class="section" id="implementation-dependent-features__section_dco_qgs_qc"><h2 class="title sectiontitle">Image scaling</h2>
       
-      <p class="p">If both height and width attributes are given, the image is scaled non-uniformly.</p>
-      <p class="p">If the scale attribute is not an unsigned integer, no error or warning is thrown during preprocessing.</p>
+      <p class="p">If both height and width attributes are given, image is scaled non-uniformly.</p>
+      <p class="p">If scale attribute is not an unsigned integer, no error or warning is thrown during preprocessing.</p>
     </section>
     <section class="section"><h2 class="title sectiontitle">Map processing</h2>
       
       <p class="p">When a <code class="ph codeph">topicref</code> element that references a map contains child <code class="ph codeph">topicref</code>
-        elements, the <span class="keyword msgnum">DOTX068W</span> error is thrown and the child <code class="ph codeph">topicref</code> elements are
+        elements, <span class="keyword msgnum">DOTX068W</span> error is thrown and the child <code class="ph codeph">topicref</code> elements are
         ignored. </p>
     </section>
     <section class="section" id="implementation-dependent-features__section_h3h_jsx_1h"><h2 class="title sectiontitle">Link processing</h2>
       
-      <p class="p">When the value of <code class="ph codeph">href</code> attribute is not a valid URI reference, the <span class="keyword msgnum">DOTJ054E</span>
-        error is thrown. Depending on the
-        <a class="xref" href="../parameters/parameters-base.html#base__processing-mode">processing-mode</a> setting, error
-        recovery may be attempted.</p>
+      <p class="p">When the value of <code class="ph codeph">href</code> attribute is not a valid URI reference, <span class="keyword msgnum">DOTJ054E</span> error
+        is thrown. Depending on <a class="xref" href="../parameters/parameters-base.html#base__processing-mode">error recover
+          mode</a>, error recover may be attempted.</p>
     </section>
     <section class="section"><h2 class="title sectiontitle">Copy-to processing</h2>
       
       <p class="p">When the <code class="ph codeph">copy-to</code> attribute is specified on a <code class="ph codeph">topicref</code>, the content of the
           <code class="ph codeph">shortdesc</code> element is not used to override the short description of the topic.</p>
-    </section>
-    <section class="section"><h2 class="title sectiontitle">Coderef processing</h2>
-      
-      <p class="p">When <code class="ph codeph">coderef</code> elements are used within codeblocks to reference external files with literal code
-        samples, the system default character set is used as the target file encoding unless a different character set
-        is explicitly defined via the mechanisms described under
-        <a class="xref" href="extended-functionality.html#code-reference__coderef-charset">Character set definition</a>.</p>
     </section>
   </div>
 </main>
