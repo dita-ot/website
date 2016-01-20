@@ -3,10 +3,10 @@
 // Apply `.alert` rule from `_alerts.scss`
 div.note, div.important, div.attention {
   @extend .alert;
-}
-
-div.note a, div.important a, div.attention a {
-  @extend .alert-link;
+  margin: 1em;
+  a {
+    @extend .alert-link;  
+  }
 }
 
 // Import alert settings for note variants
@@ -32,3 +32,18 @@ div.note a, div.important a, div.attention a {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
 
+// Title styles
+.notetitle,
+.tiptitle,
+.fastpathtitle,
+.restrictiontitle,
+.importanttitle,
+.remembertitle,
+.attentiontitle,
+.cautiontitle,
+.noticetitle,
+.dangertitle,
+.warningtitle,
+.othertitle {
+  font-weight: bold;
+}

@@ -4,24 +4,11 @@
 // Import DITA-OT custom subset of Bootstrap modules
 @import 'bootstrap-custom';
 
-// Import navigation
-@import 'toc';
-
-// Import partials for vocabulary domains
-@import 'xml-d';
-
-// Import Bootstrap Note styling
+// Override Bootstrap & user agent defaults 
+@import 'code';
 @import 'notes';
-
-// Bootstrap font-family for code, kbd, pre, samp 
-$code-fonts: Menlo, Monaco, Consolas, "Courier New", monospace;
-
-// Common code rules (imported to other classes)
-@mixin codeclass {
-	font-family: $code-fonts;
-	font-size: 90%;
-	color: #777;
-}
+@import 'toc';
+@import 'xml-d';
 
 footer {
 	text-align: center;
@@ -35,45 +22,6 @@ footer {
 	padding: 0 
 }
 
-// Based on Bootstrap code rules
-.parmname {
-	@include codeclass;
-	padding: 2px 4px;
-    color: #777;
-	white-space: nowrap;
-	background-color: #F5F5F5;
-}
-.codeblock {
-	background-color: #EEE;
-}
-// Reset Bootstrap’s <code> rules to defaults
-code {
-	background-color: transparent;
-	border-radius: 0; 
-    color: #777;
-	padding: 0; 
-}
-.filepath, .codeph, .option {
-	@include codeclass;
-}
-.cmdname, .msgnum {
-	@include codeclass;
-	font-weight: bold;
-}
-.notetitle,
-.tiptitle,
-.fastpathtitle,
-.restrictiontitle,
-.importanttitle,
-.remembertitle,
-.attentiontitle,
-.cautiontitle,
-.noticetitle,
-.dangertitle,
-.warningtitle,
-.othertitle {
-	font-weight: bold;
-}
 // Fixed w/ https://github.com/dita-ot/dita-ot/pull/2097, remove once all site content has been regenerated thereafter
 col {
 	display: none;
