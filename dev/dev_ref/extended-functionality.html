@@ -8,25 +8,24 @@ title: "Extended functionality"
   <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="code-reference">
     <h2 class="title topictitle2" id="ariaid-title2">Code reference processing</h2>
     <div class="body refbody">
-      <section class="section" id="code-reference__coderef-charset"><h3 class="title sectiontitle">Character set definition</h3>
+      <section class="section"><h3 class="title sectiontitle">Charset definition</h3>
         
         <p class="p">DITA-OT supports defining the code reference target file encoding using the <code class="ph codeph">format</code>
           attribute. The supported format is:</p>
         <pre class="pre codeblock"><code>format (";" space* "charset=" charset)?</code></pre>
-        <p class="p">If a character set is not defined, the system default character set will be used. If the character set is not
-          recognized or supported, the <span class="keyword msgnum">DOTJ052E</span> error is thrown and the system default character set is
-          used as a fall-back.</p>
+        <p class="p">If charset is not defined system default charset will be used. If charset is not recognized or supported,
+            <span class="keyword">DOTJ052E</span> error is thrown and system default charset is used as a fall-back.</p>
       </section>
       <div class="example">
         <pre class="pre codeblock"><code>&lt;coderef href="unicode.txt" format="txt; charset=UTF-8"/&gt;</code></pre>
       </div>
       <section class="section"><h3 class="title sectiontitle">Line range extraction</h3>
         
-        <p class="p">Code references can be limited to extract only a specified line range by defining the
-            <code class="ph codeph">line-range</code> pointer in the URI fragment. The format is:</p>
+        <p class="p">Code reference can extract only a given line ranges with <code class="ph codeph">line-range</code> pointer in the URI
+          fragment. The format is:</p>
         <pre class="pre codeblock"><code>uri ("#line-range(" start ("," end)? ")" )?</code></pre>
-        <p class="p">Start and end line numbers start from 1 and are inclusive. If the end range is omitted, the range ends on the
-          last line of the file.</p>
+        <p class="p">Start and end line numbers start from 1 and are inclusive. If end range is omitted, range ends in last line
+          of the file.</p>
       </section>
       <div class="example">
         <pre class="pre codeblock"><code>&lt;coderef href="Parser.scala#line-range(5, 10)" format="scala"/&gt;</code></pre>
@@ -37,8 +36,8 @@ title: "Extended functionality"
         <p class="p">DITA-OT implements line position and range from <a class="xref" href="http://tools.ietf.org/html/rfc5147" target="_blank">RFC 5147</a>. The format for line range is:</p>
         <pre class="pre codeblock"><code>uri ("#line=" start? "," end? )?</code></pre>
         <p class="p">Start and end line numbers start from 0 and are inclusive and exclusive, respectively. If the start range is
-          omitted, the range starts from the first line; if the end range is omitted, the range ends on the last line of
-          the file. The format for line position is:</p>
+          omitted, range starts from the first line; if end range is omitted, range ends in last line of the file. The
+          format for line position is:</p>
         <pre class="pre codeblock"><code>uri ("#line=" position )?</code></pre>
         <p class="p">Position line number starts from 0.</p>
       </section>
