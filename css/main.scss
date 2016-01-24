@@ -39,4 +39,5 @@ div.shortdesc {
 
 .simpletable {
 	@extend .table;
+	@extend .table-condensed;
 }
