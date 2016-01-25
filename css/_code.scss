@@ -1,41 +1,41 @@
 // Sass partial to override Bootstrap & user agent defaults for code styles
 
-// Bootstrap font-family for code, kbd, pre, samp 
-$code-fonts: Menlo, Monaco, Consolas, "Courier New", monospace;
-
 // Common code rules (imported to other classes)
 @mixin codeclass {
-	font-family: $code-fonts;
-	font-size: 90%;
-	color: #777;
+  font-family: $font-family-monospace;
+  font-size: 90%;
+  color: $gray-light;
 }
 
 // Based on Bootstrap code rules
 .parmname {
-	@include codeclass;
-	padding: 2px 4px;
-    color: #777;
-	white-space: nowrap;
-	background-color: #F5F5F5;
+  @include codeclass;
+  background-color: $pre-bg;
+  color: $gray-light;
+  padding: 2px 4px;
+  white-space: nowrap;
 }
 
 .codeblock {
-	background-color: #EEE;
+  background-color: $pre-bg;
 }
 
 // Reset Bootstrap’s <code> rules to defaults
 code {
-	background-color: transparent;
-	border-radius: 0; 
-    color: #777;
-	padding: 0; 
+  background-color: transparent;
+  border-radius: 0;
+  color: $gray-light;
+  padding: 0;
 }
 
-.filepath, .codeph, .option {
-	@include codeclass;
+.codeph,
+.filepath,
+.option {
+  @include codeclass;
 }
 
-.cmdname, .msgnum {
-	@include codeclass;
-	font-weight: bold;
+.cmdname,
+.msgnum {
+  @include codeclass;
+  font-weight: bold;
 }
