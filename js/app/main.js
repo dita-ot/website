@@ -1,0 +1,1 @@
+'use strict';define(['TocController'],function(TocController){TocController()});

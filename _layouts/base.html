@@ -9,7 +9,10 @@
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link href="{{ site.baseurl }}/css/main.css" rel="stylesheet" media="screen">
+    <link href="{{ site.baseurl }}/css/main.css" rel="stylesheet">
+    {% if page.index %}
+    <link href="{{ page.index }}" rel="index">
+    {% endif %}
   </head>
   <body>
     {% include header.html %}
@@ -19,8 +22,10 @@
       </div>
     </div>
     {% include footer.html %}
-    <script src="//code.jquery.com/jquery.min.js"></script>
-    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.17.0/URI.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js" type="text/javascript" data-main="{{ site.baseurl }}/js/app"></script>
+    <script src="{{ site.baseurl }}/js/bootstrap.min.js" type="text/javascript"></script>
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-37132449-1']);

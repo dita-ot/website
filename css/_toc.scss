@@ -11,3 +11,64 @@
 		margin-left: 10px;
 	}
 }
+
+@mixin controller($symbol) {
+  content: $symbol;
+  font-size: 0.5em;
+  opacity: 0.5;
+}
+
+nav[role=toc] {
+  > div {
+    padding-right: 0px;
+  }
+  .controller {
+    display: inline-block;
+    position: absolute;
+    left: -0.8em;
+    padding-left: 0px;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+  }
+
+  ul {
+    margin-left: 10px;
+    padding-left: 0px;
+  }
+
+  li {
+    display: block;
+    position: relative;
+    margin-left: 2px;
+
+    > a {
+      display: block;
+      padding: 3px 0px 3px 20px;
+      margin: 0px 0px 0px -20px;
+    }
+    &.active {
+      > a {
+        color: white;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+        background-color: #08c;
+      }
+      > .controller:before {
+        color: white;
+      }
+    }
+    &.expanded {
+      > .controller:before {
+        @include controller("\25BC");
+      }
+    }
+    &.collapsed {
+      > .controller:before {
+        @include controller("\25B6");
+      }
+      > ul {
+        display: none;
+      }
+    }
+  }
+}
