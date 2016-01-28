@@ -2,8 +2,9 @@
 # Generated from DITA source
 layout: base
 title: "Building output using the dita command"
+index: "../toc.html"
 ---
-<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"></ul></div></nav><main class="col-md-9">
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
   
   <div class="body taskbody"><p class="shortdesc">DITA-OT includes a <span class="keyword cmdname">dita</span> command-line tool. You can invoke the DITA-OT from the
@@ -42,7 +43,7 @@ title: "Building output using the dita command"
           <p class="p">If processing is successful, nothing is printed in the terminal window.</p>
           <p class="p">If you do not specify an output directory, the <span class="keyword cmdname">dita</span> command writes output to the
               <span class="ph filepath">out</span> subdirectory of the current directory.</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d234e95"><span class="note__title tiptitle">Tip:</span> If you add the absolute path for the DITA-OT
+          <div class="note tip note_tip" id="using-command-line-tool__d17e95"><span class="note__title tiptitle">Tip:</span> If you add the absolute path for the DITA-OT
                 <span class="ph filepath"><var class="keyword varname">install-dir</var>/bin</span> directory to the <var class="keyword varname">PATH</var>
             environment variable, you can run the <span class="keyword cmdname">dita</span> command from any location on the file
             system.</div>
@@ -51,10 +52,10 @@ title: "Building output using the dita command"
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">The following command generates HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file and writes the
         output to the <span class="ph filepath">test</span> directory:</p>
-      <pre class="pre codeblock"><code>dita -i samples/sequence.ditamap -f html5 -o test</code></pre>
+      <pre class="pre codeblock"><code>dita -i docsrc/samples/sequence.ditamap -f html5 -o test</code></pre>
       <div class="p">If the <span class="keyword cmdname">dita</span> command is not on your <var class="keyword varname">PATH</var>, use the
         following command:
-        <pre class="pre codeblock"><code><var class="keyword varname">install-dir</var>/bin/dita i samples/sequence.ditamap -f html5 -o test</code></pre>
+        <pre class="pre codeblock"><code><var class="keyword varname">install-dir</var>/bin/dita i docsrc/samples/sequence.ditamap -f html5 -o test</code></pre>
       </div>
     </div>
   </div>

@@ -2,8 +2,9 @@
 # Generated from DITA source
 layout: base
 title: "Building output using the dita command"
+index: "../toc.html"
 ---
-<nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a><ul class="nav nav-list"><li><a href="../user-guide/overview-of-dita-ot.html">DITA Open Toolkit Overview</a></li><li><a href="../user-guide/installing.html">Installing the DITA-OT</a></li><li><a href="../user-guide/transforming-dita-content.html">Publishing DITA content</a><ul class="nav nav-list"><li class="active"><a href="../user-guide/build-using-dita-command.html">Building output using the dita command</a></li><li><a href="../user-guide/publishing-with-ant.html">Publishing DITA content from Ant</a></li></ul></li><li><a href="../user-guide/AvailableTransforms.html">Output formats</a></li><li><a href="../user-guide/extending-the-dita-ot.html">Extending the DITA-OT</a></li><li><a href="../user-guide/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../user-guide/troubleshooting-overview.html">Troubleshooting</a></li></ul></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9">
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a><ul class="nav nav-list"><li><a href="../user-guide/overview-of-dita-ot.html">DITA Open Toolkit Overview</a></li><li><a href="../user-guide/installing.html">Installing the DITA-OT</a></li><li><a href="../user-guide/transforming-dita-content.html">Publishing DITA content</a><ul class="nav nav-list"><li class="active"><a href="../user-guide/build-using-dita-command.html">Building output using the dita command</a></li><li><a href="../user-guide/publishing-with-ant.html">Publishing DITA content from Ant</a></li></ul></li><li><a href="../user-guide/AvailableTransforms.html">Output formats</a></li><li><a href="../user-guide/extending-the-dita-ot.html">Extending the DITA-OT</a></li><li><a href="../user-guide/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../user-guide/troubleshooting-overview.html">Troubleshooting</a></li></ul></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
   
   <div class="body taskbody"><p class="shortdesc">DITA-OT includes a <span class="keyword cmdname">dita</span> command-line tool. You can invoke the DITA-OT from the
@@ -29,7 +30,7 @@ title: "Building output using the dita command"
           <p class="p">If processing is successful, nothing is printed in the terminal window.</p>
           <p class="p">If you do not specify an output directory, the <span class="keyword cmdname">dita</span> command writes output to the
               <span class="ph filepath">out</span> subdirectory of the current directory.</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d234e95"><span class="note__title tiptitle">Tip:</span> If you add the absolute path for the DITA-OT
+          <div class="note tip note_tip" id="using-command-line-tool__d17e95"><span class="note__title tiptitle">Tip:</span> If you add the absolute path for the DITA-OT
                 <span class="ph filepath"><var class="keyword varname">install-dir</var>/bin</span> directory to the <var class="keyword varname">PATH</var>
             environment variable, you can run the <span class="keyword cmdname">dita</span> command from any location on the file
             system.</div>
@@ -38,7 +39,7 @@ title: "Building output using the dita command"
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">The following command generates HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file and writes the
         output to the <span class="ph filepath">test</span> directory:</p>
-      <pre class="pre codeblock"><code>dita -i samples/sequence.ditamap -f html5 -o test</code></pre>
+      <pre class="pre codeblock"><code>dita -i docsrc/samples/sequence.ditamap -f html5 -o test</code></pre>
       
     </div>
   </div>
