@@ -1,13 +1,85 @@
+// Initial navigation (up to v2.2.2)
 .bs-docs-sidenav li {
-	> a {
-		padding: 3px 15px;
-	}
-	&.active > a {
-		color: #fff;
-		text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
-		background-color: #08c;
-	}
-	ul {
-		margin-left: 10px;
-	}
+  > a {
+    padding: 3px 15px;
+  }
+
+  &.active > a {
+    background-color: $nav-bg;
+    color: $nav-text;
+    text-shadow: 0 -1px 0 $nav-shadow;
+  }
+
+  ul {
+    margin-left: 10px;
+  }
+}
+
+// Dynamic ToC (after v2.2.2)
+
+@mixin controller($symbol) {
+  content: $symbol;
+  font-size: 0.5em;
+  opacity: 0.5;
+}
+
+nav[role=toc] {
+  > div {
+    padding-right: 0;
+  }
+
+  .controller {
+    cursor: pointer;
+    display: inline-block;
+    height: 1em;
+    left: -0.8em;
+    padding-left: 0;
+    position: absolute;
+    width: 1em;
+  }
+
+  ul {
+    margin-left: 10px;
+    padding-left: 0;
+  }
+
+  li {
+    display: block;
+    margin-left: 2px;
+    position: relative;
+
+    > a {
+      display: block;
+      margin: 0 0 0 -20px;
+      padding: 3px 0 3px 20px;
+    }
+
+    &.active {
+      > a {
+        background-color: $nav-bg;
+        color: $nav-text;
+        text-shadow: 0 -1px 0 $nav-shadow;
+      }
+
+      > .controller::before {
+        color: $nav-text;
+      }
+    }
+
+    &.expanded {
+      > .controller::before {
+        @include controller('\25BC');
+      }
+    }
+
+    &.collapsed {
+      > .controller::before {
+        @include controller('\25B6');
+      }
+
+      > ul {
+        display: none;
+      }
+    }
+  }
 }

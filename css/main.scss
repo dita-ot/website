@@ -1,6 +1,15 @@
 ---
 ---
 
+// Override default Bootstrap variable definitions
+$code-color: #777;  // $gray-light
+$code-bg: transparent;
+
+// Color definitions for active navigation items
+$nav-bg: #08c;
+$nav-text: #fff; // white
+$nav-shadow: rgba(0, 0, 0, 0.2);
+
 // Import DITA-OT custom subset of Bootstrap modules
 @import 'bootstrap-custom';
 
@@ -39,4 +48,5 @@ div.shortdesc {
 
 .simpletable {
 	@extend .table;
+	@extend .table-condensed;
 }
