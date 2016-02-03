@@ -20,12 +20,24 @@
   background-color: $pre-bg;
 }
 
-// Reset Bootstrap’s <code> rules to defaults
+// Override Bootstrap _code partials
+
+// Inline code
 code {
   background-color: transparent;
   border-radius: 0;
   color: $gray-light;
   padding: 0;
+}
+
+// User input typically entered via keyboard
+kbd {
+  // Prefer GitHub's presentation (mimic physical keys)
+  border: solid 1px $pre-border-color;
+  border-bottom-color: $kbd-shadow;
+  box-shadow: inset 0 -1px 0 $kbd-shadow;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .codeph,
