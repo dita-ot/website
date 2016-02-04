@@ -2,8 +2,12 @@
 ---
 
 // Override default Bootstrap variable definitions
-$code-color: #777;  // $gray-light
-$code-bg: transparent;
+$code-color:                  #777; // $gray-light
+$code-bg:                     transparent;
+
+$kbd-color:                   #555;
+$kbd-bg:                      #fcfcfc;
+$kbd-shadow:                  #bbb;
 
 // Color definitions for active navigation items
 $nav-bg: #08c;
