@@ -104,13 +104,13 @@ index: "../toc.html"
     </section>
     <section class="section"><h2 class="title sectiontitle">Options</h2>
       
-      <dl class="dl parml">
+      <dl class="dl parml" id="dita-command-properties__dita_build_options">
         
           <dt class="dt pt dlterm"><span class="keyword parmname">-o</span>, <span class="keyword parmname">-output</span>
             <var class="keyword varname">dir</var></dt>
-          <dd class="dd pd" id="dita-command-properties__output.dir.desc">Specifies the path of the output directory; the path can be absolute or relative to
-            the current directory. By default, the output is written to the <span class="ph filepath">out</span> subdirectory of the
-            current directory.</dd>
+          <dd class="dd pd" id="dita-command-properties__output.dir.desc">Specifies the path of the output directory; the path can be
+            absolute or relative to the current directory. By default, the output is written to the
+              <span class="ph filepath">out</span> subdirectory of the current directory.</dd>
         
         
           <dt class="dt pt dlterm"><span class="keyword parmname">-filter</span>
@@ -136,18 +136,22 @@ index: "../toc.html"
           <dd class="dd pd">Write logging messages to a file.</dd>
         
         
-          <dt class="dt pt dlterm"><span class="keyword parmname">-D</span><var class="keyword varname">property</var>=<var class="keyword varname">value</var></dt>
-          <dd class="dd pd">Specify a value for a parameter. Supported parameters are the same as Ant parameters and are
-            transformation type specific.</dd>
+          <dt class="dt pt dlterm"><span class="keyword parmname">-D</span><var class="keyword varname">parameter</var>=<var class="keyword varname">value</var></dt>
+          <dd class="dd pd">Specify a value for a DITA-OT or Ant build parameter. <p class="p">Parameters not implemented by
+              the specified transformation type or referenced in a <span class="ph filepath">.properties</span>
+              file are ignored.</p><div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> If you are building in different environments where the
+        location of the input files is not consistent, set <span class="keyword option">args.input.dir</span> with the
+          <span class="keyword cmdname">dita</span> command  and reference its value with
+          <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span> file.</div></dd>
         
         
           <dt class="dt pt dlterm"><span class="keyword parmname">-propertyfile</span>
             <var class="keyword varname">file</var></dt>
-          <dd class="dd pd">Load all properties from a file. Properties specified with the <span class="keyword parmname">-D</span> option take
-            precedence.</dd>
+          <dd class="dd pd">Use build parameters defined in the referenced <span class="ph filepath">.properties</span> file.
+              <p class="p">Build parameters specified on the command line override those set in the
+                <span class="ph filepath">.properties</span> file.</p></dd>
         
       </dl>
     </section>
   </div>
-  <nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Finally, some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the -Dparameter-name=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></div></div></nav>
-</main>
+<nav role="navigation" class="related-links"><div class="linklist linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../user-guide/build-using-dita-command.html" title="You can generate output using the DITA Open Toolkit dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a></div><div><a class="link" href="../user-guide/build-using-dita-properties-file.html" title="Usually, DITA builds require setting a number of parameters that do not change frequently. You can reference a set of build parameters defined in a .properties file when building output with the dita command. If needed, you can override any parameter by specifying it explicitly as an argument to the dita command.">Setting build parameters with .properties files</a></div></div><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Finally, some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the -Dparameter-name=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></div><div><a class="link" href="../parameters/internal-ant-properties.html" title="Reference list of Ant properties used by DITA-OT internally.">Internal Ant properties</a></div></div></nav></main>
