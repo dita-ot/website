@@ -1,0 +1,32 @@
+---
+# Generated from DITA source
+layout: base
+title: "Migrating to release 2.1"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../dev_ref/migrating-to-2.2.html">To 2.2</a></li><li class="active"><a href="../dev_ref/migrating-to-2.1.html">To 2.1</a></li><li><a href="../dev_ref/migrating-to-2.0.html">To 2.0</a></li><li><a href="../dev_ref/migrating-to-1.8.html">To 1.8</a></li><li><a href="../dev_ref/migrating-to-1.7.html">To 1.7</a></li><li><a href="../dev_ref/migrating-to-1.6.html">To 1.6</a></li><li><a href="../dev_ref/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 2.1</h1>
+
+  
+
+  <div class="body refbody"><p class="shortdesc">In DITA-OT 2.1, the <code class="ph codeph">insertVariable</code> template was deprecated for PDF
+      transformations.
+  </p>
+    <section class="section"><h2 class="title sectiontitle">PDF</h2>
+      
+      <p class="p">The following template has been deprecated:</p>
+      <ul class="ul">
+        <li class="li"><code class="ph codeph">insertVariable</code></li>
+      </ul>
+      <p class="p">Calls to that template will result in warnings in the build log. To update your plugin,
+        make the following changes:</p>
+      <pre class="pre codeblock"><code>&lt;xsl:call-template name="<span style="text-decoration:line-through" class="ph line-through">insertVariable</span><strong class="ph b">getVariable</strong>"&gt;
+  &lt;xsl:with-param name="<span style="text-decoration:line-through" class="ph line-through">theVariableID</span><strong class="ph b">id</strong>" select="<var class="keyword varname">var-id</var>"/&gt;
+  &lt;xsl:with-param name="<span style="text-decoration:line-through" class="ph line-through">theParameters</span><strong class="ph b">params</strong>"&gt;
+    <var class="keyword varname">params</var>
+  &lt;/xsl:with-param&gt;
+&lt;/xsl:call-template&gt;</code></pre>
+    </section>
+  </div>
+</main>

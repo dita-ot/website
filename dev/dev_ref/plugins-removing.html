@@ -1,20 +1,28 @@
 ---
 # Generated from DITA source
 layout: base
-title: "Manually removing plug-ins"
+title: "Removing plug-ins"
 index: "../toc.html"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a><ul class="nav nav-list"><li><a href="../extension-points/all-extension-points.html">Extension points</a></li><li><a href="../dev_ref/plugins-installing.html">Manually installing plug-ins</a></li><li class="active"><a href="../dev_ref/plugins-removing.html">Manually removing plug-ins</a></li><li><a href="../dev_ref/rebuilding-the-dita-ot-documentation.html">Rebuilding the DITA-OT documentation</a></li></ul></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">Manually removing plug-ins</h1>
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a><ul class="nav nav-list"><li><a href="../extension-points/all-extension-points.html">Extension points</a></li><li><a href="../dev_ref/plugins-installing.html">Installing plug-ins</a></li><li class="active"><a href="../dev_ref/plugins-removing.html">Removing plug-ins</a></li><li><a href="../dev_ref/rebuilding-the-dita-ot-documentation.html">Rebuilding the DITA-OT documentation</a></li></ul></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Removing plug-ins</h1>
   
-  <div class="body taskbody"><p class="shortdesc">Plug-ins can be installed by removing the plug-in and running integration process.</p>
-    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
-        <span class="ph cmd">Remove plug-in installation directory.</span>
-      </li><li class="li step stepexpand">
-        <span class="ph cmd">Run integration process.</span>
+  <div class="body taskbody"><p class="shortdesc">Use the <span class="keyword cmdname">dita</span> command to uninstall a plug-in.</p>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
+        <span class="ph cmd">At the command-line prompt, enter the following command:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock"><code>ant -f integrator.xml</code></pre>
+          <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> -uninstall <var class="keyword varname">plug-in-id</var></code></pre>
+          <p class="p">where:</p>
+          <ul class="ul">
+            <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation
+              directory.</li>
+            <li class="li"><var class="keyword varname">plug-in-id</var> is the unique ID of the plug-in, as
+                defined in the plug-in's configuration file (<span class="ph filepath">plugin.xml</span>).</li>
+          </ul>
+          <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
+            the <span class="keyword cmdname">dita</span> command from any location on the file system without typing
+            the path.</div>
         </div>
-      </li></ol>
+      </div>
   </div>
-</main>
+<nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content, manage plug-ins, or print information about the command. Options can be used to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></div></div></nav></main>
