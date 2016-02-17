@@ -55,3 +55,8 @@ div.shortdesc {
 	@extend .table;
 	@extend .table-condensed;
 }
+
+// Apply Bootstrap's <caption> style to figure titles (rendered as HTML5 <figcaption> elements)
+figcaption {
+	@extend caption;
+}

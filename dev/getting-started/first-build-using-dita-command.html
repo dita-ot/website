@@ -7,11 +7,9 @@ index: "../toc.html"
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a><ul class="nav nav-list"><li><a href="../getting-started/installing-client.html">Installing the toolkit</a></li><li class="active"><a href="../getting-started/first-build-using-dita-command.html">Building output</a></li></ul></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
   
-  <div class="body taskbody"><p class="shortdesc">You can generate output using the DITA Open Toolkit <span class="keyword cmdname">dita</span>
-    command-line tool. Build parameters can be specified on the command line or with
-      <span class="ph filepath">.properties</span> files.</p>
-    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool with no graphical user
-      interface.</section>
+  <div class="body taskbody"><p class="shortdesc">You can generate output using the DITA Open Toolkit <span class="keyword cmdname">dita</span> command-line tool. Build
+    parameters can be specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool with no graphical user interface.</section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Open a terminal window by typing the following in the search bar:</span>
         <div class="itemgroup info">
@@ -36,20 +34,19 @@ index: "../toc.html"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built
             output is written to the specified output directory (by default, in the
               <span class="ph filepath">out</span> subdirectory of the current directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d22e244"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
+          <div class="note tip note_tip" id="using-command-line-tool__d24e289"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
             the <span class="keyword cmdname">dita</span> command from any location on the file system without typing
             the path.</div>
         </div>
       </li></ol>
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
-      <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, the following
-        command generates HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file:</p>
+      <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, the following command generates
+        HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file:</p>
       <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> -input sequence.ditamap -format html5</code></pre>
     </div>
     
     <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
-      <p class="p">Most builds require you to specify more options than are described in
-        this topic.</p>
+      <p class="p">Most builds require you to specify more options than are described in this topic.</p>
       
     </section>
   </div>

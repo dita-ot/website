@@ -1,46 +1,33 @@
 ---
 # Generated from DITA source
 layout: base
-title: "Manually installing plug-ins"
+title: "Installing plug-ins"
 index: "../toc.html"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a><ul class="nav nav-list"><li><a href="../extension-points/all-extension-points.html">Extension points</a></li><li class="active"><a href="../dev_ref/plugins-installing.html">Manually installing plug-ins</a></li><li><a href="../dev_ref/plugins-removing.html">Manually removing plug-ins</a></li><li><a href="../dev_ref/rebuilding-the-dita-ot-documentation.html">Rebuilding the DITA-OT documentation</a></li></ul></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">Manually installing plug-ins</h1>
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a><ul class="nav nav-list"><li><a href="../extension-points/all-extension-points.html">Extension points</a></li><li class="active"><a href="../dev_ref/plugins-installing.html">Installing plug-ins</a></li><li><a href="../dev_ref/plugins-removing.html">Removing plug-ins</a></li><li><a href="../dev_ref/rebuilding-the-dita-ot-documentation.html">Rebuilding the DITA-OT documentation</a></li></ul></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Installing plug-ins</h1>
   
-  <div class="body taskbody"><p class="shortdesc">Plug-ins are generally distributed as zip files. There are two steps to installing a plug-in: unzipping and
-    integrating.</p>
-    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
-      <p class="p">It is possible to define a plug-in so that it may be installed anywhere, although most expect to be placed in
-          <span class="ph filepath">plugins/</span> directory inside of the DITA-OT. Most plug-ins do not require a specific install
-        directory and can go in either of the default locations, but some may come with instructions for a particular
-        install directory.</p>
-    </section>
-    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
-        <span class="ph cmd">The unzip the plug-in file to <span class="ph filepath">plugins</span> subdirectory.</span>
-        <div class="itemgroup info">The plug-in directory should be named after plug-in ID and version, for example
-            <span class="ph filepath">plugins/com.example.xhtml_1.0.0</span>.</div>
-      </li><li class="li step stepexpand">
-        <span class="ph cmd">Run plug-in integration process.</span>
-        <ul class="ul choices">
-          <li class="li choice">From the toolkit directory, run the following command to integrate all installed plug-ins:
-            <pre class="pre codeblock"><code>ant -f integrator.xml </code></pre></li>
-          <li class="li choice">Any build that uses the Java command line interface automatically runs the integrator before
-            processing begins.</li>
-          <li class="li choice">Ant based builds may import the <code class="ph codeph">integrator.xml</code> file, and add
-              <code class="ph codeph">integrate</code> to the start of the dependency chain for the build. <div class="note note note_note"><span class="note__title notetitle">Note:</span> The
-              integration process in considered part of the installation process and running it before each conversion
-              will incur a performance penalty.</div></li>
-        </ul>
+  <div class="body taskbody"><p class="shortdesc">Use the <span class="keyword cmdname">dita</span> command to install a plug-in.</p>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
+        <span class="ph cmd">At the command-line prompt, enter the following command:</span>
         <div class="itemgroup info">
-          <p class="p">The integration process has two modes, lax and strict. In the strict mode the integration process will
-            immediately fail if it encounters errors in plug-in configurations or installation process. In the lax mode,
-            the integration process will continue to finish regardless of errors; the lax mode does not imply error
-            recovery and may leave the DITA-OT installation into a broken state. The default mode is lax due to
-            backwards compatibility, to run the integration in strict mode:</p>
-          <pre class="pre codeblock"><code>ant -f integrator.xml strict</code></pre>
-          <p class="p">To get more information about the integration process, run Ant in verbose mode:</p>
-          <pre class="pre codeblock"><code>ant -f integrator.xml -verbose strict</code></pre>
+          <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> -install <var class="keyword varname">plug-in-zip</var></code></pre>
+          <p class="p">where:</p>
+          <ul class="ul">
+            <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation
+              directory.</li>
+            <li class="li"><span class="ph filepath"><var class="keyword varname">plug-in-zip</var></span> is the
+                <var class="keyword varname">filename</var> or <var class="keyword varname">URL</var> of the plug-in's distribution ZIP file.</li>
+          </ul>
+          <div class="note note note_note"><span class="note__title notetitle">Note:</span> 
+            <span class="ph">If no <var class="keyword varname">filename</var> or <var class="keyword varname">URL</var> argument is
+                  provided, the integration process reloads plug-ins from the <span class="ph filepath">plugins</span> directory.
+                  This approach can be used to integrate multiple plug-ins at once.</span>
+          </div>
+          <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
+            the <span class="keyword cmdname">dita</span> command from any location on the file system without typing
+            the path.</div>
         </div>
-      </li></ol>
+      </div>
   </div>
-</main>
+<nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content, manage plug-ins, or print information about the command. Options can be used to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></div></div></nav></main>

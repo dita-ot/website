@@ -7,11 +7,9 @@ index: "../toc.html"
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
   
-  <div class="body taskbody"><p class="shortdesc">You can generate output using the DITA Open Toolkit <span class="keyword cmdname">dita</span>
-    command-line tool. Build parameters can be specified on the command line or with
-      <span class="ph filepath">.properties</span> files.</p>
-    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool with no graphical user
-      interface.</section>
+  <div class="body taskbody"><p class="shortdesc">You can generate output using the DITA Open Toolkit <span class="keyword cmdname">dita</span> command-line tool. Build
+    parameters can be specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool with no graphical user interface.</section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Open a terminal window by typing the following in the search bar:</span>
         <div class="itemgroup info">
@@ -35,7 +33,7 @@ index: "../toc.html"
         
           <dt class="dt pt dlterm"><span class="keyword parmname">-o</span>, <span class="keyword parmname">-output</span>
             <var class="keyword varname">dir</var></dt>
-          <dd class="dd pd" id="using-command-line-tool__d22e99">Specifies the path of the output directory; the path can be
+          <dd class="dd pd" id="using-command-line-tool__d24e144">Specifies the path of the output directory; the path can be
             absolute or relative to the current directory. By default, the output is written to the
               <span class="ph filepath">out</span> subdirectory of the current directory.</dd>
         
@@ -84,24 +82,24 @@ index: "../toc.html"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built
             output is written to the specified output directory (by default, in the
               <span class="ph filepath">out</span> subdirectory of the current directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d22e244"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
+          <div class="note tip note_tip" id="using-command-line-tool__d24e289"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
             the <span class="keyword cmdname">dita</span> command from any location on the file system without typing
             the path.</div>
         </div>
       </li></ol>
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
-      <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, the following
-        command generates HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file:</p>
+      <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, the following command generates
+        HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file:</p>
       <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> -input sequence.ditamap -format html5</code></pre>
     </div>
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
-      <p class="p">For example, from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>,
-        run:</p>
-      <pre class="pre codeblock"><code>dita -input sequence.ditamap -format html5 -output output/sequence ⤸
--Dargs.input.dir=<span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span> -propertyfile properties/sequence-html5.properties</code></pre>
-      <p class="p">This builds <span class="ph filepath">sequence.ditamap</span> to HTML5 output in
-          <span class="ph filepath">output/sequence</span> using the additional parameters specified in the
-          <span class="ph filepath">properties/sequence-html5.properties</span> file:</p>
+      <p class="p">For example, from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, run:</p>
+      <pre class="pre codeblock"><code>dita -input sequence.ditamap -format html5 \
+     -output output/sequence \
+     -Dargs.input.dir=<span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span> \
+     -propertyfile properties/sequence-html5.properties</code></pre>
+      <p class="p">This builds <span class="ph filepath">sequence.ditamap</span> to HTML5 output in <span class="ph filepath">output/sequence</span> using
+        the additional parameters specified in the <span class="ph filepath">properties/sequence-html5.properties</span> file:</p>
       <pre class="pre codeblock"><code>args.gen.task.lbl = NO
 args.cssroot = ${args.input.dir}/css/
 args.css = style.css
@@ -111,8 +109,7 @@ nav-toc = full
 args.xhtml.toc = toc</code></pre>
     </div>
     <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
-      <p class="p">Most builds require you to specify more options than are described in
-        this topic.</p>
+      <p class="p">Most builds require you to specify more options than are described in this topic.</p>
       <p class="p">Usually, you will want to specify a set of reusable build parameters in a
           <span class="ph filepath">.properties</span> file.</p>
     </section>

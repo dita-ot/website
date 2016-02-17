@@ -1,12 +1,12 @@
 ---
 # Generated from DITA source
 layout: base
-title: "Migrating to Release 1.5.4"
+title: "Migrating to release 1.5.4"
 index: "../toc.html"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../dev_ref/migrating-to-1.8.html">Migrating to Release 1.8</a></li><li><a href="../dev_ref/migrating-to-1.7.html">Migrating to Release 1.7</a></li><li><a href="../dev_ref/migrating-to-1.6.html">Migrating to Release 1.6</a></li><li class="active"><a href="../dev_ref/migrating-to-1.5.4.html">Migrating to Release 1.5.4</a></li></ul></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../dev_ref/migrating-to-2.2.html">To 2.2</a></li><li><a href="../dev_ref/migrating-to-2.1.html">To 2.1</a></li><li><a href="../dev_ref/migrating-to-2.0.html">To 2.0</a></li><li><a href="../dev_ref/migrating-to-1.8.html">To 1.8</a></li><li><a href="../dev_ref/migrating-to-1.7.html">To 1.7</a></li><li><a href="../dev_ref/migrating-to-1.6.html">To 1.6</a></li><li class="active"><a href="../dev_ref/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
 
-  <h1 class="title topictitle1" id="ariaid-title1">Migrating to Release 1.5.4</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 1.5.4</h1>
 
   
 
@@ -30,34 +30,34 @@ index: "../toc.html"
       
       <p class="p">New plug-in extension points have been added allow configuring DITA-OT behavior based on file extensions.</p>
       <table cellpadding="4" cellspacing="0" summary="" id="ID__simpletable_xym_ryi_uc" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-          <th style="vertical-align:bottom;text-align:left;" id="d3215e59" class="stentry">Extension point</th>
-          <th style="vertical-align:bottom;text-align:left;" id="d3215e62" class="stentry">Description</th>
-          <th style="vertical-align:bottom;text-align:left;" id="d3215e65" class="stentry">Default values</th>
+          <th style="vertical-align:bottom;text-align:left;" id="d3249e59" class="stentry">Extension point</th>
+          <th style="vertical-align:bottom;text-align:left;" id="d3249e62" class="stentry">Description</th>
+          <th style="vertical-align:bottom;text-align:left;" id="d3249e65" class="stentry">Default values</th>
         </tr></thead><tbody><tr class="strow">
-          <td style="vertical-align:top;" headers="d3215e59" class="stentry"><code class="ph codeph">dita.topic.extension</code></td>
-          <td style="vertical-align:top;" headers="d3215e62" class="stentry">DITA topic</td>
-          <td style="vertical-align:top;" headers="d3215e65" class="stentry"><span class="ph filepath">.dita</span>, <span class="ph filepath">.xml</span></td>
+          <td style="vertical-align:top;" headers="d3249e59" class="stentry"><code class="ph codeph">dita.topic.extension</code></td>
+          <td style="vertical-align:top;" headers="d3249e62" class="stentry">DITA topic</td>
+          <td style="vertical-align:top;" headers="d3249e65" class="stentry"><span class="ph filepath">.dita</span>, <span class="ph filepath">.xml</span></td>
         </tr><tr class="strow">
-          <td style="vertical-align:top;" headers="d3215e59" class="stentry"><code class="ph codeph">dita.map.extensions</code></td>
-          <td style="vertical-align:top;" headers="d3215e62" class="stentry">DITA map</td>
-          <td style="vertical-align:top;" headers="d3215e65" class="stentry"><span class="ph filepath">.ditamap</span></td>
+          <td style="vertical-align:top;" headers="d3249e59" class="stentry"><code class="ph codeph">dita.map.extensions</code></td>
+          <td style="vertical-align:top;" headers="d3249e62" class="stentry">DITA map</td>
+          <td style="vertical-align:top;" headers="d3249e65" class="stentry"><span class="ph filepath">.ditamap</span></td>
         </tr><tr class="strow">
-          <td style="vertical-align:top;" headers="d3215e59" class="stentry"><code class="ph codeph">dita.html.extensions</code></td>
-          <td style="vertical-align:top;" headers="d3215e62" class="stentry">HTML file</td>
-          <td style="vertical-align:top;" headers="d3215e65" class="stentry"><span class="ph filepath">.html</span>, <span class="ph filepath">.htm</span></td>
+          <td style="vertical-align:top;" headers="d3249e59" class="stentry"><code class="ph codeph">dita.html.extensions</code></td>
+          <td style="vertical-align:top;" headers="d3249e62" class="stentry">HTML file</td>
+          <td style="vertical-align:top;" headers="d3249e65" class="stentry"><span class="ph filepath">.html</span>, <span class="ph filepath">.htm</span></td>
         </tr><tr class="strow">
-          <td style="vertical-align:top;" headers="d3215e59" class="stentry"><code class="ph codeph">dita.resource.extensions</code></td>
-          <td style="vertical-align:top;" headers="d3215e62" class="stentry">Resource file</td>
-          <td style="vertical-align:top;" headers="d3215e65" class="stentry"><span class="ph filepath">.pdf</span>, <span class="ph filepath">.swf</span></td>
+          <td style="vertical-align:top;" headers="d3249e59" class="stentry"><code class="ph codeph">dita.resource.extensions</code></td>
+          <td style="vertical-align:top;" headers="d3249e62" class="stentry">Resource file</td>
+          <td style="vertical-align:top;" headers="d3249e65" class="stentry"><span class="ph filepath">.pdf</span>, <span class="ph filepath">.swf</span></td>
         </tr></tbody></table>
       <p class="p">Both HTML and resource file extensions are used to determine if a file in source is copied to output.</p>
       <p class="p">A new plug-in extension point has been added to declare transformation types as print types.</p>
       <table cellpadding="4" cellspacing="0" summary="" id="ID__simpletable_xts_5wq_rt" border="1" class="simpletable"><col style="width:50%"><col style="width:50%"><thead><tr class="sthead">
-          <th style="vertical-align:bottom;text-align:left;" id="d3215e146" class="stentry">Extension point</th>
-          <th style="vertical-align:bottom;text-align:left;" id="d3215e149" class="stentry">Description</th>
+          <th style="vertical-align:bottom;text-align:left;" id="d3249e146" class="stentry">Extension point</th>
+          <th style="vertical-align:bottom;text-align:left;" id="d3249e149" class="stentry">Description</th>
         </tr></thead><tbody><tr class="strow">
-          <td style="vertical-align:top;" headers="d3215e146" class="stentry"><code class="ph codeph">dita.transtype.print</code></td>
-          <td style="vertical-align:top;" headers="d3215e149" class="stentry">Declare transformation type as a print type.</td>
+          <td style="vertical-align:top;" headers="d3249e146" class="stentry"><code class="ph codeph">dita.transtype.print</code></td>
+          <td style="vertical-align:top;" headers="d3249e149" class="stentry">Declare transformation type as a print type.</td>
         </tr></tbody></table>
       <p class="p">The <code class="ph codeph">print_transtypes</code> property in <span class="ph filepath">integrator.properties</span> has been
         deprecated in favor of <code class="ph codeph">dita.transtype.print</code>.</p>
@@ -94,11 +94,11 @@ index: "../toc.html"
         processed in bookmaps. The default is to reorder the frontmatter content as in previous releases.</p>
       <p class="p">A new extension point has been added to add mappings to the PDF configuration catalog file.</p>
       <table cellpadding="4" cellspacing="0" summary="" id="ID__simpletable_jkf_bxq_rt" border="1" class="simpletable"><col style="width:50%"><col style="width:50%"><thead><tr class="sthead">
-          <th style="vertical-align:bottom;text-align:left;" id="d3215e260" class="stentry">Extension point</th>
-          <th style="vertical-align:bottom;text-align:left;" id="d3215e263" class="stentry">Description</th>
+          <th style="vertical-align:bottom;text-align:left;" id="d3249e260" class="stentry">Extension point</th>
+          <th style="vertical-align:bottom;text-align:left;" id="d3249e263" class="stentry">Description</th>
         </tr></thead><tbody><tr class="strow">
-          <td style="vertical-align:top;" headers="d3215e260" class="stentry"><code class="ph codeph">org.dita.pdf2.catalog.relative</code></td>
-          <td style="vertical-align:top;" headers="d3215e263" class="stentry">Configuration catalog includes.</td>
+          <td style="vertical-align:top;" headers="d3249e260" class="stentry"><code class="ph codeph">org.dita.pdf2.catalog.relative</code></td>
+          <td style="vertical-align:top;" headers="d3249e263" class="stentry">Configuration catalog includes.</td>
         </tr></tbody></table>
       <p class="p">Support for the following languages has been added:</p>
       <ul class="ul">

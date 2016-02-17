@@ -10,11 +10,12 @@ index: "../toc.html"
   <div class="body conbody"><p class="shortdesc">The <code class="ph codeph">conref</code> step resolves conref attributes, processing only the DITA maps or topics that
     use the @conref attribute. This step is implemented in XSLT.</p>
     <section class="section">
-      <p class="p">The values of the @id attribute on referenced content are changed as the elements are pulled into the new
-        locations. This ensures that the values of the @id attribute within the referencing topic remain unique.</p>
+      <p class="p">The values of the <code class="keyword markupname xmlatt">@id</code> attribute on referenced content are changed as the elements are pulled
+        into the new locations. This ensures that the values of the <code class="keyword markupname xmlatt">@id</code> attribute within the referencing
+        topic remain unique.</p>
       <div class="p">If an element is pulled into a new context along with a cross reference that references the target, both the
-        values of the @id and @xref attributes are updated so that they remain valid in the new location. For example, a
-        referenced topic might include a section as in the following example: <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Referenced topic that contains a section and cross reference</figcaption>
+        values of the <code class="keyword markupname xmlatt">@id</code> and <code class="keyword markupname xmlatt">@xref</code> attributes are updated so that they remain valid in
+        the new location. For example, a referenced topic might include a section as in the following example: <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Referenced topic that contains a section and cross reference</figcaption>
           
           <pre class="pre codeblock"><code>&lt;topic id="referenced_topic"&gt;
   &lt;title&gt;...&lt;/title&gt;
@@ -28,10 +29,12 @@ index: "../toc.html"
   &lt;/body&gt;
 &lt;/topic&gt;</code></pre>
         </figure></div>
-      <div class="p">When the section is referenced using a @conref attribute, the value of the @id attribute on the &lt;fig&gt;
-        element is modified to ensure that it remains unique in the new context. At the same time, the &lt;xref&gt; element
-        is also modified so that it remains valid as a local reference. For example, if the referencing topic has an @id
-        set to "new_topic", then the conrefed &lt;section&gt; element may look like this in the intermediate document.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Resolved conrefed &lt;section&gt; element after the conref step</figcaption>
+      <div class="p">When the section is referenced using a <code class="keyword markupname xmlatt">@conref</code> attribute, the value of the <code class="keyword markupname xmlatt">@id
+        </code>attribute on the <code class="keyword markupname xmlelement">&lt;fig&gt;</code> element is modified to ensure that it remains unique in
+        the new context. At the same time, the  <code class="keyword markupname xmlelement">&lt;xref&gt;</code> element is also modified so that it
+        remains valid as a local reference. For example, if the referencing topic has an <code class="keyword markupname xmlatt">@id </code> set to
+        "new_topic", then the conrefed  element may look like this in the intermediate
+          document.<code class="keyword markupname xmlelement">&lt;section&gt;</code><figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Resolved conrefed &lt;section&gt; element after the conref step</figcaption>
           
           <pre class="pre codeblock"><code>&lt;section id="sect"&gt;&lt;title&gt;Sample section&lt;/title&gt;
     &lt;p&gt;Figure &lt;xref href="#new_topic/d1e25"/&gt; contains an code sample that demonstrates ... .&lt;/p&gt;
@@ -40,9 +43,9 @@ index: "../toc.html"
     &lt;/fig&gt;
 &lt;/section&gt;</code></pre>
         </figure></div>
-      <p class="p">In this case, the value of the @id attribute on the &lt;fig&gt; element has been changed to a generated value of
-        "d1e25". At the same time, the &lt;xref&gt; element has been updated to use that new generated ID, so that the
-        cross reference remains valid.</p>
+      <p class="p">In this case, the value of the <code class="keyword markupname xmlatt">@id </code> attribute on the <code class="keyword markupname xmlelement">&lt;fig&gt;</code> element has
+        been changed to a generated value of "d1e25". At the same time, the <code class="keyword markupname xmlelement">&lt;xref&gt;</code> element has
+        been updated to use that new generated ID, so that the cross reference remains valid.</p>
     </section>
   </div>
-<nav role="navigation" class="related-links"><div class="familylinks"><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="../dev_ref/preprocess-conrefpush.html" title="The conrefpush step resolves &#34;conref push&#34; references. This step only processes documents that use conref push or that are updated due to the push action. This step is implemented in Java.">Conref push (conrefpush)</a></div><div class="nextlink"><strong>Next topic:</strong> <a class="link" href="../dev_ref/preprocess-coderef.html" title="The coderef step resolves references made with the <coderef&gt; element. This step is implemented in Java.">Resolve code references (coderef)</a></div></div></nav></main>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="../dev_ref/preprocess-conrefpush.html" title="The conrefpush step resolves &#34;conref push&#34; references. This step only processes documents that use conref push or that are updated due to the push action. This step is implemented in Java.">Conref push (conrefpush)</a></div><div class="nextlink"><strong>Next topic:</strong> <a class="link" href="../dev_ref/preprocess-coderef.html" title="The coderef step resolves references made with the coderef element. This step is implemented in Java.">Resolve code references (coderef)</a></div></div></nav></main>
