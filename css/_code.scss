@@ -46,6 +46,14 @@ kbd {
   @include codeclass;
 }
 
+// Ensure uniform font size for inline code classes nested within <codeblock> elements
+.codeblock .cmdname,
+.codeblock .filepath,
+.codeblock .option,
+.codeblock .varname {
+  font-size: 100%;
+}
+
 .cmdname,
 .msgnum {
   @include codeclass;
