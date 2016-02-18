@@ -3,37 +3,37 @@
 // Sass partial for DITA 1.3 XML mention domain
 
 $code-fonts: Menlo, Monaco, Consolas, "Courier New", monospace;
-$markup-color: #663399;
+$markup-color: #639;
 
 @mixin markupname {
-    color: $markup-color;
-    font-family: $code-fonts;
+  color: $markup-color;
+  font-family: $code-fonts;
 }
- 
+
 .numcharref {
-    @include markupname;
+  @include markupname;
 }
 
 .parameterentity {
-    @include markupname;
+  @include markupname;
 }
 
 .textentity {
-    @include markupname;
+  @include markupname;
 }
 
 .xmlatt {
-    @include markupname;
+  @include markupname;
 }
 
 .xmlelement {
-    @include markupname;
+  @include markupname;
 }
 
 .xmlnsname {
-    @include markupname;
+  @include markupname;
 }
 
 .xmlpi {
-    @include markupname;
+  @include markupname;
 }
