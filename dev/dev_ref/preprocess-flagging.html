@@ -19,13 +19,14 @@ index: "../toc.html"
         the current topic. The active flags are enclosed in a pseudo-specialization of the
           <code class="keyword markupname xmlelement">&lt;foreign&gt;</code> element (referred to as a pseudo-specialization because it is used only under
         the covers, with all topic types; it is not integrated into any shipped document types).</p>
-      <dl class="dl">
+      <dl class="dl parml">
         
-          <dt class="dt dlterm"><code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code></dt>
-          <dd class="dd">When any flag is active on an element, a <code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code> element will be
-            created as the first child of the flagged
-              element:<pre class="pre codeblock"><code>&lt;ditaval-startprop class="+ topic/foreign ditaot-d/ditaval-startprop "&gt;</code></pre><div class="p">The
-                <code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code> element will contain the following:<ul class="ul">
+          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code></dt>
+          <dd class="dd pd">
+            <p class="p">When any flag is active on an element, a <code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code> element will be
+              created as the first child of the flagged element:</p>
+            <pre class="pre codeblock"><code>&lt;ditaval-startprop class="+ topic/foreign ditaot-d/ditaval-startprop "&gt;</code></pre>
+            <div class="p">The <code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code> element will contain the following:<ul class="ul">
                 <li class="li">If the active flags should create a new style, that style is included using standard CSS markup on
                   the <code class="keyword markupname xmlatt">@outputclass</code> attribute. Output types that make use of CSS, such as XHTML, can use
                   this value as-is.</li>
@@ -40,15 +41,17 @@ index: "../toc.html"
           </dd>
         
         
-          <dt class="dt dlterm"><code class="keyword markupname xmlelement">&lt;ditaval-endprop&gt;</code></dt>
-          <dd class="dd">When any flag is active on an element, a <code class="keyword markupname xmlelement">&lt;ditaval-endprop&gt;</code> element will be created
-            as the last child of the flagged
-              element:<pre class="pre codeblock"><code>&lt;ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop "&gt;</code></pre><p class="p">CSS
-              values and <code class="keyword markupname xmlelement">&lt;style-conflict&gt;</code> elements are not included on this element.</p>
+          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;ditaval-endprop&gt;</code></dt>
+          <dd class="dd pd">
+            <p class="p">When any flag is active on an element, a <code class="keyword markupname xmlelement">&lt;ditaval-endprop&gt;</code> element will be created
+              as the last child of the flagged element:</p>
+            <pre class="pre codeblock"><code>&lt;ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop "&gt;</code></pre>
+            <p class="p">CSS values and <code class="keyword markupname xmlelement">&lt;style-conflict&gt;</code> elements are not included on this element.</p>
             <p class="p">Any <code class="keyword markupname xmlelement">&lt;prop&gt;</code> or <code class="keyword markupname xmlelement">&lt;revprop&gt;</code> elements that define active flags
               will be copied in as children of <code class="keyword markupname xmlelement">&lt;ditaval-prop&gt;</code>. Any
                 <code class="keyword markupname xmlelement">&lt;startflag&gt;</code> children of the properties will be included, but
-                <code class="keyword markupname xmlelement">&lt;endflag&gt;</code> children will not.</p></dd>
+                <code class="keyword markupname xmlelement">&lt;endflag&gt;</code> children will not.</p>
+          </dd>
         
       </dl>
     </section>
