@@ -33,7 +33,7 @@ index: "../toc.html"
         
           <dt class="dt pt dlterm"><span class="keyword parmname">-o</span>, <span class="keyword parmname">-output</span>
             <var class="keyword varname">dir</var></dt>
-          <dd class="dd pd" id="using-command-line-tool__d24e144">Specifies the path of the output directory; the path can be
+          <dd class="dd pd" id="using-command-line-tool__d25e144">Specifies the path of the output directory; the path can be
             absolute or relative to the current directory. By default, the output is written to the
               <span class="ph filepath">out</span> subdirectory of the current directory.</dd>
         
@@ -82,7 +82,7 @@ index: "../toc.html"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built
             output is written to the specified output directory (by default, in the
               <span class="ph filepath">out</span> subdirectory of the current directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d24e289"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
+          <div class="note tip note_tip" id="using-command-line-tool__d25e289"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
             the <span class="keyword cmdname">dita</span> command from any location on the file system without typing
             the path.</div>
         </div>
@@ -90,14 +90,14 @@ index: "../toc.html"
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, the following command generates
         HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file:</p>
-      <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> -input sequence.ditamap -format html5</code></pre>
+      <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword option">-input</span> sequence.ditamap <span class="keyword option">-format</span> html5</code></pre>
     </div>
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">For example, from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, run:</p>
-      <pre class="pre codeblock"><code>dita -input sequence.ditamap -format html5 \
-     -output output/sequence \
-     -Dargs.input.dir=<span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span> \
-     -propertyfile properties/sequence-html5.properties</code></pre>
+      <pre class="pre codeblock"><code>dita <span class="keyword option">-input</span> sequence.ditamap <span class="keyword option">-format</span> html5 \
+     <span class="keyword option">-output</span> output/sequence \
+     <span class="keyword option">-D</span>args.input.dir=<span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span> \
+     <span class="keyword option">-propertyfile</span> properties/sequence-html5.properties</code></pre>
       <p class="p">This builds <span class="ph filepath">sequence.ditamap</span> to HTML5 output in <span class="ph filepath">output/sequence</span> using
         the additional parameters specified in the <span class="ph filepath">properties/sequence-html5.properties</span> file:</p>
       <pre class="pre codeblock"><code>args.gen.task.lbl = NO
