@@ -52,6 +52,12 @@ nav[role=toc] {
       display: block;
       margin: 0 0 0 -20px;
       padding: 3px 0 3px 20px;
+
+      &:hover,
+      &:focus {
+        background-color: $nav-link-hover-bg;
+        text-decoration: none;
+      }
     }
 
     &.active {
