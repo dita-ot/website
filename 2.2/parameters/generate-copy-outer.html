@@ -1,12 +1,12 @@
 ---
 # Generated from DITA source
 layout: base
-title: "generate.outer.copy parameter"
+title: "generate.copy.outer parameter"
 ---
 <nav class="col-md-3"><div class="well well-sm"><ul class="nav bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a><ul class="nav nav-list"><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a><ul class="nav nav-list"><li><a href="../parameters/parameters-base.html">Common</a></li><li><a href="../parameters/parameters-base-html.html">HTML-based output</a></li><li><a href="../parameters/parameters-common-html.html">HTML5 and XHTML</a></li><li><a href="../parameters/parameters-html5.html">HTML5</a></li><li><a href="../parameters/parameters-eclipsecontent.html">Eclipse content</a></li><li><a href="../parameters/parameters-eclipsehelp.html">Eclipse Help</a></li><li><a href="../parameters/parameters-htmlhelp.html">HTMLHelp</a></li><li><a href="../parameters/parameters-javahelp.html">JavaHelp</a></li><li><a href="../parameters/parameters-odt.html">Open Document Format</a></li><li><a href="../parameters/parameters-other.html">Other</a></li><li><a href="../parameters/parameters-pdf.html">PDF</a></li></ul></li><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li><li><a href="../parameters/internal-ant-properties.html">Internal Ant properties</a></li></ul></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9">
-  <h1 class="title topictitle1" id="ariaid-title1"><span class="keyword parmname">generate.outer.copy</span> parameter</h1>
+  <h1 class="title topictitle1" id="ariaid-title1"><span class="keyword parmname">generate.copy.outer</span> parameter</h1>
   
-  <div class="body conbody"><p class="shortdesc">Elaboration on how the <span class="keyword parmname">generate.outer.copy</span> parameter functions.</p>
+  <div class="body conbody"><p class="shortdesc">Elaboration on how the <span class="keyword parmname">generate.copy.outer</span> parameter functions.</p>
     <section class="section"><h2 class="title sectiontitle">Background</h2>
       
       <div class="p">This is an issue in the following situations:<ul class="ul">
@@ -19,10 +19,10 @@ topics
 images</pre>The DITA map is in the <span class="ph filepath">maps</span> directory, the topics
         are in the<span class="ph filepath"> topics</span> directory, and the images are in the <span class="ph filepath">images</span>
         directory.</div></section>
-    <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.outer.copy</span> parameter to <span class="keyword option">1</span></h2>
+    <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">1</span></h2>
       
       <div class="p">Let's assume that you run the HTML5 transformation and specify an output directory of
-          <span class="ph filepath">C:\A-test</span>. By default, The DITA-OT uses the <span class="keyword parmname">generate.outer.copy</span>
+          <span class="ph filepath">C:\A-test</span>. By default, The DITA-OT uses the <span class="keyword parmname">generate.copy.outer</span>
         parameter with a value of <span class="keyword option">1</span>. Output is not built for the topics. You receive only the following
         output: <pre class="pre">C:\A-test
 --- index.html
@@ -31,9 +31,9 @@ images</pre>The DITA map is in the <span class="ph filepath">maps</span> directo
           <span class="ph filepath">index.html</span> file contains the navigation structure, but all the links are broken, since no
         HTML5 files were built for the topics.</div>
       <p class="p">How do you fix this? By specifying a value of <span class="keyword option">3</span> for the
-          <span class="keyword parmname">generate.outer.copy</span> parameter. </p>
+          <span class="keyword parmname">generate.copy.outer</span> parameter. </p>
     </section>
-    <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.outer.copy</span> parameter to <span class="keyword option">3</span></h2>
+    <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">3</span></h2>
       
       <div class="p">Now your output directory structure looks like this: <pre class="pre">C:\A-test
 --- images\
