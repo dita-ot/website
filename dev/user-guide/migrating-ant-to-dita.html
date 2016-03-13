@@ -33,6 +33,7 @@ index: "../toc.html"
     <div class="example"><h2 class="title sectiontitle">Example: Ant build</h2>
       <div class="p">Sample build file: <span class="ph filepath" id="migrating-ant-to-dita__samples-dir"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf.xml</span>
         <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+
 &lt;project name="build-chm-pdf" default="all" basedir="."&gt;
 
   &lt;property name="dita.dir" location="${basedir}/../../.."/&gt;
@@ -54,8 +55,8 @@ index: "../toc.html"
       &lt;property name="args.input" location="../taskbook.ditamap"/&gt;
       &lt;property name="transtype" value="pdf"/&gt;
       &lt;property name="output.dir" location="../out/pdf"/&gt;
-      &lt;property name="args.gen.task.lbl" value="YES"/&gt;   
-      &lt;property name="args.rellinks" value="nofamily"/&gt;   
+      &lt;property name="args.gen.task.lbl" value="YES"/&gt;
+      &lt;property name="args.rellinks" value="nofamily"/&gt;
     &lt;/ant&gt;
   &lt;/target&gt;
 
@@ -83,13 +84,15 @@ args.rellinks = nofamily</code></pre></div>
       <p class="p">This example uses a <code class="keyword markupname xmlelement">&lt;dita-cmd&gt;</code> Ant macro defined in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/dita-cmd.xml</span> file.</p>
       <div class="p">Sample build file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf-hybrid.xml</span>
         <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+
 &lt;project name="build-chm-pdf-hybrid" default="all" basedir="."&gt;
+
   &lt;description&gt;An Ant build that calls the dita command&lt;/description&gt;
-  
+
   &lt;include file="dita-cmd.xml"/&gt;&lt;!-- defines the &lt;dita-cmd&gt; macro --&gt;
 
   &lt;target name="all" depends="pre,main,post"/&gt;
-  
+
   &lt;target name="pre"&gt;
     &lt;description&gt;Preprocessing steps&lt;/description&gt;
   &lt;/target&gt;

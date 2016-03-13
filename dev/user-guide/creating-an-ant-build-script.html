@@ -65,6 +65,7 @@ index: "../toc.html"
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <div class="p">The following Ant build script generates CHM and PDF output for the sample DITA
         maps.<pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+
 &lt;project name="build-chm-pdf" default="all" basedir="."&gt;
 
   &lt;property name="dita.dir" location="${basedir}/../../.."/&gt;
@@ -86,8 +87,8 @@ index: "../toc.html"
       &lt;property name="args.input" location="../taskbook.ditamap"/&gt;
       &lt;property name="transtype" value="pdf"/&gt;
       &lt;property name="output.dir" location="../out/pdf"/&gt;
-      &lt;property name="args.gen.task.lbl" value="YES"/&gt;   
-      &lt;property name="args.rellinks" value="nofamily"/&gt;   
+      &lt;property name="args.gen.task.lbl" value="YES"/&gt;
+      &lt;property name="args.rellinks" value="nofamily"/&gt;
     &lt;/ant&gt;
   &lt;/target&gt;
 
