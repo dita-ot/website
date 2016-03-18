@@ -5,7 +5,7 @@
 $code-color:                  #777; // $gray-light ($text-muted)
 $code-bg:                     transparent;
 
-$kbd-color:                   #555;
+$kbd-color:                   #555; // $gray
 $kbd-bg:                      #fcfcfc;
 $kbd-shadow:                  #bbb;
 
@@ -50,6 +50,13 @@ col {
 li.li ul.ul,
 div.shortdesc {
   margin-bottom: 10px;
+}
+
+p.shortdesc,
+div.shortdesc {
+  color: $text-muted;
+  font-size: $font-size-large;
+  line-height: $line-height-large;
 }
 
 .simpletable {
