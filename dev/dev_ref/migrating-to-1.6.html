@@ -3,8 +3,9 @@
 layout: base
 title: "Migrating to release 1.6"
 index: "../toc.html"
+commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../dev_ref/migrating-to-2.2.html">To 2.2</a></li><li><a href="../dev_ref/migrating-to-2.1.html">To 2.1</a></li><li><a href="../dev_ref/migrating-to-2.0.html">To 2.0</a></li><li><a href="../dev_ref/migrating-to-1.8.html">To 1.8</a></li><li><a href="../dev_ref/migrating-to-1.7.html">To 1.7</a></li><li class="active"><a href="../dev_ref/migrating-to-1.6.html">To 1.6</a></li><li><a href="../dev_ref/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../dev_ref/migrating-to-2.2.html">To 2.2</a></li><li><a href="../dev_ref/migrating-to-2.1.html">To 2.1</a></li><li><a href="../dev_ref/migrating-to-2.0.html">To 2.0</a></li><li><a href="../dev_ref/migrating-to-1.8.html">To 1.8</a></li><li><a href="../dev_ref/migrating-to-1.7.html">To 1.7</a></li><li class="active"><a href="../dev_ref/migrating-to-1.6.html">To 1.6</a></li><li><a href="../dev_ref/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
 
   <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 1.6</h1>
 
@@ -19,29 +20,29 @@ index: "../toc.html"
       <p class="p">The <span class="ph filepath">demo</span> folder has been deprecated and the following plug-ins have been moved to the
           <span class="ph filepath">plugins</span> folder:</p>
       <table class="simpletable"><col style="width:50%"><col style="width:50%"><thead><tr class="sthead">
-          <th class="stentry" id="d4068e41">old path</th>
-          <th class="stentry" id="d4068e44">new path</th>
+          <th class="stentry" id="d4085e41">old path</th>
+          <th class="stentry" id="d4085e44">new path</th>
         </tr></thead><tbody><tr class="strow">
-          <td class="stentry" headers="d4068e41"><span class="ph filepath">demo/dita11</span></td>
-          <td class="stentry" headers="d4068e44"><span class="ph filepath">plugins/org.dita.specialization.dita11</span></td>
+          <td class="stentry" headers="d4085e41"><span class="ph filepath">demo/dita11</span></td>
+          <td class="stentry" headers="d4085e44"><span class="ph filepath">plugins/org.dita.specialization.dita11</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="d4068e41"><span class="ph filepath">demo/dita132</span></td>
-          <td class="stentry" headers="d4068e44"><span class="ph filepath">plugins/org.dita.specialization.dita132</span></td>
+          <td class="stentry" headers="d4085e41"><span class="ph filepath">demo/dita132</span></td>
+          <td class="stentry" headers="d4085e44"><span class="ph filepath">plugins/org.dita.specialization.dita132</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="d4068e41"><span class="ph filepath">demo/eclipsemap</span></td>
-          <td class="stentry" headers="d4068e44"><span class="ph filepath">plugins/org.dita.specialization.eclipsemap</span></td>
+          <td class="stentry" headers="d4085e41"><span class="ph filepath">demo/eclipsemap</span></td>
+          <td class="stentry" headers="d4085e44"><span class="ph filepath">plugins/org.dita.specialization.eclipsemap</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="d4068e41"><span class="ph filepath">demo/fo</span></td>
-          <td class="stentry" headers="d4068e44"><span class="ph filepath">plugins/org.dita.pdf2</span></td>
+          <td class="stentry" headers="d4085e41"><span class="ph filepath">demo/fo</span></td>
+          <td class="stentry" headers="d4085e44"><span class="ph filepath">plugins/org.dita.pdf2</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="d4068e41"><span class="ph filepath">demo/tocjs</span></td>
-          <td class="stentry" headers="d4068e44"><span class="ph filepath">plugins/com.sophos.tocjs</span></td>
+          <td class="stentry" headers="d4085e41"><span class="ph filepath">demo/tocjs</span></td>
+          <td class="stentry" headers="d4085e44"><span class="ph filepath">plugins/com.sophos.tocjs</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="d4068e41"><span class="ph filepath">demo/h2d</span></td>
-          <td class="stentry" headers="d4068e44"><span class="ph filepath">plugins/h2d</span></td>
+          <td class="stentry" headers="d4085e41"><span class="ph filepath">demo/h2d</span></td>
+          <td class="stentry" headers="d4085e44"><span class="ph filepath">plugins/h2d</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="d4068e41"><span class="ph filepath">demo/legacypdf</span></td>
-          <td class="stentry" headers="d4068e44"><span class="ph filepath">plugins/legacypdf</span></td>
+          <td class="stentry" headers="d4085e41"><span class="ph filepath">demo/legacypdf</span></td>
+          <td class="stentry" headers="d4085e44"><span class="ph filepath">plugins/legacypdf</span></td>
         </tr></tbody></table>
       <p class="p">The remaining plug-ins in the demo folder have been moved to a separate repository at <a class="xref" href="https://github.com/dita-ot/ext-plugins" target="_blank">github.com/dita-ot/ext-plugins</a>.</p>
     </section>

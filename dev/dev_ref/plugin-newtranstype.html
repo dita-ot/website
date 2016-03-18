@@ -1,46 +1,60 @@
 ---
 # Generated from DITA source
 layout: base
-title: "Integrating a new transformation type"
+title: "Adding a new transformation type"
 index: "../toc.html"
+commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML catalog</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li class="active"><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">Integrating a new transformation type</h1>
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugins-overview.html">Overview of plug-ins</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li class="active"><a href="../dev_ref/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding a Java library to the DITA-OT classpath parameter</a></li><li><a href="../dev_ref/plugin-messages.html">Adding new diagnostic messages</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Adding a new transformation type</h1>
   
-  <div class="body refbody"><p class="shortdesc">Plug-ins may integrate an entirely new transformation type. The new transformation type can be very simple,
-    such as an XHTML build that creates an additional control file; it can also be very complex, adding any number of
+  <div class="body taskbody"><p class="shortdesc">Plug-ins can integrate an entirely new transformation type. The new transformation type can be very simple,
+    such as an XHTML build that creates an additional control file; it also can be very complex, adding any number of
     new processing steps.</p>
-    <section class="section">
-      <p class="p">The transtype extension point is used to define a new transformation type, which makes use of targets in your
-        Ant extensions. When a transformation type is defined, the build expects Ant code to be integrated to define the
-        transform process. The Ant code must define a target based on the name of the transformation type; if the
-        transformation type is "mystuff", the Ant code must define a target named dita2mystuff.</p>
-      <dl class="dl">
-        
-          <dt class="dt dlterm"><code class="ph codeph">dita.conductor.transtype.check</code></dt>
-          <dd class="dd">Add a new value to the list of valid transformation type names.</dd>
-        
-        
-          <dt class="dt dlterm"><code class="ph codeph">dita.transtype.print</code></dt>
-          <dd class="dd">Declare the transformation type as a print type.</dd>
-        
-      </dl>
-      <p class="p">The <code class="ph codeph">&lt;transtype&gt;</code> element is used to define a new transformation type with the parameters
-        that are supported.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+      <p class="p">You can use the <code class="ph codeph">dita.conductor.transtype.check</code> and <code class="ph codeph">dita.transtype.print</code>
+        extension points to define new transformation types.</p>
+      <p class="p">When a transformation type is defined, the build expects Ant code to be integrated to define the transformation
+        process. The Ant code must define a target based on the name of the transformation type; if the transformation
+        type is "new-transform", the Ant code must define a target named <span class="keyword parmname">dita2new-transform</span>.</p>
     </section>
-    <div class="example"><h2 class="title sectiontitle">Example</h2>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Create an Ant project file for the new transformation. This project file must define a target named
+            "dita2<var class="keyword varname">new-transtype</var>," where <var class="keyword varname">new-transtype</var> is the name of the new
+          transformation type. </span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Create the following feature:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>&lt;plugin id="<var class="keyword varname">plugin-id </var>"&gt;
+  &lt;feature extension="dita.conductor.transtype.check" value="<var class="keyword varname">new-transtype</var>"/&gt;
+  <strong class="ph b">&lt;feature extension="dita.transtype.print" value="<var class="keyword varname">new-transtype</var>"/&gt;</strong>
+  &lt;feature extension="dita.conductor.target.relative" file="<var class="keyword varname">ant-file</var>"/&gt;
+&lt;/plugin&gt;</code></pre>
+          <p class="p">where:</p>
+          <ul class="ul">
+            <li class="li"><var class="keyword varname">plugin-id </var> is the plug-in identifier, for example, com.dita-ot.pdf.</li>
+            <li class="li"><var class="keyword varname">new-transtype</var> is the name of the new transformation, for example, dita-ot-pdf.</li>
+            <li class="li"><var class="keyword varname">ant-file</var> is the name of the Ant file, for example,
+                <span class="ph filepath">build-dita-ot-pdf.xml</span>.</li>
+          </ul>
+          <p class="p">Exclude the content that is highlighted in bold if the transformation is not intended for print.</p>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Integrate the plug-in.</span>
+      </li></ol>
+    <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>You now can use the new transformation.</section>
+    <div class="example"><h2 class="title sectiontitle">Examples</h2>
       
-      <p class="p">The following feature defines a transformation type of "newtext" and declares it as a print type; using this
-        transformation type will cause the build to look for a target <code class="ph codeph">dita2newtext</code>, defined in a
-        related Ant extension from the third feature:</p>
+      <p class="p">The following <span class="ph filepath">plugin.xml</span> file defines a new transformation type named "newtext"; it also
+        defines the transformation type to be a print type. The build will look for a <span class="keyword parmname">dita2newtext</span>
+        target.</p>
       <pre class="pre codeblock"><code>&lt;plugin id="com.example.newtext"&gt;
-  <strong class="ph b">&lt;feature extension="dita.conductor.transtype.check" value="newtext"/&gt;</strong>
-  <strong class="ph b">&lt;transtype name="newtext"/&gt;</strong>
+  &lt;feature extension="dita.conductor.transtype.check" value="newtext"/&gt;
   &lt;feature extension="dita.transtype.print" value="newtext"/&gt;
-  &lt;feature extension="dita.conductor.target.relative" file="antWrapper.xml"/&gt;
+  &lt;feature extension="dita.conductor.target.relative" file="build-newtext.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
       <p class="p">The following example shows how the <span class="ph filepath">org.dita.html5</span> plugin uses the
-          <code class="ph codeph">&lt;transtype&gt;</code> element to extend the common HTML transformation with a new
+          <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element to extend the common HTML transformation with a new
           <span class="keyword option">html5</span> transformation type and define a new <span class="keyword parmname">nav-toc</span> parameter with three
         possible values:</p>
       <pre class="pre codeblock"><code><strong class="ph b">&lt;transtype name="html5" extends="common-html" desc="HTML5"&gt;</strong>
@@ -50,6 +64,8 @@ index: "../toc.html"
     &lt;val desc="Partial TOC that shows the current topic"&gt;partial&lt;/val&gt;
     &lt;val desc="Full TOC"&gt;full&lt;/val&gt;
   &lt;/param&gt;
-&lt;/transtype&gt;</code></pre></div>
+&lt;/transtype&gt;</code></pre>
+      
+    </div>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../dev_ref/plugin-configfile.html" title="The plugin.xml file controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and integrates those changes into the core code.">Plug-in configuration file</a></div><div><a class="link" href="../extension-points/all-extension-points.html" title="The DITA Open Toolkit provides a series of extension points that can be used to integrate changes into the core code. Extension points are defined in the plugin.xml file for each plug-in. The DITA-OT integration process makes each extension visible to the rest of the toolkit.">Extension points</a></div></div></nav></main>
+<nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../dev_ref/plugin-extension-points-general.html" title="These extension points enable you to extend the DITA-OT. You can add Ant targets or imports; add a Java library to the classpath parameter; add a new transformation type; extend a catalog file; add new diagnostic messages, and more.">General extension points</a></div><div><a class="link" href="../dev_ref/plugin-configfile.html" title="The plug-in descriptor file (plugin.xml) controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and then integrates those changes into the core DITA-OT code.">Plug-in descriptor file</a></div><div><a class="link" href="../extension-points/all-extension-points.html" title="The pre-defined extension points can be used to extend the functionality of the DITA-OT.">All DITA-OT extension points</a></div></div></nav></main>

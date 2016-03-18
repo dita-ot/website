@@ -1,40 +1,39 @@
 ---
 # Generated from DITA source
 layout: base
-title: "Adding new targets to the Ant build process"
+title: "Adding a new target to the Ant build process"
 index: "../toc.html"
+commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugins-overview.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-configfile.html">Plug-in configuration file</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending the XML catalog</a></li><li class="active"><a href="../dev_ref/plugin-anttarget.html">Adding new targets to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding Ant targets to the pre-process pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Integrating a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding styles with XSLT</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Passing parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding Java libraries to the classpath</a></li><li><a href="../dev_ref/plugin-messages.html">Adding diagnostic messages</a></li><li><a href="../dev_ref/plugin-dependencies.html">Managing plug-in dependencies</a></li><li><a href="../dev_ref/plugin-support.html">Version and support information</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">Adding new targets to the Ant build process</h1>
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugins-overview.html">Overview of plug-ins</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li class="active"><a href="../dev_ref/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding a Java library to the DITA-OT classpath parameter</a></li><li><a href="../dev_ref/plugin-messages.html">Adding new diagnostic messages</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Adding a new target to the Ant build process</h1>
   
-  <div class="body refbody"><p class="shortdesc">The Ant conductor extension point is used to make new targets available to the Ant processing pipeline.
-    This may be done as part of creating a new transform, extending pre-processing, or simply to provide Ant targets for
-    the use of other plug-ins.</p>
-    <section class="section">
-      <dl class="dl">
-        
-          <dt class="dt dlterm"><code class="ph codeph">dita.conductor.target.relative</code></dt>
-          <dt class="dt dlterm"><code class="ph codeph">dita.conductor.target</code></dt>
-          <dd class="dd">
-            <p class="p">Add Ant import to main Ant build file.</p>
-            <div class="note remember note_remember"><span class="note__title remembertitle">Remember:</span> The <code class="ph codeph">dita.conductor.target</code> extension is deprecated. Use
-                <code class="ph codeph">dita.conductor.target.relative</code> instead.</div>
-          </dd>
-        
-      </dl>
+  <div class="body taskbody"><p class="shortdesc">Use the Ant conductor extension point (<code class="ph codeph">dita.conductor.target.relative</code>) to make new targets
+    available to the Ant processing pipeline. This can be done as part of creating a new transformation, extending
+    pre-processing, or simply to make new Ant targets available to other plug-ins.</p>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Create an Ant project file that contains the new target.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">In the same directory as the Ant project file, create a wrapper file that imports the Ant project file: </span>
+        <div class="itemgroup info"><pre class="pre codeblock"><code>&lt;dummy&gt;
+  &lt;import file="<var class="keyword varname">Ant-file</var>"/&gt;
+&lt;/dummy&gt;</code></pre>where
+            <var class="keyword varname">Ant-file</var> is the project file that contains the new target.</div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Create the <span class="ph filepath">plugin.xml</span> file:</span>
+        <div class="itemgroup stepxmp"><pre class="pre codeblock"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
+  &lt;feature extension="dita.conductor.target.relative" file="<var class="keyword varname">wrapper-file</var>"/&gt;
+&lt;/plugin&gt;</code></pre>where:<ul class="ul">
+            <li class="li"><var class="keyword varname">plugin-id</var> is the plug-in identifier, for example,
+              <code class="ph codeph">com.example.ant</code>.</li>
+            <li class="li"><var class="keyword varname">wrapper-file</var> is the wrapper file that imports the Ant project file.</li>
+          </ul></div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Integrate the plug-in.</span>
+      </li></ol>
+    <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
+      <p class="p">The imports from wrapper file are copied into the <span class="ph filepath">build.xml</span> file, using the correct path.
+        This makes the new Ant targets available to other processes.</p>
     </section>
-    <div class="example"><h2 class="title sectiontitle">Example</h2>
-      
-      <p class="p">To extend Ant processing, first place your extensions in an Ant project file within your plug-in, such as
-          <span class="ph filepath">myAntStuff.xml</span>. Next, create a small wrapper file
-          <span class="ph filepath">myAntStuffWrapper.xml</span> in the same directory:
-        </p><pre class="pre codeblock"><code>&lt;dummy&gt; &lt;import file="myAntStuff.xml"/&gt; &lt;/dummy&gt;</code></pre><p class="p">Then create the following
-        feature:
-        </p><pre class="pre codeblock"><code>&lt;plugin id="com.example.ant"&gt;
-  &lt;feature extension="dita.conductor.target.relative" file="myAntStuffWrapper.xml"/&gt;
-&lt;/plugin&gt;</code></pre><p class="p">When
-        the plug-in is integrated, the imports from <span class="ph filepath">myAntStuffWrapper.xml</span> will be copied into
-          <span class="ph filepath">build.xml</span> (using the correct path). This makes targets in
-          <span class="ph filepath">myAntStuff.xml</span> available to any other processing.</p></div>
   </div>
-</main>
+<nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../dev_ref/plugin-extension-points-general.html" title="These extension points enable you to extend the DITA-OT. You can add Ant targets or imports; add a Java library to the classpath parameter; add a new transformation type; extend a catalog file; add new diagnostic messages, and more.">General extension points</a></div></div></nav></main>

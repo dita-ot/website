@@ -1,0 +1,110 @@
+---
+# Generated from DITA source
+layout: base
+title: "XSLT-import extension points"
+index: "../toc.html"
+commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-extension-points-general.html">General extension points</a></li><li><a href="../dev_ref/plugin-extension-points-pre-processing.html">Pre-processing extension points</a></li><li class="active"><a href="../dev_ref/plugin-extension-points-xslt-import.html">XSLT-import extension points</a></li><li><a href="../dev_ref/plugin-extension-points-xslt-parameters.html">XSLT-parameter extension points</a></li><li><a href="../dev_ref/plugin-extension-points-support.html">Version and support information</a></li><li><a href="../extension-points/all-extension-points.html">All extension points</a></li></ul></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">XSLT-import extension points</h1>
+  
+  <div class="body refbody"><p class="shortdesc">You can use these extension points to override XSLT processing steps in pre-processing and certain
+    transformation types. The value of the <code class="keyword markupname xmlelement">&lt;file&gt;</code> attribute in the
+      <code class="keyword markupname xmlelement">&lt;feature&gt;</code> element specifies a relative path to an XSL file in the current plug-in. The
+    plug-in installer adds a XSL import statement to the default DITA-OT code, so that the XSL override becomes part of
+    the normal build.</p>
+    <section class="section"><h2 class="title sectiontitle">Pre-processing</h2>
+      
+      <p class="p">You can use the following extension points to add XSLT processing to modules in the pre-processing
+        pipeline:</p>
+      <dl class="dl">
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.conref</span></dt>
+          <dd class="dd">Overrides the pre-processing step that resolves conref.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.maplink</span></dt>
+          <dd class="dd">Overrides the <code class="ph codeph">maplink</code> step in the pre-processing pipeline. This is the step that
+            generates map-based links.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.mappull</span></dt>
+          <dd class="dd">Overrides the <code class="ph codeph">mappull</code> step in the pre-processing pipeline. This is the step that updates
+            navigation titles in maps and causes attributes to cascade.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.mapref</span></dt>
+          <dd class="dd">Overrides the <code class="ph codeph">mapref</code> step in the pre-processing pipeline. This is the step that resolves
+            references to other maps.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.topicpull</span></dt>
+          <dd class="dd">Overrides the <code class="ph codeph">topicpull</code> step in the pre-processing pipeline. This is the step that pulls
+            text into <code class="keyword markupname xmlelement">&lt;xref&gt;</code> elements, as well as performing other tasks.</dd>
+        
+      </dl>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">Transformations</h2>
+      
+      <p class="p">You can use the following extension points to add XSLT processing to modules in DITA-OT transformations:</p>
+      <dl class="dl">
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.docbook</span></dt>
+          <dd class="dd">Overrides the default DocBook transformation.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.eclipse.plugin</span></dt>
+          <dd class="dd">Overrides the step that generates the <span class="ph filepath">plugin.xml</span> file for Eclipse Help.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.rtf</span></dt>
+          <dd class="dd">Overrides the default rich-text format (RTF) transformation.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.troff-ast</span></dt>
+          <dd class="dd">Overrides the intermediate block-and-phrase format that is generated as input to troff processing.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.troff</span></dt>
+          <dd class="dd">Overrides the XSL that converts block-and-phrase intermediate markup into troff. </dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.xhtml</span></dt>
+          <dd class="dd">Overrides the default HTML or XHTML transformation, including HTML Help and Eclipse Help. The referenced
+            file is integrated directly into the XSLT step that generates XHTML.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.xslfo</span></dt>
+          <dd class="dd">Overrides the default PDF transformation (formerly known as PDF2). The referenced XSL file is integrated
+            directly into the XSLT step that generates the XSL-FO.</dd>
+        
+      </dl>
+    </section>
+    <div class="example"><h2 class="title sectiontitle">Example</h2>
+      
+      <p class="p">The following two files represent a complete (albeit simple) plug-in that adds a company
+        banner to the XHTML output. The <span class="ph filepath">plugin.xml</span> file declares an XSLT file
+        that extends the XHTML processing; the <span class="ph filepath">xsl/header.xsl</span> file overrides
+        the default header processing to provide a company banner.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Contents of the <span class="ph filepath">plugin.xml</span> file</figcaption>
+        
+        <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;plugin id="com.example.brandheader"&gt;
+  &lt;feature extension="dita.xsl.xhtml" file="xsl/header.xsl"/&gt;
+&lt;/plugin&gt;</code></pre>
+      </figure>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Contents of the <span class="ph filepath">xsl/header.xsl</span> file</figcaption>
+        
+        <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet version="1.0" 
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+  &lt;xsl:template name="gen-user-header"&gt;
+    &lt;div&gt;&lt;img src="http://www.example.com/company_banner.jpg" 
+              alt="Example Company Banner"/&gt;&lt;/div&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+&lt;/xml&gt;</code></pre>
+      </figure>
+    </div>
+  </div>
+</main>
