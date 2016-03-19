@@ -1,3 +1,10 @@
 <footer>
-<div class="container text-muted">DITA Open Toolkit is released under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></div>
+<div class="container text-muted">
+{% if page.commit %}
+Page content generated from DITA source: <a href="https://github.com/dita-ot/docs/commit/{{ page.commit }}">
+dita-ot/docs/commit/{{ page.commit | truncate: 7, '' }}</a>.
+{% else %}
+DITA Open Toolkit is released under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
+{% endif %}
+</div>
 </footer>
