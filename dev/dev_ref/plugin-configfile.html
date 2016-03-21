@@ -3,7 +3,7 @@
 layout: base
 title: "Plug-in descriptor file"
 index: "../toc.html"
-commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
+commit: "2dd8c4f18f12180ea3ebc3528cee5f38baf8dc78"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugins-overview.html">Overview of plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-benefits.html">Benefits of plug-ins</a></li><li class="active"><a href="../dev_ref/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../dev_ref/plugin-dependencies.html">Plug-in dependencies</a></li></ul></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding a Java library to the DITA-OT classpath parameter</a></li><li><a href="../dev_ref/plugin-messages.html">Adding new diagnostic messages</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Plug-in descriptor file</h1>
@@ -34,46 +34,46 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
           <dt class="dt dlterm"><code class="keyword markupname xmlelement">&lt;feature&gt;</code></dt>
           <dd class="dd">
             <p class="p">An optional element that defines the extension to the DITA-OT.</p>
-            <p class="p">The following attributes are supported:</p><table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-                <th class="stentry" id="d7004e98">Attribute</th>
-                <th class="stentry" id="d7004e101">Description</th>
-                <th class="stentry" id="d7004e104">Required?</th>
+            <p class="p">The following attributes are supported:</p><table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e98" class="stentry">Attribute</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e101" class="stentry">Description</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e104" class="stentry">Required?</th>
               </tr></thead><tbody><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e98">extension</th>
-                <td class="stentry" headers="d7004e101 d7004e110">Name of the DITA-OT extension point</td>
-                <td class="stentry" headers="d7004e104 d7004e110">Yes</td>
+                <th style="vertical-align:top;" id="d6641e110" headers="d6641e98" class="stentry">extension</th>
+                <td style="vertical-align:top;" headers="d6641e101 d6641e110" class="stentry">Name of the DITA-OT extension point</td>
+                <td style="vertical-align:top;" headers="d6641e104 d6641e110" class="stentry">Yes</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e98">value</th>
-                <td class="stentry" headers="d7004e101 d7004e122">Comma separated string value of the extension</td>
-                <td class="stentry" headers="d7004e104 d7004e122">Either the <code class="keyword markupname xmlatt">@value</code> or <code class="keyword markupname xmlatt">@file</code> attribute must be
+                <th style="vertical-align:top;" id="d6641e122" headers="d6641e98" class="stentry">value</th>
+                <td style="vertical-align:top;" headers="d6641e101 d6641e122" class="stentry">Comma separated string value of the extension</td>
+                <td style="vertical-align:top;" headers="d6641e104 d6641e122" class="stentry">Either the <code class="keyword markupname xmlatt">@value</code> or <code class="keyword markupname xmlatt">@file</code> attribute must be
                   specified</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e98">file</th>
-                <td class="stentry" headers="d7004e101 d7004e140">File name, relative to the <span class="ph filepath">plugin.xml</span> file</td>
-                <td class="stentry" headers="d7004e104 d7004e140">Either the <code class="keyword markupname xmlatt">@value</code> or <code class="keyword markupname xmlatt">@file</code> attribute must be
+                <th style="vertical-align:top;" id="d6641e140" headers="d6641e98" class="stentry">file</th>
+                <td style="vertical-align:top;" headers="d6641e101 d6641e140" class="stentry">File name, relative to the <span class="ph filepath">plugin.xml</span> file</td>
+                <td style="vertical-align:top;" headers="d6641e104 d6641e140" class="stentry">Either the <code class="keyword markupname xmlatt">@value</code> or <code class="keyword markupname xmlatt">@file</code> attribute must be
                   specified</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e98">type</th>
-                <td class="stentry" headers="d7004e101 d7004e161">Type of the <code class="keyword markupname xmlatt">@value</code> attribute</td>
-                <td class="stentry" headers="d7004e104 d7004e161">No</td>
+                <th style="vertical-align:top;" id="d6641e161" headers="d6641e98" class="stentry">type</th>
+                <td style="vertical-align:top;" headers="d6641e101 d6641e161" class="stentry">Type of the <code class="keyword markupname xmlatt">@value</code> attribute</td>
+                <td style="vertical-align:top;" headers="d6641e104 d6641e161" class="stentry">No</td>
               </tr></tbody></table></dd>
         
         
           <dt class="dt dlterm"><code class="keyword markupname xmlelement">&lt;extension-point&gt;</code></dt>
           <dd class="dd">
             <p class="p">An optional element that defines a new extension point that can be used by other DITA-OT plug-ins.</p>
-            <p class="p">The following attributes are supported:</p><table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-                <th class="stentry" id="d7004e193">Attribute</th>
-                <th class="stentry" id="d7004e196">Description</th>
-                <th class="stentry" id="d7004e199">Required?</th>
+            <p class="p">The following attributes are supported:</p><table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e193" class="stentry">Attribute</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e196" class="stentry">Description</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e199" class="stentry">Required?</th>
               </tr></thead><tbody><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e193">id</th>
-                <td class="stentry" headers="d7004e196 d7004e205">Extension point identifier</td>
-                <td class="stentry" headers="d7004e199 d7004e205">Yes</td>
+                <th style="vertical-align:top;" id="d6641e205" headers="d6641e193" class="stentry">id</th>
+                <td style="vertical-align:top;" headers="d6641e196 d6641e205" class="stentry">Extension point identifier</td>
+                <td style="vertical-align:top;" headers="d6641e199 d6641e205" class="stentry">Yes</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e193">name</th>
-                <td class="stentry" headers="d7004e196 d7004e217">Extension point description</td>
-                <td class="stentry" headers="d7004e199 d7004e217">No</td>
+                <th style="vertical-align:top;" id="d6641e217" headers="d6641e193" class="stentry">name</th>
+                <td style="vertical-align:top;" headers="d6641e196 d6641e217" class="stentry">Extension point description</td>
+                <td style="vertical-align:top;" headers="d6641e199 d6641e217" class="stentry">No</td>
               </tr></tbody></table>
           </dd>
         
@@ -81,33 +81,33 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
           <dt class="dt dlterm"><code class="keyword markupname xmlelement">&lt;require&gt;</code></dt>
           <dd class="dd">
             <p class="p">An optional element that defines plug-in dependencies.</p>
-            <p class="p">The following attributes are supported:</p><table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-                <th class="stentry" id="d7004e247">Attribute</th>
-                <th class="stentry" id="d7004e250">Description</th>
-                <th class="stentry" id="d7004e253">Required?</th>
+            <p class="p">The following attributes are supported:</p><table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e247" class="stentry">Attribute</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e250" class="stentry">Description</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e253" class="stentry">Required?</th>
               </tr></thead><tbody><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e247">plugin</th>
-                <td class="stentry" headers="d7004e250 d7004e259">A vertical-bar separated list of plug-ins that are required </td>
-                <td class="stentry" headers="d7004e253 d7004e259">Yes</td>
+                <th style="vertical-align:top;" id="d6641e259" headers="d6641e247" class="stentry">plugin</th>
+                <td style="vertical-align:top;" headers="d6641e250 d6641e259" class="stentry">A vertical-bar separated list of plug-ins that are required </td>
+                <td style="vertical-align:top;" headers="d6641e253 d6641e259" class="stentry">Yes</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e247">importance</th>
-                <td class="stentry" headers="d7004e250 d7004e271">Identifies whether plug-in is required or optional</td>
-                <td class="stentry" headers="d7004e253 d7004e271">No</td>
+                <th style="vertical-align:top;" id="d6641e271" headers="d6641e247" class="stentry">importance</th>
+                <td style="vertical-align:top;" headers="d6641e250 d6641e271" class="stentry">Identifies whether plug-in is required or optional</td>
+                <td style="vertical-align:top;" headers="d6641e253 d6641e271" class="stentry">No</td>
               </tr></tbody></table></dd>
         
         
           <dt class="dt dlterm"><code class="keyword markupname xmlelement">&lt;template&gt;</code></dt>
           <dd class="dd">
             <p class="p">An optional element that defines files that should be treated as templates.</p>
-            <p class="p">The following attributes are supported: </p><table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-                <th class="stentry" id="d7004e300">Attribute</th>
-                <th class="stentry" id="d7004e303">Description</th>
-                <th class="stentry" id="d7004e306">Required?</th>
+            <p class="p">The following attributes are supported: </p><table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e300" class="stentry">Attribute</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e303" class="stentry">Description</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e306" class="stentry">Required?</th>
               </tr></thead><tbody><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e300">file</th>
-                <td class="stentry" headers="d7004e303 d7004e312">Name and path to the template file, relative to the <span class="ph filepath">plugin.xml</span>
+                <th style="vertical-align:top;" id="d6641e312" headers="d6641e300" class="stentry">file</th>
+                <td style="vertical-align:top;" headers="d6641e303 d6641e312" class="stentry">Name and path to the template file, relative to the <span class="ph filepath">plugin.xml</span>
                   file</td>
-                <td class="stentry" headers="d7004e306 d7004e312">Yes</td>
+                <td style="vertical-align:top;" headers="d6641e306 d6641e312" class="stentry">Yes</td>
               </tr></tbody></table>
           </dd>
         
@@ -115,18 +115,18 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
           <dt class="dt dlterm"><code class="keyword markupname xmlelement">&lt;meta&gt;</code></dt>
           <dd class="dd">
             <p class="p">An optional element that defines metadata.</p>
-            <p class="p">The following attributes are supported:</p><table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-                <th class="stentry" id="d7004e345">Attribute</th>
-                <th class="stentry" id="d7004e348">Description</th>
-                <th class="stentry" id="d7004e351">Required?</th>
+            <p class="p">The following attributes are supported:</p><table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e345" class="stentry">Attribute</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e348" class="stentry">Description</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e351" class="stentry">Required?</th>
               </tr></thead><tbody><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e345">type</th>
-                <td class="stentry" headers="d7004e348 d7004e357">Metadata name </td>
-                <td class="stentry" headers="d7004e351 d7004e357">Yes</td>
+                <th style="vertical-align:top;" id="d6641e357" headers="d6641e345" class="stentry">type</th>
+                <td style="vertical-align:top;" headers="d6641e348 d6641e357" class="stentry">Metadata name </td>
+                <td style="vertical-align:top;" headers="d6641e351 d6641e357" class="stentry">Yes</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e345">value</th>
-                <td class="stentry" headers="d7004e348 d7004e369">Metadata value</td>
-                <td class="stentry" headers="d7004e351 d7004e369">Yes</td>
+                <th style="vertical-align:top;" id="d6641e369" headers="d6641e345" class="stentry">value</th>
+                <td style="vertical-align:top;" headers="d6641e348 d6641e369" class="stentry">Metadata value</td>
+                <td style="vertical-align:top;" headers="d6641e351 d6641e369" class="stentry">Yes</td>
               </tr></tbody></table></dd>
         
         
@@ -134,59 +134,59 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
           <dd class="dd">
             <p class="p">An optional element that defines a new output format (transformation type).</p>
             <p class="p">The following attributes are supported:</p>
-            <table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-                <th class="stentry" id="d7004e400">Attribute</th>
-                <th class="stentry" id="d7004e403">Description</th>
-                <th class="stentry" id="d7004e406">Required?</th>
+            <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e400" class="stentry">Attribute</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e403" class="stentry">Description</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e406" class="stentry">Required?</th>
               </tr></thead><tbody><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e400">name</th>
-                <td class="stentry" headers="d7004e403 d7004e412">Transformation name</td>
-                <td class="stentry" headers="d7004e406 d7004e412">Yes</td>
+                <th style="vertical-align:top;" id="d6641e412" headers="d6641e400" class="stentry">name</th>
+                <td style="vertical-align:top;" headers="d6641e403 d6641e412" class="stentry">Transformation name</td>
+                <td style="vertical-align:top;" headers="d6641e406 d6641e412" class="stentry">Yes</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e400">desc</th>
-                <td class="stentry" headers="d7004e403 d7004e424">Transformation type description</td>
-                <td class="stentry" headers="d7004e406 d7004e424">No</td>
+                <th style="vertical-align:top;" id="d6641e424" headers="d6641e400" class="stentry">desc</th>
+                <td style="vertical-align:top;" headers="d6641e403 d6641e424" class="stentry">Transformation type description</td>
+                <td style="vertical-align:top;" headers="d6641e406 d6641e424" class="stentry">No</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e400">abstract</th>
-                <td class="stentry" headers="d7004e403 d7004e436">Defines an abstract transformation type that cannot be used directly</td>
-                <td class="stentry" headers="d7004e406 d7004e436">No</td>
+                <th style="vertical-align:top;" id="d6641e436" headers="d6641e400" class="stentry">abstract</th>
+                <td style="vertical-align:top;" headers="d6641e403 d6641e436" class="stentry">Defines an abstract transformation type that cannot be used directly</td>
+                <td style="vertical-align:top;" headers="d6641e406 d6641e436" class="stentry">No</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e400">extends</th>
-                <td class="stentry" headers="d7004e403 d7004e448">Specifies the name of the transformation type being extended</td>
-                <td class="stentry" headers="d7004e406 d7004e448">No</td>
+                <th style="vertical-align:top;" id="d6641e448" headers="d6641e400" class="stentry">extends</th>
+                <td style="vertical-align:top;" headers="d6641e403 d6641e448" class="stentry">Specifies the name of the transformation type being extended</td>
+                <td style="vertical-align:top;" headers="d6641e406 d6641e448" class="stentry">No</td>
               </tr></tbody></table>
             <p class="p">The <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element may define additional parameters for the transformation
               type using <code class="keyword markupname xmlelement">&lt;param&gt;</code> child elements.</p>
             <p class="p">The following parameter attributes are supported:</p>
-            <table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-                <th class="stentry" id="d7004e476">Attribute</th>
-                <th class="stentry" id="d7004e479">Description</th>
-                <th class="stentry" id="d7004e482">Required?</th>
+            <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e476" class="stentry">Attribute</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e479" class="stentry">Description</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e482" class="stentry">Required?</th>
               </tr></thead><tbody><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e476">name</th>
-                <td class="stentry" headers="d7004e479 d7004e488">Parameter name</td>
-                <td class="stentry" headers="d7004e482 d7004e488">Yes</td>
+                <th style="vertical-align:top;" id="d6641e488" headers="d6641e476" class="stentry">name</th>
+                <td style="vertical-align:top;" headers="d6641e479 d6641e488" class="stentry">Parameter name</td>
+                <td style="vertical-align:top;" headers="d6641e482 d6641e488" class="stentry">Yes</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e476">desc</th>
-                <td class="stentry" headers="d7004e479 d7004e500">Parameter description</td>
-                <td class="stentry" headers="d7004e482 d7004e500">No</td>
+                <th style="vertical-align:top;" id="d6641e500" headers="d6641e476" class="stentry">desc</th>
+                <td style="vertical-align:top;" headers="d6641e479 d6641e500" class="stentry">Parameter description</td>
+                <td style="vertical-align:top;" headers="d6641e482 d6641e500" class="stentry">No</td>
               </tr><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e476">type</th>
-                <td class="stentry" headers="d7004e479 d7004e512">Parameter type (<span class="keyword option">enum</span>, <span class="keyword option">file</span>,
+                <th style="vertical-align:top;" id="d6641e512" headers="d6641e476" class="stentry">type</th>
+                <td style="vertical-align:top;" headers="d6641e479 d6641e512" class="stentry">Parameter type (<span class="keyword option">enum</span>, <span class="keyword option">file</span>,
                   <span class="keyword option">string</span>)</td>
-                <td class="stentry" headers="d7004e482 d7004e512">Yes</td>
+                <td style="vertical-align:top;" headers="d6641e482 d6641e512" class="stentry">Yes</td>
               </tr></tbody></table>
             <p class="p">Enumeration parameters (<code class="keyword markupname xmlelement">&lt;param&gt;</code> elements of type <span class="keyword option">enum</span>) define
               enumeration values with <code class="keyword markupname xmlelement">&lt;val&gt;</code> child elements.</p>
             <p class="p">The following attributes are supported:</p>
-            <table class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
-                <th class="stentry" id="d7004e551">Attribute</th>
-                <th class="stentry" id="d7004e554">Description</th>
-                <th class="stentry" id="d7004e557">Required?</th>
+            <table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletable"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e551" class="stentry">Attribute</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e554" class="stentry">Description</th>
+                <th style="vertical-align:bottom;text-align:left;" id="d6641e557" class="stentry">Required?</th>
               </tr></thead><tbody><tr class="strow">
-                <th scope="row" class="stentry" headers="d7004e551">default</th>
-                <td class="stentry" headers="d7004e554 d7004e563">Defines an enumeration value as the default value (default="true")</td>
-                <td class="stentry" headers="d7004e557 d7004e563">Yes</td>
+                <th style="vertical-align:top;" id="d6641e563" headers="d6641e551" class="stentry">default</th>
+                <td style="vertical-align:top;" headers="d6641e554 d6641e563" class="stentry">Defines an enumeration value as the default value (default="true")</td>
+                <td style="vertical-align:top;" headers="d6641e557 d6641e563" class="stentry">Yes</td>
               </tr></tbody></table>
           </dd>
         
