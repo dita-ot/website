@@ -2,10 +2,10 @@
 ---
 
 // Override default Bootstrap variable definitions
-$code-color:                  #777; // $gray-light
+$code-color:                  #777; // $gray-light ($text-muted)
 $code-bg:                     transparent;
 
-$kbd-color:                   #555;
+$kbd-color:                   #555; // $gray
 $kbd-bg:                      #fcfcfc;
 $kbd-shadow:                  #bbb;
 
@@ -17,7 +17,7 @@ $nav-shadow: rgba(0, 0, 0, 0.2);
 // Import DITA-OT custom subset of Bootstrap modules
 @import 'bootstrap-custom';
 
-// Override Bootstrap & user agent defaults 
+// Override Bootstrap & user agent defaults
 @import 'code';
 @import 'notes';
 @import 'toc';
@@ -25,38 +25,46 @@ $nav-shadow: rgba(0, 0, 0, 0.2);
 @import 'search';
 
 footer {
-	text-align: center;
-	font-size: smaller;
-	margin-top: 30px;
-	padding: 10px 0;
-	border-top: 1px solid #e5e5e5;
+  border-top: 1px solid $legend-border-color;
+  font-size: smaller;
+  margin-top: 30px;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .navbar-form {
-	padding: 0 
+  padding: 0;
 }
 
 // Fixed w/ https://github.com/dita-ot/dita-ot/pull/2097, remove once all site content has been regenerated thereafter
 col {
-	display: none;
+  display: none;
 }
+
 .lq {
-	font-size: 14px;
-	color: #777; 
+  color: $text-muted;
+  font-size: 14px;
 }
 
 // Add bottom margin to nested lists & short descriptions that appear in abstracts
 li.li ul.ul,
 div.shortdesc {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+p.shortdesc,
+div.shortdesc {
+  color: $text-muted;
+  font-size: $font-size-large;
+  line-height: $line-height-large;
 }
 
 .simpletable {
-	@extend .table;
-	@extend .table-condensed;
+  @extend .table;
+  @extend .table-condensed;
 }
 
 // Apply Bootstrap's <caption> style to figure titles (rendered as HTML5 <figcaption> elements)
 figcaption {
-	@extend caption;
+  @extend caption;
 }
