@@ -3,7 +3,7 @@
 layout: base
 title: "Customizing PDF output"
 index: "../toc.html"
-commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
+commit: "2f6255c3084d35685e56be1ca4e1c257306a6350"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li class="active"><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Customizing PDF output</h1>
@@ -24,7 +24,7 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
             (<span class="ph filepath">plugin.xml</span>) that declares the new <span class="keyword option">print-pdf</span> transformation and its
           dependencies.</span>
         <div class="itemgroup info">
-          <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span><span class="ph filepath">plugin.xml</span> file</figcaption>
+          <figure class="fig fignone"><span class="figcap">Figure 1. <span class="ph filepath">plugin.xml</span> file</span>
             
             <pre class="pre codeblock"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;plugin id="com.example.print-pdf"&gt;
@@ -38,7 +38,7 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
       </li><li class="li step stepexpand">
         <span class="ph cmd">Add an Ant script (<span class="ph filepath">integrator.xml</span>) to define the transformation type.</span>
         <div class="itemgroup info">
-          <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span><span class="ph filepath">integrator.xml</span> file</figcaption>
+          <figure class="fig fignone"><span class="figcap">Figure 2. <span class="ph filepath">integrator.xml</span> file</span>
             
             <pre class="pre codeblock"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;project name="com.example.print-pdf"&gt;
@@ -52,7 +52,7 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
         <span class="ph cmd">In the new plug-in directory, add a <span class="ph filepath">cfg/catalog.xml</span> file that specifies the custom
           XSLT style sheets.</span>
         <div class="itemgroup stepxmp">
-          <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span><span class="ph filepath">cfg/catalog.xml</span> file</figcaption>
+          <figure class="fig fignone"><span class="figcap">Figure 3. <span class="ph filepath">cfg/catalog.xml</span> file</span>
             
             <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;catalog prefer="system" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;
@@ -64,7 +64,7 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
       </li><li class="li step stepexpand">
         <span class="ph cmd">Create the <span class="ph filepath">cfg/fo/attrs/custom.xsl</span> file, and add attribute and variable overrides to
           it.</span>
-        <div class="itemgroup stepxmp">For example, add the content highlighted with bold to change the page size to A4.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span><span class="ph filepath">cfg/fo/attrs/custom.xsl</span> file</figcaption>
+        <div class="itemgroup stepxmp">For example, add the content highlighted with bold to change the page size to A4.<figure class="fig fignone"><span class="figcap">Figure 4. <span class="ph filepath">cfg/fo/attrs/custom.xsl</span> file</span>
             
             <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -76,7 +76,7 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
           </figure></div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Create the <span class="ph filepath">cfg/fo/xsl/custom.xsl</span> file, and add XSLT overrides to it.</span>
-        <div class="itemgroup stepxmp">For example, the following code changes the rendering of &lt;figure&gt; elements.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 5. </span><span class="ph filepath">cfg/fo/xsl/custom.xsl</span> file</figcaption>
+        <div class="itemgroup stepxmp">For example, the following code changes the rendering of &lt;figure&gt; elements.<figure class="fig fignone"><span class="figcap">Figure 5. <span class="ph filepath">cfg/fo/xsl/custom.xsl</span> file</span>
             
             <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -103,7 +103,7 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
         <span class="ph cmd">Create an English-language variable-definition file (<span class="ph filepath">cfg/common/vars/en.xml</span>) and make
           any necessary modifications to it.</span>
         <div class="itemgroup stepxmp">For example, the following code removes the period after the number for an ordered-list item; it also
-          specifies that the bullet for an unordered list item should be an em dash.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span><span class="ph filepath">cfg/common/vars/en.xml</span> file</figcaption>
+          specifies that the bullet for an unordered list item should be an em dash.<figure class="fig fignone"><span class="figcap">Figure 6. <span class="ph filepath">cfg/common/vars/en.xml</span> file</span>
             
             <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;vars xmlns="http://www.idiominc.com/opentopic/vars"&gt;

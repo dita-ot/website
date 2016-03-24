@@ -3,7 +3,7 @@
 layout: base
 title: "XSLT-parameter extension points"
 index: "../toc.html"
-commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
+commit: "2f6255c3084d35685e56be1ca4e1c257306a6350"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a><ul class="nav nav-list"><li><a href="../dev_ref/plugin-extension-points-general.html">General extension points</a></li><li><a href="../dev_ref/plugin-extension-points-pre-processing.html">Pre-processing extension points</a></li><li><a href="../dev_ref/plugin-extension-points-xslt-import.html">XSLT-import extension points</a></li><li class="active"><a href="../dev_ref/plugin-extension-points-xslt-parameters.html">XSLT-parameter extension points</a></li><li><a href="../dev_ref/plugin-extension-points-support.html">Version and support information</a></li><li><a href="../extension-points/all-extension-points.html">All extension points</a></li></ul></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">XSLT-parameter extension points</h1>
@@ -68,13 +68,13 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
       <p class="p">The following two files represent a complete (albeit simple) plug-in that passes the
         parameters defined in the <span class="ph filepath">insertParameters.xml</span> file to the XHTML
         transformation process.</p>
-      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Contents of the <span class="ph filepath">plugin.xml</span> file</figcaption>
+      <figure class="fig fignone"><span class="figcap">Figure 1. Contents of the <span class="ph filepath">plugin.xml</span> file</span>
         
         <pre class="pre codeblock"><code>&lt;plugin id="com.example.newparam"&gt;
   &lt;feature extension="dita.conductor.xhtml.param" file="insertParameters.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
       </figure>
-      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Contents of the <span class="ph filepath">insertParameters.xml</span></figcaption>
+      <figure class="fig fignone"><span class="figcap">Figure 2. Contents of the <span class="ph filepath">insertParameters.xml</span></span>
         
         <pre class="pre codeblock"><code>&lt;dummy&gt;
   &lt;!-- Any Ant code allowed in xslt task is possible. Common example: --&gt;

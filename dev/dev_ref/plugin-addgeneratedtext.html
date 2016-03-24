@@ -3,7 +3,7 @@
 layout: base
 title: "Modifying or adding generated text"
 index: "../toc.html"
-commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
+commit: "2f6255c3084d35685e56be1ca4e1c257306a6350"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugins-overview.html">Overview of plug-ins</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li class="active"><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding a Java library to the DITA-OT classpath parameter</a></li><li><a href="../dev_ref/plugin-messages.html">Adding new diagnostic messages</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Modifying or adding generated text</h1>
@@ -103,9 +103,9 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
 &lt;/langlist&gt;</code></pre></div>
       <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and rename it to match
         the language you wish to add. For example, to support Vietnamese strings you may want to pick a name like
-          <span class="ph filepath">strings-vi.xml</span>. In that file, change the <code class="ph codeph">xml:lang</code> attribute on the root
+          <span class="ph filepath">strings-vi.xml</span>. In that file, change the <code class="keyword markupname xmlatt">@xml:lang</code> attribute on the root
         element to match your new language.</p><p class="p">Once the file is ready, translate the contents of each
-          <code class="ph codeph">&lt;str&gt;</code> element (be sure to leave the name attribute unchanged). Repeat this process for
+          <code class="keyword markupname xmlelement">&lt;str&gt;</code> element (be sure to leave the name attribute unchanged). Repeat this process for
         each new language you wish to add.</p><p class="p">To integrate the new languages, use the same method as above to add
         these strings to your <span class="ph filepath">plugin.xml</span> file. Once this plug-in is integrated, non-PDF builds will
         include support for Vietnamese; instead of generating the English word "Caution", the element <code class="ph codeph">&lt;note

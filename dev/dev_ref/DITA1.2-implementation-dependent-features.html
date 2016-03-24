@@ -3,7 +3,7 @@
 layout: base
 title: "Implementation dependent features"
 index: "../toc.html"
-commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
+commit: "2f6255c3084d35685e56be1ca4e1c257306a6350"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li class="active"><a href="../dev_ref/DITA1.2-implementation-dependent-features.html">Implementation dependent features</a></li><li><a href="../dev_ref/extended-functionality.html">Extended functionality</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Implementation dependent features</h1>
@@ -33,7 +33,7 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
       
       <p class="p">Error recovery:</p>
       <ul class="ul">
-        <li class="li">When there are multiple <code class="ph codeph">revprop</code> elements with the same val attribute, no error or warning
+        <li class="li">When there are multiple <code class="keyword markupname xmlelement">&lt;revprop&gt;</code> elements with the same val attribute, no error or warning
           is thrown</li>
         <li class="li">When multiple prop elements define a duplicate attribute and value combination, attribute default, or
           fall-back behavior, the <span class="keyword msgnum">DOTJ007E</span> error is thrown.</li>
@@ -61,25 +61,25 @@ commit: "7ad6235c822ca060f9b59737f23238a340034d0b"
     </section>
     <section class="section"><h2 class="title sectiontitle">Map processing</h2>
       
-      <p class="p">When a <code class="ph codeph">topicref</code> element that references a map contains child <code class="ph codeph">topicref</code>
-        elements, the <span class="keyword msgnum">DOTX068W</span> error is thrown and the child <code class="ph codeph">topicref</code> elements are
+      <p class="p">When a <code class="keyword markupname xmlelement">&lt;topicref&gt;</code> element that references a map contains child <code class="ph codeph">topicref</code>
+        elements, the <span class="keyword msgnum">DOTX068W</span> error is thrown and the child <code class="keyword markupname xmlelement">&lt;topicref&gt;</code> elements are
         ignored. </p>
     </section>
     <section class="section" id="implementation-dependent-features__section_h3h_jsx_1h"><h2 class="title sectiontitle">Link processing</h2>
       
-      <p class="p">When the value of <code class="ph codeph">href</code> attribute is not a valid URI reference, the <span class="keyword msgnum">DOTJ054E</span>
+      <p class="p">When the value of <code class="keyword markupname xmlatt">@href</code> attribute is not a valid URI reference, the <span class="keyword msgnum">DOTJ054E</span>
         error is thrown. Depending on the
         <a class="xref" href="../parameters/parameters-base.html#base__processing-mode">processing-mode</a> setting, error
         recovery may be attempted.</p>
     </section>
     <section class="section"><h2 class="title sectiontitle">Copy-to processing</h2>
       
-      <p class="p">When the <code class="ph codeph">copy-to</code> attribute is specified on a <code class="ph codeph">topicref</code>, the content of the
-          <code class="ph codeph">shortdesc</code> element is not used to override the short description of the topic.</p>
+      <p class="p">When the <code class="keyword markupname xmlatt">@copy-to</code> attribute is specified on a <code class="ph codeph">topicref</code>, the content of the
+          <code class="keyword markupname xmlelement">&lt;shortdesc&gt;</code> element is not used to override the short description of the topic.</p>
     </section>
     <section class="section"><h2 class="title sectiontitle">Coderef processing</h2>
       
-      <p class="p">When <code class="ph codeph">coderef</code> elements are used within codeblocks to reference external files with literal code
+      <p class="p">When <code class="keyword markupname xmlelement">&lt;coderef&gt;</code> elements are used within codeblocks to reference external files with literal code
         samples, the system default character set is used as the target file encoding unless a different character set
         is explicitly defined via the mechanisms described under
         <a class="xref" href="extended-functionality.html#code-reference__coderef-charset">Character set definition</a>.</p>
