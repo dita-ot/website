@@ -10,10 +10,7 @@
 // Based on Bootstrap code rules
 .parmname {
   @include codeclass;
-  background-color: $pre-bg;
-  color: $gray-light;
-  padding: 2px 4px;
-  white-space: nowrap;
+  color: #006;
 }
 
 .codeblock {
