@@ -68,3 +68,8 @@ div.shortdesc {
 figcaption {
   @extend caption;
 }
+
+// Apply Bootstrap's <p> margins to definition descriptions
+dd {
+  margin: 0 0 ($line-height-computed / 2);
+}
