@@ -9,6 +9,12 @@ $kbd-color:                   #555; // $gray
 $kbd-bg:                      #fcfcfc;
 $kbd-shadow:                  #bbb;
 
+// Reset inverted navbar basics
+$navbar-inverse-bg:           #222;
+
+// Inverted navbar links
+$navbar-inverse-link-hover-bg:      darken($navbar-inverse-bg, 10%);
+
 // Inverted navbar brand label      // DITA Open Toolkit home page
 $navbar-inverse-brand-color:  #eee; // match search box background
 
