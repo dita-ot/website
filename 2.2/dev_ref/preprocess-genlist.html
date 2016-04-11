@@ -7,178 +7,127 @@ title: "Generate lists (gen-list)"
   <h1 class="title topictitle1" id="ariaid-title1">Generate lists (gen-list)</h1>
   
   <div class="body refbody"><p class="shortdesc">The <code class="ph codeph">gen-list</code> step examines the input files and creates lists of topics, images, document
-    properties, or other content. These lists are used by later steps in the pipeline. For example, one list includes
-    all topics that make use of the conref attribute; only those files are processed during the conref stage of the
-    build. This step is implemented in Java.</p>
+    properties, or other content. These lists are used by later steps in the pipeline. This step is implemented in
+    Java.</p>
     <section class="section">
-      <p class="p">The result of this list is a set of several list files in the temporary directory, including
-          <span class="ph filepath">dita.list</span> and <span class="ph filepath">dita.xml.properties</span>.</p><table class="table expanse-column table-rulesborder"><colgroup><col><col><col><col></colgroup><thead class="thead" style="text-align:left;">
+      <p class="p">For example, one list includes all topics that make use of the conref attribute; only those files are processed
+        during the conref stage of the build. The list file name name is derived from the list file property. For
+        example, the <code class="ph codeph">conref.list</code> file is generated for “conreffile” and a corresponding list property
+        is provided for each generated list, in this case “conreflist”.</p>
+      <p class="p">The result of this step is a set of several list files in the temporary directory, including
+          <span class="ph filepath">dita.list</span> and <span class="ph filepath">dita.xml.properties</span>.</p><table class="table expanse-column table-rulesborder"><colgroup><col style="width:25%"><col style="width:37.5%"><col style="width:37.5%"></colgroup><thead class="thead" style="text-align:left;">
             <tr class="row">
-              <th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d11018e46">List file property</th>
-              <th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d11018e49">List file</th>
-              <th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d11018e52">List property</th>
-              <th class="entry cell-norowborder" style="text-align:left;vertical-align:top;" id="d11018e55">Usage</th>
+              <th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d11018e50">List file property</th>
+              <th class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" id="d11018e53">List file</th>
+              <th class="entry cell-norowborder" style="text-align:left;vertical-align:top;" id="d11018e56">Usage</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">canditopicsfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">canditopics.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">canditopicslist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">canditopicsfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">canditopics.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">codereffile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">coderef.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">codereflist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">topics with coderef</td>
-            </tr>
-            <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">conreffile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">conref.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">conreflist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">Documents that contains conref attribute that need to be resolved in
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">conreffile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">conref.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">Documents that contain conref attributes that need to be resolved in
                 preprocess.</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">conrefpushfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">conrefpush.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">conrefpushlist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">conreftargetsfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">conreftargets.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">conreftargetsfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">conreftargets.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">conreftargetslist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">copytosourcefile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">copytosource.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">copytosourcefile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">copytosource.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">copytosourcelist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">flagimagefile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">flagimage.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">copytotarget2sourcemapfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">copytotarget2sourcemap.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">copytotarget2sourcemaplist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
-            </tr>
-            <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">flagimagefile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">flagimage.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">flagimagelist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
-            </tr>
-            <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">fullditamapandtopicfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">fullditamapandtopic.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">fullditamapandtopiclist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">All of the ditamap and topic files that are referenced during the transformation.
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">fullditamapandtopicfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">fullditamapandtopic.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">All of the ditamap and topic files that are referenced during the transformation.
                 These may be referenced by href or conref attributes.</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">fullditamapfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">fullditamap.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">fullditamaplist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">All of the ditamap files in dita.list</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">fullditamapfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">fullditamap.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">All of the ditamap files in dita.list</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">fullditatopicfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">fullditatopic.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">fullditatopiclist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">All of the topic files in dita.list</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">fullditatopicfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">fullditatopic.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">All of the topic files in dita.list</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">hrefditatopicfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">hrefditatopic.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">hrefditatopiclist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">All of the topic files that are referenced with an href attribute</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">hrefditatopicfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">hrefditatopic.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">All of the topic files that are referenced with an href attribute</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">hreftargetsfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">hreftargets.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">hreftargetslist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">link targets</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">hreftargetsfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">hreftargets.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">Link targets</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">htmlfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">html.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">htmllist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">resource files</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">htmlfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">html.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">Resource files</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">imagefile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">image.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">imagelist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">Images files that are referenced in the content</td>
-            </tr>
-            
-            
-            <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">outditafilesfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">outditafiles.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">outditafileslist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">imagefile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">image.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">Image files that are referenced in the content</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">relflagimagefile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">relflagimage.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">relflagimagelist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">outditafilesfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">outditafiles.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">resourceonlyfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">resourceonly.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">resourceonlylist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">resourceonlyfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">resourceonly.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">skipchunkfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">skipchunk.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">skipchunklist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">subjectschemefile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">subjectscheme.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">subjectschemefile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">subjectscheme.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">subjectschemelist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">subtargetsfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 "><code class="ph codeph">subtargets.list</code></td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">subtargetsfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 "><code class="ph codeph">subtargets.list</code></td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">subtargetslist</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">tempdirToinputmapdir.relative.value</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 ">&nbsp;</td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">tempdirToinputmapdir.relative.value</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 ">&nbsp;</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">&nbsp;</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">uplevels</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 ">&nbsp;</td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">&nbsp;</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">uplevels</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 ">&nbsp;</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">&nbsp;</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">&nbsp;</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">user.input.dir</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 ">&nbsp;</td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">Absolute input directory path</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">user.input.dir</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 ">&nbsp;</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">&nbsp;</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">Absolute input directory path</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">user.input.file.listfile</td>
+              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e53 ">&nbsp;</td>
+              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">Input file list file</td>
             </tr>
             <tr class="row">
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">user.input.file.listfile</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e49 ">&nbsp;</td>
-              <td class="entry nocellnorowborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">&nbsp;</td>
-              <td class="entry cell-norowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">Input file list file</td>
-            </tr>
-            <tr class="row">
-              <td class="entry row-nocellborder" style="text-align:left;vertical-align:top;" headers="d11018e46 ">user.input.file</td>
-              <td class="entry row-nocellborder" style="text-align:left;vertical-align:top;" headers="d11018e49 ">&nbsp;</td>
-              <td class="entry row-nocellborder" style="text-align:left;vertical-align:top;" headers="d11018e52 ">&nbsp;</td>
-              <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11018e55 ">Input file path, relative to input directory</td>
+              <td class="entry row-nocellborder" style="text-align:left;vertical-align:top;" headers="d11018e50 ">user.input.file</td>
+              <td class="entry row-nocellborder" style="text-align:left;vertical-align:top;" headers="d11018e53 ">&nbsp;</td>
+              <td class="entry cellrowborder" style="text-align:left;vertical-align:top;" headers="d11018e56 ">Input file path, relative to the input directory</td>
             </tr>
           </tbody></table>
     </section>
