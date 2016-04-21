@@ -2,12 +2,13 @@
 /_site
 
 # Generated landing pages (copied to `index.html`)
-# Up to 2.1.1 
+# Up to 2.1.1
 DITA-OTProjectHome.html
 # As of 2.1.1+
 introduction.html
 
-# Spurious duplicate Release Notes index
+# Spurious duplicates generated via branch filtering & @copy-to
+*/getting-started/using-dita-command.html
 */release-notes/index-1.html
 
 # Default Bootstrap ToC partial
