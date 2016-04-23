@@ -3,7 +3,7 @@
 layout: base
 title: "Installing plug-ins"
 index: "../toc.html"
-commit: "6e3fd88288b679278fe0aca70c0790c3099af4ce"
+commit: "928cce414e4fe0b5fcd8067cc815e10392d0b50e"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/plugins-installing.html">Installing plug-ins</a></li><li><a href="../dev_ref/plugins-removing.html">Removing plug-ins</a></li><li><a href="../dev_ref/rebuilding-the-dita-ot-documentation.html">Rebuilding the DITA-OT documentation</a></li></ul></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Installing plug-ins</h1>
@@ -15,19 +15,19 @@ commit: "6e3fd88288b679278fe0aca70c0790c3099af4ce"
           <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> -install <var class="keyword varname">plug-in-zip</var></code></pre>
           <p class="p">where:</p>
           <ul class="ul">
-            <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation
-              directory.</li>
+            <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li>
             <li class="li"><span class="ph filepath"><var class="keyword varname">plug-in-zip</var></span> is the
-                <var class="keyword varname">filename</var> or <var class="keyword varname">URL</var> of the plug-in's distribution ZIP file.</li>
+                  <var class="keyword varname">filename</var> or <var class="keyword varname">URL</var> of the plug-in's distribution ZIP file
+                (optional).</li>
           </ul>
           <div class="note note note_note"><span class="note__title notetitle">Note:</span> 
             <span class="ph">If no <var class="keyword varname">filename</var> or <var class="keyword varname">URL</var> argument is
                   provided, the integration process reloads plug-ins from the <span class="ph filepath">plugins</span> directory.
-                  This approach can be used to integrate multiple plug-ins at once.</span>
+                  This approach can be used to integrate multiple plug-ins at once, or install any individual plug-ins
+                  you have already copied to the <span class="ph filepath">plugins</span> directory.</span>
           </div>
-          <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
-            the <span class="keyword cmdname">dita</span> command from any location on the file system without typing
-            the path.</div>
+          <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
+              <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
         </div>
       </div>
   </div>

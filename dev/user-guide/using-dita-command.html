@@ -3,7 +3,7 @@
 layout: base
 title: "Building output using the dita command"
 index: "../toc.html"
-commit: "4a9e5b3c2f3cbd13d62b2c4b7b547535ca0043b6"
+commit: "928cce414e4fe0b5fcd8067cc815e10392d0b50e"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
@@ -24,17 +24,14 @@ commit: "4a9e5b3c2f3cbd13d62b2c4b7b547535ca0043b6"
         <div class="itemgroup info"><pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword option">-input</span>&nbsp;<var class="keyword varname">input-file</var> <span class="keyword option">-format</span>&nbsp;<var class="keyword varname">format</var> <var class="keyword varname">options</var></code></pre>
           <p class="p">where:</p>
           <ul class="ul">
-            <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation
-              directory.</li><li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to process.</li><li class="li"><var class="keyword varname">format</var> is the output format
-              (transformation type). Use the same values available for the
-                <span class="keyword parmname">transtype</span> build parameter, for example, <code class="ph codeph">html5</code>
-              or <code class="ph codeph">pdf</code>.</li>
-            <li class="li"><var class="keyword varname">options</var> include the following optional build
-                parameters:<dl class="dl parml">
+            <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li><li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to process.</li><li class="li"><var class="keyword varname">format</var> is the output format (transformation type). Use the
+              same values available for the <span class="keyword parmname">transtype</span> build parameter, for example,
+                <code class="ph codeph">html5</code> or <code class="ph codeph">pdf</code>.</li>
+            <li class="li"><var class="keyword varname">options</var> include the following optional build parameters:<dl class="dl parml">
         
           <dt class="dt pt dlterm"><span class="keyword parmname">-o</span>, <span class="keyword parmname">-output</span>
             <var class="keyword varname">dir</var></dt>
-          <dd class="dd pd" id="using-command-line-tool__d617e283">Specifies the path of the output directory; the path can be
+          <dd class="dd pd" id="using-command-line-tool__d617e286">Specifies the path of the output directory; the path can be
             absolute or relative to the current directory. By default, the output is written to the
               <span class="ph filepath">out</span> subdirectory of the current directory.</dd>
         
@@ -65,10 +62,10 @@ commit: "4a9e5b3c2f3cbd13d62b2c4b7b547535ca0043b6"
           <dt class="dt pt dlterm"><span class="keyword parmname">-D</span><var class="keyword varname">parameter</var>=<var class="keyword varname">value</var></dt>
           <dd class="dd pd">Specify a value for a DITA-OT or Ant build parameter. <p class="p">Parameters not implemented by
               the specified transformation type or referenced in a <span class="ph filepath">.properties</span>
-              file are ignored.</p><div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> If you are building in different environments where the
-        location of the input files is not consistent, set <span class="keyword option">args.input.dir</span> with the
-          <span class="keyword cmdname">dita</span> command  and reference its value with
-          <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span> file.</div></dd>
+              file are ignored.</p><div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> If you are building in different environments where the location of the input
+        files is not consistent, set <span class="keyword option">args.input.dir</span> with the <span class="keyword cmdname">dita</span> command and
+        reference its value with <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span>
+        file.</div></dd>
         
         
           <dt class="dt pt dlterm"><span class="keyword parmname">-propertyfile</span>
@@ -80,12 +77,11 @@ commit: "4a9e5b3c2f3cbd13d62b2c4b7b547535ca0043b6"
       </dl></li>
           </ul></div>
         <div class="itemgroup stepresult">
-          <p class="p">If processing is successful, nothing is printed in the terminal window. The built
-            output is written to the specified output directory (by default, in the
-              <span class="ph filepath">out</span> subdirectory of the current directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d220e148"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run
-            the <span class="keyword cmdname">dita</span> command from any location on the file system without typing
-            the path.</div>
+          <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
+            specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
+            directory).</p>
+          <div class="note tip note_tip" id="using-command-line-tool__d220e151"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
+              <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
         </div>
       </li></ol>
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
