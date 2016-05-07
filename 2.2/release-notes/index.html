@@ -20,46 +20,89 @@ title: "DITA Open Toolkit 2.2.5 Release Notes"
       <section class="section">
         <p class="p">DITA Open Toolkit Release <span class="keyword">2.2.5</span> includes the following bug fixes.</p>
         <ul class="ul">
-          <li class="li" id="v225__1190">Tables in RTF output are damaged, RTF output cannot be opened
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1190" target="_blank">#1190</a>, 
+          <li class="li" id="v225__1190">In earlier toolkit versions, the Word RTF transformation produced invalid RTF output when source
+            files contained tables with absolute column widths. Processing has been modified to treat all widths as
+            proportional, including units given in inches, centimeters, millimeters, or points. Absolute units are not
+            respected, but the toolkit now generates valid RTF output rather than crashing.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1190" target="_blank">#1190</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2333" target="_blank">#2333</a>
           </li>
-          <li class="li" id="v225__1549">Empty map causes odd mapref error
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1549" target="_blank">#1549</a>, 
+          <li class="li" id="v225__1549">References to empty ditamap files threw the <span class="keyword msgnum">DOTX031E</span> during the mapref
+            processing stage. The toolkit no longer checks for subelements in the map and will now continue processing
+            as long as a root node is available.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1549" target="_blank">#1549</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2336" target="_blank">#2336</a>
           </li>
-          <li class="li" id="v225__1709">Re-check and rephrase messages.xml
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1709" target="_blank">#1709</a>, 
+          <li class="li" id="v225__1709">Several error messages generated during index processing for PDF output have been clarified to
+            better explain the cause of the error and provide more helpful information on how to resolve the issue.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1709" target="_blank">#1709</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2327" target="_blank">#2327</a>
           </li>
-          <li class="li" id="v225__1876">Plugin Can't Override Templates in dita2html5Impl.xsl
+          <li class="li" id="v225__1764">Links to <code class="keyword markupname xmlelement">&lt;dlentry&gt;</code> elements were broken in PDFs generated via Apache FOP,
+            as FOP does not support the <code class="keyword markupname xmlatt">@id</code> attribute on table rows. To work around this issue, DITA-OT
+            now moves the ID from the <code class="keyword markupname xmlelement">&lt;dlentry&gt;</code> to an <code class="keyword markupname xmlelement">&lt;fo:inline&gt;</code> element
+            in the first term when rendering PDF output via FOP.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1764" target="_blank">#1764</a>, 
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2198" target="_blank">#2198</a>
+          </li>
+          <li class="li" id="v225__1876">The DITA-OT 2.0 HTML5 transformation declared several XSL extension points that were not fully
+            implemented:
+            <ul class="ul">
+              <li class="li"><code class="ph codeph">dita.xsl.html5</code></li>
+              <li class="li"><code class="ph codeph">dita.xsl.html5.toc</code></li>
+              <li class="li"><code class="ph codeph">dita.xsl.html5.cover</code></li>
+            </ul> Three new templates now provide the necessary <code class="keyword markupname xmlelement">&lt;dita:extension&gt;</code> elements to add
+            custom XSLT processing to the HTML5 transformation.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1876" target="_blank">#1876</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2313" target="_blank">#2313</a>
           </li>
-          <li class="li" id="v225__2198">Any link to a dlentry element is broken in PDF
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2198" target="_blank">#2198</a>
-          </li>
-          <li class="li" id="v225__2266">DITA 1.3 catalog.xml points to non existing resources
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2266" target="_blank">#2266</a>, 
+          <li class="li" id="v225__2266">The OASIS catalogs for DITA 1.3 pointed to a series of non-existent resources. The catalog files
+            have been updated to remove spurious file references and errata have been submitted to OASIS for inclusion
+            in the original source catalogs.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2266" target="_blank">#2266</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2320" target="_blank">#2320</a>
           </li>
-          <li class="li" id="v225__2307">Huge performance drop down when using huge database topics
+          <li class="li" id="v225__2307">Performance of previous toolkit versions suffered substantially if a single warehouse topic was
+            used to store a large number of blocks for reference instead of multiple smaller warehouse topics with the
+            same total number of blocks. An expensive XPath expression in the content reference processing phase was
+            replaced with an optimized expression that dramatically reduces publication time in cases with thousands of
+            following siblings.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2307" target="_blank">#2307</a>, 
         
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2309" target="_blank">#2309</a>
           </li>
-          <li class="li" id="v225__2311">Avoid double dependency on copy-css task
+          <li class="li" id="v225__2311">In JavaHelp output, the copy-css task was called too early, before the
+              <span class="keyword parmname">user.csspath</span> parameter was evaluated, so CSS files were copied to a folder named
+              <code class="ph codeph">${user.csspath}</code> rather than to the intended location. JavaHelp processing has been
+            corrected to avoid the duplicate dependency on the copy-css task and ensure that CSS files are handled
+            correctly.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2311" target="_blank">#2311</a>
           </li>
-          <li class="li" id="v225__2312">Remove unimplemented parameter extension points from HTML5 plug-in
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2312" target="_blank">#2312</a>, 
+          <li class="li" id="v225__2312">Two unimplemented parameter extension points were removed from the HTML5 plug-in:
+            <ul class="ul">
+              <li class="li"><code class="ph codeph">dita.conductor.html5.param</code></li>
+              <li class="li"><code class="ph codeph">dita.conductor.html5.toc.param</code></li>
+            </ul> Implementers who want to add parameters to the HTML5 transformation can instead require the base HTML
+            plug-in as well as the HTML5 plug-in and extend the base HTML plug-in's parameter extension points
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2312" target="_blank">#2312</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2314" target="_blank">#2314</a>
           </li>
-          <li class="li" id="v225__2321">Topicset @type attribute warning in move-meta-entries
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2321" target="_blank">#2321</a>, 
+          <li class="li" id="v225__2315">Content reference range processing has been modified to use before <code class="ph codeph">&lt;&lt;</code> and
+            after <code class="ph codeph">&gt;&gt;</code> expressions rather than following-sibling and check that the conref end
+            target actually exists.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2315" target="_blank">#2315</a>
+          </li>
+          <li class="li" id="v225__2321">When a <code class="keyword markupname xmlelement">&lt;topicsetref&gt;</code> element is used to refer to a set of topics defined
+            via <code class="keyword markupname xmlelement">&lt;topicset&gt;</code>, previous toolkit versions treated the target element name as topicset
+            rather than the actual type of the referenced topics and threw a <span class="keyword msgnum">DOTX019W</span> error. Map
+            reference processing has been modified to drop the <code class="keyword markupname xmlatt">@type</code> attribute as part of the
+            resolution. This prevents such unintended side effects by ensuring that the type no longer cascades further
+            down the resolved branch.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2321" target="_blank">#2321</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2338" target="_blank">#2338</a>
           </li>
-          <li class="li" id="v225__2329">Made include of htmlflag.xsl into an import and moved before extension point
+          <li class="li" id="v225__2329">Support for flagging in HTML output has been imported (rather than included) and moved before
+            the extension point to allow custom plug-ins to override flagging behavior.
         
         
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2329" target="_blank">#2329</a>
