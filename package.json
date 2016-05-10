@@ -1,0 +1,26 @@
+{
+  "name": "dita-ot.github.io",
+  "version": "1.0.0",
+  "description": "DITA-OT Website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dita-ot/dita-ot.github.io.git"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/dita-ot/dita-ot.github.io",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-watch": "^4.3.5"
+  },
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "lodash": "^4.12.0"
+  }
+}
