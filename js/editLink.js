@@ -1,7 +1,7 @@
 (function() {
         
         var link = document.createElement('a');
-        link.textContent = 'Edit this page!';
+        link.textContent = ' [Edit] ';
         link.target = '_blank';
         
         if (!document.querySelector('.generated')) {
@@ -9,7 +9,7 @@
             var file = htmlURL.endsWith('.html')? 
                 htmlURL.slice('/dev/'.length, htmlURL.length - '.html'.length) + '.dita' : 
                 htmlURL.slice('/dev/'.length, htmlURL.length) + 'index.dita' ;
-            if (file.contains('/build-')) {
+            if (file.indexOf('/build-') != -1) {
                 file = file.replace('build-', '');
             }
             link.href=
