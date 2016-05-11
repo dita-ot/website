@@ -4,11 +4,13 @@ define([
   'TocController',
   'SearchController',
   'HelpController',
+  'EditController',
   'jquery'
 ], function (
   TocController,
   SearchController,
   HelpController,
+  EditController,
   $
 ) {
   const indexAttr = $("link[rel=index]").attr('href')
@@ -21,6 +23,7 @@ define([
         TocController($toc, index)
         SearchController($toc, index)
         HelpController()
+        EditController()
       }
     })
   }
