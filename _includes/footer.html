@@ -6,11 +6,5 @@ dita-ot/docs/commit/{{ page.commit | truncate: 7, '' }}</a>.
 {% else %}
 DITA Open Toolkit is released under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.
 {% endif %}
-
-{% if page.url contains '/dev/' %}
-    {% unless page.generated %}
-        <a id="editLink" href="" target="_blank" onclick="updateEditLink()" onmouseover="updateEditLink()">[Edit]</a>
-    {% endunless %}
-{% endif %}
 </div>
 </footer>
