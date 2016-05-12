@@ -28,6 +28,9 @@ define([
           let file = htmlURL.endsWith('.html') ?
           htmlURL.slice('/dev/'.length, htmlURL.length - '.html'.length) + '.dita' :
           htmlURL.slice('/dev/'.length, htmlURL.length) + 'index.dita'
+          if(file.indexOf('/first-build-') != -1) {
+            file = file.replace('first-build-', '')
+          }
           if(file.indexOf('/build-') != -1) {
             file = file.replace('build-', '')
           }
