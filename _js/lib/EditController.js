@@ -24,7 +24,7 @@ define([
         if (document.querySelector('.generated')) {
           url = getEditURL(PROJECT_BRANCH, PROJECT_MAP)
         } else {
-          const htmlURL = location.pathname
+          const htmlURL = location.pathname.substring(location.pathname.indexOf('/dev/'))
           let file = htmlURL.endsWith('.html') ?
           htmlURL.slice('/dev/'.length, htmlURL.length - '.html'.length) + '.dita' :
           htmlURL.slice('/dev/'.length, htmlURL.length) + 'index.dita'
