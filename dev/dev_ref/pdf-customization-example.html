@@ -1,21 +1,23 @@
 ---
 # Generated from DITA source
 layout: base
-title: "Customizing PDF output"
+title: "Example: Creating a simple PDF plug-in"
 index: "../toc.html"
-commit: "6e3fd88288b679278fe0aca70c0790c3099af4ce"
+commit: "3b05a67a6a6f736336fd3cb3181cf4210a9c3a0f"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li class="active"><a href="../user-guide/dita2pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">Customizing PDF output</h1>
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a><ul class="nav nav-list"><li><a href="../dev_ref/pdf-transformation-history.html">History of the PDF transformation</a></li><li><a href="../dev_ref/pdf-customization-approaches.html">PDF customization approaches</a></li><li><a href="../dev_ref/pdf-customization-plugin-types.html">Types of custom PDF plug-ins</a></li><li><a href="../dev_ref/pdf-plugin-structure.html">PDF plug-in structure</a></li><li class="active"><a href="../dev_ref/pdf-customization-example.html">Simple PDF plug-in example</a></li><li><a href="../dev_ref/pdf-customization-best-practices.html">Customization best practices</a></li><li><a href="../dev_ref/pdf-customization-resources.html">Custom PDF plug-in resources</a></li></ul></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Example: Creating a simple PDF plug-in</h1>
   
-  
-  <div class="body taskbody"><p class="shortdesc">You can build a DITA-OT plug-in that contains a customized PDF transformation.</p>
-    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>This topic demonstrates the process of building a plug-in (com.example.print-pdf) that creates a new
-      transformation type: <span class="keyword option">print-pdf</span>. The <span class="keyword option">print-pdf</span> transformation has the following characteristics:<ul class="ul">
+  <div class="body taskbody"><p class="shortdesc">This scenario walks through the process of creating a very simple plug-in
+      (<code class="ph codeph">com.example.print-pdf</code>) that creates a new transformation type: <span class="keyword option">print-pdf</span>. </p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+      <p class="p">The <span class="keyword option">print-pdf</span> transformation has the following characteristics:</p>
+      <ul class="ul">
         <li class="li">Uses A4 paper </li>
         <li class="li">Renders figures with a title at the top and a description at the bottom</li>
         <li class="li">Use em dashes as the symbols for unordered lists</li>
-      </ul></section>
+      </ul>
+    </section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">plugins</span> directory, create a directory named
             <span class="ph filepath">com.example.print-pdf</span>.</span>
@@ -76,7 +78,7 @@ commit: "6e3fd88288b679278fe0aca70c0790c3099af4ce"
           </figure></div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Create the <span class="ph filepath">cfg/fo/xsl/custom.xsl</span> file, and add XSLT overrides to it.</span>
-        <div class="itemgroup stepxmp">For example, the following code changes the rendering of &lt;figure&gt; elements.<figure class="fig fignone"><span class="figcap">Figure 5. <span class="ph filepath">cfg/fo/xsl/custom.xsl</span> file</span>
+        <div class="itemgroup stepxmp">For example, the following code changes the rendering of <code class="keyword markupname xmlelement">&lt;figure&gt;</code> elements.<figure class="fig fignone"><span class="figcap">Figure 5. <span class="ph filepath">cfg/fo/xsl/custom.xsl</span> file</span>
             
             <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"

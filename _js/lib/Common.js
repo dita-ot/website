@@ -86,4 +86,4 @@ define([
       return abs.indexOf(base) !== -1
     }
   }
-});
+})
