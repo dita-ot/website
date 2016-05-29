@@ -1,0 +1,58 @@
+---
+# Generated from DITA source
+layout: base
+title: "Extended functionality"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a><ul class="nav nav-list"><li><a href="../user-guide/transforming-dita-content.html">Publishing DITA content</a></li><li><a href="../user-guide/AvailableTransforms.html">Output formats</a></li><li><a href="../user-guide/DITA_spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../user-guide/DITA_v1-2-support.html">DITA 1.2 support</a></li><li><a href="../user-guide/DITA_v1-3-support.html">DITA 1.3 support</a></li><li><a href="../user-guide/implementation-dependent-features.html">Feature implementation</a></li><li class="active"><a href="../user-guide/extended-functionality.html">Extended functionality</a></li></ul></li><li><a href="../user-guide/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../user-guide/troubleshooting-overview.html">Troubleshooting</a></li></ul></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9" role="main">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Extended functionality</h1>
+
+  <p class="shortdesc">DITA-OT provides additional code reference processing support beyond that which is mandated by the DITA
+    specification. These extensions can be used to define character encodings or line ranges for use in code
+    blocks.</p>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="extended-functionality__code-reference">
+    <h2 class="title topictitle2" id="ariaid-title2">Code reference processing</h2>
+    <div class="body refbody">
+      <section class="section" id="code-reference__coderef-charset"><h3 class="title sectiontitle">Character set definition</h3>
+        
+        <p class="p">DITA-OT supports defining the code reference target file encoding using the <code class="keyword markupname xmlatt">@format</code>
+          attribute. The supported format is:</p>
+        <pre class="pre codeblock"><code>format (";" space* "charset=" charset)?</code></pre>
+        <p class="p">If a character set is not defined, the system default character set will be used. If the character set is not
+          recognized or supported, the <span class="keyword msgnum">DOTJ052E</span> error is thrown and the system default character set is
+          used as a fall-back.</p>
+      </section>
+      <div class="example">
+        <pre class="pre codeblock"><code>&lt;coderef href="unicode.txt" format="txt; charset=UTF-8"/&gt;</code></pre>
+      </div>
+      <section class="section"><h3 class="title sectiontitle">Line range extraction</h3>
+        
+        <p class="p">Code references can be limited to extract only a specified line range by defining the
+            <code class="ph codeph">line-range</code> pointer in the URI fragment. The format is:</p>
+        <pre class="pre codeblock"><code>uri ("#line-range(" start ("," end)? ")" )?</code></pre>
+        <p class="p">Start and end line numbers start from 1 and are inclusive. If the end range is omitted, the range ends on the
+          last line of the file.</p>
+      </section>
+      <div class="example">
+        <pre class="pre codeblock"><code>&lt;coderef href="Parser.scala#line-range(5, 10)" format="scala"/&gt;</code></pre>
+        <p class="p">Only lines from 5 to 10 will be included in the output.</p>
+      </div>
+      <section class="section"><h3 class="title sectiontitle">RFC 5147</h3>
+        
+        <p class="p">DITA-OT implements line position and range from <a class="xref" href="http://tools.ietf.org/html/rfc5147" target="_blank">RFC 5147</a>. The format for line range is:</p>
+        <pre class="pre codeblock"><code>uri ("#line=" start? "," end? )?</code></pre>
+        <p class="p">Start and end line numbers start from 0 and are inclusive and exclusive, respectively. If the start range is
+          omitted, the range starts from the first line; if the end range is omitted, the range ends on the last line of
+          the file. The format for line position is:</p>
+        <pre class="pre codeblock"><code>uri ("#line=" position )?</code></pre>
+        <p class="p">Position line number starts from 0.</p>
+      </section>
+      <div class="example">
+        <pre class="pre codeblock"><code>&lt;coderef href="Parser.scala#line=4,10" format="scala"/&gt;</code></pre>
+        <p class="p">Only lines from 5 to 10 will be included in the output.</p>
+      </div>
+    </div>
+  </article>
+</main>

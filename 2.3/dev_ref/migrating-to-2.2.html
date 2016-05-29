@@ -1,0 +1,57 @@
+---
+# Generated from DITA source
+layout: base
+title: "Migrating to release 2.2"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../dev_ref/migrating-to-2.3.html">To 2.3</a></li><li class="active"><a href="../dev_ref/migrating-to-2.2.html">To 2.2</a></li><li><a href="../dev_ref/migrating-to-2.1.html">To 2.1</a></li><li><a href="../dev_ref/migrating-to-2.0.html">To 2.0</a></li><li><a href="../dev_ref/migrating-to-1.8.html">To 1.8</a></li><li><a href="../dev_ref/migrating-to-1.7.html">To 1.7</a></li><li><a href="../dev_ref/migrating-to-1.6.html">To 1.6</a></li><li><a href="../dev_ref/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 2.2</h1>
+
+  
+
+  <div class="body refbody"><p class="shortdesc">In DITA-OT 2.2, the <span class="keyword option">HTML5</span> transformation was refactored as its own
+    plugin and separate plugins were created for each of the rendering engine-specific PDF
+      transformations.
+  </p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title notetitle">Note:</span> This topic provides a summary of changes in DITA-OT 2.2 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the <a class="xref" href="http://www.dita-ot.org/2.2/release-notes/" target="_blank">DITA-OT 2.2 Release Notes</a>.</div>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">HTML5</h2>
+      
+      <p class="p">The <span class="keyword option">HTML5</span> transformation introduced in release 2.0 as part of the
+          <span class="keyword option">XHTML</span> plugin has been moved to a separate <span class="keyword option">HTML5</span> plugin.
+        Customizations that extended the previous HTML5 output under the <span class="keyword option">XHTML</span>
+        plugin will probably need to be refactored on the new HTML5 plugin.</p>
+      <p class="p">Note title processing has been revised to use a common <code class="ph codeph">note__title</code> class for note elements of
+        all types. The legacy <code class="ph codeph"><var class="keyword varname">{$type}</var>title</code> classes (such as
+          <code class="ph codeph">.notetitle</code>, <code class="ph codeph">.cautiontitle</code>, <code class="ph codeph">.tiptitle</code>, etc.) are included
+        for backwards compatibility, but are deprecated and will be removed in an upcoming release. Stylesheets that
+        apply formatting overrides to note titles should be revised to replace the deprecated class selectors with the
+        equivalent descendant selectors, for example <code class="ph codeph">.note_note .note__title</code>, <code class="ph codeph">.note_caution
+          .note__title</code>, <code class="ph codeph">.note_tip .note__title</code>, etc.</p>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">PDF</h2>
+      
+      <p class="p">Processing specific to Apache FOP, Antenna House Formatter, and RenderX XEP has been
+        separated into separate plugins for each of those rendering engines. Customizations that
+        extended this processing might need to extend the new <span class="keyword">org.dita.pdf2.fop</span>,
+          <span class="keyword">org.dita.pdf2.axf</span>, or <span class="keyword">org.dita.pdf2.xep</span> plugins.</p>
+      <p class="p">PDF customizations that are not specific to a rendering engine can continue to extend the
+          <span class="keyword">org.dita.pdf2</span> plugin as before.</p>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">Deprecated properties</h2>
+      
+      <div class="p">The following Ant properties have been deprecated:
+        <ul class="ul">
+          <li class="li"><span class="keyword parmname">user.input.file</span>, use <span class="keyword parmname">user.input.file.uri</span> instead to specify the
+            input file system path</li>
+          <li class="li"><span class="keyword parmname">user.input.dir</span>, use <span class="keyword parmname">user.input.dir.uri</span> instead to specify the
+            input directory system path</li>
+          <li class="li"><span class="keyword parmname">InputMapDir</span>, use <span class="keyword parmname">InputMapDir.uri</span> instead to specify the input
+            map directory system path</li>
+        </ul></div>
+    </section>
+  </div>
+</main>

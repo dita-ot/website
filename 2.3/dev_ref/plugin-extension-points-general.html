@@ -1,0 +1,57 @@
+---
+# Generated from DITA source
+layout: base
+title: "General extension points"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/plugin-extension-points-general.html">General extension points</a></li><li><a href="../dev_ref/plugin-extension-points-pre-processing.html">Pre-processing extension points</a></li><li><a href="../dev_ref/plugin-extension-points-xslt-import.html">XSLT-import extension points</a></li><li><a href="../dev_ref/plugin-extension-points-xslt-parameters.html">XSLT-parameter extension points</a></li><li><a href="../dev_ref/plugin-extension-points-support.html">Version and support information</a></li><li><a href="../extension-points/all-extension-points.html">All extension points</a></li></ul></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">General extension points</h1>
+  
+  <div class="body refbody"><p class="shortdesc">These extension points enable you to extend the DITA-OT. You can add Ant targets or
+    imports; add a Java library to the <span class="keyword parmname">classpath</span> parameter; add a new
+    transformation type; extend a catalog file; add new diagnostic messages, and more.</p>
+    <section class="section">
+      <dl class="dl">
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.lib.import</span></dt>
+          <dd class="dd">Adds a Java library to the DITA-OT classpath.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.target</span></dt>
+          <dd class="dd">Adds an Ant import to the main Ant build file. This extension point is deprecated; use
+              <code class="ph codeph">dita.conductor.target.relative</code> instead.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.target.relative</span></dt>
+          <dd class="dd">Adds an Ant import to the main Ant build file.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.transtype.check</span></dt>
+          <dd class="dd">Adds a new value to the list of valid transformation types.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.specialization.catalog</span></dt>
+          <dd class="dd">Adds the content of a catalog file to the main DITA-OT catalog file. This extension
+            point is deprecated; use <code class="ph codeph">dita.specialization.catalog.relative</code>
+            instead.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.specialization.catalog.relative</span></dt>
+          <dd class="dd">Adds the content of a catalog file to the main DITA-OT catalog file.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.transtype.print</span></dt>
+          <dd class="dd">Defines a transformation as a print type.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.messages</span></dt>
+          <dd class="dd">Adds new diagnostic messages to the DITA-OT.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">org.dita.pdf2.catalog.relative</span></dt>
+          <dd class="dd">Adds the content of a catalog file to the main catalog file for the PDF plug-in.</dd>
+        
+      </dl>
+    </section>
+  </div>
+</main>
