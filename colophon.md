@@ -13,6 +13,7 @@ The [Documentation][10] section is maintained in DITA using the source files fro
 
 Site output is built with [Gradle][13] using the settings in the [site.gradle][14] build file. The [DITA Open Toolkit Gradle plugin][15] is used with the Gradle dæmon and the `--continuous` build option to automatically regenerate the site output whenever documentation source files change. A staging environment provides a preview of generated site output via the `jekyll serve` command for local testing.  
 
+[Travis][16] continuous integration automatically republishes the latest [development version][10] of the documentation on the project website whenever changes are pushed to the `develop` branch of the [dita-ot/docs][11] repository.
 
 [1]:	https://pages.github.com
 [2]:	http://dita-ot.github.io
@@ -29,3 +30,4 @@ Site output is built with [Gradle][13] using the settings in the [site.gradle][1
 [13]:	http://gradle.org "Gradle | Modern Open-Source Enterprise Build Automation"
 [14]:	https://github.com/dita-ot/docs/blob/develop/site.gradle
 [15]:	http://eerohele.github.io/dita-ot-gradle/build/
+[16]:	https://travis-ci.org
