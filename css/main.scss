@@ -1,6 +1,17 @@
 ---
 ---
 
+// $brand-primary:      darken(#428bca, 6.5%) !default; // #337ab7
+$brand-primary:         #1d365d; // lesscss.org
+
+//** Global textual link color.
+$link-color:            lighten($brand-primary, 20%);
+//** Link hover color set via `darken()` function.
+$link-hover-color:      $brand-primary;
+
+$headings-color:        $brand-primary;
+
+
 // Override default Bootstrap variable definitions
 $code-color:                  #777; // $gray-light ($text-muted)
 $code-bg:                     transparent;
@@ -9,10 +20,20 @@ $kbd-color:                   #555; // $gray
 $kbd-bg:                      #fcfcfc;
 $kbd-shadow:                  #bbb;
 
+// Reset inverted navbar basics
+$navbar-inverse-bg:           $brand-primary;
+
+// Inverted navbar links
+$navbar-inverse-link-color:         #b9c8e0;
+$navbar-inverse-link-hover-bg:      darken($navbar-inverse-bg, 5%);
+
+// Inverted navbar brand label      // DITA Open Toolkit home page
+$navbar-inverse-brand-color:  #eee; // match search box background
+
 // Color definitions for active navigation items
-$nav-bg: #08c;
-$nav-text: #fff; // white
-$nav-shadow: rgba(0, 0, 0, 0.2);
+$nav-bg:                lighten($brand-primary, 10%);
+$nav-text:              #fff; // white
+$nav-shadow:            rgba(0, 0, 0, 0.2);
 
 // Import DITA-OT custom subset of Bootstrap modules
 @import 'bootstrap-custom';
@@ -30,6 +51,9 @@ footer {
   margin-top: 30px;
   padding: 10px 0;
   text-align: center;
+  a {
+    color:                  #777; // $gray-light ($text-muted)
+  }
 }
 
 .navbar-form {

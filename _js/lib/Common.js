@@ -1,13 +1,17 @@
 'use strict'
 
 define([
-  'jquery'
+  'EditController',
+  'jquery',
 ], function (
+  EditController,
   $
 ) {
-  return function TocController(index) {
+  return function Common(index) {
     const CLASS_OPEN = 'expanded'
     const CLASS_CLOSED = 'collapsed'
+
+    const editController = EditController()
 
     var base = new URI('.').absoluteTo(index).href()
 
@@ -64,6 +68,7 @@ define([
 
     function initializeMain() {
       $main.find('a[href]').filter(isLocal).click(mainClickHandler)
+      editController.createEditLink()
 
       function mainClickHandler(event) {
         event.preventDefault()
@@ -81,4 +86,4 @@ define([
       return abs.indexOf(base) !== -1
     }
   }
-});
+})

@@ -3,7 +3,6 @@
 define([
   'Common',
   //'rx',
-  // TODO: should lodash and JQuery just be loaded outside Require.js?
   'lodash',
   'jquery'
   //'uri'
@@ -107,4 +106,4 @@ define([
       }
     }
   }
-});
+})
