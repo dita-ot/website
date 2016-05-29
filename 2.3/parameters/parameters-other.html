@@ -1,0 +1,44 @@
+---
+# Generated from DITA source
+layout: base
+title: "Other parameters"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a><ul class="nav nav-list"><li><a href="../parameters/parameters-base.html">Common</a></li><li><a href="../parameters/parameters-base-html.html">HTML-based output</a></li><li><a href="../parameters/parameters-common-html.html">HTML5 and XHTML</a></li><li><a href="../parameters/parameters-html5.html">HTML5</a></li><li><a href="../parameters/parameters-eclipsecontent.html">Eclipse content</a></li><li><a href="../parameters/parameters-eclipsehelp.html">Eclipse Help</a></li><li><a href="../parameters/parameters-htmlhelp.html">HTMLHelp</a></li><li><a href="../parameters/parameters-javahelp.html">JavaHelp</a></li><li><a href="../parameters/parameters-odt.html">Open Document Format</a></li><li class="active"><a href="../parameters/parameters-other.html">Other</a></li><li><a href="../parameters/parameters-pdf.html">PDF</a></li></ul></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li></ul></li><li><a href="../dev_ref/index.html">Developer Reference</a></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Other parameters</h1>
+  
+  
+  <div class="body refbody"><p class="shortdesc">These parameters enable you to reload style sheets that the DITA-OT uses for specific pre-processing
+    stages.</p>
+    <section class="section">
+      
+      <dl class="dl parml">
+        
+          <dt class="dt pt dlterm" id="ant-parameters-other__dita.preprocess.reloadstylesheet"><span class="keyword parmname">dita.preprocess.reloadstylesheet</span></dt>
+          <dt class="dt pt dlterm" id="ant-parameters-other__dita.preprocess.reloadstylesheet.conref">
+            <span class="keyword parmname">dita.preprocess.reloadstylesheet.conref</span>
+          </dt>
+          <dt class="dt pt dlterm" id="ant-parameters-other__dita.preprocess.reloadstylesheet.mapref">
+            <span class="keyword parmname">dita.preprocess.reloadstylesheet.mapref</span>
+          </dt>
+          <dt class="dt pt dlterm" id="ant-parameters-other__dita.preprocess.reloadstylesheet.mappull">
+            <span class="keyword parmname">dita.preprocess.reloadstylesheet.mappull</span>
+          </dt>
+          <dt class="dt pt dlterm" id="ant-parameters-other__dita.preprocess.reloadstylesheet.maplink">
+            <span class="keyword parmname">dita.preprocess.reloadstylesheet.maplink</span>
+          </dt>
+          <dt class="dt pt dlterm" id="ant-parameters-other__dita.preprocess.reloadstylesheet.topicpull">
+            <span class="keyword parmname">dita.preprocess.reloadstylesheet.topicpull</span>
+          </dt>
+          <dd class="dd pd" id="ant-parameters-other__dita.preprocess.reloadstylesheet.desc">Specifies whether the DITA-OT reloads the XSL style sheets
+            that are used for the transformation. The allowed values are <span class="keyword option">true</span> and
+              <span class="keyword option">false</span>; the default value is <span class="keyword option">false</span>.<div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> Set the parameter
+              to <span class="keyword option">true</span> if you want to use more than one set of style sheets to process a collection of
+              topics. The parameter also is useful for large projects that generate Java out-of-memory errors during
+              transformation. Alternatively, you can adjust the size of your Java memory heap if setting
+                <code class="ph codeph">dita.preprocess.reloadstylesheet</code> for this reason.</div></dd>
+        
+      </dl>
+    </section>
+  </div>
+</main>

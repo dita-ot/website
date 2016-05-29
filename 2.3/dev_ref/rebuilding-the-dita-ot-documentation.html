@@ -1,0 +1,31 @@
+---
+# Generated from DITA source
+layout: base
+title: "Rebuilding the DITA-OT documentation"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a><ul class="nav nav-list"><li><a href="../dev_ref/plugins-installing.html">Installing plug-ins</a></li><li><a href="../dev_ref/plugins-removing.html">Removing plug-ins</a></li><li class="active"><a href="../dev_ref/rebuilding-the-dita-ot-documentation.html">Rebuilding the DITA-OT documentation</a></li></ul></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../dev_ref/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li></ul></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Rebuilding the DITA-OT documentation</h1>
+  
+  <div class="body taskbody"><p class="shortdesc">The DITA-OT ships with Ant scripts that enable you to rebuild the toolkit documentation. This is especially
+    helpful if your environment contains plug-ins that integrate additional messages into the toolkit. </p>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Change to the <span class="ph filepath">docsrc</span> directory.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Run the following command:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock"><code>ant -f build.xml <var class="keyword varname">target</var></code></pre>
+        </div>
+        <div class="itemgroup info">
+          <div class="p">The <var class="keyword varname">target</var> parameter is optional and specifies a transformation type. It takes the
+            following values:
+            <ul class="ul">
+              <li class="li">html</li>
+              <li class="li">htmlhelp</li>
+              <li class="li">pdf</li>
+            </ul></div>
+          <p class="p">If you do not specify an Ant target, HTML5 and PDF output is generated.</p>
+        </div>
+      </li></ol>
+  </div>
+</main>
