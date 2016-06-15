@@ -37,7 +37,7 @@ define([
           url = getEditURL(PROJECT_BRANCH, file, PROJECT_MAP)
         }
         if ($link.length === 0) {
-          $link = $('<a id="editLink" target="_blank" title="Edit this file"><span class="glyphicon glyphicon-pencil"></span></a>')
+          $link = $('<a id="editLink" target="_blank" title="Edit this file"><span class="glyphicon glyphicon-pencil"></span> Edit this page.</a>')
           $('footer > .container').append($link)
         }
         $link.attr('href', url)
