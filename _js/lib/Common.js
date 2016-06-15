@@ -28,8 +28,8 @@ define([
       $.ajax({
         url: href,
         success: function (data) {
-          updateMain(data)
           updateToc(href, $tocLink)
+          updateMain(data)
         }
       })
 
