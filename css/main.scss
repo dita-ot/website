@@ -42,9 +42,10 @@ $nav-shadow:                    rgba(0, 0, 0, 0.2);
 // Override Bootstrap & user agent defaults
 @import 'code';
 @import 'notes';
-@import 'toc';
-@import 'xml-d';
 @import 'search';
+@import 'toc';
+@import 'ui-d';
+@import 'xml-d';
 
 footer {
   border-top: 1px solid $legend-border-color;
