@@ -12,4 +12,4 @@ exclude: ["gulpfile.js", "package.js", "node_modules"]
 # MAJOR.MINOR
 release: "2.3"
 # MAJOR.MINOR.BUG
-version: "2.3"
+version: "2.3.1"

@@ -10,7 +10,7 @@
 // Based on Bootstrap code rules
 .parmname {
   @include codeclass;
-  color: #006;
+  color: $brand-primary;
 }
 
 .codeblock {
