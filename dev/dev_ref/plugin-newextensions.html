@@ -8,13 +8,13 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Creating a new plug-in extension point</h1>
   
   <div class="body refbody"><p class="shortdesc">If your plug-in needs to define its own extension point in an XML file, add the string
-      "<code class="ph codeph">_template</code>" to the filename before the file suffix. During integration, this file will be
-    processed like the built-in DITA-OT templates.</p>
+      "<code class="ph codeph">_template</code>" to the filename before the file suffix. When the plug-in is installed, this file will
+    be processed like the built-in DITA-OT templates.</p>
     <section class="section">
       <p class="p">Template files are used to integrate most DITA-OT extensions. For example, the
           <span class="ph filepath">dita2xhtml_template.xsl</span> file contains all of the default rules for converting DITA topics
-        to XHTML, along with an integration point for plug-in extensions. When the integrator runs, the
-          <span class="ph filepath">dita2xhtml.xsl</span> is recreated, and the integration point is replaced with references to all
+        to XHTML, along with an extension point for plug-in extensions. When the plug-in is installed, the
+          <span class="ph filepath">dita2xhtml.xsl</span> is recreated, and the extension point is replaced with references to all
         appropriate plug-ins.</p>
       <p class="p">To mark a new file as a template file, use the <code class="keyword markupname xmlelement">&lt;template&gt;</code> element.</p>
       <p class="p">The template extension namespace has the URI <code class="ph codeph">http://dita-ot.sourceforge.net</code>. It is used to
@@ -26,7 +26,7 @@ index: "../toc.html"
     <section class="section"><h2 class="title sectiontitle"><code class="keyword markupname xmlelement">&lt;dita:extension&gt;</code> element</h2>
       
       <p class="p">The <code class="keyword markupname xmlelement">&lt;dita:extension&gt;</code> elements are used to insert generated content during the
-        integration process. There are two required attributes:</p>
+        plug-in installation process. There are two required attributes:</p>
       <ul class="ul">
         <li class="li">The <code class="keyword markupname xmlatt">@id</code> attribute defines the extension point ID that provides the argument data.</li>
         <li class="li">The <code class="keyword markupname xmlatt">@behavior</code> attribute defines which processing action is used.</li>
@@ -110,7 +110,7 @@ index: "../toc.html"
                    name="Custom target content"/&gt;
   &lt;template file="myBuildFile_template.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
-      <p class="p">When the integrator runs, this will be used to recreate <span class="ph filepath">myBuildFile.xml</span>, replacing Ant
+      <p class="p">When the plug-in is installed, this will be used to recreate <span class="ph filepath">myBuildFile.xml</span>, replacing Ant
         file content based on extension point use.</p>
       <pre class="pre codeblock"><code>&lt;project xmlns:dita="http://dita-ot.sourceforge.net"&gt;
   &lt;target name="dita2custom"
