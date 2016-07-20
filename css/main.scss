@@ -58,6 +58,12 @@ footer {
   }
 }
 
+@media screen and (min-width: $screen-sm-min) {
+  .navbar-brand {
+    padding-left: 0;
+  }
+}
+
 .navbar-form {
   padding: 0;
 }
