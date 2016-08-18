@@ -9,7 +9,7 @@ index: "../toc.html"
   
   <div class="body taskbody"><p class="shortdesc">If you are working with large documents with extensive metadata or key references, you will need to
     increase the memory allocation for the Java process. You can do this from the command-line prompt for a specific
-    session, or you can increase the value of the ANT_OPTS environment variable.</p>
+    session, or you can increase the value of the <code class="ph codeph">ANT_OPTS</code> environment variable.</p>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ul class="ul steps-unordered"><li class="li step stepexpand">
         <span class="ph cmd">To change the value for an specific session, from the command prompt, issue the following command:</span>
         <table class="simpletable choicetable choicetableborder"><col style="width:50%"><col style="width:50%"><thead><tr class="sthead chhead">
@@ -17,17 +17,17 @@ index: "../toc.html"
             <th class="stentry chdeschd" id="t-increasing-the-JVM__chdeschd__1">Command</th>
           </tr></thead><tbody><tr class="strow chrow">
             <th scope="row" class="stentry choption" headers="t-increasing-the-JVM__choptionhd__1">Linux or Mac OS&nbsp;X&nbsp;</th>
-            <td class="stentry chdesc" headers="t-increasing-the-JVM__chdeschd__1 d49559e37"><code class="ph codeph">export ANT_OPTS=$ANT_OPTS -Xmx<var class="keyword varname">1024</var>M</code></td>
+            <td class="stentry chdesc" headers="t-increasing-the-JVM__chdeschd__1 d49803e40"><code class="ph codeph">export ANT_OPTS=$ANT_OPTS -Xmx<var class="keyword varname">1024</var>M</code></td>
           </tr><tr class="strow chrow">
             <th scope="row" class="stentry choption" headers="t-increasing-the-JVM__choptionhd__1">Windows</th>
-            <td class="stentry chdesc" headers="t-increasing-the-JVM__chdeschd__1 d49559e50"><code class="ph codeph">set ANT_OPTS=%ANT_OPTS% -Xmx<var class="keyword varname">1024</var>M</code></td>
+            <td class="stentry chdesc" headers="t-increasing-the-JVM__chdeschd__1 d49803e53"><code class="ph codeph">set ANT_OPTS=%ANT_OPTS% -Xmx<var class="keyword varname">1024</var>M</code></td>
           </tr></tbody></table>
         <div class="itemgroup info">
           <p class="p">This increases the JVM memory allocation to 1024 megabytes. The amount of memory which can be allocated is
             limited by available system memory and the operating system.</p></div>
       </li><li class="li step stepexpand">
-        <span class="ph cmd">To persistently change the value, change the value allocated to the ANT_OPTS environment variable on your
-          system.</span>
+        <span class="ph cmd">To persistently change the value, change the value allocated to the <code class="ph codeph">ANT_OPTS</code> environment
+          variable on your system.</span>
       </li></ul>
   </div>
 </main>
