@@ -1,25 +1,61 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 2.3.1 Release Notes"
+title: "DITA Open Toolkit 2.3.2 Release Notes"
 index: "../toc.html"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="http://www.dita-ot.org/participate">How to participate</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.3.1</span> Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.3.2</span> Release Notes</h1>
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.3.1</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.3.2</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">2.3</span>, which includes <span class="ph">enhanced HTML5 output, new language support
         and additional internationalization improvements</span>.</p>
     <p class="p">Issue numbers correspond to the tracking number in the <span class="ph">
         <a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues tracker</a></span>.</p>
   </div>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="ID__v231">
-    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.3.1</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="ID__v232">
+    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.3.2</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">2.3.1</span> includes the following bug fixes.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.3.2</span> includes the following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v232__1599">In earlier versions of DITA-OT, relative paths to cross-references from short descriptions were
+            sometimes interpreted incorrectly if the source and target topics were located in different directories. New
+            XSL functions now ensure that these references are correctly resolved.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1599" target="_blank">#1599</a>
+          </li>
+          <li class="li" id="v232__2413">In DITA-OT 2.3, the HTML5 transtype failed on topics with tables when the
+              <span class="keyword parmname">args.xhtml.classattr</span> parameter was set to <span class="keyword option">no</span>. Processing has been
+            updated to handle these cases and correctly exclude the DITA class ancestry information when publishing
+            HTML5 output.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2413" target="_blank">#2413</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2424" target="_blank">#2424</a>
+          </li>
+          <li class="li" id="v232__2439">In DITA-OT 2.3, the PDF2 build target dependency list contained redundant entries. The
+            integration process has been corrected to remove the duplicates.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2439" target="_blank">#2439</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2451" target="_blank">#2451</a>
+          </li>
+          <li class="li" id="v232__2441">The script that checks for Antenna House installations has been updated to include installation
+            paths with spaces as used by recent versions of Antenna House for Windows –
+              <span class="ph filepath">C:\Program&nbsp;Files\Antenna&nbsp;House</span> and the (x86) equivalent.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2441" target="_blank">#2441</a>
+          </li>
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.3.1...2.3.2" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="ID__v231">
+    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.3.1</h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release 2.3.1 included the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v231__2395">The distribution package for the 2.3 release included several unnecessary subfolders and
             appended the Git commit ID to the version number in the <span class="ph filepath">lib/configuration.properties</span>
@@ -57,9 +93,9 @@ index: "../toc.html"
       </section>
     </div>
   </article>
-  
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="ID__requirements">
-    <h2 class="title topictitle2" id="ariaid-title3">Requirements</h2>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="ID__requirements">
+    <h2 class="title topictitle2" id="ariaid-title4">Requirements</h2>
     <div class="body refbody">
       <section class="section">
         
@@ -69,8 +105,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="ID__highlights">
-    <h2 class="title topictitle2" id="ariaid-title4">Release Highlights</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="ID__highlights">
+    <h2 class="title topictitle2" id="ariaid-title5">Release Highlights</h2>
     
     <div class="body refbody"><p class="shortdesc">DITA-OT <span class="keyword">2.3</span> includes <span class="ph" id="highlights__summary">enhanced HTML5 output, new language support
         and additional internationalization improvements</span>.</p>
@@ -187,8 +223,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="ID__issues">
-    <h2 class="title topictitle2" id="ariaid-title5">Resolved issues</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="ID__issues">
+    <h2 class="title topictitle2" id="ariaid-title6">Resolved issues</h2>
     
     <div class="body refbody"><p class="shortdesc">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">2.3</span>
       includes the following changes.</p>
