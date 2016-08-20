@@ -35,18 +35,18 @@ index: "../toc.html"
         <span class="ph cmd">Save the new XML catalog file to your plug-in. Be sure that the local file references are relative to the
           location of the catalog and plug-in.</span>
       </li><li class="li step stepexpand">
-        <span class="ph cmd">Integrate the plug-in.</span>
+        <span class="ph cmd">Install the plug-in.</span>
       </li></ol>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>The catalog entries inside of the new catalog file are added to the core DITA-OT catalog file.</section>
     <div class="example"><h2 class="title sectiontitle">Example</h2>
       
       <p class="p">This example assumes that <span class="ph filepath">catalog-dita.xml</span> contains an OASIS catalog for any document-type
         shells inside this plug-in. The catalog entries in <span class="ph filepath">catalog-dita.xml</span> are relative to the
-        catalog itself; when the plug-in is integrated, they are added to the core DITA-OT catalog (with the correct
+        catalog itself; when the plug-in is installed, they are added to the core DITA-OT catalog (with the correct
         path).</p>
       <pre class="pre codeblock"><code>&lt;plugin id="com.example.catalog"&gt;
   &lt;feature extension="dita.specialization.catalog.relative" file="catalog-dita.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
     </div>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../dev_ref/plugin-extension-points-general.html" title="These extension points enable you to extend the DITA-OT. You can add Ant targets or imports; add a Java library to the classpath parameter; add a new transformation type; extend a catalog file; add new diagnostic messages, and more.">General extension points</a></div></div></nav></main>
+<nav role="navigation" class="related-links"><div class="linklist linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../dev_ref/plugins-installing.html" title="Use the dita command to install a plug-in.">Installing plug-ins</a></div></div><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../dev_ref/plugin-extension-points-general.html" title="These extension points enable you to extend the DITA-OT. You can add Ant targets or imports; add a Java library to the classpath parameter; add a new transformation type; extend a catalog file; add new diagnostic messages, and more.">General extension points</a></div></div></nav></main>

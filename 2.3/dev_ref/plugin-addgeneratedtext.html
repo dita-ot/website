@@ -11,7 +11,8 @@ index: "../toc.html"
     contents of a &lt;note&gt; element.</p>
     <section class="section">
       <div class="p">The generated text extension point is used to add new strings to the default set of generated text. There are
-        several reasons you may want to use this:<ul class="ul">
+        several reasons you may want to use this:
+        <ul class="ul">
           <li class="li">It can be used to add new text for your own processing extensions; for example, it could be used to add
             localized versions of the string "User response" to aid in rendering troubleshooting information.</li>
           <li class="li">It can be used to override the default strings in the toolkit; for example, it could be used to reset the
@@ -20,7 +21,8 @@ index: "../toc.html"
             complicated localization support). For example, it could be used to add support for Vietnamese or Gaelic; it
             could also be used to support a new variant of a previously supported language, such as Australian
             English.</li>
-        </ul></div><dl class="dl">
+        </ul></div>
+      <dl class="dl">
         
           <dt class="dt dlterm"><code class="ph codeph">dita.xsl.strings</code></dt>
           <dd class="dd">Add new strings to generated text file. </dd>
@@ -42,21 +44,19 @@ index: "../toc.html"
   &lt;lang xml:lang="is-IS"  filename="mystring-is-is.xml"/&gt;
   &lt;lang xml:lang="ru"     filename="mystring-ru-ru.xml"/&gt;
   &lt;lang xml:lang="ru-RU"  filename="mystring-ru-ru.xml"/&gt;
-&lt;/langlist&gt;</code></pre><p class="p">Next,
-        copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and replace the content with
-        your own strings (be sure to give them unique name attributes). Do the same for each language that you are
-        providing a translation for. For example, the file <span class="ph filepath">mystring-en-us.xml</span> might
-        contain:</p><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;/langlist&gt;</code></pre>
+      <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and replace the content
+        with your own strings (be sure to give them unique name attributes). Do the same for each language that you are
+        providing a translation for. For example, the file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;strings xml:lang="en-US"&gt;
   &lt;str name="String1"&gt;English generated text&lt;/str&gt;
   &lt;str name="Another String"&gt;Another String in English&lt;/str&gt;
-&lt;/strings&gt;</code></pre><p class="p">Use
-        the following extension code to include your strings in the set of generated text:
-        </p><pre class="pre codeblock"><code>&lt;plugin id="com.example.strings"&gt;
+&lt;/strings&gt;</code></pre>
+      <p class="p">Use the following extension code to include your strings in the set of generated text: </p><pre class="pre codeblock"><code>&lt;plugin id="com.example.strings"&gt;
   &lt;feature extension="dita.xsl.strings" file="xsl/my-new-strings.xml"/&gt;
-&lt;/plugin&gt;</code></pre><p class="p">The
-        string is now available to the "getString" template used in many DITA-OT XSLT files. For example, if processing
-        in a context where the xml:lang value is "en-US", the following call would return "Another String in
+&lt;/plugin&gt;</code></pre>
+      <p class="p">The string is now available to the "getString" template used in many DITA-OT XSLT files. For example, if
+        processing in a context where the xml:lang value is "en-US", the following call would return "Another String in
         English":</p><pre class="pre codeblock"><code>&lt;xsl:call-template name="getString"&gt;
   &lt;xsl:with-param name="stringName" select="'Another String'"/&gt;
 &lt;/xsl:call-template&gt;
@@ -69,18 +69,17 @@ index: "../toc.html"
       
       <p class="p">The process for modifying existing generated text is exactly the same as for adding new text, except that the
         strings you provide override values that already exist. To begin, set up the
-          <span class="ph filepath">xsl/my-new-strings.xml</span> file in your plug-in as in the previous example. </p><p class="p">Next, copy
-        the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and choose the strings you wish to
-        change (be sure to leave the name attribute unchanged, because this is the key used to look up the string).
-        Create a strings file for each language that needs to modify existing strings. For example, the new file
-          <span class="ph filepath">mystring-en-us.xml</span> might
-        contain:</p><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          <span class="ph filepath">xsl/my-new-strings.xml</span> file in your plug-in as in the previous example. </p>
+      <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and choose the strings
+        you wish to change (be sure to leave the name attribute unchanged, because this is the key used to look up the
+        string). Create a strings file for each language that needs to modify existing strings. For example, the new
+        file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;strings xml:lang="en-US"&gt;
   &lt;str name="Figure"&gt;Fig&lt;/str&gt;
   &lt;str name="Draft comment"&gt;ADDRESS THIS DRAFT COMMENT&lt;/str&gt;
-&lt;/strings&gt;</code></pre><p class="p">To
-        integrate the new strings, use the same method as above to add these strings to your
-          <span class="ph filepath">plugin.xml</span> file. Once this plug-in is integrated, where XHTML output previously generated
+&lt;/strings&gt;</code></pre>
+      <p class="p">To include the new strings, use the same method as above to add these strings to your
+          <span class="ph filepath">plugin.xml</span> file. Once this plug-in is installed, where XHTML output previously generated
         the term "Figure", it will now generate "Fig"; where it previously generated "Draft comment", it will now
         generate "ADDRESS THIS DRAFT COMMENT". The same strings in other languages will not be modified unless you also
         provide new versions for those languages.</p><div class="note note note_note"><span class="note__title notetitle">Note:</span> If two plug-ins override the same string in the same
@@ -103,14 +102,15 @@ index: "../toc.html"
       <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and rename it to match
         the language you wish to add. For example, to support Vietnamese strings you may want to pick a name like
           <span class="ph filepath">strings-vi.xml</span>. In that file, change the <code class="keyword markupname xmlatt">@xml:lang</code> attribute on the root
-        element to match your new language.</p><p class="p">Once the file is ready, translate the contents of each
-          <code class="keyword markupname xmlelement">&lt;str&gt;</code> element (be sure to leave the name attribute unchanged). Repeat this process for
-        each new language you wish to add.</p><p class="p">To integrate the new languages, use the same method as above to add
-        these strings to your <span class="ph filepath">plugin.xml</span> file. Once this plug-in is integrated, non-PDF builds will
-        include support for Vietnamese; instead of generating the English word "Caution", the element <code class="ph codeph">&lt;note
-          type="caution" xml:lang="vi"&gt;</code> may generate something like "<dfn class="term" lang="vi">chú
-        ý</dfn>".</p><div class="note note note_note"><span class="note__title notetitle">Note:</span> If two plug-ins add support for the same language using different values, the results will
-        be non-deterministic (translations from either plug-in may be picked up under different conditions).</div>
+        element to match your new language.</p>
+      <p class="p">Once the file is ready, translate the contents of each <code class="keyword markupname xmlelement">&lt;str&gt;</code> element (be sure to leave
+        the name attribute unchanged). Repeat this process for each new language you wish to add.</p>
+      <p class="p">To include the new languages, use the same method as above to add these strings to your
+          <span class="ph filepath">plugin.xml</span> file. Once this plug-in is installed, non-PDF builds will include support for
+        Vietnamese; instead of generating the English word "Caution", the element <code class="ph codeph">&lt;note type="caution"
+          xml:lang="vi"&gt;</code> may generate something like "<dfn class="term" lang="vi">chú ý</dfn>".</p><div class="note note note_note"><span class="note__title notetitle">Note:</span> If two
+        plug-ins add support for the same language using different values, the results will be non-deterministic
+        (translations from either plug-in may be picked up under different conditions).</div>
     </div>
   </div>
 <nav role="navigation" class="related-links"><div class="linklist linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../user-guide/DITA-globalization.html" title="The DITA standard supports content that is written in or translated to any language. In general, the DITA Open Toolkit passes content through to the output format unchanged. The DITA-OT uses the values for the xml:lang, translate, and dir attributes that are set in the source content to provide globalization support.">Globalizing DITA content</a></div></div><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../user-guide/DITA-globalization-xhtml.html" title="The DITA Open Toolkit supports over 50 languages and language variants for the HTML-based transformations such as HTML5, XHTML, Eclipse Help, HTML Help, and TocJS.">Languages supported by the core toolkit</a></div></div></nav></main>
