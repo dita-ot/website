@@ -15,6 +15,9 @@ Site output is built with [Gradle][13] using the settings in the [site.gradle][1
 
 [Travis CI][16] continuous integration automatically republishes the latest [development version][10] of the documentation on the project website whenever changes are pushed to the `develop` branch of the [dita-ot/docs][11] repository.
 
+The page footers in the development documentation include **Edit this page** links that open the DITA source file for the topic in [oXygen XML Web Author][17]. The web-based authoring workflow prompts users to log in to GitHub and fork the [dita-ot/docs][11] repository if necessary. Changes saved in the authoring environment are committed to a new branch, and a pull request is created to submit changes for review by the DITA-OT documentation team.
+
+
 [1]:	https://pages.github.com
 [2]:	http://dita-ot.github.io
 [3]:	http://www.dita-ot.org
@@ -31,3 +34,4 @@ Site output is built with [Gradle][13] using the settings in the [site.gradle][1
 [14]:	https://github.com/dita-ot/docs/blob/develop/site.gradle
 [15]:	http://eerohele.github.io/dita-ot-gradle/build/
 [16]:	https://travis-ci.org
+[17]:	https://www.oxygenxml.com/webauthor/
