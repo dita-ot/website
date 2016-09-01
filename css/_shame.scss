@@ -40,11 +40,13 @@ div.shortdesc {
   margin-bottom: 10px;
 }
 
+.lead {
+  color: $text-muted;
+}
+
 p.shortdesc,
 div.shortdesc {
-  color: $text-muted;
-  font-size: $font-size-large;
-  line-height: $line-height-large;
+  @extend .lead;
 }
 
 .simpletable {
