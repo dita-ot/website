@@ -32,6 +32,6 @@ The page footers in the development documentation include **Edit this page** lin
 [12]:	https://github.com/dita-ot/org.dita-ot.html
 [13]:	http://gradle.org "Gradle | Modern Open-Source Enterprise Build Automation"
 [14]:	https://github.com/dita-ot/docs/blob/develop/site.gradle
-[15]:	http://eerohele.github.io/dita-ot-gradle/build/
+[15]:	http://eerohele.github.io/dita-ot-gradle/
 [16]:	https://travis-ci.org
 [17]:	https://www.oxygenxml.com/webauthor/
