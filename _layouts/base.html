@@ -18,6 +18,9 @@
     {% include header.html %}
     <div id="content" class="container-fluid container">
       <div class="row">
+        {% if page.url contains '/dev/' %}
+          {% include banner.html %}
+        {% endif %}
         {{ content }}
       </div>
     </div>
