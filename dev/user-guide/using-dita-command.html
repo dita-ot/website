@@ -120,13 +120,27 @@ index: "../toc.html"
      <span class="keyword option">-D</span>args.input.dir=<span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span> \
      <span class="keyword option">-propertyfile</span> properties/sequence-html5.properties</code></pre>
       <p class="p">This builds <span class="ph filepath">sequence.ditamap</span> to HTML5 output in <span class="ph filepath">output/sequence</span> using
-        the additional parameters specified in the <span class="ph filepath">properties/sequence-html5.properties</span> file:</p>
-      <pre class="pre codeblock"><code>args.gen.task.lbl = NO
+        the following additional parameters specified in the <span class="ph filepath">properties/sequence-html5.properties</span>
+        file:</p>
+      <pre class="pre codeblock"><code># Don't generate headings for sections within task topics:
+args.gen.task.lbl = NO
+
+# Directory that contains the custom .css file:
 args.cssroot = ${args.input.dir}/css/
+
+# Custom .css file used to style output:
 args.css = style.css
+
+# Copy the custom .css file to the output directory:
 args.copycss = yes
+
+# Location of the copied .css file relative to the output:
 args.csspath = branding
+
+# Generate a full navigation TOC in topic pages:
 nav-toc = full
+
+# Base name of the Table of Contents file:
 args.xhtml.toc = toc</code></pre>
     </div>
     <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
