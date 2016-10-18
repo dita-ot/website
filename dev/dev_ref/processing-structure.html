@@ -13,16 +13,16 @@ index: "../toc.html"
     working directory; the source files themselves are never modified.</p>
     <p class="p">The DITA-OT is designed as a pipeline. Most of the pipeline is common to all output formats; it is known as the
         <dfn class="term">pre-processing stage</dfn>. In general, any DITA process begins with this common set of pre-processing
-      routines. Once the pre-processing is completed, the pipeline diverges based on the requested output format. Some
-      processing is still common to multiple output formats; for example, Eclipse Help and HTML Help both use the same
-      routines to generate XHTML topics, after which the two pipelines branch to create different sets of navigation
-      files.</p>
-    <p class="p">The following image illustrates how the pipeline works for some common output types: PDF, Eclipse Help, XHTML,
-      JavaHelp, and HTML Help.</p>
-
+      routines.</p>
+    <p class="p">Once the pre-processing is completed, the pipeline diverges based on the requested output format. Some processing
+      is still common to multiple output formats; for example, Eclipse Help and HTML Help both use the same routines to
+      generate XHTML topics, after which the two pipelines branch to create different sets of navigation files.</p>
+    <p class="p">The following image illustrates how the pipeline works for several common output formats: PDF, Eclipse Help, HTML
+      Help, JavaHelp, XHTML, and HTML5.</p>
+    <div class="note note note_note"><span class="note__title notetitle">Note:</span> Other output formats may implement additional processing steps.</div>
     <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Diagram of some possible paths through the transformation pipeline</figcaption>
       
-      <br><img class="image" src="images/mainarch.gif" width="624"><br>
+      <br><img class="image" src="images/processing-flow.png" width="624"><br>
     </figure>
   </div>
 </main>
