@@ -35,6 +35,10 @@ div.attention {
 }
 
 // Title styles
+
+// Common class for v2.2 and newer
+.note__title,
+// Legacy classes for backwards compatibility w/ v2.1 and earlier (removed in v2.4)
 .notetitle,
 .tiptitle,
 .fastpathtitle,
