@@ -47,8 +47,17 @@ index: "../toc.html"
       <p class="p">You can use the following extension points to add XSLT processing to modules in DITA-OT transformations:</p>
       <dl class="dl">
         
+          <dt class="dt dlterm"><span class="keyword parmname">dita.map.eclipse.index.pre</span></dt>
+          <dd class="dd">Runs an Ant target before the Eclipse index extraction process.</dd>
+        
+        
           <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.eclipse.plugin</span></dt>
-          <dd class="dd">Overrides the step that generates the <span class="ph filepath">plugin.xml</span> file for Eclipse Help.</dd>
+          <dd class="dd">Overrides the default XSLT step that generates the <span class="ph filepath">plugin.xml</span> file for Eclipse
+            Help.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.eclipse.toc</span></dt>
+          <dd class="dd">Overrides the default XSLT step that generates the Eclipse Help table of contents (TOC).</dd>
         
         
           <dt class="dt dlterm" id="plugin-extension-points-xslt-import__dita.xsl.html.cover"><span class="keyword parmname">dita.xsl.html.cover</span></dt>
@@ -74,8 +83,13 @@ index: "../toc.html"
           <dd class="dd">Overrides the default XSLT step that generates the HTML5 table of contents (TOC).</dd>
         
         
-          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.rtf</span></dt>
-          <dd class="dd">Overrides the default rich-text format (RTF) transformation.</dd>
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.htmlhelp.map2hhc</span></dt>
+          <dd class="dd">Overrides the default XSLT step that generates the HTML Help contents (<span class="ph filepath">.hhc</span>)
+            file.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.htmlhelp.map2hhp</span></dt>
+          <dd class="dd">Overrides the default XSLT step that generates the HTML Help project (<span class="ph filepath">.hhp</span>) file.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.troff-ast</span></dt>
@@ -83,7 +97,8 @@ index: "../toc.html"
         
         
           <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.troff</span></dt>
-          <dd class="dd">Overrides the XSL that converts block-and-phrase intermediate markup into troff. </dd>
+          <dd class="dd">Overrides
+            the XSL that converts block-and-phrase intermediate markup into troff.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.xhtml</span></dt>
