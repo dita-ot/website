@@ -24,6 +24,7 @@ div.attention {
 }
 
 // Important = alert alert-warning
+.attention,
 .important {
   @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
 }
