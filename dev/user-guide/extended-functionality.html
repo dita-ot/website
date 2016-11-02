@@ -78,12 +78,11 @@ main = print $ fact 7</code></pre>
       <p class="p">to include the range of lines that follows the <code class="ph codeph">START-FACT</code> token, up to (but not including) the
         line that contains the <code class="ph codeph">END-FACT</code> token. The resulting <code class="keyword markupname xmlelement">&lt;codeblock&gt;</code> would
         contain the following lines:</p>
-      <pre class="pre codeblock"><code>-- START-FACT
-fact :: Int -&gt; Int
+      
+      
+      <pre class="pre codeblock"><code>fact :: Int -&gt; Int
 fact 0 = 1
-fact n = n * fact (n-1)
--- END-FACT
-main = print $ fact 7</code></pre>
+fact n = n * fact (n-1)</code></pre>
       <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> This approach can be used to reference code samples that are frequently edited. In these cases,
         referencing line ranges by line number can be error-prone, as the target line range for the reference may shift
         if preceding lines are added or removed. Specifying ranges by line content makes references more robust, as long
