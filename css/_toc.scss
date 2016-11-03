@@ -89,3 +89,11 @@ nav[role=toc] {
     }
   }
 }
+
+// Static page nav headers
+
+.nav-header {
+  color: $gray-light;
+  font-weight: bold;
+  margin: 5px;
+}
