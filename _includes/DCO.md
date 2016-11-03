@@ -1,7 +1,4 @@
----
-layout: default
-title: "Signing your work"
----
+## Signing your work
 
 <p class="lead">Before we can include your contribution in the DITA Open Toolkit, you need to give us your permission.</p>
 

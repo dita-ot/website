@@ -31,6 +31,8 @@ If you find something wrong or missing in the [documentation][11], you can [open
 
 If you'd like to fix a typo or propose changes to an existing topic, you can use the **Edit this page** link in the page footers of the [development version of the documentation][11] to open the source file in a web editor and save your changes to a GitHub [pull request][10].
 
+{% include DCO.md %}
+
 [1]:	https://github.com/dita-ot/dita-ot/issues
 [2]:	https://github.com/dita-ot/dita-ot/issues/new
 [3]:	https://github.com/dita-ot/docs/issues
