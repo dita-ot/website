@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "DITA Open Toolkit Project Management Guidelines"
+title: "DITA Open Toolkit Project Management"
 ---
-<p class="lead">The<span><cite> DITA Open Toolkit Project Management Guidelines</cite></span> are designed to provide information about how the project is managed. These guidelines are geared to an
+<p class="lead">The <cite>DITA Open Toolkit Project Management Guidelines</cite> are designed to provide information about how the project is managed. These guidelines are geared to an
   audience that needs information about how to participate in the development of the DITA-OT.</p>
 <p>The project is managed similarly to commercial software-development projects; it uses requirements gathering, plan validation with stakeholders and contributors, scheduled activities,
   tests, reviews, and builds. Quality is strongly emphasized.</p>
@@ -11,15 +11,15 @@ title: "DITA Open Toolkit Project Management Guidelines"
   <p>The goal of the DITA Open Toolkit (DITA-OT) is to provide a high-quality implementation for production-level output of DITA content, built in a professionally-managed project
     environment by vetted contributors, and tested thoroughly for each release.</p>
   <p>The DITA-OT is designed to meet the needs of users who want to publish DITA content, from individual users running the toolkit in a stand-alone mode to vendors who incorporate the
-    toolkit into their software products. The different distribution packages are designed to meet the needs of these different audiences.</p>
+    toolkit into their software products.</p>
   <p>The DITA-OT project keeps up to date with the latest DTD and Schema updates from the OASIS DITA Technical Committee (TC), which develops and maintains the DITA standard. As the DITA
     TC produces drafts of future versions, the DITA-OT works to create early support for new features and helps to test the new draft versions of the standard.</p>
-  <p>The project agrees with the open-source motto of <span>"Release early and often"</span> and seeks to develop wide consensus on issues.</p>
+  <p>The project agrees with the open-source motto of <em>”Release early and often”</em> and seeks to develop wide consensus on issues.</p>
 </section>
 <section id="development_process">
   <h2>DITA Open Toolkit development process</h2>
   <p>The DITA Open Toolkit (DITA-OT) development process is modeled after development processes for other popular and successful open-source projects, most notably Eclipse.</p>
-  <p>Version 1.0 was released February 27, 2005. Version 2.0 was released June 29, 2012.</p>
+  <!-- <p>Version 1.0 was released February 27, 2005. Version 2.0 was released June 29, 2012.</p> -->
   <section id="projectroles">
     <h3>Project roles and responsibilities</h3>
     <p>The DITA Open Toolkit (DITA-OT) project has the following roles: Project manager, committer, and contributor. Each role has different rights and obligations.</p>
@@ -35,7 +35,7 @@ title: "DITA Open Toolkit Project Management Guidelines"
         </ul>
       </dd>
       <dt>Committer</dt>
-      <dd>Committers oversee the quality and originality of all contributions. Committers influences the development of the project and have write access to the source-code repository.
+      <dd>Committers oversee the quality and originality of all contributions. Committers influence the development of the project and have write access to the source-code repository.
         This position reflects a track record of high-quality contributions to the project. </dd>
       <dt>Contributor</dt>
       <dd>Contributors contribute code, documentation, fixes, tests, or other work to the project. Contributors do not have write access to the source-code repository. There is no limit
@@ -44,9 +44,9 @@ title: "DITA Open Toolkit Project Management Guidelines"
   </section>
   <section id="ditaopentoolkitreleaselifecycle">
     <h3>DITA Open Toolkit release management</h3>
-    <p>The DITA-OT project works with an agile development process; it releases test (milestone) builds approximately every month, and it encourages feedback on the test builds while
-      function is being developed. Stable releases are typically issued approximately every six months.</p>
-    <p>Each iteration begins with a meeting of project contributors. The meeting minutes are stored on the project Wiki and are available to the public. Active contributors are directly
+    <p>The DITA-OT project works with an agile development process; it releases test builds via a continuous integration process, and it encourages feedback on the test builds while
+      features are being developed. Stable releases are typically issued approximately every six months.</p>
+    <p>Each iteration begins with a meeting of project contributors. The meeting minutes are stored on the project wiki and are available to the public. Active contributors are directly
       invited to these meetings, but anybody interested in the DITA-OT development is welcome to attend. If you are interested in attending these meetings, join the dita-ot-developer
       mailing list and send a note to the list or list owners.</p>
     <p>Each iteration kick-off meeting covers the following topics:</p>
@@ -62,16 +62,14 @@ title: "DITA Open Toolkit Project Management Guidelines"
       <li>Evaluation of what is allowed in the iteration; the final iteration typically has no major changes in order to assure quality in the stable build.</li>
       <li>Assessment of whether all release notes and other artifacts are up-to-date and ready for a final build.</li>
     </ul>
-    <p>When an iteration is complete, the build is uploaded to SourceForge. Test builds are placed in the <span>Latest Test Build</span> folder. At the end of a release cycle, the builds
-      are loaded to the <span>Stable Release</span> folder, and the project information is updated to reflect the latest release.</p>
+    <p>When a stable release is complete, the distribution build is uploaded to the GitHub releases page, and the dowload links on the project website are updated to reflect the latest release.</p>
   </section>
   <section id="fixesandfeatures">
     <h3>Feature requests and defect reports</h3>
     <p>Feature requests and defect reports can be submitted at any time through the project page at GitHub. </p>
     <p>The core project contributors track and address bugs reported against the project; they issue patches based on urgency. The core contributors also will provide feedback on
       requests for new features or design changes, but they might not be able to provide development assistance.</p>
-    <p>All new bug reports or feature requests should be submitted through GitHub: <a href="https://github.com/dita-ot/dita-ot/issues" target="_blank">DITA-OT bug and feature
-      tracker</a>.</p>
+    <p>All new bug reports or feature requests should be submitted through the <a href="https://github.com/dita-ot/dita-ot/issues" target="_blank">DITA-OT issue and feature tracker</a> on GitHub.</p>
     <section>
       <h4>Feature requests</h4>
       <p>The project committers periodically review new feature requests with contributors and interested parties; when possible, they make plans to implement the new features.</p>
