@@ -3,6 +3,8 @@ layout: default
 title: "Colophon"
 ---
 
+<p class="lead">How we build and maintain the DITA Open Toolkit project website.</p>
+
 The DITA-OT project website is hosted via [GitHub pages][1] at [dita-ot.github.io][2], which redirects to [dita-ot.org][3].
 
 The website is maintained in Git and updated by pushing commits to the repository at [github.com/dita-ot/dita-ot.github.io][4].
