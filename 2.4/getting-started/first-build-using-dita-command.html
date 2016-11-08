@@ -1,0 +1,55 @@
+---
+# Generated from DITA source
+layout: base
+title: "Building output using the dita command"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a><ul class="nav nav-list"><li><a href="../getting-started/installing-client.html">Installing the toolkit</a></li><li class="active"><a href="../getting-started/first-build-using-dita-command.html">Building output</a></li></ul></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
+  
+  <div xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg" xmlns:related-links="http://dita-ot.sourceforge.net/ns/200709/related-links" xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html" class="body taskbody"><p class="shortdesc">You can generate output using the DITA Open Toolkit <span class="keyword cmdname">dita</span> command-line tool. Build
+    parameters can be specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool with no graphical user interface.</section>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Open a terminal window by typing the following in the search bar:</span>
+        <div class="itemgroup info">
+          <ul class="ul">
+            <li class="li">On OS X and Linux, type <kbd class="ph userinput">Terminal</kbd>.</li>
+            <li class="li">On Windows, type <kbd class="ph userinput">Command Prompt</kbd>.</li>
+          </ul>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">At the command-line prompt, enter the following command:</span>
+        <div class="itemgroup info"><pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword option">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword option">--format</span>=<var class="keyword varname">format</var> </code></pre>
+          <p class="p">where:</p>
+          <ul class="ul">
+            <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li><li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to
+              process.</li><li class="li">
+              <p class="p" id="using-command-line-tool__d15e117"><var class="keyword varname">format</var> is the output format (transformation type). Use the
+                same values available for the <span class="keyword parmname">transtype</span> build parameter, for example,
+                  <span class="keyword option">html5</span> or <span class="keyword option">pdf</span>.</p>
+            </li>
+            
+            
+            
+          </ul></div>
+        <div class="itemgroup stepresult">
+          <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
+            specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
+            directory).</p>
+          <div class="note tip note_tip" id="using-command-line-tool__d15e400"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
+              <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
+        </div>
+      </li></ol>
+    <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
+      <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, the following command generates
+        HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file:</p>
+      <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword option">--input</span>=sequence.ditamap <span class="keyword option">--format</span>=html5</code></pre>
+    </div>
+    
+    <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
+      <p class="p">Most builds require you to specify more options than are described in this topic.</p>
+      
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="../getting-started/installing-client.html" title="The DITA-OT distribution package can be installed on Linux, macOS, and Windows. It contains everything that you need to run the toolkit except for Java.">Installing the distribution package</a></div></div><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../user-guide/build-using-dita-command.html" title="You can generate output using the DITA Open Toolkit dita command-line tool. Build parameters can be specified on the command line or with .properties files.">More information about building output with the <span class="keyword cmdname">dita</span> command</a></div></div></nav></main>
