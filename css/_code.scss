@@ -11,6 +11,7 @@
 .parmname {
   @include codeclass;
   color: $brand-primary;
+  letter-spacing: 1px;
 }
 
 .codeblock {
