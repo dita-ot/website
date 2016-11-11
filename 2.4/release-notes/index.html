@@ -90,6 +90,57 @@ index: "../toc.html"
         makes references more robust, as long as the <code class="ph codeph">token</code> keywords are preserved when the referenced
         resource is modified.</div>
       </section>
+      <section class="section" id="highlights__2405"><h3 class="title sectiontitle">Standalone <span class="keyword option">HTML5</span> plug-in</h3>
+        
+        <div class="div">
+            <p class="p">The <span class="keyword option">HTML5</span> transformation introduced in release 2.0 as part of the <span class="keyword option">XHTML</span>
+              plug-in was moved to a separate <span class="keyword option">HTML5</span> plug-in in release 2.2, but that version of the
+                <span class="keyword option">HTML5</span> transformation still depended on the <span class="keyword option">XHTML</span> plug-in for certain
+              common processing.</p>
+            <p class="p">In release 2.4, all dependencies between <span class="keyword option">HTML5</span> and <span class="keyword option">XHTML</span> have been
+              removed to ensure that HTML5 processing can be further refactored in the future without affecting XHTML
+              output, or other HTML-based transformations such as <span class="keyword option">eclipsehelp</span>,
+                <span class="keyword option">htmlhelp</span> or <span class="keyword option">javahelp</span>.</p>
+          </div>
+        <p class="p">
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2405" target="_blank">#2405</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2511" target="_blank">#2511</a>
+        </p>
+      </section>
+
+      <section class="section" id="highlights__1542"><h3 class="title sectiontitle">Legacy plug-ins removed</h3>
+      
+      <p class="p">DITA-OT 2.4 no longer includes the following legacy transformation plug-ins in the default distribution:</p>
+      <table xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg" xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html" class="table frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">Legacy plug-ins</span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+            <tr class="row">
+              <th class="entryPlug-in colsep-0 rowsep-1" id="highlights__1542__entry__1">Plug-in </th>
+              <th class="entrySource code locationcolsep-0 rowsep-1" id="highlights__1542__entry__2">Source code location</th>
+            </tr>
+          </thead><tbody class="tbody">
+            <tr class="row">
+              <td class="entryDocBookcolsep-0 rowsep-1" headers="highlights__1542__entry__1 ">DocBook</td>
+              <td class="entry&#xA;                colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.docbook" target="_blank">https://github.com/dita-ot/org.dita.docbook</a></td>
+            </tr>
+            <tr class="row">
+              <td class="entryEclipse Contentcolsep-0 rowsep-1" headers="highlights__1542__entry__1 ">Eclipse Content</td>
+              <td class="entry&#xA;                colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.eclipsecontent" target="_blank">https://github.com/dita-ot/org.dita.eclipsecontent</a></td>
+            </tr>
+            <tr class="row">
+              <td class="entryWord RTFcolsep-0 rowsep-1" headers="highlights__1542__entry__1 ">Word RTF</td>
+              <td class="entry&#xA;                colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.wordrtf" target="_blank">https://github.com/dita-ot/org.dita.wordrtf</a></td>
+            </tr>
+          </tbody></table>
+      <div class="note note note_note"><span class="note__title">Note:</span> If necessary, they may be re-installed from earlier DITA-OT distributions, but they are no longer actively
+        maintained or supported by the core toolkit committers. The source code is available on GitHub for anyone
+        interested in maintaining the plug-ins for use with future toolkit versions.</div>
+    </section>
+      <section class="section">
+        <p class="p">
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1542" target="_blank">#1542</a></p>
+      </section>
     </div>
   </article>
 
@@ -98,32 +149,21 @@ index: "../toc.html"
     
     <div class="body refbody"><p class="shortdesc">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">2.4</span>
       includes the following changes.</p>
-      <section class="section" id="issues__features"><h3 class="title sectiontitle">Features</h3>
+
+      
+
+      <section class="section" id="issues__enhancements"><h3 class="title sectiontitle">Enhancements and changes</h3>
         
-        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> includes the following new features:</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> includes the following enhancements and changes to
+          existing features:</p>
         <ul class="ul">
-          <li class="li" id="issues__2405">Remove dependency to XHTML from HTML5
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2405" target="_blank">#2405</a>,
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2511" target="_blank">#2511</a>
-          </li>
           <li class="li" id="issues__2026">Move to Java 8
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2026" target="_blank">#2026</a>
-          </li>
-          <li class="li" id="issues__1542">Remove completely from the DITA OT distribution the plugin for generating Eclipse Content
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1542" target="_blank">#1542</a>
           </li>
           <li class="li" id="issues__1245">TM output
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1245" target="_blank">#1245</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2404" target="_blank">#2404</a>
           </li>
-        </ul>
-      </section>
-
-      <section class="section" id="issues__enhancements"><h3 class="title sectiontitle">Enhancements</h3>
-        
-        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> includes the following enhancements and changes to
-          existing features:</p>
-        <ul class="ul">
           <li class="li" id="issues__2512">Bug in "dita-utilities.xsl" getVariable when called from string context
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2512" target="_blank">#2512</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2513" target="_blank">#2513</a>
@@ -131,7 +171,7 @@ index: "../toc.html"
           <li class="li" id="issues__2503">HTML5 generates duplicate class attributes
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2503" target="_blank">#2503</a>
           </li>
-          <li class="li" id="issues__2502">Use Sass `// comment` syntax for partials copyrights #
+          <li class="li" id="issues__2502">Use Sass <code class="ph codeph">// comment</code> syntax for partials copyrights
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2502" target="_blank">#2502</a>
           </li>
           <li class="li" id="issues__2499">Change HTML5 to use libsass instead of Compass
@@ -184,7 +224,8 @@ index: "../toc.html"
       <section class="section" id="issues__contrib"><h3 class="title sectiontitle">Contributors</h3>
         
         <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> includes
-          <a class="xref" href="https://github.com/dita-ot/dita-ot/graphs/contributors" target="_blank">contributions</a> by the following people:</p>
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/graphs/contributors" target="_blank">code contributions</a> by the following people:</p>
+        
         
         <ol class="ol">
           <li class="li">Jarno Elovirta</li>
@@ -209,10 +250,23 @@ index: "../toc.html"
             <a class="xref" href="../user-guide/DITA-messages.html" title="This topic lists each error message generated by the toolkit and provides additional information that might be helpful in understanding and resolving the error condition. If your toolkit installation includes custom plug-ins that define additional messages, you can add to this list by rebuilding the DITA-OT documentation.">DITA-OT error messages</a> topics, a new
             <a class="xref" href="../extension-points/extension-points-by-plugin.html" title="The default plug-ins that ship with the DITA Open Toolkit include a series of extension points that can be used to modify various aspects of toolkit processing.">Extension points by plug-in</a> section is now generated from the installed DITA-OT plug-ins to
             provide an overview of the extension points supported by each plug-in.</li>
+          <li class="li">A new
+            <a class="xref" href="../user-guide/DITA-features-in-docs.html" title="The DITA Open Toolkit uses various recent DITA features in the project documentation.">DITA features in the documentation</a> topic provides examples of how the project documentation uses various
+            recent DITA features.</li>
+          <li class="li">A new topic provides information on
+            <a class="xref" href="../dev_ref/migrating-to-2.4.html" title="In DITA-OT 2.4, the HTML5 transformation was refactored as an independent plug-in that no longer depends on the XHTML plug-in.">Migrating to release 2.4</a>.</li>
         </ul>
         <p class="p">For additional information on documentation issues resolved in DITA Open Toolkit Release <span class="keyword">2.4</span>, see the
           <a class="xref" href="https://github.com/dita-ot/docs/issues?q=milestone%3A2.4+is%3Aclosed" target="_blank">
             <span class="keyword">2.4</span> milestone</a> in the documentation repository.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4</span> includes
+          <a class="xref" href="https://github.com/dita-ot/docs/graphs/contributors" target="_blank">documentation contributions</a> by the following people:</p>
+        
+        <ol class="ol">
+          <li class="li">Roger Sheen</li>
+          <li class="li">Jarno Elovirta</li>
+          <li class="li">Mark Giffin</li>
+        </ol>
         <p class="p">For the complete list of documentation changes since the previous release, see the
           <a class="xref" href="https://github.com/dita-ot/docs/compare/2.3...2.4" target="_blank">
             changelog</a>.</p>
