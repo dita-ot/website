@@ -54,6 +54,15 @@ div.shortdesc {
   @extend .table-condensed;
 }
 
+.generated {
+  color: $kbd-color;
+
+  &:before {
+    font-variant: small-caps;
+    content: 'Generated: ';
+  }
+}
+
 // Apply Bootstrap's <caption> style to figure titles (rendered as HTML5 <figcaption> elements)
 figcaption {
   @extend caption;
@@ -64,12 +73,27 @@ dd {
   margin: 0 0 ($line-height-computed / 2);
 }
 
-// Invert link colors for teaser icon links
-.teaser a {
-  color: $link-hover-color;  // $brand-primary ** Global textual link color.
+// Teaser overrides
+.teasers {
+  text-align: center;
+}
 
-  &:hover,
-  &:focus {
-    color: $link-color;      // lighten($brand-primary, 20%)
+.teaser {
+
+  .glyphicon {
+    font-size: 8em;
   }
+  // Invert link colors for teaser icon links
+  a {
+    color: $link-hover-color;  // $brand-primary ** Global textual link color.
+
+    &:hover,
+    &:focus {
+      color: $link-color;      // lighten($brand-primary, 20%)
+    }
+  }
+}
+
+.finch {
+  margin-top: 3em;
 }

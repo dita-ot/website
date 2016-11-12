@@ -3,82 +3,165 @@ layout: base
 title: "DITA Open Toolkit"
 toc: false
 ---
+<!--
 <div style="text-align: center; padding-bottom: 10px">
   <a href="https://www.oxygenxml.com/events/2016/dita-ot_day.html">
     <img src="http://oxygenxml.com/img/banner_meetup_dita_ot_day_2016.jpg" alt="DITA-OT Day 2016"
          class="img-responsive center-block">
   </a>
 </div>
+-->
 
 <div class="jumbotron">
   <h1>{{ page.title }}</h1>
-  <p>The DITA Open Toolkit, or DITA-OT for short, is a set of Java-based, open-source tools that provide processing for
-    XML content authored in the <em>Darwin Information Typing Architecture</em>.</p>
-  <p>Download and install the toolkit to get started with topic-based writing and publishing.</p>
-  <a class="btn btn-large btn-success" href="{{ site.baseurl }}/download">
-    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download DITA-OT</a>
+  <p><strong><em>DITA-OT</em></strong> — DITA Open Toolkit is an open-source publishing engine for XML content
+  authored in the <em>Darwin Information Typing Architecture</em> — extensible publishing power for DITA workflows.</p>
 </div>
 
-<h2>DITA Open Toolkit features</h2>
-<p class="lead">The DITA Open Toolkit is primarily a publishing tool used to convert DITA content into various output
-  formats. The toolkit supports all versions of the <a href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part0-overview.html">OASIS DITA specification</a>, including 1.0, 1.1, 1.2, and 1.3.</p>
+<div class="container marketing">
+  <div class="row teasers">
+    <div class="col-md-4">
+      <p class="teaser">
+        <a href="#features" role="button">
+          <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+        </a>
+      </p>
+      <h2>Features</h2>
+      <p class="lead">The DITA Open Toolkit is primarily a publishing tool used to convert DITA content into various
+      output formats.</p>
+      <p><a class="btn btn-default" href="#features" role="button">Learn more »</a></p>
+    </div><!-- /.col-md-4 -->
+    <div class="col-md-4">
+      <p class="teaser">
+        <a href="{{ site.baseurl }}/download" role="button">
+          <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+        </a>
+      </p>
+      <h2>Download</h2>
+      <p class="lead">Install DITA Open Toolkit to get started with structured authoring, topic-based writing and
+      cross-media publishing.</p>
+      <p>
+        <a class="btn btn-large btn-success" href="{{ site.baseurl }}/download" role="button">
+          <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download DITA-OT
+        </a>
+      </p>
+    </div><!-- /.col-md-4 -->
+    <div class="col-md-4">
+      <p class="teaser">
+        <a href="{{ site.baseurl }}/dev" role="button">
+          <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+        </a>
+      </p>
+      <h2>Docs</h2>
+      <p class="lead">The DITA Open Toolkit docs provide information about running, configuring and extending the
+      toolkit.</p>
+      <p><a class="btn btn-default" href="{{ site.baseurl }}/dev" role="button">Read the docs »</a></p>
+    </div><!-- /.col-md-4 -->
+  </div><!-- /.row -->
 
-<div class="alert alert-success" role="alert">
-  <p><span class="note__title notetitle">Note: </span>
-  While the DITA standard is owned and developed by OASIS, the DITA Open Toolkit project is governed separately.
-  DITA-OT is an independent, open-source implementation of the DITA standard.</p>
+  <hr class="featurette-divider" id="features">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Open source. <span class="text-muted">Free as a bird.</span></h2>
+      <p class="lead">
+      While the DITA standard is owned and developed by OASIS, the <em>DITA Open Toolkit</em> project is governed
+      separately.</p>
+      <p>DITA Open Toolkit is a vendor-independent, open-source implementation of the DITA standard, released under
+      the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.</p>
+      <p>The toolkit supports all versions of the <a href="http://docs.oasis-open.org/dita/dita/v1.3/
+      dita-v1.3-part0-overview.html">OASIS DITA specification</a>, including 1.0, 1.1, 1.2, and 1.3.</p>
+      <p>The DITA Open Toolkit project welcomes contributions from the community. The project depends heavily on the
+      dedication of a small group of <a href="http://www.dita-ot.org/
+      who_we_are">contributors</a>, most of whom work on the project in their spare time.</p>
+      <p>If you use DITA Open Toolkit to publish XML content, we hope you’ll consider
+      <a href="http://www.dita-ot.org/contributing">contributing</a> to the project in any way you can.</p>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image finch img-responsive center-block" src="images/dita-logo.png">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7 col-md-push-5">
+      <h2 class="featurette-heading">DITA infrastructure. <span class="text-muted">Publishing power.</span></h2>
+      <p class="lead">DITA Open Toolkit serves as critical infrastructure, providing the publishing engine that powers
+      the DITA ecosystem.</p>
+      <p>Many of the best-known XML editors, enterprise authoring solutions and commercial content management systems
+      rely on DITA-OT to publish XML content, including:</p>
+      <ul>
+        <li><a href="http://www.oxygenxml.com" target="_blank">oXygen XML Editor</a></li>
+        <li><a href="http://www.xmetal.com" target="_blank">XMetaL Author Enterprise</a></li>
+        <li><a href="http://www.astoriasoftware.com" target="_blank">Astoria CMS</a></li>
+        <li><a href="http://www.componize.com" target="_blank">Componize DITA CMS</a></li>
+        <li><a href="http://www.ditaexchange.com" target="_blank">DitaExchange Dx4</a></li>
+        <li><a href="http://www.intuillion.com" target="_blank">DITAToo DITA CMS</a></li>
+        <li><a href="http://ditaworks.com" target="_blank">DITAworks</a></li>
+        <li><a href="http://www.rsicms.com/doczone" target="_blank">DocZone DITA CCMS</a></li>
+        <li><a href="http://easydita.com" target="_blank">easyDITA</a></li>
+        <li><a href="http://www.empolis.com/en/smart-information-management/products/content-management.html"
+          target="_blank">Empolis Smart Content Express</a></li>
+        <li><a href="http://www.ixiasoft.com/en/products/" target="_blank">IXIASOFT DITA CMS</a></li>
+        <li><a href="http://www.rsicms.com/rsuite-enterprise-publishing-solution" target="_blank">RSI Content Solutions
+        RSuite</a></li>
+        <li><a href="http://www.bluestream.com" target="_blank">XDocs CCMS</a></li>
+        <li><a href="http://www.xplm.com/publisher" target="_blank">XPLM Publisher</a></li>
+        <li><a href="http://www.fluidtopics.com" target="_blank">Fluid Topics</a></li>
+        <li><a href="http://www.ditainprint.com" target="_blank">DITA InPrint™</a></li>
+        <li><a href="http://congility.com/idxml/" target="_blank">IdXML – DITA to Adobe InDesign</a></li>
+      </ul>
+    </div>
+    <div class="col-md-5 col-md-pull-7">
+      <img class="featurette-image img-responsive center-block" alt="Publishing platform" src="images/dita-ot_input.png">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading" id="supported_transformation_types">Output formats. <span class="text-muted">Out
+      of the box.</span></h2>
+      <p class="lead">The toolkit’s extensible plug-in mechanism allows you to add your own  transformations and
+      customize the default output, including:</p>
+      <ul>
+        <li>
+          <p><strong>HTML</strong> – HTML5 and XHTML output are supported along with a variety of HTML-based
+          navigation types. The HTML output contains class values based on the DITA elements so CSS files may be used
+          to customize the output style.</p>
+        </li>
+        <li>
+          <p><strong>PDF</strong> – PDF output is based on a plug-in that produces XSL Formatting Objects (XSL-FO)
+          output. The XSL-FO output may be converted to PDF using an open-source rendering tool (Apache FOP) or
+          commercial tools such as RenderX XEP or Antenna House Formatter.</p>
+        </li>
+        <li>
+          <p><strong>Eclipse Help</strong> – Eclipse output is an HTML-based format that also produces navigation and
+          index files for use with Eclipse information centers.</p>
+        </li>
+        <li>
+          <p><strong>HTML Help</strong> – Microsoft Compiled HTML Help output produces a compiled help (.chm) file
+          with HTML topics, table of contents, and index.</p>
+        </li>
+        <li>
+          <p><strong>Java Help</strong> – HTML topics, table of contents and index for use with the Java Help platform.
+          </p>
+        </li>
+        <li>
+          <p><strong>troff</strong> – troff-based man pages are supported; one man page is generated for each input
+          topic.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-5">
+      <img class="featurette-image img-responsive center-block" alt="Output formats" src="images/dita-ot_output.png">
+    </div>
+  </div>
+
+  <footer>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+  </footer>
+
 </div>
-
-<h3 id="supported_transformation_types">Output formats</h3>
-<p>The following transformation types are supported out of the box with any toolkit installation:</p>
-<ul>
-  <li>
-    <p><strong>PDF</strong> – PDF output is based on a plug-in that produces XSL Formatting Objects (XSL-FO) output. The
-      XSL-FO output may be converted to PDF using an open-source rendering tool (Apache FOP) or commercial tools such as
-      RenderX XEP or Antenna House Formatter.</p>
-  </li>
-  <li>
-    <p><strong>HTML</strong> – HTML5 and XHTML output are supported along with a variety of HTML-based navigation types.
-      The HTML output contains class values based on the DITA elements so CSS files may be used to customize the output
-      style.</p>
-  </li>
-  <li>
-    <p><strong>TocJS</strong> – The TocJS transformation type includes HTML5 output along with JavaScript-based frames
-      for navigation, including table of contents (ToC) sections that expand and collapse.</p>
-  </li>
-  <li>
-    <p><strong>HTML Help</strong> – Microsoft Compiled HTML Help output produces a compiled help (.chm) file with HTML
-      topics, table of contents, and index.</p>
-  </li>
-  <li>
-    <p><strong>Eclipse Help</strong> – Eclipse output is an HTML-based format that also produces navigation and index
-      files for use with Eclipse information centers.</p>
-  </li>
-  <li>
-    <p><strong>Eclipse Content</strong> – Normalized DITA plus Eclipse project files.</p>
-  </li>
-  <li>
-    <p><strong>Java Help</strong> – HTML topics, table of contents and index for use with the Java Help platform.</p>
-  </li>
-  <li>
-    <p><strong>ODT</strong> – OpenDocument Text is based on the Open Document Format for Office Applications (ODF)
-      standard, for use with tools like OpenOffice and Google Docs.</p>
-  </li>
-  <li>
-    <p><strong>Word RTF</strong> – Rich Text Format output is supported for basic content, but complex markup and some
-      advanced features of DITA may not be supported.</p>
-  </li>
-  <li>
-    <p><strong>DocBook</strong> – An earlier semantic markup language for technical documentation.</p>
-  </li>
-  <li>
-    <p><strong>troff</strong> – troff-based man pages are supported; one man page is generated for each input topic.
-      Note that tables are not supported by this transformation type.</p>
-  </li>
-</ul>
-
-<p>The toolkit’s plug-in mechanism allows new transformation types to be added.</p>
-
-<h2>License</h2>
-<p>The DITA Open Toolkit is licensed for use under the Apache License 2.0. A copy of the Apache License 2.0 can be found
-  at the root directory of the DITA Open Toolkit deliverable package.</p>

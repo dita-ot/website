@@ -7,7 +7,7 @@ baseurl: ""
 sass:
     style: compressed
     sass_dir: css
-exclude: ["gulpfile.js", "package.js", "node_modules"]
+exclude: ["gulpfile.js", "package.js", "node_modules", "images/dita-ot_input-output.graffle"]
 
 # Major & minor release version (2 digits)
 release: "2.4"

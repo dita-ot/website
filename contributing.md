@@ -33,15 +33,15 @@ If you'd like to fix a typo or propose changes to an existing topic, you can use
 
 {% include DCO.md %}
 
-[1]:	https://github.com/dita-ot/dita-ot/issues
-[2]:	https://github.com/dita-ot/dita-ot/issues/new
-[3]:	https://github.com/dita-ot/docs/issues
-[4]:	https://github.com/dita-ot/dita-ot.github.io/issues
-[5]:	https://groups.google.com/d/forum/dita-ot-users
-[6]:	https://groups.yahoo.com/neo/groups/dita-users/info/
-[7]:	http://stackoverflow.com/questions/tagged/dita-ot
-[8]:	https://groups.google.com/d/forum/dita-ot-dev
-[9]:	https://github.com/dita-ot/dita-ot/labels/bug
-[10]:	https://help.github.com/articles/using-pull-requests
-[11]:	http://www.dita-ot.org/dev/
-[12]:	https://github.com/dita-ot/docs/issues/new
+[1]: https://github.com/dita-ot/dita-ot/issues
+[2]: https://github.com/dita-ot/dita-ot/issues/new
+[3]: https://github.com/dita-ot/docs/issues
+[4]: https://github.com/dita-ot/dita-ot.github.io/issues
+[5]: https://groups.google.com/d/forum/dita-ot-users
+[6]: https://groups.yahoo.com/neo/groups/dita-users/info/
+[7]: http://stackoverflow.com/questions/tagged/dita-ot
+[8]: https://groups.google.com/d/forum/dita-ot-dev
+[9]: https://github.com/dita-ot/dita-ot/labels/bug
+[10]: https://help.github.com/articles/using-pull-requests
+[11]: http://www.dita-ot.org/dev/
+[12]: https://github.com/dita-ot/docs/issues/new
