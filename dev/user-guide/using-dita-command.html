@@ -20,7 +20,7 @@ index: "../toc.html"
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
-        <div class="itemgroup info"><pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword option">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword option">--format</span>=<var class="keyword varname">format</var> <var class="keyword varname">options</var></code></pre>
+        <div class="itemgroup info"><pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> <var class="keyword varname">options</var></code></pre>
           <p class="p">where:</p>
           <ul class="ul">
             <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li><li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to
@@ -104,14 +104,14 @@ index: "../toc.html"
         
         
           <dt class="dt pt dlterm">
-            <span class="keyword parmname">--parameter=value</span></dt>
+            <span class="keyword parmname">--parameter</span>=<var class="keyword varname">value</var></dt>
           <dt class="dt pt dlterm">
             <span class="keyword parmname">-D</span><var class="keyword varname">parameter</var>=<var class="keyword varname">value</var>
           </dt>
           <dd class="dd pd">Specify a value for a DITA-OT or Ant build parameter.
-            <p class="p">The GNU-style <span class="keyword parmname">--parameter=value</span> form is only available for parameters that are
-              configured in the plug-in configuration file; the Java-style <span class="keyword parmname">-D</span> form can also be used
-              to specify additional non-configured parameters or set system properties.</p>
+            <p class="p">The GNU-style <span class="keyword parmname">--parameter</span>=<var class="keyword varname">value</var> form is only available for
+              parameters that are configured in the plug-in configuration file; the Java-style <span class="keyword parmname">-D</span>
+              form can also be used to specify additional non-configured parameters or set system properties.</p>
             <p class="p">Parameters not implemented by the specified transformation type or referenced in a
                 <span class="ph filepath">.properties</span> file are ignored.</p><div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> If you are building in different environments where the location of the input
         files is not consistent, set <span class="keyword option">args.input.dir</span> with the <span class="keyword cmdname">dita</span> command and
@@ -132,21 +132,21 @@ index: "../toc.html"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
             specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
             directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d14e400"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
+          <div class="note tip note_tip" id="using-command-line-tool__d14e406"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
               <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
         </div>
       </li></ol>
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, the following command generates
         HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file:</p>
-      <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword option">--input</span>=sequence.ditamap <span class="keyword option">--format</span>=html5</code></pre>
+      <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
     </div>
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">For example, from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, run:</p>
-      <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword option">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword option">--format</span>=html5 \
-     <span class="keyword option">--output</span>=<span class="ph filepath">output/sequence</span> \
-     <span class="keyword option">--args.input.dir</span>=<span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span> \
-     <span class="keyword option">--propertyfile</span>=<span class="ph filepath">properties/sequence-html5.properties</span></code></pre>
+      <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
+     <span class="keyword parmname">--output</span>=<span class="ph filepath">output/sequence</span> \
+     <span class="keyword parmname">--args.input.dir</span>=<span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span> \
+     <span class="keyword parmname">--propertyfile</span>=<span class="ph filepath">properties/sequence-html5.properties</span></code></pre>
       <p class="p">This builds <span class="ph filepath">sequence.ditamap</span> to HTML5 output in <span class="ph filepath">output/sequence</span> using
         the following additional parameters specified in the <span class="ph filepath">properties/sequence-html5.properties</span>
         file:</p>

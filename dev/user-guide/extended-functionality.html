@@ -4,7 +4,7 @@ layout: base
 title: "Extended code reference processing"
 index: "../toc.html"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a><ul class="nav nav-list"><li><a href="../user-guide/transforming-dita-content.html">Publishing DITA content</a></li><li><a href="../user-guide/AvailableTransforms.html">Output formats</a></li><li><a href="../user-guide/DITA_spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../user-guide/DITA_v1-2-support.html">DITA 1.2 support</a></li><li><a href="../user-guide/DITA_v1-3-support.html">DITA 1.3 support</a></li><li><a href="../user-guide/implementation-dependent-features.html">Feature implementation</a></li><li class="active"><a href="../user-guide/extended-functionality.html">Coderef extensions</a></li></ul></li><li><a href="../user-guide/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../user-guide/troubleshooting-overview.html">Troubleshooting</a></li></ul></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a><ul class="nav nav-list"><li><a href="../user-guide/transforming-dita-content.html">Publishing DITA content</a></li><li><a href="../user-guide/AvailableTransforms.html">Output formats</a></li><li><a href="../user-guide/DITA_spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../user-guide/DITA_v1-2-support.html">DITA 1.2 support</a></li><li><a href="../user-guide/DITA_v1-3-support.html">DITA 1.3 support</a></li><li><a href="../user-guide/implementation-dependent-features.html">Feature implementation</a></li><li class="active"><a href="../user-guide/extended-functionality.html">Coderef extensions</a></li><li><a href="../user-guide/DITA-features-in-docs.html">DITA features in docs</a></li></ul></li><li><a href="../user-guide/DITA-globalization.html">Globalizing DITA content</a></li><li><a href="../user-guide/troubleshooting-overview.html">Troubleshooting</a></li></ul></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
 
   <h1 class="title topictitle1" id="ariaid-title1">Extended code reference processing</h1>
 
@@ -58,12 +58,14 @@ index: "../toc.html"
       
       <p class="p">Instead of specifying line numbers, you can also select lines to include in the code reference by specifying
         keywords (or “<dfn class="term">tokens</dfn>”) that appear in the referenced file.</p>
-      <p class="p">DITA-OT supports the <code class="ph codeph">token</code> pointer in the URI fragment to extract a line range based on the
-        file content. The format for referencing a range of lines by content is:</p>
-      <pre class="pre codeblock"><code>uri ("#token=" start? ("," end)? )?</code></pre>
-      <p class="p">Lines identified using start and end tokens are exclusive: the lines that contain the start token and end token
-        will be not be included. If the start token is omitted, the range starts from the first line in the file; if the
-        end token is omitted, the range ends on the last line of the file. </p>
+      <div class="div" id="code-reference__coderef-by-content">
+        <p class="p">DITA-OT supports the <code class="ph codeph">token</code> pointer in the URI fragment to extract a line range based on the
+          file content. The format for referencing a range of lines by content is:</p>
+        <pre class="pre codeblock"><code>uri ("#token=" start? ("," end)? )?</code></pre>
+        <p class="p">Lines identified using start and end tokens are exclusive: the lines that contain the start token and end
+          token will be not be included. If the start token is omitted, the range starts from the first line in the
+          file; if the end token is omitted, the range ends on the last line of the file. </p>
+      </div>
     </section>
     <div class="example">
       <p class="p">Given a Haskell source file named <span class="ph filepath">fact.hs</span> with the following content,</p>
@@ -83,9 +85,10 @@ main = print $ fact 7</code></pre>
       <pre class="pre codeblock"><code>fact :: Int -&gt; Int
 fact 0 = 1
 fact n = n * fact (n-1)</code></pre>
-      <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> This approach can be used to reference code samples that are frequently edited. In these cases,
-        referencing line ranges by line number can be error-prone, as the target line range for the reference may shift
-        if preceding lines are added or removed. Specifying ranges by line content makes references more robust, as long
-        as the <code class="ph codeph">token</code> keywords are preserved when the referenced resource is modified.</div></div>
+      <div class="note tip note_tip" id="code-reference__coderef-by-content-tip"><span class="note__title tiptitle">Tip:</span> This approach can be used to reference code samples that are
+        frequently edited. In these cases, referencing line ranges by line number can be error-prone, as the target line
+        range for the reference may shift if preceding lines are added or removed. Specifying ranges by line content
+        makes references more robust, as long as the <code class="ph codeph">token</code> keywords are preserved when the referenced
+        resource is modified.</div></div>
   </div>
 </main>
