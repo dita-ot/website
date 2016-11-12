@@ -9,7 +9,7 @@ sass:
     sass_dir: css
 exclude: ["gulpfile.js", "package.js", "node_modules"]
 
-# MAJOR.MINOR
-release: "2.3"
-# MAJOR.MINOR.BUG
-version: "2.3.3"
+# Major & minor release version (2 digits)
+release: "2.4"
+# Maintenance version (normally 3 digits, 2 for initial minor release)
+version: "2.4"
