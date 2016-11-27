@@ -54,14 +54,15 @@ div.shortdesc {
   @extend .table-condensed;
 }
 
-.generated {
-  color: $kbd-color;
-
-  &:before {
-    font-variant: small-caps;
-    content: 'Generated: ';
-  }
-}
+// Disable "generated" prefix pending resolution of dita-ot/dita-ot#2524
+// .generated {
+//   color: $kbd-color;
+//
+//   &:before {
+//     font-variant: small-caps;
+//     content: 'Generated: ';
+//   }
+// }
 
 // Apply Bootstrap's <caption> style to figure titles (rendered as HTML5 <figcaption> elements)
 figcaption {
