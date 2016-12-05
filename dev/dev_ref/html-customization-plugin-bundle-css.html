@@ -16,21 +16,21 @@ index: "../toc.html"
           (<code class="ph codeph">com.example.html5.custom.css</code>) that creates a new transformation type:
           <span class="keyword option">html5-custom-css</span>. </p>
       <p class="p">The <span class="keyword option">html5-custom-css</span> transformation includes a custom CSS file and sets three parameters to
-        integrate the custom stylesheet in the generated HTML5 output:</p>
+        integrate the custom stylesheet in the generated HTML5 output. These parameter settings make the following
+        changes:</p>
       <ul class="ul">
-        <li class="li">Specify the custom .css file with <span class="keyword parmname">args.css</span><ul class="ul" id="custom-html-plugin-bundle-css__ul_mkh_rw2_2y">
-            <li class="li">Specify only the name of the .css file, as the path is set by
-                <span class="keyword parmname">args.csspath</span>.</li>
-          </ul></li>
-        <li class="li">Trigger the copy of the custom .css file to the output directory by setting
-            <span class="keyword parmname">args.copycss</span> to <kbd class="ph userinput">yes</kbd></li>
-        <li class="li">Set the path for .css files in the output folder with
-            <span class="keyword parmname">args.csspath</span>.<ul class="ul" id="custom-html-plugin-bundle-css__ul_m4s_cx2_2y">
-            <li class="li">Exclude the .css file name from the path as it is set by
-                <span class="keyword parmname">args.css</span>.</li>
-          </ul></li>
+        <li class="li">
+          <p class="p">Specify the name of the custom .css file with <span class="keyword parmname">args.css</span>.</p>
+          <p class="p">The value of this parameter tells DITA-OT to use the custom .css file provided by the plug-in.</p></li>
+        <li class="li">
+          <p class="p">Ensure that the custom .css file is copied to the output directory by setting
+              <span class="keyword parmname">args.copycss</span> to <span class="keyword option">yes</span>.</p></li>
+        <li class="li">
+          <p class="p">Set the relative path for .css files in the output folder with <span class="keyword parmname">args.csspath</span>.</p>
+          <p class="p">CSS files are copied to the root level of the output folder by default. Setting this parameter places CSS
+            files in a dedicated subfolder.</p></li>
       </ul>
-      <p class="p">All these parameters are set in the Ant script (<span class="ph filepath">build.xml</span>).</p>
+      <p class="p">All three parameters are set in the Ant script (<span class="ph filepath">build.xml</span>).</p>
     </section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">plugins</span> directory, create a directory named
@@ -71,8 +71,8 @@ body {
           </figure>
           <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> When you first create the plug-in, you may want to include a rule in your custom stylesheet
             that makes it readily apparent when the custom styles are applied (the example above will change body text
-            to “red”). Once you have verified that the plug-in works as intended, replace the placeholder rule with
-            your own custom styles.</div>
+            to “red”). Once you have verified that the plug-in works as intended, replace the placeholder rule with your
+            own custom styles.</div>
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Add an Ant script (<span class="ph filepath">build.xml</span>) to define the transformation type.</span>
@@ -116,4 +116,4 @@ body {
       </ol>
     </section>
   </div>
-</main>
+<nav role="navigation" class="related-links"><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../parameters/parameters-base-html.html" title="Certain parameters apply to all the HTML-based transformation types: Eclipse help, HTML5, HTML Help, JavaHelp, TocJS, and XHTML.">HTML-based output parameters</a></div></div></nav></main>
