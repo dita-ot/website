@@ -18,10 +18,19 @@ index: "../toc.html"
       <p class="p">The <span class="keyword option">html5-custom-css</span> transformation includes a custom CSS file and sets three parameters to
         integrate the custom stylesheet in the generated HTML5 output:</p>
       <ul class="ul">
-        <li class="li">Specify the custom .css file with <span class="keyword parmname">args.css</span></li>
-        <li class="li">Copy the custom .css file to the output directory with <span class="keyword parmname">args.copycss</span></li>
-        <li class="li">Set the path for .css files in the output folder with <span class="keyword parmname">args.csspath</span></li>
+        <li class="li">Specify the custom .css file with <span class="keyword parmname">args.css</span><ul class="ul" id="custom-html-plugin-bundle-css__ul_mkh_rw2_2y">
+            <li class="li">Specify only the name of the .css file, as the path is set by
+                <span class="keyword parmname">args.csspath</span>.</li>
+          </ul></li>
+        <li class="li">Trigger the copy of the custom .css file to the output directory by setting
+            <span class="keyword parmname">args.copycss</span> to <kbd class="ph userinput">yes</kbd></li>
+        <li class="li">Set the path for .css files in the output folder with
+            <span class="keyword parmname">args.csspath</span>.<ul class="ul" id="custom-html-plugin-bundle-css__ul_m4s_cx2_2y">
+            <li class="li">Exclude the .css file name from the path as it is set by
+                <span class="keyword parmname">args.css</span>.</li>
+          </ul></li>
       </ul>
+      <p class="p">All these parameters are set in the Ant script (<span class="ph filepath">build.xml</span>).</p>
     </section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">plugins</span> directory, create a directory named
