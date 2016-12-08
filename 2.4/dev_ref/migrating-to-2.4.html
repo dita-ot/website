@@ -4,7 +4,7 @@ layout: base
 title: "Migrating to release 2.4"
 index: "../toc.html"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/migrating-to-2.4.html">To 2.4</a></li><li><a href="../dev_ref/migrating-to-2.3.html">To 2.3</a></li><li><a href="../dev_ref/migrating-to-2.2.html">To 2.2</a></li><li><a href="../dev_ref/migrating-to-2.1.html">To 2.1</a></li><li><a href="../dev_ref/migrating-to-2.0.html">To 2.0</a></li><li><a href="../dev_ref/migrating-to-1.8.html">To 1.8</a></li><li><a href="../dev_ref/migrating-to-1.7.html">To 1.7</a></li><li><a href="../dev_ref/migrating-to-1.6.html">To 1.6</a></li><li><a href="../dev_ref/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/html-customization.html">Customizing HTML output</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a><ul class="nav nav-list"><li class="active"><a href="../dev_ref/migrating-to-2.4.html">To 2.4</a></li><li><a href="../dev_ref/migrating-to-2.3.html">To 2.3</a></li><li><a href="../dev_ref/migrating-to-2.2.html">To 2.2</a></li><li><a href="../dev_ref/migrating-to-2.1.html">To 2.1</a></li><li><a href="../dev_ref/migrating-to-2.0.html">To 2.0</a></li><li><a href="../dev_ref/migrating-to-1.8.html">To 1.8</a></li><li><a href="../dev_ref/migrating-to-1.7.html">To 1.7</a></li><li><a href="../dev_ref/migrating-to-1.6.html">To 1.6</a></li><li><a href="../dev_ref/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
 
   <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 2.4</h1>
 
@@ -52,31 +52,36 @@ index: "../toc.html"
     <section class="section" id="migrating-to-2.4__24-legacy-plugin-removal"><h2 class="title sectiontitle">Legacy plug-ins removed</h2>
       
       <p class="p">DITA-OT 2.4 no longer includes the following legacy transformation plug-ins in the default distribution:</p>
-      <table xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg" xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html" class="table frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">Legacy plug-ins</span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+      <table class="table frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">Legacy plug-ins</span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
             <tr class="row">
-              <th class="entryPlug-in colsep-0 rowsep-1" id="migrating-to-2.4__24-legacy-plugin-removal__entry__1">Plug-in </th>
-              <th class="entrySource code locationcolsep-0 rowsep-1" id="migrating-to-2.4__24-legacy-plugin-removal__entry__2">Source code location</th>
+              <th class="entry colsep-0 rowsep-1" id="migrating-to-2.4__24-legacy-plugin-removal__entry__1">Plug-in </th>
+              <th class="entry colsep-0 rowsep-1" id="migrating-to-2.4__24-legacy-plugin-removal__entry__2">Source code location</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entryDocBookcolsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__1 ">DocBook</td>
-              <td class="entry&#xA;                colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__2 ">
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__1 ">DocBook</td>
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__2 ">
                 <a class="xref" href="https://github.com/dita-ot/org.dita.docbook" target="_blank">https://github.com/dita-ot/org.dita.docbook</a></td>
             </tr>
             <tr class="row">
-              <td class="entryEclipse Contentcolsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__1 ">Eclipse Content</td>
-              <td class="entry&#xA;                colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__2 ">
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__1 ">Eclipse Content</td>
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__2 ">
                 <a class="xref" href="https://github.com/dita-ot/org.dita.eclipsecontent" target="_blank">https://github.com/dita-ot/org.dita.eclipsecontent</a></td>
             </tr>
             <tr class="row">
-              <td class="entryWord RTFcolsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__1 ">Word RTF</td>
-              <td class="entry&#xA;                colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__2 ">
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__1 ">OpenDocument Text</td>
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__2 ">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.odt" target="_blank">https://github.com/dita-ot/org.dita.odt</a></td>
+            </tr>
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__1 ">Word RTF</td>
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-2.4__24-legacy-plugin-removal__entry__2 ">
                 <a class="xref" href="https://github.com/dita-ot/org.dita.wordrtf" target="_blank">https://github.com/dita-ot/org.dita.wordrtf</a></td>
             </tr>
           </tbody></table>
-      <div class="note note note_note"><span class="note__title">Note:</span> If necessary, they may be re-installed from earlier DITA-OT distributions, but they are no longer actively
-        maintained or supported by the core toolkit committers. The source code is available on GitHub for anyone
-        interested in maintaining the plug-ins for use with future toolkit versions.</div>
+      <div class="note note note_note"><span class="note__title">Note:</span> If necessary, legacy plug-ins may be re-installed from earlier DITA-OT distributions, but they are no longer
+        actively maintained or supported by the core toolkit committers. The source code is available on GitHub for
+        anyone interested in maintaining the plug-ins for use with future toolkit versions.</div>
     </section>
 
   </div>
