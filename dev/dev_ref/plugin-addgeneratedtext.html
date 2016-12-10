@@ -61,7 +61,7 @@ index: "../toc.html"
   &lt;xsl:with-param name="stringName" select="'Another String'"/&gt;
 &lt;/xsl:call-template&gt;
 </code></pre>
-      <div class="note note note_note"><span class="note__title notetitle">Note:</span> If two plug-ins define the same string, the results will be non-deterministic, so multiple plug-ins should
+      <div class="note note note_note"><span class="note__title">Note:</span> If two plug-ins define the same string, the results will be non-deterministic, so multiple plug-ins should
         not try to create the same generated text string. One common way to avoid this problem is to ensure the name
         attributes used to look up the string value are related to the ID or purpose of your plug-in.</div>
     </div>
@@ -82,7 +82,7 @@ index: "../toc.html"
           <span class="ph filepath">plugin.xml</span> file. Once this plug-in is installed, where XHTML output previously generated
         the term "Figure", it will now generate "Fig"; where it previously generated "Draft comment", it will now
         generate "ADDRESS THIS DRAFT COMMENT". The same strings in other languages will not be modified unless you also
-        provide new versions for those languages.</p><div class="note note note_note"><span class="note__title notetitle">Note:</span> If two plug-ins override the same string in the same
+        provide new versions for those languages.</p><div class="note note note_note"><span class="note__title">Note:</span> If two plug-ins override the same string in the same
         language, the results will be non-deterministic (either string may be used under different conditions). Multiple
         plug-ins should not override the same generated text string for a single language.</div>
     </div>
@@ -108,9 +108,9 @@ index: "../toc.html"
       <p class="p">To include the new languages, use the same method as above to add these strings to your
           <span class="ph filepath">plugin.xml</span> file. Once this plug-in is installed, non-PDF builds will include support for
         Vietnamese; instead of generating the English word "Caution", the element <code class="ph codeph">&lt;note type="caution"
-          xml:lang="vi"&gt;</code> may generate something like "<dfn class="term" lang="vi">chú ý</dfn>".</p><div class="note note note_note"><span class="note__title notetitle">Note:</span> If two
+          xml:lang="vi"&gt;</code> may generate something like "<dfn class="term" lang="vi">chú ý</dfn>".</p><div class="note note note_note"><span class="note__title">Note:</span> If two
         plug-ins add support for the same language using different values, the results will be non-deterministic
         (translations from either plug-in may be picked up under different conditions).</div>
     </div>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../user-guide/DITA-globalization.html" title="The DITA standard supports content that is written in or translated to any language. In general, the DITA Open Toolkit passes content through to the output format unchanged. The DITA-OT uses the values for the xml:lang and dir attributes that are set in the source content to provide globalization support.">Globalizing DITA content</a></div></div><div class="linklist linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../user-guide/DITA-globalization-languages.html" title="The following languages are supported for all PDF, XHTML, and HTML5-based transformation types.">Languages supported by the core toolkit</a></div></div></nav></main>
+<nav role="navigation" class="related-links"><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../user-guide/DITA-globalization.html" title="The DITA standard supports content that is written in or translated to any language. In general, the DITA Open Toolkit passes content through to the output format unchanged. The DITA-OT uses the values for the xml:lang and dir attributes that are set in the source content to provide globalization support.">Globalizing DITA content</a></div></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../user-guide/DITA-globalization-languages.html" title="The following languages are supported for all PDF, XHTML, and HTML5-based transformation types.">Languages supported by the core toolkit</a></div></div></nav></main>

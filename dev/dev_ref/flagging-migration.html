@@ -58,25 +58,11 @@ index: "../toc.html"
         or evaluate flagging logic. The <span class="ph filepath">htmlflag.xsl</span> file contains a few rules to match and process
         the start/end flags; in most cases, all code to explicitly process flags can be deleted.</p>
       <p class="p">For example, the common logic for most element rules before DITA-OT 1.7 could be boiled down to the
-        following:<p class="lines">Match element<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Create <code class="ph codeph">"flagrules"</code> variable by reading DITAVAL for active flags<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Output start tag such as <code class="ph codeph">&lt;div&gt;</code> or <code class="ph codeph">&lt;span&gt;</code><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"commonattributes"</code> and ID processing<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"gen-style"</code> with <code class="ph codeph">$flagrules</code>, to create DITAVAL based CSS<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"start-flagit"</code> with <code class="ph codeph">$flagrules</code>, to create start flag images<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"start-revflag"</code> with <code class="ph codeph">$flagrules</code>, to create start revision images<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output contents<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"end-revflag"</code> with <code class="ph codeph">$flagrules</code>, to create end revision images<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"end-flagit"</code> with <code class="ph codeph">$flagrules</code>, to create end flag images<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Output end tag such as <code class="ph codeph">&lt;/div&gt;</code> or <code class="ph codeph">&lt;/span&gt;</code></p></p>
+        following:<p class="lines">Match element<br>&nbsp;&nbsp;&nbsp;&nbsp;Create <code class="ph codeph">"flagrules"</code> variable by reading DITAVAL for active flags<br>&nbsp;&nbsp;&nbsp;&nbsp;Output start tag such as <code class="ph codeph">&lt;div&gt;</code> or <code class="ph codeph">&lt;span&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"commonattributes"</code> and ID processing<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"gen-style"</code> with <code class="ph codeph">$flagrules</code>, to create DITAVAL based CSS<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"start-flagit"</code> with <code class="ph codeph">$flagrules</code>, to create start flag images<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"start-revflag"</code> with <code class="ph codeph">$flagrules</code>, to create start revision images<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output contents<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"end-revflag"</code> with <code class="ph codeph">$flagrules</code>, to create end revision images<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"end-flagit"</code> with <code class="ph codeph">$flagrules</code>, to create end flag images<br>&nbsp;&nbsp;&nbsp;&nbsp;Output end tag such as <code class="ph codeph">&lt;/div&gt;</code> or <code class="ph codeph">&lt;/span&gt;</code></p></p>
       <p class="p">In DITA-OT 1.7, style and images are typically handled with XSLT fallthrough processing. This removes virtually
         all special flag coding from element rules, because flags are already part of the document and processed in
         document order. The sample above is reduced
-        to:<p class="lines">Match element<br>
-&nbsp;&nbsp; Output start tag such as <code class="ph codeph">&lt;div&gt;</code> or <code class="ph codeph">&lt;span&gt;</code><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"commonattributes"</code> and ID processing<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output contents<br>
-&nbsp;&nbsp; Output end tag such as <code class="ph codeph">&lt;/div&gt;</code> or <code class="ph codeph">&lt;/span&gt;</code></p></p></section>
+        to:<p class="lines">Match element<br>&nbsp;&nbsp; Output start tag such as <code class="ph codeph">&lt;div&gt;</code> or <code class="ph codeph">&lt;span&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"commonattributes"</code> and ID processing<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output contents<br>&nbsp;&nbsp; Output end tag such as <code class="ph codeph">&lt;/div&gt;</code> or <code class="ph codeph">&lt;/span&gt;</code></p></p></section>
     <section class="section"><h2 class="title sectiontitle">Migrating <code class="ph codeph">"gen-style"</code> named template</h2>
       
       <p class="p">Calls to the <code class="ph codeph">"gen-style"</code> template should be deleted. There is no need to replace this call for

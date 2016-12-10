@@ -14,12 +14,12 @@ index: "../toc.html"
     should be replaced with the <code class="ph codeph">getVariable</code> template. Various <code class="ph codeph">dita.<strong class="ph b">out.</strong>map.*</code>
     targets have been deprecated in favor of updated <code class="ph codeph">dita.map.*</code> equivalents.</p>
     <section class="section">
-      <div class="note note note_note"><span class="note__title notetitle">Note:</span> This topic provides a summary of changes in DITA-OT 2.1 that may require modifications to custom stylesheets
+      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 2.1 that may require modifications to custom stylesheets
         or plug-ins. For more information on changes in this release, see the <a class="xref" href="http://www.dita-ot.org/2.1/release-notes/" target="_blank">DITA-OT 2.1 Release Notes</a>.</div>
     </section>
 
     <section class="section">
-      <p class="p">The custom<samp class="ph systemoutput">FileUtils</samp> code used to handle input and output in earlier versions of
+      <p class="p">The custom<samp class="ph systemoutput sysout">FileUtils</samp> code used to handle input and output in earlier versions of
         DITA-OT has been replaced with the <a class="xref" href="http://commons.apache.org/proper/commons-io/" target="_blank">Apache Commons IO</a> utilities library. </p>
     </section>
 
@@ -46,7 +46,7 @@ index: "../toc.html"
         <li class="li">The <span class="keyword parmname">depend.preprocess.copy-subsidiary.pre</span> extension point used to insert an Ant target
           before the <code class="ph codeph">copy-subsidiary</code> step in the pre-processing stage.</li>
       </ul>
-      <p class="p">A new<samp class="ph systemoutput">dita.parser</samp> extension point has been added to allow plug-ins to contribute a
+      <p class="p">A new<samp class="ph systemoutput sysout">dita.parser</samp> extension point has been added to allow plug-ins to contribute a
         custom parser for DITA files. If a custom DITA parser is defined, the preprocessing routines will use it during
         the gen-list and debug-filter stages to output DITA XML.</p>
     </section>

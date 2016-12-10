@@ -115,7 +115,7 @@ index: "../toc.html"
         <p class="p">For details on recent changes in FOP, see the <cite class="cite">Release Notes</cite> for versions
           <a class="xref" href="https://xmlgraphics.apache.org/fop/2.0/releaseNotes_2.0.html" target="_blank">2.0</a> and
           <a class="xref" href="https://xmlgraphics.apache.org/fop/2.0/releaseNotes_2.0.html" target="_blank">2.1</a>.</p>
-        <div class="note note note_note"><span class="note__title notetitle">Note:</span> To conserve memory, accessible PDF output is disabled by default in FOP 2.1. To generate accessible PDFs
+        <div class="note note note_note"><span class="note__title">Note:</span> To conserve memory, accessible PDF output is disabled by default in FOP 2.1. To generate accessible PDFs
           from DITA-OT, set the <span class="keyword parmname">args.fo.userconfig</span> parameter and include the
             <span class="keyword option">&lt;accessibility&gt;true&lt;/accessibility&gt;</span> option in your custom FOP configuration file.
           <p class="p">For more information, see
@@ -134,7 +134,7 @@ index: "../toc.html"
           message appears if a property is not recognized or if an enumerated property value is invalid.
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2422" target="_blank">#2422</a>,
           <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2492" target="_blank">#2492</a>
-          <div class="note attention note_attention"><span class="note__title attentiontitle">Attention:</span> Unix-style single-letter options (preceded by a single hyphen) are also available in
+          <div class="note attention note_attention"><span class="note__title">Attention:</span> Unix-style single-letter options (preceded by a single hyphen) are also available in
             some cases for backwards compatibility. The X-Toolkit–style single-hyphen keyword variants supported by
             previous releases (such as <span class="keyword parmname">-input</span>) have been deprecated and may be removed in an
             upcoming release.</div></div>
@@ -155,7 +155,7 @@ index: "../toc.html"
           token will be not be included. If the start token is omitted, the range starts from the first line in the
           file; if the end token is omitted, the range ends on the last line of the file. </p>
       </div>
-        <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> This approach can be used to reference code samples that are
+        <div class="note tip note_tip"><span class="note__title">Tip:</span> This approach can be used to reference code samples that are
         frequently edited. In these cases, referencing line ranges by line number can be error-prone, as the target line
         range for the reference may shift if preceding lines are added or removed. Specifying ranges by line content
         makes references more robust, as long as the <code class="ph codeph">token</code> keywords are preserved when the referenced
@@ -186,32 +186,32 @@ index: "../toc.html"
       <p class="p">DITA-OT 2.4 no longer includes the following legacy transformation plug-ins in the default distribution:</p>
       <table class="table frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">Legacy plug-ins</span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
             <tr class="row">
-              <th class="entry row-nocellborder colsep-0 rowsep-1" id="highlights__1542__entry__1">Plug-in </th>
-              <th class="entry row-nocellborder colsep-0 rowsep-1" id="highlights__1542__entry__2">Source code location</th>
+              <th class="entry colsep-0 rowsep-1" id="highlights__1542__entry__1">Plug-in </th>
+              <th class="entry colsep-0 rowsep-1" id="highlights__1542__entry__2">Source code location</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry row-nocellborder colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">DocBook</td>
-              <td class="entry row-nocellborder colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">DocBook</td>
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
                 <a class="xref" href="https://github.com/dita-ot/org.dita.docbook" target="_blank">https://github.com/dita-ot/org.dita.docbook</a></td>
             </tr>
             <tr class="row">
-              <td class="entry row-nocellborder colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">Eclipse Content</td>
-              <td class="entry row-nocellborder colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">Eclipse Content</td>
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
                 <a class="xref" href="https://github.com/dita-ot/org.dita.eclipsecontent" target="_blank">https://github.com/dita-ot/org.dita.eclipsecontent</a></td>
             </tr>
             <tr class="row">
-              <td class="entry row-nocellborder colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">OpenDocument Text</td>
-              <td class="entry row-nocellborder colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">OpenDocument Text</td>
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
                 <a class="xref" href="https://github.com/dita-ot/org.dita.odt" target="_blank">https://github.com/dita-ot/org.dita.odt</a></td>
             </tr>
             <tr class="row">
-              <td class="entry row-nocellborder colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">Word RTF</td>
-              <td class="entry row-nocellborder colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__1 ">Word RTF</td>
+              <td class="entry colsep-0 rowsep-1" headers="highlights__1542__entry__2 ">
                 <a class="xref" href="https://github.com/dita-ot/org.dita.wordrtf" target="_blank">https://github.com/dita-ot/org.dita.wordrtf</a></td>
             </tr>
           </tbody></table>
-      <div class="note note note_note"><span class="note__title notetitle">Note:</span> If necessary, legacy plug-ins may be re-installed from earlier DITA-OT distributions, but they are no longer
+      <div class="note note note_note"><span class="note__title">Note:</span> If necessary, legacy plug-ins may be re-installed from earlier DITA-OT distributions, but they are no longer
         actively maintained or supported by the core toolkit committers. The source code is available on GitHub for
         anyone interested in maintaining the plug-ins for use with future toolkit versions.</div>
     </section>

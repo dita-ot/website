@@ -7,7 +7,7 @@ index: "../toc.html"
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
   
-  <div class="body taskbody"><p class="shortdesc">You can generate output using the DITA Open Toolkit <span class="keyword cmdname">dita</span> command-line tool. Build
+  <div xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg" xmlns:related-links="http://dita-ot.sourceforge.net/ns/200709/related-links" xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html" class="body taskbody"><p class="shortdesc">You can generate output using the DITA Open Toolkit <span class="keyword cmdname">dita</span> command-line tool. Build
     parameters can be specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
     <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool with no graphical user interface.</section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
@@ -25,7 +25,7 @@ index: "../toc.html"
           <ul class="ul">
             <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li><li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to
               process.</li><li class="li">
-              <p class="p" id="using-command-line-tool__d11e117"><var class="keyword varname">format</var> is the output format (transformation type). Use the
+              <p class="p" id="using-command-line-tool__d12e117"><var class="keyword varname">format</var> is the output format (transformation type). Use the
                 same values available for the <span class="keyword parmname">transtype</span> build parameter, for example,
                   <span class="keyword option">html5</span> or <span class="keyword option">pdf</span>.</p>
             </li>
@@ -35,7 +35,7 @@ index: "../toc.html"
               <p class="p"><var class="keyword varname">format</var> is the output format (transformation type). Use the
                 same values available for the <span class="keyword parmname">transtype</span> build parameter, for example,
                   <span class="keyword option">html5</span> or <span class="keyword option">pdf</span>.</p>
-              <div class="p" id="using-command-line-tool__d11e148">You can create plug-ins to add new output formats; by default, the following values are
+              <div class="p" id="using-command-line-tool__d12e148">You can create plug-ins to add new output formats; by default, the following values are
                 available:
                 <ul class="ul">
                   <li class="li"><span class="keyword option">eclipsehelp</span></li>
@@ -58,7 +58,7 @@ index: "../toc.html"
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
-          <dd class="dd pd" id="using-command-line-tool__d11e213">Specifies the path of the output directory; the path can be absolute or relative to
+          <dd class="dd pd" id="using-command-line-tool__d12e213">Specifies the path of the output directory; the path can be absolute or relative to
             the current directory. By default, the output is written to the <span class="ph filepath">out</span> subdirectory of the
             current directory.</dd>
         
@@ -113,7 +113,7 @@ index: "../toc.html"
               parameters that are configured in the plug-in configuration file; the Java-style <span class="keyword parmname">-D</span>
               form can also be used to specify additional non-configured parameters or set system properties.</p>
             <p class="p">Parameters not implemented by the specified transformation type or referenced in a
-                <span class="ph filepath">.properties</span> file are ignored.</p><div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> If you are building in different environments where the location of the input
+                <span class="ph filepath">.properties</span> file are ignored.</p><div class="note tip note_tip"><span class="note__title">Tip:</span> If you are building in different environments where the location of the input
         files is not consistent, set <span class="keyword option">args.input.dir</span> with the <span class="keyword cmdname">dita</span> command and
         reference its value with <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span>
         file.</div></dd>
@@ -132,7 +132,7 @@ index: "../toc.html"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
             specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
             directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d11e406"><span class="note__title tiptitle">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
+          <div class="note tip note_tip" id="using-command-line-tool__d12e406"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
               <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
         </div>
       </li></ol>

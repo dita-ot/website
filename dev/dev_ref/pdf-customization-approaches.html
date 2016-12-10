@@ -21,7 +21,7 @@ index: "../toc.html"
       <p class="p">While this method yields quick results and can help users to determine which files and templates control
         various aspects of PDF output, it quickly leads to problems, as any errors may prevent the toolkit from
         generating PDF output.</p>
-      <div class="note warning note_warning"><span class="note__title warningtitle">Warning:</span> Any changes made in this fashion would be overwritten when upgrading to newer versions of
+      <div class="note warning note_warning"><span class="note__title">Warning:</span> Any changes made in this fashion would be overwritten when upgrading to newer versions of
         DITA-OT, so users that have customized their toolkit installation in this way are often “stuck” on older
         versions of the toolkit and unable to take advantage of improvements in recent versions of DITA-OT.</div>
     </section>
@@ -33,13 +33,13 @@ index: "../toc.html"
       <p class="p">Files in the <span class="ph filepath">org.dita.pdf2/Customization</span> folder can override their default counterparts,
         allowing users to adjust certain aspects of PDF output without changing any of the plug-in’s default files, or
         specifying additional parameters when generating output.</p>
-      <div class="note important note_important"><span class="note__title importanttitle">Important:</span> While this approach is slightly better than editing default files in place, it can still
+      <div class="note important note_important"><span class="note__title">Important:</span> While this approach is slightly better than editing default files in place, it can still
         cause problems when upgrading the toolkit to a new version. Since the <span class="ph filepath">Customization</span> folder
         is located within the <span class="ph filepath">org.dita.pdf2</span> plug-in’s parent directory, users must be take care to
         preserve the contents of this folder when upgrading to new toolkit versions.</div>
       <p class="p">Although recent versions of DITA-OT still support this mechanism to ensure backwards compatibility, this
         practice is deprecated in favor of custom PDF plug-ins.</p>
-      <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> Users who have used the <span class="ph filepath">Customization</span> folder to modify the default PDF
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> Users who have used the <span class="ph filepath">Customization</span> folder to modify the default PDF
         output are encouraged to create a custom PDF plug-in instead. In many cases, this may be as simple as copying
         the contents of the <span class="ph filepath">Customization</span> folder to a new subfolder in the
           <span class="ph filepath">plugins</span> folder and creating the necessary <span class="ph filepath">plugin.xml</span> file and an Ant
@@ -57,7 +57,7 @@ index: "../toc.html"
         location available to the entire team, such as a shared drive.</p>
       <p class="p">It can also be useful in environments where corporate policy, CMS permissions, or network access rights prevent
         changes to the toolkit installation, which may prohibit the installation of custom plug-ins.</p>
-      <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> Users who specify external customization directories via <span class="keyword parmname">customization.dir</span>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> Users who specify external customization directories via <span class="keyword parmname">customization.dir</span>
         are encouraged to create a custom PDF plug-in if possible.</div>
     </section>
 
@@ -72,7 +72,7 @@ index: "../toc.html"
         without the need to create additional plug-in dependencies per project.</p>
       <p class="p">However, the use of multiple customization mechanisms can make it difficult to debug the precedence cascade and
         determine the origin of local formatting or processing overrides.</p>
-      <div class="note tip note_tip"><span class="note__title tiptitle">Tip:</span> In most scenarios, the use of dedicated PDF customization plug-ins is preferable. Common
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> In most scenarios, the use of dedicated PDF customization plug-ins is preferable. Common
         customizations can be bundled in one plug-in, and any project-specific overrides can be maintained in separate
         plug-ins that build on the base branding or other settings in the common custom plug-in.</div>
     </section>
