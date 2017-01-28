@@ -29,38 +29,38 @@ index: "../toc.html"
     <section class="section"><h2 class="title sectiontitle">New plug-in extension points </h2>
       
       <p class="p">New plug-in extension points have been added allow configuring DITA-OT behavior based on file extensions.</p>
-      <table class="simpletable" id="ID__simpletable_xym_ryi_uc"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><thead><tr class="sthead">
+      <table class="simpletable" id="ID__simpletable_xym_ryi_uc"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><thead><tr class="sthead">
           <th class="stentry" id="ID__simpletable_xym_ryi_uc__stentry__1">Extension point</th>
           <th class="stentry" id="ID__simpletable_xym_ryi_uc__stentry__2">Description</th>
           <th class="stentry" id="ID__simpletable_xym_ryi_uc__stentry__3">Default values</th>
         </tr></thead><tbody><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><code class="ph codeph">dita.topic.extension</code></td>
+          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><span class="keyword parmname">dita.topic.extension</span></td>
           <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__2">DITA topic</td>
           <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__3"><span class="ph filepath">.dita</span>, <span class="ph filepath">.xml</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><code class="ph codeph">dita.map.extensions</code></td>
+          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><span class="keyword parmname">dita.map.extensions</span></td>
           <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__2">DITA map</td>
           <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__3"><span class="ph filepath">.ditamap</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><code class="ph codeph">dita.html.extensions</code></td>
+          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><span class="keyword parmname">dita.html.extensions</span></td>
           <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__2">HTML file</td>
           <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__3"><span class="ph filepath">.html</span>, <span class="ph filepath">.htm</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><code class="ph codeph">dita.resource.extensions</code></td>
+          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><span class="keyword parmname">dita.resource.extensions</span></td>
           <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__2">Resource file</td>
           <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__3"><span class="ph filepath">.pdf</span>, <span class="ph filepath">.swf</span></td>
         </tr></tbody></table>
       <p class="p">Both HTML and resource file extensions are used to determine if a file in source is copied to output.</p>
       <p class="p">A new plug-in extension point has been added to declare transformation types as print types.</p>
-      <table class="simpletable" id="ID__simpletable_xts_5wq_rt"><col style="width:50%"><col style="width:50%"><thead><tr class="sthead">
+      <table class="simpletable" id="ID__simpletable_xts_5wq_rt"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr class="sthead">
           <th class="stentry" id="ID__simpletable_xts_5wq_rt__stentry__1">Extension point</th>
           <th class="stentry" id="ID__simpletable_xts_5wq_rt__stentry__2">Description</th>
         </tr></thead><tbody><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xts_5wq_rt__stentry__1"><code class="ph codeph">dita.transtype.print</code></td>
+          <td class="stentry" headers="ID__simpletable_xts_5wq_rt__stentry__1"><span class="keyword parmname">dita.transtype.print</span></td>
           <td class="stentry" headers="ID__simpletable_xts_5wq_rt__stentry__2">Declare transformation type as a print type.</td>
         </tr></tbody></table>
       <p class="p">The <code class="ph codeph">print_transtypes</code> property in <span class="ph filepath">integrator.properties</span> has been
-        deprecated in favor of <code class="ph codeph">dita.transtype.print</code>.</p>
+        deprecated in favor of <span class="keyword parmname">dita.transtype.print</span>.</p>
     </section>
     <section class="section"><h2 class="title sectiontitle">Plugin URI scheme</h2>
       
@@ -90,14 +90,14 @@ index: "../toc.html"
         <li class="li"><code class="ph codeph">page-margin-outside</code></li>
         <li class="li"><code class="ph codeph">page-margin-inside</code></li>
       </ul>
-      <p class="p">The <code class="ph codeph">args.bookmap-order</code> property has been added to control how front and back matter are
+      <p class="p">The <span class="keyword parmname">args.bookmap-order</span> property has been added to control how front and back matter are
         processed in bookmaps. The default is to reorder the frontmatter content as in previous releases.</p>
       <p class="p">A new extension point has been added to add mappings to the PDF configuration catalog file.</p>
-      <table class="simpletable" id="ID__simpletable_jkf_bxq_rt"><col style="width:50%"><col style="width:50%"><thead><tr class="sthead">
+      <table class="simpletable" id="ID__simpletable_jkf_bxq_rt"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr class="sthead">
           <th class="stentry" id="ID__simpletable_jkf_bxq_rt__stentry__1">Extension point</th>
           <th class="stentry" id="ID__simpletable_jkf_bxq_rt__stentry__2">Description</th>
         </tr></thead><tbody><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_jkf_bxq_rt__stentry__1"><code class="ph codeph">org.dita.pdf2.catalog.relative</code></td>
+          <td class="stentry" headers="ID__simpletable_jkf_bxq_rt__stentry__1"><span class="keyword parmname">org.dita.pdf2.catalog.relative</span></td>
           <td class="stentry" headers="ID__simpletable_jkf_bxq_rt__stentry__2">Configuration catalog includes.</td>
         </tr></tbody></table>
       <p class="p">Support for the following languages has been added:</p>
@@ -110,15 +110,17 @@ index: "../toc.html"
       </ul>
       <p class="p">PDF processing no longer copies images or generates XSL FO to output directory. Instead, the temporary
         directory is used for all temporary files and source images are read directly from source directory. The legacy
-        processing model can be enabled by setting <code class="ph codeph">org.dita.pdf2.use-out-temp</code> to <code class="ph codeph">true</code>
-        in configuration properties; support for the legacy processing model may be removed in future releases.</p>
+        processing model can be enabled by setting <span class="keyword parmname">org.dita.pdf2.use-out-temp</span> to
+          <span class="keyword option">true</span> in configuration properties; support for the legacy processing model may be removed in
+        future releases.</p>
       <p class="p">Support for FrameMaker index syntax has been disabled by default. To enable FrameMaker index syntax, set
-          <code class="ph codeph">org.dita.pdf2.index.frame-markup</code> to <code class="ph codeph">true</code> in configuration properties.</p>
+          <span class="keyword parmname">org.dita.pdf2.index.frame-markup</span> to <span class="keyword option">true</span> in configuration
+        properties.</p>
       <p class="p">A configuration option has been added to disable internationalization (I18N) font processing and use
-        stylesheet-defined fonts. To disable I18N font processing, set <code class="ph codeph">org.dita.pdf2.i18n.enabled</code> to
-          <code class="ph codeph">false</code> in configuration properties.</p>
-      <p class="p">The XSLT parameters <code class="ph codeph">customizationDir</code> and <code class="ph codeph">fileProfilePrefix</code> have been removed
-        in favor of the <code class="ph codeph">customizationDir.url</code> parameter.</p>
+        stylesheet-defined fonts. To disable I18N font processing, set <span class="keyword parmname">org.dita.pdf2.i18n.enabled</span>
+        to <code class="ph codeph">false</code> in configuration properties.</p>
+      <p class="p">The XSLT parameters <span class="keyword parmname">customizationDir</span> and <span class="keyword parmname">fileProfilePrefix</span> have been
+        removed in favor of the <span class="keyword parmname">customizationDir.url</span> parameter.</p>
       <p class="p">A new shell stylesheet has been added for FOP and other shell stylesheets have also been revised. Plug-ins
         which have their own shell stylesheets for PDF processing should make sure all required stylesheets are
         imported.</p>
