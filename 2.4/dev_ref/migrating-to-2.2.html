@@ -10,9 +10,8 @@ index: "../toc.html"
 
   
 
-  <div class="body refbody"><p class="shortdesc">In DITA-OT 2.2, the <span class="keyword option">HTML5</span> transformation was refactored as its own
-    plugin and separate plugins were created for each of the rendering engine-specific PDF
-      transformations.
+  <div class="body refbody"><p class="shortdesc">In DITA-OT 2.2, the <span class="keyword option">HTML5</span> transformation was refactored as its own plug-in and separate
+    plug-ins were created for each of the rendering engine-specific PDF transformations.
   </p>
     <section class="section">
       <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 2.2 that may require modifications to custom stylesheets
@@ -20,10 +19,10 @@ index: "../toc.html"
     </section>
     <section class="section"><h2 class="title sectiontitle">HTML5</h2>
       
-      <p class="p">The <span class="keyword option">HTML5</span> transformation introduced in release 2.0 as part of the
-          <span class="keyword option">XHTML</span> plugin has been moved to a separate <span class="keyword option">HTML5</span> plugin.
-        Customizations that extended the previous HTML5 output under the <span class="keyword option">XHTML</span>
-        plugin will probably need to be refactored on the new HTML5 plugin.</p>
+      <p class="p">The <span class="keyword option">HTML5</span> transformation introduced in release 2.0 as part of the <span class="keyword option">XHTML</span>
+        plug-in has been moved to a separate <span class="keyword option">HTML5</span> plug-in. Customizations that extended the previous
+        HTML5 output under the <span class="keyword option">XHTML</span> plug-in will probably need to be refactored on the new HTML5
+        plug-in.</p>
       <p class="p">Note title processing has been revised to use a common <code class="ph codeph">note__title</code> class for note elements of
         all types. The legacy <code class="ph codeph"><var class="keyword varname">{$type}</var>title</code> classes (such as
           <code class="ph codeph">.notetitle</code>, <code class="ph codeph">.cautiontitle</code>, <code class="ph codeph">.tiptitle</code>, etc.) are included
@@ -34,12 +33,12 @@ index: "../toc.html"
     </section>
     <section class="section"><h2 class="title sectiontitle">PDF</h2>
       
-      <p class="p">Processing specific to Apache FOP, Antenna House Formatter, and RenderX XEP has been
-        separated into separate plugins for each of those rendering engines. Customizations that
-        extended this processing might need to extend the new <span class="keyword">org.dita.pdf2.fop</span>,
-          <span class="keyword">org.dita.pdf2.axf</span>, or <span class="keyword">org.dita.pdf2.xep</span> plugins.</p>
+      <p class="p">Processing specific to Apache FOP, Antenna House Formatter, and RenderX XEP has been separated into separate
+        plug-ins for each of those rendering engines. Customizations that extended this processing might need to extend
+        the new <code class="ph codeph">org.dita.pdf2.fop</code>, <code class="ph codeph">org.dita.pdf2.axf</code>, or
+          <code class="ph codeph">org.dita.pdf2.xep</code> plug-ins.</p>
       <p class="p">PDF customizations that are not specific to a rendering engine can continue to extend the
-          <span class="keyword">org.dita.pdf2</span> plugin as before.</p>
+          <code class="ph codeph">org.dita.pdf2</code> plug-in as before.</p>
       <p class="p">The default format for page numbers in the table of contents (<code class="keyword markupname xmlelement">&lt;toc&gt;</code>) was switched to
         roman to align with <code class="keyword markupname xmlelement">&lt;preface&gt;</code> and ensure consistent numbering styles for all
           <code class="keyword markupname xmlelement">&lt;frontmatter&gt;</code> components in <code class="keyword markupname xmlelement">&lt;bookmap&gt;</code>. This prevents numbering

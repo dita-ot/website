@@ -1,14 +1,14 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 2.4.2 Release Notes"
+title: "DITA Open Toolkit 2.4.3 Release Notes"
 index: "../toc.html"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.4</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="../license/index.html">License</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.4.2</span> Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.4.3</span> Release Notes</h1>
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.4.2</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.4.3</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">2.4</span>, which includes <span class="ph">Apache FOP <span class="ph">2.1</span>,
         a new long-form syntax for <span class="keyword cmdname">dita</span> command options, and additional code referencing
         extensions</span>.</p>
@@ -16,11 +16,69 @@ index: "../toc.html"
         <a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues tracker</a></span>.</p>
   </div>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="ID__v242">
-    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.4.2</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="ID__v243">
+    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.4.3</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4.2</span> includes the following bug fixes.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4.3</span> includes the following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v243__1525">In PDF output generated with earlier versions of DITA-OT and RenderX XEP, the
+              <code class="keyword markupname xmlelement">&lt;indexterm&gt;</code> hierarchy for multilevel entries in the PDF index was not properly
+            indented. Index term indentation has been corrected to properly reflect the entry hierarchy as authored in
+            DITA source files.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1525" target="_blank">#1525</a>
+          </li>
+          <li class="li" id="v243__2038">In earlier versions of DITA-OT, specifying a relative path for the temporary directory on the
+            command line would cause PDF processing to fail. DITA-OT now checks whether the
+              <span class="keyword parmname">dita.temp.dir</span> property is set to an absolute path and responds with an error message
+            otherwise.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2038" target="_blank">#2038</a>
+          </li>
+          <li class="li" id="v243__2522">In certain cases, DITA-OT 2.4 generated broken links in PDF output for related topics and
+            reported “unresolved internal destination” warnings in the console when processing topic references with the
+              <code class="keyword markupname xmlatt">@collection-type</code> attribute set to <span class="keyword option">family</span>. Link rewrite processing has
+            been corrected to ensure that links are generated properly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2522" target="_blank">#2522</a>
+          </li>
+          <li class="li" id="v243__2555">Default settings for several parameters have been removed from the
+              <span class="ph filepath">configuration.properties</span> file.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2555" target="_blank">#2555</a>
+            <div class="p">Values for these parameters can be passed as usual to the <span class="keyword cmdname">dita</span> command or included in
+              build scripts:
+              <ul class="ul">
+                <li class="li"><span class="keyword parmname">default.language</span></li>
+                <li class="li"><span class="keyword parmname">generate-debug-attributes</span></li>
+                <li class="li"><span class="keyword parmname">processing-mode</span></li>
+              </ul></div>
+          </li>
+          
+          <li class="li" id="v243__2563">In previous versions of DITA-OT, the HTML5 transformation generated
+              <code class="keyword markupname xmlelement">&lt;simpletable&gt;</code> output with column widths specified in <code class="keyword markupname xmlelement">&lt;col&gt;</code>
+            elements as direct children of the <code class="keyword markupname xmlelement">&lt;table&gt;</code> element. A
+              <code class="keyword markupname xmlelement">&lt;colgroup&gt;</code> wrapper element has been added for compatibility with the HTML5
+            standard.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2563" target="_blank">#2563</a>
+          </li>
+          
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.4.2...2.4.3" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+      <section class="section"><h3 class="title sectiontitle">Documentation updates</h3>
+        
+        <p class="p">The DITA-OT <span class="keyword">2.4.3</span> documentation includes corrections and improvements to
+          existing topics, along with new content on
+          <a class="xref" href="../parameters/configuration-properties.html" title="The DITA-OT uses .properties files and internal properties that store configuration settings for the toolkit and its plug-ins. Configuration properties are available to both Ant and Java processes, but unlike argument properties, they cannot be set at run time.">Configuration properties</a>.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="ID__v242">
+    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.4.2</h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release 2.4.2 included the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v242__1885">DITA-OT 2.0 threw a null pointer exception when producing Eclipse Help output from a bookmap
             with a <code class="keyword markupname xmlelement">&lt;glossarylist&gt;</code> that referenced a composite <code class="keyword markupname xmlelement">&lt;dita&gt;</code>
@@ -64,8 +122,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="ID__v241">
-    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.4.1</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="ID__v241">
+    <h2 class="title topictitle2" id="ariaid-title4">Maintenance Release 2.4.1</h2>
     <div class="body refbody">
       <section class="section">
         <p class="p">DITA Open Toolkit Release 2.4.1 included the following bug fixes.</p>
@@ -111,8 +169,8 @@ index: "../toc.html"
       </section>
       <section class="section"><h3 class="title sectiontitle">Documentation updates</h3>
         
-        <p class="p">The DITA-OT 2.4.1 documentation includes corrections and improvements to
-          existing topics, along with new content.</p>
+        <p class="p">The DITA-OT 2.4.1 documentation includes corrections and improvements to existing topics, along with new
+          content.</p>
         <ul class="ul">
           <li class="li">
             <a class="xref" href="../dev_ref/html-customization.html" title="There are several ways to customize the default HTML output. You can easily adjust the look and feel just by setting parameters and adding custom CSS, or create plug-ins for more complex customizations.">Customizing HTML output</a> provides examples that illustrate various approaches for customizing
@@ -135,8 +193,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="ID__requirements">
-    <h2 class="title topictitle2" id="ariaid-title4">Requirements</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="ID__requirements">
+    <h2 class="title topictitle2" id="ariaid-title5">Requirements</h2>
     <div class="body refbody">
       <section class="section">
         
@@ -146,8 +204,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="ID__highlights">
-    <h2 class="title topictitle2" id="ariaid-title5">Release Highlights</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="ID__highlights">
+    <h2 class="title topictitle2" id="ariaid-title6">Release Highlights</h2>
     
     <div class="body refbody"><p class="shortdesc">DITA-OT <span class="keyword">2.4</span> includes <span class="ph" id="highlights__summary">Apache FOP <span class="ph">2.1</span>,
         a new long-form syntax for <span class="keyword cmdname">dita</span> command options, and additional code referencing
@@ -270,8 +328,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="ID__issues">
-    <h2 class="title topictitle2" id="ariaid-title6">Resolved issues</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="ID__issues">
+    <h2 class="title topictitle2" id="ariaid-title7">Resolved issues</h2>
     
     <div class="body refbody"><p class="shortdesc">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">2.4</span>
       includes the following changes.</p>

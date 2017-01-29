@@ -10,10 +10,10 @@ index: "../toc.html"
   <div class="body taskbody"><p class="shortdesc">You can update either the main DITA-OT XML catalog or the XML catalog that is used by the PDF plug-in. This
     enables the DITA-OT to support new specializations and document-type shells.</p>
     <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
-      <p class="p">You can use the <code class="ph codeph">dita.specialization.catalog.relative</code> and
-          <code class="ph codeph">org.dita.pdf2.catalog.relative</code> extension points to update the DITA-OT catalog files.</p>
-      <div class="note remember note_remember"><span class="note__title">Remember:</span> The <code class="ph codeph">dita.specialization.catalog</code> extension is deprecated. Use
-          <code class="ph codeph">dita.specialization.catalog.relative</code> instead.</div>
+      <p class="p">You can use the <span class="keyword parmname">dita.specialization.catalog.relative</span> and
+          <span class="keyword parmname">org.dita.pdf2.catalog.relative</span> extension points to update the DITA-OT catalog files.</p>
+      <div class="note remember note_remember"><span class="note__title">Remember:</span> The <span class="keyword parmname">dita.specialization.catalog</span> extension is deprecated. Use
+          <span class="keyword parmname">dita.specialization.catalog.relative</span> instead.</div>
     </section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Using the OASIS catalog format, create an XML catalog file that contains only the new values that you want
@@ -26,8 +26,8 @@ index: "../toc.html"
           <ul class="ul">
             <li class="li"><var class="keyword varname">plugin-id</var> is the plug-in identifier, for example,
                 <code class="ph codeph">com.example.catalog</code>.</li>
-            <li class="li"><var class="keyword varname">extension-point</var> is either <code class="ph codeph">dita.specialization.catalog.relative</code> or
-                <code class="ph codeph">org.dita.pdf2.catalog.relative</code>.</li>
+            <li class="li"><var class="keyword varname">extension-point</var> is either <span class="keyword parmname">dita.specialization.catalog.relative</span>
+              or <span class="keyword parmname">org.dita.pdf2.catalog.relative</span>.</li>
             <li class="li"><var class="keyword varname">file</var> is the name of the new catalog file, for example,
                 <span class="ph filepath">catalog-dita.xml</span>. </li>
           </ul></div>
