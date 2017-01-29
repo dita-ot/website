@@ -23,9 +23,9 @@ index: "../toc.html"
         <p class="p">DITA Open Toolkit Release <span class="keyword">2.4.3</span> includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v243__1525">In PDF output generated with earlier versions of DITA-OT and RenderX XEP, the
-              <code class="keyword markupname xmlelement">&lt;indexterm&gt;</code> hierarchy for multilevel entries in the PDF index was limited to two
-            levels. Index term indentation has been corrected to properly reflect the entry hierarchy as authored in
-            DITA source files when generating PDF output with XEP.
+              <code class="keyword markupname xmlelement">&lt;indexterm&gt;</code> hierarchy for multilevel entries in the PDF index was not properly
+            indented. Index term indentation has been corrected to properly reflect the entry hierarchy as authored in
+            DITA source files.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1525" target="_blank">#1525</a>
           </li>
           <li class="li" id="v243__2038">In earlier versions of DITA-OT, specifying a relative path for the temporary directory on the
@@ -34,8 +34,8 @@ index: "../toc.html"
             otherwise.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2038" target="_blank">#2038</a>
           </li>
-          <li class="li" id="v243__2522">PDF: In certain cases, DITA-OT 2.4 generated broken links for related topics and reported
-            “unresolved internal destination” warnings in the console when processing topic references with the
+          <li class="li" id="v243__2522">In certain cases, DITA-OT 2.4 generated broken links in PDF output for related topics and
+            reported “unresolved internal destination” warnings in the console when processing topic references with the
               <code class="keyword markupname xmlatt">@collection-type</code> attribute set to <span class="keyword option">family</span>. Link rewrite processing has
             been corrected to ensure that links are generated properly.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2522" target="_blank">#2522</a>
