@@ -11,7 +11,7 @@ index: "../toc.html"
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--install</span>=<var class="keyword varname">plug-in-zip</var></code></pre>
+          <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--install</span>&nbsp;<var class="keyword varname">plug-in-zip</var></code></pre>
           <p class="p">where:</p>
           <ul class="ul">
             <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li>
@@ -21,9 +21,10 @@ index: "../toc.html"
           </ul>
           <div class="note note note_note"><span class="note__title">Note:</span> 
             <span class="ph">If no <var class="keyword varname">filename</var> or <var class="keyword varname">URL</var> argument is
-                  provided, the installation process reloads plug-ins from the <span class="ph filepath">plugins</span> directory.
-                  This approach can be used to install multiple plug-ins at once, or install any individual plug-ins you
-                  have already copied to the <span class="ph filepath">plugins</span> directory.</span>
+                  provided, the installation process reloads the current set of plug-ins from the
+                    <span class="ph filepath">plugins</span> directory. This approach can be used to add or remove multiple plug-ins
+                  at once, or any individual plug-ins you have already copied to (or removed from) the
+                    <span class="ph filepath">plugins</span> directory.</span>
           </div>
           <div class="note tip note_tip"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
               <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
