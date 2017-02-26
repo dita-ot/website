@@ -11,13 +11,15 @@ index: "../toc.html"
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--uninstall</span>=<var class="keyword varname">plug-in-id</var></code></pre>
+          <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--uninstall</span>&nbsp;<var class="keyword varname">plug-in-id</var></code></pre>
           <p class="p">where:</p>
           <ul class="ul">
             <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li>
-            <li class="li"><var class="keyword varname">plug-in-id</var> is the unique ID of the plug-in, as defined in the
-                plug-in's configuration file (<span class="ph filepath">plugin.xml</span>).</li>
+            <li class="li"><span class="ph filepath"><var class="keyword varname">plug-in-id</var></span> is the unique ID of the plug-in, as
+                defined in the plug-in's configuration file (<span class="ph filepath">plugin.xml</span>).</li>
           </ul>
+          <div class="note attention note_attention"><span class="note__title">Attention:</span> The <span class="keyword parmname">--uninstall</span> option also
+                  removes the corresponding subdirectory from the <span class="ph filepath">plugins</span> folder.</div>
           <div class="note tip note_tip"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
               <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
         </div>
