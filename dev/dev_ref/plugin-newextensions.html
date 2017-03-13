@@ -114,7 +114,7 @@ index: "../toc.html"
         file content based on extension point use.</p>
       <pre class="pre codeblock"><code>&lt;project xmlns:dita="http://dita-ot.sourceforge.net"&gt;
   &lt;target name="dita2custom"
-          depends="dita2custom.init,
+          dita:depends="dita2custom.init,
                    {com.example.new-extensions.pre},
                    dita2xhtml"
           dita:extension="depends org.dita.dost.platform.InsertDependsAction"&gt;
