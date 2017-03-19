@@ -21,7 +21,7 @@ index: "../toc.html"
   &lt;title&gt;...&lt;/title&gt;
   &lt;body&gt;
     &lt;section id="sect"&gt;&lt;title&gt;Sample section&lt;/title&gt;
-      &lt;p&gt;Figure &lt;xref href="#referenced_topic/fig"/&gt; contains an code sample that demonstrates ... .&lt;/p&gt;
+      &lt;p&gt;Figure &lt;xref href="#referenced_topic/fig"/&gt; contains a code sample that demonstrates ... .&lt;/p&gt;
       &lt;fig id="fig"&gt;&lt;title&gt;Code sample&lt;/title&gt;
         &lt;codeblock&gt;....&lt;/codeblock&gt;
       &lt;/fig&gt;
@@ -34,10 +34,11 @@ index: "../toc.html"
         the new context. At the same time, the  <code class="keyword markupname xmlelement">&lt;xref&gt;</code> element is also modified so that it
         remains valid as a local reference. For example, if the referencing topic has an <code class="keyword markupname xmlatt">@id </code> set to
         "new_topic", then the conrefed  element may look like this in the intermediate
-          document.<code class="keyword markupname xmlelement">&lt;section&gt;</code><figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Resolved conrefed &lt;section&gt; element after the conref step</figcaption>
+          document <code class="keyword markupname xmlelement">&lt;section&gt;</code>.
+        <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Resolved conrefed <code class="keyword markupname xmlelement">&lt;section&gt;</code> element after the conref step</figcaption>
           
           <pre class="pre codeblock"><code>&lt;section id="sect"&gt;&lt;title&gt;Sample section&lt;/title&gt;
-    &lt;p&gt;Figure &lt;xref href="#new_topic/d1e25"/&gt; contains an code sample that demonstrates ... .&lt;/p&gt;
+    &lt;p&gt;Figure &lt;xref href="#new_topic/d1e25"/&gt; contains a code sample that demonstrates ... .&lt;/p&gt;
     &lt;fig id="d1e25"&gt;&lt;title&gt;Code sample&lt;/title&gt;
         &lt;codeblock&gt;....&lt;/codeblock&gt;
     &lt;/fig&gt;
