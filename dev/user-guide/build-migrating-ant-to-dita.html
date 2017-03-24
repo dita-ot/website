@@ -81,7 +81,25 @@ args.rellinks = nofamily</code></pre></div>
         also want the convenience of using the <span class="keyword cmdname">dita</span> command with <span class="ph filepath">.properties</span>
         files to define the parameters for each build. This can be accomplished with Ant's <code class="keyword markupname xmlelement">&lt;exec&gt;</code>
         task.</p>
-      <p class="p">This example uses a <code class="keyword markupname xmlelement">&lt;dita-cmd&gt;</code> Ant macro defined in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/dita-cmd.xml</span> file.</p>
+      <p class="p">This example uses a <code class="keyword markupname xmlelement">&lt;dita-cmd&gt;</code> Ant macro defined in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/dita-cmd.xml</span> file:</p>
+      <pre class="pre codeblock"><code>  &lt;macrodef name="dita-cmd"&gt;
+    &lt;attribute name="input"/&gt;
+    &lt;attribute name="format"/&gt;
+    &lt;attribute name="propertyfile"/&gt;
+    &lt;sequential&gt;
+      &lt;exec executable="${dita.dir}/bin/dita"&gt;
+        &lt;arg line="-i @{input} -f @{format} -propertyfile @{propertyfile}"/&gt;
+      &lt;/exec&gt;
+    &lt;/sequential&gt;
+  &lt;/macrodef&gt;</code></pre>
+      <div class="p">You can use this macro in your Ant build to call the <span class="keyword cmdname">dita</span> command and pass the
+          <span class="keyword parmname">input</span>, <span class="keyword parmname">format</span> and <span class="keyword parmname">propertyfile</span> parameters as
+        follows:
+        <pre class="pre codeblock"><code>&lt;dita-cmd input="sample.ditamap" format="pdf" propertyfile="sample.properties"/&gt;</code></pre>
+      </div>
+      <p class="p">This approach allows you to use Ant builds to perform additional tasks at build time while allowing the
+          <span class="keyword cmdname">dita</span> command to set the classpath and ensure that all necessary JAR libraries are
+        available.</p>
       <div class="p">Sample build file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf-hybrid.xml</span>
         <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 
