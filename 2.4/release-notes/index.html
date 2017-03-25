@@ -1,14 +1,14 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 2.4.4 Release Notes"
+title: "DITA Open Toolkit 2.4.5 Release Notes"
 index: "../toc.html"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.4</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="../license/index.html">License</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.4.4</span> Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.4.5</span> Release Notes</h1>
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.4.4</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.4.5</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">2.4</span>, which includes <span class="ph">Apache FOP <span class="ph">2.1</span>,
         a new long-form syntax for <span class="keyword cmdname">dita</span> command options, and additional code referencing
         extensions</span>.</p>
@@ -16,21 +16,77 @@ index: "../toc.html"
         <a class="xref" href="https://github.com/dita-ot/dita-ot/issues" target="_blank">GitHub issues tracker</a></span>.</p>
   </div>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="ID__v244">
-    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.4.4</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="ID__v245">
+    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.4.5</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4.4</span> includes the following bug fixes.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.4.5</span> includes the following bug fixes.</p>
         <ul class="ul">
-          
+          <li class="li" id="v245__2559">DITA-OT 2.4 reported errors when filtering HTML5 output with a <span class="ph filepath">.ditaval</span>
+            file and failed to preserve attributes that were set to <span class="keyword option">passthrough</span> via the
+              <code class="keyword markupname xmlatt">@action</code> attribute. The order in which properties are initialized has been corrected and
+            profiling conditions are now propagated to corresponding <code class="keyword markupname xmlatt">@data-</code> attributes in HTML5 output
+            to support filtering.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2559" target="_blank">#2559</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2598" target="_blank">#2598</a>, 
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2627" target="_blank">#2627</a>
+          </li>
+          <li class="li" id="v245__2567">Remaining XHTML property references in the HTML5 transformation have been corrected to point to
+            their HTML5 equivalents.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2567" target="_blank">#2567</a>
+          </li>
+          <li class="li" id="v245__2570">In DITA-OT 2.4, the HTML5 transformation failed to process topics with tables when the
+              <span class="keyword parmname">args.html5.classattr</span> parameter was set to <span class="keyword option">no</span>. Processing has been
+            updated to ensure that tables are handled correctly when the DITA class ancestry is not passed to output.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2570" target="_blank">#2570</a>
+          </li>
+          <li class="li" id="v245__2622">The HTML5 transformation has been updated to preserve the <code class="keyword markupname xmlatt">@class</code> attribute on
+            ordered lists when <code class="keyword markupname xmlelement">&lt;steps&gt;</code> contain a <code class="keyword markupname xmlelement">&lt;stepsection&gt;</code> element.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2622" target="_blank">#2622</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2631" target="_blank">#2631</a>
+          </li>
+          <li class="li" id="v245__2623">Earlier versions of DITA-OT ignored any <code class="keyword markupname xmlelement">&lt;navref&gt;</code> and
+              <code class="keyword markupname xmlelement">&lt;anchor&gt;</code> elements that were declared as direct children of referenced submaps. The
+            map reference implementation has been updated to preserve these elements as-is when resolving nested maps.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2623" target="_blank">#2623</a>
+          </li>
+          <li class="li" id="v245__2628">HTML5 processing has been corrected to respect the <span class="keyword parmname">args.outext</span> setting.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2628" target="_blank">#2628</a>
+          </li>
+          <li class="li" id="v245__2629">The Finnish translations for attention and warning notes have been corrected to “Huomio” and
+            “Varoitus”, respectively.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2629" target="_blank">#2629</a>
+          </li>
+          <li class="li" id="v245__2636">DITA-OT 2.4.4 introduced a regression that prevented table cells from spanning multiple columns.
+            Table processing has been corrected to produce the proper table structure.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2636" target="_blank">#2636</a>
+          </li>
+          <li class="li">
+            <p class="p">The documentation includes minor
+              <a class="xref" href="https://github.com/dita-ot/docs/compare/2.4.4...2.4.5" target="_blank">
+                changes</a> with
+              <a class="xref" href="https://github.com/dita-ot/docs/milestone/23?closed=1" target="_blank">corrections and improvements</a> to existing topics.</p>
+          </li>
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.4.4...2.4.5" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="ID__v244">
+    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.4.4</h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release 2.4.4 includes the following bug fixes.</p>
+        <ul class="ul">
           <li class="li" id="v244__2564">DITA-OT 2.4 threw errors if non-XML DITA topics (such as Markdown files) were referenced in DITA
             maps. The source format information is now retained to ensure these topics are processed correctly when the
             <a class="xref" href="https://github.com/jelovirt/dita-ot-markdown" target="_blank">DITA-OT Markdown
               plug-in</a> is installed.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2564" target="_blank">#2564</a>
           </li>
-          
-          
           <li class="li" id="v244__2573">In HTML5 transformations, DITA-OT 2.4 threw XSLT warnings if a topic included copyright metadata
             in the prolog. The redundant templates have been removed to ensure that copyright metadata is correctly
             processed.
@@ -90,8 +146,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="ID__v243">
-    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.4.3</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="ID__v243">
+    <h2 class="title topictitle2" id="ariaid-title4">Maintenance Release 2.4.3</h2>
     <div class="body refbody">
       <section class="section">
         <p class="p">DITA Open Toolkit Release 2.4.3 includes the following bug fixes.</p>
@@ -146,8 +202,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="ID__v242">
-    <h2 class="title topictitle2" id="ariaid-title4">Maintenance Release 2.4.2</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="ID__v242">
+    <h2 class="title topictitle2" id="ariaid-title5">Maintenance Release 2.4.2</h2>
     <div class="body refbody">
       <section class="section">
         <p class="p">DITA Open Toolkit Release 2.4.2 includes the following bug fixes.</p>
@@ -194,8 +250,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="ID__v241">
-    <h2 class="title topictitle2" id="ariaid-title5">Maintenance Release 2.4.1</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="ID__v241">
+    <h2 class="title topictitle2" id="ariaid-title6">Maintenance Release 2.4.1</h2>
     <div class="body refbody">
       <section class="section">
         <p class="p">DITA Open Toolkit Release 2.4.1 includes the following bug fixes.</p>
@@ -265,8 +321,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="ID__requirements">
-    <h2 class="title topictitle2" id="ariaid-title6">Requirements</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="ID__requirements">
+    <h2 class="title topictitle2" id="ariaid-title7">Requirements</h2>
     <div class="body refbody">
       <section class="section">
         
@@ -276,8 +332,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="ID__highlights">
-    <h2 class="title topictitle2" id="ariaid-title7">Release Highlights</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title8" id="ID__highlights">
+    <h2 class="title topictitle2" id="ariaid-title8">Release Highlights</h2>
     
     <div class="body refbody"><p class="shortdesc">DITA-OT <span class="keyword">2.4</span> includes <span class="ph" id="highlights__summary">Apache FOP <span class="ph">2.1</span>,
         a new long-form syntax for <span class="keyword cmdname">dita</span> command options, and additional code referencing
@@ -403,8 +459,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title8" id="ID__issues">
-    <h2 class="title topictitle2" id="ariaid-title8">Resolved issues</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title9" id="ID__issues">
+    <h2 class="title topictitle2" id="ariaid-title9">Resolved issues</h2>
     
     <div class="body refbody"><p class="shortdesc">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">2.4</span>
       includes the following changes.</p>
