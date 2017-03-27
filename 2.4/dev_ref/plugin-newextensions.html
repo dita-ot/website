@@ -54,7 +54,7 @@ index: "../toc.html"
         
         
           <dt class="dt pt dlterm"><code class="ph codeph">org.dita.dost.platform.ImportStringsAction</code></dt>
-          <dd class="dd pd">Include plug-in string file content based on the <a class="xref" href="plugin-addgeneratedtext.html" title="Generated text is the term for strings that are automatically added by the build, such as &#34;Note&#34; before the contents of a <note&gt; element.">generated text
+          <dd class="dd pd">Include plug-in string file content based on the <a class="xref" href="plugin-addgeneratedtext.html" title="Generated text is the term for strings that are automatically added by the build, such as &#34;Note&#34; before the contents of a note element.">generated text
               extension point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is used to define the extension point ID.</dd>
         
         
@@ -114,7 +114,7 @@ index: "../toc.html"
         file content based on extension point use.</p>
       <pre class="pre codeblock"><code>&lt;project xmlns:dita="http://dita-ot.sourceforge.net"&gt;
   &lt;target name="dita2custom"
-          depends="dita2custom.init,
+          dita:depends="dita2custom.init,
                    {com.example.new-extensions.pre},
                    dita2xhtml"
           dita:extension="depends org.dita.dost.platform.InsertDependsAction"&gt;

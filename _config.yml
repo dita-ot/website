@@ -12,4 +12,4 @@ exclude: ["gulpfile.js", "package.js", "node_modules", "images/dita-ot_input-out
 # Major & minor release version (2 digits)
 release: "2.4"
 # Maintenance version (normally 3 digits, 2 for initial minor release)
-version: "2.4.4"
+version: "2.4.5"
