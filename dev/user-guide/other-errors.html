@@ -37,5 +37,13 @@ index: "../toc.html"
           <code class="ph codeph">Unsupported major.minor version</code> and a list of Java classes, make sure your system meets the
         minimum Java requirements as listed in the <cite class="cite">Release Notes</cite> and installation instructions.</p>
     </section>
+    <section class="section" id="troubleshooting__tools-jar-error"><h2 class="title sectiontitle">Unable to locate tools.jar</h2>
+      
+      <p class="p">If a Java Runtime Environment (JRE) is used when building output via Ant, the <samp class="ph msgph">Unable to locate
+          tools.jar</samp> error may appear. This message is safe to ignore, since DITA-OT does not rely on any of the
+        functions in this library. If a Java Development Kit (JDK) is also installed, setting the
+          <var class="keyword varname">JAVA_HOME</var> environment variable to the location of the JDK will prevent this message from
+        appearing.</p>
+    </section>
   </div>
 <nav role="navigation" class="related-links"><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><div><a class="link" href="../user-guide/increasing-the-jvm.html" title="If you are working with large documents with extensive metadata or key references, you will need to increase the memory allocation for the Java process. You can do this from the command-line prompt for a specific session, or you can increase the value of the ANT_OPTS environment variable.">Increasing Java memory allocation</a></div><div><a class="link" href="../getting-started/installing-client.html" title="The DITA-OT distribution package can be installed on Linux, macOS, and Windows. It contains everything that you need to run the toolkit except for Java.">Installing the distribution package</a></div></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><div><a class="link" href="../parameters/parameters-other.html" title="These parameters enable you to reload style sheets that the DITA-OT uses for specific pre-processing stages.">Other parameters</a></div><div><a class="link" href="../release-notes/index.html" title="DITA Open Toolkit 2.4.6 is a maintenance release that fixes issues reported in DITA-OT 2.4, which includes Apache FOP 2.1, a new long-form syntax for dita command options, and additional code referencing extensions.">DITA Open Toolkit 2.4.6 Release Notes</a></div></div></nav></main>
