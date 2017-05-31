@@ -1,0 +1,34 @@
+---
+# Generated from DITA source
+layout: base
+title: "Experimental map-first preprocessing"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a><ul class="nav nav-list"><li><a href="../dev_ref/processing-structure.html">Processing structure</a></li><li><a href="../dev_ref/processing-pipeline-modules.html">Processing modules</a></li><li><a href="../dev_ref/processing-order.html">Processing order</a></li><li><a href="../dev_ref/DITA-OTPreprocess.html">Pre-processing modules</a></li><li><a href="../dev_ref/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../dev_ref/PdfDefault.html">PDF processing modules</a></li><li class="active"><a href="../dev_ref/map-first-preprocessing.html">Map-first preprocessing</a></li></ul></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/html-customization.html">Customizing HTML output</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/java-api.html">Java API</a></li></ul></li><li><a href="../license/index.html">License</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Experimental map-first preprocessing</h1>
+  
+  
+  <div class="body conbody"><p class="shortdesc"><span class="ph" id="ID__map-first-preproc-desc">DITA-OT 2.5 introduces an experimental map-first preprocessing option as an
+      alternative to the default <code class="ph codeph">preprocess</code> operation. The new method provides the same functionality,
+      but takes a different approach.</span></p>
+    <p class="p" id="ID__map-first-preproc-gain">Whereas the default preprocessing routine handles both maps and topics at the same
+      time, the map-first approach begins by processing maps as far as possible, and only then starts processing topics.
+      This simplifies the processing logic and creates cleaner module responsibilities, which makes it easier to process
+      only those topics that are actually referenced after filtering, for example, or to only process the map to
+      validate the map structure.</p>
+    <p class="p">The current preprocessing architecture was established during the DITA 1.0 era when there were fewer DITA
+      features that operated on the map level. Initially, the difference between processing modes was not that great,
+      but as more map-level features such as keys and key scopes have been added to DITA, processing maps first to build
+      the context makes sense. The original preprocessing operation already does this to a degree, but the new map-first
+      preprocessing option will be even more formal about it.</p>
+    <div class="note note note_note" id="ID__map-first-preproc-note"><span class="note__title">Note:</span> The map-first preprocessing option is not enabled by default in DITA-OT 2.5, but
+      is offered as an experimental preview feature to allow users and vendors who extend preprocessing to provide
+      feedback on possible issues with the design. The new option will most likely become the default in DITA-OT
+      3.0.</div>
+    <p class="p">To use map-first preprocessing, call the <code class="ph codeph">preprocess2</code> Ant target in your customizations instead
+      of the default <code class="ph codeph">preprocess</code> target.</p>
+    <div class="note attention note_attention"><span class="note__title">Attention:</span> The <code class="ph codeph">preprocess2</code> target name and implementation details are subject to
+      change. Subject schemes and delayed key resolution have not yet been implemented, but support for at least subject
+      schemes will likely be added in an upcoming release.</div>
+  </div>
+</main>

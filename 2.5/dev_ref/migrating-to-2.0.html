@@ -1,0 +1,63 @@
+---
+# Generated from DITA source
+layout: base
+title: "Migrating to release 2.0"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/html-customization.html">Customizing HTML output</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../dev_ref/migrating-to-2.5.html">To 2.5</a></li><li><a href="../dev_ref/migrating-to-2.4.html">To 2.4</a></li><li><a href="../dev_ref/migrating-to-2.3.html">To 2.3</a></li><li><a href="../dev_ref/migrating-to-2.2.html">To 2.2</a></li><li><a href="../dev_ref/migrating-to-2.1.html">To 2.1</a></li><li class="active"><a href="../dev_ref/migrating-to-2.0.html">To 2.0</a></li><li><a href="../dev_ref/migrating-to-1.8.html">To 1.8</a></li><li><a href="../dev_ref/migrating-to-1.7.html">To 1.7</a></li><li><a href="../dev_ref/migrating-to-1.6.html">To 1.6</a></li><li><a href="../dev_ref/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../dev_ref/java-api.html">Java API</a></li></ul></li><li><a href="../license/index.html">License</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 2.0</h1>
+
+  
+
+  <div class="body refbody"><p class="shortdesc">In DITA-OT 2.0, XSLT templates were converted to XSLT 2.0, variable typing was
+    implemented, and some older templates were refactored or removed. In addition, the
+      <span class="keyword cmdname">dita</span> command simplifies distribution of plugins by allowing installation
+    from a URL.
+  </p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 2.0 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the <a class="xref" href="http://www.dita-ot.org/2.0/readme/changes/rel2.0.html" target="_blank">DITA-OT 2.0 Release Notes</a>.</div>
+    </section>
+    <div class="bodydiv refbodydiv">
+      <section class="section"><h2 class="title sectiontitle">All transformations — variable typing</h2>
+        
+        <p class="p">XSLT stylesheets were converted to XSLT 2.0. With that change, variable types were also
+          implemented. Plug-ins that change template variable values will need to make the following
+          changes:</p>
+        <ul class="ul">
+          <li class="li">Declare the same types defined in the default templates with <code class="keyword markupname xmlatt">@as</code>.</li>
+          <li class="li">Ensure that the generated values conform to the declared type.</li>
+        </ul>
+      </section>
+      <div class="example">
+        <p class="p">For example:</p>
+        <pre class="pre codeblock"><code>&lt;xsl:variable name="urltest"&gt;
+&lt;xsl:variable name="urltest" <strong class="ph b">as="xs:boolean"</strong>&gt;</code></pre>
+      </div>
+      <section class="section"><h2 class="title sectiontitle">All transformations — refactoring</h2>
+        
+        <p class="p">Much of the toolkit code was refactored for release 2.0. Customization changes that were
+          based on a specific template in a previous version of the toolkit might not work because
+          the modified template is no longer used. If this is the case, the changes will need to be
+          reimplemented based on the new XSLT templates.</p>
+      </section>
+    </div>
+    <section class="section"><h2 class="title sectiontitle">HTML5</h2>
+      
+      <p class="p">A new <span class="keyword option">HTML5</span> transformation type has been added. Customizations that
+        previously modified the XHTML output to generate valid HTML5 should still work, but basing
+        your customization on the new transformation type might simplify the customization and
+        reduce the work required to maintain compatibility with future versions of the toolkit.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> The <span class="keyword option">HTML5</span> transformation was refactored with release 2.2. Before
+        basing your customization on the changes in release 2.0, consider whether you might want to
+        move to release 2.2 instead. See  <a class="xref" href="migrating-to-2.2.html" title="In DITA-OT 2.2, the HTML5 transformation was refactored as its own plug-in and separate plug-ins were created for each of the rendering engine-specific PDF transformations.">To 2.2</a>.</div>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">Plug-in installation and distribution</h2>
+      
+      <p class="p">Plug-ins can now be installed or uninstalled from a ZIP archive using the new
+          <span class="keyword cmdname">dita</span> command. Plug-ins can also be installed from a referenced URL. See
+          <a class="xref" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content, manage plug-ins, or print information about the command. Options can be used to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a>.</p>
+    </section>
+  </div>
+</main>
