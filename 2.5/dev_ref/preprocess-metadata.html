@@ -1,0 +1,39 @@
+---
+# Generated from DITA source
+layout: base
+title: "Move metadata (move-meta-entries) and pull content into maps (mappull) "
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a><ul class="nav nav-list"><li><a href="../dev_ref/processing-structure.html">Processing structure</a></li><li><a href="../dev_ref/processing-pipeline-modules.html">Processing modules</a></li><li><a href="../dev_ref/processing-order.html">Processing order</a></li><li><a href="../dev_ref/DITA-OTPreprocess.html">Pre-processing modules</a><ul class="nav nav-list"><li><a href="../dev_ref/preprocess-genlist.html">Generate lists (gen-list)</a></li><li><a href="../dev_ref/preprocess-debugfilter.html">Debug and filter (debug-filter)</a></li><li><a href="../dev_ref/preprocess-mapref.html">Resolve map references (mapref)</a></li><li><a href="../dev_ref/preprocess-branch-filter.html">Branch filtering (branch-filter)</a></li><li><a href="../dev_ref/preprocess-copyfiles.html">Copy related files (copy-files)</a></li><li><a href="../dev_ref/preprocess-keyref.html">Resolve keyref (keyref)</a></li><li><a href="../dev_ref/preprocess-copy-to.html">Copy topics (copy-to)</a></li><li><a href="../dev_ref/preprocess-conrefpush.html">Conref push (conrefpush)</a></li><li><a href="../dev_ref/preprocess-conref.html">Conref (conref)</a></li><li><a href="../dev_ref/preprocess-profile.html">Filter conditional content (profile)</a></li><li><a href="../dev_ref/preprocess-topic-fragment.html">Resolve topic fragments and code references (topic-fragment)</a></li><li><a href="../dev_ref/preprocess-chunk.html">Chunk topics (chunk)</a></li><li class="active"><a href="../dev_ref/preprocess-metadata.html">Move metadata (move-meta-entries) and pull content into maps (mappull) </a></li><li><a href="../dev_ref/preprocess-maplink.html">Map based linking (maplink)</a></li><li><a href="../dev_ref/preprocess-topicpull.html">Pull content into topics (topicpull)</a></li><li><a href="../dev_ref/preprocess-flagging.html">Flagging (flag-module)</a></li><li><a href="../dev_ref/preprocess-clean-map.html">Map cleanup (clean-map)</a></li></ul></li><li><a href="../dev_ref/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../dev_ref/PdfDefault.html">PDF processing modules</a></li><li><a href="../dev_ref/map-first-preprocessing.html">Map-first preprocessing</a></li></ul></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/html-customization.html">Customizing HTML output</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/java-api.html">Java API</a></li></ul></li><li><a href="../license/index.html">License</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Move metadata (move-meta-entries) and pull content into maps (mappull) </h1>
+  
+
+  <div class="body conbody"><p class="shortdesc">The <code class="ph codeph">move-meta-entries</code> step pushes metadata back and forth between maps and topics. For
+    example, index entries and copyrights in the map are pushed into affected topics, so that the topics can be
+    processed later in isolation while retaining all relevant metadata. This step is implemented in Java.</p>
+    <div class="note note note_note"><span class="note__title">Note:</span> As of DITA-OT 2.2, the <code class="ph codeph">move-meta-entries</code> and <code class="ph codeph">mappull</code> steps have been merged.
+      The <code class="ph codeph">mappull</code> step has been moved into <code class="ph codeph">move-meta-entries</code>.</div>
+    <section class="section">
+      <p class="p">The <code class="ph codeph">mappull</code> step pulls content from referenced topics into maps, and then cascades data within
+        maps. This step is implemented in XSLT.</p>
+      <div class="p">The <code class="ph codeph">mappull</code> step makes the following changes to the DITA map:
+        <ul class="ul">
+          <li class="li">Titles are pulled from referenced DITA topics. Unless the <code class="keyword markupname xmlatt">@locktitle</code> attribute is set to
+            "yes", the pulled titles replace the navigation titles specified on the <code class="keyword markupname xmlelement">&lt;topicref&gt;</code>
+            elements.</li>
+          <li class="li">The <code class="keyword markupname xmlelement">&lt;linktext&gt;</code> element is set based on the title of the referenced topic, unless it
+            is already specified locally.</li>
+          <li class="li">The <code class="keyword markupname xmlelement">&lt;shortdesc&gt;</code> element is set based on the short description of the referenced
+            topic, unless it is already specified locally.</li>
+          <li class="li">The <code class="keyword markupname xmlatt">@type</code> attribute is set on <code class="keyword markupname xmlelement">&lt;topicref&gt;</code> elements that reference
+            local DITA topics. The value of the <code class="keyword markupname xmlatt">@type</code> attribute is set to value of the root element of
+            the topic; for example, a <code class="keyword markupname xmlelement">&lt;topicref&gt;</code> element that references a task topic is given a
+              <code class="keyword markupname xmlatt">@type</code> attribute set to "task"".</li>
+          <li class="li">Attributes that cascade, such as <code class="keyword markupname xmlatt">@toc</code> and <code class="keyword markupname xmlatt">@print</code>, are made explicit on any
+            child <code class="keyword markupname xmlelement">&lt;topicref&gt;</code> elements. This allows future steps to work with the attributes
+            directly, without reevaluating the cascading behavior.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="../dev_ref/preprocess-chunk.html" title="The chunk step breaks apart and assembles referenced DITA content based on the @chunk attribute in maps. This step is implemented in Java.">Chunk topics (chunk)</a></div><div class="nextlink"><strong>Next topic:</strong> <a class="link" href="../dev_ref/preprocess-maplink.html" title="This step collects links based on a map and moves those links into the referenced topics. The links are created based on hierarchy in the DITA map, the collection-type attribute, and relationship tables. This step is implemented in XSLT and Java.">Map based linking (maplink)</a></div></div></nav></main>

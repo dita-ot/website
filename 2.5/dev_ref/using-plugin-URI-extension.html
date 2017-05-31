@@ -1,0 +1,64 @@
+---
+# Generated from DITA source
+layout: base
+title: "Referencing files from other plug-ins"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a><ul class="nav nav-list"><li><a href="../dev_ref/DITA-OTArchitecture.html">DITA-OT Architecture</a></li><li><a href="../dev_ref/extending-the-ot.html">Extending the DITA-OT</a></li><li><a href="../dev_ref/plugin-creating.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../dev_ref/plugins-overview.html">Overview of plug-ins</a></li><li><a href="../dev_ref/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../dev_ref/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li><a href="../dev_ref/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li><a href="../dev_ref/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../dev_ref/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li class="active"><a href="../dev_ref/using-plugin-URI-extension.html">Referencing files from other plug-ins</a></li><li><a href="../dev_ref/plugin-addgeneratedtext.html">Modifying or adding generated text</a></li><li><a href="../dev_ref/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../dev_ref/plugin-javalib.html">Adding a Java library to the DITA-OT classpath parameter</a></li><li><a href="../dev_ref/plugin-messages.html">Adding new diagnostic messages</a></li><li><a href="../dev_ref/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../dev_ref/plugin-sample.html">Example plugin.xml file</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../dev_ref/html-customization.html">Customizing HTML output</a></li><li><a href="../dev_ref/pdf-customization.html">Customizing PDF output</a></li><li><a href="../dev_ref/migration.html">Migrating customizations</a></li><li><a href="../dev_ref/java-api.html">Java API</a></li></ul></li><li><a href="../license/index.html">License</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
+    <h1 class="title topictitle1" id="ariaid-title1">Referencing files from other plug-ins</h1>
+    
+    <div class="body taskbody"><p class="shortdesc">Starting with DITA-OT 1.5.4, you can use the <span class="ph filepath" id="using-plugin-URI-extension__plugin-uri-ext">plugin:<var class="keyword varname">plugin-id</var></span> URI extension and the <span class="ph filepath" id="using-plugin-URI-extension__antvar">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</span> Ant variable to reference the
+    base path of another installed DITA-OT plug-in.</p>
+    <section class="section">
+      <p class="p">Sometimes you need to reference content in another DITA-OT plug-in. However, the path to an
+        installed plug-in is not guaranteed to be the same between different installed instances of
+        the DITA-OT. The <span class="ph filepath">plugin:<var class="keyword varname">plugin-id</var></span> URI
+        extension and <span class="ph filepath">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</span> Ant variable are
+        provided so your build  and XSLT files always use the correct path to the plug-in.</p>
+      <p class="p">Within a single plug-in, you can safely use relative path references, for example,
+          <span class="ph filepath">xsl/my.xsl</span> without specifying the path to the plug-in itself.</p>
+    </section>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ul class="ul steps-unordered"><li class="li step stepexpand">
+        <span class="ph cmd">Use <span class="ph filepath">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</span> in Ant build files.</span>
+        <div class="itemgroup info">
+          <p class="p">Use the Ant variable <span class="ph filepath">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</span> anywhere
+            in your build file or template to point to the base path of an installed DITA-OT
+            plug-in.</p>
+        </div>
+        <div class="itemgroup stepxmp">
+          <p class="p">The following example copies CSS files from the HTML5 plug-in:</p>
+          <pre class="pre codeblock"><code>&lt;copy todir="${dita.temp.dir}/css"&gt;
+  &lt;fileset dir="${dita.plugin.org.dita.html5.dir}/css" includes="*.css"/&gt;
+&lt;/copy&gt;</code></pre>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Use <span class="ph filepath">plugin:<var class="keyword varname">plugin-id</var></span> in XSLT
+          files.</span>
+        <div class="itemgroup info">
+          <p class="p">Use the URI extension <span class="ph filepath">plugin:<var class="keyword varname">plugin-id</var></span>
+            at the beginning of a file reference—usually in <code class="keyword markupname xmlelement">&lt;xsl:import&gt;</code>—to
+            point to the base path of an installed DITA-OT plug-in.</p>
+        </div>
+        <div class="itemgroup stepxmp">
+          <p class="p">The following example imports the base output-message.xsl processing:</p>
+          <pre class="pre codeblock"><code>&lt;xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/&gt;</code></pre>
+        </div>
+        <div class="itemgroup info">
+          <p class="p">To use the URI extension, your plug-in must reference the DITA-OT catalog file. In your
+            Ant build file, add an <code class="keyword markupname xmlelement">&lt;xmlcatalog&gt;</code> element referencing the
+            DITA-OT catalog file as a child of the <code class="keyword markupname xmlelement">&lt;xslt&gt;</code> element.</p>
+        </div>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock"><code>&lt;xslt style="xsl/my.xsl"
+  in="${dita.temp.dir}/input.file" out="${dita.temp.dir}/output.file"&gt;
+  &lt;xmlcatalog refid="dita.catalog"/&gt;
+&lt;/xslt&gt;</code></pre>
+        </div>
+      </li></ul>
+    <section class="section tasktroubleshooting">
+      <p class="p">For both of these methods, make sure you use the plug-in ID (defined in the
+          <span class="ph filepath">plugin.xml</span> file) rather than the folder name of the plug-in. In many
+        cases, the folder name is not the same as the plug-in ID.</p>
+    </section>
+    </div>
+</main>
