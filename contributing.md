@@ -15,21 +15,25 @@ Before you do that, [review the open issues][1] to make sure it hasn't already b
 
 You can help give back to the community by answering DITA-OT–related questions on the [DITA-OT Users Google Group][5], the [Yahoo! dita-users group][6] or [StackOverflow][7].
 
-Developers and vendors using the toolkit are encouraged to join the [DITA-OT Development Google Group][8] list. This mailing list is used to discuss upcoming changes that may impact developers or vendors.
+## Development discussions
+
+We use [Slack][8] to discuss DITA-OT development and design issues, plan events and keep tabs on revisions in our GitHub repositories. Developers and vendors using the toolkit are encouraged to join the [DITA-OT Slack team][9] to discuss upcoming changes.
+
+To request an invitation and join the conversation, visit [slack.dita-ot.org][10].
 
 ## Coding
 
 _Have XSLT or Java coding skills?_
 
-You can contribute fixes to [bugs][9] or new features by sending [pull requests][10] via GitHub.
+You can contribute fixes to [bugs][11] or new features by sending [pull requests][12] via GitHub.
 
 ## Documentation
 
 _Have writing or editing skills?_
 
-If you find something wrong or missing in the [documentation][11], you can [open an issue on GitHub][12] to describe the problem or suggest new topics we might want to include in future versions of the DITA-OT docs.
+If you find something wrong or missing in the [documentation][13], you can [open an issue on GitHub][14] to describe the problem or suggest new topics we might want to include in future versions of the DITA-OT docs.
 
-If you'd like to fix a typo or propose changes to an existing topic, you can use the **Edit this page** link in the page footers of the [development version of the documentation][11] to open the source file in a web editor and save your changes to a GitHub [pull request][10].
+If you'd like to fix a typo or propose changes to an existing topic, you can use the **Edit this page** link in the page footers of the [development version of the documentation][13] to open the source file in a web editor and save your changes to a GitHub [pull request][12].
 
 {% include DCO.md %}
 
@@ -40,8 +44,10 @@ If you'd like to fix a typo or propose changes to an existing topic, you can use
 [5]: https://groups.google.com/d/forum/dita-ot-users
 [6]: https://groups.yahoo.com/neo/groups/dita-users/info
 [7]: http://stackoverflow.com/questions/tagged/dita-ot
-[8]: https://groups.google.com/d/forum/dita-ot-dev
-[9]: https://github.com/dita-ot/dita-ot/labels/bug
-[10]: https://help.github.com/articles/using-pull-requests
-[11]: http://www.dita-ot.org/dev/
-[12]: https://github.com/dita-ot/docs/issues/new
+[8]: https://slack.com
+[9]: https://dita-ot.slack.com
+[10]: http://slack.dita-ot.org
+[11]: https://github.com/dita-ot/dita-ot/labels/bug
+[12]: https://help.github.com/articles/using-pull-requests
+[13]: http://www.dita-ot.org/dev/
+[14]: https://github.com/dita-ot/docs/issues/new
