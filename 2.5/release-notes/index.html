@@ -1,29 +1,57 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 2.5.1 Release Notes"
+title: "DITA Open Toolkit 2.5.2 Release Notes"
 index: "../toc.html"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.5</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="../license/index.html">License</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.5.1</span> Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.5.2</span> Release Notes</h1>
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.5.1</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.5.2</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">2.5</span>, which includes <span class="ph">a basic Java API, an experimental map-first
         preprocessing option, better support for DITA composite documents, publishing with multiple DITAVAL files, and
         more consistent styling for default PDF output</span>.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">2.5.1</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">2.5.2</span>.zip</span>
             package from the project website at <a class="xref" href="http://www.dita-ot.org/download" target="_blank">dita-ot.org/download</a>.</span></div>
   </div>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="v251">
-    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.5.1</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="v252">
+    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.5.2</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">2.5.1</span> includes the following bug fixes.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.5.2</span> includes the following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v252__2743">In DITA-OT 2.5.1, the mappull step could fail when a map referenced a DITA document where the
+            root element was filtered out. The filtered document is now processed correctly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2743" target="_blank">#2743</a>
+          </li>
+          <li class="li" id="v252__2749">In the original 2.5 release, setting a revision property to "flag" in the DITAVAL resulted in
+            build errors if the DITAVAL did not also specify a start and end image for that flag. The build errors no
+            longer appear.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2749" target="_blank">#2749</a>
+          </li>
+          <li class="li">
+            <p class="p">The documentation includes minor
+              <a class="xref" href="https://github.com/dita-ot/docs/compare/2.5.1...2.5.2" target="_blank">
+                changes</a> with corrections and improvements to existing topics.</p>
+          </li>
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.5.1...2.5.2" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v251">
+    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.5.1</h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release 2.5.1 includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v251__2014">
-            <p class="p">In DITA-OT 2.5 and earlier, key resolution did not comply with the DITA specification's requirement to
+            <p class="p">In DITA-OT 2.5 and earlier, key resolution did not comply with the DITA specification’s requirement to
               use <code class="keyword markupname xmlelement">&lt;linktext&gt;</code> from a key definition as valid replacement text for all uses of that
               key.
               <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1590" target="_blank">#1590</a>,
@@ -51,10 +79,11 @@ index: "../toc.html"
             to exclude all items from the list. The code has been updated to more gracefully handle elements that are
             missing required children.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2701" target="_blank">#2701</a>,
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2712" target="_blank">#2721</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2712" target="_blank">#2712</a>
           </li>
-          <li class="li" id="v251__2705">One DITA 1.3 RNG module from the OASIS DITA Standard contained a typo in a default attribute
-            value. The typo will be corrected in the next DITA 1.3 errata, and is now fixed in the DITA-OT copy.
+          <li class="li" id="v251__2705">One DITA 1.3 RNG module in the grammar files for the
+            <a class="xref" href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part0-overview.html" target="_blank">DITA 1.3 specification</a> contained a typo in a default attribute value. The typo will be corrected in
+            the next DITA 1.3 errata, and is now fixed in the DITA-OT copy.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2705" target="_blank">#2705</a>
           </li>
           <li class="li" id="v251__2706">On Windows only, chunking a DITA document using the "by-topic" method would lose the root chunk
@@ -88,8 +117,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="requirements">
-    <h2 class="title topictitle2" id="ariaid-title3">Requirements</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="requirements">
+    <h2 class="title topictitle2" id="ariaid-title4">Requirements</h2>
     <div class="body refbody">
       <section class="section">
         
@@ -99,8 +128,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="highlights">
-    <h2 class="title topictitle2" id="ariaid-title4">Release Highlights</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="highlights">
+    <h2 class="title topictitle2" id="ariaid-title5">Release Highlights</h2>
     
     <div class="body refbody"><p class="shortdesc">DITA-OT <span class="keyword">2.5</span> includes <span class="ph" id="highlights__summary">a basic Java API, an experimental map-first
         preprocessing option, better support for DITA composite documents, publishing with multiple DITAVAL files, and
@@ -142,6 +171,7 @@ index: "../toc.html"
           to topics within <code class="keyword markupname xmlelement">&lt;dita&gt;</code> elements were broken. The PDF output now includes the full
           content of the referenced document, and links to any element within the document are correct.
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1077" target="_blank">#1077</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1904" target="_blank">#1904</a>,
           <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2679" target="_blank">#2679</a></p>
         <p class="p" id="highlights__2698">Attributes from the <code class="keyword markupname xmlelement">&lt;dita&gt;</code> element are now preserved when merging topics. In
           previous releases, attributes like <code class="keyword markupname xmlatt">@xml:lang</code> set on the <code class="keyword markupname xmlelement">&lt;dita&gt;</code> element
@@ -194,8 +224,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="issues">
-    <h2 class="title topictitle2" id="ariaid-title5">Resolved issues</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="issues">
+    <h2 class="title topictitle2" id="ariaid-title6">Resolved issues</h2>
     
     <div class="body refbody"><p class="shortdesc">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">2.5</span>
       includes the following changes.</p>
