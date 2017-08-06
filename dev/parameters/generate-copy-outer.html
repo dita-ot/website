@@ -15,33 +15,41 @@ index: "../toc.html"
           <li class="li">The DITA map is in a directory that is below the directories that contain the referenced objects.</li>
         </ul></div>
       <div class="p">Let's assume that the directory structure for the DITA content looks like the
-        following:<pre class="pre">maps
-topics
-images</pre>The DITA map is in the <span class="ph filepath">maps</span> directory, the topics
-        are in the<span class="ph filepath"> topics</span> directory, and the images are in the <span class="ph filepath">images</span>
+        following:<pre class="pre">images/
+  fig.png
+maps/
+  start.ditamap
+topics/
+  topic.dita</pre>The DITA
+        map is in the <span class="ph filepath">maps</span> directory, the topics are in the<span class="ph filepath">
+          topics</span> directory, and the images are in the <span class="ph filepath">images</span>
         directory.</div></section>
     <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">1</span></h2>
       
-      <div class="p">Let's assume that you run the HTML5 transformation and specify an output directory of
-          <span class="ph filepath">C:\A-test</span>. By default, The DITA-OT uses the <span class="keyword parmname">generate.copy.outer</span>
-        parameter with a value of <span class="keyword option">1</span>. Output is not built for the topics. You receive only the following
-        output: <pre class="pre">C:\A-test
---- index.html
---- commonltr.css
---- commonrtl.css</pre>The
-          <span class="ph filepath">index.html</span> file contains the navigation structure, but all the links are broken, since no
-        HTML5 files were built for the topics.</div>
+      <div class="p">Let's assume that you run the HTML5 transformation. By default, The DITA-OT uses the
+          <span class="keyword parmname">generate.copy.outer</span> parameter with a value of <span class="keyword option">1</span>.
+        Output is not built for the topics. You receive only the following output:
+        <pre class="pre">index.html
+commonltr.css
+commonrtl.css</pre>The <span class="ph filepath">index.html</span> file
+        contains the navigation structure, but all the links are broken, since no HTML5 files were
+        built for the topics.</div>
       <p class="p">How do you fix this? By specifying a value of <span class="keyword option">3</span> for the
           <span class="keyword parmname">generate.copy.outer</span> parameter. </p>
     </section>
     <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">3</span></h2>
       
-      <div class="p">Now your output directory structure looks like this: <pre class="pre">C:\A-test
---- images\
---- maps\
---- topics\</pre>The
-        index.html file is in the maps directory, and the CSS and other files are located in the output directory,
-          <span class="ph filepath">C:\A-test</span>. Copying the output directory is simplified.</div>
+      <div class="p">Now your output directory structure looks like this:
+        <pre class="pre">images/
+  fig.png
+maps/
+  index.html
+topics/
+  topic.html
+commonltr.css
+commonrtl.css</pre>The
+        index.html file is in the maps directory, and the CSS and other files are located in the
+        output directory. Copying the output directory is simplified.</div>
     </section>
   </div>
 </main>
