@@ -22,10 +22,11 @@ index: "../toc.html"
       <section class="section">
         <p class="p">DITA Open Toolkit Release <span class="keyword">2.5.3</span> includes the following bug fixes.</p>
         <ul class="ul">
-          <li class="li" id="v253__2759">In DITA-OT 2.5, the <code class="ph codeph">gen-list</code> pre-processing step included non-topic references
-            marked with <code class="keyword markupname xmlatt">@scope</code>=<code class="ph codeph">"peer"</code>, which caused later processing steps to try
-            reading them (even when they are not DITA). Pre-processing has been updated to skip these files and prevent
-            erroneous errors from appearing when using the <span class="keyword parmname">onlytopic.in.map</span> parameter.
+          <li class="li" id="v253__2759">In DITA-OT 2.5, the <code class="ph codeph">gen-list</code> pre-processing step listed resource-only
+            references with <code class="keyword markupname xmlatt">@scope</code>=<code class="ph codeph">"peer"</code> as local files when the
+              <span class="keyword parmname">onlytopic.in.map</span> parameter was set to <span class="keyword option">true</span>. This caused later
+            processing steps to generate errors as they tried to read the peer files (even when they were not DITA).
+            Pre-processing has been updated to avoid reading these files, which also removes the build errors.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2759" target="_blank">#2759</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2761" target="_blank">#2761</a>
           </li>
@@ -34,10 +35,10 @@ index: "../toc.html"
             has been adjusted to create the destination directory if necessary and allow the build to continue.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2768" target="_blank">#2768</a>
           </li>
-          <li class="li" id="v253__2769">DITA-OT 2.5 would crash when publishing maps that contained empty
-              <code class="keyword markupname xmlelement">&lt;ditavalref&gt;</code> elements. Pre-processing has been updated to be more tolerant in these
-            cases. The <code class="ph codeph">branch-filter</code> step will now proceed as if the
-              <code class="keyword markupname xmlelement">&lt;ditavalref&gt;</code> were not specified, which allows the build to finish.
+          <li class="li" id="v253__2769">DITA-OT 2.5 would crash when publishing maps that contained <code class="keyword markupname xmlelement">&lt;ditavalref&gt;</code>
+            elements without valid hyperlink references in the <code class="keyword markupname xmlatt">@href</code> attribute. Pre-processing has been
+            updated to be more tolerant in these cases. The <code class="ph codeph">branch-filter</code> step will now proceed as if
+            the <code class="keyword markupname xmlelement">&lt;ditavalref&gt;</code> were not specified, which allows the build to finish.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2769" target="_blank">#2769</a>
           </li>
           <li class="li">
