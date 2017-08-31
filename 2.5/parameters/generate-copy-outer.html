@@ -1,47 +1,68 @@
 ---
 # Generated from DITA source
 layout: base
-title: "generate.copy.outer parameter"
+title: "Handling content outside the map directory"
 index: "../toc.html"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a><ul class="nav nav-list"><li><a href="../parameters/parameters-base.html">Common</a></li><li><a href="../parameters/parameters-base-html.html">HTML-based output</a></li><li><a href="../parameters/parameters-html5.html">HTML5</a></li><li><a href="../parameters/parameters-xhtml.html">XHTML</a></li><li><a href="../parameters/parameters-eclipsehelp.html">Eclipse Help</a></li><li><a href="../parameters/parameters-htmlhelp.html">HTMLHelp</a></li><li><a href="../parameters/parameters-javahelp.html">JavaHelp</a></li><li><a href="../parameters/parameters-other.html">Other</a></li><li><a href="../parameters/parameters-pdf.html">PDF</a></li></ul></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li></ul></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="../license/index.html">License</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1"><span class="keyword parmname">generate.copy.outer</span> parameter</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">Handling content outside the map directory</h1>
   
-  <div class="body conbody"><p class="shortdesc">Elaboration on how the <span class="keyword parmname">generate.copy.outer</span> parameter functions.</p>
+
+  <div class="body conbody"><p class="shortdesc">By default, DITA-OT assumes content is located in or beneath the directory containing the DITA map file.
+    The <span class="keyword parmname">generate.copy.outer</span> parameter can be used to adjust how output is generated for content
+    that is located outside the map directory.</p>
     <section class="section"><h2 class="title sectiontitle">Background</h2>
       
-      <div class="p">This is an issue in the following situations:<ul class="ul">
+      <div class="p">This is an issue in the following situations:
+        <ul class="ul">
           <li class="li">The DITA map is in a directory that is a peer to directories that contain referenced objects.</li>
           <li class="li">The DITA map is in a directory that is below the directories that contain the referenced objects.</li>
         </ul></div>
-      <div class="p">Let's assume that the directory structure for the DITA content looks like the
-        following:<pre class="pre">maps
-topics
-images</pre>The DITA map is in the <span class="ph filepath">maps</span> directory, the topics
-        are in the<span class="ph filepath"> topics</span> directory, and the images are in the <span class="ph filepath">images</span>
-        directory.</div></section>
-    <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">1</span></h2>
-      
-      <div class="p">Let's assume that you run the HTML5 transformation and specify an output directory of
-          <span class="ph filepath">C:\A-test</span>. By default, The DITA-OT uses the <span class="keyword parmname">generate.copy.outer</span>
-        parameter with a value of <span class="keyword option">1</span>. Output is not built for the topics. You receive only the following
-        output: <pre class="pre">C:\A-test
---- index.html
---- commonltr.css
---- commonrtl.css</pre>The
-          <span class="ph filepath">index.html</span> file contains the navigation structure, but all the links are broken, since no
-        HTML5 files were built for the topics.</div>
-      <p class="p">How do you fix this? By specifying a value of <span class="keyword option">3</span> for the
-          <span class="keyword parmname">generate.copy.outer</span> parameter. </p>
+      <p class="p">Let’s assume that the directory structure for the DITA content looks like the following:</p>
+      <div class="p"><pre class="pre">images/
+  fig.png
+maps/
+  start.ditamap
+topics/
+  topic.dita</pre></div>
+      <p class="p">The DITA map is in the <span class="ph filepath">maps</span> directory, the topics are in the <span class="ph filepath">topics</span>
+        directory, and the images are in the <span class="ph filepath">images</span> directory.</p>
     </section>
-    <section class="section"><h2 class="title sectiontitle">Setting the <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">3</span></h2>
+
+    <section class="section"><h2 class="title sectiontitle">Exclude content outside the map directory</h2>
       
-      <div class="p">Now your output directory structure looks like this: <pre class="pre">C:\A-test
---- images\
---- maps\
---- topics\</pre>The
-        index.html file is in the maps directory, and the CSS and other files are located in the output directory,
-          <span class="ph filepath">C:\A-test</span>. Copying the output directory is simplified.</div>
+      <p class="p">Let’s assume that you run the HTML5 transformation. By default, the DITA-OT uses the
+          <span class="keyword parmname">generate.copy.outer</span> parameter with a value of <span class="keyword option">1</span>, which means that no
+        output is generated for content that is located outside the DITA map directory.</p>
+      <p class="p">You receive only the following output:</p>
+      <div class="p"><pre class="pre">index.html
+commonltr.css
+commonrtl.css</pre></div>
+      <p class="p">The <span class="ph filepath">index.html</span> file contains the navigation structure, but all the links are broken, since
+        no HTML files were built for the topics.</p>
+      <p class="p">How do you fix this? By adjusting the parameter setting to shift the output directory.</p>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Shift the output directory to include all content</h2>
+      
+      <p class="p">To preserve the links to referenced topics and images and make it easier to copy the output directory, set the
+          <span class="keyword parmname">generate.copy.outer</span> parameter to <span class="keyword option">3</span>.</p>
+      <p class="p">Now your output directory structure resembles the structure of the source directory:</p>
+      <div class="p"><pre class="pre">images/
+  fig.png
+maps/
+  index.html
+topics/
+  topic.html
+commonltr.css
+commonrtl.css</pre></div>
+      <p class="p">The <span class="ph filepath">index.html</span> file is in the <span class="ph filepath">maps</span> directory, the HTML files for the
+        topics are in the <span class="ph filepath">topics</span> directory, and the referenced images are in the
+          <span class="ph filepath">images</span> directory.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> If <span class="keyword parmname">args.csspath</span> is not set, the default CSS files (and any custom CSS files
+        specified via <span class="keyword parmname">args.css</span>) will be copied to the root level of the output folder. To copy CSS
+        files to an output subfolder named <span class="ph filepath">css</span>, set <span class="keyword parmname">args.csspath</span> to
+          <span class="keyword option">css</span>.</div>
     </section>
   </div>
 </main>
