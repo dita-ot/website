@@ -1,26 +1,65 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 2.5.2 Release Notes"
+title: "DITA Open Toolkit 2.5.3 Release Notes"
 index: "../toc.html"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 2.5</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../getting-started/index.html">Getting Started</a></li><li><a href="../user-guide/index.html">User Guide</a></li><li><a href="../parameters/index.html">Parameter Reference</a></li><li><a href="../dev_ref/index.html">Developer Reference</a></li><li><a href="../license/index.html">License</a></li><li><a href="http://www.dita-ot.org/contributing">Contributing</a></li><li><a href="http://www.dita-ot.org/who_we_are">Who we are</a></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.5.2</span> Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">2.5.3</span> Release Notes</h1>
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.5.2</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">2.5.3</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">2.5</span>, which includes <span class="ph">a basic Java API, an experimental map-first
         preprocessing option, better support for DITA composite documents, publishing with multiple DITAVAL files, and
         more consistent styling for default PDF output</span>.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">2.5.2</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">2.5.3</span>.zip</span>
             package from the project website at <a class="xref" href="http://www.dita-ot.org/download" target="_blank">dita-ot.org/download</a>.</span></div>
   </div>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="v252">
-    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.5.2</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="v253">
+    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">2.5.3</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">2.5.2</span> includes the following bug fixes.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">2.5.3</span> includes the following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v253__2759">In DITA-OT 2.5, the <code class="ph codeph">gen-list</code> pre-processing step listed resource-only
+            references with <code class="keyword markupname xmlatt">@scope</code>=<code class="ph codeph">"peer"</code> as local files when the
+              <span class="keyword parmname">onlytopic.in.map</span> parameter was set to <span class="keyword option">true</span>. This caused later
+            processing steps to generate errors as they tried to read the peer files (even when they were not DITA).
+            Pre-processing has been updated to avoid reading these files, which also removes the build errors.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2759" target="_blank">#2759</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2761" target="_blank">#2761</a>
+          </li>
+          <li class="li" id="v253__2768">In previous versions of DITA-OT, the <code class="ph codeph">copy-files</code> pre-processing step would stop
+            the build with an error if the destination directory for copied files did not (yet) exist. The copy process
+            has been adjusted to create the destination directory if necessary and allow the build to continue.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2768" target="_blank">#2768</a>
+          </li>
+          <li class="li" id="v253__2769">DITA-OT 2.5 would crash when publishing maps that contained <code class="keyword markupname xmlelement">&lt;ditavalref&gt;</code>
+            elements without valid hyperlink references in the <code class="keyword markupname xmlatt">@href</code> attribute. Pre-processing has been
+            updated to be more tolerant in these cases. The <code class="ph codeph">branch-filter</code> step will now proceed as if
+            the <code class="keyword markupname xmlelement">&lt;ditavalref&gt;</code> were not specified, which allows the build to finish.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2769" target="_blank">#2769</a>
+          </li>
+          <li class="li">
+            <p class="p">The documentation includes minor
+              <a class="xref" href="https://github.com/dita-ot/docs/compare/2.5.2...2.5.3" target="_blank">
+                changes</a> with
+              <a class="xref" href="https://github.com/dita-ot/docs/milestone/28?closed=1" target="_blank">corrections and improvements</a> to existing topics.</p>
+          </li>
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/2.5.2...2.5.3" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v252">
+    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.5.2</h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release 2.5.2 includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v252__2743">In DITA-OT 2.5.1, the mappull step could fail when a map referenced a DITA document where the
             root element was filtered out. The filtered document is now processed correctly.
@@ -45,8 +84,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v251">
-    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 2.5.1</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v251">
+    <h2 class="title topictitle2" id="ariaid-title4">Maintenance Release 2.5.1</h2>
     <div class="body refbody">
       <section class="section">
         <p class="p">DITA Open Toolkit Release 2.5.1 includes the following bug fixes.</p>
@@ -118,8 +157,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="requirements">
-    <h2 class="title topictitle2" id="ariaid-title4">Requirements</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="requirements">
+    <h2 class="title topictitle2" id="ariaid-title5">Requirements</h2>
     <div class="body refbody">
       <section class="section">
         
@@ -129,8 +168,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="highlights">
-    <h2 class="title topictitle2" id="ariaid-title5">Release Highlights</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="highlights">
+    <h2 class="title topictitle2" id="ariaid-title6">Release Highlights</h2>
     
     <div class="body refbody"><p class="shortdesc">DITA-OT <span class="keyword">2.5</span> includes <span class="ph" id="highlights__summary">a basic Java API, an experimental map-first
         preprocessing option, better support for DITA composite documents, publishing with multiple DITAVAL files, and
@@ -225,8 +264,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="issues">
-    <h2 class="title topictitle2" id="ariaid-title6">Resolved issues</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="issues">
+    <h2 class="title topictitle2" id="ariaid-title7">Resolved issues</h2>
     
     <div class="body refbody"><p class="shortdesc">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">2.5</span>
       includes the following changes.</p>
