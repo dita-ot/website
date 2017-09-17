@@ -13,29 +13,44 @@ index: "../toc.html"
     <section class="section">
       <dl class="dl">
         
-          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.lib.import</span></dt>
-          <dd class="dd">Adds a Java library to the DITA-OT classpath.</dd>
-        
-        
-          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.target</span></dt>
-          <dd class="dd">Adds
-            an Ant import to the main Ant build file.
-            <div class="note attention note_attention"><span class="note__title">Attention:</span> This extension point is deprecated; use <code class="ph codeph">dita.conductor.target.relative</code>
-              instead.</div></dd>
-        
-        
-          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.target.relative</span></dt>
+          <dt class="dt dlterm" id="plugin-general-extension-points__ant.import"><span class="keyword parmname">ant.import</span></dt>
           <dd class="dd">Adds an Ant import to the main Ant build file.</dd>
         
         
+          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.lib.import</span></dt>
+          <dd class="dd">Adds a Java
+            library to the DITA-OT classpath.</dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.target</span></dt>
+          <dd class="dd">Adds an Ant
+            import to the main Ant build file.
+            <div class="p">
+              <div class="note attention note_attention"><span class="note__title">Attention:</span> This extension point is deprecated; use
+                  <code class="ph codeph">dita.conductor.target.relative</code> or <code class="ph codeph">ant.import</code> instead.</div>
+            </div>
+          </dd>
+        
+        
+          <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.target.relative</span></dt>
+          <dd class="dd">Adds
+            an Ant import to the main Ant build file.
+            <div class="p">
+              <div class="note tip note_tip"><span class="note__title">Tip:</span> As of DITA-OT 3.0, the <code class="ph codeph">ant.import</code> extension point can be used
+                instead.</div>
+            </div>
+          </dd>
+        
+        
           <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.transtype.check</span></dt>
-          <dd class="dd">Adds a new value to the list of valid transformation types.</dd>
+          <dd class="dd">Adds a
+            new value to the list of valid transformation types.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">dita.specialization.catalog</span></dt>
-          <dd class="dd">Adds the content of a catalog file to the main DITA-OT catalog file.
-            <div class="note attention note_attention"><span class="note__title">Attention:</span> This extension point is deprecated; use <code class="ph codeph">dita.specialization.catalog.relative</code>
-              instead.</div></dd>
+          <dd class="dd">Adds the
+            content of a catalog file to the main DITA-OT catalog file. <div class="note attention note_attention"><span class="note__title">Attention:</span> This extension point is
+              deprecated; use <code class="ph codeph">dita.specialization.catalog.relative</code> instead.</div></dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">dita.specialization.catalog.relative</span></dt>
@@ -43,17 +58,18 @@ index: "../toc.html"
         
         
           <dt class="dt dlterm"><span class="keyword parmname">dita.transtype.print</span></dt>
-          <dd class="dd">Defines
-            a transformation as a print type.</dd>
+          <dd class="dd">Defines a
+            transformation as a print type.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">dita.xsl.messages</span></dt>
-          <dd class="dd">Adds new
-            diagnostic messages to the DITA-OT.</dd>
+          <dd class="dd">Adds new diagnostic
+            messages to the DITA-OT.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">org.dita.pdf2.catalog.relative</span></dt>
-          <dd class="dd">Adds the content of a catalog file to the main catalog file for the PDF plug-in.</dd>
+          <dd class="dd">Adds
+            the content of a catalog file to the main catalog file for the PDF plug-in.</dd>
         
       </dl>
     </section>
