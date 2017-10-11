@@ -88,7 +88,7 @@ args.rellinks = nofamily</code></pre></div>
     &lt;attribute name="propertyfile"/&gt;
     &lt;sequential&gt;
       &lt;exec executable="${dita.dir}/bin/dita"&gt;
-        &lt;arg line="-i @{input} -f @{format} -propertyfile @{propertyfile}"/&gt;
+        &lt;arg line="--input @{input} --format @{format} --propertyfile=@{propertyfile}"/&gt;
       &lt;/exec&gt;
     &lt;/sequential&gt;
   &lt;/macrodef&gt;</code></pre>
