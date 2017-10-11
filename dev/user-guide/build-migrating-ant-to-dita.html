@@ -27,7 +27,8 @@ index: "../toc.html"
           per line, in the format <code class="ph codeph">name = value</code>.</span>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Use the <span class="keyword cmdname">dita</span> command to perform each build, referencing your
-            <span class="ph filepath">.properties</span> file with the <span class="keyword parmname">-propertyfile</span> option.</span>
+            <span class="ph filepath">.properties</span> with the <span class="keyword parmname">--propertyfile</span>=<var class="keyword varname">file</var>
+          option.</span>
       </li></ol>
     <div class="example"><h2 class="title sectiontitle">Example: Ant build</h2>
       <div class="p">Sample build file: <span class="ph filepath" id="migrating-ant-to-dita__samples-dir"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf.xml</span>
@@ -88,7 +89,7 @@ args.rellinks = nofamily</code></pre></div>
     &lt;attribute name="propertyfile"/&gt;
     &lt;sequential&gt;
       &lt;exec executable="${dita.dir}/bin/dita"&gt;
-        &lt;arg line="--input @{input} --format @{format} --propertyfile=@{propertyfile}"/&gt;
+        &lt;arg line="--input=@{input} --format=@{format} --propertyfile=@{propertyfile}"/&gt;
       &lt;/exec&gt;
     &lt;/sequential&gt;
   &lt;/macrodef&gt;</code></pre>
@@ -100,6 +101,9 @@ args.rellinks = nofamily</code></pre></div>
       <p class="p">This approach allows you to use Ant builds to perform additional tasks at build time while allowing the
           <span class="keyword cmdname">dita</span> command to set the classpath and ensure that all necessary JAR libraries are
         available.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> The attributes defined in the Ant macro are required and must be supplied each time the task is run. To set
+        optional parameters in one build (but not another), use different <span class="ph filepath">.properties</span> files for
+        each build.</div>
       <div class="p">Sample build file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf-hybrid.xml</span>
         <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 
