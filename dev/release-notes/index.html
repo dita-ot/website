@@ -249,25 +249,23 @@ index: "../toc.html"
 
       <section class="section" id="highlights__2497"><h3 class="title sectiontitle">Map-first preprocessing</h3>
         
-        <p class="p"><span class="ph">DITA-OT 3.0 provides a map-first preprocessing option as
-an alternative to the default <code class="ph codeph">preprocess</code> operation. The method, which was
-introduced in DITA-OT 2.5 as an experimental feature, has been improved and is ready for use in many
-production scenarios. Map-first-preprocessing provides the same functionality as the default
-<code class="ph codeph">preprocess</code>, but takes a different approach.</span></p>
-        <p class="p">Whereas the default preprocessing routine handles both maps and
-topics at the same time, often switching back and forth between map operations and topic operations,
-the map-first approach only begins processing topics after nearly all map processing is complete.
-This simplifies the processing logic and creates cleaner module responsibilities, which makes it
-easier to process only those topics that are actually referenced after filtering, for example, or to
-only process the map to validate the map structure.</p>
-        <div class="note note note_note"><span class="note__title">Note:</span> The map-first preprocessing option is enabled by default in
-DITA-OT 3.0 for PDF, HTML Help, and Java Help. These three formats were chosen because they all
-result in a compiled result file, so temporarily hashed file names should all be invisible to the
-build. After further testing and feedback, the new option will most likely become the default for
-other transform types in future versions. Because the DITA-OT development team cannot have access to
-all varieties of DITA, all edge cases, or even all the ways DITA-OT itself is extended, the switch
-to default map-first preprocessing for other transform types will be smoother for everybody if more
-people can test and provide feedback.</div>
+        <p class="p"><span class="ph">DITA-OT 3.0 provides a map-first preprocessing option as an alternative to
+      the default <code class="ph codeph">preprocess</code> operation. The method, which was introduced in DITA-OT 2.5 as an
+      experimental feature, has been improved and is ready for use in many production scenarios. Map-first-preprocessing
+      provides the same functionality as the default <code class="ph codeph">preprocess</code>, but takes a different
+    approach.</span></p>
+        <p class="p">Whereas the default preprocessing routine handles both maps and topics at the same
+      time, often switching back and forth between map operations and topic operations, the map-first approach only
+      begins processing topics after nearly all map processing is complete. This simplifies the processing logic and
+      creates cleaner module responsibilities, which makes it easier to process only those topics that are actually
+      referenced after filtering, for example, or to only process the map to validate the map structure.</p>
+        <div class="note note note_note"><span class="note__title">Note:</span> The map-first preprocessing option is enabled by default in DITA-OT 3.0 for PDF,
+      HTML Help, and Java Help. These three formats were chosen because they all generate a compiled result file, so
+      temporarily hashed file names should all be invisible to the build. After further testing and feedback, the new
+      option will most likely become the default for other output formats in future versions. Because the DITA-OT
+      development team cannot have access to all varieties of DITA, all edge cases, or even all the ways DITA-OT itself
+      is extended, the switch to default map-first preprocessing for other output formats will be smoother for
+      everyone if more people can test and provide feedback.</div>
         <p class="p">See
           <a class="xref" href="../dev_ref/map-first-preprocessing.html" title="DITA-OT 3.0 provides a map-first preprocessing option as an alternative to the default preprocess operation. The method, which was introduced in DITA-OT 2.5 as an experimental feature, has been improved and is ready for use in many production scenarios. Map-first-preprocessing provides the same functionality as the default preprocess, but takes a different approach.">Map-first preprocessing</a>,
           <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2497" target="_blank">#2497</a></p>
