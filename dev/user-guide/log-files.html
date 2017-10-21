@@ -20,12 +20,44 @@ index: "../toc.html"
         
         
           <dt class="dt dlterm">Ant</dt>
-          <dd class="dd">By default, status information is written to the screen. If you issue the <span class="keyword parmname">-l</span>
-            parameter, the build runs silently and the information is written to a log file with the name and location
-            that you specified. (You also can use other Ant loggers; see the Ant documentation for more
-            information.)</dd>
+          <dd class="dd">By default, status information is written to the screen. If you issue the
+              <span class="keyword parmname">-l</span> parameter, the build runs silently and the information is
+            written to a log file with the name and location that you specified.</dd>
         
       </dl></div>
+    <section class="section" id="loghandling__section_iqf_d5l_pbb"><h2 class="title sectiontitle">Using other Ant loggers</h2>
+      
+      <p class="p">You also can use other Ant loggers; see <a class="xref" href="https://ant.apache.org/manual/listeners.html" target="_blank">Listeners &amp; Loggers</a> in the Ant documentation for more information.</p>
+      <p class="p">For example, you can use the <strong class="ph b">AnsiColorLogger</strong> to colorize the messages written on the
+        screen.</p>
+      <dl class="dl">
+        
+          <dt class="dt dlterm"><span class="keyword cmdname">dita</span> command</dt>
+          <dd class="dd">
+            <p class="p">To use a custom Ant logger together with the <span class="keyword cmdname">dita</span> command, you
+              need to add the logger to the <code class="ph codeph">ANT_ARGS</code> environment variable. To do
+              that, simply call the following command before calling the <span class="keyword cmdname">dita</span>
+              command.</p>
+            <pre class="pre codeblock"><code>export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger"</code></pre>
+            <p class="p">Now you will get colorized messages when calling the <span class="keyword cmdname">dita</span>
+              command.</p>
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> Environment variables can also be set permanently; see <a class="xref" href="https://www.java.com/en/download/help/path.xml" target="_blank">How do I set or change the PATH system variable?</a> for information how to set
+              the <code class="ph codeph">PATH</code> environment variable for several operating systems. You can
+              set the <code class="ph codeph">ANT_ARGS</code> environment variable likewise.</div>
+          </dd>
+        
+        
+          <dt class="dt dlterm">Ant</dt>
+          <dd class="dd">
+            <p class="p">If you prefer to launch the DITA-OT directly from Ant, you can also add the logger to
+              the <code class="ph codeph">ANT_ARGS</code> environment variable, as explained above. It is also
+              possible to set the logger with the <code class="ph codeph">-logger</code> parameter when calling
+              Ant.</p>
+            <pre class="pre codeblock"><code>ant -logger org.apache.tools.ant.listener.AnsiColorLogger</code></pre>
+          </dd>
+        
+      </dl>
+    </section>
     
     
     
