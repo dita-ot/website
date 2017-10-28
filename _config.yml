@@ -10,6 +10,6 @@ sass:
 exclude: ["gulpfile.js", "package.js", "node_modules", "images/dita-ot_input-output.graffle"]
 
 # Major & minor release version (2 digits)
-release: "2.5"
+release: "3.0"
 # Maintenance version (normally 3 digits, 2 for initial minor release)
-version: "2.5.4"
+version: "3.0"
