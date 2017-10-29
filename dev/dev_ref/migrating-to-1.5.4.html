@@ -30,34 +30,34 @@ index: "../toc.html"
       
       <p class="p">New plug-in extension points have been added allow configuring DITA-OT behavior based on file extensions.</p>
       <table class="simpletable" id="ID__simpletable_xym_ryi_uc"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><thead><tr class="sthead">
-          <th class="stentry" id="ID__simpletable_xym_ryi_uc__stentry__1">Extension point</th>
-          <th class="stentry" id="ID__simpletable_xym_ryi_uc__stentry__2">Description</th>
-          <th class="stentry" id="ID__simpletable_xym_ryi_uc__stentry__3">Default values</th>
+          <th class="stentry" scope="col">Extension point</th>
+          <th class="stentry" scope="col">Description</th>
+          <th class="stentry" scope="col">Default values</th>
         </tr></thead><tbody><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><span class="keyword parmname">dita.topic.extension</span></td>
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__2">DITA topic</td>
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__3"><span class="ph filepath">.dita</span>, <span class="ph filepath">.xml</span></td>
+          <td class="stentry"><span class="keyword parmname">dita.topic.extension</span></td>
+          <td class="stentry">DITA topic</td>
+          <td class="stentry"><span class="ph filepath">.dita</span>, <span class="ph filepath">.xml</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><span class="keyword parmname">dita.map.extensions</span></td>
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__2">DITA map</td>
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__3"><span class="ph filepath">.ditamap</span></td>
+          <td class="stentry"><span class="keyword parmname">dita.map.extensions</span></td>
+          <td class="stentry">DITA map</td>
+          <td class="stentry"><span class="ph filepath">.ditamap</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><span class="keyword parmname">dita.html.extensions</span></td>
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__2">HTML file</td>
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__3"><span class="ph filepath">.html</span>, <span class="ph filepath">.htm</span></td>
+          <td class="stentry"><span class="keyword parmname">dita.html.extensions</span></td>
+          <td class="stentry">HTML file</td>
+          <td class="stentry"><span class="ph filepath">.html</span>, <span class="ph filepath">.htm</span></td>
         </tr><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__1"><span class="keyword parmname">dita.resource.extensions</span></td>
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__2">Resource file</td>
-          <td class="stentry" headers="ID__simpletable_xym_ryi_uc__stentry__3"><span class="ph filepath">.pdf</span>, <span class="ph filepath">.swf</span></td>
+          <td class="stentry"><span class="keyword parmname">dita.resource.extensions</span></td>
+          <td class="stentry">Resource file</td>
+          <td class="stentry"><span class="ph filepath">.pdf</span>, <span class="ph filepath">.swf</span></td>
         </tr></tbody></table>
       <p class="p">Both HTML and resource file extensions are used to determine if a file in source is copied to output.</p>
       <p class="p">A new plug-in extension point has been added to declare transformation types as print types.</p>
       <table class="simpletable" id="ID__simpletable_xts_5wq_rt"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr class="sthead">
-          <th class="stentry" id="ID__simpletable_xts_5wq_rt__stentry__1">Extension point</th>
-          <th class="stentry" id="ID__simpletable_xts_5wq_rt__stentry__2">Description</th>
+          <th class="stentry" scope="col">Extension point</th>
+          <th class="stentry" scope="col">Description</th>
         </tr></thead><tbody><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_xts_5wq_rt__stentry__1"><span class="keyword parmname">dita.transtype.print</span></td>
-          <td class="stentry" headers="ID__simpletable_xts_5wq_rt__stentry__2">Declare transformation type as a print type.</td>
+          <td class="stentry"><span class="keyword parmname">dita.transtype.print</span></td>
+          <td class="stentry">Declare transformation type as a print type.</td>
         </tr></tbody></table>
       <p class="p">The <code class="ph codeph">print_transtypes</code> property in <span class="ph filepath">integrator.properties</span> has been
         deprecated in favor of <span class="keyword parmname">dita.transtype.print</span>.</p>
@@ -94,11 +94,11 @@ index: "../toc.html"
         processed in bookmaps. The default is to reorder the frontmatter content as in previous releases.</p>
       <p class="p">A new extension point has been added to add mappings to the PDF configuration catalog file.</p>
       <table class="simpletable" id="ID__simpletable_jkf_bxq_rt"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr class="sthead">
-          <th class="stentry" id="ID__simpletable_jkf_bxq_rt__stentry__1">Extension point</th>
-          <th class="stentry" id="ID__simpletable_jkf_bxq_rt__stentry__2">Description</th>
+          <th class="stentry" scope="col">Extension point</th>
+          <th class="stentry" scope="col">Description</th>
         </tr></thead><tbody><tr class="strow">
-          <td class="stentry" headers="ID__simpletable_jkf_bxq_rt__stentry__1"><span class="keyword parmname">org.dita.pdf2.catalog.relative</span></td>
-          <td class="stentry" headers="ID__simpletable_jkf_bxq_rt__stentry__2">Configuration catalog includes.</td>
+          <td class="stentry"><span class="keyword parmname">org.dita.pdf2.catalog.relative</span></td>
+          <td class="stentry">Configuration catalog includes.</td>
         </tr></tbody></table>
       <p class="p">Support for the following languages has been added:</p>
       <ul class="ul">
