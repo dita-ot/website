@@ -9,12 +9,14 @@ index: "../toc.html"
   
   <div class="body taskbody"><p class="shortdesc">You can generate output using the DITA Open Toolkit <span class="keyword cmdname">dita</span> command-line tool. Build
     parameters can be specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
-    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool with no graphical user interface.</section>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool with no graphical user interface. To verify
+      that your installation works correctly, you can build output using the sample files included in the distribution
+      package.</section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Open a terminal window by typing the following in the search bar:</span>
         <div class="itemgroup info">
           <ul class="ul">
-            <li class="li">On OS X and Linux, type <kbd class="ph userinput">Terminal</kbd>.</li>
+            <li class="li">On Linux and macOS, type <kbd class="ph userinput">Terminal</kbd>.</li>
             <li class="li">On Windows, type <kbd class="ph userinput">Command Prompt</kbd>.</li>
           </ul>
         </div>
@@ -40,9 +42,12 @@ index: "../toc.html"
               <div class="p" id="using-command-line-tool__d12e184">You can create plug-ins to add new output formats; by default, the following values are
                 available:
                 <ul class="ul">
+                  <li class="li"><span class="keyword option">dita</span></li>
                   <li class="li"><span class="keyword option">eclipsehelp</span></li>
                   <li class="li"><span class="keyword option">html5</span></li>
                   <li class="li"><span class="keyword option">htmlhelp</span></li>
+                  <li class="li"><span class="keyword option">markdown</span>, <span class="keyword option">markdown_gitbook</span>, and
+                    <span class="keyword option">markdown_github</span></li>
                   <li class="li"><span class="keyword option">pdf</span></li>
                   <li class="li"><span class="keyword option">tocjs</span></li>
                   <li class="li"><span class="keyword option">troff</span></li>
@@ -59,7 +64,7 @@ index: "../toc.html"
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
-          <dd class="dd pd" id="using-command-line-tool__d12e245">Specifies the path of the output directory; the path can be absolute or relative to
+          <dd class="dd pd" id="using-command-line-tool__d12e259">Specifies the path of the output directory; the path can be absolute or relative to
             the current directory. This argument corresponds to the common parameter <span class="keyword parmname">output.dir</span>. By
             default, the output is written to the <span class="ph filepath">out</span> subdirectory of the current directory.</dd>
         
@@ -136,7 +141,7 @@ index: "../toc.html"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
             specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
             directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d12e453"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
+          <div class="note tip note_tip" id="using-command-line-tool__d12e467"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
               <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
         </div>
       </li></ol>
