@@ -1,0 +1,19 @@
+---
+# Generated from DITA source
+layout: base
+title: "Ant"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a><ul class="nav nav-list"><li class="active"><a href="../topics/ant.html">Ant</a></li><li><a href="../topics/building-with-ant.html">Building output using Ant</a></li><li><a href="../topics/creating-an-ant-build-script.html">Creating an Ant build script</a></li></ul></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/extending-the-ot.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Ant</h1>
+  
+  
+  <div class="body conbody"><p class="shortdesc">Ant is a Java-based, open-source tool that is provided by the Apache Foundation. It can be used to declare
+    a sequence of build actions. It is well suited for both development and document builds. The toolkit ships with a
+    copy of Ant.</p>
+    <p class="p">The DITA-OT uses Ant to manage the XSLT scripts that are used to perform the various transformation; it also uses
+      Ant to manage intermediate steps that are written in Java. </p>
+    <p class="p">The most important Ant script is the <span class="ph filepath">build.xml</span> file. This script defines and combines common
+      pre-processing and output transformation routines; it also defines the DITA-OT extension points.</p>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/migrating-ant-to-dita.html" title="Although Ant builds are still supported in the DITA Open Toolkit, you might want to switch to use the new dita command.">Migrating Ant builds to use the dita command</a></li><li class="linklist"><a class="link" href="../topics/building-with-ant.html" title="You can build output by using an Ant build script to provide the DITA-OT parameters.">Building output using Ant</a></li><li class="linklist"><a class="link" href="../topics/creating-an-ant-build-script.html" title="Instead of typing the DITA-OT parameters at the command prompt, you might want to create an Ant build script that contains all of the parameters.">Creating an Ant build script</a></li></ul></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="http://ant.apache.org/manual" target="_blank">Apache Ant documentation</a></li></ul></div></nav></main>
