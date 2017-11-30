@@ -12,4 +12,10 @@ exclude: ["gulpfile.js", "package.js", "node_modules", "images/dita-ot_input-out
 # Major & minor release version (2 digits)
 release: "3.0"
 # Maintenance version (normally 3 digits, 2 for initial minor release)
-version: "3.0"
+version: "3.0.1"
+
+# Enable redirects (#43)
+plugins:
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
