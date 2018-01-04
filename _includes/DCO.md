@@ -12,10 +12,9 @@ To indicate that you agree to the [terms][1] of the DCO, you “sign off” your
 
 You must use your real name (no pseudonyms or anonymous contributions are allowed.)
 
-Your signature certifies that you are either the author of the contribution or  have the right to submit it under the open-source [license][2] used by the DITA Open Toolkit project.
+Your signature certifies that you are either the author of the contribution or have the right to submit it under the open-source [license][2] used by the DITA Open Toolkit project.
 
 If you set your `user.name` and `user.email` as part of your Git configuration, you can sign your commit automatically with `git commit -s`.
-
 
 [1]: http://developercertificate.org/
 [2]: http://www.apache.org/licenses/LICENSE-2.0

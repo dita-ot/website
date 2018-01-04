@@ -1,0 +1,7 @@
+# .prettierrc
+
+# https://prettier.io/docs/en/configuration.html
+printWidth: 100
+proseWrap: "preserve"
+singleQuote: true
+semi: false

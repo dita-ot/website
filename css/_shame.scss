@@ -80,17 +80,16 @@ dd {
 }
 
 .teaser {
-
   .glyphicon {
     font-size: 8em;
   }
   // Invert link colors for teaser icon links
   a {
-    color: $link-hover-color;  // $brand-primary ** Global textual link color.
+    color: $link-hover-color; // $brand-primary ** Global textual link color.
 
     &:hover,
     &:focus {
-      color: $link-color;      // lighten($brand-primary, 20%)
+      color: $link-color; // lighten($brand-primary, 20%)
     }
   }
 }

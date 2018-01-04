@@ -1,0 +1,10 @@
+# https://prettier.io/docs/en/ignore.html
+
+# Tell Prettier not to format the following files/paths
+_layouts/**
+_site/**
+css/bootstrap/**
+js/**
+
+# https://github.com/prettier/prettier/issues/3321
+css/main.scss
