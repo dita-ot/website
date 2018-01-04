@@ -10,6 +10,7 @@
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link href="{{ site.baseurl }}/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
     {% if page.index %}
     <link href="{{ page.index }}" rel="index">
     {% endif %}
@@ -27,6 +28,7 @@
     {% include footer.html %}
     {% include search.html %}
     {% include help.html %}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.17.0/URI.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js" type="text/javascript" data-main="{{ site.baseurl }}/js/app"></script>
     <script type="text/javascript">
@@ -38,6 +40,13 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
+    </script>
+    <script type="text/javascript"> docsearch({
+      apiKey: 'fdd89b9b35b9bd347f34111dbc1c6219',
+      indexName: 'dita-ot',
+      inputSelector: '#search input[type=text]',
+      debug: false // Set debug to true if you want to inspect the dropdown
+      });
     </script>
   </body>
 </html>
