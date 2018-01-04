@@ -3,3 +3,6 @@
 # Tell Prettier not to format the following files/paths
 css/bootstrap/**
 js/**
+
+# https://github.com/prettier/prettier/issues/3321
+css/main.scss
