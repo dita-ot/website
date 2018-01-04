@@ -7,7 +7,7 @@
     "install": "./node_modules/.bin/gulp",
     "fix:config": "prettier --ignore-path .prettierignore --write \"**/*.json\"",
     "fix:docs": "prettier --ignore-path .prettierignore --write \"**/*.md\"",
-    "fix:script": "npm run test:script -- --fix",
+    "fix:script": "prettier --ignore-path .prettierignore --write \"**/*.js\"",
     "fix:style": "prettier --ignore-path .prettierignore --write \"**/*.scss\"",
     "fix": "npm run fix:script && npm run fix:config && npm run fix:style && npm run fix:docs",
     "test:script": "eslint --ignore-path .prettierignore \"**/*.js\"",
@@ -15,7 +15,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
+    "*.js": ["prettier --write", "git add"],
     "*.json": ["prettier --write", "git add"],
     "*.md": ["prettier --write", "git add"],
     "*.scss": ["prettier --write", "git add"]
