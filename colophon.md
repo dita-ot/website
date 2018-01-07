@@ -15,9 +15,9 @@ The [Documentation][10] section is maintained in DITA using the source files fro
 
 Site output is built with [Gradle][13] using the settings in the [site.gradle][14] build file. The [DITA Open Toolkit Gradle plugin][15] is used with the Gradle dæmon and the `--continuous` build option to automatically regenerate the site output whenever documentation source files change. A staging environment provides a preview of generated site output via the `jekyll serve` command for local testing.
 
-[Travis CI][16] continuous integration automatically republishes the latest [development version][10] of the documentation on the project website whenever changes are pushed to the `develop` branch of the [dita-ot/docs][11] repository.
+[Travis CI][16] continuous integration automatically republishes the latest [development version][10] of the documentation on the project website whenever changes are pushed to the `develop` branch of the [dita-ot/docs][11] repository. The development docs are indexed by [Algolia DocSearch][17], which provides the full text search capabilities available via the search form in the navigation bar.
 
-The page footers in the development documentation include **Edit this page** links that open the DITA source file for the topic in [oXygen XML Web Author][17]. The web-based authoring workflow prompts users to log in to GitHub and fork the [dita-ot/docs][11] repository if necessary. Changes saved in the authoring environment are committed to a new branch, and a pull request is created to submit changes for review by the DITA-OT documentation team.
+The page footers in the development documentation include **Edit this page** links that open the DITA source file for the topic in [oXygen XML Web Author][18]. The web-based authoring workflow prompts users to log in to GitHub and fork the [dita-ot/docs][11] repository if necessary. Changes saved in the authoring environment are committed to a new branch, and a pull request is created to submit changes for review by the DITA-OT documentation team.
 
 [1]: https://pages.github.com
 [2]: http://dita-ot.github.io
@@ -35,4 +35,5 @@ The page footers in the development documentation include **Edit this page** lin
 [14]: https://github.com/dita-ot/docs/blob/develop/site.gradle
 [15]: http://eerohele.github.io/dita-ot-gradle/
 [16]: https://travis-ci.org
-[17]: https://www.oxygenxml.com/webauthor/
+[17]: http://algolia.com/docsearch/
+[18]: https://www.oxygenxml.com/webauthor/
