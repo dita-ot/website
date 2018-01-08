@@ -15,10 +15,11 @@ version: "3.0.1"
 
 # Exclude directories and/or files from the conversion
 exclude:
+  - Gemfile*
   - gulpfile.js
   - images/dita-ot_input-output.graffle
   - node_modules
-  - package.js
+  - package*.js*
 
 # Enable redirects (#43)
 plugins:
