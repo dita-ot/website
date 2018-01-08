@@ -19,3 +19,14 @@ plugins:
   - jekyll-redirect-from
 whitelist:
   - jekyll-redirect-from
+
+# Preserve redirects (#44)
+keep_files:
+  - 3.0/dev_ref/html-customization-plugin-bundle-css.html
+  - 3.0/dev_ref/migration.html
+  - 3.0/dev_ref/plugin-newtranstype.html
+  - dev/dev_ref/map-first-preprocessing.html
+  - dev/dev_ref/migrating-ant-to-dita.html
+  - dev/dev_ref/migration.html
+  - dev/dev_ref/pdf-customization-best-practices.html
+  - dev/dev_ref/plugin-addgeneratedtext.html
