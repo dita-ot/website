@@ -82,8 +82,9 @@ index: "../toc.html"
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2867" target="_blank">#2867</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2889" target="_blank">#2889</a>
           </li>
-          <li class="li" id="v302__2874">The DITA 1.2 schemas have been corrected to use version-specific identifiers in the
-              <code class="keyword markupname xmlatt">@schemaLocation</code> references to ensure that "latest module" inclusions resolve to DITA 1.3.
+          <li class="li" id="v302__2874">The DITA 1.2 schemas have been corrected to use DITA 1.2 version-specific identifiers in all
+              <code class="keyword markupname xmlatt">@schemaLocation</code> references. Previously one module was referenced with an unversioned
+            identifier, causing DITA 1.3 rules to be pulled into the DITA 1.2 task schema.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2874" target="_blank">#2874</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2878" target="_blank">#2878</a>
           </li>
