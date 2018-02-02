@@ -64,6 +64,11 @@ index: "../toc.html"
             been corrected to ignore images when reading topics from the map, allowing builds to complete successfully.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2828" target="_blank">#2828</a>
           </li>
+          <li class="li" id="v302__2829">Earlier versions of DITA-OT failed to process resources where the filename includes the percent
+              <code class="ph codeph">%</code> character. The URI parser has been corrected to escape these characters correctly and
+            rewrite references in valid URI syntax.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2829" target="_blank">#2829</a>
+          </li>
           <li class="li" id="v302__2862">In DITA-OT 3.0, cross-references to external resources caused problems if the
               <code class="keyword markupname xmlatt">@scope</code> attribute was not explicitly set to <code class="ph codeph">external</code>. The preprocess
             validation filter has been revised to implicitly treat such references as external in lax processing mode
