@@ -11,6 +11,21 @@ index: "../toc.html"
   <div class="body conbody"><p class="shortdesc">To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases,
     the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding
     patterns.</p>
+    <section class="section"><h2 class="title sectiontitle">Upgrade stylesheets to XSLT 2.0</h2>
+      
+      <p class="p">The Saxon project has announced plans to remove XSLT 1.0 support from the Saxon-HE library that ships with
+        DITA-OT:</p>
+      <blockquote class="lq">…we’re dropping XSLT 1.0
+        backwards compatibility mode from Saxon-HE, and hope to eliminate it entirely in due course.<br><div style="text-align:right"><a href="https://www.xml.com/news/release-saxon-98/"><cite>https://www.xml.com/news/release-saxon-98/</cite></a></div></blockquote>
+      <p class="p">DITA-OT 3.0 and 3.0.1 included Saxon-HE 9.8.0.5, which rejects XSLT stylesheets that specify
+          <code class="ph codeph">version="1.0"</code>. Plug-ins with XSLT templates specifying version 1.0 will fail with the message
+          “<samp class="ph msgph">XSLT 1.0 compatibility mode is not available in this configuration</samp>.”</p>
+      <p class="p">To resolve this issue, change any occurrences of <code class="ph codeph">&lt;xsl:stylesheet version="1.0"&gt;</code> in custom
+        plug-in stylesheets to at least <code class="ph codeph">&lt;xsl:stylesheet version="2.0"&gt;</code>.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> DITA-OT 3.0.2 includes Saxon-HE 9.8.0.7, which restores XSLT 1.0 backwards-compatibility mode,
+        but the DITA Open Toolkit project recommends upgrading all stylesheets to XSLT 2.0 to ensure plug-ins remain
+        compatible with future versions of DITA-OT and Saxon-HE.</div>
+    </section>
     <section class="section"><h2 class="title sectiontitle">Use custom <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> elements</h2>
       
       <p class="p">In Ant scripts, use the XSLT module from DITA-OT instead of Ant’s built-in <code class="keyword markupname xmlelement">&lt;xslt&gt;</code> or
@@ -63,23 +78,23 @@ index: "../toc.html"
       </div>
       <p class="p">The <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> resource collection can be used to select different types of
         files.</p>
-      <table class="table" id="ID__table_dgb_v5p_wcb"><caption><span class="table--title-label">Table 1. </span><span class="title">Usage examples of <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code></span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+      <table class="table"><caption><span class="table--title-label">Table 1. </span><span class="title">Usage examples of <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code></span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
             <tr class="row">
-              <th class="entry" id="ID__table_dgb_v5p_wcb__entry__1">Example</th>
-              <th class="entry" id="ID__table_dgb_v5p_wcb__entry__2">Description</th>
+              <th class="entry" id="ID__entry__1">Example</th>
+              <th class="entry" id="ID__entry__2">Description</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry" headers="ID__table_dgb_v5p_wcb__entry__1 "><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
-              <td class="entry" headers="ID__table_dgb_v5p_wcb__entry__2 ">Selects all DITA topics in current temporary directory.</td>
+              <td class="entry" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
+              <td class="entry" headers="ID__entry__2 ">Selects all DITA topics in the temporary directory.</td>
             </tr>
             <tr class="row">
-              <td class="entry" headers="ID__table_dgb_v5p_wcb__entry__1 "><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
-              <td class="entry" headers="ID__table_dgb_v5p_wcb__entry__2 ">Selects all DITA maps in current temporary directory.</td>
+              <td class="entry" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
+              <td class="entry" headers="ID__entry__2 ">Selects all DITA maps in the temporary directory.</td>
             </tr>
             <tr class="row">
-              <td class="entry" headers="ID__table_dgb_v5p_wcb__entry__1 "><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
-              <td class="entry" headers="ID__table_dgb_v5p_wcb__entry__2 ">Selects images of all known types in current temporary directory.</td>
+              <td class="entry" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
+              <td class="entry" headers="ID__entry__2 ">Selects images of all known types in the temporary directory.</td>
             </tr>
           </tbody></table>
     </section>
@@ -92,9 +107,9 @@ index: "../toc.html"
       <div class="p"><pre class="pre codeblock"><code>&lt;xsl:import href="../../org.dita.base/xsl/common/output-message.xsl"/&gt;</code></pre></div>
       <p class="p">use:</p>
       <div class="p"><pre class="pre codeblock"><code>&lt;xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/&gt;</code></pre></div>
-      <p class="p">As with the plug-in directory property in Ant, this allows plugins to resolve to the correct directory
-        even when a plugin moves to a new location. The plugin is referenced using the syntax
-        <code class="ph codeph">plugin:<var class="keyword varname">plugin-id</var>:<var class="keyword varname">path/within/plugin/file.xsl</var></code>.</p>
+      <p class="p">As with the plug-in directory property in Ant, this allows plug-ins to resolve to the correct directory even
+        when a plug-in moves to a new location. The plug-in is referenced using the syntax
+            <code class="ph codeph">plugin:<var class="keyword varname">plugin-id</var>:<var class="keyword varname">path/within/plugin/file.xsl</var></code>.</p>
     </section>
   </div>
 <nav role="navigation" class="related-links"><div class="linklist relinfo relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization-approaches.html" title="Various methods may be used to customize the PDF output produced by the DITA Open Toolkit. Each of these approaches have advantages and shortcomings that should be considered when preparing a customization project. Some of these methods are considered “anti-patterns” with disadvantages that outweigh their apparent appeal. In most cases, you should create a custom PDF plug-in.">PDF customization approaches</a></li><li class="linklist"><a class="link" href="../topics/plugin-best-practices.html" title="Adhering to certain development practices will properly isolate your code from that of the DITA Open Toolkit. This will make it easier to you to upgrade to new versions of the DITA-OT when they are released.">Best practices for custom plug-ins</a></li></ul></div><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization.html" title="You can create custom DITA-OT plug-ins that build on the default DITA to PDF transformation. Plug-ins can customize covers and page layouts, modify formatting, override logic of the default PDF plug-in, and much more.">Customizing PDF output</a></li></ul></div></nav></main>
