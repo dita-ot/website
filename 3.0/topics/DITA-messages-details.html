@@ -36,7 +36,7 @@ index: "../toc.html"
           <dd class="dd">The toolkit encountered a severe condition, processing stopped, and no output is generated.</dd>
         
       </dl>
-      <p class="p">Plug-ins may be used to add additional messages to the toolkit; for more information, see <a class="xref" href="rebuilding-the-dita-ot-documentation.html" title="The DITA-OT ships with Ant scripts that enable you to rebuild the toolkit documentation. This is especially helpful if your environment contains plug-ins that add new extension points, messages, or parameters to the toolkit.">Rebuilding documentation</a>.</p>
+      <p class="p">Plug-ins may be used to add additional messages to the toolkit; for more information, see <a class="xref" href="rebuilding-the-dita-ot-documentation.html" title="The DITA-OT ships with Ant scripts that enable you to rebuild the toolkit documentation. This is especially helpful if your environment contains plug-ins that add new extension points, messages, or parameters to the toolkit.">Rebuilding the DITA-OT documentation</a>.</p>
     </section>
     <table class="simpletable"><colgroup><col style="width:100%"></colgroup><thead><tr class="sthead">
         <th class="stentry" scope="col">Individual cells in this table may be used to push additional explanations for any existing error
@@ -265,6 +265,12 @@ index: "../toc.html"
         <td class="stentry">By default, the DITA-OT supports
           the extensions "dita" and "xml" for DITA topics, as mandated by the DITA Specification. Please verify that
           your topics use one of these extensions, or configure the toolkit to allow additional extensions.</td>
+      </tr><tr class="strow">
+        <td class="stentry">This message indicates that the
+          <code class="keyword markupname xmlatt">@href</code> value specified in <var class="keyword varname">%1</var> does not use proper URI syntax. This may occur when
+          <code class="keyword markupname xmlatt">@href</code> includes characters that should be escaped (such as the space character, which should be
+          <code class="ph codeph">%20</code> when in a URI). In strict processing mode this will cause a build failure;
+          in other processing modes the build will continue using the value in <var class="keyword varname">%2</var>.</td>
       </tr><tr class="strow">
         <td class="stentry">A conref "mark" action has been
           used to mark a target element without a corresponding content reference target. This may occur when the order
