@@ -7,6 +7,7 @@ index: "../toc.html"
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/extending-the-ot.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/custom-plugins.html">Custom plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a><ul class="nav nav-list"><li class="active"><a href="../reference/flagging-migration.html">Flagging updates</a></li></ul></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../topics/rebuilding-the-dita-ot-documentation.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">XHTML migration for flagging updates in DITA-OT 1.7</h1>
   
+  
   <div class="body refbody"><p class="shortdesc">This topic is primarily of interest to developers with XHTML transform overrides written prior to DITA-OT
     1.7. Due to significant changes in the flagging process with the 1.7 release, some changes may be needed to make
     overrides work properly with DITAVAL based flagging. The new design is significantly simpler than the old design; in
@@ -17,7 +18,8 @@ index: "../toc.html"
       <p class="p">If your builds do not make use of DITAVAL based flagging, but calls the deprecated flagging templates, then you
         should override but there is little urgency. You will not see any difference in the output, but those templates
         will be removed in a future release.</p>
-      <div class="p">If you do make use of DITAVAL based flagging, try using your override with 1.7. Check the elements you override:<ol class="ol">
+      <div class="p">If you do make use of DITAVAL based flagging, try using your override with 1.7. Check the elements you override:
+        <ol class="ol">
           <li class="li">In some cases flags may be doubled. This will be the case if you call routines such as
               <code class="ph codeph">"start-flagit"</code>.</li>
           <li class="li">In some cases flags may be removed. This will be the case if you call shortcut routines such as
@@ -29,13 +31,15 @@ index: "../toc.html"
       
       <p class="p">All of the old DITAVAL based templates are deprecated in DITA-OT 1.7. If your overrides include any of the
         following templates, they should be migrated for the new release; in many cases the templates below will not
-        have any effect on your output, but all instances should be migrated.</p><ul class="ul">
+        have any effect on your output, but all instances should be migrated.</p>
+      <ul class="ul">
         <li class="li">The <code class="ph codeph">"gen-style"</code> template used to add CSS styling</li>
         <li class="li">The <code class="ph codeph">"start-flagit"</code> and <code class="ph codeph">"end-flagit"</code> templates used to generate image flags
           based on property attributes like @audience</li>
         <li class="li">The <code class="ph codeph">"start-revflag"</code> and <code class="ph codeph">"end-revflag"</code> templates, used to generate images
           for active revisions</li>
-        <li class="li">Shortcut templates that group these templates into a single call, such as:<ul class="ul">
+        <li class="li">Shortcut templates that group these templates into a single call, such as:
+          <ul class="ul">
             <li class="li"><code class="ph codeph">"start-flags-and-rev"</code> and <code class="ph codeph">"end-flags-and-rev"</code>, used to combine flags
               and revisions into one call</li>
             <li class="li"><code class="ph codeph">"revblock"</code> and <code class="ph codeph">"revtext"</code>, both used to output start revisions, element

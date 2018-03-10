@@ -32,40 +32,47 @@ index: "../toc.html"
 &lt;/li&gt;</code></pre></div>
       <p class="p">An “audience” subject scheme controls the values that are available for the <code class="keyword markupname xmlatt">@audience</code>
         attribute:</p>
-      <div class="p"><pre class="pre codeblock"><code>  &lt;subjectdef keys="audience"&gt;
-    &lt;subjectdef keys="novice"/&gt;
-    &lt;subjectdef keys="expert"/&gt;
-    &lt;subjectdef keys="xslt-customizer"/&gt;
-  &lt;/subjectdef&gt;</code></pre></div>
+      
+      
+      <div class="p"><pre class="pre codeblock"><code>&lt;subjectdef keys="audience"&gt;
+  &lt;subjectdef keys="novice"/&gt;
+  &lt;subjectdef keys="expert"/&gt;
+  &lt;subjectdef keys="xslt-customizer"/&gt;
+&lt;/subjectdef&gt;</code></pre></div>
     </section>
     <section class="section"><h2 class="title sectiontitle">Branch filtering: re-using profiled content</h2>
       
     </section>
     <section class="section">
-      <p class="p"><cite class="cite">Installing DITA-OT</cite> pulls a subset of the build description from <cite class="cite">Building output</cite>,
-        filtered to display only content deemed suitable for novice users under
-        <a class="xref" href="../topics/first-build-using-dita-command.html" title="You can generate output using the DITA Open Toolkit dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a>:</p>
-      <div class="p"><pre class="pre codeblock"><code>  &lt;topicref href="using-dita-command.dita" keys="first-build-using-dita-command"&gt;
-    &lt;topicmeta&gt;
-      &lt;navtitle&gt;Building output&lt;/navtitle&gt;
-    &lt;/topicmeta&gt;
-    &lt;ditavalref href="../resources/novice.ditaval"&gt;
-      &lt;ditavalmeta&gt;
-        &lt;dvrResourcePrefix&gt;first-build-&lt;/dvrResourcePrefix&gt;
-      &lt;/ditavalmeta&gt;
-    &lt;/ditavalref&gt;
-  &lt;/topicref&gt;</code></pre></div>
+      <p class="p"><cite class="cite">Installing DITA-OT</cite> pulls a subset of the build description from <cite class="cite">using the
+            <span class="keyword cmdname">dita</span> command</cite>, filtered to display only content deemed suitable for novice users
+        under
+        <a class="xref" href="../topics/first-build-using-dita-command.html" title="You can generate output using the DITA Open Toolkit dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output</a>:</p>
+      
+      
+      <div class="p"><pre class="pre codeblock"><code>&lt;topicref href="using-dita-command.dita" keys="first-build-using-dita-command" locktitle="yes"&gt;
+  &lt;topicmeta&gt;
+    &lt;navtitle&gt;Building output&lt;/navtitle&gt;
+  &lt;/topicmeta&gt;
+  &lt;ditavalref href="../resources/novice.ditaval"&gt;
+    &lt;ditavalmeta&gt;
+      &lt;dvrResourcePrefix&gt;first-build-&lt;/dvrResourcePrefix&gt;
+    &lt;/ditavalmeta&gt;
+  &lt;/ditavalref&gt;
+&lt;/topicref&gt;</code></pre></div>
       <p class="p">The same content appears later in
-        <a class="xref" href="../topics/build-using-dita-command.html" title="You can generate output using the DITA Open Toolkit dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a> with additional information on arguments, options and examples.</p>
-      <div class="p"><pre class="pre codeblock"><code>  &lt;topicref href="using-dita-command.dita" keys="build-using-dita-command"&gt;
-    &lt;topicmeta&gt;
-      &lt;navtitle&gt;Using the &lt;cmdname&gt;dita&lt;/cmdname&gt; command&lt;/navtitle&gt;
-    &lt;/topicmeta&gt;
-    &lt;ditavalref href="../resources/expert.ditaval"&gt;
-      &lt;ditavalmeta&gt;
-        &lt;dvrResourcePrefix&gt;build-&lt;/dvrResourcePrefix&gt;
-      &lt;/ditavalmeta&gt;
-    &lt;/ditavalref&gt;</code></pre></div>
+        <a class="xref" href="../topics/build-using-dita-command.html" title="You can generate output using the DITA Open Toolkit dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Using the dita command</a> with additional information on arguments, options and examples.</p>
+      
+      
+      <div class="p"><pre class="pre codeblock"><code>&lt;topicref href="using-dita-command.dita" keys="build-using-dita-command" locktitle="yes"&gt;
+  &lt;topicmeta&gt;
+    &lt;navtitle&gt;Using the &lt;cmdname&gt;dita&lt;/cmdname&gt; command&lt;/navtitle&gt;
+  &lt;/topicmeta&gt;
+  &lt;ditavalref href="../resources/expert.ditaval"&gt;
+    &lt;ditavalmeta&gt;
+      &lt;dvrResourcePrefix&gt;build-&lt;/dvrResourcePrefix&gt;
+    &lt;/ditavalmeta&gt;
+  &lt;/ditavalref&gt;</code></pre></div>
     </section>
     <section class="section"><h2 class="title sectiontitle">Conref push</h2>
       
@@ -73,8 +80,8 @@ index: "../toc.html"
     <section class="section">
       <p class="p">The docs build uses the conref push mechanism (with the <code class="ph codeph">pushreplace</code>, <code class="ph codeph">mark</code>,
         and <code class="ph codeph">pushafter</code>
-        <a class="xref" href="http://docs.oasis-open.org/dita/dita/v1.3/errata01/os/complete/part1-base/langRef/attributes/theconactionattribute.html" target="_blank">conactions</a>) to extend the parameter
-        descriptions embedded in the default plug-ins:</p>
+        <a class="xref" href="http://docs.oasis-open.org/dita/dita/v1.3/errata01/os/complete/part1-base/langRef/attributes/theconactionattribute.html" target="_blank">conactions</a>) to extend the parameter descriptions embedded in the
+        default plug-ins:</p>
       <div class="p"><pre class="pre codeblock"><code>&lt;plentry id="args.csspath"&gt;
   &lt;pt&gt;
     &lt;parmname&gt;args.csspath&lt;/parmname&gt;
@@ -98,13 +105,15 @@ index: "../toc.html"
     <section class="section">
       <p class="p">The <code class="ph codeph">key-definitions.ditamap</code> defines keys for version references, re-usable links, etc.</p>
       <p class="p">This key definition defines the maintenance release version:</p>
-      <div class="p"><pre class="pre codeblock"><code>  &lt;keydef keys="maintenance-version"&gt;
-    &lt;topicmeta&gt;
-      &lt;keywords&gt;
-        &lt;keyword&gt;3.0.2&lt;/keyword&gt;
-      &lt;/keywords&gt;
-    &lt;/topicmeta&gt;
-  &lt;/keydef&gt;</code></pre></div>
+      
+      
+      <div class="p"><pre class="pre codeblock"><code>&lt;keydef keys="maintenance-version"&gt;
+  &lt;topicmeta&gt;
+    &lt;keywords&gt;
+      &lt;keyword&gt;3.0.3&lt;/keyword&gt;
+    &lt;/keywords&gt;
+  &lt;/topicmeta&gt;
+&lt;/keydef&gt;</code></pre></div>
       <p class="p">In topics, the keyword is used in place of hard-coded version references:</p>
       <pre class="pre codeblock"><code>&lt;title&gt;DITA Open Toolkit &lt;keyword keyref="maintenance-version"/&gt; Release Notes&lt;/title&gt;</code></pre>
     </section>
