@@ -2,7 +2,7 @@ define(
   ['jquery'],
   $ =>
     function EditController() {
-      const OXYGEN = 'https://www.oxygenxml.com/webapp-demo-aws/app/oxygen.html'
+      const OXYGEN = 'https://www.oxygenxml.com/oxygen-xml-web-author/app/oxygen.html'
       const PROJECT_BASE = 'github://getFileContent/dita-ot/docs/'
       const PROJECT_MAP = 'userguide-book.ditamap'
       const PROJECT_BRANCH = 'develop'
