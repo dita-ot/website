@@ -6,5 +6,6 @@ _site/**
 css/bootstrap/**
 js/**
 
-# https://github.com/prettier/prettier/issues/3321
+# Ignore to preserve comments in YAML front matter
+# https://github.com/prettier/prettier/issues/4390
 css/main.scss
