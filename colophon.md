@@ -20,18 +20,18 @@ Site output is built with [Gradle][13] using the settings in the [site.gradle][1
 The page footers in the development documentation include **Edit this page** links that open the DITA source file for the topic in [oXygen XML Web Author][18]. The web-based authoring workflow prompts users to log in to GitHub and fork the [dita-ot/docs][11] repository if necessary. Changes saved in the authoring environment are committed to a new branch, and a pull request is created to submit changes for review by the DITA-OT documentation team.
 
 [1]: https://pages.github.com
-[2]: http://dita-ot.github.io
-[3]: http://www.dita-ot.org
+[2]: https://dita-ot.github.io
+[3]: https://www.dita-ot.org
 [4]: https://github.com/dita-ot/dita-ot.github.io
-[5]: http://jekyllrb.com "Jekyll • Simple, blog-aware, static sites"
+[5]: http://jekyllrb.com 'Jekyll • Simple, blog-aware, static sites'
 [6]: http://daringfireball.net/projects/markdown/
 [7]: https://github.com/Shopify/liquid/wiki
-[8]: http://sass-lang.com "Sass: Syntactically Awesome Style Sheets"
+[8]: http://sass-lang.com 'Sass: Syntactically Awesome Style Sheets'
 [9]: http://getbootstrap.com
-[10]: http://www.dita-ot.org/dev/
+[10]: https://www.dita-ot.org/dev/
 [11]: https://github.com/dita-ot/docs
 [12]: https://github.com/dita-ot/org.dita-ot.html
-[13]: http://gradle.org "Gradle | Modern Open-Source Enterprise Build Automation"
+[13]: http://gradle.org 'Gradle | Modern Open-Source Enterprise Build Automation'
 [14]: https://github.com/dita-ot/docs/blob/develop/site.gradle
 [15]: http://eerohele.github.io/dita-ot-gradle/
 [16]: https://travis-ci.org

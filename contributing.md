@@ -49,5 +49,5 @@ If you'd like to fix a typo or propose changes to an existing topic, you can use
 [10]: http://slack.dita-ot.org
 [11]: https://github.com/dita-ot/dita-ot/labels/bug
 [12]: https://help.github.com/articles/using-pull-requests
-[13]: http://www.dita-ot.org/dev/
+[13]: https://www.dita-ot.org/dev/
 [14]: https://github.com/dita-ot/docs/issues/new
