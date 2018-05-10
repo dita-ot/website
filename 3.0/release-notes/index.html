@@ -48,11 +48,7 @@ index: "../toc.html"
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2005" target="_blank">#2005</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2922" target="_blank">#2922</a>
           </li>
-          <li class="li" id="v304__2821">HTML5 builds in DITA-OT 3.0 warned that the <span class="ph filepath">map2html5Impl.xsl</span> stylesheet
-            was included or imported more than once. The redundant import has been removed to quiet the log message.
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2821" target="_blank">#2821</a>,
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2950" target="_blank">#2950</a>
-          </li>
+          
           <li class="li" id="v304__2835">DITA-OT 3.0 failed to recognize PDF customizations if the custom plug-in used the same file
             names as the base PDF plug-in. The default catalog has been removed from the catalog configuration file to
             ensure that only explicitly configured catalogs are used and customizations take precedence regardless of
@@ -102,6 +98,12 @@ index: "../toc.html"
             and non-DITA references, the <code class="keyword markupname xmlelement">&lt;linktext&gt;</code> for peer topics will now be used as a
             fallback title when no navigation title is available.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2927" target="_blank">#2927</a>
+          </li>
+          <li class="li" id="v304__2929">The Lightweight DITA plug-in has been updated to the latest version (2.0.3) to prevent errors
+            when processing Markdown input that contains typographic quotation marks with the <code class="keyword markupname xmlatt">@format</code>
+            attribute set to <code class="ph codeph">markdown</code>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2929" target="_blank">#2929</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2956" target="_blank">#2956</a>
           </li>
           <li class="li" id="v304__2942">When generating PDF output for tables that specified row headers, DITA-OT failed to honor
             vertical spans defined via the <code class="keyword markupname xmlatt">@morerows</code> attribute on an <code class="keyword markupname xmlelement">&lt;entry&gt;</code>
