@@ -36,7 +36,7 @@ index: "../toc.html"
 
   <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v304">
     <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.0.4</span>
-      <span class="ph small"><em class="ph i">(pending release)</em></span></h2>
+      <span class="ph small">released May 10, 2018</span></h2>
     <div class="body refbody">
       <section class="section">
         <p class="p">DITA Open Toolkit <span class="keyword">3.0.4</span> is a maintenance release that includes the
@@ -56,7 +56,7 @@ index: "../toc.html"
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2835" target="_blank">#2835</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2937" target="_blank">#2937</a>
           </li>
-          <li class="li" id="v304__2841">In DITA-OT 3.0, URI-based links may cause Null Pointer Exceptions when link targets do not exist
+          <li class="li" id="v304__2841">In DITA-OT 3.0, URI-based links may cause NullPointerExceptions when link targets do not exist
             until after <code class="keyword markupname xmlatt">@copy-to</code> attributes are evaluated. The build failure has been removed, and this
             type of link will now generate normal build errors as in previous releases.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2841" target="_blank">#2841</a>,
@@ -578,7 +578,7 @@ index: "../toc.html"
         
         <ul class="ul">
           
-          <li class="li" id="issues__2654">Email links without a scope or format previously generated a Null Pointer Exception. The
+          <li class="li" id="issues__2654">Email links without a scope or format previously generated a NullPointerException. The
               <code class="ph codeph">mailto:</code> syntax is now recognized as an email link and will not be read as a file
             reference.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2654" target="_blank">#2654</a>
