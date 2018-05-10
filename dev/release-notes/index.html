@@ -1,27 +1,134 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 3.0.3 Release Notes"
+title: "DITA Open Toolkit 3.0.4 Release Notes"
 index: "../toc.html"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.0</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/extending-the-ot.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">3.0.3</span> Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">3.0.4</span> Release Notes</h1>
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.0.3</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.0.4</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">3.0</span>, which <span class="ph">adds support for Markdown, normalized DITA output, and the alternative authoring formats
             proposed for Lightweight DITA. The map-first preprocessing approach provides a modern alternative to the
             default <code class="ph codeph">preprocess</code> operation.</span></p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.0.3</span>.zip</span>
-            package from the project website at <a class="xref" href="http://www.dita-ot.org/download" target="_blank">dita-ot.org/download</a>.</span></div>
+    <p class="p">DITA-OT releases follow
+        <a class="xref" href="https://semver.org" target="_blank">semantic versioning</a> guidelines. Version numbers use the
+            <code class="ph codeph"><var class="keyword varname">major</var>.<var class="keyword varname">minor</var>.<var class="keyword varname">patch</var></code> syntax, where
+          <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
+        functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
+        that include backwards-compatible bug fixes.</p>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.0.4</span>.zip</span>
+            package from the project website at <a class="xref" href="https://www.dita-ot.org/download" target="_blank">dita-ot.org/download</a>.</span></div>
   </div>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="v303">
-    <h2 class="title topictitle2" id="ariaid-title2">Maintenance Release <span class="keyword">3.0.3</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="requirements">
+    <h2 class="title topictitle2" id="ariaid-title2">Requirements</h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">3.0.3</span> includes the following bug fixes.</p>
+        
+        <p class="p">DITA Open Toolkit Release <span class="keyword">3.0</span> requires the Java Runtime Environment (JRE) version
+            <span class="keyword">8</span> or later.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v304">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.0.4</span>
+      <span class="ph small">released May 10, 2018</span></h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">3.0.4</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v304__2005">In previous releases, including a <code class="ph codeph">&lt;!DOCTYPE&gt;</code> declaration in a DITAVAL
+            document resulted in a build failure. This is now fixed, and the referenced grammar file will be found using
+            the same catalog that is used to locate other grammar files.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2005" target="_blank">#2005</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2922" target="_blank">#2922</a>
+          </li>
+          
+          <li class="li" id="v304__2835">DITA-OT 3.0 failed to recognize PDF customizations if the custom plug-in used the same file
+            names as the base PDF plug-in. The default catalog has been removed from the catalog configuration file to
+            ensure that only explicitly configured catalogs are used and customizations take precedence regardless of
+            the file names in the custom plug-in.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2835" target="_blank">#2835</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2937" target="_blank">#2937</a>
+          </li>
+          <li class="li" id="v304__2841">In DITA-OT 3.0, URI-based links may cause NullPointerExceptions when link targets do not exist
+            until after <code class="keyword markupname xmlatt">@copy-to</code> attributes are evaluated. The build failure has been removed, and this
+            type of link will now generate normal build errors as in previous releases.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2841" target="_blank">#2841</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2936" target="_blank">#2936</a>
+          </li>
+          <li class="li" id="v304__2842">In previous releases, if a key definition specified both <code class="keyword markupname xmlatt">@href</code> and
+              <code class="keyword markupname xmlatt">@copy-to</code> attributes, references to that key always resolved to the original
+              <code class="keyword markupname xmlatt">@href</code> rather than to the new copy specified with <code class="keyword markupname xmlatt">@copy-to</code>. Key references
+            to this type of definition will now resolve to the appropriate copy of the resource.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2842" target="_blank">#2842</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2935" target="_blank">#2935</a>
+          </li>
+          <li class="li" id="v304__2901">In DITA-OT 3.0.1, <code class="keyword markupname xmlelement">&lt;coderef&gt;</code> elements that contained references to line
+            ranges in DITA map files were not reliably included in PDF output as the preprocessing routine may change
+            maps. All code references are now resolved from the original files to ensure that code blocks reflect the
+            intended source range.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2901" target="_blank">#2901</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2916" target="_blank">#2916</a>
+          </li>
+          <li class="li" id="v304__2910">In DITA-OT 3.0, PDF output files were created outside of the specified output directory when the
+            map referenced content outside of the map directory. This has been fixed to ensure that PDFs are always
+            placed in the specified output directory.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2910" target="_blank">#2910</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2923" target="_blank">#2923</a>
+          </li>
+          <li class="li" id="v304__2917">When generating HTML output with DITA-OT 3.0.2, images referenced indirectly via keys were not
+            copied to the output folder. Processing has been corrected to ensure that the list of images in the job
+            configuration includes those referenced via keys.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2917" target="_blank">#2917</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2921" target="_blank">#2921</a>
+          </li>
+          <li class="li" id="v304__2926">In earlier releases, <code class="keyword markupname xmlatt">@scale</code> attributes on the <code class="keyword markupname xmlelement">&lt;fig&gt;</code>
+            element were ignored for PDF output. The <code class="keyword markupname xmlatt">@scale</code> attribute is now respected for PDF figures,
+            which may include text content (such as code blocks), inline images inside the text, or block images.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2926" target="_blank">#2926</a>
+          </li>
+          <li class="li" id="v304__2927">In earlier releases, topic references to peer DITA content reported “missing navigation title”
+            errors even when the reference included <code class="keyword markupname xmlelement">&lt;linktext&gt;</code>. As with all other peer, external,
+            and non-DITA references, the <code class="keyword markupname xmlelement">&lt;linktext&gt;</code> for peer topics will now be used as a
+            fallback title when no navigation title is available.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2927" target="_blank">#2927</a>
+          </li>
+          <li class="li" id="v304__2929">The Lightweight DITA plug-in has been updated to the latest version (2.0.3) to prevent errors
+            when processing Markdown input that contains typographic quotation marks with the <code class="keyword markupname xmlatt">@format</code>
+            attribute set to <code class="ph codeph">markdown</code>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2929" target="_blank">#2929</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2956" target="_blank">#2956</a>
+          </li>
+          <li class="li" id="v304__2942">When generating PDF output for tables that specified row headers, DITA-OT failed to honor
+            vertical spans defined via the <code class="keyword markupname xmlatt">@morerows</code> attribute on an <code class="keyword markupname xmlelement">&lt;entry&gt;</code>
+            (cell). Row headers are now properly applied when cells span additional rows.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2942" target="_blank">#2942</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/2946" target="_blank">#2946</a>
+          </li>
+          <li class="li" id="v304__2945">When <code class="keyword markupname xmlelement">&lt;fragref&gt;</code> elements were used to reference a syntax diagram fragment,
+            earlier versions of DITA-OT displayed an error. Processing has been updated to use the latest designs from
+            the topicpull module and fix the error.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2945" target="_blank">#2945</a>
+          </li>
+        </ul>
+        <p class="p">For the complete list of changes since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.0.3...3.0.4" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v303">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.0.3 <span class="ph small">released March 10, 2018</span></h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit 3.0.3 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v303__2892">In some scenarios on Windows, the version of Saxon shipped in DITA-OT 3.0 caches one copy of the
             toolkit module <span class="ph filepath">functions.xsl</span> and then uses that copy in place of a second (different)
@@ -75,11 +182,11 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v302">
-    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release 3.0.2</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v302">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 3.0.2 <span class="ph small">released February 5, 2018</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release 3.0.2 includes the following bug fixes.</p>
+        <p class="p">DITA Open Toolkit 3.0.2 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v302__1550">If a map or branch of a map was chunked to create a single document, but that portion of the map
             also contained a <code class="keyword markupname xmlelement">&lt;topicref&gt;</code> reference to a non-DITA resource, earlier versions of
@@ -170,11 +277,11 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v301">
-    <h2 class="title topictitle2" id="ariaid-title4">Maintenance Release 3.0.1</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v301">
+    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT 3.0.1 <span class="ph small">released November 30, 2017</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release 3.0.1 includes the following bug fixes.</p>
+        <p class="p">DITA Open Toolkit 3.0.1 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v301__1151">Microsoft Compiled HTML Help requires a Windows codepage rather than UTF-8, so many characters
             are converted to HTML entities to ensure they are preserved during the codepage conversion. In earlier
@@ -236,19 +343,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="requirements">
-    <h2 class="title topictitle2" id="ariaid-title5">Requirements</h2>
-    <div class="body refbody">
-      <section class="section">
-        
-        <p class="p">DITA Open Toolkit Release <span class="keyword">3.0</span> requires the Java Runtime Environment (JRE) version
-            <span class="keyword">8</span> or later.</p>
-      </section>
-    </div>
-  </article>
-
-  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="highlights">
-    <h2 class="title topictitle2" id="ariaid-title6">Release Highlights</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="highlights">
+    <h2 class="title topictitle2" id="ariaid-title7">DITA-OT 3.0 <span class="ph small">released October 28, 2017</span></h2>
     <div class="body refbody">
       <section class="section">
         <p class="p">DITA-OT <span class="keyword">3.0</span>
@@ -355,8 +451,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="issues">
-    <h2 class="title topictitle2" id="ariaid-title7">Resolved issues</h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title8" id="issues">
+    <h2 class="title topictitle2" id="ariaid-title8">Resolved issues</h2>
     <div class="body refbody">
       <section class="section">
         <p class="p">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">3.0</span> includes
@@ -482,7 +578,7 @@ index: "../toc.html"
         
         <ul class="ul">
           
-          <li class="li" id="issues__2654">Email links without a scope or format previously generated a Null Pointer Exception. The
+          <li class="li" id="issues__2654">Email links without a scope or format previously generated a NullPointerException. The
               <code class="ph codeph">mailto:</code> syntax is now recognized as an email link and will not be read as a file
             reference.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2654" target="_blank">#2654</a>

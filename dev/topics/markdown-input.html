@@ -27,9 +27,11 @@ index: "../toc.html"
     <section class="section"><h2 class="title sectiontitle">Adding Markdown topics</h2>
       
       <p class="p">To add a Markdown topic to a DITA publication, create a topic reference in your map and set the
-          <code class="keyword markupname xmlatt">@format</code> attribute to <code class="ph codeph">markdown</code> (or <code class="ph codeph">md</code>) so the toolkit will
-        recognize the source file as Markdown and convert it to DITA:</p>
-      <div class="p"><pre class="pre codeblock"><code>&lt;map&gt;
+          <code class="keyword markupname xmlatt">@format</code> attribute to <code class="ph codeph">markdown</code> so the toolkit will recognize the source file
+        as Markdown and convert it to DITA:</p>
+      <div class="p"><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd"&gt;
+&lt;map&gt;
   &lt;topicref href="markdown-dita-topic.md" <strong class="ph b">format="markdown"</strong>/&gt;
 &lt;/map&gt;</code></pre></div>
       <p class="p">The <code class="ph codeph">markdown</code> format uses a relatively lenient document parsing approach to support a wide
