@@ -8,9 +8,9 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Rebuilding the DITA-OT documentation</h1>
   
   
-  <div class="body taskbody"><p class="shortdesc">The DITA-OT ships with Ant scripts that enable you to rebuild the toolkit documentation. This is especially
-    helpful if your environment contains plug-ins that add new extension points, messages, or parameters to the
-    toolkit.</p>
+  <div class="body taskbody"><p class="shortdesc">The DITA-OT ships with a <a href="https://gradle.org" target="_blank"><span class="keyword">Gradle</span></a> build script that enables you to rebuild the toolkit
+    documentation. This is especially helpful if your environment contains plug-ins that add new extension points,
+    messages, or parameters to the toolkit.</p>
     <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
       <p class="p">The documentation build script reads the toolkit’s plug-in configuration and automatically regenerates topics
         and properties file templates based on the extension points, messages, and parameters provided by the installed
@@ -22,7 +22,7 @@ index: "../toc.html"
       </li><li class="li step stepexpand">
         <span class="ph cmd">Run the following command:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock"><code>ant -f build.xml <var class="keyword varname">target</var></code></pre>
+          <pre class="pre codeblock"><code>./gradlew <var class="keyword varname">target</var></code></pre>
         </div>
         <div class="itemgroup info">
           <div class="p">The <var class="keyword varname">target</var> parameter is optional and specifies a transformation type. It takes the
@@ -33,7 +33,7 @@ index: "../toc.html"
               <li class="li"><span class="keyword option">pdf</span></li>
             </ul>
           </div>
-          <p class="p">If you do not specify an Ant target, HTML5 and PDF output is generated.</p>
+          <p class="p">If you do not specify a target, HTML5 and PDF output is generated.</p>
         </div>
       </li></ol>
   </div>
