@@ -24,8 +24,9 @@ index: "../toc.html"
       </li><li class="li step stepexpand">
         <span class="ph cmd">Create the following feature:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock"><code>&lt;plugin id="<var class="keyword varname">plugin-id </var>"&gt;
-  &lt;feature extension="dita.conductor.transtype.check" value="<var class="keyword varname">new-transtype</var>"/&gt;
+          <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="<var class="keyword varname">plugin-id </var>"&gt;
+  &lt;feature extension="dita.conductor.transtype.check" 
+           value="<var class="keyword varname">new-transtype</var>"/&gt;
   <strong class="ph b">&lt;feature extension="dita.transtype.print" value="<var class="keyword varname">new-transtype</var>"/&gt;</strong>
   &lt;feature extension="dita.conductor.target.relative" file="<var class="keyword varname">ant-file</var>"/&gt;
 &lt;/plugin&gt;</code></pre>
@@ -47,19 +48,20 @@ index: "../toc.html"
       <p class="p">The following <span class="ph filepath">plugin.xml</span> file defines a new transformation type named "newtext"; it also
         defines the transformation type to be a print type. The build will look for a <span class="keyword parmname">dita2newtext</span>
         target.</p>
-      <pre class="pre codeblock"><code>&lt;plugin id="com.example.newtext"&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.newtext"&gt;
   &lt;feature extension="dita.conductor.transtype.check" value="newtext"/&gt;
   &lt;feature extension="dita.transtype.print" value="newtext"/&gt;
-  &lt;feature extension="dita.conductor.target.relative" file="build-newtext.xml"/&gt;
+  &lt;feature extension="dita.conductor.target.relative" 
+           file="build-newtext.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
       <p class="p">While the <span class="ph filepath">org.dita.html5</span> plug-in was separated from <code class="ph codeph">common-html</code> in version 2.4,
           the following example shows how earlier versions of that plug-in used the
           <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element to extend the common HTML transformation with a new
           <span class="keyword option">html5</span> transformation type and define a new <span class="keyword parmname">nav-toc</span> parameter with three
         possible values:</p>
-      <pre class="pre codeblock"><code><strong class="ph b">&lt;transtype name="html5" extends="common-html" desc="HTML5"&gt;</strong>
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code><strong class="ph b">&lt;transtype name="html5" extends="common-html" desc="HTML5"&gt;</strong>
   &lt;param name="nav-toc" type="enum" 
-         desc="Specifies whether to generate a navigation TOC in topic pages."&gt;
+         desc="Specifies whether to generate navigation in topic pages."&gt;
     &lt;val default="true" desc="No TOC"&gt;none&lt;/val&gt;
     &lt;val desc="Partial TOC that shows the current topic"&gt;partial&lt;/val&gt;
     &lt;val desc="Full TOC"&gt;full&lt;/val&gt;

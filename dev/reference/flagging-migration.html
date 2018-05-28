@@ -10,23 +10,24 @@ index: "../toc.html"
   
   <div class="body refbody"><p class="shortdesc">This topic is primarily of interest to developers with XHTML transform overrides written prior to DITA-OT
     1.7. Due to significant changes in the flagging process with the 1.7 release, some changes may be needed to make
-    overrides work properly with DITAVAL based flagging. The new design is significantly simpler than the old design; in
+    overrides work properly with DITAVAL-based flagging. The new design is significantly simpler than the old design; in
     many cases, migration will consist of deleting old code that is no longer needed.</p>
     <section class="section"><h2 class="title sectiontitle">Which XHTML overrides need to migrate?</h2>
       
       <p class="p">If your override does not contain any code related to DITAVAL flagging, then there is nothing to migrate.</p>
-      <p class="p">If your builds do not make use of DITAVAL based flagging, but calls the deprecated flagging templates, then you
+      <p class="p">If your builds do not make use of DITAVAL-based flagging, but call the deprecated flagging templates, then you
         should override but there is little urgency. You will not see any difference in the output, but those templates
         will be removed in a future release.</p>
-      <div class="p">If you do make use of DITAVAL based flagging, try using your override with 1.7. Check the elements you override:
+      <div class="p">If you do make use of DITAVAL-based flagging, try using your override with 1.7. Check the elements you
+        override:
         <ol class="ol">
           <li class="li">In some cases flags may be doubled. This will be the case if you call routines such as
               <code class="ph codeph">"start-flagit"</code>.</li>
           <li class="li">In some cases flags may be removed. This will be the case if you call shortcut routines such as
               <code class="ph codeph">"revtext"</code> or <code class="ph codeph">"revblock"</code>.</li>
-          <li class="li">In other cases, flags may still appear properly, in which case migration is less urgent</li>
+          <li class="li">In other cases, flags may still appear properly, in which case migration is less urgent.</li>
         </ol></div>
-      <p class="p">For any migration that needs migration, please see the instructions that follow.</p></section>
+      <p class="p">For any override that needs migration, please see the instructions that follow.</p></section>
     <section class="section"><h2 class="title sectiontitle">Deprecated templates in DITA-OT 1.7</h2>
       
       <p class="p">All of the old DITAVAL based templates are deprecated in DITA-OT 1.7. If your overrides include any of the
@@ -61,12 +62,36 @@ index: "../toc.html"
         flags to be processed in document order; in addition, there is never a need to read the DITAVAL, interpret CSS,
         or evaluate flagging logic. The <span class="ph filepath">htmlflag.xsl</span> file contains a few rules to match and process
         the start/end flags; in most cases, all code to explicitly process flags can be deleted.</p>
-      <p class="p">For example, the common logic for most element rules before DITA-OT 1.7 could be boiled down to the
-        following:<p class="lines">Match element<br>&nbsp;&nbsp;&nbsp;&nbsp;Create <code class="ph codeph">"flagrules"</code> variable by reading DITAVAL for active flags<br>&nbsp;&nbsp;&nbsp;&nbsp;Output start tag such as <code class="ph codeph">&lt;div&gt;</code> or <code class="ph codeph">&lt;span&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"commonattributes"</code> and ID processing<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"gen-style"</code> with <code class="ph codeph">$flagrules</code>, to create DITAVAL based CSS<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"start-flagit"</code> with <code class="ph codeph">$flagrules</code>, to create start flag images<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"start-revflag"</code> with <code class="ph codeph">$flagrules</code>, to create start revision images<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output contents<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"end-revflag"</code> with <code class="ph codeph">$flagrules</code>, to create end revision images<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"end-flagit"</code> with <code class="ph codeph">$flagrules</code>, to create end flag images<br>&nbsp;&nbsp;&nbsp;&nbsp;Output end tag such as <code class="ph codeph">&lt;/div&gt;</code> or <code class="ph codeph">&lt;/span&gt;</code></p></p>
+      <div class="p">For example, the common logic for most element rules before DITA-OT 1.7 could be boiled down to the following:
+        <ol class="ol">
+          <li class="li">Match element </li>
+          <li class="li">Create <code class="ph codeph">"flagrules"</code> variable by reading DITAVAL for active flags </li>
+          <li class="li">Output start tag such as <code class="ph codeph">&lt;div&gt;</code> or <code class="ph codeph">&lt;span&gt;</code>
+          </li>
+          <li class="li">Call <code class="ph codeph">"commonattributes"</code> and ID processing </li>
+          <li class="li">Call <code class="ph codeph">"gen-style"</code> with <code class="ph codeph">$flagrules</code>, to create DITAVAL based CSS </li>
+          <li class="li">Call <code class="ph codeph">"start-flagit"</code> with <code class="ph codeph">$flagrules</code>, to create start flag images </li>
+          <li class="li">Call <code class="ph codeph">"start-revflag"</code> with <code class="ph codeph">$flagrules</code>, to create start revision images </li>
+          <li class="li">Output contents </li>
+          <li class="li">Call <code class="ph codeph">"end-revflag"</code> with <code class="ph codeph">$flagrules</code>, to create end revision images </li>
+          <li class="li">Call <code class="ph codeph">"end-flagit"</code> with <code class="ph codeph">$flagrules</code>, to create end flag images </li>
+          <li class="li">Output end tag such as <code class="ph codeph">&lt;/div&gt;</code> or <code class="ph codeph">&lt;/span&gt;</code></li>
+        </ol>
+      </div>
       <p class="p">In DITA-OT 1.7, style and images are typically handled with XSLT fallthrough processing. This removes virtually
         all special flag coding from element rules, because flags are already part of the document and processed in
-        document order. The sample above is reduced
-        to:<p class="lines">Match element<br>&nbsp;&nbsp; Output start tag such as <code class="ph codeph">&lt;div&gt;</code> or <code class="ph codeph">&lt;span&gt;</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call <code class="ph codeph">"commonattributes"</code> and ID processing<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output contents<br>&nbsp;&nbsp; Output end tag such as <code class="ph codeph">&lt;/div&gt;</code> or <code class="ph codeph">&lt;/span&gt;</code></p></p></section>
+        document order. </p>
+      <div class="p">The sample above is reduced to:
+        <ol class="ol">
+          <li class="li">Match element </li>
+          <li class="li">Output start tag such as <code class="ph codeph">&lt;div&gt;</code> or <code class="ph codeph">&lt;span&gt;</code>
+          </li>
+          <li class="li">Call <code class="ph codeph">"commonattributes"</code> and ID processing </li>
+          <li class="li">Output contents </li>
+          <li class="li">Output end tag such as <code class="ph codeph">&lt;/div&gt;</code> or <code class="ph codeph">&lt;/span&gt;</code></li>
+        </ol>
+      </div>
+    </section>
     <section class="section"><h2 class="title sectiontitle">Migrating <code class="ph codeph">"gen-style"</code> named template</h2>
       
       <p class="p">Calls to the <code class="ph codeph">"gen-style"</code> template should be deleted. There is no need to replace this call for
@@ -88,21 +113,24 @@ index: "../toc.html"
           <code class="ph codeph">"start-flagit"</code>/<code class="ph codeph">"start-revflag"</code>, process contents,
           <code class="ph codeph">"end-revflag"</code>/<code class="ph codeph">"end-flagit"</code>, end tag - you just need to delete the calls to
         these templates. Flags will be generated simply by processing the element contents in document order.</p>
-      <div class="p">If the flow of your element rule processes flags outside of the normal document-order. There are generally two
+      <p class="p">If the flow of your element rule processes flags outside of the normal document-order. There are generally two
         reasons this is done. The first case is for elements like <code class="ph codeph">&lt;ol&gt;</code>, where flags must appear
         before the <code class="ph codeph">&lt;ol&gt;</code> in order to create valid XHTML. The second is for elements like
           <code class="ph codeph">&lt;section&gt;</code>, where start flags are created, followed by the title or some generated text,
         element contents, and finally end flags. In either of these cases, support for processing flags in document
-        order is disabled, so they must be explicitly processed out-of-line. This is done with the following two lines
-        (one for start flag/revision, one for end
-        flag/revision):<pre class="pre codeblock"><code>Create starting flag and revision images:
-&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/&gt;
-
-Create ending flag and revision images:
-&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/&gt;</code></pre></div>
+        order is disabled, so they must be explicitly processed out-of-line.</p>
+      <p class="p">This is done with the following two lines (one for start flag/revision, one for end flag/revision):</p>
+      <ul class="ul">
+        <li class="li">
+          <p class="p">Create starting flag and revision images:</p>
+          <pre class="pre codeblock"><code>&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/&gt;</code></pre></li>
+        <li class="li">
+          <p class="p">Create ending flag and revision images:</p>
+          <pre class="pre codeblock"><code>&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/&gt;</code></pre></li>
+      </ul>
       <div class="p">For example, the following lines are used in DITA-OT 1.7 to process the <code class="keyword markupname xmlelement">&lt;ul&gt;</code> element
         (replacing the 29 lines used in DITA-OT
-        1.6):<pre class="pre codeblock"><code>&lt;xsl:template match="*[contains(@class,' topic/ul ')]"&gt;
+        1.6):<pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:template match="*[contains(@class,' topic/ul ')]"&gt;
   <strong class="ph b">&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/&gt;</strong>
   &lt;xsl:call-template name="setaname"/&gt;
   &lt;ul&gt;

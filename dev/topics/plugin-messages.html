@@ -13,8 +13,8 @@ index: "../toc.html"
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="plugin-messages__step_create-message-xml">
         <span class="ph cmd">Create an XML file that contains the messages that you want to add. Be sure to use the following format for
           the XML file:</span>
-        <div class="itemgroup info"><pre class="pre codeblock"><code>&lt;messages&gt;
-  &lt;!-- See resources/messages.xml for the details. --&gt;
+        <div class="itemgroup info"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;messages&gt;
+  <em class="ph i">&lt;!-- See resources/messages.xml for the details. --&gt;</em>
   &lt;message id="<var class="keyword varname">Prefix</var><var class="keyword varname">Number</var><var class="keyword varname">Letter</var>" type="<var class="keyword varname">error-severity</var>"&gt;
     &lt;reason&gt;Message text&lt;/reason&gt;
     &lt;response&gt;How to resolve&lt;/response&gt;
@@ -59,7 +59,7 @@ index: "../toc.html"
       </li><li class="li step stepexpand">
         <span class="ph cmd">Create a <span class="ph filepath">plugin.xml</span> file that contains the following content:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
+          <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
   &lt;feature extension="dita.xsl.messages" file="<var class="keyword varname">file</var>"/&gt;
 &lt;/plugin&gt;</code></pre>
           <p class="p">where:</p>
@@ -76,11 +76,10 @@ index: "../toc.html"
       </li></ol>
     <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
       <p class="p">Add the following call in XSLT modules to generate a message when a specific condition occurs:</p>
-      <pre class="pre codeblock"><code>&lt;xsl:call-template name="output-message"&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="output-message"&gt;
   &lt;xsl:with-param name="id"&gt;<var class="keyword varname">prefix</var><var class="keyword varname">number</var><var class="keyword varname">letter</var>&lt;/xsl:with-param&gt;
   &lt;xsl:with-param name="msg"&gt;Message text and parameters.&lt;/xsl:with-param&gt;
-&lt;/xsl:call-template&gt;
-</code></pre>
+&lt;/xsl:call-template&gt;</code></pre>
       <p class="p">Use the <code class="ph codeph">ctx</code> parameter if calling from a function.</p>
     </section>
   </div>

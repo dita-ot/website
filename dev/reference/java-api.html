@@ -16,8 +16,9 @@ index: "../toc.html"
       configuration for the Java application.</div>
     <div class="example"><h2 class="title sectiontitle">Example usage</h2>
       
-      <pre class="pre codeblock language-java"><code>// Create a reusable processor factory with DITA-OT base directory and temporary directory
+      <pre class="pre codeblock language-java normalize-space show-line-numbers show-whitespace"><code>// Create a reusable processor factory with DITA-OT base directory
 ProcessorFactory pf = ProcessorFactory.newInstance(ditaDir);
+// and set the temporary directory
 pf.setBaseTempDir(tempDir);
 
 // Create a processor using the factory and configure the processor

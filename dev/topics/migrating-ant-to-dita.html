@@ -34,14 +34,10 @@ index: "../toc.html"
     <div class="example"><h2 class="title sectiontitle">Example: Ant build</h2>
       
       <div class="p">Sample build file: <span class="ph filepath" id="migrating-ant-to-dita__samples-dir"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf.xml</span>
-        <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-
+        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="build-chm-pdf" default="all" basedir="."&gt;
-
   &lt;property name="dita.dir" location="${basedir}/../../.."/&gt;
-
   &lt;target name="all" description="build CHM and PDF" depends="chm,pdf"/&gt;
-
   &lt;target name="chm" description="build CHM"&gt;
     &lt;ant antfile="${dita.dir}/build.xml"&gt;
       &lt;property name="args.input" location="../sequence.ditamap"/&gt;
@@ -50,7 +46,6 @@ index: "../toc.html"
       &lt;property name="args.gen.task.lbl" value="YES"/&gt;
     &lt;/ant&gt;
   &lt;/target&gt;
-
   &lt;target name="pdf" description="build PDF"&gt;
     &lt;ant antfile="${dita.dir}/build.xml"&gt;
       &lt;property name="args.input" location="../taskbook.ditamap"/&gt;
@@ -60,16 +55,19 @@ index: "../toc.html"
       &lt;property name="args.rellinks" value="nofamily"/&gt;
     &lt;/ant&gt;
   &lt;/target&gt;
-
 &lt;/project&gt;</code></pre></div></div>
     <div class="example"><h2 class="title sectiontitle">Example: <span class="ph filepath">.properties</span> files with <span class="keyword cmdname">dita</span> command</h2>
       
       <p class="p">The following <span class="ph filepath">.properties</span> files and <span class="keyword cmdname">dita</span> commands are equivalent to the
         example Ant build.</p>
-      <div class="p">Sample <span class="ph filepath">.properties</span> file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/properties/chm.properties</span><pre class="pre codeblock"><code>output.dir = out/chm
+      <p class="p">Sample <span class="ph filepath">.properties</span> file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/properties/chm.properties</span></p>
+      <div class="p">
+        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>output.dir = out/chm
 args.gen.task.lbl = YES
 args.breadcrumbs = yes</code></pre></div>
-      <div class="p">Sample <span class="ph filepath">.properties</span> file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/properties/pdf.properties</span><pre class="pre codeblock"><code>output.dir = out/pdf
+      <p class="p">Sample <span class="ph filepath">.properties</span> file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/properties/pdf.properties</span></p>
+      <div class="p">
+        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>output.dir = out/pdf
 args.gen.task.lbl = YES
 args.rellinks = nofamily</code></pre></div>
       <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>:</p>
@@ -85,7 +83,8 @@ args.rellinks = nofamily</code></pre></div>
         files to define the parameters for each build. This can be accomplished with Ant's <code class="keyword markupname xmlelement">&lt;exec&gt;</code>
         task.</p>
       <p class="p">This example uses a <code class="keyword markupname xmlelement">&lt;dita-cmd&gt;</code> Ant macro defined in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/dita-cmd.xml</span> file:</p>
-      <pre class="pre codeblock"><code>  &lt;macrodef name="dita-cmd"&gt;
+      <div class="p">
+        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>  &lt;macrodef name="dita-cmd"&gt;
     &lt;attribute name="input"/&gt;
     &lt;attribute name="format"/&gt;
     &lt;attribute name="propertyfile"/&gt;
@@ -94,7 +93,7 @@ args.rellinks = nofamily</code></pre></div>
         &lt;arg line="--input=@{input} --format=@{format} --propertyfile=@{propertyfile}"/&gt;
       &lt;/exec&gt;
     &lt;/sequential&gt;
-  &lt;/macrodef&gt;</code></pre>
+  &lt;/macrodef&gt;</code></pre></div>
       <div class="p">You can use this macro in your Ant build to call the <span class="keyword cmdname">dita</span> command and pass the
           <span class="keyword parmname">input</span>, <span class="keyword parmname">format</span> and <span class="keyword parmname">propertyfile</span> parameters as
         follows:
@@ -106,31 +105,26 @@ args.rellinks = nofamily</code></pre></div>
       <div class="note note note_note"><span class="note__title">Note:</span> The attributes defined in the Ant macro are required and must be supplied each time the task is run. To set
         optional parameters in one build (but not another), use different <span class="ph filepath">.properties</span> files for
         each build.</div>
-      <div class="p">Sample build file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf-hybrid.xml</span>
-        <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-
+      <p class="p">Sample build file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf-hybrid.xml</span></p>
+      <div class="p">
+        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="build-chm-pdf-hybrid" default="all" basedir="."&gt;
-
   &lt;description&gt;An Ant build that calls the dita command&lt;/description&gt;
-
   &lt;include file="dita-cmd.xml"/&gt;&lt;!-- defines the &lt;dita-cmd&gt; macro --&gt;
-
   &lt;target name="all" depends="pre,main,post"/&gt;
-
   &lt;target name="pre"&gt;
     &lt;description&gt;Preprocessing steps&lt;/description&gt;
   &lt;/target&gt;
-
   &lt;target name="main"&gt;
     &lt;description&gt;Build the CHM and PDF with the dita command&lt;/description&gt;
-    &lt;dita-cmd input="../sequence.ditamap" format="htmlhelp" propertyfile="../properties/chm.properties"/&gt;
-    &lt;dita-cmd input="../taskbook.ditamap" format="pdf" propertyfile="../properties/pdf.properties"/&gt;
+    &lt;dita-cmd input="../sequence.ditamap" format="htmlhelp"
+              propertyfile="../properties/chm.properties"/&gt;
+    &lt;dita-cmd input="../taskbook.ditamap" format="pdf"
+              propertyfile="../properties/pdf.properties"/&gt;
   &lt;/target&gt;
-
   &lt;target name="post"&gt;
     &lt;description&gt;Postprocessing steps&lt;/description&gt;
   &lt;/target&gt;
-
 &lt;/project&gt;</code></pre>
       </div>
     </div>

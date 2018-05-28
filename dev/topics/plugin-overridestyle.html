@@ -13,7 +13,7 @@ index: "../toc.html"
         <span class="ph cmd">Develop an XSL file that contains the XSL override.</span>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Construct a <span class="ph filepath">plugin.xml</span> file that contains the following content:</span>
-        <div class="itemgroup info"><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        <div class="itemgroup info"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
   &lt;feature extension="<var class="keyword varname">extension-point</var>" file="<var class="keyword varname">relative-path</var>"/&gt;
 &lt;/plugin&gt;</code></pre>where:
@@ -34,13 +34,13 @@ index: "../toc.html"
       
       <p class="p">The following two files represent a complete, simple style plug-in.</p>
       <p class="p">The <span class="ph filepath">plugin.xml</span> file declares an XSLT file that extends XHTML processing:</p>
-      <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;plugin id="com.example.brandheader"&gt;
   &lt;feature extension="dita.xsl.xhtml" file="xsl/header.xsl"/&gt;
 &lt;/plugin&gt;</code></pre>
       <p class="p">The <span class="ph filepath">xsl/header.xsl</span> XSLT file referenced in <span class="ph filepath">plugin.xml</span> overrides the
         default header processing to add a banner:</p>
-      <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet version="1.0" 
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
   &lt;xsl:template name="gen-user-header"&gt;

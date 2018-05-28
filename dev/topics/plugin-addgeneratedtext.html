@@ -34,7 +34,7 @@ index: "../toc.html"
       <p class="p">First copy the file <span class="ph filepath">xsl/common/strings.xml</span> to your plug-in, and edit it to contain the
         languages that you are providing translations for ("en-US" must be present). For this sample, copy the file into
         your plug-in as <span class="ph filepath">xsl/my-new-strings.xml</span>. The new strings file will look something like
-        this:</p><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+        this:</p><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!-- Provide strings for my plug-in; this plug-in supports
      English, Icelandic, and Russian. --&gt;
 &lt;langlist&gt;
@@ -47,20 +47,19 @@ index: "../toc.html"
 &lt;/langlist&gt;</code></pre>
       <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and replace the content
         with your own strings (be sure to give them unique name attributes). Do the same for each language that you are
-        providing a translation for. For example, the file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+        providing a translation for. For example, the file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;strings xml:lang="en-US"&gt;
   &lt;str name="String1"&gt;English generated text&lt;/str&gt;
   &lt;str name="Another String"&gt;Another String in English&lt;/str&gt;
 &lt;/strings&gt;</code></pre>
-      <p class="p">Use the following extension code to include your strings in the set of generated text: </p><pre class="pre codeblock"><code>&lt;plugin id="com.example.strings"&gt;
+      <p class="p">Use the following extension code to include your strings in the set of generated text: </p><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.strings"&gt;
   &lt;feature extension="dita.xsl.strings" file="xsl/my-new-strings.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
       <p class="p">The string is now available to the "getVariable" template used in many DITA-OT XSLT files.
         For example, if processing in a context where the xml:lang value is "en-US", the following
-        call would return "Another String in English":</p><pre class="pre codeblock"><code>&lt;xsl:call-template name="getVariable"&gt;
+        call would return "Another String in English":</p><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
   &lt;xsl:with-param name="id" select="'Another String'"/&gt;
-&lt;/xsl:call-template&gt;
-</code></pre>
+&lt;/xsl:call-template&gt;</code></pre>
       <div class="note note note_note"><span class="note__title">Note:</span> If two plug-ins define the same string, the results will be non-deterministic, so multiple plug-ins should
         not try to create the same generated text string. One common way to avoid this problem is to ensure the name
         attributes used to look up the string value are related to the ID or purpose of your plug-in.</div>
@@ -73,7 +72,7 @@ index: "../toc.html"
       <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and choose the strings
         you wish to change (be sure to leave the name attribute unchanged, because this is the key used to look up the
         string). Create a strings file for each language that needs to modify existing strings. For example, the new
-        file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+        file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;strings xml:lang="en-US"&gt;
   &lt;str name="Figure"&gt;Fig&lt;/str&gt;
   &lt;str name="Draft comment"&gt;ADDRESS THIS DRAFT COMMENT&lt;/str&gt;
@@ -92,7 +91,7 @@ index: "../toc.html"
         just translating an existing strings file. To begin, set up the <span class="ph filepath">xsl/my-new-strings.xml</span> file
         in your plug-in as in the previous examples. In this case, the only difference is that you are adding a mapping
         to new languages; for example, the following file would be used to set up support for
-        Vietnamese:<pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+        Vietnamese:<pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!-- Map languages with xml:lang="vi" or xml:lang="vi-vn"
      to the translations in this plug-in. --&gt;
 &lt;langlist&gt;

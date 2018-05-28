@@ -77,15 +77,17 @@ index: "../toc.html"
           <span class="ph filepath">insertParameters.xml</span> file to the XHTML transformation process.</p>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Contents of the <span class="ph filepath">plugin.xml</span> file</figcaption>
         
-        <pre class="pre codeblock"><code>&lt;plugin id="com.example.newparam"&gt;
-  &lt;feature extension="dita.conductor.xhtml.param" file="insertParameters.xml"/&gt;
+        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.newparam"&gt;
+  &lt;feature extension="dita.conductor.xhtml.param" 
+           file="insertParameters.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
       </figure>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Contents of the <span class="ph filepath">insertParameters.xml</span></figcaption>
         
-        <pre class="pre codeblock"><code>&lt;dummy&gt;
-  &lt;!-- Any Ant code allowed in xslt task is possible. Common example: --&gt;
-  &lt;param name="paramNameinXSLT" expression="${antProperty}" if="antProperty"/&gt;
+        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;dummy&gt;
+  <em class="ph i">&lt;!-- Any Ant code allowed in xslt task is possible. Example: --&gt;</em>
+  &lt;param name="paramNameinXSLT" expression="${antProperty}" 
+         if="antProperty"/&gt;
 &lt;/dummy&gt;</code></pre>
       </figure>
     </div>

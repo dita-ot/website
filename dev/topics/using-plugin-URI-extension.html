@@ -27,8 +27,9 @@ index: "../toc.html"
         </div>
         <div class="itemgroup stepxmp">
           <p class="p">The following example copies CSS files from the HTML5 plug-in:</p>
-          <pre class="pre codeblock"><code>&lt;copy todir="${dita.temp.dir}/css"&gt;
-  &lt;fileset dir="${dita.plugin.org.dita.html5.dir}/css" includes="*.css"/&gt;
+          <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;copy todir="${dita.temp.dir}/css"&gt;
+  &lt;fileset dir="${dita.plugin.org.dita.html5.dir}/css" 
+           includes="*.css"/&gt;
 &lt;/copy&gt;</code></pre>
         </div>
       </li><li class="li step stepexpand">
@@ -49,8 +50,9 @@ index: "../toc.html"
             DITA-OT catalog file as a child of the <code class="keyword markupname xmlelement">&lt;xslt&gt;</code> element.</p>
         </div>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock"><code>&lt;xslt style="xsl/my.xsl"
-  in="${dita.temp.dir}/input.file" out="${dita.temp.dir}/output.file"&gt;
+          <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;xslt style="xsl/my.xsl"
+      in="${dita.temp.dir}/input.file" 
+      out="${dita.temp.dir}/output.file"&gt;
   &lt;xmlcatalog refid="dita.catalog"/&gt;
 &lt;/xslt&gt;</code></pre>
         </div>

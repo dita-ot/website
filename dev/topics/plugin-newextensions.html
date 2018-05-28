@@ -103,7 +103,7 @@ index: "../toc.html"
       
       <p class="p">The following plug-in defines <span class="ph filepath">myBuildFile_template.xml</span> as a new template for extensions,
         and two new extension points.</p>
-      <pre class="pre codeblock"><code>&lt;plugin id="com.example.new-extensions"&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.new-extensions"&gt;
   &lt;extension-point id="com.example.new-extensions.pre"
                    name="Custom target preprocess"/&gt;
   &lt;extension-point id="com.example.new-extensions.content"
@@ -112,12 +112,12 @@ index: "../toc.html"
 &lt;/plugin&gt;</code></pre>
       <p class="p">When the plug-in is installed, this will be used to recreate <span class="ph filepath">myBuildFile.xml</span>, replacing Ant
         file content based on extension point use.</p>
-      <pre class="pre codeblock"><code>&lt;project xmlns:dita="http://dita-ot.sourceforge.net"&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;project xmlns:dita="http://dita-ot.sourceforge.net"&gt;
   &lt;target name="dita2custom"
-          dita:depends="dita2custom.init,
-                   {com.example.new-extensions.pre},
+     dita:depends="dita2custom.init,
+                  {com.example.new-extensions.pre},
                    dita2xhtml"
-          dita:extension="depends org.dita.dost.platform.InsertDependsAction"&gt;
+     dita:extension="depends org.dita.dost.platform.InsertDependsAction"&gt;
     &lt;dita:extension id="com.example.new-extensions.content"
                     behavior="org.dita.dost.platform.InsertAction"/&gt;
   &lt;/target&gt;

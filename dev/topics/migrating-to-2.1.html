@@ -60,7 +60,7 @@ index: "../toc.html"
       </ul>
       <p class="p">Calls to that template will result in warnings in the build log.</p>
       <p class="p">To update your plug-in, make the following changes:</p>
-      <pre class="pre codeblock"><code>&lt;xsl:call-template name="<span style="text-decoration:line-through" class="ph line-through">insertVariable</span><strong class="ph b">getVariable</strong>"&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="<span style="text-decoration:line-through" class="ph line-through">insertVariable</span><strong class="ph b">getVariable</strong>"&gt;
   &lt;xsl:with-param name="<span style="text-decoration:line-through" class="ph line-through">theVariableID</span><strong class="ph b">id</strong>" select="<var class="keyword varname">var-id</var>"/&gt;
   &lt;xsl:with-param name="<span style="text-decoration:line-through" class="ph line-through">theParameters</span><strong class="ph b">params</strong>"&gt;
     <var class="keyword varname">params</var>
@@ -93,11 +93,11 @@ index: "../toc.html"
         updated <code class="ph codeph">dita.map.xhtml.toc</code> equivalent.</p>
       <p class="p">Keydef processing has been removed from the XHTML rendering code. Keys are now resolved in one preprocessing
         step, whereas in earlier versions of DITA-OT, the XHTML code returned to the <span class="ph filepath">keydef.xml</span>
-        file to look up targets for phrase elements and pull in text when needed. This change affects non-linking
-        elements that can't take <code class="keyword markupname xmlatt">@href</code> attributes, such as <code class="keyword markupname xmlelement">&lt;ph&gt;</code>,
-          <code class="keyword markupname xmlelement">&lt;keyword&gt;</code>, <code class="keyword markupname xmlelement">&lt;cite&gt;</code>, <code class="keyword markupname xmlelement">&lt;dt&gt;</code>,
-          <code class="keyword markupname xmlelement">&lt;term&gt;</code>, and <code class="keyword markupname xmlelement">&lt;indexterm&gt;</code> (when <code class="ph codeph">$INDEXSHOW</code> is
-        active).</p>
+        file to look up targets for phrase elements and pull in text when needed.</p>
+      <p class="p">This change affects non-linking elements that can't take <code class="keyword markupname xmlatt">@href</code> attributes, such as
+          <code class="keyword markupname xmlelement">&lt;ph&gt;</code>, <code class="keyword markupname xmlelement">&lt;keyword&gt;</code>, <code class="keyword markupname xmlelement">&lt;cite&gt;</code>,
+          <code class="keyword markupname xmlelement">&lt;dt&gt;</code>, <code class="keyword markupname xmlelement">&lt;term&gt;</code>, and <code class="keyword markupname xmlelement">&lt;indexterm&gt;</code> (when
+          <code class="ph codeph">$INDEXSHOW</code> is active).</p>
     </section>
 
     <section class="section"><h2 class="title sectiontitle">HTMLHelp</h2>

@@ -12,11 +12,11 @@ index: "../toc.html"
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Create an XML file that contains the following content:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+          <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="%project-name%" default="%default-target%" basedir="."&gt;
 
   &lt;property name="dita.dir" location="%path-to-DITA-OT%"/&gt;
- 
+
   &lt;target name="%target-name%"&gt;
     &lt;ant antfile="${dita.dir}/build.xml"&gt;
       &lt;property name="args.input" value="%DITA-input%"/&gt;
@@ -32,14 +32,12 @@ index: "../toc.html"
         <span class="ph cmd">Specify project information:</span>
         <ol type="a" class="ol substeps">
           <li class="li substep substepexpand"><strong>Optional: </strong>
-            <span class="ph cmd">Set the value of the <code class="keyword markupname xmlatt">@name</code> attribute to the name of your
-              project.</span>
+            <span class="ph cmd">Set the value of the <code class="keyword markupname xmlatt">@name</code> attribute to the name of your project.</span>
           </li>
           <li class="li substep substepexpand">
-            <span class="ph cmd">Set the value of the <code class="keyword markupname xmlatt">@default</code> attribute to the name of a target in
-              the build script.</span>
-            <div class="itemgroup info">If the build script is invoked without specifying a target, this target will be
-              run.</div>
+            <span class="ph cmd">Set the value of the <code class="keyword markupname xmlatt">@default</code> attribute to the name of a target in the build
+              script.</span>
+            <div class="itemgroup info">If the build script is invoked without specifying a target, this target will be run.</div>
           </li>
         </ol>
       </li><li class="li step stepexpand">
@@ -63,15 +61,12 @@ index: "../toc.html"
         <span class="ph cmd">Save the build script.</span>
       </li></ol>
     <div class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
-      <div class="p">The following Ant build script generates CHM and PDF output for the sample DITA
-        maps.<pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-
+      <p class="p">The following Ant build script generates CHM and PDF output for the sample DITA maps.</p>
+      <div class="p">
+        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="build-chm-pdf" default="all" basedir="."&gt;
-
   &lt;property name="dita.dir" location="${basedir}/../../.."/&gt;
-
   &lt;target name="all" description="build CHM and PDF" depends="chm,pdf"/&gt;
-
   &lt;target name="chm" description="build CHM"&gt;
     &lt;ant antfile="${dita.dir}/build.xml"&gt;
       &lt;property name="args.input" location="../sequence.ditamap"/&gt;
@@ -80,7 +75,6 @@ index: "../toc.html"
       &lt;property name="args.gen.task.lbl" value="YES"/&gt;
     &lt;/ant&gt;
   &lt;/target&gt;
-
   &lt;target name="pdf" description="build PDF"&gt;
     &lt;ant antfile="${dita.dir}/build.xml"&gt;
       &lt;property name="args.input" location="../taskbook.ditamap"/&gt;
@@ -90,7 +84,6 @@ index: "../toc.html"
       &lt;property name="args.rellinks" value="nofamily"/&gt;
     &lt;/ant&gt;
   &lt;/target&gt;
-
 &lt;/project&gt;</code></pre></div>
       <div class="p">In addition to the mandatory parameters (<span class="keyword parmname">args.input</span> and <span class="keyword parmname">transtype</span>),
         the chm and pdf targets each specify some optional parameters:
@@ -100,13 +93,12 @@ index: "../toc.html"
           <li class="li">The <span class="keyword parmname">output.dir</span> property specifies where the DITA-OT writes the output of the
             transformations.</li>
         </ul></div>
-      <p class="p">The pdf target also specifies that related links should be generated in the PDF, but only
-        those links that are created by relationship tables and <code class="keyword markupname xmlelement">&lt;link&gt;</code>
-        elements.</p>
+      <p class="p">The pdf target also specifies that related links should be generated in the PDF, but only those links that are
+        created by relationship tables and <code class="keyword markupname xmlelement">&lt;link&gt;</code> elements.</p>
       <p class="p">Finally, the all target simply specifies that both the chm and pdf target should be run.</p>
     </div>
-    <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>Another resource for learning about Ant scripts are the files in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/</span>
-      directory. This directory contains sample Ant build files for common output formats, as well as
-      templates that you can use to create your own Ant scripts.</section>
+    <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>Another resource for learning about Ant scripts are the files in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/</span> directory. This
+      directory contains sample Ant build files for common output formats, as well as templates that you can use to
+      create your own Ant scripts.</section>
   </div>
 <nav role="navigation" class="related-links"><div class="linklist relinfo relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/ant.html" title="Ant is a Java-based, open-source tool that is provided by the Apache Foundation. It can be used to declare a sequence of build actions. It is well suited for both development and document builds. The toolkit ships with a copy of Ant.">Ant</a></li></ul></div><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/building-with-ant.html" title="You can build output by using an Ant build script to provide the DITA-OT parameters.">Building output using Ant</a></li><li class="linklist"><a class="link" href="../topics/migrating-ant-to-dita.html" title="Although Ant builds are still supported in the DITA Open Toolkit, you might want to switch to use the new dita command.">Migrating Ant builds to use the dita command</a></li></ul></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="http://ant.apache.org/manual" target="_blank">Apache Ant documentation</a></li></ul></div></nav></main>

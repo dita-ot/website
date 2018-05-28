@@ -42,11 +42,12 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample <span class="ph filepath">plugin.xml</span> file</figcaption>
             
-            <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-<em class="ph i">&lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;</em>
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<em class="ph i">&lt;!-- Plug-in to extend DITA-OT HTML5 output with a custom CSS file --&gt;</em>
 &lt;plugin id="com.example.html5.custom.css"&gt;
   <strong class="ph b">&lt;require plugin="org.dita.html5"/&gt;</strong>
-  <strong class="ph b">&lt;feature extension="dita.conductor.transtype.check" value="html5-custom-css"/&gt;</strong>
+  <strong class="ph b">&lt;feature extension="dita.conductor.transtype.check"
+           value="html5-custom-css"/&gt;</strong>
   &lt;feature extension="dita.conductor.target.relative" file="build.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
           </figure>
@@ -62,12 +63,11 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample <span class="ph filepath">custom.css</span> file</figcaption>
             
-            <pre class="pre codeblock"><code><em class="ph i">/* These custom styles extend or override DITA Open Toolkit default styles. */</em>
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code><em class="ph i">/* These custom styles extend the DITA Open Toolkit default styles */</em>
 
 body {
   color: red
-}
-</code></pre>
+}</code></pre>
           </figure>
           <div class="note tip note_tip"><span class="note__title">Tip:</span> When you first create the plug-in, you may want to include a rule in your custom stylesheet
             that makes it readily apparent when the custom styles are applied (the example above will change body text
@@ -79,13 +79,14 @@ body {
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample <span class="ph filepath">build.xml</span> file</figcaption>
             
-            <pre class="pre codeblock"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-<em class="ph i">&lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;</em>
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+<em class="ph i">&lt;!-- Plug-in to extend DITA-OT HTML5 output with a custom CSS file --&gt;</em>
 &lt;project name="com.example.html5.custom.css"&gt;
   &lt;target name="dita2html5-custom-css"&gt;
     &lt;antcall target="dita2html5"&gt;
       <em class="ph i">&lt;!-- Custom .css file used to style output --&gt;</em>
-      <strong class="ph b">&lt;param name="args.css" value="${dita.plugin.com.example.html5.custom.css.dir}/css/custom.css"/&gt;</strong>
+      <strong class="ph b">&lt;param name="args.css" 
+             value="${dita.plugin.com.example.html5.custom.css.dir}/css/custom.css"/&gt;</strong>
       <em class="ph i">&lt;!-- Copy the custom .css file to the output directory --&gt;</em>
       &lt;param name="args.copycss" value="yes"/&gt;
       <em class="ph i">&lt;!-- Location of the copied .css file relative to the output --&gt;</em>

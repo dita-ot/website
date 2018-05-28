@@ -38,8 +38,9 @@ index: "../toc.html"
           <div class="note tip note_tip"><span class="note__title">Tip:</span> Copy <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/properties/template.properties</span>; this template describes each of the properties you can
         set.</div>
         </div>
-        <div class="itemgroup stepxmp">For
-          example:<pre class="pre codeblock"><code># Don't generate headings for sections within task topics:
+        <div class="itemgroup stepxmp">
+          <p class="p">For example:</p>
+          <div class="p"><pre class="pre codeblock show-line-numbers show-whitespace"><code># Don't generate headings for sections within task topics:
 args.gen.task.lbl = NO
 
 # Directory that contains the custom .css file:
@@ -58,7 +59,9 @@ args.csspath = branding
 nav-toc = full
 
 # Base name of the Table of Contents file:
-args.xhtml.toc = toc</code></pre></div>
+args.xhtml.toc = toc</code></pre>
+          </div>
+        </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Reference your <span class="ph filepath">.properties</span> file with the <span class="keyword cmdname">dita</span> command when building
           your output.</span>

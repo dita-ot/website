@@ -21,7 +21,7 @@ index: "../toc.html"
         <span class="ph cmd">Define and integrate the new Ant target.</span>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Create the following <span class="ph filepath">plugin.xml</span> file:</span>
-        <div class="itemgroup info"><pre class="pre codeblock"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
+        <div class="itemgroup info"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
   &lt;feature extension="<var class="keyword varname">extension-point</var>" value="<var class="keyword varname">Ant-target</var>"/&gt;
 &lt;/plugin&gt;</code></pre>where
           <ul class="ul">
@@ -39,8 +39,9 @@ index: "../toc.html"
       <p class="p">The following <span class="ph filepath">plugin.xml</span> file specifies that the
           <span class="keyword parmname">myAntTargetBeforeChunk</span> target is always run before the <code class="ph codeph">chunk</code> step in the
         pre-processing stage.</p>
-      <pre class="pre codeblock"><code>&lt;plugin id="com.example.extendchunk"&gt;
-  &lt;feature extension="depend.preprocess.chunk.pre" value="myAntTargetBeforeChunk"/&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.extendchunk"&gt;
+  &lt;feature extension="depend.preprocess.chunk.pre" 
+           value="myAntTargetBeforeChunk"/&gt;
 &lt;/plugin&gt;</code></pre>
       <p class="p">It assumes that the <span class="keyword parmname">myAntTargetBeforeChunk</span> target has already been defined and
         integrated.</p>

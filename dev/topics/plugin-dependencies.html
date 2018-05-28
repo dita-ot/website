@@ -25,7 +25,7 @@ index: "../toc.html"
       
       <p class="p">The following plug-in will only be installed if the plug-in with the ID <code class="ph codeph">com.example.primary</code> is
         available. If that plug-in is not available, a warning is generated and the installation operation fails.</p>
-      <pre class="pre codeblock"><code>&lt;plugin id="com.example.builds-on-primary"&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.builds-on-primary"&gt;
   &lt;!-- ... Extensions here --&gt;
   &lt;require plugin="com.example.primary"/&gt;
 &lt;/plugin&gt;</code></pre>
@@ -35,7 +35,7 @@ index: "../toc.html"
       <p class="p">The following plug-in will only be installed if either the plug-in with the ID <code class="ph codeph">pluginA</code> or the
         plug-in with the ID <code class="ph codeph">pluginB</code> is available. If neither of those plug-ins are installed, a warning
         is generated but the installation operation is completed.</p>
-      <pre class="pre codeblock"><code>&lt;plugin id="pluginC"&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="pluginC"&gt;
   &lt;!-- ...extensions here --&gt;
   &lt;require plugin="pluginA|pluginB" importance="optional"/&gt;
 &lt;/plugin&gt;</code></pre>

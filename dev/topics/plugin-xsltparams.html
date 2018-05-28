@@ -14,15 +14,16 @@ index: "../toc.html"
         <span class="ph cmd">Create an XML file that contains one or more Ant <code class="keyword markupname xmlelement">&lt;param&gt;</code> elements nested within a
             <code class="keyword markupname xmlelement">&lt;dummy&gt;</code> wrapper element.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock"><code>&lt;dummy&gt;
-  &lt;!-- Any Ant code allowed in xslt task is possible. Common example: --&gt;
-  &lt;param name="paramNameinXSLT" expression="${antProperty}" if="antProperty"/&gt;
+          <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;dummy&gt;
+  <em class="ph i">&lt;!-- Any Ant code allowed in xslt task is possible. Example: --&gt;</em>
+  &lt;param name="paramNameinXSLT" expression="${antProperty}" 
+         if="antProperty"/&gt;
 &lt;/dummy&gt;</code></pre>
           
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Construct a <span class="ph filepath">plugin.xml</span> file that contains the following content:</span>
-        <div class="itemgroup info"><pre class="pre codeblock"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
+        <div class="itemgroup info"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
   &lt;feature extension="<var class="keyword varname">extension-point</var>" file="<var class="keyword varname">file</var>"/&gt;
 &lt;/plugin&gt;</code></pre>where:
           <ul class="ul">
@@ -45,8 +46,9 @@ index: "../toc.html"
       <p class="p">The following plug-in passes the parameters defined in the <span class="ph filepath">insertParameters.xml</span> file as
         input to the XHTML process. Generally, an additional XSLT override will make use of the parameters to do
         something new with the generated content.</p>
-      <pre class="pre codeblock"><code>&lt;plugin id="com.example.newparam"&gt;
-  &lt;feature extension="dita.conductor.xhtml.param" file="insertParameters.xml"/&gt;
+      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.newparam"&gt;
+  &lt;feature extension="dita.conductor.xhtml.param" 
+           file="insertParameters.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
     </div>
   </div>

@@ -24,21 +24,25 @@ index: "../toc.html"
       <p class="p">To accomplish this, you can create a new plug-in. In the Ant script that defines the transformation type,
         specify the DITA-OT parameters. For example, to render draft comments and art labels, add
           <code class="keyword markupname xmlelement">&lt;property&gt;</code> elements to specify the DITA-OT parameters:</p>
-      <pre class="pre codeblock"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+      <div class="p">
+        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;project name="com.example.draft.pdf"&gt;
   &lt;target name="dita2draft.pdf.init"&gt;
-    &lt;property name="customization.dir" location="${dita.plugin.com.example.draft.pdf.dir}/cfg"/&gt;
+    &lt;property name="customization.dir"
+              location="${dita.plugin.com.example.draft.pdf.dir}/cfg"/&gt;
     <strong class="ph b">&lt;property name="args.draft" value="yes"/&gt;</strong>
     <strong class="ph b">&lt;property name="args.artlbl" value="yes"/&gt;</strong>
   &lt;/target&gt;
-  &lt;target name="dita2draft.pdf" depends="dita2draft.pdf.init, dita2production.pdf,dita2pdf2"/&gt;
+  &lt;target name="dita2draft.pdf"
+          depends="dita2draft.pdf.init, dita2production.pdf,dita2pdf2"/&gt;
 &lt;/project&gt;</code></pre>
+      </div>
     </section>
     <section class="section"><h2 class="title sectiontitle">Plug-in that overrides the base PDF transformation</h2>
       
-      <p class="p">Production uses of the DITA-OT typically rely on a custom PDF plug-in to render PDFs that are styled to
-        match corporate or organizational guidelines. Such customization plug-ins often override the following aspects
-        of the DITA-OT's default output:</p>
+      <p class="p">Production uses of the DITA-OT typically rely on a custom PDF plug-in to render PDFs that are styled to match
+        corporate or organizational guidelines. Such customization plug-ins often override the following aspects of the
+        DITA-OT's default output:</p>
       <ul class="ul">
         <li class="li">Generated text strings</li>
         <li class="li">XSL templates</li>

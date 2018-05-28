@@ -28,12 +28,14 @@ index: "../toc.html"
         <div class="itemgroup info">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span><span class="ph filepath">plugin.xml</span> file</figcaption>
             
-            <pre class="pre codeblock"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;plugin id="com.example.print-pdf"&gt;
   &lt;require plugin="org.dita.pdf2"/&gt;
-  &lt;feature extension="dita.conductor.transtype.check" value="print-pdf"/&gt;
+  &lt;feature extension="dita.conductor.transtype.check" 
+           value="print-pdf"/&gt;
   &lt;feature extension="dita.transtype.print" value="print-pdf"/&gt;
-  &lt;feature extension="dita.conductor.target.relative" file="integrator.xml"/&gt;
+  &lt;feature extension="dita.conductor.target.relative" 
+           file="integrator.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
           </figure>
         </div>
@@ -42,12 +44,13 @@ index: "../toc.html"
         <div class="itemgroup info">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span><span class="ph filepath">integrator.xml</span> file</figcaption>
             
-            <pre class="pre codeblock"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;project name="com.example.print-pdf"&gt;
   &lt;target name="dita2print-pdf.init"&gt;
-    &lt;property name="customization.dir" location="${dita.plugin.com.example.print-pdf.dir}/cfg"/&gt;
-  &lt;/target&gt;
-  &lt;target name="dita2print-pdf" depends="dita2print-pdf.init, dita2pdf2"/&gt;
+    &lt;property name="customization.dir" 
+     location="${dita.plugin.com.example.print-pdf.dir}/cfg"/&gt;&lt;/target&gt;
+  &lt;target name="dita2print-pdf" 
+          depends="dita2print-pdf.init, dita2pdf2"/&gt;
 &lt;/project&gt;</code></pre>
           </figure></div>
       </li><li class="li step stepexpand">
@@ -56,8 +59,9 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span><span class="ph filepath">cfg/catalog.xml</span> file</figcaption>
             
-            <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;catalog prefer="system" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;catalog prefer="system" 
+         xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"&gt;
   &lt;uri name="cfg:fo/attrs/custom.xsl" uri="fo/attrs/custom.xsl"/&gt;
   &lt;uri name="cfg:fo/xsl/custom.xsl" uri="fo/xsl/custom.xsl"/&gt;
 &lt;/catalog&gt;</code></pre>
@@ -68,19 +72,19 @@ index: "../toc.html"
           it.</span>
         <div class="itemgroup stepxmp">For example, add the content highlighted with bold to change the page size to A4.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span><span class="ph filepath">cfg/fo/attrs/custom.xsl</span> file</figcaption>
             
-            <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 version="2.0"&gt;
- <strong class="ph b"> &lt;!-- Change page size to A4 --&gt;
-  &lt;xsl:variable name="page-width"&gt;210mm&lt;/xsl:variable&gt;
-  &lt;xsl:variable name="page-height"&gt;297mm&lt;/xsl:variable&gt;</strong>
+  <strong class="ph b">&lt;!-- Change page size to A4 --&gt;</strong>
+  <strong class="ph b">&lt;xsl:variable name="page-width"&gt;210mm&lt;/xsl:variable&gt;</strong>
+  <strong class="ph b">&lt;xsl:variable name="page-height"&gt;297mm&lt;/xsl:variable&gt;</strong>
 &lt;/xsl:stylesheet&gt;</code></pre>
           </figure></div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Create the <span class="ph filepath">cfg/fo/xsl/custom.xsl</span> file, and add XSLT overrides to it.</span>
         <div class="itemgroup stepxmp">For example, the following code changes the rendering of <code class="keyword markupname xmlelement">&lt;figure&gt;</code> elements.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 5. </span><span class="ph filepath">cfg/fo/xsl/custom.xsl</span> file</figcaption>
             
-            <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
@@ -107,10 +111,12 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">For example, the following code removes the period after the number for an ordered-list item; it also
           specifies that the bullet for an unordered list item should be an em dash.<figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span><span class="ph filepath">cfg/common/vars/en.xml</span> file</figcaption>
             
-            <pre class="pre codeblock"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;vars xmlns="http://www.idiominc.com/opentopic/vars"&gt;
   &lt;!-- Remove dot from list number --&gt;
-  &lt;variable id="Ordered List Number"&gt;&lt;param ref-name="number"/&gt;&lt;/variable&gt;
+  &lt;variable id="Ordered List Number"&gt;
+    &lt;param ref-name="number"/&gt;
+  &lt;/variable&gt;
   &lt;!-- Change unordered list bullet to an em dash --&gt;
   &lt;variable id="Unordered List bullet"&gt;&amp;#x2014;&lt;/variable&gt;
 &lt;/vars&gt;</code></pre>

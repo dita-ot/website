@@ -41,35 +41,34 @@ index: "../toc.html"
         transformation types instead of using the default <code class="ph codeph">preprocess</code> target.</p>
       <p class="p">For example, if you have a custom HTML5 transformation type named "myhtml", then you may have a plug-in
         extension that looks this:</p>
-      <pre class="pre codeblock"><code>&lt;!-- Simple variant: set properties and call default HTML5 --&gt;
+      <pre class="pre codeblock"><code><em class="ph i">&lt;!-- Simple variant: set properties and call default HTML5 --&gt;</em>
 &lt;target name="dita2myhtml" depends="myhtml.init,dita2html5"/&gt;
 </code></pre>
       <p class="p">This type of extension is quite common, and is used to set default properties for your environment followed by
         a normal build to use those properties. In this case, you'll need to replace <code class="ph codeph">dita2html5</code> with
         the normal HTML5 steps, swapping out <code class="ph codeph">preprocess</code> for <code class="ph codeph">preprocess2</code>:</p>
-      <pre class="pre codeblock"><code>&lt;!-- Simple variant: set properties and call default HTML5 --&gt;
+      <pre class="pre codeblock show-line-numbers show-whitespace"><code>&lt;!-- Simple variant: set properties and call default HTML5 --&gt;
 &lt;target name="dita2myhtml" 
-          depends="myhtml.init,
-                   html5.init,
-                   build-init,
-                   <strong class="ph b">preprocess2,</strong>
-                   html5.topic,
-                   html5.map,
-                   html5.css"/&gt;
-</code></pre>
+        depends="myhtml.init,
+                 html5.init,
+                 build-init,
+                 <strong class="ph b">preprocess2,</strong>
+                 html5.topic,
+                 html5.map,
+                 html5.css"/&gt;</code></pre>
       <div class="note note note_note"><span class="note__title">Note:</span> If you use this simple method for customized PDF, HTML Help, or JavaHelp builds, you will automatically be
         using <code class="ph codeph">preprocess2</code>.</div>
       <p class="p">Some custom transformation types already require you to repeat the default dependencies, in which case you
         should already call <code class="ph codeph">preprocess</code> directly, as in the following:</p>
-      <pre class="pre codeblock"><code>&lt;!-- More complex variant: add processing steps to default HTML5 --&gt;
+      <pre class="pre codeblock show-line-numbers show-whitespace"><code>&lt;!-- More complex variant: add processing steps to default HTML5 --&gt;
 &lt;target name="dita2myhtml"
-          depends="myhtml.init,
-                   build-init,
-                   preprocess,
-                   local-extensions-after-preprocess,
-                   html5.topic,
-                   html5.map,
-                   html5.css"/&gt;</code></pre>
+        depends="myhtml.init,
+                 build-init,
+                 preprocess,
+                 local-extensions-after-preprocess,
+                 html5.topic,
+                 html5.map,
+                 html5.css"/&gt;</code></pre>
       <p class="p">In such cases, the modification is much easier – simply add a <code class="ph codeph">2</code> to the existing
           <code class="ph codeph">preprocess</code> target.</p>
     </section>
@@ -84,19 +83,18 @@ index: "../toc.html"
         variant called <code class="ph codeph">myhtml</code> as above, instead of modifying that transformation directly, you could
         create a second transformation type called <code class="ph codeph">myhtml-beta</code> that provides exactly the same support,
         but with the new map-first preprocessing:</p>
-      <pre class="pre codeblock"><code>&lt;!-- Original "myhtml" is not modified, used for production --&gt;
+      <pre class="pre codeblock show-line-numbers show-whitespace"><code><em class="ph i">&lt;!-- Original "myhtml" is not modified, used for production --&gt;</em>
 &lt;target name="dita2myhtml5" depends="myhtml.init,dita2html5"/&gt;
 
-&lt;!-- "myhtml-beta" provides a way to test and provide feedback on preprocess2 --&gt;
+<em class="ph i">&lt;!-- "myhtml-beta" used to test and provide feedback on preprocess2 --&gt;</em>
 &lt;target name="dita2myhtml-beta" 
-          depends="myhtml.init,
-                   html5.init,
-                   build-init,
-                   <strong class="ph b">preprocess2,</strong>
-                   html5.topic,
-                   html5.map,
-                   html5.css"/&gt;
-</code></pre>
+        depends="myhtml.init,
+                 html5.init,
+                 build-init,
+                 <strong class="ph b">preprocess2,</strong>
+                 html5.topic,
+                 html5.map,
+                 html5.css"/&gt;</code></pre>
     </section>
     <section class="section"><h2 class="title sectiontitle">Known limitations</h2>
       
