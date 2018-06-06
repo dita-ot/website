@@ -1,15 +1,14 @@
 # Generated site (transformed by Jekyll)
 /_site
 
-# Generated landing pages (copied to `index.html`)
-# Up to 2.1.1
-DITA-OTProjectHome.html
-# As of 2.1.1+
-introduction.html
-
 # Spurious duplicates generated via branch filtering & @copy-to
-*/getting-started/using-dita-command.html
-*/release-notes/index-1.html
+# See https://github.com/dita-ot/dita-ot/issues/2980
+*/topics/using-dita-command.html
+
+# Resource-only warehouse topics
+*/resources/conref-task.html
+*/resources/reusable-components.html
+*/topics/DITA-messages-details.html
 
 # Default Bootstrap ToC partial
 css/_bootstrap.scss
