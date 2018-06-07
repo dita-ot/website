@@ -1,0 +1,37 @@
+---
+# Generated from DITA source
+layout: base
+title: "Processing modules"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/extending-the-ot.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a><ul class="nav nav-list"><li><a href="../reference/processing-structure.html">Processing structure</a></li><li><a href="../reference/map-first-preprocessing.html">Map-first preprocessing</a></li><li class="active"><a href="../reference/processing-pipeline-modules.html">Processing modules</a></li><li><a href="../reference/processing-order.html">Processing order</a></li><li><a href="../reference/preprocessing.html">Pre-processing modules</a></li><li><a href="../reference/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../reference/pdf-transform.html">PDF processing modules</a></li></ul></li><li><a href="../reference/DITA_spec-support.html">DITA specification support</a></li><li><a href="../reference/java-api.html">Java API</a></li><li><a href="../reference/license.html">License</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Processing modules</h1>
+  
+  <div class="body conbody"><p class="shortdesc">The DITA-OT processing pipeline is implemented using Ant. Individual modules within the Ant script are
+    implemented in either Java or XSLT, depending on such factors as performance or requirements for customization.
+    Virtually all Ant and XSLT modules can be extended by adding a plug-in to the toolkit; new Ant targets may be
+    inserted before or after common processing, and new rules may be imported into common XSLT modules to override
+    default processing.</p>
+    <section class="section"><h2 class="title sectiontitle">XSLT modules</h2>
+      
+      <p class="p">The XSLT modules use shell files. Typically, each shell file begins by importing common rules that apply to all
+        topics. This set of common processing rules may in turn import additional common modules, such as those used for
+        reporting errors or determining the document locale. After the common rules are imported, additional imports can
+        be included in order to support processing for DITA specializations.</p>
+      <p class="p">For example, XHTML processing is controlled by the <span class="ph filepath">xsl/dita2xhtml.xsl</span> file. The shell
+        begins by importing common rules that are applicable to all general topics:
+          <span class="ph filepath">xslhtml/dita2htmlImpl.xsl</span>. After that, additional XSLT overrides are imported for
+        specializations that require modified processing. For example, an override for reference topics is imported in
+        order to add default headers to property tables. Additional modules are imported for tasks, for the highlighting
+        domain, and for several other standard specializations. After the standard XSLT overrides occur, plug-ins may
+        add in additional processing rules for local styles or for additional specializations.</p>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">Java modules</h2>
+      
+      <p class="p">Java modules are typically used when XSLT is a poor fit, such as for processes that make use of standard Java
+        libraries (like those used for index sorting). Java modules are also used in many cases where a step involves
+        copying files, such as the initial process where source files are parsed and copied to a temporary processing
+        directory.</p>
+    </section>
+  </div>
+</main>

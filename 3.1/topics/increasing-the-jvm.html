@@ -1,0 +1,31 @@
+---
+# Generated from DITA source
+layout: base
+title: "Increasing Java memory allocation"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/extending-the-ot.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li><a href="../topics/log-files.html">Log files</a></li><li><a href="../topics/DITA-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Accessing help for the dita command</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li class="active"><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Reducing processing time</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Increasing Java memory allocation</h1>
+  
+  
+  <div class="body taskbody"><p class="shortdesc">If you are working with large documents with extensive metadata or key references, you will need to
+    increase the memory allocation for the Java process. You can do this from the command-line prompt for a specific
+    session, or you can increase the value of the <code class="ph codeph">ANT_OPTS</code> environment variable.</p>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ul class="ul steps-unordered"><li class="li step stepexpand">
+        <span class="ph cmd">To change the value for a specific session, from the command prompt, issue the following command:</span>
+        <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr class="sthead chhead"><th scope="col" class="stentry choptionhd" style="vertical-align:bottom;text-align:left;">Platform</th><th scope="col" class="stentry chdeschd" style="vertical-align:bottom;text-align:left;">Command</th></tr></thead><tbody><tr class="strow chrow">
+            <th style="vertical-align:top;" scope="row" class="stentry choption">Linux or macOS&nbsp;</th>
+            <td style="vertical-align:top;" class="stentry chdesc"><code class="ph codeph">export ANT_OPTS=$ANT_OPTS -Xmx<var class="keyword varname">1024</var>M</code></td>
+          </tr><tr class="strow chrow">
+            <th style="vertical-align:top;" scope="row" class="stentry choption">Windows</th>
+            <td style="vertical-align:top;" class="stentry chdesc"><code class="ph codeph">set ANT_OPTS=%ANT_OPTS% -Xmx<var class="keyword varname">1024</var>M</code></td>
+          </tr></tbody></table>
+        <div class="itemgroup info">
+          <p class="p">This increases the JVM memory allocation to 1024 megabytes. The amount of memory which can be allocated is
+            limited by available system memory and the operating system.</p></div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">To persistently change the value, change the value allocated to the <code class="ph codeph">ANT_OPTS</code> environment
+          variable on your system.</span>
+      </li></ul>
+  </div>
+</main>

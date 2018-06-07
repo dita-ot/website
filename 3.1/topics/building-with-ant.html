@@ -1,0 +1,43 @@
+---
+# Generated from DITA source
+layout: base
+title: "Building output using Ant"
+index: "../toc.html"
+---
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a><ul class="nav nav-list"><li><a href="../topics/ant.html">Ant</a></li><li class="active"><a href="../topics/building-with-ant.html">Building output using Ant</a></li><li><a href="../topics/creating-an-ant-build-script.html">Creating an Ant build script</a></li></ul></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/extending-the-ot.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
+  <h1 class="title topictitle1" id="ariaid-title1">Building output using Ant</h1>
+  
+  <div class="body taskbody"><p class="shortdesc">You can build output by using an Ant build script to provide the DITA-OT parameters.</p>
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Open a command prompt or terminal session, and then change to the directory where the
+          DITA Open Toolkit is installed.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Issue the following command:</span>
+        <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder"><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead><tr class="sthead chhead"><th scope="col" class="stentry choptionhd" style="vertical-align:bottom;text-align:left;">Option</th><th scope="col" class="stentry chdeschd" style="vertical-align:bottom;text-align:left;">Description</th></tr></thead><tbody><tr class="strow chrow">
+            <th style="vertical-align:top;" scope="row" class="stentry choption">Linux or macOS&nbsp;</th>
+            <td style="vertical-align:top;" class="stentry chdesc">
+              <span class="keyword cmdname">bin/ant</span>
+              <span class="keyword option">-f</span>
+              <code class="ph codeph"><var class="keyword varname">build-script</var>
+                <var class="keyword varname">target</var></code>
+            </td>
+          </tr><tr class="strow chrow">
+            <th style="vertical-align:top;" scope="row" class="stentry choption">Windows</th>
+            <td style="vertical-align:top;" class="stentry chdesc">
+              <span class="keyword cmdname">bin\ant</span>
+              <span class="keyword option">-f</span>
+              <code class="ph codeph"><var class="keyword varname">build-script</var>
+                <var class="keyword varname">target</var></code>
+            </td>
+          </tr></tbody></table>
+        <div class="itemgroup info"> where:
+          <ul class="ul">
+            <li class="li"><var class="keyword varname">build-script</var> is name of the Ant build script.</li>
+            <li class="li"><var class="keyword varname">target</var> is an optional switch that specifies the name of the Ant target that you want
+              to run. <p class="p">If you do not specify a target, the value of the <code class="keyword markupname xmlatt">@default</code> attribute for the Ant
+                project is used.</p>
+            </li>
+          </ul></div>
+      </li></ol>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist relinfo relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/ant.html" title="Ant is a Java-based, open-source tool that is provided by the Apache Foundation. It can be used to declare a sequence of build actions. It is well suited for both development and document builds. The toolkit ships with a copy of Ant.">Ant</a></li></ul></div><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/creating-an-ant-build-script.html" title="Instead of typing the DITA-OT parameters at the command prompt, you might want to create an Ant build script that contains all of the parameters.">Creating an Ant build script</a></li><li class="linklist"><a class="link" href="../topics/migrating-ant-to-dita.html" title="Although Ant builds are still supported in the DITA Open Toolkit, you might want to switch to use the new dita command.">Migrating Ant builds to use the dita command</a></li></ul></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="http://ant.apache.org/manual" target="_blank">Apache Ant documentation</a></li></ul></div></nav></main>
