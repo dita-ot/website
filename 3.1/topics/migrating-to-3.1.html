@@ -11,8 +11,9 @@ index: "../toc.html"
 
   
 
-  <div class="body refbody"><p class="shortdesc">DITA-OT 3.1 includes <span class="ph" id="migrating-to-3.1__summary">support for DITA 1.3 SVG domain elements, enhanced codeblock
-      processing, and incremental improvements to Lightweight DITA processing and PDF output</span>.</p>
+  <div class="body refbody"><p class="shortdesc">DITA-OT 3.1 includes <span class="ph" id="migrating-to-3.1__summary">support for DITA 1.3 SVG domain elements, enhanced
+        <code class="keyword markupname xmlelement">&lt;codeblock&gt;</code> processing, and incremental improvements to Lightweight DITA processing and
+      PDF output</span>.</p>
     <section class="section">
       <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 3.1 that may require modifications to custom stylesheets
         or plug-ins.
@@ -22,18 +23,20 @@ index: "../toc.html"
     <section class="section"><h2 class="title sectiontitle">Custom if/unless attributes in Ant scripts</h2>
       
       <p class="p">Ant scripts for DITA-OT builds now make use of <code class="keyword markupname xmlatt">@if:set</code> and <code class="keyword markupname xmlatt">@unless:set</code>
-        attributes in the Ant namespace, which can be used to control whether the item is run or otherwise takes effect.
+        attributes in the Ant namespace, which can be used to control whether parameters are passed to XSLT modules.
         These attributes replace custom implementations of <code class="ph codeph">if</code> and <code class="ph codeph">unless</code> logic
         introduced before Ant had this capability.</p>
-      <div class="p">If your plug-ins include Ant scripts that use the earlier custom implementations, add the following namespace
-        attributes to the root project:
+      <div class="p">If your plug-ins include Ant scripts that use <code class="keyword markupname xmlatt">@if</code> or <code class="keyword markupname xmlatt">@unless</code> on
+          <code class="keyword markupname xmlelement">&lt;param&gt;</code> elements that pass XSLT parameters, add the following namespace attributes to
+        the root project:
         <ul class="ul">
           <li class="li"><code class="keyword markupname xmlnsname">xmlns:if</code>=<code class="ph codeph">"ant:if"</code></li>
           <li class="li"><code class="keyword markupname xmlnsname">xmlns:unless</code>=<code class="ph codeph">"ant:unless"</code></li>
         </ul></div>
-      <p class="p">In custom Ant build files and in any files that supply parameters to existing Ant build files, replace all
-        occurrences of <code class="ph codeph">if="property"</code> with <code class="ph codeph">if<strong class="ph b">:set</strong>="property"</code> (and
-          <code class="ph codeph">unless</code> → <code class="ph codeph">unless<strong class="ph b">:set</strong></code> respectively).</p>
+      <p class="p">In custom Ant build files and in any files that supply parameters to existing DITA-OT XSLT modules, replace all
+        occurrences of <code class="ph codeph">if="property"</code> on <code class="keyword markupname xmlelement">&lt;param&gt;</code> elements with
+            <code class="ph codeph">if<strong class="ph b">:set</strong>="property"</code> (and <code class="ph codeph">unless</code> → <code class="ph codeph">unless<strong class="ph b">:set</strong></code>
+        respectively).</p>
       <div class="p"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;root xmlns:if="ant:if" xmlns:unless="ant:unless"&gt;
   &lt;param name="antProperty" expression="${antProperty}"
          if<strong class="ph b">:set</strong>="antProperty"/&gt;
