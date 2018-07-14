@@ -12,7 +12,7 @@ index: "../toc.html"
     
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
-        <div class="itemgroup info"><pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> <var class="keyword varname">options</var></code></pre>
+        <div class="itemgroup info"><pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> <span class="ph">[<var class="keyword varname">options</var>]</span></code></pre>
           <p class="p">where:</p>
           <ul class="ul">
             
@@ -21,7 +21,7 @@ index: "../toc.html"
             <li class="li">
               <p class="p">
                 <var class="keyword varname">format</var> is the output format (transformation type).
-                This argument corresponds to the common parameter 
+                This argument corresponds to the common parameter
                 <span class="keyword parmname">transtype</span>.
                 Use the same values as for the <span class="keyword parmname">transtype</span> build
                 parameter, for example <span class="keyword option">html5</span> or <span class="keyword option">pdf</span>.
@@ -40,9 +40,11 @@ index: "../toc.html"
                   <li class="li"><span class="keyword option">troff</span></li>
                   <li class="li"><span class="keyword option">xhtml</span></li>
                 </ul>
+                <div class="note tip note_tip"><span class="note__title">Tip:</span> See <a class="xref" href="../resources/../topics/output-formats.html" title="The DITA Open Toolkit ships with several core transformations that generate different output formats from DITA content. Each transformation represents an implementation of the processing that is defined by OASIS in the DITA specification.">DITA-OT transformations (output formats)</a> for sample command line syntax and more information
+                  on each transformation.</div>
               </div>
             </li>
-            <li class="li"><var class="keyword varname">options</var> include the following optional build parameters:
+            <li class="li">[<var class="keyword varname">options</var>] include the following optional build parameters:
               <dl class="dl parml">
         
           <dt class="dt pt dlterm">
@@ -51,7 +53,7 @@ index: "../toc.html"
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
-          <dd class="dd pd" id="using-command-line-tool__d12e301">
+          <dd class="dd pd" id="using-command-line-tool__d12e307">
             <p class="p">Specifies the path of the output directory; the path can be absolute or relative to the current
               directory.</p>
             <p class="p">This argument corresponds to the common parameter <span class="keyword parmname">output.dir</span>. By default, the output
@@ -131,7 +133,7 @@ index: "../toc.html"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
             specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
             directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d12e515"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
+          <div class="note tip note_tip" id="using-command-line-tool__d12e521"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
               <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
         </div>
       </div>
