@@ -1,8 +1,7 @@
 {
   "name": "DITA Open Toolkit",
   "tagline": "The DITA Open Toolkit is an implementation of the OASIS DITA XML Specification.",
-  "body":
-    "DITA Open Toolkit is an open-source publishing engine for content authored in the Darwin Information Typing Architecture.",
+  "body": "DITA Open Toolkit is an open-source publishing engine for content authored in the Darwin Information Typing Architecture.",
   "google": "",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }

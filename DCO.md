@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Developer Certificate of Origin"
+title: 'Developer Certificate of Origin'
 ---
 
 {% include DCO.md %}

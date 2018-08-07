@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Colophon"
+title: 'Colophon'
 ---
 
 <p class="lead">How we build and maintain the DITA Open Toolkit project website.</p>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "License"
+title: 'License'
 ---
 
 The DITA Open Toolkit is licensed for use under the Apache License 2.0. A copy of the Apache License 2.0 can be found at the root directory of the DITA Open Toolkit deliverable package.

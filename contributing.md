@@ -1,6 +1,6 @@
 ---
-layout:     default
-title:      Contributing to the DITA Open Toolkit
+layout: default
+title: 'Contributing to the DITA Open Toolkit'
 ---
 
 <p class="lead">You can help us make the toolkit better by finding and reporting bugs, participating in community support, and improving the code and documentation.</p>
