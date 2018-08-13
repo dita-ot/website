@@ -11,7 +11,7 @@ sass:
 # Major & minor release version (2 digits)
 release: "3.1"
 # Maintenance version (normally 3 digits, 2 for initial minor release)
-version: "3.1.1"
+version: "3.1.2"
 
 # Exclude directories and/or files from the conversion
 exclude:
