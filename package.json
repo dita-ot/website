@@ -15,23 +15,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.md": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.scss": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.{yaml,yml}": [
+    "*.{js,json,md,scss,yaml,yml}": [
       "prettier --write",
       "git add"
     ]
