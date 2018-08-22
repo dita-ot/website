@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "install": "./node_modules/.bin/gulp",
-    "fix:config": "prettier --ignore-path .prettierignore --write \"**/*.json\"",
+    "fix:config": "prettier --ignore-path .prettierignore --write \"**/*.{json,yaml,yml}\"",
     "fix:docs": "prettier --ignore-path .prettierignore --write \"**/*.md\"",
     "fix:script": "prettier --ignore-path .prettierignore --write \"**/*.js\"",
     "fix:style": "prettier --ignore-path .prettierignore --write \"**/*.scss\"",
@@ -28,6 +28,10 @@
       "git add"
     ],
     "*.scss": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{yaml,yml}": [
       "prettier --write",
       "git add"
     ]
