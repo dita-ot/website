@@ -10,11 +10,9 @@ index: "../toc.html"
     <div class="body taskbody"><p class="shortdesc">Starting with DITA-OT 1.5.4, you can use the <span class="ph filepath" id="using-plugin-URI-extension__plugin-uri-ext">plugin:<var class="keyword varname">plugin-id</var></span> URI extension and the <span class="ph filepath" id="using-plugin-URI-extension__antvar">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</span> Ant variable to reference the
     base path of another installed DITA-OT plug-in.</p>
     <section class="section">
-      <p class="p">Sometimes you need to reference content in another DITA-OT plug-in. However, the path to an
-        installed plug-in is not guaranteed to be the same between different installed instances of
-        the DITA-OT. The <span class="ph filepath">plugin:<var class="keyword varname">plugin-id</var></span> URI
-        extension and <span class="ph filepath">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</span> Ant variable are
-        provided so your build  and XSLT files always use the correct path to the plug-in.</p>
+      <p class="p">Sometimes you need to reference content in another DITA-OT plug-in. However, the path to an installed plug-in
+        is not guaranteed to be the same between different installed instances of DITA-OT. The <span class="ph filepath">plugin:<var class="keyword varname">plugin-id</var></span> URI extension and <span class="ph filepath">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</span> Ant variable are provided so your build and XSLT files always
+        use the correct path to the plug-in.</p>
       <p class="p">Within a single plug-in, you can safely use relative path references, for example,
           <span class="ph filepath">xsl/my.xsl</span> without specifying the path to the plug-in itself.</p>
     </section>

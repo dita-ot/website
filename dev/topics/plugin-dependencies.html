@@ -8,14 +8,14 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Plug-in dependencies</h1>
   
   <div class="body conbody"><p class="shortdesc">A DITA-OT plug-in can be dependent on other plug-ins. Prerequisite plug-ins are installed first, which
-    ensures that the DITA-OT handles XSLT overrides correctly.</p>
+    ensures that DITA-OT handles XSLT overrides correctly.</p>
     
     <section class="section">
       <p class="p">The <code class="keyword markupname xmlelement">&lt;require&gt;</code> element in the <span class="ph filepath">plugin.xml</span> file specifies whether the
         plug-in has dependencies. Use <code class="keyword markupname xmlelement">&lt;require&gt;</code> elements to specify prerequisite plug-ins, in
         order from most general to most specific.</p>
-      <p class="p">If a prerequisite plug-in is missing, the DITA-OT prints a warning during installation. To suppress the warning
-        but keep the installation order if both plug-ins are present, add <code class="ph codeph">importance="optional"</code> to the
+      <p class="p">If a prerequisite plug-in is missing, DITA-OT prints a warning during installation. To suppress the warning but
+        keep the installation order if both plug-ins are present, add <code class="ph codeph">importance="optional"</code> to the
           <code class="keyword markupname xmlelement">&lt;require&gt;</code> element. </p>
       
       <p class="p">If a plug-in can depend on any one of several optional plug-ins, separate the plug-in IDs with a vertical bar.
