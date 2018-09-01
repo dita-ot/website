@@ -1,5 +1,14 @@
 # Generated site (transformed by Jekyll)
 /_site
+.sass-cache
+.jekyll-metadata
+
+# GitHub Pages Gemfile & bundler artifacts
+Gemfile*
+
+# Bundler configuration & installation log
+.bundle/config
+install.log
 
 # Spurious duplicates generated via branch filtering & @copy-to
 # See https://github.com/dita-ot/dita-ot/issues/2980
