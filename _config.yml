@@ -8,6 +8,9 @@ safe: true
 lsi: false
 highlighter: rouge
 markdown: kramdown
+kramdown:
+  input: GFM
+
 sass:
   style: compressed
   sass_dir: css
