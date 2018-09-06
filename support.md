@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "DITA-OT Support"
+title: 'Community Support Forums'
 ---
 
-DITA-OT is maintained by a [small group of volunteers][1] who work on the project in their spare time.
+DITA Open Toolkit is developed and maintained by a [small group of volunteers][1] who work on the project in their spare time.
 {: .lead}
 
 With these limited resources, we can't offer direct support, but the DITA community offers several other forums, including:
 
-- The [DITA-OT project website][2] at [dita-ot.org][2] provides information about the latest toolkit releases, including [download links][3], release notes, and [documentation][4] for recent DITA-OT versions.
 - The [Yahoo! dita-users group][5] is the original DITA list-serv and a vital resource for the DITA community. People post regularly, both asking for and offering help. While the archived messages can be difficult to search, this is a treasure trove of information.
 - The [DITA-OT Users Google Group][6] is a general interest DITA-OT product forum, for questions on any aspect of the toolkit — from installation and getting started to questions about specific overrides, plug-ins, and customizations.
 - The StackOverflow developer community includes [topics related to DITA-OT][7].
+- The [OASIS DITA Technical Committee][8] maintains the DITA standard.
 
 [1]: /who_we_are
 [2]: https://www.dita-ot.org
@@ -20,3 +20,4 @@ With these limited resources, we can't offer direct support, but the DITA commun
 [5]: http://groups.yahoo.com/group/dita-users
 [6]: https://groups.google.com/d/forum/dita-ot-users
 [7]: http://stackoverflow.com/questions/tagged/dita-ot
+[8]: https://www.oasis-open.org/committees/dita/
