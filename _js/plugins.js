@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', event => {
-  fetch('http://plugins.dita-ot.org/_all.json')
+  fetch('https://plugins.dita-ot.org/_all.json')
     .then(response => response.json())
     .then(json => {
       const ul = document.createElement('ul')
