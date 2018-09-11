@@ -50,8 +50,9 @@ function list(json) {
   wrapper.appendChild(ul)
 }
 
-function details(versions) {
-  const first = versions[0]
+function details(vs) {
+  const versions = vs.slice().sort(compareVersion)
+  const first = versions[versions.length - 1]
   const div = document.createElement('div')
   const h2 = document.createElement('h2')
   h2.appendChild(document.createTextNode(first.name))
@@ -109,5 +110,38 @@ function getDomain(homepage) {
 function clear(myNode) {
   while (myNode.firstChild) {
     myNode.removeChild(myNode.firstChild)
+  }
+}
+
+function compareVersion(a, b) {
+  function parse(v) {
+    return v.split('.').map(v => Number.parseInt(v))
+  }
+  function compare(a = 0, b = 0) {
+    if (a === b) {
+      return 0
+    } else if (a < b) {
+      return 1
+    } else {
+      return -1
+    }
+  }
+  function zip(as, bs) {
+    return as.map(function(e, i) {
+      return [e, bs[i]]
+    })
+  }
+
+  try {
+    const as = parse(a)
+    const bs = parse(b)
+    console.log(as, bs)
+    console.log(zip(as, bs))
+    console.log(zip(as, bs).map(pair => compare(pair[0], pair[1])))
+    return zip(as, bs)
+      .map(pair => compare(pair[0], pair[1]))
+      .reduce((acc, curr) => (acc !== 0 ? acc : curr), 0)
+  } catch (e) {
+    return 0
   }
 }
