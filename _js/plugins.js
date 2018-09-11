@@ -58,49 +58,55 @@ function details(vs) {
   h2.appendChild(document.createTextNode(first.name))
   div.appendChild(h2)
   if (!!first.description) {
-    const desc = document.createElement('p')
-    desc.appendChild(document.createTextNode(first.description))
-    div.appendChild(desc)
+    div.appendChild(elem('h3', {}, 'Keywords'))
+    div.appendChild(elem('p', {}, first.description))
   }
   if (!!first.keywords && first.keywords.length !== 0) {
-    const keywordTitle = document.createElement('h3')
-    keywordTitle.appendChild(document.createTextNode('Keywords'))
-    div.appendChild(keywordTitle)
-    const desc = document.createElement('p')
-    desc.appendChild(document.createTextNode(first.keywords.join(', ')))
-    div.appendChild(desc)
+    div.appendChild(elem('h3', {}, 'Keywords'))
+    div.appendChild(elem('p', {}, first.keywords.join(', ')))
   }
   if (!!first.homepage) {
-    const title = document.createElement('h3')
-    title.appendChild(document.createTextNode('Homepage'))
-    div.appendChild(title)
-    const desc = document.createElement('p')
-    const link = document.createElement('a')
-    link.setAttribute('href', first.homepage)
-    link.appendChild(document.createTextNode(getDomain(first.homepage)))
-    desc.appendChild(link)
-    div.appendChild(desc)
+    div.appendChild(elem('h3', {}, 'Homepage'))
+    div.appendChild(elem('p', {}, [elem('a', { href: first.homepage }, getDomain(first.homepage))]))
   }
-  const installTitle = document.createElement('h3')
-  installTitle.appendChild(document.createTextNode('Install'))
-  div.appendChild(installTitle)
-  const installBlock = document.createElement('pre')
-  installBlock.appendChild(document.createTextNode(`dita --install ${first.name}`))
-  div.appendChild(installBlock)
-  const versionTitle = document.createElement('h3')
-  versionTitle.appendChild(document.createTextNode('Versions'))
-  div.appendChild(versionTitle)
-  const versionWrapper = document.createElement('ul')
-  versions.forEach(version => {
-    const li = document.createElement('li')
-    li.appendChild(document.createTextNode(version.vers))
-    versionWrapper.appendChild(li)
-  })
-  div.appendChild(versionWrapper)
+  div.appendChild(elem('h3', {}, 'Install'))
+  div.appendChild(elem('p', { class: 'small' }, 'DITA-OT 3.1 and newer'))
+  div.appendChild(elem('pre', {}, `dita --install ${first.name}`))
+  div.appendChild(elem('p', { class: 'small' }, 'DITA-OT 3.0 and older'))
+  div.appendChild(elem('pre', {}, `dita --install ${first.url}`))
+
+  div.appendChild(elem('h3', {}, 'Versions'))
+  div.appendChild(elem('ul', {}, versions.map(version => elem('li', {}, version.vers))))
 
   const wrapper = document.getElementById('plugins')
   clear(wrapper)
-  wrapper.appendChild(div)
+  append(wrapper, div)
+}
+
+function elem(name, attrs, content) {
+  const installBlock = document.createElement(name)
+  Object.keys(attrs).forEach(key => {
+    installBlock.setAttribute(key, attrs[key])
+  })
+  append(installBlock, content)
+  return installBlock
+}
+
+function append(parent, content) {
+  switch (typeof content) {
+    case 'string':
+      parent.appendChild(document.createTextNode(content))
+      break
+    case 'object':
+      if (Array.isArray(content)) {
+        content.forEach(c => {
+          parent.appendChild(c)
+        })
+        break
+      }
+    default:
+      parent.appendChild(content)
+  }
 }
 
 function getDomain(homepage) {
