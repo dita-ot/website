@@ -54,29 +54,33 @@ function details(vs) {
   const versions = vs.slice().sort(compareVersion)
   const first = versions[versions.length - 1]
   const div = document.createElement('div')
-  const h2 = document.createElement('h2')
-  h2.appendChild(document.createTextNode(first.name))
-  div.appendChild(h2)
+
+  div.appendChild(elem('h2', {}, first.name))
+
   if (!!first.description) {
-    div.appendChild(elem('h3', {}, 'Keywords'))
-    div.appendChild(elem('p', {}, first.description))
+    append(div, [elem('h3', {}, 'Keywords'), elem('p', {}, first.description)])
   }
   if (!!first.keywords && first.keywords.length !== 0) {
-    div.appendChild(elem('h3', {}, 'Keywords'))
-    div.appendChild(elem('p', {}, first.keywords.join(', ')))
+    append(div, [elem('h3', {}, 'Keywords'), elem('p', {}, first.keywords.join(', '))])
   }
   if (!!first.homepage) {
-    div.appendChild(elem('h3', {}, 'Homepage'))
-    div.appendChild(elem('p', {}, [elem('a', { href: first.homepage }, getDomain(first.homepage))]))
+    append(div, [
+      elem('h3', {}, 'Homepage'),
+      elem('p', {}, [elem('a', { href: first.homepage }, getDomain(first.homepage))])
+    ])
   }
-  div.appendChild(elem('h3', {}, 'Install'))
-  div.appendChild(elem('p', { class: 'small' }, 'DITA-OT 3.1 and newer'))
-  div.appendChild(elem('pre', {}, `dita --install ${first.name}`))
-  div.appendChild(elem('p', { class: 'small' }, 'DITA-OT 3.0 and older'))
-  div.appendChild(elem('pre', {}, `dita --install ${first.url}`))
+  append(div, [
+    elem('h3', {}, 'Install'),
+    elem('p', { class: 'small' }, 'DITA-OT 3.1 and newer'),
+    elem('pre', {}, `dita --install ${first.name}`),
+    elem('p', { class: 'small' }, 'DITA-OT 3.0 and older'),
+    elem('pre', {}, `dita --install ${first.url}`)
+  ])
 
-  div.appendChild(elem('h3', {}, 'Versions'))
-  div.appendChild(elem('ul', {}, versions.map(version => elem('li', {}, version.vers))))
+  append(div, [
+    elem('h3', {}, 'Versions'),
+    elem('ul', {}, versions.map(version => elem('li', {}, version.vers)))
+  ])
 
   const wrapper = document.getElementById('plugins')
   clear(wrapper)
