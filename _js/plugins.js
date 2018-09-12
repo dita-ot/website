@@ -77,6 +77,26 @@ function details(vs) {
     elem('pre', {}, `dita --install ${first.url}`)
   ])
 
+  const deps = first.deps
+  deps.sort((a, b) => a[0].name.localeCompare(b[0].name))
+  append(div, [
+    elem('h3', {}, 'Dependencies'),
+    elem(
+      'ul',
+      {},
+      deps
+        .filter(dep => dep.name === 'org.dita.base')
+        .map(dep => elem('li', {}, `${dep.name} ${dep.req || ''}`))
+    ),
+    elem(
+      'ul',
+      {},
+      deps
+        .filter(dep => dep.name !== 'org.dita.base')
+        .map(dep => elem('li', {}, `${dep.name} ${dep.req || ''}`))
+    )
+  ])
+
   append(div, [
     elem('h3', {}, 'Versions'),
     elem('ul', {}, versions.map(version => elem('li', {}, version.vers)))
