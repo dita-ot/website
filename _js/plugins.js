@@ -47,14 +47,12 @@ function list(json) {
     Object.values(json)
       .filter(plugin => !!plugin)
       .sort((a, b) => a[0].name.localeCompare(b[0].name))
-      .forEach(plugin => {
+      .map(plugin => {
         const first = plugin[0]
-        ul.appendChild(
-          elem('li', [
-            elem('a', { href: `#${first.name}`, style: 'font-weight:bold' }, first.name),
-            elem('p', { class: 'small' }, first.description)
-          ])
-        )
+        return elem('li', [
+          elem('a', { href: `#${first.name}`, style: 'font-weight:bold' }, first.name),
+          elem('p', { class: 'small' }, first.description)
+        ])
       })
   )
 }
