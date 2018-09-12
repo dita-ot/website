@@ -1,7 +1,9 @@
+const REPOSITORY_URL = 'https://plugins.dita-ot.org/_all.json'
+
 let plugins = null
 
 document.addEventListener('DOMContentLoaded', event => {
-  fetch('https://plugins.dita-ot.org/_all.json')
+  fetch(REPOSITORY_URL)
     .then(response => response.json())
     .then(init)
     .catch(err => {
@@ -18,96 +20,111 @@ function init(json) {
 }
 
 function show(hash) {
+  let content = null
   if (!!hash) {
-    const plugin = plugins[hash.substr(1)]
-    details(plugin)
+    const [name, version] = hash.substr(1).split('/')
+    const pluginVersions = plugins[name].slice()
+    pluginVersions.sort(compareVersion)
+    content = details(pluginVersions, version) || notFound(name, version)
   } else {
-    list(plugins)
+    content = list(plugins)
   }
+  const wrapper = document.getElementById('plugins')
+  clear(wrapper)
+  append(wrapper, content)
+}
+
+function notFound(name, version) {
+  return elem(
+    'p',
+    !!version ? `Plugin ${name} version ${version} not found.` : `Plugin ${name} not found.`
+  )
 }
 
 function list(json) {
-  const ul = document.createElement('ul')
-  Object.values(json)
-    .filter(plugin => !!plugin)
-    .sort((a, b) => a[0].name.localeCompare(b[0].name))
-    .forEach(plugin => {
-      const first = plugin[0]
-      const li = document.createElement('li')
-      const a = document.createElement('a')
-      a.setAttribute('href', `#${first.name}`)
-      a.setAttribute('style', 'font-weight:bold')
-      a.appendChild(document.createTextNode(first.name))
-      li.appendChild(a)
-      const desc = document.createElement('p')
-      desc.setAttribute('class', 'small')
-      desc.appendChild(document.createTextNode(first.description))
-      li.appendChild(desc)
-      ul.appendChild(li)
-    })
-  const wrapper = document.getElementById('plugins')
-  clear(wrapper)
-  wrapper.appendChild(ul)
+  return elem(
+    'ul',
+    Object.values(json)
+      .filter(plugin => !!plugin)
+      .sort((a, b) => a[0].name.localeCompare(b[0].name))
+      .forEach(plugin => {
+        const first = plugin[0]
+        ul.appendChild(
+          elem('li', [
+            elem('a', { href: `#${first.name}`, style: 'font-weight:bold' }, first.name),
+            elem('p', { class: 'small' }, first.description)
+          ])
+        )
+      })
+  )
 }
 
-function details(vs) {
-  const versions = vs.slice().sort(compareVersion)
-  const first = versions[versions.length - 1]
+function details(versions, version) {
+  console.log(versions, version)
+  const first = !!version ? versions.find(plugin => plugin.vers === version) : versions[0]
+  if (!first) {
+    return null
+  }
+
   const div = document.createElement('div')
 
-  div.appendChild(elem('h2', {}, first.name))
+  div.appendChild(elem('h2', [`${first.name}`, elem('small', ` ${first.vers}`)]))
 
   if (!!first.description) {
-    append(div, [elem('p', { class: 'shortdesc' }, first.description)])
+    append(div, elem('p', { class: 'shortdesc' }, first.description))
   }
   if (!!first.keywords && first.keywords.length !== 0) {
-    append(div, [elem('h3', {}, 'Keywords'), elem('p', {}, first.keywords.join(', '))])
+    append(div, [elem('h3', 'Keywords'), elem('p', first.keywords.join(', '))])
   }
   if (!!first.homepage) {
     append(div, [
-      elem('h3', {}, 'Homepage'),
-      elem('p', {}, [elem('a', { href: first.homepage }, getDomain(first.homepage))])
+      elem('h3', 'Homepage'),
+      elem('p', elem('a', { href: first.homepage }, getDomain(first.homepage)))
     ])
   }
   append(div, [
-    elem('h3', {}, 'Install'),
+    elem('h3', 'Install'),
     elem('p', { class: 'small' }, 'DITA-OT 3.1 and newer'),
-    elem('pre', {}, `dita --install ${first.name}`),
+    elem('pre', `dita --install ${first.name}`),
     elem('p', { class: 'small' }, 'DITA-OT 3.0 and older'),
-    elem('pre', {}, `dita --install ${first.url}`)
+    elem('pre', `dita --install ${first.url}`)
   ])
 
   const deps = first.deps
   deps.sort((a, b) => a[0].name.localeCompare(b[0].name))
   append(div, [
-    elem('h3', {}, 'Dependencies'),
+    elem('h3', 'Dependencies'),
     elem(
       'ul',
-      {},
       deps
         .filter(dep => dep.name === 'org.dita.base')
-        .map(dep => elem('li', {}, `${dep.name} ${dep.req || ''}`))
+        .map(dep => elem('li', `${dep.name} ${dep.req || ''}`))
     ),
     elem(
       'ul',
-      {},
       deps
         .filter(dep => dep.name !== 'org.dita.base')
-        .map(dep => elem('li', {}, `${dep.name} ${dep.req || ''}`))
+        .map(dep => elem('li', `${dep.name} ${dep.req || ''}`))
     )
   ])
 
   append(div, [
-    elem('h3', {}, 'Versions'),
-    elem('ul', {}, versions.map(version => elem('li', {}, version.vers)))
+    elem('h3', 'Versions'),
+    elem(
+      'ul',
+      versions.map(version =>
+        elem('li', elem('a', { href: `#${first.name}/${version.vers}` }, version.vers))
+      )
+    )
   ])
 
-  const wrapper = document.getElementById('plugins')
-  clear(wrapper)
-  append(wrapper, div)
+  return div
 }
 
-function elem(name, attrs, content) {
+function elem() {
+  const name = arguments[0]
+  const attrs = arguments.length === 3 ? arguments[1] : {}
+  const content = arguments.length === 3 ? arguments[2] : arguments[1]
   const installBlock = document.createElement(name)
   Object.keys(attrs).forEach(key => {
     installBlock.setAttribute(key, attrs[key])
@@ -117,6 +134,9 @@ function elem(name, attrs, content) {
 }
 
 function append(parent, content) {
+  if (content === undefined || content === null) {
+    return
+  }
   switch (typeof content) {
     case 'string':
       parent.appendChild(document.createTextNode(content))
@@ -124,7 +144,7 @@ function append(parent, content) {
     case 'object':
       if (Array.isArray(content)) {
         content.forEach(c => {
-          parent.appendChild(c)
+          append(parent, c)
         })
         break
       }
