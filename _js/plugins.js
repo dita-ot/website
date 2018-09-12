@@ -58,7 +58,7 @@ function details(vs) {
   div.appendChild(elem('h2', {}, first.name))
 
   if (!!first.description) {
-    append(div, [elem('h3', {}, 'Keywords'), elem('p', {}, first.description)])
+    append(div, [elem('p', { class: 'shortdesc' }, first.description)])
   }
   if (!!first.keywords && first.keywords.length !== 0) {
     append(div, [elem('h3', {}, 'Keywords'), elem('p', {}, first.keywords.join(', '))])
