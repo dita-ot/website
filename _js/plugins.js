@@ -58,7 +58,6 @@ function list(json) {
 }
 
 function details(versions, version) {
-  console.log(versions, version)
   const first = !!version ? versions.find(plugin => plugin.vers === version) : versions[0]
   if (!first) {
     return null
@@ -183,9 +182,6 @@ function compareVersion(a, b) {
   try {
     const as = parse(a)
     const bs = parse(b)
-    console.log(as, bs)
-    console.log(zip(as, bs))
-    console.log(zip(as, bs).map(pair => compare(pair[0], pair[1])))
     return zip(as, bs)
       .map(pair => compare(pair[0], pair[1]))
       .reduce((acc, curr) => (acc !== 0 ? acc : curr), 0)
