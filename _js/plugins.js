@@ -95,7 +95,7 @@ function details(versions, version) {
       'ul',
       deps
         .filter(dep => dep.name === 'org.dita.base')
-        .map(dep => elem('li', `${dep.name} ${dep.req || ''}`))
+        .map(dep => elem('li', `DITA-OT ${dep.req || ''}`))
     ),
     elem(
       'ul',
