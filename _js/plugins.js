@@ -44,16 +44,24 @@ function notFound(name, version) {
 function list(json) {
   return elem(
     'ul',
+    { class: 'list-unstyled' },
     Object.values(json)
       .filter(plugin => !!plugin)
       .sort((a, b) => a[0].name.localeCompare(b[0].name))
-      .map(plugin => {
-        const first = plugin[0]
-        return elem('li', [
-          elem('a', { href: `#${first.name}`, style: 'font-weight:bold' }, first.name),
-          elem('p', { class: 'small' }, first.description)
+      .map(plugin => plugin[0])
+      .map(first =>
+        elem('li', [
+          elem('h3', elem('a', { href: `#${first.name}` }, first.name)),
+          elem('p', first.description),
+          elem(
+            'p',
+            (first.keywords || []).flatMap(keyword => [
+              elem('code', { class: 'small' }, keyword),
+              ' \u00A0'
+            ])
+          )
         ])
-      })
+      )
   )
 }
 
@@ -71,7 +79,10 @@ function details(versions, version) {
     append(div, elem('p', { class: 'shortdesc' }, first.description))
   }
   if (!!first.keywords && first.keywords.length !== 0) {
-    append(div, [elem('h3', 'Keywords'), elem('p', first.keywords.join(', '))])
+    append(div, [
+      elem('h3', 'Keywords'),
+      elem('p', first.keywords.flatMap(keyword => [elem('code', keyword), ' \u00A0']))
+    ])
   }
   if (!!first.homepage) {
     append(div, [
@@ -95,13 +106,13 @@ function details(versions, version) {
       'ul',
       deps
         .filter(dep => dep.name === 'org.dita.base')
-        .map(dep => elem('li', `DITA-OT ${dep.req || ''}`))
+        .map(dep => elem('li', `DITA-OT ${humanReadableVersion(dep.req) || ''}`))
     ),
     elem(
       'ul',
       deps
         .filter(dep => dep.name !== 'org.dita.base')
-        .map(dep => elem('li', `${dep.name} ${dep.req || ''}`))
+        .map(dep => elem('li', `${dep.name} ${humanReadableVersion(dep.req) || ''}`))
     )
   ])
 
@@ -116,6 +127,17 @@ function details(versions, version) {
   ])
 
   return div
+}
+
+function humanReadableVersion(version) {
+  if (version.startsWith('=')) {
+    return `${version.substr(1)}`
+  } else if (version.startsWith('>=')) {
+    return `${version.substr(2)} or newer`
+  } else if (version.startsWith('<=')) {
+    return `${version.substr(2)} or older`
+  }
+  return version
 }
 
 function elem() {
