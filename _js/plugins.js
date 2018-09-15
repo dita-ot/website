@@ -84,6 +84,9 @@ function details(versions, version) {
       elem('p', first.keywords.flatMap(keyword => [elem('code', keyword), ' \u00A0']))
     ])
   }
+  if (!!first.license) {
+    append(div, [elem('h3', 'License'), elem('p', license(first.license))])
+  }
   if (!!first.homepage) {
     append(div, [
       elem('h3', 'Homepage'),
@@ -127,6 +130,23 @@ function details(versions, version) {
   ])
 
   return div
+}
+
+function license(spdx) {
+  switch (spdx) {
+    case 'Apache-2.0':
+      return elem(
+        'a',
+        { href: 'https://www.apache.org/licenses/LICENSE-2.0' },
+        'Apache License 2.0'
+      )
+    case 'MIT':
+      return elem('a', { href: 'https://opensource.org/licenses/MIT' }, 'MIT License')
+    case 'UNLICENSED':
+      return 'Unlicensed'
+    default:
+      return spdx
+  }
 }
 
 function humanReadableVersion(version) {
