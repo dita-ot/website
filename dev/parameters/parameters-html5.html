@@ -36,7 +36,9 @@ generated: true
               <div class="div">
                 <span class="ph">Corresponds to the XSLT parameter <span class="keyword parmname">FTR</span>.</span>
                 <div class="note note note_note"><span class="note__title">Note:</span> The footer file should be specified using an absolute path and must contain valid XML. A common
-                  practice is to place all content into a <code class="keyword markupname xmlelement">&lt;div&gt;</code> element.</div>
+                  practice is to place all content into a <code class="keyword markupname xmlelement">&lt;div&gt;</code> element. In HTML5 output, the
+                  footer file contents will be wrapped in an HTML5 <code class="keyword markupname xmlelement">&lt;footer&gt;</code> element with the
+                    <code class="keyword markupname xmlatt">@role</code> attribute set to <span class="keyword option">contentinfo</span>.</div>
               </div></dd><dt class="dt pt dlterm" id="html5__args.gen.default.meta"><span class="keyword parmname">args.gen.default.meta</span></dt><dd class="dd pd" id="html5__args.gen.default.meta.desc">Specifies whether to generate extra metadata that targets parental control scanners, meta elements with name="security" and name="Robots". The allowed values are <span class="keyword option">yes</span> and <span class="keyword option">no</span>; the default value is <span class="keyword option">no</span>.</dd><dd class="dd pd ddexpand">
               <div class="div">Corresponds to the XSLT parameter <span class="keyword parmname">genDefMeta</span>.
               </div>
@@ -51,7 +53,9 @@ generated: true
               <div class="div">
                 <span class="ph">Corresponds to the XSLT parameter <span class="keyword parmname">HDR</span>.</span>
                 <div class="note note note_note"><span class="note__title">Note:</span> The header file should be specified using an absolute path and must contain valid XML. A common
-                  practice is to place all content into a <code class="keyword markupname xmlelement">&lt;div&gt;</code> element.</div>
+                  practice is to place all content into a <code class="keyword markupname xmlelement">&lt;div&gt;</code> element. In HTML5 output, the
+                  contents of the header file will be wrapped in an HTML5 <code class="keyword markupname xmlelement">&lt;header&gt;</code> element with
+                  the <code class="keyword markupname xmlatt">@role</code> attribute set to <span class="keyword option">banner</span>.</div>
               </div></dd><dt class="dt pt dlterm" id="html5__args.hide.parent.link"><span class="keyword parmname">args.hide.parent.link</span></dt><dd class="dd pd" id="html5__args.hide.parent.link.desc">Specifies whether to hide links to parent topics in the HTML5 output. The allowed values are <span class="keyword option">yes</span> and <span class="keyword option">no</span>; the default value is <span class="keyword option">no</span>.</dd><dd class="dd pd ddexpand">
               <div class="div">
                 <span class="ph">Corresponds to the XSLT parameter <span class="keyword parmname">NOPARENTLINK</span>.</span>
