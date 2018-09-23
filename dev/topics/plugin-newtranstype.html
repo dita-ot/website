@@ -28,7 +28,7 @@ index: "../toc.html"
   &lt;feature extension="dita.conductor.transtype.check" 
            value="<var class="keyword varname">new-transtype</var>"/&gt;
   <strong class="ph b">&lt;feature extension="dita.transtype.print" value="<var class="keyword varname">new-transtype</var>"/&gt;</strong>
-  &lt;feature extension="dita.conductor.target.relative" file="<var class="keyword varname">ant-file</var>"/&gt;
+  &lt;feature extension="ant.import" file="<var class="keyword varname">ant-file</var>"/&gt;
 &lt;/plugin&gt;</code></pre>
           <p class="p">where:</p>
           <ul class="ul">
@@ -51,8 +51,7 @@ index: "../toc.html"
       <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.newtext"&gt;
   &lt;feature extension="dita.conductor.transtype.check" value="newtext"/&gt;
   &lt;feature extension="dita.transtype.print" value="newtext"/&gt;
-  &lt;feature extension="dita.conductor.target.relative" 
-           file="build-newtext.xml"/&gt;
+  &lt;feature extension="ant.import" file="build-newtext.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
       <p class="p">While the <span class="ph filepath">org.dita.html5</span> plug-in was separated from <code class="ph codeph">common-html</code> in version 2.4,
           the following example shows how earlier versions of that plug-in used the

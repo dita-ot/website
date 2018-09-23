@@ -32,7 +32,7 @@ index: "../toc.html"
       <ul class="ul">
         <li class="li">The JAR file must be added to the classpath.</li>
         <li class="li">The Ant target must be added to the dependency chain for conref.</li>
-        <li class="li">An Ant target must be created that uses this class, and the Ant wrapper integrated into the code.</li>
+        <li class="li">An Ant target must be created that uses this class, and integrated into the code.</li>
       </ul>
       <p class="p">The files might look like the following:</p>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span><span class="ph filepath">plugin.xml</span> file</figcaption>
@@ -43,21 +43,13 @@ index: "../toc.html"
   <strong class="ph b">&lt;feature extension="dita.conductor.lib.import" 
            file="com.example.sampleValidation.jar"/&gt;</strong>
   <em class="ph i">&lt;!-- Integrate the Ant code --&gt;</em>
-  &lt;feature extension="dita.conductor.target.relative"
-           file="antWrapper.xml"/&gt;
+  &lt;feature extension="ant.import" file="calljava-antcode.xml"/&gt;
   <em class="ph i">&lt;!-- Define the Ant target to call, and when (before conref) --&gt;</em>
   &lt;feature extension="depend.preprocess.conref.pre" 
            value="validateWithJava"/&gt;
 &lt;/plugin&gt;</code></pre>
       </figure>
-      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span><span class="ph filepath">antWrapper.xml</span> file</figcaption>
-        
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;dummy&gt;
-  &lt;import file="calljava-antcode.xml"/&gt;
-&lt;/dummy&gt;</code></pre>
-      </figure>
-      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span><span class="ph filepath">calljava-antcode.xml</span> file</figcaption>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span><span class="ph filepath">calljava-antcode.xml</span> file</figcaption>
         
         <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;project default="validateWithJava"&gt;
