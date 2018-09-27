@@ -34,7 +34,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "3.0.1",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-prettier": "2.7.0",
     "gulp": "^3.9.0",
     "gulp-babel": "^7.0.1",
     "gulp-watch": "^5.0.1",
