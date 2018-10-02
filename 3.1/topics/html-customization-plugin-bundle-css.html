@@ -4,7 +4,7 @@ layout: base
 title: "Bundling CSS in a custom HTML plug-in"
 index: "../toc.html"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/extending-the-ot.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a><ul class="nav nav-list"><li><a href="../topics/html-customization-parameters.html">Setting HTML parameters</a></li><li><a href="../topics/html-customization-properties-file.html">Using a properties file</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../topics/html-customization-plugin-bundle-css.html">Bundling custom CSS</a></li></ul></li></ul></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/custom-plugins.html">Custom plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/rebuilding-the-dita-ot-documentation.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a><ul class="nav nav-list"><li><a href="../topics/html-customization-parameters.html">Setting HTML parameters</a></li><li><a href="../topics/html-customization-properties-file.html">Using a properties file</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../topics/html-customization-plugin-bundle-css.html">Bundling custom CSS</a></li></ul></li></ul></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/custom-plugins.html">Custom plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Bundling CSS in a custom HTML plug-in</h1>
   
   
@@ -15,22 +15,26 @@ index: "../toc.html"
       <p class="p">This scenario walks through the process of creating a very simple plug-in
           (<code class="ph codeph">com.example.html5.custom.css</code>) that creates a new transformation type:
           <span class="keyword option">html5-custom-css</span>. </p>
-      <p class="p">The <span class="keyword option">html5-custom-css</span> transformation includes a custom CSS file and sets three parameters to
+      <p class="p">The <span class="keyword option">html5-custom-css</span> transformation includes a custom CSS file and sets four parameters to
         integrate the custom stylesheet in the generated HTML5 output. These parameter settings make the following
         changes:</p>
       <ul class="ul">
         <li class="li">
-          <p class="p">Specify the name of the custom .css file with <span class="keyword parmname">args.css</span>.</p>
-          <p class="p">The value of this parameter tells DITA-OT to use the custom .css file provided by the plug-in.</p></li>
+          <p class="p">Specify the name of the custom CSS file with <span class="keyword parmname">args.css</span>.</p>
+          <p class="p">The value of this parameter tells DITA-OT to use the <span class="ph filepath">custom.css</span> file provided by the
+            plug-in.</p></li>
         <li class="li">
-          <p class="p">Ensure that the custom .css file is copied to the output directory by setting
-              <span class="keyword parmname">args.copycss</span> to <span class="keyword option">yes</span>.</p></li>
+          <p class="p">Specify the <span class="ph filepath">css</span> subfolder of the plug-in as the source directory for custom CSS with
+              <span class="keyword parmname">args.cssroot</span>.</p></li>
         <li class="li">
-          <p class="p">Set the relative path for .css files in the output folder with <span class="keyword parmname">args.csspath</span>.</p>
+          <p class="p">Ensure that the CSS file is copied to the output directory by setting <span class="keyword parmname">args.copycss</span> to
+              <span class="keyword option">yes</span>.</p></li>
+        <li class="li">
+          <p class="p">Set the destination path for CSS files in the output folder with <span class="keyword parmname">args.csspath</span>.</p>
           <p class="p">CSS files are copied to the root level of the output folder by default. Setting this parameter places CSS
-            files in a dedicated subfolder.</p></li>
+            files in a dedicated <span class="ph filepath">css</span> subfolder.</p></li>
       </ul>
-      <p class="p">All three parameters are set in the Ant script (<span class="ph filepath">build.xml</span>).</p>
+      <p class="p">All four parameters are set in the Ant script (<span class="ph filepath">build.xml</span>).</p>
     </section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">plugins</span> directory, create a directory named
@@ -43,12 +47,12 @@ index: "../toc.html"
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample <span class="ph filepath">plugin.xml</span> file</figcaption>
             
             <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-<em class="ph i">&lt;!-- Plug-in to extend DITA-OT HTML5 output with a custom CSS file --&gt;</em>
+<em class="ph i">&lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;</em>
 &lt;plugin id="com.example.html5.custom.css"&gt;
   <strong class="ph b">&lt;require plugin="org.dita.html5"/&gt;</strong>
   <strong class="ph b">&lt;feature extension="dita.conductor.transtype.check"
            value="html5-custom-css"/&gt;</strong>
-  &lt;feature extension="dita.conductor.target.relative" file="build.xml"/&gt;
+  &lt;feature extension="ant.import" file="build.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
           </figure>
           <div class="note note note_note"><span class="note__title">Note:</span> This plug-in will extend the default HTML5 transformation, so the <code class="keyword markupname xmlelement">&lt;require&gt;</code>
@@ -75,24 +79,28 @@ body {
             own custom styles.</div>
         </div>
       </li><li class="li step stepexpand">
-        <span class="ph cmd">Add an Ant script (<span class="ph filepath">build.xml</span>) to define the transformation type.</span>
+        <span class="ph cmd">In the <span class="ph filepath">com.example.html5.custom.css</span> root directory, add an Ant script
+            (<span class="ph filepath">build.xml</span>) to define the transformation type.</span>
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample <span class="ph filepath">build.xml</span> file</figcaption>
             
             <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-<em class="ph i">&lt;!-- Plug-in to extend DITA-OT HTML5 output with a custom CSS file --&gt;</em>
+<em class="ph i">&lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;</em>
 &lt;project name="com.example.html5.custom.css"&gt;
-  &lt;target name="dita2html5-custom-css"&gt;
-    &lt;antcall target="dita2html5"&gt;
-      <em class="ph i">&lt;!-- Custom .css file used to style output --&gt;</em>
-      <strong class="ph b">&lt;param name="args.css" 
-             value="${dita.plugin.com.example.html5.custom.css.dir}/css/custom.css"/&gt;</strong>
-      <em class="ph i">&lt;!-- Copy the custom .css file to the output directory --&gt;</em>
-      &lt;param name="args.copycss" value="yes"/&gt;
-      <em class="ph i">&lt;!-- Location of the copied .css file relative to the output --&gt;</em>
-      &lt;param name="args.csspath" value="css"/&gt;
-    &lt;/antcall&gt;
+  &lt;target name="dita2html5-custom-css.init"&gt;
+    <em class="ph i">&lt;!-- Custom .css file used to style output --&gt;</em>
+    <strong class="ph b">&lt;property name="args.css" value="custom.css"/&gt;</strong>
+    <em class="ph i">&lt;!-- Source directory that contains the custom .css file --&gt;</em>
+    <strong class="ph b">&lt;property name="args.cssroot"
+              value="${dita.plugin.com.example.html5.custom.css.dir}/css"/&gt;</strong>
+    <em class="ph i">&lt;!-- Copy the custom .css file to the output directory --&gt;</em>
+    <strong class="ph b">&lt;property name="args.copycss" value="yes"/&gt;</strong>
+    <em class="ph i">&lt;!-- Location of the copied .css file relative to the output --&gt;</em>
+    <strong class="ph b">&lt;property name="args.csspath" value="css"/&gt;</strong>
   &lt;/target&gt;
+  &lt;target name="dita2html5-custom-css"
+          depends="dita2html5-custom-css.init,
+                   dita2html5"/&gt;
 &lt;/project&gt;</code></pre>
           </figure>
         </div>
@@ -117,4 +125,4 @@ body {
       </ol>
     </section>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/html-customization-css.html" title="To modify the appearance of the default HTML output generated by the DITA Open Toolkit, you can reference a custom Cascading Style Sheet (CSS) file with the typography and colors that define your corporate identity.">Adding custom CSS</a></li></ul></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters-base-html.html" title="Certain parameters apply to all HTML-based transformation types: HTML5, XHTML, HTML&nbsp;Help, Eclipse help, and TocJS.">HTML-based output parameters</a></li></ul></div></nav></main>
+<nav role="navigation" class="related-links"><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/html-customization-css.html" title="To modify the appearance of the default HTML output that DITA Open Toolkit generates, you can reference a custom Cascading Style Sheet (CSS) file with the typography, colors, and other presentation aspects that define your corporate identity.">Adding custom CSS</a></li></ul></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters-base-html.html" title="Certain parameters apply to all HTML-based transformation types: HTML5, XHTML, HTML&nbsp;Help, Eclipse help, and TocJS.">HTML-based output parameters</a></li></ul></div></nav></main>
