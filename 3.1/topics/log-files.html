@@ -4,11 +4,11 @@ layout: base
 title: "Log files"
 index: "../toc.html"
 ---
-<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/extending-the-ot.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li class="active"><a href="../topics/log-files.html">Log files</a></li><li><a href="../topics/DITA-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Accessing help for the dita command</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Reducing processing time</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
+<nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li class="active"><a href="../topics/log-files.html">Log files</a></li><li><a href="../topics/DITA-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Accessing help for the dita command</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Reducing processing time</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
   <h1 class="title topictitle1" id="ariaid-title1">Log files</h1>
   
-  <div class="body conbody"><p class="shortdesc">When you run the DITA-OT, key information is logged on the screen. This information can also be written to
-    a log file. If you encounter a problem, you can analyze this information to determine the source of the problem and
+  <div class="body conbody"><p class="shortdesc">When you run DITA-OT, key information is logged on the screen. This information can also be written to a
+    log file. If you encounter a problem, you can analyze this information to determine the source of the problem and
     then take action to resolve it.</p>
     <p class="p">The logging behavior varies depending on whether you use the <span class="keyword cmdname">dita</span> command or Ant to invoke a
       toolkit build.</p>
@@ -51,7 +51,7 @@ index: "../toc.html"
         
           <dt class="dt dlterm">Ant</dt>
           <dd class="dd">
-            <p class="p">If you prefer to launch the DITA-OT directly from Ant, you can also add the logger to the
+            <p class="p">If you prefer to launch DITA-OT directly from Ant, you can also add the logger to the
                 <code class="ph codeph">ANT_ARGS</code> environment variable, as explained above. You can also set the logger with the
                 <code class="ph codeph">-logger</code> parameter when calling Ant.</p>
             <pre class="pre codeblock"><code>ant -logger org.apache.tools.ant.listener.AnsiColorLogger</code></pre>
