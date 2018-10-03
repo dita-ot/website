@@ -11,8 +11,7 @@
     "fix:style": "prettier --ignore-path .prettierignore --write \"**/*.scss\"",
     "fix": "npm run fix:script && npm run fix:config && npm run fix:style && npm run fix:docs",
     "test:script": "eslint --ignore-path .prettierignore \"**/*.js\"",
-    "test": "npm run test:script",
-    "precommit": "lint-staged"
+    "test": "npm run test:script"
   },
   "lint-staged": {
     "*.{js,json,md,scss,yaml,yml}": [
@@ -46,5 +45,10 @@
     "history": "^4.7.2",
     "jquery": "^3.3.1",
     "lodash": "^4.17.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
