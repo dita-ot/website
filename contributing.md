@@ -38,7 +38,7 @@ If you'd like to fix a typo or propose changes to an existing topic, you can use
 {% include DCO.md %}
 
 [1]: https://github.com/dita-ot/dita-ot/issues
-[2]: https://github.com/dita-ot/dita-ot/issues/new
+[2]: https://github.com/dita-ot/dita-ot/issues/new/choose
 [3]: https://github.com/dita-ot/docs/issues
 [4]: https://github.com/dita-ot/dita-ot.github.io/issues
 [5]: https://groups.google.com/d/forum/dita-ot-users
