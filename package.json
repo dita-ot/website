@@ -40,7 +40,7 @@
     "gulp-watch": "^5.0.1",
     "husky": "0.14.3",
     "lint-staged": "7.3.0",
-    "prettier": "1.14.2"
+    "prettier": "1.14.3"
   },
   "dependencies": {
     "history": "^4.7.2",
