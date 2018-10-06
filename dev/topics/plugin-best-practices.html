@@ -26,6 +26,17 @@ index: "../toc.html"
         default settings in the base plug-in and makes it easier to migrate your changes to new toolkit versions.</li>
       <li class="li">Upgrade your customization plug-in to new versions of DITA-OT regularly. Do not wait through several major
         releases before upgrading.</li>
+      <li class="li">
+        <p class="p">For XSLT customizations, use a custom namespace for any modified template modes, template names, attribute
+          sets, functions, and variables. This helps to clarify which portions of the code are specific to your
+          customizations, and serves to isolate your changes in the event that items with the same name are added to the
+          base plug-ins in the future.</p>
+        <p class="p">For example, instead of creating a template named <code class="ph codeph">searchbar</code>, use something like
+            <code class="ph codeph">corp:searchbar</code> instead. This ensures that if future versions of DITA-OT add a
+            <code class="ph codeph">searchbar</code> template, your custom version will be unaffected.</p>
+        <div class="p">Instead of: <pre class="pre codeblock"><code>&lt;xsl:template name="searchbar"/&gt;</code></pre></div>
+        <div class="p">use: <pre class="pre codeblock"><code>&lt;xsl:template name="corp:searchbar"/&gt;</code></pre></div>
+      </li>
     </ul>
   </div>
 <nav role="navigation" class="related-links"><div class="linklist relinfo relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization-approaches.html" title="Various methods may be used to customize the PDF output that DITA Open Toolkit produces. Each of these approaches have advantages and shortcomings that should be considered when preparing a customization project. Some of these methods are considered “anti-patterns” with disadvantages that outweigh their apparent appeal. In most cases, you should create a custom PDF plug-in.">PDF customization approaches</a></li><li class="linklist"><a class="link" href="../topics/plugin-coding-conventions.html" title="To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases, the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding patterns.">Plug-in coding conventions</a></li></ul></div><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization.html" title="You can create custom DITA-OT plug-ins that build on the default DITA to PDF transformation. Plug-ins can customize covers and page layouts, modify formatting, override logic of the default PDF plug-in, and much more.">Customizing PDF output</a></li></ul></div></nav></main>
