@@ -102,7 +102,7 @@ function details(versions, version) {
   ])
 
   const deps = first.deps
-  deps.sort((a, b) => a[0].name.localeCompare(b[0].name))
+  deps.sort((a, b) => a.name.localeCompare(b.name))
   append(div, [
     elem('h3', 'Dependencies'),
     elem(
