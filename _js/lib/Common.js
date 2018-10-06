@@ -69,7 +69,7 @@ define(['EditController', 'jquery'], (EditController, $) =>
         event.preventDefault()
         event.stopPropagation()
 
-        const $target = $(event.target)
+        const $target = $(event.currentTarget)
         const href = $target.attr('href')
         loadMain(href)
       }
