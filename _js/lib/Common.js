@@ -10,13 +10,20 @@ define(['EditController', 'jquery'], (EditController, $) =>
     const $nav = $('nav[role=toc]')
     const $main = $('main[role=main]')
 
+    window.onpopstate = function(event) {
+      loadMain(document.location, undefined, false)
+    }
+
     return {
       loadMain,
       initializeMain,
       isLocal
     }
 
-    function loadMain(href, $tocLink) {
+    function loadMain(href, $tocLink, pushState = true) {
+      if (pushState) {
+        history.pushState({}, '', href)
+      }
       $.ajax({
         url: href,
         success(data) {
@@ -37,7 +44,6 @@ define(['EditController', 'jquery'], (EditController, $) =>
           $li.addClass('active')
           exposeNode($li)
         }
-        window.history.pushState({}, '', href)
 
         function exposeNode($li) {
           let $current = $li.parents('li:first')
