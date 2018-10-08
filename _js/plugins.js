@@ -13,6 +13,22 @@ document.addEventListener('DOMContentLoaded', event => {
 
 function init(json) {
   plugins = json
+  Object.values(plugins)
+    .filter(plugin => !!plugin)
+    .forEach(plugin => {
+      plugin.forEach(version => {
+        const buf =
+          version.name +
+          ' ' +
+          (version.description && version.description) +
+          ' ' +
+          (version.keywords && version.keywords.join(' '))
+        version.search = buf
+          .toLocaleLowerCase()
+          .replace(/\W/g, ' ')
+          .replace(/\s+/g, ' ')
+      })
+    })
   window.onpopstate = event => {
     show(location.hash)
   }
@@ -41,28 +57,90 @@ function notFound(name, version) {
   )
 }
 
-function list(json) {
-  return elem(
-    'ul',
-    { class: 'list-unstyled' },
-    Object.values(json)
-      .filter(plugin => !!plugin)
-      .sort((a, b) => a[0].name.localeCompare(b[0].name))
-      .map(plugin => plugin[0])
-      .map(first =>
-        elem('li', [
-          elem('h3', elem('a', { href: `#${first.name}` }, first.name)),
-          elem('p', first.description),
-          elem(
-            'p',
-            (first.keywords || []).flatMap(keyword => [
-              elem('code', { class: 'small' }, keyword),
-              ' \u00A0'
-            ])
-          )
-        ])
-      )
+function filterListHandler(event) {
+  const query = event.target.value
+    .toLocaleLowerCase()
+    .replace(/\W/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+  if (!!query) {
+    let found = false
+    document.querySelectorAll('#list > li').forEach(li => {
+      const plugin = plugins[li.id]
+      if (!!plugin[0].search.match(query)) {
+        found = true
+        li.style.display = 'list-item'
+      } else {
+        li.style.display = 'none'
+      }
+    })
+    document.querySelector('#empty').style.display = !found ? 'block' : 'none'
+  } else {
+    clearFilter()
+  }
+}
+
+function clearFilter() {
+  document.querySelectorAll('#list > li').forEach(li => {
+    li.style.display = 'list-item'
+  })
+}
+
+function clearFilterHandler(event) {
+  if (event.keyCode === 27) {
+    clearFilter()
+    document.querySelector('#query').value = ''
+    document.querySelector('#empty').style.display = 'none'
+  }
+}
+
+function filterForm() {
+  const input = elem(
+    'input',
+    {
+      id: 'query',
+      type: 'text',
+      class: 'form-control',
+      placeholder: 'Filter plugins',
+      size: 100
+    },
+    undefined
   )
+  input.oninput = filterListHandler
+  input.onkeypress = clearFilterHandler
+  return input
+}
+
+function list(json) {
+  return [
+    filterForm(),
+    elem(
+      'p',
+      { id: 'empty', style: 'display: none; margin-top: 1em', class: 'alert alert-info' },
+      'No matches found.'
+    ),
+    elem(
+      'ul',
+      { class: 'list-unstyled', id: 'list' },
+      Object.values(json)
+        .filter(plugin => !!plugin)
+        .sort((a, b) => a[0].name.localeCompare(b[0].name))
+        .map(plugin => plugin[0])
+        .map(first =>
+          elem('li', { id: first.name }, [
+            elem('h3', elem('a', { href: `#${first.name}` }, first.name)),
+            elem('p', first.description),
+            elem(
+              'p',
+              (first.keywords || []).flatMap(keyword => [
+                elem('code', { class: 'small' }, keyword),
+                ' \u00A0'
+              ])
+            )
+          ])
+        )
+    )
+  ]
 }
 
 function details(versions, version) {
