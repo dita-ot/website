@@ -21,11 +21,12 @@ define(['EditController', 'jquery'], (EditController, $) =>
     }
 
     function loadMain(href, $tocLink, pushState = true) {
+      const abs = new URI(href).absoluteTo(window.location.href).href()
       if (pushState) {
         history.pushState({}, '', href)
       }
       $.ajax({
-        url: href,
+        url: abs,
         success(data) {
           updateToc(href, $tocLink)
           updateMain(data)
