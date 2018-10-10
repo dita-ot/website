@@ -47,11 +47,10 @@ index: "../toc.html"
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample <span class="ph filepath">plugin.xml</span> file</figcaption>
             
             <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-<em class="ph i">&lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;</em>
+&lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;
 &lt;plugin id="com.example.html5.custom.css"&gt;
-  <strong class="ph b">&lt;require plugin="org.dita.html5"/&gt;</strong>
-  <strong class="ph b">&lt;feature extension="dita.conductor.transtype.check"
-           value="html5-custom-css"/&gt;</strong>
+  &lt;require plugin="org.dita.html5"/&gt;
+  &lt;feature extension="dita.conductor.transtype.check" value="html5-custom-css"/&gt;
   &lt;feature extension="ant.import" file="build.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
           </figure>
@@ -67,7 +66,7 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample <span class="ph filepath">custom.css</span> file</figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code><em class="ph i">/* These custom styles extend the DITA Open Toolkit default styles */</em>
+            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>/* These custom styles extend or override DITA Open Toolkit default styles. */
 
 body {
   color: red
@@ -85,18 +84,18 @@ body {
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample <span class="ph filepath">build.xml</span> file</figcaption>
             
             <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
-<em class="ph i">&lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;</em>
+&lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;
 &lt;project name="com.example.html5.custom.css"&gt;
   &lt;target name="dita2html5-custom-css.init"&gt;
-    <em class="ph i">&lt;!-- Custom .css file used to style output --&gt;</em>
-    <strong class="ph b">&lt;property name="args.css" value="custom.css"/&gt;</strong>
-    <em class="ph i">&lt;!-- Source directory that contains the custom .css file --&gt;</em>
-    <strong class="ph b">&lt;property name="args.cssroot"
-              value="${dita.plugin.com.example.html5.custom.css.dir}/css"/&gt;</strong>
-    <em class="ph i">&lt;!-- Copy the custom .css file to the output directory --&gt;</em>
-    <strong class="ph b">&lt;property name="args.copycss" value="yes"/&gt;</strong>
-    <em class="ph i">&lt;!-- Location of the copied .css file relative to the output --&gt;</em>
-    <strong class="ph b">&lt;property name="args.csspath" value="css"/&gt;</strong>
+    &lt;!-- Custom .css file used to style output --&gt;
+    &lt;property name="args.css" value="custom.css"/&gt;
+    &lt;!-- Source directory that contains the custom .css file --&gt;
+    &lt;property name="args.cssroot"
+              value="${dita.plugin.com.example.html5.custom.css.dir}/css"/&gt;
+    &lt;!-- Copy the custom .css file to the output directory --&gt;
+    &lt;property name="args.copycss" value="yes"/&gt;
+    &lt;!-- Location of the copied .css file relative to the output --&gt;
+    &lt;property name="args.csspath" value="css"/&gt;
   &lt;/target&gt;
   &lt;target name="dita2html5-custom-css"
           depends="dita2html5-custom-css.init,
