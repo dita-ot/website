@@ -13,7 +13,7 @@ index: "../toc.html"
     without having to copy the stylesheet to each project.</p>
     <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
       <p class="p">This scenario walks through the process of creating a very simple plug-in
-          (<code class="ph codeph">com.example.html5.custom.css</code>) that creates a new transformation type:
+          (<code class="ph codeph">com.example.html5-custom-css</code>) that creates a new transformation type:
           <span class="keyword option">html5-custom-css</span>. </p>
       <p class="p">The <span class="keyword option">html5-custom-css</span> transformation includes a custom CSS file and sets four parameters to
         integrate the custom stylesheet in the generated HTML5 output. These parameter settings make the following
@@ -38,9 +38,9 @@ index: "../toc.html"
     </section>
     <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">plugins</span> directory, create a directory named
-            <span class="ph filepath">com.example.html5.custom.css</span>.</span>
+            <span class="ph filepath">com.example.html5-custom-css</span>.</span>
       </li><li class="li step stepexpand">
-        <span class="ph cmd">In the new <span class="ph filepath">com.example.html5.custom.css</span> directory, create a plug-in configuration file
+        <span class="ph cmd">In the new <span class="ph filepath">com.example.html5-custom-css</span> directory, create a plug-in configuration file
             (<span class="ph filepath">plugin.xml</span>) that declares the new <span class="keyword option">html5-custom-css</span> transformation and
           its dependencies.</span>
         <div class="itemgroup stepxmp">
@@ -48,7 +48,7 @@ index: "../toc.html"
             
             <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;
-&lt;plugin id="com.example.html5.custom.css"&gt;
+&lt;plugin id="com.example.html5-custom-css"&gt;
   &lt;require plugin="org.dita.html5"/&gt;
   &lt;feature extension="dita.conductor.transtype.check" value="html5-custom-css"/&gt;
   &lt;feature extension="ant.import" file="build.xml"/&gt;
@@ -58,7 +58,7 @@ index: "../toc.html"
             element explicitly defines <span class="ph filepath">org.dita.html5</span> as a dependency.</div>
         </div>
       </li><li class="li step stepexpand">
-        <span class="ph cmd">In the <span class="ph filepath">com.example.html5.custom.css</span> directory, create a subdirectory named
+        <span class="ph cmd">In the <span class="ph filepath">com.example.html5-custom-css</span> directory, create a subdirectory named
             <span class="ph filepath">css</span>.</span>
       </li><li class="li step stepexpand">
         <span class="ph cmd">In the new <span class="ph filepath">css</span> subdirectory, create a file named <span class="ph filepath">custom.css</span> with
@@ -78,20 +78,20 @@ body {
             own custom styles.</div>
         </div>
       </li><li class="li step stepexpand">
-        <span class="ph cmd">In the <span class="ph filepath">com.example.html5.custom.css</span> root directory, add an Ant script
+        <span class="ph cmd">In the <span class="ph filepath">com.example.html5-custom-css</span> root directory, add an Ant script
             (<span class="ph filepath">build.xml</span>) to define the transformation type.</span>
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample <span class="ph filepath">build.xml</span> file</figcaption>
             
             <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 &lt;!-- This plug-in extends DITA-OT HTML5 processing with a custom CSS file. --&gt;
-&lt;project name="com.example.html5.custom.css"&gt;
+&lt;project name="com.example.html5-custom-css"&gt;
   &lt;target name="dita2html5-custom-css.init"&gt;
     &lt;!-- Custom .css file used to style output --&gt;
     &lt;property name="args.css" value="custom.css"/&gt;
     &lt;!-- Source directory that contains the custom .css file --&gt;
     &lt;property name="args.cssroot"
-              value="${dita.plugin.com.example.html5.custom.css.dir}/css"/&gt;
+              value="${dita.plugin.com.example.html5-custom-css.dir}/css"/&gt;
     &lt;!-- Copy the custom .css file to the output directory --&gt;
     &lt;property name="args.copycss" value="yes"/&gt;
     &lt;!-- Location of the copied .css file relative to the output --&gt;
@@ -105,8 +105,11 @@ body {
         </div>
       </li></ol>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
-      <p class="p">The new plug-in directory has the following layout and files:</p>
-      <pre class="pre codeblock"><code>com.example.html5.custom.css
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> The files for this sample plug-in are included in the DITA-OT installation directory under
+          <span class="ph filepath">docsrc/samples/plugins/com.example.html5-custom-css/</span> and on
+        <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-custom-css" target="_blank">GitHub</a>.</div>
+      <p class="p">The plug-in directory has the following layout and files:</p>
+      <pre class="pre codeblock"><code>com.example.html5-custom-css
 ├── build.xml
 ├── css
 │   └── custom.css
