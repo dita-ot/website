@@ -42,8 +42,12 @@ index: "../toc.html"
         
         
           <dt class="dt dlterm"><span class="keyword parmname">dita.conductor.transtype.check</span></dt>
-          <dd class="dd">Adds a
-            new value to the list of valid transformation types.</dd>
+          <dd class="dd">
+            <p class="p">Adds a new value to the list of valid transformation types.</p>
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> This extension point is still supported for backwards compatibility, but any new
+              customizations should instead use the <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element in the
+              <a class="xref" href="../topics/plugin-configfile.html" title="The plug-in descriptor file (plugin.xml) controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and then integrates those changes into the core DITA-OT code.">Plug-in descriptor file</a> to define a new transformation.</div>
+          </dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">dita.specialization.catalog</span></dt>
