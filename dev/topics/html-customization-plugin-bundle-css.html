@@ -86,13 +86,13 @@ body {
             
             <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 
-&lt;project  name="dita2html5-custom-css"&gt;
+&lt;project&gt;
   &lt;target name="dita2html5-custom-css"
        depends="dita2html5-custom-css.init,
                 dita2html5"/&gt;
   &lt;target name="dita2html5-custom-css.init"&gt;
     &lt;property name="args.cssroot"
-              value="${dita.plugin.com.example.html5-custom-css.dir}/css"/&gt;
+          location="${dita.plugin.com.example.html5-custom-css.dir}/css"/&gt;
     &lt;property name="args.css" value="custom.css"/&gt;
     &lt;property name="args.copycss" value="yes"/&gt;
     &lt;property name="args.csspath" value="css"/&gt;
