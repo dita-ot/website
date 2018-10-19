@@ -86,6 +86,8 @@ index: "../toc.html"
           </dt>
           <dd class="dd pd">Specifies the output format (transformation type).</dd>
           <dd class="dd pd ddexpand">This argument corresponds to the common parameter <span class="keyword parmname">transtype</span>.</dd>
+          <dd class="dd pd ddexpand">To list the formats that are currently available in your environment, use <span class="keyword cmdname">dita</span>
+            <span class="keyword parmname">--transtypes</span>.</dd>
           <dd class="dd pd ddexpand">
             <div class="p">You can create plug-ins to add new output formats; by default, the following values are
                 available:
@@ -121,17 +123,35 @@ index: "../toc.html"
                   provided, the installation process reloads the current set of plug-ins from the
                     <span class="ph filepath">plugins</span> directory. This approach can be used to add or remove multiple plug-ins
                   at once, or any individual plug-ins you have already copied to (or removed from) the
-                    <span class="ph filepath">plugins</span> directory.</span></dd>
+                <span class="ph filepath">plugins</span> directory. Any plug-ins added or removed in the process will be listed by
+                their plug-in ID.</span></dd>
         
         
           <dt class="dt pt dlterm">
             <span class="keyword parmname">--uninstall</span>&nbsp;<var class="keyword varname">id</var>
           </dt>
           <dd class="dd pd">
-            <p class="p">Uninstall a plug-in with the specified ID.</p>
+            <p class="p">Remove the plug-in with the specified ID.</p>
+          </dd>
+          <dd class="dd pd ddexpand">For a list of the currently installed plug-in IDs, use <span class="keyword cmdname">dita</span>
+            <span class="keyword parmname">--plugins</span>.</dd>
+          <dd class="dd pd ddexpand">
             <div class="note attention note_attention"><span class="note__title">Attention:</span> The <span class="keyword parmname">--uninstall</span> option also
                   removes the corresponding subdirectory from the <span class="ph filepath">plugins</span> folder.</div>
           </dd>
+        
+        
+          <dt class="dt pt dlterm">
+            <span class="keyword parmname">--plugins</span>
+          </dt>
+          <dd class="dd pd">Show a list of the currently installed plug-ins.</dd>
+        
+        
+          <dt class="dt pt dlterm">
+            <span class="keyword parmname">--transtypes</span>
+          </dt>
+          <dd class="dd pd">Show a list of the available output formats (transformation types).</dd>
+          <dd class="dd pd ddexpand">The entries in this list may be passed as values to the <span class="keyword parmname">--format</span> argument.</dd>
         
         
           <dt class="dt pt dlterm">
