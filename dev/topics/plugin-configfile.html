@@ -43,6 +43,10 @@ index: "../toc.html"
       
       <p class="p">The root element of the <span class="ph filepath">plugin.xml</span> file is <code class="keyword markupname xmlelement">&lt;plugin&gt;</code>, which has a
         required <code class="keyword markupname xmlatt">@id</code> attribute set to the unique plug-in identifier.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample <code class="keyword markupname xmlelement">&lt;plugin&gt;</code> element</figcaption>
+        
+        <pre class="pre codeblock"><code>&lt;plugin id="com.example.html5-javascript"&gt;</code></pre>
+      </figure>
     </section>
     <section class="section"><h2 class="title sectiontitle">Plug-in elements</h2>
       
@@ -71,6 +75,10 @@ index: "../toc.html"
               more dot-delimited tokens.</p>
             <div class="note note note_note" id="plugin-configfile__entension-point-ids-note"><span class="note__title">Note:</span> Extension point identifiers should begin with the identifier of the
               defining plug-in and append one or more tokens, for example, <code class="ph codeph">org.dita.example.pre</code>.</div>
+            <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample <code class="keyword markupname xmlelement">&lt;extension-point&gt;</code> element</figcaption>
+              
+              <pre class="pre codeblock"><code>&lt;extension-point id="dita.xsl.html5" name="HTML5 XSLT import"/&gt;</code></pre>
+            </figure>
           </dd>
         
         
@@ -103,11 +111,15 @@ index: "../toc.html"
                 <td class="stentry">Type of the <code class="keyword markupname xmlatt">@value</code> attribute</td>
                 <td class="stentry">No</td>
               </tr></tbody></table>
-            <div class="p">If more than one <code class="keyword markupname xmlelement">&lt;feature&gt;</code> element supplies values to the same extension point,
-              the values are additive. For example, the following are
-              equivalent:<pre class="pre codeblock"><code>&lt;feature extension="org.dita.example.extension-point" value="a,b,c"/&gt;</code></pre><pre class="pre codeblock"><code>&lt;feature extension="org.dita.example.extension-point" value="a"/&gt;
+            <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample <code class="keyword markupname xmlelement">&lt;feature&gt;</code> elements</figcaption>
+              
+              <p class="p">If more than one <code class="keyword markupname xmlelement">&lt;feature&gt;</code> element supplies values to the same extension point,
+                the values are additive. For example, the following are equivalent:</p>
+              <pre class="pre codeblock"><code>&lt;feature extension="org.dita.example.extension-point" value="a,b,c"/&gt;</code></pre>
+              <pre class="pre codeblock"><code>&lt;feature extension="org.dita.example.extension-point" value="a"/&gt;
 &lt;feature extension="org.dita.example.extension-point" value="b"/&gt;
-&lt;feature extension="org.dita.example.extension-point" value="c"/&gt;</code></pre></div>
+&lt;feature extension="org.dita.example.extension-point" value="c"/&gt;</code></pre>
+            </figure>
           </dd>
         
         
@@ -128,6 +140,10 @@ index: "../toc.html"
                 <td class="stentry">Metadata value</td>
                 <td class="stentry">Yes</td>
               </tr></tbody></table>
+            <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span>Sample <code class="keyword markupname xmlelement">&lt;meta&gt;</code> element</figcaption>
+              
+              <pre class="pre codeblock"><code>&lt;meta type="foo" value="bar"/&gt;</code></pre>
+            </figure>
           </dd>
         
         
@@ -152,6 +168,10 @@ index: "../toc.html"
                   available.</td>
                 <td class="stentry">No</td>
               </tr></tbody></table>
+            <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 5. </span>Sample <code class="keyword markupname xmlelement">&lt;require&gt;</code> element</figcaption>
+              
+              <pre class="pre codeblock normalize-space"><code>&lt;require plugin="org.dita.html5"/&gt;</code></pre>
+            </figure>
           </dd>
         
         
@@ -173,6 +193,10 @@ index: "../toc.html"
                   file</td>
                 <td class="stentry">Yes</td>
               </tr></tbody></table>
+            <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span>Sample <code class="keyword markupname xmlelement">&lt;template&gt;</code> element</figcaption>
+              
+              <pre class="pre codeblock"><code>&lt;template file="build_dita2html5_template.xml"/&gt;</code></pre>
+            </figure>
           </dd>
         
         
@@ -204,6 +228,20 @@ index: "../toc.html"
                 <td class="stentry">Specifies the name of the transformation type being extended</td>
                 <td class="stentry">No</td>
               </tr></tbody></table>
+            <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 7. </span>Sample element</figcaption>
+              
+              <pre class="pre codeblock"><code>&lt;transtype name="base" abstract="true" desc="Common"&gt;
+  &lt;!-- ⋮ --&gt;
+  &lt;param name="link-crawl" 
+         desc="Specifies whether to crawl only topic links found in maps, or all discovered topic links."
+         type="enum"&gt;
+    &lt;val&gt;map&lt;/val&gt;
+    &lt;val default="true"&gt;topic&lt;/val&gt;
+  &lt;/param&gt;
+  &lt;!-- ⋮ --&gt;
+&lt;/transtype&gt;
+</code></pre>
+            </figure>
             <p class="p">The <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element may define additional parameters for the transformation
               type using the following child elements.</p>
             <dl class="dl parml">
