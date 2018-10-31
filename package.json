@@ -38,7 +38,7 @@
     "gulp-babel": "^7.0.1",
     "gulp-watch": "^5.0.1",
     "husky": "1.1.2",
-    "lint-staged": "7.3.0",
+    "lint-staged": "8.0.4",
     "prettier": "1.14.2"
   },
   "dependencies": {
