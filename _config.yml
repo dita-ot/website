@@ -25,6 +25,7 @@ exclude:
   - Gemfile*
   - gulpfile.js
   - images/dita-ot_input-output.graffle
+  - LICENSE
   - node_modules
   - package*.js*
 
