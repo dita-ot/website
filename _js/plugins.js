@@ -173,9 +173,9 @@ function details(versions, version) {
   }
   append(div, [
     elem('h3', 'Install'),
-    elem('p', { class: 'small' }, 'DITA-OT 3.1 and newer'),
+    elem('p', { class: 'small' }, 'DITA-OT 3.2 and newer'),
     elem('pre', `dita --install ${first.name}`),
-    elem('p', { class: 'small' }, 'DITA-OT 3.0 and older'),
+    elem('p', { class: 'small' }, 'DITA-OT 3.1 and older'),
     elem('pre', `dita --install ${first.url}`)
   ])
 
