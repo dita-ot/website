@@ -16,18 +16,22 @@ function init(json) {
   Object.values(plugins)
     .filter(plugin => !!plugin)
     .forEach(plugin => {
-      plugin.forEach(version => {
-        const buf =
-          version.name +
-          ' ' +
-          (version.description && version.description) +
-          ' ' +
-          (version.keywords && version.keywords.join(' '))
-        version.search = buf
-          .toLocaleLowerCase()
-          .replace(/\W/g, ' ')
-          .replace(/\s+/g, ' ')
-      })
+      if (plugin.alias) {
+        // skip
+      } else {
+        plugin.forEach(version => {
+          const buf =
+            version.name +
+            ' ' +
+            (version.description && version.description) +
+            ' ' +
+            (version.keywords && version.keywords.join(' '))
+          version.search = buf
+            .toLocaleLowerCase()
+            .replace(/\W/g, ' ')
+            .replace(/\s+/g, ' ')
+        })
+      }
     })
   window.onpopstate = event => {
     show(location.hash)
@@ -123,7 +127,7 @@ function list(json) {
       'ul',
       { class: 'list-unstyled', id: 'list' },
       Object.values(json)
-        .filter(plugin => !!plugin)
+        .filter(plugin => !!plugin && !plugin.alias)
         .sort((a, b) => a[0].name.localeCompare(b[0].name))
         .map(plugin => plugin[0])
         .map(first =>
