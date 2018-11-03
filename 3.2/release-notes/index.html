@@ -178,8 +178,8 @@ index: "../toc.html"
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/3031" target="_blank">#3031</a>
           </li>
           <li class="li" id="v3.2__3011">The previously deprecated <code class="ph codeph">dost.jar.path</code> alias has been removed, and the
-              <code class="ph codeph">dost.class.path</code> property to which it referredhas been deprecated, as the classpath is now
-            defined outside the Ant process.
+              <code class="ph codeph">dost.class.path</code> property to which it referred has been deprecated, as the classpath is
+            now defined outside the Ant process.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3011" target="_blank">#3011</a>
           </li>
           <li class="li" id="v3.2__3020">HTML5 CSS configuration has been refactored to improve test coverage and simplify property
@@ -220,10 +220,11 @@ index: "../toc.html"
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3079" target="_blank">#3079</a>
           </li>
           <li class="li" id="v3.2__3084">In earlier releases, <code class="keyword markupname xmlatt">@conref</code> resolution would fail with an error when the
-            referring document had a constraint that was not also specified on the target document (as for DITA to XDITA
-            conrefs, for example). Based on the DITA specification, this is an error condition but should only fail when
-            the constraint is defined as "strict". Accordingly, the <code class="keyword markupname xmlatt">@conref</code> processor has been updated
-            to allow resolution of <code class="keyword markupname xmlatt">@conref</code> with an error for ordinary constraints.
+            referring document had a constraint that was not also specified on the target document (as when referencing
+            DITA content from an XDITA topic, for example). Based on the DITA specification, this is an error condition
+            but should only fail when the constraint is defined as "strict". Accordingly, the <code class="keyword markupname xmlatt">@conref</code>
+            processor has been updated to allow resolution of <code class="keyword markupname xmlatt">@conref</code> with an error for ordinary
+            constraints.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3084" target="_blank">#3084</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/3097" target="_blank">#3097</a>
           </li>
@@ -291,6 +292,13 @@ index: "../toc.html"
               <code class="ph codeph">move-meta</code> preprocessing step. This has been fixed so metadata is handled properly for
             each reference to a document.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3127" target="_blank">#3127</a>
+          </li>
+          <li class="li" id="v3.2__3128">In earlier releases, input documents that included tables with the <code class="keyword markupname xmlatt">@frame</code>
+            attribute set to <code class="ph codeph">"none"</code> generated invalid HTML5 markup (<code class="ph codeph">border="0"</code>).
+            Processing has been corrected to ensure that the <code class="keyword markupname xmlatt">@border</code> attribute is omitted for tables
+            that have no border.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3128" target="_blank">#3128</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3139" target="_blank">#3139</a>
           </li>
         </ul>
       </section>
