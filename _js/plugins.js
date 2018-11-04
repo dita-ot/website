@@ -1,4 +1,54 @@
 const REPOSITORY_URL = 'https://plugins.dita-ot.org/_all.json'
+const VERSIONS = [
+  '3.2',
+  '3.1.3',
+  '3.1.2',
+  '3.1.1',
+  '3.1',
+  '3.0.4',
+  '3.0.3',
+  '3.0.2',
+  '3.0.1',
+  '3.0',
+  '2.5.4',
+  '2.5.3',
+  '2.5.2',
+  '2.5.1',
+  '2.5',
+  '2.4.6',
+  '2.4.5',
+  '2.4.4',
+  '2.4.3',
+  '2.4.2',
+  '2.4.1',
+  '2.4',
+  '2.3.3',
+  '2.3.2',
+  '2.3.1',
+  '2.3',
+  '2.2.5',
+  '2.2.4',
+  '2.2.3',
+  '2.2.2',
+  '2.2.1',
+  '2.2',
+  '2.1.2',
+  '2.1.1',
+  '2.1',
+  '2.0.1',
+  '2.0',
+  '1.8.5',
+  '1.8.4',
+  '1.8.3',
+  '1.8.2',
+  '1.8.1',
+  '1.8',
+  '1.7.5',
+  '1.7.4',
+  '1.7.3',
+  '1.7.2',
+  '1.7.1'
+]
 
 let plugins = null
 
@@ -106,13 +156,27 @@ function filterForm() {
       type: 'text',
       class: 'form-control',
       placeholder: 'Filter plugins',
-      size: 100
+      size: 50
     },
     undefined
   )
   input.oninput = filterListHandler
   input.onkeypress = clearFilterHandler
-  return input
+
+  const version = elem(
+    'select',
+    { id: 'version', class: 'form-control' },
+    [elem('option', { value: '' }, 'Any version')].concat(
+      VERSIONS.map(version => elem('option', { value: version }, version))
+    )
+  )
+  // version.onchange = todo
+
+  return elem('div', { class: 'form-inline' }, [
+    elem('div', { class: 'form-group' }, input),
+    ' ',
+    elem('div', { class: 'form-group' }, version)
+  ])
 }
 
 function list(json) {
