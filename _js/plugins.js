@@ -1,3 +1,31 @@
+const TRANSLATIONS = {
+  INSTALL_OLD: 'DITA-OT 3.1 and older',
+  INSTALL_CURRENT: 'DITA-OT 3.2 and newer',
+  LICENSE: 'License',
+  HOMEPAGE: 'Homepage',
+  KEYWORDS: 'Keywords',
+  INSTALL: 'Install',
+  FILTER_PLACEHOLDER: 'Filter plugins',
+  FILTER_ANY_VERSION: 'Any version',
+  FILTER_VERSION_LABEL: 'DITA-OT version',
+  NO_MATCHES: 'No matches found.',
+  DEPENDENCIES: 'Dependencies',
+  VERSIONS: 'Versions',
+  VERSION_NOT_FOUND: 'Plugin {} version {} not found.',
+  NOT_FOUND: 'Plugin {} not found.',
+  FOUND: 'Found {} matches.'
+}
+
+function t(name) {
+  if (arguments.length > 1) {
+    return [...arguments]
+      .slice(1)
+      .reduce((acc, curr) => acc.replace('{}', curr), TRANSLATIONS[name])
+  } else {
+    return TRANSLATIONS[name]
+  }
+}
+
 const REPOSITORY_URL = 'https://plugins.dita-ot.org/_all.json'
 const VERSIONS = [
   '3.2',
@@ -103,18 +131,23 @@ function show(hash) {
   clear(wrapper)
   append(wrapper, content)
   if (!hash) {
-    filterList()
+    doFilter()
   }
 }
 
 function notFound(name, version) {
   return elem(
     'p',
-    !!version ? `Plugin ${name} version ${version} not found.` : `Plugin ${name} not found.`
+    !!version
+      ? t('VERSION_NOT_FOUND', name, version) //`Plugin ${name} version ${version} not found.`
+      : t('NOT_FOUND', name) //`Plugin ${name} not found.`
   )
 }
 
-var query = {}
+const query = {
+  freetext: null,
+  version: null
+}
 
 function queryHandler(event) {
   query.freetext = event.target.value
@@ -122,15 +155,15 @@ function queryHandler(event) {
     .replace(/\W/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
-  filterList()
+  doFilter()
 }
 
 function versionHandler(event) {
   query.version = event.target.value
-  filterList()
+  doFilter()
 }
 
-function filterList() {
+function doFilter() {
   if (!!query.freetext || !!query.version) {
     let count = 0
     document.querySelectorAll('#list > li').forEach(li => {
@@ -152,7 +185,7 @@ function filterList() {
       empty.style.display = 'none'
       hits.style.display = 'block'
       clear(hits)
-      hits.appendChild(document.createTextNode(`Found ${count} matches.`))
+      hits.appendChild(document.createTextNode(t('FOUND', count)))
     }
   } else {
     clearFilter()
@@ -178,14 +211,16 @@ function clearFilter() {
   })
   const hits = document.querySelector('#hits')
   hits.style.display = 'none'
-  clear(hits)
+  // clear(hits)
 }
 
 function clearFilterHandler(event) {
   if (event.keyCode === 27) {
-    clearFilter()
+    // clearFilter()
     document.querySelector('#query').value = ''
-    document.querySelector('#empty, #hits').style.display = 'none'
+    query.freetext = ''
+    // document.querySelector('#empty, #hits').style.display = 'none'
+    doFilter()
   }
 }
 
@@ -197,7 +232,7 @@ function filterForm() {
       value: query.freetext || '',
       type: 'text',
       class: 'form-control',
-      placeholder: 'Filter plugins',
+      placeholder: t('FILTER_PLACEHOLDER'),
       size: 50
     },
     undefined
@@ -215,7 +250,7 @@ function filterForm() {
   const version = elem(
     'select',
     { id: 'version', class: 'form-control' },
-    [elem('option', { value: '' }, 'Any version')].concat(options)
+    [elem('option', { value: '' }, t('FILTER_ANY_VERSION'))].concat(options)
   )
   version.onchange = versionHandler
 
@@ -232,13 +267,9 @@ function list(json) {
     elem(
       'p',
       { id: 'empty', style: 'display: none; margin-top: 1em', class: 'alert alert-info' },
-      'No matches found.'
+      t('NO_MATCHES')
     ),
-    elem(
-      'p',
-      { id: 'hits', style: 'display: none; margin-top: 1em', class: 'alert alert-info' },
-      'Matches found.'
-    ),
+    elem('p', { id: 'hits', style: 'display: none; margin-top: 1em' }, ''),
     elem(
       'ul',
       { class: 'list-unstyled', id: 'list' },
@@ -278,31 +309,31 @@ function details(versions, version) {
   }
   if (!!first.keywords && first.keywords.length !== 0) {
     append(div, [
-      elem('h3', 'Keywords'),
+      elem('h3', t('KEYWORDS')),
       elem('p', first.keywords.flatMap(keyword => [elem('code', keyword), ' \u00A0']))
     ])
   }
   if (!!first.license) {
-    append(div, [elem('h3', 'License'), elem('p', license(first.license))])
+    append(div, [elem('h3', t('LICENSE')), elem('p', license(first.license))])
   }
   if (!!first.homepage) {
     append(div, [
-      elem('h3', 'Homepage'),
+      elem('h3', t('HOMEPAGE')),
       elem('p', elem('a', { href: first.homepage }, getDomain(first.homepage)))
     ])
   }
   append(div, [
-    elem('h3', 'Install'),
-    elem('p', { class: 'small' }, 'DITA-OT 3.2 and newer'),
+    elem('h3', t('INSTALL')),
+    elem('p', { class: 'small' }, t('INSTALL_OLD')),
     elem('pre', `dita --install ${first.name}`),
-    elem('p', { class: 'small' }, 'DITA-OT 3.1 and older'),
+    elem('p', { class: 'small' }, t('INSTALL_CURRENT')),
     elem('pre', `dita --install ${first.url}`)
   ])
 
   const deps = first.deps
   deps.sort((a, b) => a.name.localeCompare(b.name))
   append(div, [
-    elem('h3', 'Dependencies'),
+    elem('h3', t('DEPENDENCIES')),
     elem(
       'ul',
       deps
@@ -318,7 +349,7 @@ function details(versions, version) {
   ])
 
   append(div, [
-    elem('h3', 'Versions'),
+    elem('h3', t('VERSIONS')),
     elem(
       'ul',
       versions.map(version =>
@@ -358,6 +389,12 @@ function humanReadableVersion(version) {
   return version
 }
 
+function getDomain(homepage) {
+  return homepage.replace(/^\w+:\/\/([^\/]+?)(\/.*)?$/, '$1')
+}
+
+// DOM utils
+
 function elem() {
   const name = arguments[0]
   const attrs = arguments.length === 3 ? arguments[1] : {}
@@ -388,10 +425,6 @@ function append(parent, content) {
     default:
       parent.appendChild(content)
   }
-}
-
-function getDomain(homepage) {
-  return homepage.replace(/^\w+:\/\/([^\/]+?)(\/.*)?$/, '$1')
 }
 
 function clear(myNode) {
