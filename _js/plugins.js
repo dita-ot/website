@@ -1,4 +1,82 @@
+const TRANSLATIONS = {
+  INSTALL_OLD: 'DITA-OT 3.1 and older',
+  INSTALL_CURRENT: 'DITA-OT 3.2 and newer',
+  LICENSE: 'License',
+  HOMEPAGE: 'Homepage',
+  KEYWORDS: 'Keywords',
+  INSTALL: 'Install',
+  FILTER_PLACEHOLDER: 'Filter plugins',
+  FILTER_ANY_VERSION: 'Any version',
+  FILTER_VERSION_LABEL: 'DITA-OT version',
+  NO_MATCHES: 'No matches found.',
+  DEPENDENCIES: 'Dependencies',
+  VERSIONS: 'Versions',
+  VERSION_NOT_FOUND: 'Plugin {} version {} not found.',
+  NOT_FOUND: 'Plugin {} not found.',
+  FOUND: 'Found {} matches.'
+}
+
+function t(name) {
+  if (arguments.length > 1) {
+    return [...arguments]
+      .slice(1)
+      .reduce((acc, curr) => acc.replace('{}', curr), TRANSLATIONS[name])
+  } else {
+    return TRANSLATIONS[name]
+  }
+}
+
 const REPOSITORY_URL = 'https://plugins.dita-ot.org/_all.json'
+const VERSIONS = [
+  '3.2',
+  // '3.1.3',
+  // '3.1.2',
+  // '3.1.1',
+  '3.1',
+  // '3.0.4',
+  // '3.0.3',
+  // '3.0.2',
+  // '3.0.1',
+  '3.0',
+  // '2.5.4',
+  // '2.5.3',
+  // '2.5.2',
+  // '2.5.1',
+  '2.5',
+  // '2.4.6',
+  // '2.4.5',
+  // '2.4.4',
+  // '2.4.3',
+  // '2.4.2',
+  // '2.4.1',
+  '2.4',
+  // '2.3.3',
+  // '2.3.2',
+  // '2.3.1',
+  '2.3',
+  // '2.2.5',
+  // '2.2.4',
+  // '2.2.3',
+  // '2.2.2',
+  // '2.2.1',
+  '2.2',
+  // '2.1.2',
+  // '2.1.1',
+  '2.1',
+  // '2.0.1',
+  '2.0',
+  // '1.8.5',
+  // '1.8.4',
+  // '1.8.3',
+  // '1.8.2',
+  // '1.8.1',
+  '1.8'
+  // '1.7.5',
+  // '1.7.4',
+  // '1.7.3',
+  // '1.7.2',
+  // '1.7.1'
+]
 
 let plugins = null
 
@@ -52,49 +130,97 @@ function show(hash) {
   const wrapper = document.getElementById('plugins')
   clear(wrapper)
   append(wrapper, content)
+  if (!hash) {
+    doFilter()
+  }
 }
 
 function notFound(name, version) {
   return elem(
     'p',
-    !!version ? `Plugin ${name} version ${version} not found.` : `Plugin ${name} not found.`
+    !!version
+      ? t('VERSION_NOT_FOUND', name, version) //`Plugin ${name} version ${version} not found.`
+      : t('NOT_FOUND', name) //`Plugin ${name} not found.`
   )
 }
 
-function filterListHandler(event) {
-  const query = event.target.value
+const query = {
+  freetext: null,
+  version: null
+}
+
+function queryHandler(event) {
+  query.freetext = event.target.value
     .toLocaleLowerCase()
     .replace(/\W/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
-  if (!!query) {
-    let found = false
+  doFilter()
+}
+
+function versionHandler(event) {
+  query.version = event.target.value
+  doFilter()
+}
+
+function doFilter() {
+  if (!!query.freetext || !!query.version) {
+    let count = 0
     document.querySelectorAll('#list > li').forEach(li => {
       const plugin = plugins[li.id]
-      if (!!plugin[0].search.match(query)) {
-        found = true
+      if (match(plugin[0])) {
+        count++
         li.style.display = 'list-item'
       } else {
         li.style.display = 'none'
       }
     })
-    document.querySelector('#empty').style.display = !found ? 'block' : 'none'
+    const empty = document.querySelector('#empty')
+    const hits = document.querySelector('#hits')
+    if (count === 0) {
+      empty.style.display = 'block'
+      hits.style.display = 'none'
+      clear(hits)
+    } else {
+      empty.style.display = 'none'
+      hits.style.display = 'block'
+      clear(hits)
+      hits.appendChild(document.createTextNode(t('FOUND', count)))
+    }
   } else {
     clearFilter()
   }
+}
+
+function match(plugin) {
+  let freetext = !query.freetext
+  if (!!query.freetext && !!plugin.search.match(query.freetext)) {
+    freetext = true
+  }
+  let version = !query.version
+  const platform = plugin.deps.find(dep => dep.name === 'org.dita.base')
+  if (!!query.version && !!platform && matchVersion(query.version, platform.req)) {
+    version = true
+  }
+  return freetext && version
 }
 
 function clearFilter() {
   document.querySelectorAll('#list > li').forEach(li => {
     li.style.display = 'list-item'
   })
+  const hits = document.querySelector('#hits')
+  hits.style.display = 'none'
+  // clear(hits)
 }
 
 function clearFilterHandler(event) {
   if (event.keyCode === 27) {
-    clearFilter()
+    // clearFilter()
     document.querySelector('#query').value = ''
-    document.querySelector('#empty').style.display = 'none'
+    query.freetext = ''
+    // document.querySelector('#empty, #hits').style.display = 'none'
+    doFilter()
   }
 }
 
@@ -103,16 +229,36 @@ function filterForm() {
     'input',
     {
       id: 'query',
+      value: query.freetext || '',
       type: 'text',
       class: 'form-control',
-      placeholder: 'Filter plugins',
-      size: 100
+      placeholder: t('FILTER_PLACEHOLDER'),
+      size: 50
     },
     undefined
   )
-  input.oninput = filterListHandler
+  input.oninput = queryHandler
   input.onkeypress = clearFilterHandler
-  return input
+
+  const options = VERSIONS.map(version => {
+    const atts = { value: version }
+    if (version === query.version) {
+      atts.selected = 'selected'
+    }
+    return elem('option', atts, version)
+  })
+  const version = elem(
+    'select',
+    { id: 'version', class: 'form-control' },
+    [elem('option', { value: '' }, t('FILTER_ANY_VERSION'))].concat(options)
+  )
+  version.onchange = versionHandler
+
+  return elem('div', { class: 'form-inline' }, [
+    elem('div', { class: 'form-group' }, input),
+    ' ',
+    elem('div', { class: 'form-group' }, version)
+  ])
 }
 
 function list(json) {
@@ -121,8 +267,9 @@ function list(json) {
     elem(
       'p',
       { id: 'empty', style: 'display: none; margin-top: 1em', class: 'alert alert-info' },
-      'No matches found.'
+      t('NO_MATCHES')
     ),
+    elem('p', { id: 'hits', style: 'display: none; margin-top: 1em' }, ''),
     elem(
       'ul',
       { class: 'list-unstyled', id: 'list' },
@@ -162,31 +309,31 @@ function details(versions, version) {
   }
   if (!!first.keywords && first.keywords.length !== 0) {
     append(div, [
-      elem('h3', 'Keywords'),
+      elem('h3', t('KEYWORDS')),
       elem('p', first.keywords.flatMap(keyword => [elem('code', keyword), ' \u00A0']))
     ])
   }
   if (!!first.license) {
-    append(div, [elem('h3', 'License'), elem('p', license(first.license))])
+    append(div, [elem('h3', t('LICENSE')), elem('p', license(first.license))])
   }
   if (!!first.homepage) {
     append(div, [
-      elem('h3', 'Homepage'),
+      elem('h3', t('HOMEPAGE')),
       elem('p', elem('a', { href: first.homepage }, getDomain(first.homepage)))
     ])
   }
   append(div, [
-    elem('h3', 'Install'),
-    elem('p', { class: 'small' }, 'DITA-OT 3.2 and newer'),
+    elem('h3', t('INSTALL')),
+    elem('p', { class: 'small' }, t('INSTALL_OLD')),
     elem('pre', `dita --install ${first.name}`),
-    elem('p', { class: 'small' }, 'DITA-OT 3.1 and older'),
+    elem('p', { class: 'small' }, t('INSTALL_CURRENT')),
     elem('pre', `dita --install ${first.url}`)
   ])
 
   const deps = first.deps
   deps.sort((a, b) => a.name.localeCompare(b.name))
   append(div, [
-    elem('h3', 'Dependencies'),
+    elem('h3', t('DEPENDENCIES')),
     elem(
       'ul',
       deps
@@ -202,7 +349,7 @@ function details(versions, version) {
   ])
 
   append(div, [
-    elem('h3', 'Versions'),
+    elem('h3', t('VERSIONS')),
     elem(
       'ul',
       versions.map(version =>
@@ -242,6 +389,12 @@ function humanReadableVersion(version) {
   return version
 }
 
+function getDomain(homepage) {
+  return homepage.replace(/^\w+:\/\/([^\/]+?)(\/.*)?$/, '$1')
+}
+
+// DOM utils
+
 function elem() {
   const name = arguments[0]
   const attrs = arguments.length === 3 ? arguments[1] : {}
@@ -274,42 +427,76 @@ function append(parent, content) {
   }
 }
 
-function getDomain(homepage) {
-  return homepage.replace(/^\w+:\/\/([^\/]+?)(\/.*)?$/, '$1')
-}
-
 function clear(myNode) {
   while (myNode.firstChild) {
     myNode.removeChild(myNode.firstChild)
   }
 }
 
-function compareVersion(a, b) {
-  function parse(v) {
-    return v.split('.').map(v => Number.parseInt(v))
-  }
-  function compare(a = 0, b = 0) {
-    if (a === b) {
-      return 0
-    } else if (a < b) {
-      return 1
-    } else {
-      return -1
+// Compare
+
+function parse(value) {
+  const op = value.replace(/\./g, '').replace(/[^=<>.]/g, '')
+  const v = value.replace(/[=<>]/g, '')
+  const tokens = v.split('.').map(v => Number.parseInt(v))
+  if (tokens.length < 3) {
+    for (let i = tokens.length; i < 3; i++) {
+      tokens.push(0)
     }
   }
-  function zip(as, bs) {
-    return as.map(function(e, i) {
-      return [e, bs[i]]
-    })
+  return {
+    op: !!op ? op : null,
+    tokens: tokens
   }
+}
+function compare(a = 0, b = 0) {
+  if (a === b) {
+    return 0
+  } else if (a < b) {
+    return 1
+  } else {
+    return -1
+  }
+}
+function zip(as, bs) {
+  return as.map(function(e, i) {
+    return [e, bs[i]]
+  })
+}
 
+function compareVersion(a, b) {
   try {
     const as = parse(a)
     const bs = parse(b)
-    return zip(as, bs)
-      .map(pair => compare(pair[0], pair[1]))
-      .reduce((acc, curr) => (acc !== 0 ? acc : curr), 0)
+    const comparedPairs = zip(as.tokens, bs.tokens).map(pair => compare(pair[0], pair[1]))
+    return verify(comparedPairs)
   } catch (e) {
     return 0
+  }
+}
+
+function verify(pairs, op) {
+  const reduced = pairs.reduce((acc, curr) => (acc !== 0 ? acc : curr), 0)
+  if (op === '>=') {
+    return reduced <= 0
+  } else if (op === '>') {
+    return reduced < 0
+  } else if (op === '<=') {
+    return reduced >= 0
+  } else if (op === '<') {
+    return reduced > 0
+  } else {
+    return reduced === 0
+  }
+}
+
+function matchVersion(a, b) {
+  try {
+    const as = parse(a)
+    const bs = parse(b)
+    const comparedPairs = zip(as.tokens, bs.tokens).map(pair => compare(pair[0], pair[1]))
+    return verify(comparedPairs, bs.op)
+  } catch (e) {
+    return false
   }
 }
