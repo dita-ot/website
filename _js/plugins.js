@@ -102,6 +102,9 @@ function show(hash) {
   const wrapper = document.getElementById('plugins')
   clear(wrapper)
   append(wrapper, content)
+  if (!hash) {
+    filterList()
+  }
 }
 
 function notFound(name, version) {
@@ -111,40 +114,78 @@ function notFound(name, version) {
   )
 }
 
-function filterListHandler(event) {
-  const query = event.target.value
+var query = {}
+
+function queryHandler(event) {
+  query.freetext = event.target.value
     .toLocaleLowerCase()
     .replace(/\W/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
-  if (!!query) {
-    let found = false
+  filterList()
+}
+
+function versionHandler(event) {
+  query.version = event.target.value
+  filterList()
+}
+
+function filterList() {
+  if (!!query.freetext || !!query.version) {
+    let count = 0
     document.querySelectorAll('#list > li').forEach(li => {
       const plugin = plugins[li.id]
-      if (!!plugin[0].search.match(query)) {
-        found = true
+      if (match(plugin[0])) {
+        count++
         li.style.display = 'list-item'
       } else {
         li.style.display = 'none'
       }
     })
-    document.querySelector('#empty').style.display = !found ? 'block' : 'none'
+    const empty = document.querySelector('#empty')
+    const hits = document.querySelector('#hits')
+    if (count === 0) {
+      empty.style.display = 'block'
+      hits.style.display = 'none'
+      clear(hits)
+    } else {
+      empty.style.display = 'none'
+      hits.style.display = 'block'
+      clear(hits)
+      hits.appendChild(document.createTextNode(`Found ${count} matches.`))
+    }
   } else {
     clearFilter()
   }
+}
+
+function match(plugin) {
+  let freetext = !query.freetext
+  if (!!query.freetext && !!plugin.search.match(query.freetext)) {
+    freetext = true
+  }
+  let version = !query.version
+  const platform = plugin.deps.find(dep => dep.name === 'org.dita.base')
+  if (!!query.version && !!platform && matchVersion(query.version, platform.req)) {
+    version = true
+  }
+  return freetext && version
 }
 
 function clearFilter() {
   document.querySelectorAll('#list > li').forEach(li => {
     li.style.display = 'list-item'
   })
+  const hits = document.querySelector('#hits')
+  hits.style.display = 'none'
+  clear(hits)
 }
 
 function clearFilterHandler(event) {
   if (event.keyCode === 27) {
     clearFilter()
     document.querySelector('#query').value = ''
-    document.querySelector('#empty').style.display = 'none'
+    document.querySelector('#empty, #hits').style.display = 'none'
   }
 }
 
@@ -153,6 +194,7 @@ function filterForm() {
     'input',
     {
       id: 'query',
+      value: query.freetext || '',
       type: 'text',
       class: 'form-control',
       placeholder: 'Filter plugins',
@@ -160,17 +202,22 @@ function filterForm() {
     },
     undefined
   )
-  input.oninput = filterListHandler
+  input.oninput = queryHandler
   input.onkeypress = clearFilterHandler
 
+  const options = VERSIONS.map(version => {
+    const atts = { value: version }
+    if (version === query.version) {
+      atts.selected = 'selected'
+    }
+    return elem('option', atts, version)
+  })
   const version = elem(
     'select',
     { id: 'version', class: 'form-control' },
-    [elem('option', { value: '' }, 'Any version')].concat(
-      VERSIONS.map(version => elem('option', { value: version }, version))
-    )
+    [elem('option', { value: '' }, 'Any version')].concat(options)
   )
-  // version.onchange = todo
+  version.onchange = versionHandler
 
   return elem('div', { class: 'form-inline' }, [
     elem('div', { class: 'form-group' }, input),
@@ -186,6 +233,11 @@ function list(json) {
       'p',
       { id: 'empty', style: 'display: none; margin-top: 1em', class: 'alert alert-info' },
       'No matches found.'
+    ),
+    elem(
+      'p',
+      { id: 'hits', style: 'display: none; margin-top: 1em', class: 'alert alert-info' },
+      'Matches found.'
     ),
     elem(
       'ul',
@@ -348,32 +400,70 @@ function clear(myNode) {
   }
 }
 
-function compareVersion(a, b) {
-  function parse(v) {
-    return v.split('.').map(v => Number.parseInt(v))
-  }
-  function compare(a = 0, b = 0) {
-    if (a === b) {
-      return 0
-    } else if (a < b) {
-      return 1
-    } else {
-      return -1
+// Compare
+
+function parse(value) {
+  const op = value.replace(/\./g, '').replace(/[^=<>.]/g, '')
+  const v = value.replace(/[=<>]/g, '')
+  const tokens = v.split('.').map(v => Number.parseInt(v))
+  if (tokens.length < 3) {
+    for (let i = tokens.length; i < 3; i++) {
+      tokens.push(0)
     }
   }
-  function zip(as, bs) {
-    return as.map(function(e, i) {
-      return [e, bs[i]]
-    })
+  return {
+    op: !!op ? op : null,
+    tokens: tokens
   }
+}
+function compare(a = 0, b = 0) {
+  if (a === b) {
+    return 0
+  } else if (a < b) {
+    return 1
+  } else {
+    return -1
+  }
+}
+function zip(as, bs) {
+  return as.map(function(e, i) {
+    return [e, bs[i]]
+  })
+}
 
+function compareVersion(a, b) {
   try {
     const as = parse(a)
     const bs = parse(b)
-    return zip(as, bs)
-      .map(pair => compare(pair[0], pair[1]))
-      .reduce((acc, curr) => (acc !== 0 ? acc : curr), 0)
+    const comparedPairs = zip(as.tokens, bs.tokens).map(pair => compare(pair[0], pair[1]))
+    return verify(comparedPairs)
   } catch (e) {
     return 0
+  }
+}
+
+function verify(pairs, op) {
+  const reduced = pairs.reduce((acc, curr) => (acc !== 0 ? acc : curr), 0)
+  if (op === '>=') {
+    return reduced <= 0
+  } else if (op === '>') {
+    return reduced < 0
+  } else if (op === '<=') {
+    return reduced >= 0
+  } else if (op === '<') {
+    return reduced > 0
+  } else {
+    return reduced === 0
+  }
+}
+
+function matchVersion(a, b) {
+  try {
+    const as = parse(a)
+    const bs = parse(b)
+    const comparedPairs = zip(as.tokens, bs.tokens).map(pair => compare(pair[0], pair[1]))
+    return verify(comparedPairs, bs.op)
+  } catch (e) {
+    return false
   }
 }
