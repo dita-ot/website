@@ -37,10 +37,10 @@ index: "../toc.html"
       <li class="li"><div class="div">
         <p class="p">DITA-OT includes a RELAX NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
           files that define the capabilities of each plug-in.</p>
-        <p class="p">To ensure the syntax of your custom plug-in is correct, include the following <code class="keyword markupname xmlpi">xml-model</code>
+        <p class="p">To ensure the syntax of your custom plug-in is correct, include the following <code class="keyword markupname xmlpi">&lt;?xml-model?&gt;</code>
           processing instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
-        <p class="p"><code class="keyword markupname xmlpi">xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"</code></p>
+        <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
         <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="best-practices-pdf-customization-plugins__d29e83"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
           your plug-in file.</p>
       </div></li>

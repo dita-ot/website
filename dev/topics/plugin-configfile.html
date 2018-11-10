@@ -15,10 +15,10 @@ index: "../toc.html"
       <div class="div" id="plugin-configfile__d29e60">
         <p class="p">DITA-OT includes a RELAX NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
           files that define the capabilities of each plug-in.</p>
-        <p class="p">To ensure the syntax of your custom plug-in is correct, include the following <code class="keyword markupname xmlpi">xml-model</code>
+        <p class="p">To ensure the syntax of your custom plug-in is correct, include the following <code class="keyword markupname xmlpi">&lt;?xml-model?&gt;</code>
           processing instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
-        <p class="p"><code class="keyword markupname xmlpi">xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"</code></p>
+        <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
         <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="plugin-configfile__d29e83"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
           your plug-in file.</p>
       </div>
@@ -218,9 +218,9 @@ index: "../toc.html"
                 <td class="stentry">No</td>
               </tr><tr class="strow">
                 <th scope="row" class="stentry">abstract</th>
-                <td class="stentry">When <span class="keyword option">true</span>, sets the transformation type as <span class="q">“abstract”</span>, meaning it can be
+                <td class="stentry">When <span class="keyword option">true</span>, sets the transformation type as <q class="q">abstract</q>, meaning it can be
                   extended by other plug-ins, but cannot be used directly.
-                  <p class="p">For example, the <code class="ph codeph">org.dita.base</code> plug-in defines an abstract <span class="q">“base”</span>
+                  <p class="p">For example, the <code class="ph codeph">org.dita.base</code> plug-in defines an abstract <q class="q">base</q>
                     transformation type that is extended by other DITA-OT plug-ins.</p></td>
                 <td class="stentry">No</td>
               </tr><tr class="strow">
