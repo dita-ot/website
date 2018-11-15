@@ -324,9 +324,9 @@ function details(versions, version) {
   }
   append(div, [
     elem('h3', t('INSTALL')),
-    elem('p', { class: 'small' }, t('INSTALL_OLD')),
-    elem('pre', `dita --install ${first.name}`),
     elem('p', { class: 'small' }, t('INSTALL_CURRENT')),
+    elem('pre', `dita --install ${first.name}`),
+    elem('p', { class: 'small' }, t('INSTALL_OLD')),
     elem('pre', `dita --install ${first.url}`)
   ])
 
