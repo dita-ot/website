@@ -10,6 +10,9 @@ Gemfile*
 .bundle/config
 install.log
 
+# Parcel cache
+.cache
+
 # Spurious duplicates generated via branch filtering & @copy-to
 # See https://github.com/dita-ot/dita-ot/issues/2980
 */topics/using-dita-command.html
