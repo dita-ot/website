@@ -285,10 +285,11 @@ function list(json) {
             elem('p', first.description),
             elem(
               'p',
-              (first.keywords || []).flatMap(keyword => [
-                elem('code', { class: 'small' }, keyword),
-                ' \u00A0'
-              ])
+              (first.keywords || []).reduce(
+                (acc, keyword) =>
+                  acc.concat([elem('code', { class: 'small' }, keyword), ' \u00A0']),
+                []
+              )
             )
           ])
         )
@@ -312,7 +313,10 @@ function details(versions, version) {
   if (!!first.keywords && first.keywords.length !== 0) {
     append(div, [
       elem('h3', t('KEYWORDS')),
-      elem('p', first.keywords.flatMap(keyword => [elem('code', keyword), ' \u00A0']))
+      elem(
+        'p',
+        first.keywords.reduce((acc, keyword) => acc.concat([elem('code', keyword), ' \u00A0']), [])
+      )
     ])
   }
   if (!!first.license) {
