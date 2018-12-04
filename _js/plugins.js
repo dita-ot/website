@@ -1,3 +1,5 @@
+import 'whatwg-fetch'
+
 const TRANSLATIONS = {
   INSTALL_OLD: 'DITA-OT 3.1 and older',
   INSTALL_CURRENT: 'DITA-OT 3.2 and newer',
