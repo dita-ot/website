@@ -17,13 +17,6 @@ index: "../toc.html"
         following properties are typically set in this file:</p>
       <dl class="dl parml">
         
-          <dt class="dt pt dlterm" id="configuration__otrelease-otversion"><span class="keyword parmname">otrelease</span></dt>
-          <dt class="dt pt dlterm"><span class="keyword parmname">otversion</span></dt>
-          <dd class="dd pd">The DITA-OT release number and maintenance version stored here are read when version information is
-            requested on the commmand line via <span class="keyword cmdname">dita</span>
-            <span class="keyword option">--version</span>.</dd>
-        
-        
           <dt class="dt pt dlterm" id="configuration__default-cascade"><span class="keyword parmname">default.cascade</span></dt>
           <dd class="dd pd">
             <p class="p">Specifies the processing default value for the DITA 1.3 <code class="keyword markupname xmlatt">@cascade</code> attribute, which
@@ -71,6 +64,14 @@ index: "../toc.html"
             significant. If multiple plug-ins define the same thing (differently), the first catalog entry “wins”.
             DITA-OT uses this property to define the order in which catalog entries are written. This mechanism is
             currently used to ensure that DITA 1.3 grammar files take precedence over their DITA 1.2 equivalents.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="configuration__registry"><span class="keyword parmname">registry</span></dt>
+          <dd class="dd pd">Defines the list (and order) of plug-in repositories that are searched for available plug-ins during the
+            installation process. In addition to the main plug-in registry at <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank">dita-ot.org/plugins</a>, you
+            can create a registry of your own to store the custom plug-ins for your company or organization. To add a
+            new entry, append the URL for your custom registry directory to the <code class="ph codeph">registry</code> key value,
+            separating each entry with a space. For more information, see <a class="xref" href="../topics/plugins-registry.html" title="DITA-OT 3.2 supports a new plug-in registry that makes it easier to discover and install new plug-ins. The registry provides a searchable list of plug-ins at dita-ot.org/plugins.">Adding plug-ins via the registry</a>.</dd>
         
         
             <dt class="dt pt dlterm"><span class="keyword parmname">org.dita.pdf2.i18n.enabled</span></dt>
