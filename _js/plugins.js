@@ -1,3 +1,10 @@
+import values from 'object.values'
+if (!Object.values) {
+  values.shim()
+}
+import 'es6-promise/auto'
+import 'whatwg-fetch'
+
 const TRANSLATIONS = {
   INSTALL_OLD: 'DITA-OT 3.1 and older',
   INSTALL_CURRENT: 'DITA-OT 3.2 and newer',
@@ -283,10 +290,11 @@ function list(json) {
             elem('p', first.description),
             elem(
               'p',
-              (first.keywords || []).flatMap(keyword => [
-                elem('code', { class: 'small' }, keyword),
-                ' \u00A0'
-              ])
+              (first.keywords || []).reduce(
+                (acc, keyword) =>
+                  acc.concat([elem('code', { class: 'small' }, keyword), ' \u00A0']),
+                []
+              )
             )
           ])
         )
@@ -310,7 +318,10 @@ function details(versions, version) {
   if (!!first.keywords && first.keywords.length !== 0) {
     append(div, [
       elem('h3', t('KEYWORDS')),
-      elem('p', first.keywords.flatMap(keyword => [elem('code', keyword), ' \u00A0']))
+      elem(
+        'p',
+        first.keywords.reduce((acc, keyword) => acc.concat([elem('code', keyword), ' \u00A0']), [])
+      )
     ])
   }
   if (!!first.license) {
