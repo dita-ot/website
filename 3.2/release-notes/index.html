@@ -1,26 +1,26 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 3.2 Release Notes"
+title: "DITA Open Toolkit 3.2.1 Release Notes"
 index: "../toc.html"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">3.2</span> Release Notes</h1>
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">3.2.1</span> Release Notes</h1>
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.2</span> is a feature release that provides new features and
-      enhancements, including <span class="ph">new command-line options,
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.2.1</span> is a maintenance release that fixes issues
+      reported in DITA-OT <span class="keyword">3.2</span>, which includes <span class="ph">new command-line options,
             support for RELAX NG parsing and validation, preliminary processing for the XDITA authoring format proposed
             for Lightweight DITA, and a plug-in registry that makes it easier to discover and install new
           plug-ins</span>.</p>
     <p class="p">DITA-OT releases follow
-        <a class="xref" href="https://semver.org" target="_blank">semantic versioning</a> guidelines. Version numbers use the
+        <a class="xref" href="https://semver.org" target="_blank">Semantic Versioning 2.0.0</a> guidelines. Version numbers use the
             <code class="ph codeph"><var class="keyword varname">major</var>.<var class="keyword varname">minor</var>.<var class="keyword varname">patch</var></code> syntax, where
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.2</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.2.1</span>.zip</span>
             package from the project website at <a class="xref" href="https://www.dita-ot.org/download" target="_blank">dita-ot.org/download</a>.</span></div>
   </div>
 
@@ -35,8 +35,51 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.2">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.2</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.2.1">
+    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release <span class="keyword">3.2.1</span></h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit Release <span class="keyword">3.2.1</span> includes the following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v3.2.1__3140">In earlier releases, the base directory resolution treated input files as local resources. Input
+            file handling has been extended to support non-local (HTTP and HTTPS) input URIs.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/3140" target="_blank">#3140</a>
+          </li>
+          <li class="li" id="v3.2.1__3148">The parsing mechanism for <a href="https://semver.org" target="_blank"><span class="keyword">Semantic Versioning 2.0.0</span></a> was extended to support pre-release
+            versions and build metadata in plug-in repository version information.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/3148" target="_blank">#3148</a>
+          </li>
+          <li class="li" id="v3.2.1__3155">In earlier releases, branch filtering using <code class="keyword markupname xmlelement">&lt;ditavalref&gt;</code> elements failed
+            when the map included references outside the scope of the map directory. This has been fixed and filtered
+            topics are handled as expected.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/3155" target="_blank">#3155</a>
+          </li>
+          <li class="li" id="v3.2.1__3156">To make XSLT import and include elements consistent, remaining relative URIs in the default
+            plug-ins were rewritten to use the absolute <code class="ph codeph">plugin</code> URI scheme. This allows Saxon to detect
+            duplicate imports more easily and makes it easier to copy import and include elements to other stylesheets.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3156" target="_blank">#3156</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/3159" target="_blank">#3159</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/3163" target="_blank">#3163</a>
+          </li>
+          <li class="li" id="v3.2.1__112">The plugin registry UI at <a href="https://www.dita-ot.org/plugins" target="_blank"><span class="keyword">dita-ot.org/plugins</span></a> was not working on certain
+            older Windows browsers that do not support all of the necessary Javascript features. Polyfills were added to
+            allow these browsers to correctly display the list of available plug-ins.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot.github.io/issues/112" target="_blank">#112</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot.github.io/pull/113" target="_blank">#113</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot.github.io/pull/114" target="_blank">#114</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.2.1+is%3Aclosed" target="_blank">
+            <span class="keyword">3.2</span> milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.2...3.2.1" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.2">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">3.2</span>
       <span class="ph small">released November 3, 2018</span></h2>
     <div class="body refbody">
       <section class="section">
