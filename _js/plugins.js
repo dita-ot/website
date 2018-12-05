@@ -1,3 +1,7 @@
+import values from 'object.values'
+if (!Object.values) {
+  values.shim()
+}
 import 'es6-promise/auto'
 import 'whatwg-fetch'
 
