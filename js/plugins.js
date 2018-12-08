@@ -49,8 +49,7 @@ module.exports=function(o,r){var t=o%r;return Math.floor(t>=0?t:t+r)};
 },{"./es2016":"ah32"}],"+5Pm":[function(require,module,exports) {
 "use strict";var e=require("es-abstract/es7"),r=require("has"),t=require("function-bind"),u=t.call(Function.call,Object.prototype.propertyIsEnumerable);module.exports=function(t){var i=e.RequireObjectCoercible(t),c=[];for(var n in i)r(i,n)&&u(i,n)&&c.push(i[n]);return c};
 },{"es-abstract/es7":"LptJ","has":"ar57","function-bind":"58Ti"}],"JzMa":[function(require,module,exports) {
-"use strict";var e=require("./implementation");
-module.exports=function(){return"function"==typeof Object.values?Object.values:e};
+"use strict";var e=require("./implementation");module.exports=function(){return"function"==typeof Object.values?Object.values:e};
 },{"./implementation":"+5Pm"}],"ViJj":[function(require,module,exports) {
 
 "use strict";var e=require("./polyfill"),r=require("define-properties");module.exports=function(){var u=e();return r(Object,{values:u},{values:function(){return Object.values!==u}}),u};

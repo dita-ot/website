@@ -31,9 +31,9 @@ define(['jquery'], $ =>
         }
         if ($link.length === 0) {
           $link = $(
-            '<a class="btn btn-success btn-xs pull-right" id="editLink" target="_blank" title="Edit this file"><span class="glyphicon glyphicon-pencil"></span> Edit this page</a>'
+            '<a class="btn btn-success pull-right" id="editLink" target="_blank" title="Edit this page on GitHub to help improve the docs"><span class="glyphicon glyphicon-pencil"></span> Edit this page</a>'
           )
-          $('footer > .container').append($link)
+          $('.dev-docs-banner').append($link)
         }
         $link.attr('href', url)
       } else {
