@@ -1,5 +1,6 @@
 import Common from './Common'
 import $ from 'jquery'
+import URI from 'urijs'
 
 function SearchController($toc, index) {
   const common = Common(index)
@@ -159,7 +160,9 @@ function SearchController($toc, index) {
         const $node = $(this)
         return {
           title: $.trim($node.text()),
-          url: new URI($node.attr('href')).absoluteTo(index).href()
+          url: URI($node.attr('href'))
+            .absoluteTo(index)
+            .href()
         }
       })
       .toArray()

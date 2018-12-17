@@ -1,6 +1,7 @@
 import Common from './Common'
 import _ from 'lodash'
 import $ from 'jquery'
+import URI from 'urijs'
 
 function TocController($toc, index) {
   const CLASS_OPEN = 'expanded'
@@ -23,14 +24,16 @@ function TocController($toc, index) {
       let $current
       $dummy.find('a').each(function() {
         const $a = $(this)
-        const abs = new URI($a.attr('href')).absoluteTo(index).href()
+        const abs = URI($a.attr('href'))
+          .absoluteTo(index)
+          .href()
         $a.attr('href', abs)
         if (abs === window.location.href) {
           $current = $a
         }
       })
       if (!$current || !$current.length) {
-        const target = new URI(window.location.href)
+        const target = URI(window.location.href)
         if (target.fragment().length > 0) {
           $current = $dummy.find(`a[href="${target.fragment('')}"]:first`)
         }

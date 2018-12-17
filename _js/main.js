@@ -2,10 +2,13 @@ import TocController from './lib/TocController'
 import SearchController from './lib/SearchController'
 import HelpController from './lib/HelpController'
 import $ from 'jquery'
+import URI from 'urijs'
 
 const indexAttr = $('link[rel=index]').attr('href')
 if (indexAttr && window.history) {
-  const index = new URI(indexAttr).absoluteTo(window.location.href).href()
+  const index = URI(indexAttr)
+    .absoluteTo(window.location.href)
+    .href()
   $.ajax({
     url: index,
     success: data => {

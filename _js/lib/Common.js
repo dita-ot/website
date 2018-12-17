@@ -1,5 +1,6 @@
 import EditController from './EditController'
 import $ from 'jquery'
+import URI from 'urijs'
 
 function Common(index) {
   const CLASS_OPEN = 'expanded'
@@ -7,7 +8,9 @@ function Common(index) {
 
   const editController = EditController()
 
-  const base = new URI('.').absoluteTo(index).href()
+  const base = URI('.')
+    .absoluteTo(index)
+    .href()
 
   const $nav = $('nav[role=toc]')
   const $main = $('main[role=main]')
@@ -23,7 +26,9 @@ function Common(index) {
   }
 
   function loadMain(href, $tocLink, pushState = true) {
-    const abs = new URI(href).absoluteTo(window.location.href).href()
+    const abs = URI(href)
+      .absoluteTo(window.location.href)
+      .href()
     if (pushState) {
       history.pushState({}, '', href)
     }
@@ -42,7 +47,9 @@ function Common(index) {
         $li.addClass('active')
         exposeNode($li)
       } else {
-        const abs = new URI(href).absoluteTo(window.location.href).href()
+        const abs = URI(href)
+          .absoluteTo(window.location.href)
+          .href()
         const $li = $nav.find(`a[href="${abs}"]`).parent('li')
         $li.addClass('active')
         exposeNode($li)
@@ -86,7 +93,9 @@ function Common(index) {
 
   function isLocal() {
     const $a = $(this)
-    const abs = new URI($a.attr('href')).absoluteTo(window.location.href).href()
+    const abs = URI($a.attr('href'))
+      .absoluteTo(window.location.href)
+      .href()
     return abs.indexOf(base) !== -1
   }
 }

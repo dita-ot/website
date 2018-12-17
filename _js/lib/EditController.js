@@ -25,16 +25,16 @@ function EditController() {
         if (file.indexOf('/first-build-') != -1) {
           file = file.replace('first-build-', '')
         }
-          if (file.indexOf('/build-') != -1) {
-            file = file.replace('build-', '')
-          }
+        if (file.indexOf('/build-') != -1) {
+          file = file.replace('build-', '')
+        }
         url = getEditURL(PROJECT_BRANCH, file, PROJECT_MAP)
       }
       if ($link.length === 0) {
         $link = $(
           '<a class="btn btn-success pull-right" id="editLink" target="_blank" title="Edit this page on GitHub to help improve the docs"><span class="glyphicon glyphicon-pencil"></span> Edit this page</a>'
         )
-          $('.dev-docs-banner').append($link)
+        $('.dev-docs-banner').append($link)
       }
       $link.attr('href', url)
     } else {
