@@ -28,6 +28,7 @@ exclude:
   - LICENSE
   - node_modules
   - package*.js*
+  - README.md
 
 # Enable redirects (#43)
 plugins:
