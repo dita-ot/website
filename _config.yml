@@ -46,3 +46,8 @@ keep_files:
   - dev/dev_ref/migration.html
   - dev/dev_ref/pdf-customization-best-practices.html
   - dev/dev_ref/plugin-addgeneratedtext.html
+  - dev/parameters/lib-configuration-properties.html
+  - dev/parameters/lib-plugin-properties.html
+  - dev/parameters/local-properties.html
+  - dev/topics/extending-the-ot.html
+  - dev/topics/rebuilding-the-dita-ot-documentation.html
