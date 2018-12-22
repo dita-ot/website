@@ -1,6 +1,8 @@
 <footer>
 <div class="container text-muted">
-{% if page.commit %}
+{% if page.generated %}
+Page content generated from plug-in source.
+{% elsif page.commit %}
 Page content generated from DITA source · Latest change: <a href="https://github.com/dita-ot/docs/commit/{{ page.commit }}">
 dita-ot/docs@{{ page.commit | truncate: 7, '' }}</a>.
 {% else %}
