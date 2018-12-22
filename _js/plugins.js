@@ -5,34 +5,8 @@ if (!Object.values) {
 }
 import 'es6-promise/auto'
 import 'whatwg-fetch'
-
-const TRANSLATIONS = {
-  INSTALL_OLD: 'DITA-OT 3.1 and older',
-  INSTALL_CURRENT: 'DITA-OT 3.2 and newer',
-  LICENSE: 'License',
-  HOMEPAGE: 'Homepage',
-  KEYWORDS: 'Keywords',
-  INSTALL: 'Install',
-  FILTER_PLACEHOLDER: 'Filter plugins',
-  FILTER_ANY_VERSION: 'Any version',
-  FILTER_VERSION_LABEL: 'DITA-OT version',
-  NO_MATCHES: 'No matches found.',
-  DEPENDENCIES: 'Dependencies',
-  VERSIONS: 'Versions',
-  VERSION_NOT_FOUND: 'Plugin {} version {} not found.',
-  NOT_FOUND: 'Plugin {} not found.',
-  FOUND: 'Found {} matches.'
-}
-
-function t(name) {
-  if (arguments.length > 1) {
-    return [...arguments]
-      .slice(1)
-      .reduce((acc, curr) => acc.replace('{}', curr), TRANSLATIONS[name])
-  } else {
-    return TRANSLATIONS[name]
-  }
-}
+import { elem, append, clear } from './dom'
+import t from './translations'
 
 const REPOSITORY_URL = 'https://plugins.dita-ot.org/_all.json'
 const VERSIONS = [
@@ -403,44 +377,4 @@ function humanReadableVersion(version) {
 
 function getDomain(homepage) {
   return homepage.replace(/^\w+:\/\/([^\/]+?)(\/.*)?$/, '$1')
-}
-
-// DOM utils
-
-function elem() {
-  const name = arguments[0]
-  const attrs = arguments.length === 3 ? arguments[1] : {}
-  const content = arguments.length === 3 ? arguments[2] : arguments[1]
-  const installBlock = document.createElement(name)
-  Object.keys(attrs).forEach(key => {
-    installBlock.setAttribute(key, attrs[key])
-  })
-  append(installBlock, content)
-  return installBlock
-}
-
-function append(parent, content) {
-  if (content === undefined || content === null) {
-    return
-  }
-  switch (typeof content) {
-    case 'string':
-      parent.appendChild(document.createTextNode(content))
-      break
-    case 'object':
-      if (Array.isArray(content)) {
-        content.forEach(c => {
-          append(parent, c)
-        })
-        break
-      }
-    default:
-      parent.appendChild(content)
-  }
-}
-
-function clear(myNode) {
-  while (myNode.firstChild) {
-    myNode.removeChild(myNode.firstChild)
-  }
 }
