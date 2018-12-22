@@ -167,7 +167,8 @@ function doFilter() {
       empty.style.display = 'none'
       hits.style.display = 'block'
       clear(hits)
-      hits.appendChild(document.createTextNode(t('FOUND', count)))
+      const text = t('FOUND', count)
+      hits.appendChild(document.createTextNode(text))
     }
   } else {
     clearFilter()

@@ -1,4 +1,4 @@
-const TRANSLATIONS = {
+const TRANSLATIONS: { [key: string]: string } = {
   INSTALL_OLD: 'DITA-OT 3.1 and older',
   INSTALL_CURRENT: 'DITA-OT 3.2 and newer',
   LICENSE: 'License',
@@ -16,12 +16,23 @@ const TRANSLATIONS = {
   FOUND: 'Found {} matches.'
 }
 
-export default function t(name) {
+export default function t(name: string): string {
   if (arguments.length > 1) {
-    return [...arguments]
-      .slice(1)
-      .reduce((acc, curr) => acc.replace('{}', curr), TRANSLATIONS[name])
+    return skip(arguments).reduce((acc, curr) => acc.replace('{}', curr), TRANSLATIONS[name])
   } else {
     return TRANSLATIONS[name]
   }
+}
+
+/**
+ * Skip first argument.
+ *
+ * Preferred option would be Array.from(arguments).slice(1) but that requires polyfill
+ */
+function skip(args: IArguments): any[] {
+  const res = []
+  for (let i = 1; i < args.length; i++) {
+    res.push(args[i])
+  }
+  return res
 }

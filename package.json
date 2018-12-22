@@ -39,6 +39,7 @@
     "object.values": "^1.0.4",
     "parcel-bundler": "^1.11.0",
     "prettier": "1.15.3",
+    "typescript": "^3.2.2",
     "urijs": "^1.19.1",
     "whatwg-fetch": "^3.0.0"
   },
