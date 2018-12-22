@@ -7,11 +7,11 @@
     "fix:config": "prettier --ignore-path .prettierignore --write \"**/*.{json,yaml,yml}\"",
     "fix:docs": "prettier --ignore-path .prettierignore --write \"**/*.md\"",
     "fix:html": "prettier --ignore-path .prettierignore --write \"**/*.html\"",
-    "fix:script": "prettier --ignore-path .prettierignore --write \"**/*.js\"",
+    "fix:script": "prettier --ignore-path .prettierignore --write \"**/*.{js,ts}\"",
     "fix:style": "prettier --ignore-path .prettierignore --write \"**/*.scss\"",
     "fix": "npm run fix:config && npm run fix:docs && npm run fix:html && npm run fix:script && npm run fix:style",
-    "test:script": "eslint --ignore-path .prettierignore \"**/*.js\"",
-    "test": "npm run test:script"
+    "test:script": "eslint --ignore-path .prettierignore \"**/*.{js,ts}\"",
+    "test": "jest && npm run test:script"
   },
   "lint-staged": {
     "*.{html,js,json,md,scss,yaml,yml}": [
@@ -26,6 +26,7 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/dita-ot/dita-ot.github.io",
   "devDependencies": {
+    "@types/jest": "^23.3.10",
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.3.13",
     "es6-promise": "^4.2.5",
@@ -35,10 +36,12 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-prettier": "3.0.0",
     "husky": "1.2.1",
+    "jest": "^23.6.0",
     "lint-staged": "8.1.0",
     "object.values": "^1.0.4",
     "parcel-bundler": "^1.11.0",
     "prettier": "1.15.3",
+    "ts-jest": "^23.10.5",
     "typescript": "^3.2.2",
     "urijs": "^1.19.1",
     "whatwg-fetch": "^3.0.0"
