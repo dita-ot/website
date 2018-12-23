@@ -3,7 +3,7 @@
 layout: base
 title: "Migrating to release 2.1"
 index: "../toc.html"
-commit: "8a185fc62811a3c56746a7657631aa753fd94a96"
+commit: "e3aed0f794014612afb5fe5506e1b420b36d9f4f"
 ---
 <nav class="col-md-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li class="active"><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-md-9" role="main">
 
@@ -95,7 +95,7 @@ commit: "8a185fc62811a3c56746a7657631aa753fd94a96"
       <p class="p">Keydef processing has been removed from the XHTML rendering code. Keys are now resolved in one preprocessing
         step, whereas in earlier versions of DITA-OT, the XHTML code returned to the <span class="ph filepath">keydef.xml</span>
         file to look up targets for phrase elements and pull in text when needed.</p>
-      <p class="p">This change affects non-linking elements that can't take <code class="keyword markupname xmlatt">@href</code> attributes, such as
+      <p class="p">This change affects non-linking elements that can’t take <code class="keyword markupname xmlatt">@href</code> attributes, such as
           <code class="keyword markupname xmlelement">&lt;ph&gt;</code>, <code class="keyword markupname xmlelement">&lt;keyword&gt;</code>, <code class="keyword markupname xmlelement">&lt;cite&gt;</code>,
           <code class="keyword markupname xmlelement">&lt;dt&gt;</code>, <code class="keyword markupname xmlelement">&lt;term&gt;</code>, and <code class="keyword markupname xmlelement">&lt;indexterm&gt;</code> (when
           <code class="ph codeph">$INDEXSHOW</code> is active).</p>
