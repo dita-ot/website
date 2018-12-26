@@ -2,10 +2,14 @@
 
 # Tell Prettier not to format the following files/paths
 .cache
-_layouts/**
 _site/**
 css/bootstrap/**
 js/**
+
+# Preserve control flow tags in layouts & footer
+# https://github.com/prettier/prettier/issues/5680
+_layouts/**
+_includes/footer.html
 
 # Leave generated HTML output alone
 1.*/**
