@@ -6,9 +6,10 @@
     "install": "./node_modules/.bin/parcel build _js/plugins.js _js/main.js --out-dir js",
     "fix:config": "prettier --ignore-path .prettierignore --write \"**/*.{json,yaml,yml}\"",
     "fix:docs": "prettier --ignore-path .prettierignore --write \"**/*.md\"",
+    "fix:html": "prettier --ignore-path .prettierignore --write \"**/*.html\"",
     "fix:script": "prettier --ignore-path .prettierignore --write \"**/*.js\"",
     "fix:style": "prettier --ignore-path .prettierignore --write \"**/*.scss\"",
-    "fix": "npm run fix:script && npm run fix:config && npm run fix:style && npm run fix:docs",
+    "fix": "npm run fix:config && npm run fix:docs && npm run fix:html && npm run fix:script && npm run fix:style",
     "test:script": "eslint --ignore-path .prettierignore \"**/*.js\"",
     "test": "npm run test:script"
   },
