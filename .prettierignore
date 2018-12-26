@@ -7,6 +7,12 @@ _site/**
 css/bootstrap/**
 js/**
 
+# Leave generated HTML output alone
+1.*/**
+2.*/**
+3.*/**
+dev/**
+
 # Ignore to preserve comments in YAML front matter
 # https://github.com/prettier/prettier/issues/4390
 css/main.scss
