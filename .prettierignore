@@ -11,6 +11,10 @@ js/**
 _layouts/**
 _includes/footer.html
 
+# Skip sidebar to prevent Prettier errors with nested list items
+# https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags
+_includes/toc.html
+
 # Leave generated HTML output alone
 1.*/**
 2.*/**
