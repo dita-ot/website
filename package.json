@@ -14,7 +14,7 @@
     "test": "npm run test:script"
   },
   "lint-staged": {
-    "*.{js,json,md,scss,yaml,yml}": [
+    "*.{html,js,json,md,scss,yaml,yml}": [
       "prettier --write",
       "git add"
     ]
