@@ -2,10 +2,24 @@
 
 # Tell Prettier not to format the following files/paths
 .cache
-_layouts/**
 _site/**
 css/bootstrap/**
 js/**
+
+# Preserve control flow tags in layouts & footer
+# https://github.com/prettier/prettier/issues/5680
+_layouts/**
+_includes/footer.html
+
+# Skip sidebar to prevent Prettier errors with nested list items
+# https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags
+_includes/toc.html
+
+# Leave generated HTML output alone
+1.*/**
+2.*/**
+3.*/**
+dev/**
 
 # Ignore to preserve comments in YAML front matter
 # https://github.com/prettier/prettier/issues/4390

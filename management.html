@@ -1,86 +1,179 @@
 ---
 layout: default
-title: "DITA Open Toolkit Project Management"
+title: 'DITA Open Toolkit Project Management'
 ---
-<p class="lead">The <cite>DITA Open Toolkit Project Management Guidelines</cite> are designed to provide information about how the project is managed. These guidelines are geared to an
-  audience that needs information about how to participate in the development of DITA Open Toolkit (DITA-OT).</p>
-<p>The project is managed similarly to commercial software-development projects; it uses requirements gathering, plan validation with stakeholders and contributors, scheduled activities,
-  tests, reviews, and builds. Quality is strongly emphasized.</p>
+
+<p class="lead">
+  The <cite>DITA Open Toolkit Project Management Guidelines</cite> are designed to provide
+  information about how the project is managed. These guidelines are geared to an audience that
+  needs information about how to participate in the development of DITA Open Toolkit (DITA-OT).
+</p>
+<p>
+  The project is managed similarly to commercial software-development projects; it uses requirements
+  gathering, plan validation with stakeholders and contributors, scheduled activities, tests,
+  reviews, and builds. Quality is strongly emphasized.
+</p>
 <section id="ditaotgoals">
   <h2>DITA Open Toolkit goals and objectives</h2>
-  <p>The goal of the DITA Open Toolkit project is to provide a high-quality implementation for production-level output of DITA content, built in a professionally-managed project
-    environment by vetted contributors, and tested thoroughly for each release.</p>
-  <p>DITA-OT is designed to meet the needs of users who want to publish DITA content, from individual users running the toolkit in a stand-alone mode to vendors who incorporate the
-    toolkit into their software products.</p>
-  <p>The DITA-OT project keeps up to date with the latest DTD and Schema updates from the OASIS DITA Technical Committee (TC), which develops and maintains the DITA standard. As the DITA
-    TC produces drafts of future versions, DITA-OT works to create early support for new features and helps to test the new draft versions of the standard.</p>
-  <p>The project agrees with the open-source motto of <em>”Release early and often”</em> and seeks to develop wide consensus on issues.</p>
+  <p>
+    The goal of the DITA Open Toolkit project is to provide a high-quality implementation for
+    production-level output of DITA content, built in a professionally-managed project environment
+    by vetted contributors, and tested thoroughly for each release.
+  </p>
+  <p>
+    DITA-OT is designed to meet the needs of users who want to publish DITA content, from individual
+    users running the toolkit in a stand-alone mode to vendors who incorporate the toolkit into
+    their software products.
+  </p>
+  <p>
+    The DITA-OT project keeps up to date with the latest DTD and Schema updates from the OASIS DITA
+    Technical Committee (TC), which develops and maintains the DITA standard. As the DITA TC
+    produces drafts of future versions, DITA-OT works to create early support for new features and
+    helps to test the new draft versions of the standard.
+  </p>
+  <p>
+    The project agrees with the open-source motto of <em>”Release early and often”</em> and seeks to
+    develop wide consensus on issues.
+  </p>
 </section>
 <section id="development_process">
   <h2>DITA Open Toolkit development process</h2>
-  <p>The DITA-OT development process is modeled after development processes for other popular and successful open-source projects, most notably Eclipse.</p>
+  <p>
+    The DITA-OT development process is modeled after development processes for other popular and
+    successful open-source projects, most notably Eclipse.
+  </p>
   <!-- <p>Version 1.0 was released February 27, 2005. Version 2.0 was released June 29, 2012.</p> -->
   <section id="projectroles">
     <h3>Project roles and responsibilities</h3>
-    <p>The DITA-OT project has the following roles: Project manager, committer, and contributor. Each role has different rights and obligations.</p>
+    <p>
+      The DITA-OT project has the following roles: Project manager, committer, and contributor. Each
+      role has different rights and obligations.
+    </p>
     <dl>
       <dt>Project manager (PM)</dt>
       <dd>
-        <p>The project manager is responsible for managing the project. The PM provides leadership to guide the overall direction of the project and removes obstacles, solves problems,
-          and resolves conflicts. The PM works to ensure that the following goals are met:</p>
+        <p>
+          The project manager is responsible for managing the project. The PM provides leadership to
+          guide the overall direction of the project and removes obstacles, solves problems, and
+          resolves conflicts. The PM works to ensure that the following goals are met:
+        </p>
         <ul>
           <li>The project operates effectively.</li>
           <li>All project plans, technical documents, and reports are publicly available.</li>
-          <li>The project operates using the open-source rules of engagement, which stress meritocracy, transparency, and open participation. </li>
+          <li>
+            The project operates using the open-source rules of engagement, which stress
+            meritocracy, transparency, and open participation.
+          </li>
         </ul>
       </dd>
       <dt>Committer</dt>
-      <dd>Committers oversee the quality and originality of all contributions. Committers influence the development of the project and have write access to the source-code repository.
-        This position reflects a track record of high-quality contributions to the project. </dd>
+      <dd>
+        Committers oversee the quality and originality of all contributions. Committers influence
+        the development of the project and have write access to the source-code repository. This
+        position reflects a track record of high-quality contributions to the project.
+      </dd>
       <dt>Contributor</dt>
-      <dd>Contributors contribute code, documentation, fixes, tests, or other work to the project. Contributors do not have write access to the source-code repository. There is no limit
-        to the scope of such contributions, though contributors who expect to donate a large amount of new function to the project are encouraged to work with committers in advance.</dd>
+      <dd>
+        Contributors contribute code, documentation, fixes, tests, or other work to the project.
+        Contributors do not have write access to the source-code repository. There is no limit to
+        the scope of such contributions, though contributors who expect to donate a large amount of
+        new function to the project are encouraged to work with committers in advance.
+      </dd>
     </dl>
   </section>
   <section id="ditaopentoolkitreleaselifecycle">
     <h3>DITA Open Toolkit release management</h3>
-    <p>The DITA-OT project works with an agile development process; it releases test builds via a continuous integration process, and it encourages feedback on the test builds while
-      features are being developed. Stable releases are typically issued approximately every six months.</p>
-    <p>Each iteration begins with a meeting of project contributors. The meeting minutes are stored on the project wiki and are available to the public. Active contributors are directly
-      invited to these meetings, but anybody interested in DITA-OT development is welcome to attend. If you are interested in attending these meetings, <a href="http://slack.dita-ot.org">join the DITA-OT team on Slack</a> and request an invitation.</p>
+    <p>
+      The DITA-OT project works with an agile development process; it releases test builds via a
+      continuous integration process, and it encourages feedback on the test builds while features
+      are being developed. Stable releases are typically issued approximately every six months.
+    </p>
+    <p>
+      Each iteration begins with a meeting of project contributors. The meeting minutes are stored
+      on the project wiki and are available to the public. Active contributors are directly invited
+      to these meetings, but anybody interested in DITA-OT development is welcome to attend. If you
+      are interested in attending these meetings,
+      <a href="http://slack.dita-ot.org">join the DITA-OT team on Slack</a> and request an
+      invitation.
+    </p>
     <p>Each iteration kick-off meeting covers the following topics:</p>
     <ul>
       <li>Issues from the previous iteration</li>
-      <li>Plans from each contributor for the upcoming iteration or for new work that will span multiple iterations</li>
+      <li>
+        Plans from each contributor for the upcoming iteration or for new work that will span
+        multiple iterations
+      </li>
       <li>Design discussion for any significant planned features or fixes</li>
       <li>Longer-term plans for contributions to the current or following release</li>
-      <li>(As needed) Other project issues or hot topics, such as changes to the test and build process, interest from new contributors, etc.</li>
+      <li>
+        (As needed) Other project issues or hot topics, such as changes to the test and build
+        process, interest from new contributors, etc.
+      </li>
     </ul>
-    <p>The kick-off meeting for the final iteration before a stable build covers the following topics:</p>
+    <p>
+      The kick-off meeting for the final iteration before a stable build covers the following
+      topics:
+    </p>
     <ul>
-      <li>Evaluation of what is allowed in the iteration; the final iteration typically has no major changes in order to assure quality in the stable build.</li>
-      <li>Assessment of whether all release notes and other artifacts are up-to-date and ready for a final build.</li>
+      <li>
+        Evaluation of what is allowed in the iteration; the final iteration typically has no major
+        changes in order to assure quality in the stable build.
+      </li>
+      <li>
+        Assessment of whether all release notes and other artifacts are up-to-date and ready for a
+        final build.
+      </li>
     </ul>
-    <p>When a stable release is complete, the distribution build is uploaded to the GitHub releases page, and the dowload links on the project website are updated to reflect the latest release.</p>
+    <p>
+      When a stable release is complete, the distribution build is uploaded to the GitHub releases
+      page, and the dowload links on the project website are updated to reflect the latest release.
+    </p>
   </section>
   <section id="fixesandfeatures">
     <h3>Feature requests and defect reports</h3>
-    <p>Feature requests and defect reports can be submitted at any time through the project page at GitHub. </p>
-    <p>The core project contributors track and address bugs reported against the project; they issue patches based on urgency. The core contributors also will provide feedback on
-      requests for new features or design changes, but they might not be able to provide development assistance.</p>
-    <p>All new bug reports or feature requests should be submitted through the <a href="https://github.com/dita-ot/dita-ot/issues" target="_blank">DITA-OT issue and feature tracker</a> on GitHub.</p>
+    <p>
+      Feature requests and defect reports can be submitted at any time through the project page at
+      GitHub.
+    </p>
+    <p>
+      The core project contributors track and address bugs reported against the project; they issue
+      patches based on urgency. The core contributors also will provide feedback on requests for new
+      features or design changes, but they might not be able to provide development assistance.
+    </p>
+    <p>
+      All new bug reports or feature requests should be submitted through the
+      <a href="https://github.com/dita-ot/dita-ot/issues" target="_blank"
+        >DITA-OT issue and feature tracker</a
+      >
+      on GitHub.
+    </p>
     <section>
       <h4>Feature requests</h4>
-      <p>The project committers periodically review new feature requests with contributors and interested parties; when possible, they make plans to implement the new features.</p>
-      <p>If an existing project contributor is interested in a new request, the item is assigned to the contributor and implemented based on the contributor's schedule. Otherwise, if the
-        request is valid and in line with project goals, it is left open for an interested party to pick up and implement. Some requests are best implemented as a plug-in rather than in
-        the core DITA-OT code; in those cases, project committers suggest alternatives and close the request.</p>
+      <p>
+        The project committers periodically review new feature requests with contributors and
+        interested parties; when possible, they make plans to implement the new features.
+      </p>
+      <p>
+        If an existing project contributor is interested in a new request, the item is assigned to
+        the contributor and implemented based on the contributor's schedule. Otherwise, if the
+        request is valid and in line with project goals, it is left open for an interested party to
+        pick up and implement. Some requests are best implemented as a plug-in rather than in the
+        core DITA-OT code; in those cases, project committers suggest alternatives and close the
+        request.
+      </p>
     </section>
     <section>
       <h4>Defect reports</h4>
-      <p>The project committers determine the owner of the relevant components and assign the defect to the component owner for validation and disposition. Responses, fixes, and
-        workarounds are issued faster if the defect report includes sample files and clear instructions for reproducing the issue.</p>
-      <p>If bugs are found in the OASIS DITA DTDs or Schemas, they are fixed in the toolkit and reported to the OASIS DITA Technical Committee.</p>
+      <p>
+        The project committers determine the owner of the relevant components and assign the defect
+        to the component owner for validation and disposition. Responses, fixes, and workarounds are
+        issued faster if the defect report includes sample files and clear instructions for
+        reproducing the issue.
+      </p>
+      <p>
+        If bugs are found in the OASIS DITA DTDs or Schemas, they are fixed in the toolkit and
+        reported to the OASIS DITA Technical Committee.
+      </p>
     </section>
   </section>
 </section>
