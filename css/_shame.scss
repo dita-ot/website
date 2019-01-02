@@ -14,7 +14,8 @@ footer {
   }
 }
 
-@media screen and (min-width: $screen-sm-min) {
+// Small devices (landscape phones, 576px and up)
+@media screen and (min-width: 576px) {
   .navbar-brand {
     padding-left: 0;
   }
@@ -52,7 +53,7 @@ div.shortdesc {
 
 .simpletable {
   @extend .table;
-  @extend .table-condensed;
+  @extend .table-sm;
 }
 
 // Disable "generated" prefix pending resolution of dita-ot/dita-ot#2524
@@ -70,9 +71,9 @@ figcaption {
   @extend caption;
 }
 
-// Apply Bootstrap's <p> margins to definition descriptions
+// Apply Bootstrap's <p> margins to definition descriptions (1rem bottom margin)
 dd {
-  margin: 0 0 ($line-height-computed / 2);
+  margin: 0 0 $paragraph-margin-bottom;
 }
 
 // Teaser overrides
