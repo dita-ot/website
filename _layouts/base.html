@@ -13,10 +13,10 @@
   <body>
     {% include header.html %}
     <div id="content" class="container-fluid container">
+      {% if page.url contains '/dev/' %}
+        {% include banner.html %}
+      {% endif %}
       <div class="row">
-        {% if page.url contains '/dev/' %}
-          {% include banner.html %}
-        {% endif %}
         {{ content }}
       </div>
     </div>
