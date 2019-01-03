@@ -13,7 +13,9 @@ const TRANSLATIONS: { [key: string]: string } = {
   VERSIONS: 'Versions',
   VERSION_NOT_FOUND: 'Plugin {} version {} not found.',
   NOT_FOUND: 'Plugin {} not found.',
-  FOUND: 'Found {} matches.'
+  FOUND: 'Found {} matches.',
+  FILE_HISTORY: 'File history',
+  FILE_HISTORY__TITLE: 'Show the list of changes to the source file on GitHub.'
 }
 
 export default function t(name: string): string {

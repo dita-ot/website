@@ -82,6 +82,7 @@ function Common(index) {
       .filter(isLocal)
       .click(mainClickHandler)
     editController.createEditLink()
+    editController.createHistoryLink()
 
     function mainClickHandler(event) {
       event.preventDefault()
