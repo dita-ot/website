@@ -14,6 +14,7 @@ function Common(index) {
 
   const $nav = $('nav[role=toc]')
   const $main = $('main[role=main]')
+  const $footer = $('footer')
 
   window.onpopstate = function(event) {
     loadMain(document.location, undefined, false)
@@ -69,6 +70,7 @@ function Common(index) {
     function updateMain(data) {
       const $dummy = $('<body>').append($.parseHTML(data))
       $main.html($dummy.find('[role=main]:first').html())
+      $footer.html($dummy.find('footer:first').html())
       document.title = $dummy.find('title').text()
       initializeMain()
     }
