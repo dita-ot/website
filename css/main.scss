@@ -7,6 +7,10 @@
 //## Override default brand colors
 $brand-primary:                 #1d365d;
 
+$theme-colors: (
+  "primary": $brand-primary,
+);
+
 //** Global textual link color.
 $link-color:                    lighten($brand-primary, 20%);
 //** Link hover color set via `darken()` function.
