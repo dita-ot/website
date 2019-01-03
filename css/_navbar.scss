@@ -1,7 +1,19 @@
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .navbar-nav {
-  .nav-link {
+  .nav-item {
+    padding-top: $navbar-padding-y;
+    padding-bottom: $navbar-padding-y;
+
     @include hover-focus {
       background-color: $navbar-inverse-link-hover-bg;
     }
   }
+}
+
+.navbar-form .form-group {
+  margin-bottom: 0;
 }
