@@ -77,20 +77,61 @@ function Common(index) {
   }
 
   function initializeMain() {
-    $main
-      .find('a[href]')
-      .filter(isLocal)
-      .click(mainClickHandler)
+    addLinkHandlers()
+    addAnchorLinks()
     editController.createEditLink()
     editController.createHistoryLink()
 
-    function mainClickHandler(event) {
-      event.preventDefault()
-      event.stopPropagation()
+    function addLinkHandlers() {
+      $main
+        .find('a[href]')
+        .filter(isLocal)
+        .click(mainClickHandler)
 
-      const $target = $(event.currentTarget)
-      const href = $target.attr('href')
-      loadMain(href)
+      function mainClickHandler(event) {
+        event.preventDefault()
+        event.stopPropagation()
+
+        const $target = $(event.currentTarget)
+        const href = $target.attr('href')
+        loadMain(href)
+      }
+    }
+
+    function addAnchorLinks() {
+      $main
+        .find(
+          'article[id] > h2:first-child, section[id] > h2:first-child, section[id] > h3:first-child , dt[id]'
+        )
+        .each(function() {
+          const $current = $(this)
+          const id = getId($current)
+          if (id) {
+            const link = $('<a class="anchor-link"></a>').attr('href', '#' + id)
+            $current.append(link)
+            $current.addClass('anchor-link-container')
+          }
+        })
+
+      function getId($current) {
+        return $current
+          .parents('*[id]')
+          .addBack()
+          .filter(hasNonAriaId)
+          .last()
+          .attr('id')
+
+        function hasNonAriaId() {
+          const id = this.getAttribute('id')
+          if (id) {
+            const labelledBy = $main.get(0).querySelector(`*[aria-labelledby="${id}"]`)
+            if (!labelledBy) {
+              return true
+            }
+          }
+          return false
+        }
+      }
     }
   }
 
