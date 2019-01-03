@@ -50,6 +50,7 @@ $nav-shadow:                    rgba(0, 0, 0, 0.2);
 @import 'bootstrap-custom';
 
 // Override Bootstrap & user agent defaults
+@import 'banner';
 @import 'code';
 @import 'content';
 @import 'notes';
