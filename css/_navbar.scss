@@ -1,0 +1,7 @@
+.navbar-nav {
+  .nav-link {
+    @include hover-focus {
+      background-color: $navbar-inverse-link-hover-bg;
+    }
+  }
+}
