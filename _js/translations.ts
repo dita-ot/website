@@ -15,7 +15,9 @@ const TRANSLATIONS: { [key: string]: string } = {
   NOT_FOUND: 'Plugin {} not found.',
   FOUND: 'Found {} matches.',
   FILE_HISTORY: 'File history',
-  FILE_HISTORY__TITLE: 'Show the list of changes to the source file on GitHub.'
+  FILE_HISTORY__TITLE: 'Show the list of changes to the source file on GitHub.',
+  EDIT: 'Edit this page',
+  EDIT__TITLE: 'Edit this page on GitHub to help improve the docs'
 }
 
 export default function t(name: string): string {
