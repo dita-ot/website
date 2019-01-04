@@ -77,18 +77,28 @@ dd {
 }
 
 .teaser {
-  .glyphicon {
-    font-size: 8em;
+  svg {
+    @extend .img-fluid;
+    @extend .col-lg-6;
   }
   // Invert link colors for teaser icon links
-  a {
-    color: $link-hover-color; // $brand-primary ** Global textual link color.
+  // a {
+  //   color: $link-hover-color; // $brand-primary ** Global textual link color.
 
-    &:hover,
-    &:focus {
-      color: $link-color; // lighten($brand-primary, 20%)
-    }
-  }
+  //   &:hover,
+  //   &:focus {
+  //     color: $link-color; // lighten($brand-primary, 20%)
+  //   }
+  // }
+}
+
+.btn-success svg {
+  fill: $white;
+  @extend .mb-1;
+}
+
+.dev-docs-banner svg {
+  fill: rgb(133, 100, 4);
 }
 
 .finch {
