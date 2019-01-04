@@ -1,0 +1,17 @@
+a.anchor-link {
+  text-decoration: none;
+  opacity: 0;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+
+  &:after {
+    content: '#';
+    padding-left: 0.5em;
+  }
+}
+
+.anchor-link-container:hover a.anchor-link {
+  opacity: 0.5;
+}
