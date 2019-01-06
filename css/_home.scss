@@ -9,6 +9,7 @@
   svg {
     @extend .img-fluid;
     @extend .col-lg-6;
+    fill: $brand-primary;
   }
   // Invert link colors for teaser icon links
   // a {
