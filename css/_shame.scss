@@ -49,33 +49,3 @@ figcaption {
 dd {
   margin: 0 0 $paragraph-margin-bottom;
 }
-
-// Teaser overrides
-.teasers {
-  text-align: center;
-}
-
-.teaser {
-  svg {
-    @extend .img-fluid;
-    @extend .col-lg-6;
-  }
-  // Invert link colors for teaser icon links
-  // a {
-  //   color: $link-hover-color; // $brand-primary ** Global textual link color.
-
-  //   &:hover,
-  //   &:focus {
-  //     color: $link-color; // lighten($brand-primary, 20%)
-  //   }
-  // }
-}
-
-.btn-success svg {
-  fill: $white;
-  @extend .mb-1;
-}
-
-.finch {
-  margin-top: 3em;
-}
