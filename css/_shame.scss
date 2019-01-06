@@ -1,19 +1,5 @@
 // This file is part of the DITA Open Toolkit project. See the accompanying LICENSE.md file for applicable licenses.
 
-// Sass partial for additional style overrides
-
-footer {
-  border-top: 1px solid $legend-border-color;
-  font-size: smaller;
-  margin-top: 30px;
-  padding: 10px 0;
-  text-align: center;
-
-  a {
-    color: $text-muted;
-  }
-}
-
 // Fixed w/ https://github.com/dita-ot/dita-ot/pull/2097, remove once all site content has been regenerated thereafter
 col {
   display: none;
