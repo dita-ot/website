@@ -14,13 +14,6 @@ footer {
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media screen and (min-width: 576px) {
-  .navbar-brand {
-    padding-left: 0;
-  }
-}
-
 // Fixed w/ https://github.com/dita-ot/dita-ot/pull/2097, remove once all site content has been regenerated thereafter
 col {
   display: none;
