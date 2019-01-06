@@ -1,0 +1,37 @@
+// Sass partial to apply Bootstrap styling & override user agent defaults for DITA element classes
+// See related partials for code, notes, UI & XML domains
+
+.lq {
+  color: $text-muted;
+  font-size: 14px;
+}
+
+// Add bottom margin to nested lists & short descriptions that appear in abstracts
+li.li ul.ul,
+div.shortdesc {
+  margin-bottom: 10px;
+}
+
+.lead {
+  color: $text-muted;
+}
+
+p.shortdesc,
+div.shortdesc {
+  @extend .lead;
+}
+
+.simpletable {
+  @extend .table;
+  @extend .table-sm;
+}
+
+// Apply Bootstrap's <caption> style to figure titles (rendered as HTML5 <figcaption> elements)
+figcaption {
+  @extend caption;
+}
+
+// Apply Bootstrap's <p> margins to definition descriptions (1rem bottom margin)
+dd {
+  margin: 0 0 $paragraph-margin-bottom;
+}
