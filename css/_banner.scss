@@ -6,6 +6,15 @@
   }
 }
 
+// Hide edit link on extra-small devices like phones in portrait mode
+// Begin showing at small breakpoint (landscape phones, 576px and up)
+
 #editLink {
-  margin-top: -2px;
+  display: none;
+}
+@include media-breakpoint-up(sm) {
+  #editLink {
+    display: block;
+    margin-top: -2px;
+  }
 }
