@@ -1,27 +1,26 @@
 <header>
-  <!--
-    <div class="navbar-header">
-      <button
-        type="button"
-        class="navbar-toggle collapsed"
-        data-toggle="collapse"
-        data-target=".bs-navbar-collapse"
-      >
-        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-        <span class="icon-bar"></span> <span class="icon-bar"></span>
-      </button>
-
-    </div>
-  -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <!--navbar navbar-inverse navbar-static-top collapse navbar-collapse bs-navbar-collapse-->
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
     <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    <div class="collapse navbar-collapse">
+    <button
+      class="navbar-toggler my-2"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarToggle"
+      aria-controls="navbarToggle"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarToggle">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="nav-item d-none d-lg-block">
           <a class="nav-link" href="{{ site.baseurl }}/download">Download</a>
         </li>
-        <li class="nav-item"><a class="nav-link" href="{{ site.baseurl }}/plugins">Plug-ins</a></li>
+        <li class="nav-item d-none d-lg-block">
+          <a class="nav-link" href="{{ site.baseurl }}/plugins">Plug-ins</a>
+        </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -121,7 +120,7 @@
             <a class="dropdown-item" href="http://dita-ot.sourceforge.net/1.5.4/">1.5</a>
           </div>
         </li>
-        <li class="nav-item">
+        <li class="nav-item d-none d-lg-block">
           <a
             class="nav-link"
             title="DITA-OT Day 2018"
@@ -131,17 +130,15 @@
           >
         </li>
       </ul>
-      <form class="navbar-form navbar-right" id="search" role="search">
-        <div class="form-group">
-          <input
-            type="text"
-            name="q"
-            class="form-control pull-right"
-            maxlength="255"
-            placeholder="Search the docs…"
-            style="background: #eee;"
-          />
-        </div>
+      <form class="form-inline" id="search" role="search">
+        <input
+          type="text"
+          name="q"
+          class="form-control"
+          maxlength="255"
+          placeholder="Search the docs…"
+          style="background: #eee;"
+        />
       </form>
     </div>
   </nav>
