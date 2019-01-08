@@ -12,14 +12,9 @@
   </head>
   <body>
     {% include header.html %}
-    <div id="content" class="container mt-4">
-      {% if page.url contains '/dev/' %}
-        {% include banner.html %}
-      {% endif %}
-      <div class="row">
-        {{ content }}
-      </div>
-    </div>
+    <main id="content" role="main">
+      {{ content }}
+    </main>
     {% include footer.html %}
     {% include search.html %}
     {% include help.html %}
