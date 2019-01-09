@@ -20,40 +20,34 @@ toc: false
 </div>
 
 <div class="container marketing">
-  <div class="row teasers">
-    <div class="col-lg-4">
-      <p class="teaser">
-        <a class="btn btn-light" href="#features" role="button"> {% include checklist.svg %} </a>
-      </p>
+  <div class="card-deck row teasers">
+    <div class="card col-lg-4 text-center shadow-sm p-3 mb-5 rounded">
+      <p class="teaser"><a href="#features" role="button"> {% include checklist.svg %} </a></p>
       <h2>Features</h2>
       <p class="lead">
         DITA Open Toolkit is a publishing tool used to process DITA content and convert it to
         various output formats.
       </p>
-      <p><a class="btn btn-light" href="#features" role="button">Learn more »</a></p>
+      <p><a class="btn btn-lg btn-light" href="#features" role="button">Learn more »</a></p>
     </div>
-    <div class="col-lg-4">
+    <div class="card col-lg-4 text-center shadow-sm p-3 mb-5 rounded">
       <p class="teaser">
-        <a class="btn btn-light" href="{{ site.baseurl }}/download" role="button">
-          {% include cloud-download.svg %}
-        </a>
+        <a href="{{ site.baseurl }}/download" role="button"> {% include cloud-download.svg %} </a>
       </p>
       <h2>Download</h2>
       <p class="lead">
-        Install DITA Open Toolkit to get started with structured authoring, topic-based writing and
-        cross-media publishing.
+        Install DITA Open Toolkit to get started with structured authoring and cross-media
+        publishing.
       </p>
       <p>
-        <a class="btn btn-lg btn-success light" href="{{ site.baseurl }}/download" role="button">
+        <a class="btn btn-lg btn-success" href="{{ site.baseurl }}/download" role="button">
           {% include cloud-download.svg %} Download DITA-OT {{ site.version }}
         </a>
       </p>
     </div>
-    <div class="col-lg-4">
+    <div class="card col-lg-4 text-center shadow-sm p-3 mb-5 rounded">
       <p class="teaser">
-        <a class="btn btn-light" href="{{ site.baseurl }}/dev" role="button">
-          {% include book.svg %}
-        </a>
+        <a href="{{ site.baseurl }}/dev" role="button"> {% include book.svg %} </a>
       </p>
       <h2>Docs</h2>
       <p class="lead">
@@ -61,7 +55,9 @@ toc: false
         toolkit.
       </p>
       <p>
-        <a class="btn btn-light" href="{{ site.baseurl }}/dev" role="button">Read the docs »</a>
+        <a class="btn btn-lg btn-light" href="{{ site.baseurl }}/dev" role="button"
+          >Read the docs »</a
+        >
       </p>
     </div>
   </div>
