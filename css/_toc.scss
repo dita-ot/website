@@ -5,9 +5,9 @@
   }
 
   &.active > a {
-    background-color: $nav-bg;
-    color: $nav-text;
-    text-shadow: 0 -1px 0 $nav-shadow;
+    @include border-radius($badge-border-radius);
+    background-color: $gray-200;
+    color: $link-hover-color;
   }
 
   ul {
@@ -53,22 +53,22 @@ nav[role='toc'] {
       margin: 0 0 0 -20px;
       padding: 3px 0 3px 20px;
 
-      &:hover,
-      &:focus {
-        background-color: $nav-link-hover-bg;
+      @include hover-focus {
+        @include border-radius($badge-border-radius);
+        background-color: $gray-100;
         text-decoration: none;
       }
     }
 
     &.active {
       > a {
-        background-color: $nav-bg;
-        color: $nav-text;
-        text-shadow: 0 -1px 0 $nav-shadow;
+        @include border-radius($badge-border-radius);
+        background-color: $gray-200;
+        color: $link-hover-color;
       }
 
       > .controller::before {
-        color: $nav-text;
+        color: $link-hover-color;
       }
     }
 

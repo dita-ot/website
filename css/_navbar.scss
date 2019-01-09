@@ -18,7 +18,7 @@
     padding-bottom: $navbar-padding-y;
 
     @include hover-focus {
-      background-color: $navbar-inverse-link-hover-bg;
+      background-color: $navbar-dark-link-hover-bg;
     }
   }
 }
