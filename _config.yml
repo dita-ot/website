@@ -30,8 +30,9 @@ exclude:
   - package*.js*
   - README.md
 
-# Enable redirects (#43)
+# Enable Octicons & redirects (#43)
 plugins:
+  - jekyll-octicons
   - jekyll-redirect-from
 whitelist:
   - jekyll-redirect-from
