@@ -102,7 +102,7 @@ function init(json) {
 function show(hash) {
   let content = null
   if (!!hash) {
-    const [name, version] = hash.substr(1).split('/')
+    const [name, version] = hash.substring(hash.charAt(1) === '!' ? 2 : 1).split('/')
     const pluginVersions = plugins[name].slice()
     pluginVersions.sort(compareVersion)
     content = details(pluginVersions, version) || notFound(name, version)
@@ -114,6 +114,8 @@ function show(hash) {
   append(wrapper, content)
   if (!hash) {
     doFilter()
+  } else {
+    window.scrollTo(0, 0)
   }
 }
 
@@ -237,10 +239,10 @@ function filterForm() {
   )
   version.onchange = versionHandler
 
-  return elem('div', { class: 'form-inline' }, [
-    elem('div', { class: 'form-group' }, input),
+  return elem('div', { class: 'form-row' }, [
+    elem('div', { class: 'col-md-8' }, input),
     ' ',
-    elem('div', { class: 'form-group' }, version)
+    elem('div', { class: 'col-md-4' }, version)
   ])
 }
 
@@ -262,7 +264,7 @@ function list(json) {
         .map(plugin => plugin[0])
         .map(first =>
           elem('li', { id: first.name }, [
-            elem('h3', elem('a', { href: `#${first.name}` }, first.name)),
+            elem('h3', elem('a', { href: `#!${first.name}` }, first.name)),
             elem('p', first.description),
             elem(
               'p',
@@ -340,7 +342,7 @@ function details(versions, version) {
     elem(
       'ul',
       versions.map(version =>
-        elem('li', elem('a', { href: `#${first.name}/${version.vers}` }, version.vers))
+        elem('li', elem('a', { href: `#!${first.name}/${version.vers}` }, version.vers))
       )
     )
   ])

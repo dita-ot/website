@@ -22,13 +22,14 @@ function TocController($toc, index) {
 
     function initializeToc($dummy) {
       let $current
+      const location = URI(window.location.href).href()
       $dummy.find('a').each(function() {
         const $a = $(this)
         const abs = URI($a.attr('href'))
           .absoluteTo(index)
           .href()
         $a.attr('href', abs)
-        if (abs === window.location.href) {
+        if (abs === location) {
           $current = $a
         }
       })

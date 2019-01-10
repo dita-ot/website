@@ -7,6 +7,10 @@
 //## Override default brand colors
 $brand-primary:                 #1d365d;
 
+$theme-colors: (
+  "primary": $brand-primary,
+);
+
 //** Global textual link color.
 $link-color:                    lighten($brand-primary, 20%);
 //** Link hover color set via `darken()` function.
@@ -15,9 +19,14 @@ $link-hover-color:              $brand-primary;
 $headings-color:                $brand-primary;
 $jumbotron-heading-color:       $brand-primary;
 
+// (P)re-define Bootstrap 3 variables
+$pre-bg:                        #f5f5f5; // 4% Gray — WhiteSmoke
+$pre-border-color:              #ccc;    // Used for <kbd> borders
+$gray-light:                    #6c757d; // $gray-600 ($text-muted)
+$legend-border-color:           #dee2e6; // $gray-300 ~11% cool gray footer border-top
 
 // Override default Bootstrap variable definitions
-$code-color:                    #777; // $gray-light ($text-muted)
+$code-color:                    $gray-light;
 $code-bg:                       transparent;
 
 $kbd-color:                     #555; // $gray
@@ -25,26 +34,27 @@ $kbd-bg:                        #fcfcfc;
 $kbd-shadow:                    #bbb;
 
 // Reset inverted navbar basics
-$navbar-inverse-bg:             $brand-primary;
+$navbar-dark-bg:                $brand-primary;
 
 // Inverted navbar links
-$navbar-inverse-link-color:     #b9c8e0;
-$navbar-inverse-link-hover-bg:  darken($navbar-inverse-bg, 5%);
+$navbar-dark-hover-color:       #fff; // rgba($white, .75)
+$navbar-dark-color:             #b9c8e0;
+$navbar-dark-link-hover-bg:     darken($navbar-dark-bg, 5%);
 
 // Inverted navbar brand label        // DITA Open Toolkit home page
-$navbar-inverse-brand-color:    #eee; // match search box background
-
-// Color definitions for active navigation items
-$nav-bg:                        lighten($brand-primary, 10%);
-$nav-text:                      #fff; // white
-$nav-shadow:                    rgba(0, 0, 0, 0.2);
+$navbar-dark-brand-color:       #eee; // match search box background
 
 // Import DITA-OT custom subset of Bootstrap modules
 @import 'bootstrap-custom';
 
 // Override Bootstrap & user agent defaults
+@import 'banner';
 @import 'code';
 @import 'content';
+@import 'dita';
+@import 'footer';
+@import 'home';
+@import 'navbar';
 @import 'notes';
 @import 'search';
 @import 'toc';

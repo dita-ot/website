@@ -1,58 +1,8 @@
 // This file is part of the DITA Open Toolkit project. See the accompanying LICENSE.md file for applicable licenses.
 
-// Sass partial for additional style overrides
-
-footer {
-  border-top: 1px solid $legend-border-color;
-  font-size: smaller;
-  margin-top: 30px;
-  padding: 10px 0;
-  text-align: center;
-
-  a {
-    color: $text-muted;
-  }
-}
-
-@media screen and (min-width: $screen-sm-min) {
-  .navbar-brand {
-    padding-left: 0;
-  }
-}
-
-.navbar-form {
-  padding: 0;
-  height: 34px;
-}
-
 // Fixed w/ https://github.com/dita-ot/dita-ot/pull/2097, remove once all site content has been regenerated thereafter
 col {
   display: none;
-}
-
-.lq {
-  color: $text-muted;
-  font-size: 14px;
-}
-
-// Add bottom margin to nested lists & short descriptions that appear in abstracts
-li.li ul.ul,
-div.shortdesc {
-  margin-bottom: 10px;
-}
-
-.lead {
-  color: $text-muted;
-}
-
-p.shortdesc,
-div.shortdesc {
-  @extend .lead;
-}
-
-.simpletable {
-  @extend .table;
-  @extend .table-condensed;
 }
 
 // Disable "generated" prefix pending resolution of dita-ot/dita-ot#2524
@@ -64,41 +14,3 @@ div.shortdesc {
 //     content: 'Generated: ';
 //   }
 // }
-
-// Apply Bootstrap's <caption> style to figure titles (rendered as HTML5 <figcaption> elements)
-figcaption {
-  @extend caption;
-}
-
-// Apply Bootstrap's <p> margins to definition descriptions
-dd {
-  margin: 0 0 ($line-height-computed / 2);
-}
-
-// Teaser overrides
-.teasers {
-  text-align: center;
-}
-
-.teaser {
-  .glyphicon {
-    font-size: 8em;
-  }
-  // Invert link colors for teaser icon links
-  a {
-    color: $link-hover-color; // $brand-primary ** Global textual link color.
-
-    &:hover,
-    &:focus {
-      color: $link-color; // lighten($brand-primary, 20%)
-    }
-  }
-}
-
-.finch {
-  margin-top: 3em;
-}
-
-#editLink {
-  margin-top: -6px;
-}

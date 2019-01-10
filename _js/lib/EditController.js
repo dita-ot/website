@@ -38,9 +38,9 @@ function EditController() {
       }
       if ($link.length === 0) {
         $link = $(
-          `<a class="btn btn-success pull-right" id="editLink" target="_blank" title="${t(
+          `<a class="btn btn-sm btn-success float-right" id="editLink" target="_blank" title="${t(
             'EDIT__TITLE'
-          )}"><span class="glyphicon glyphicon-pencil"></span> ${t('EDIT')}</a>`
+          )}">${t('EDIT')}</a>`
         )
         $('.dev-docs-banner').append($link)
       }

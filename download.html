@@ -1,31 +1,31 @@
 ---
-layout: base
+layout: splash
 title: 'Download DITA-OT'
 toc: false
 ---
 
-<main class="col-md-12">
-  <div class="jumbotron">
-    <h1>{{ page.title }}</h1>
-    <p>Download the DITA Open Toolkit {{site.version}} distribution package:</p>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">{{ page.title }}</h1>
+    <p class="lead">Get the latest version:</p>
     <p>
       <a
         class="btn btn-lg btn-success"
-        href="https://github.com/dita-ot/dita-ot/releases/download/{{site.version}}/dita-ot-{{site.version}}.zip"
+        href="https://github.com/dita-ot/dita-ot/releases/download/{{ site.version }}/dita-ot-{{ site.version }}.zip"
       >
-        <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> DITA-OT
-        {{site.version}}</a
+        {% octicon cloud-download %} DITA-OT {{ site.version }}</a
       >
     </p>
-    <p>
-      See the
-      <a href="{{ site.baseurl }}/{{site.release}}/release-notes"
-        >DITA-OT {{site.release}} Release Notes</a
-      >
-      for information on the changes in the current release.
+    <p class="lead">
+      For information on the changes in the current release, see the
+      <a href="{{ site.baseurl }}/{{ site.release }}/release-notes">
+        DITA-OT {{ site.release }} Release Notes</a
+      >.
     </p>
   </div>
+</div>
 
+<div class="container">
   <h2 id="dev_versions">Development versions</h2>
   <p>
     The
@@ -35,269 +35,253 @@ toc: false
     of the distribution package is available for testing.
   </p>
 
+  <hr />
+
   <h2 id="previous_versions">
-    Previous versions <small>with processing support for DITA 1.3</small>
+    Previous versions <small class="text-muted">with processing support for DITA 1.3</small>
   </h2>
 
-  <div class="row">
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.2"
-            >3.2
-            <div class="pull-right"><i class="small text-muted">2018-11-03</i></div></a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.1.3"
-            >3.1.3
-            <div class="pull-right"><i class="small text-muted">2018-10-03</i></div></a
-          >
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/3.1.2"
-            >3.1.2
-            <div class="pull-right"><i class="small text-muted">2018-08-13</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/3.1.1"
-            >3.1.1
-            <div class="pull-right"><i class="small text-muted">2018-07-16</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/3.1"
-            >3.1
-            <div class="pull-right"><i class="small text-muted">2018-06-09</i></div></a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.0.4"
-            >3.0.4
-            <div class="pull-right"><i class="small text-muted">2018-05-10</i></div></a
-          >
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/3.0.3"
-            >3.0.3
-            <div class="pull-right"><i class="small text-muted">2018-03-10</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/3.0.2"
-            >3.0.2
-            <div class="pull-right"><i class="small text-muted">2018-02-05</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/3.0.1"
-            >3.0.1
-            <div class="pull-right"><i class="small text-muted">2017-11-30</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/3.0"
-            >3.0
-            <div class="pull-right"><i class="small text-muted">2017-10-28</i></div></a
-          >
-        </div>
-      </div>
-    </div>
+  <div class="container row">
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.2"
+          >3.2 <i class="small text-muted float-right mt-1">2018-11-03</i>
+        </a>
+      </li>
+    </ul>
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.1.3"
+          >3.1.3 <i class="small text-muted float-right mt-1">2018-10-03</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.1.2"
+          >3.1.2 <i class="small text-muted float-right mt-1">2018-08-13</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.1.1"
+          >3.1.1 <i class="small text-muted float-right mt-1">2018-07-16</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.1"
+          >3.1 <i class="small text-muted float-right mt-1">2018-06-09</i>
+        </a>
+      </li>
+    </ul>
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.0.4"
+          >3.0.4 <i class="small text-muted float-right mt-1">2018-05-10</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.0.3"
+          >3.0.3 <i class="small text-muted float-right mt-1">2018-03-10</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.0.2"
+          >3.0.2 <i class="small text-muted float-right mt-1">2018-02-05</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.0.1"
+          >3.0.1 <i class="small text-muted float-right mt-1">2017-11-30</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/3.0"
+          >3.0 <i class="small text-muted float-right mt-1">2017-10-28</i>
+        </a>
+      </li>
+    </ul>
   </div>
   <hr />
-  <div class="row">
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.5.4"
-            >2.5.4
-            <div class="pull-right"><i class="small text-muted">2017-10-05</i></div></a
-          >
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.5.3"
-            >2.5.3
-            <div class="pull-right"><i class="small text-muted">2017-08-31</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.5.2"
-            >2.5.2
-            <div class="pull-right"><i class="small text-muted">2017-08-02</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.5.1"
-            >2.5.1
-            <div class="pull-right"><i class="small text-muted">2017-06-21</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.5"
-            >2.5
-            <div class="pull-right"><i class="small text-muted">2017-05-31</i></div></a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.6"
-            >2.4.6
-            <div class="pull-right"><i class="small text-muted">2017-04-18</i></div></a
-          >
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.5"
-            >2.4.5
-            <div class="pull-right"><i class="small text-muted">2017-03-27</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.4"
-            >2.4.4
-            <div class="pull-right"><i class="small text-muted">2017-02-26</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.3"
-            >2.4.3
-            <div class="pull-right"><i class="small text-muted">2017-01-29</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.2"
-            >2.4.2
-            <div class="pull-right"><i class="small text-muted">2017-01-05</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.1"
-            >2.4.1
-            <div class="pull-right"><i class="small text-muted">2016-12-10</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.4"
-            >2.4
-            <div class="pull-right"><i class="small text-muted">2016-11-12</i></div></a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.3.3"
-            >2.3.3
-            <div class="pull-right"><i class="small text-muted">2016-09-25</i></div></a
-          >
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.3.2"
-            >2.3.2
-            <div class="pull-right"><i class="small text-muted">2016-08-19</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.3.1"
-            >2.3.1
-            <div class="pull-right"><i class="small text-muted">2016-06-17</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.3"
-            >2.3
-            <div class="pull-right"><i class="small text-muted">2016-05-29</i></div></a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.5"
-            >2.2.5
-            <div class="pull-right"><i class="small text-muted">2016-05-09</i></div></a
-          >
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.4"
-            >2.2.4
-            <div class="pull-right"><i class="small text-muted">2016-04-11</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.3"
-            >2.2.3
-            <div class="pull-right"><i class="small text-muted">2016-03-14</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.2"
-            >2.2.2
-            <div class="pull-right"><i class="small text-muted">2016-01-21</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.1"
-            >2.2.1
-            <div class="pull-right"><i class="small text-muted">2015-12-17</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.2"
-            >2.2
-            <div class="pull-right"><i class="small text-muted">2015-11-14</i></div></a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.1.2"
-            >2.1.2
-            <div class="pull-right"><i class="small text-muted">2015-10-03</i></div></a
-          >
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.1.1"
-            >2.1.1
-            <div class="pull-right"><i class="small text-muted">2015-08-06</i></div></a
-          >
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.1"
-            >2.1
-            <div class="pull-right"><i class="small text-muted">2015-06-26</i></div></a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.0.1"
-            >2.0.1
-            <div class="pull-right"><i class="small text-muted">2015-01-05</i></div></a
-          >
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://github.com/dita-ot/dita-ot/releases/tag/2.0"
-            >2.0
-            <div class="pull-right"><i class="small text-muted">2014-11-18</i></div></a
-          >
-        </div>
-      </div>
-    </div>
+  <div class="container row">
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.5.4"
+          >2.5.4 <i class="small text-muted float-right mt-1">2017-10-05</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.5.3"
+          >2.5.3 <i class="small text-muted float-right mt-1">2017-08-31</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.5.2"
+          >2.5.2 <i class="small text-muted float-right mt-1">2017-08-02</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.5.1"
+          >2.5.1 <i class="small text-muted float-right mt-1">2017-06-21</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.5"
+          >2.5 <i class="small text-muted float-right mt-1">2017-05-31</i>
+        </a>
+      </li>
+    </ul>
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.6"
+          >2.4.6 <i class="small text-muted float-right mt-1">2017-04-18</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.5"
+          >2.4.5 <i class="small text-muted float-right mt-1">2017-03-27</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.4"
+          >2.4.4 <i class="small text-muted float-right mt-1">2017-02-26</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.3"
+          >2.4.3 <i class="small text-muted float-right mt-1">2017-01-29</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.2"
+          >2.4.2 <i class="small text-muted float-right mt-1">2017-01-05</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.4.1"
+          >2.4.1 <i class="small text-muted float-right mt-1">2016-12-10</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.4"
+          >2.4 <i class="small text-muted float-right mt-1">2016-11-12</i>
+        </a>
+      </li>
+    </ul>
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.3.3"
+          >2.3.3 <i class="small text-muted float-right mt-1">2016-09-25</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.3.2"
+          >2.3.2 <i class="small text-muted float-right mt-1">2016-08-19</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.3.1"
+          >2.3.1 <i class="small text-muted float-right mt-1">2016-06-17</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.3"
+          >2.3 <i class="small text-muted float-right mt-1">2016-05-29</i>
+        </a>
+      </li>
+    </ul>
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.5"
+          >2.2.5 <i class="small text-muted float-right mt-1">2016-05-09</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.4"
+          >2.2.4 <i class="small text-muted float-right mt-1">2016-04-11</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.3"
+          >2.2.3 <i class="small text-muted float-right mt-1">2016-03-14</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.2"
+          >2.2.2 <i class="small text-muted float-right mt-1">2016-01-21</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.2.1"
+          >2.2.1 <i class="small text-muted float-right mt-1">2015-12-17</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.2"
+          >2.2 <i class="small text-muted float-right mt-1">2015-11-14</i>
+        </a>
+      </li>
+    </ul>
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.1.2"
+          >2.1.2 <i class="small text-muted float-right mt-1">2015-10-03</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.1.1"
+          >2.1.1 <i class="small text-muted float-right mt-1">2015-08-06</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.1"
+          >2.1 <i class="small text-muted float-right mt-1">2015-06-26</i>
+        </a>
+      </li>
+    </ul>
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.0.1"
+          >2.0.1 <i class="small text-muted float-right mt-1">2015-01-05</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a href="https://github.com/dita-ot/dita-ot/releases/tag/2.0"
+          >2.0 <i class="small text-muted float-right mt-1">2014-11-18</i>
+        </a>
+      </li>
+    </ul>
   </div>
 
   <hr />
 
-  <h2 id="legacy_versions">Legacy versions <small>supporting DITA 1.2 and earlier</small></h2>
+  <h2 id="legacy_versions">
+    Legacy versions <small class="text-muted">supporting DITA 1.2 and earlier</small>
+  </h2>
 
-  <div class="row">
-    <div class="col-md-2">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <a
-            href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/"
-            >1.8.5
-            <div class="pull-right"><i class="small text-muted">2014-09-02</i></div></a
-          >
-        </div>
-        <div class="list-group">
-          <a
-            class="list-group-item"
-            href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.7/"
-            >1.7.5
-            <div class="pull-right"><i class="small text-muted">2013-04-19</i></div></a
-          >
-          <a
-            class="list-group-item"
-            href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.6/"
-            >1.6.3
-            <div class="pull-right"><i class="small text-muted">2012-09-17</i></div></a
-          >
-          <a
-            class="list-group-item"
-            href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.5.4/"
-            >1.5.4
-            <div class="pull-right"><i class="small text-muted">2011-12-22</i></div></a
-          >
-        </div>
-      </div>
-    </div>
+  <div class="container row">
+    <ul class="list-group col-lg-2">
+      <li class="list-group-item list-group-item-action list-group-item-light">
+        <a
+          href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.8/"
+          >1.8.5 <i class="small text-muted float-right mt-1">2014-09-02</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a
+          href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.7/"
+          >1.7.5 <i class="small text-muted float-right mt-1">2013-04-19</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a
+          href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.6/"
+          >1.6.3 <i class="small text-muted float-right mt-1">2012-09-17</i>
+        </a>
+      </li>
+      <li class="list-group-item list-group-item-action">
+        <a
+          href="http://sourceforge.net/projects/dita-ot/files/DITA-OT%20Stable%20Release/DITA%20Open%20Toolkit%201.5.4/"
+          >1.5.4 <i class="small text-muted float-right mt-1">2011-12-22</i>
+        </a>
+      </li>
+    </ul>
   </div>
-</main>
+</div>

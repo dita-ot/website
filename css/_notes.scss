@@ -16,23 +16,23 @@ div.attention {
 
 // Note = alert alert-info
 .note {
-  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+  @extend .alert-info;
   // Tip = alert alert-success
   &.tip {
-    @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
+    @extend .alert-success;
   }
 }
 
 // Important = alert alert-warning
 .attention,
 .important {
-  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+  @extend .alert-warning;
 }
 
 // Caution, Warning = alert alert-danger
 .caution,
 .warning {
-  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
+  @extend .alert-danger;
 }
 
 // Title styles

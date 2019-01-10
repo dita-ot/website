@@ -21,6 +21,13 @@
 
 // Override Bootstrap _code partials
 
+pre {
+  padding: 6px 9.5px;
+  margin: 0 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 // Inline code
 code {
   background-color: transparent;

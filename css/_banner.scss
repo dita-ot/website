@@ -1,0 +1,20 @@
+.dev-docs-banner {
+  margin-bottom: 0;
+
+  svg {
+    fill: rgb(133, 100, 4);
+  }
+}
+
+// Hide edit link on extra-small devices like phones in portrait mode
+// Begin showing at small breakpoint (landscape phones, 576px and up)
+
+#editLink {
+  display: none;
+}
+@include media-breakpoint-up(sm) {
+  #editLink {
+    display: block;
+    margin-top: -2px;
+  }
+}

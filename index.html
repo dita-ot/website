@@ -1,81 +1,69 @@
 ---
-layout: base
+layout: splash
 title: 'DITA Open Toolkit'
 toc: false
 ---
 
-<div class="jumbotron">
-  <h1>{{ page.title }}</h1>
-  <p>
-    <strong><em>DITA-OT</em></strong> — DITA Open Toolkit is an open-source publishing engine for
-    content authored in the <em>Darwin Information Typing Architecture</em> — extensible publishing
-    power for DITA workflows.
-  </p>
-  <!-- 
-  <a href="https://www.oxygenxml.com/events/2018/dita-ot_day.html" target="_blank">
-    <img src="images/Banner_DITA_OT_Day_2018.png" alt="DITA-OT Day 2018" class="img-responsive center-block">
-  </a>
-  -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">{{ page.title }}</h1>
+    <p class="lead">
+      The open-source publishing engine for content authored in the
+      <em>Darwin Information Typing Architecture</em>.
+    </p>
+    <!--
+    <a href="https://www.oxygenxml.com/events/2018/dita-ot_day.html" target="_blank">
+      <img src="images/Banner_DITA_OT_Day_2018.png" alt="DITA-OT Day 2018" class="img-fluid">
+    </a>
+    -->
+  </div>
 </div>
 
 <div class="container marketing">
-  <div class="row teasers">
-    <div class="col-md-4">
-      <p class="teaser">
-        <a href="#features" role="button">
-          <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-        </a>
-      </p>
+  <div class="card-deck row teasers">
+    <div class="card col-lg-4 text-center shadow-sm p-3 mb-5 rounded">
+      <p class="teaser"><a href="#features" role="button"> {% octicon checklist %} </a></p>
       <h2>Features</h2>
       <p class="lead">
-        DITA Open Toolkit is a publishing tool used to process DITA content and convert it to
-        various output formats.
+        DITA Open Toolkit is a publishing tool used to process DITA content and convert it to other
+        formats.
       </p>
-      <p><a class="btn btn-default" href="#features" role="button">Learn more »</a></p>
+      <p><a class="btn btn-lg btn-light" href="#features" role="button">Learn more »</a></p>
     </div>
-    <!-- /.col-md-4 -->
-    <div class="col-md-4">
+    <div class="card col-lg-4 text-center shadow-sm p-3 mb-5 rounded">
       <p class="teaser">
-        <a href="{{ site.baseurl }}/download" role="button">
-          <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-        </a>
+        <a href="{{ site.baseurl }}/download" role="button"> {% octicon cloud-download %} </a>
       </p>
       <h2>Download</h2>
       <p class="lead">
-        Install DITA Open Toolkit to get started with structured authoring, topic-based writing and
-        cross-media publishing.
+        Install DITA Open Toolkit for structured authoring, topic-based writing and cross-media
+        publishing workflows.
       </p>
       <p>
         <a class="btn btn-lg btn-success" href="{{ site.baseurl }}/download" role="button">
-          <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Download DITA-OT
-          {{site.version}}
+          {% octicon cloud-download %} Download DITA-OT {{ site.version }}
         </a>
       </p>
     </div>
-    <!-- /.col-md-4 -->
-    <div class="col-md-4">
-      <p class="teaser">
-        <a href="{{ site.baseurl }}/dev" role="button">
-          <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-        </a>
-      </p>
+    <div class="card col-lg-4 text-center shadow-sm p-3 mb-5 rounded">
+      <p class="teaser"><a href="{{ site.baseurl }}/dev" role="button"> {% octicon book %} </a></p>
       <h2>Docs</h2>
       <p class="lead">
         The DITA Open Toolkit docs provide information about running, configuring and extending the
         toolkit.
       </p>
       <p>
-        <a class="btn btn-default" href="{{ site.baseurl }}/dev" role="button">Read the docs »</a>
+        <a class="btn btn-lg btn-light" href="{{ site.baseurl }}/dev" role="button"
+          >Read the docs »</a
+        >
       </p>
     </div>
-    <!-- /.col-md-4 -->
   </div>
-  <!-- /.row -->
 
   <hr class="featurette-divider" id="features" />
 
   <div class="row featurette">
-    <div class="col-md-7">
+    <div class="col-lg-7">
       <h2 class="featurette-heading">
         Open source. <span class="text-muted">Free as a bird.</span>
       </h2>
@@ -107,15 +95,15 @@ toc: false
         can.
       </p>
     </div>
-    <div class="col-md-5">
-      <img class="featurette-image finch img-responsive center-block" src="images/dita-logo.png" />
+    <div class="col-lg-5 text-center">
+      <img class="featurette-image finch img-fluid" src="images/dita-logo.png" />
     </div>
   </div>
 
   <hr class="featurette-divider" />
 
   <div class="row featurette">
-    <div class="col-md-7 col-md-push-5">
+    <div class="col-lg-7 order-2">
       <h2 class="featurette-heading" id="supported_transformation_types">
         Output formats. <span class="text-muted">Out of the box.</span>
       </h2>
@@ -172,9 +160,9 @@ toc: false
         </li>
       </ul>
     </div>
-    <div class="col-md-5 col-md-pull-7">
+    <div class="col-lg-5 order-1 text-center">
       <img
-        class="featurette-image img-responsive center-block"
+        class="featurette-image img-fluid"
         alt="Output formats"
         src="images/dita-ot_output.png"
       />
@@ -184,13 +172,13 @@ toc: false
   <hr class="featurette-divider" />
 
   <div class="row featurette">
-    <div class="col-md-7">
+    <div class="col-lg-7">
       <h2 class="featurette-heading">
         DITA infrastructure. <span class="text-muted">Publishing power.</span>
       </h2>
       <p class="lead">
-        DITA Open Toolkit serves as critical infrastructure, providing the publishing engine that
-        powers the DITA ecosystem.
+        DITA Open Toolkit provides an extensible publishing engine that serves as the foundation of
+        the software ecosystem that enables DITA workflows.
       </p>
       <p>
         Many of the best-known XML editors, enterprise authoring solutions and commercial content
@@ -322,9 +310,9 @@ toc: false
         >.
       </p>
     </div>
-    <div class="col-md-5">
+    <div class="col-lg-5 text-center">
       <img
-        class="featurette-image img-responsive center-block"
+        class="featurette-image img-fluid"
         alt="Publishing platform"
         src="images/dita-ot_input.png"
       />
