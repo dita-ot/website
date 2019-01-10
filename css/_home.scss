@@ -10,16 +10,12 @@
     @extend .img-fluid;
     @extend .col-lg-6;
     fill: $brand-primary;
-  }
-  // Invert link colors for teaser icon links
-  // a {
-  //   color: $link-hover-color; // $brand-primary ** Global textual link color.
 
-  //   &:hover,
-  //   &:focus {
-  //     color: $link-color; // lighten($brand-primary, 20%)
-  //   }
-  // }
+    // Invert link colors for teaser icon links
+    @include hover-focus {
+      fill: $link-color; // lighten($brand-primary, 20%)
+    }
+  }
 }
 
 .btn-success svg {
