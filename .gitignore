@@ -4,7 +4,7 @@
 .jekyll-metadata
 
 # GitHub Pages Gemfile & bundler artifacts
-Gemfile*
+Gemfile.lock
 
 # Bundler configuration & installation log
 .bundle/config
