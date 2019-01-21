@@ -14,17 +14,7 @@
     {% include header.html %}
     <div id="content" class="container mt-4">
       {% if page.url contains '/dev/' %}
-        {% include dev-docs-banner.html %}
-      {% elsif page.url contains '/3.1/'
-            or page.url contains '/3.0/'
-            or page.url contains '/2.5/'
-            or page.url contains '/2.4/'
-            or page.url contains '/2.3/'
-            or page.url contains '/2.2/'
-            or page.url contains '/2.1/'
-            or page.url contains '/2.0/'
-            or page.url contains '/1.8/' %}
-        {% include old-docs-banner.html %}
+        {% include banner.html %}
       {% endif %}
       <div class="row">
         {{ content }}
