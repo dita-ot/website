@@ -40,7 +40,7 @@
     "lint-staged": "8.1.0",
     "object.values": "^1.1.0",
     "parcel-bundler": "^1.11.0",
-    "prettier": "1.16.0",
+    "prettier": "1.16.1",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.4",
     "urijs": "^1.19.1",
