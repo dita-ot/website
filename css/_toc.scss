@@ -1,10 +1,27 @@
 // Initial navigation (up to v2.2.2)
-.bs-docs-sidenav li {
-  > a {
-    padding: 3px 15px;
+
+.bs-docs-sidenav {
+  padding-top: 10px;
+
+  li {
+    display: block;
+    position: relative;
+    width: 255px;
+
+    > a {
+      display: block;
+      margin: 0;
+      padding: 3px 20px;
+
+      @include hover-focus {
+        @include border-radius($badge-border-radius);
+        background-color: $gray-100;
+        text-decoration: none;
+      }
+    }
   }
 
-  &.active > a {
+  .active > a {
     @include border-radius($badge-border-radius);
     background-color: $gray-200;
     color: $link-hover-color;
