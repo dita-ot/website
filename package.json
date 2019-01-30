@@ -4,6 +4,7 @@
   "description": "DITA-OT Website",
   "scripts": {
     "install": "./node_modules/.bin/parcel build _js/plugins.js _js/main.js --out-dir js",
+    "check": "prettier --ignore-path .prettierignore --check \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
     "fix:config": "prettier --ignore-path .prettierignore --write \"**/*.{json,yaml,yml}\"",
     "fix:docs": "prettier --ignore-path .prettierignore --write \"**/*.md\"",
     "fix:html": "prettier --ignore-path .prettierignore --write \"**/*.html\"",
