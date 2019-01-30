@@ -101,26 +101,15 @@ To automatically regenerate the site output whenever documentation source files 
 
 ## Updating JavaScript
 
-If you need to change any of the JavaScript files in the site repository, you'll need to [download & install Node.js][8] and run the `npm` package manager for JavaScript to install the project dependencies:
+If you need to change any of the JavaScript files in the site repository, you'll need to [download & install Node.js][8] and run the `npm` package manager for JavaScript to perform a clean install of the project dependencies:
 
     npm ci
 
-This will install various Node modules including [Gulp][9], the streaming build system.
+This will install various Node modules including [Parcel][9], the web application bundler.
 
-To run Gulp separately, you may need to install it per <https://gulpjs.com>:
+To make changes to the JavaScript code, add or edit source files in the `_js` folder. You can then run the `install` script to re-bundle the modified JavaScript code to the `js` folder with Parcel:
 
-    npm install gulp-cli -g
-    npm install gulp -D
-
-To make changes to the JavaScript code, add or edit source files in the `_js` folder.
-
-You can then run Gulp to minify the modified JavaScript code:
-
-    gulp
-
-Or run the `watch-js` task to monitor the JavaScript source files in the `_js` folder for changes, and compile the minified code to the `js` folder whenever the source files change:
-
-    gulp watch-js
+    npm run install
 
 ## Happy staging!
 
@@ -136,5 +125,5 @@ When you're ready to share your progress, send us a [pull request][10].
 [6]: https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
 [7]: http://127.0.0.1:4000/dev/
 [8]: https://nodejs.org/en/download/
-[9]: https://gulpjs.com
+[9]: https://parceljs.org
 [10]: https://help.github.com/articles/about-pull-requests/

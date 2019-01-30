@@ -23,7 +23,6 @@ version: '3.2.1'
 # Exclude directories and/or files from the conversion
 exclude:
   - Gemfile*
-  - gulpfile.js
   - images/dita-ot_input-output.graffle
   - LICENSE
   - node_modules
