@@ -239,7 +239,7 @@ function filterForm() {
   )
   version.onchange = versionHandler
 
-  return elem('div', { class: 'form-row' }, [
+  return elem('div', { class: 'form-row my-4' }, [
     elem('div', { class: 'col-md-8' }, input),
     ' ',
     elem('div', { class: 'col-md-4' }, version)
