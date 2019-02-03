@@ -2,11 +2,11 @@
 
 .bs-docs-sidenav {
   padding-top: 10px;
+  display: block;
 
   li {
     display: block;
     position: relative;
-    width: 255px;
 
     > a {
       display: block;
