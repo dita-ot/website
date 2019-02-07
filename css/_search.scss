@@ -7,3 +7,8 @@
     margin: 0 10px;
   }
 }
+
+#search input {
+  background: $navbar-dark-link-hover-bg;
+  border: $input-border-width inset $navbar-dark-link-hover-bg;
+}
