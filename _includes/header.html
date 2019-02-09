@@ -133,15 +133,18 @@
             >
           </li>
         </ul>
-        {% octicon search class:"bg-gradient-light mr-2" %}
+
         <form class="form-inline" id="search" role="search">
-          <input
-            type="text"
-            name="q"
-            class="form-control"
-            maxlength="255"
-            placeholder="Search the docs…"
-          />
+          <div class="form-group">
+            <label for="q">{% octicon search class:"bg-gradient-light mr-2" %}</label>
+            <input
+              type="text"
+              name="q"
+              class="form-control"
+              maxlength="255"
+              placeholder="Search the docs…"
+            />
+          </div>
         </form>
       </div>
     </div>
