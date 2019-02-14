@@ -1,8 +1,15 @@
-// Initial navigation (up to v2.2.2)
+// Sass partial for "Table of Contents" navigation styles & overrides
 
-.bs-docs-sidenav {
-  padding-top: 10px;
+// Common ToC styles shared by pre-2.3 static ToCs & dynamic ToCs
+// Select <nav> element based on new (Bootstrap 4) column classes
+
+nav.col-lg-3 {
   display: block;
+  padding-top: 10px;
+
+  ul {
+    display: block;
+  }
 
   li {
     display: block;
@@ -25,10 +32,6 @@
     @include border-radius($badge-border-radius);
     background-color: $gray-200;
     color: $link-hover-color;
-  }
-
-  ul {
-    margin-left: 10px;
   }
 }
 
@@ -57,29 +60,15 @@ nav[role='toc'] {
   }
 
   li {
-    display: block;
     margin-left: 2px;
-    position: relative;
 
     > a {
-      display: block;
-      margin: 0 0 0 -20px;
-      padding: 3px 0 3px 20px;
-
-      @include hover-focus {
-        @include border-radius($badge-border-radius);
-        background-color: $gray-100;
-        text-decoration: none;
-      }
+      margin-left: -13px;
+      padding-left: 13px;
+      padding-right: 0;
     }
 
     &.active {
-      > a {
-        @include border-radius($badge-border-radius);
-        background-color: $gray-200;
-        color: $link-hover-color;
-      }
-
       > .controller::before {
         color: $link-hover-color;
       }
