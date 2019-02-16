@@ -3,4 +3,10 @@
 .simpletable {
   @extend .table;
   @extend .table-sm;
+  margin: $spacer 0;
+}
+
+.strow {
+  border-bottom: $table-border-width solid $table-border-color;
+  border-top: $table-border-width solid $table-border-color;
 }
