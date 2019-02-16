@@ -1,5 +1,5 @@
 // Sass partial to apply Bootstrap styling & override user agent defaults for DITA element classes
-// See related partials for code, notes, UI & XML domains
+// See related partials for code, notes, tables, UI & XML domains
 
 .lq {
   color: $text-muted;
@@ -19,11 +19,6 @@ div.shortdesc {
 p.shortdesc,
 div.shortdesc {
   @extend .lead;
-}
-
-.simpletable {
-  @extend .table;
-  @extend .table-sm;
 }
 
 // Apply Bootstrap's <caption> style to figure titles (rendered as HTML5 <figcaption> elements)

@@ -1,0 +1,6 @@
+// Style DITA table elements w/ Bootstrap components
+
+.simpletable {
+  @extend .table;
+  @extend .table-sm;
+}
