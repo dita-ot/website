@@ -9,7 +9,7 @@
 // Add bottom margin to nested lists & short descriptions that appear in abstracts
 li.li ul.ul,
 div.shortdesc {
-  margin-bottom: 10px;
+  margin-bottom: $spacer;
 }
 
 .lead {

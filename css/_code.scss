@@ -17,14 +17,14 @@
 .highlight,
 .codeblock {
   background-color: $pre-bg;
-  margin: 10px 0;
+  margin: $spacer 0;
 }
 
 // Override Bootstrap _code partials
 
 pre {
   padding: 6px 9.5px;
-  margin: 0 0 10px;
+  margin: 0 0 $spacer;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
