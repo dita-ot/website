@@ -23,10 +23,10 @@
 // Override Bootstrap _code partials
 
 pre {
-  padding: 6px 9.5px;
-  margin: 0 0 $spacer;
   border: 1px solid $pre-border-color;
   border-radius: 4px;
+  margin: 0 0 $spacer;
+  padding: 6px 9.5px;
 }
 
 // Inline code

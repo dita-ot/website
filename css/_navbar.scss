@@ -8,14 +8,14 @@
 }
 
 .navbar {
-  padding-top: 0;
   padding-bottom: 0;
+  padding-top: 0;
 }
 
 .navbar-nav {
   .nav-item {
-    padding-top: $navbar-padding-y;
     padding-bottom: $navbar-padding-y;
+    padding-top: $navbar-padding-y;
 
     @include hover-focus {
       background-color: $navbar-dark-link-hover-bg;
