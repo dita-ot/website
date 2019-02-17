@@ -2,6 +2,7 @@
 
 .table {
   @extend .table-sm;
+  font-size: $font-size-sm;
 }
 
 tr.row {
@@ -11,6 +12,7 @@ tr.row {
 .simpletable {
   @extend .table;
   @extend .table-sm;
+  font-size: $font-size-sm;
   margin: $spacer 0;
 }
 
