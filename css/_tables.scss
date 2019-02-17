@@ -18,3 +18,7 @@ tr.row {
   border-bottom: $table-border-width solid $table-border-color;
   border-top: $table-border-width solid $table-border-color;
 }
+
+caption {
+  caption-side: top;
+}

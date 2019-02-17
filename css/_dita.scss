@@ -24,6 +24,9 @@ div.shortdesc {
 // Apply Bootstrap's <caption> style to figure titles (rendered as HTML5 <figcaption> elements)
 figcaption {
   @extend caption;
+  @extend .figure-caption;
+  margin: $table-cell-padding 0;
+  padding: 0;
 }
 
 // Apply Bootstrap's <p> margins to definition descriptions (1rem bottom margin)
