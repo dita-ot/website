@@ -3,7 +3,7 @@
 layout: base
 title: "Adding custom headers and footers"
 index: "../toc.html"
-commit: "708a16074838789aaa7c1e03dc000a4aba83c68a"
+commit: "07b319391bacad77c52e3f2c62acab948d92a2fc"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a><ul class="nav nav-list"><li><a href="../topics/html-customization-parameters.html">Setting HTML parameters</a><ul class="nav nav-list"><li><a href="../topics/html-customization-navigation.html">Adding navigation</a></li><li><a href="../topics/html-customization-css.html">Adding custom CSS</a></li><li class="active"><a href="../topics/html-customization-header.html">Headers and footers</a></li><li><a href="../parameters/generate-copy-outer.html">Handling content outside the map directory</a></li></ul></li><li><a href="../topics/html-customization-properties-file.html">Using a properties file</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li></ul></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -39,20 +39,20 @@ commit: "708a16074838789aaa7c1e03dc000a4aba83c68a"
         <span class="ph cmd">Add custom CSS rules to style headers and/or footers.</span>
         <div class="itemgroup info">
           <p class="p">For example, the DITA-OT documentation stylesheet includes the following header rules: </p>
-          <div class="p"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>div.header {
+          <div class="p"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>.header {
   font-size: 18pt;
   margin: 0;
   padding: 0 12px;
 }
 
-div.header p {
-  color: #777;
+.header p {
+  color: #1d365d;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.3;
   margin: 0;
 }
 
-div.header hr {
+.header hr {
   border: 0;
   border-bottom: 1px solid #eee;
   height: 0;
