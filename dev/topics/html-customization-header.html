@@ -3,7 +3,7 @@
 layout: base
 title: "Adding custom headers and footers"
 index: "../toc.html"
-commit: "73f9db7c3cef9a971bfd26ff39d4586162c8c335"
+commit: "708a16074838789aaa7c1e03dc000a4aba83c68a"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a><ul class="nav nav-list"><li><a href="../topics/html-customization-parameters.html">Setting HTML parameters</a><ul class="nav nav-list"><li><a href="../topics/html-customization-navigation.html">Adding navigation</a></li><li><a href="../topics/html-customization-css.html">Adding custom CSS</a></li><li class="active"><a href="../topics/html-customization-header.html">Headers and footers</a></li><li><a href="../parameters/generate-copy-outer.html">Handling content outside the map directory</a></li></ul></li><li><a href="../topics/html-customization-properties-file.html">Using a properties file</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li></ul></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -28,7 +28,7 @@ commit: "73f9db7c3cef9a971bfd26ff39d4586162c8c335"
       <div class="note note note_note"><span class="note__title">Note:</span> Header and footer files should be specified using absolute paths and must contain valid XML. A common
         practice is to place all content into a <code class="keyword markupname xmlelement">&lt;div&gt;</code> element.</div>
     </section>
-    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Set <span class="keyword parmname">args.hdr</span> to include an XML file as a running header that appears above the page
           content.</span>
         <div class="itemgroup info"> </div>
@@ -59,7 +59,7 @@ div.header hr {
 }</code></pre>
           </div>
         </div>
-      </li></ol></section>
+      </li></ol>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
       <div class="note tip note_tip"><span class="note__title">Tip:</span> For an example of HTML output generated using this method, see the HTML5 version of the DITA-OT
         documentation included in the installation folder under <span class="ph filepath">doc/index.html</span>.</div>
