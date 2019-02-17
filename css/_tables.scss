@@ -1,5 +1,9 @@
 // Style DITA table elements w/ Bootstrap components
 
+.table {
+  @extend .table-sm;
+}
+
 tr.row {
   display: table-row;
 }
