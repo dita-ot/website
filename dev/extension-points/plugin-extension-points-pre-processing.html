@@ -3,7 +3,7 @@
 layout: base
 title: "Pre-processing extension points"
 index: "../toc.html"
-commit: "4e6e4e9669b368aaa77ee95ab5fff8bc680ae92a"
+commit: "7b4d48bb45ec53d3300bb161376961ea8a9b7fa7"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a><ul class="nav nav-list"><li><a href="../extension-points/all-extension-points.html">All extension points</a></li><li><a href="../extension-points/plugin-extension-points-general.html">General extension points</a></li><li class="active"><a href="../extension-points/plugin-extension-points-pre-processing.html">Pre-processing extension points</a></li><li><a href="../extension-points/plugin-extension-points-xslt-import.html">XSLT-import extension points</a></li><li><a href="../extension-points/plugin-extension-points-xslt-parameters.html">XSLT-parameter extension points</a></li><li><a href="../extension-points/plugin-extension-points-support.html">Version and support information</a></li><li><a href="../extension-points/extension-points-by-plugin.html">Plug-in extension points</a></li></ul></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -29,7 +29,11 @@ commit: "4e6e4e9669b368aaa77ee95ab5fff8bc680ae92a"
         
       </dl>
     </section>
-    <section class="section">
+    <section class="section"><h2 class="title sectiontitle">Legacy pre-processing extensions</h2>
+      
+      <p class="p">The following extension points are available in the original <code class="ph codeph">preprocess</code> pipeline that was used
+        by default for all transformations prior to DITA-OT 3.0. These extensions are not available in the newer <a class="xref" href="../reference/map-first-preprocessing.html" title="DITA-OT 3.0 provides a map-first preprocessing option as an alternative to the default preprocess operation. The method, which was introduced in DITA-OT 2.5 as an experimental feature, has been improved and is ready for use in many production scenarios. Map-first-preprocessing provides the same functionality as the default preprocess, but takes a different approach.">map-first preprocessing</a> pipeline (<code class="ph codeph">preprocess2</code>), which is
+        used in the PDF and HTML Help transformations as of DITA-OT 3.0.</p>
       <div class="note caution note_caution"><span class="note__title">CAUTION:</span> The internal order of preprocessing steps is
             subject to change between versions of DITA-OT. New versions may remove, reorder, combine, or add steps to
             the process, so the extension points <strong class="ph b">within</strong> the preprocessing stage should only be used if absolutely
@@ -38,106 +42,89 @@ commit: "4e6e4e9669b368aaa77ee95ab5fff8bc680ae92a"
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.chunk.pre</span></dt>
           <dd class="dd">Runs an
-            Ant target before the <code class="ph codeph">chunk</code> step in the pre-processing stage <em class="ph i">(not recommended)</em>.</dd>
+            Ant target before the <code class="ph codeph">chunk</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.coderef.pre</span></dt>
           <dd class="dd">Runs an
-            Ant target before the <code class="ph codeph">coderef</code> step in the pre-processing stage <em class="ph i">(not
-            recommended)</em>.</dd>
+            Ant target before the <code class="ph codeph">coderef</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.conref.pre</span></dt>
           <dd class="dd">Runs an
-            Ant target before the <code class="ph codeph">conref</code> step in the pre-processing stage <em class="ph i">(not
-            recommended)</em>.</dd>
+            Ant target before the <code class="ph codeph">conref</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.conrefpush.pre</span></dt>
           <dd class="dd">Runs
-            an Ant target before the <code class="ph codeph">conrefpush</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+            an Ant target before the <code class="ph codeph">conrefpush</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.clean-temp.pre</span></dt>
           <dd class="dd">Runs
-            an Ant target before the <code class="ph codeph">clean-temp</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+            an Ant target before the <code class="ph codeph">clean-temp</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.copy-files.pre</span></dt>
           <dd class="dd">Runs
-            an Ant target before the <code class="ph codeph">copy-files</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+            an Ant target before the <code class="ph codeph">copy-files</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.copy-flag.pre</span></dt>
           <dd class="dd">Runs
-            an Ant target before the <code class="ph codeph">copy-flag</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+            an Ant target before the <code class="ph codeph">copy-flag</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.copy-html.pre</span></dt>
           <dd class="dd">Runs
-            an Ant target before the <code class="ph codeph">copy-html</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+            an Ant target before the <code class="ph codeph">copy-html</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.copy-image.pre</span></dt>
           <dd class="dd">Runs
-            an Ant target before the <code class="ph codeph">copy-image</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+            an Ant target before the <code class="ph codeph">copy-image</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.copy-subsidiary.pre</span></dt>
-          <dd class="dd">Runs an Ant target before the <code class="ph codeph">copy-subsidiary</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+          <dd class="dd">Runs an Ant target before the <code class="ph codeph">copy-subsidiary</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.debug-filter.pre</span></dt>
-          <dd class="dd">Runs an Ant target before the <code class="ph codeph">debug-filter</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+          <dd class="dd">Runs an Ant target before the <code class="ph codeph">debug-filter</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.gen-list.pre</span></dt>
           <dd class="dd">Runs
-            an Ant target before the <code class="ph codeph">gen-list</code> step in the pre-processing stage <em class="ph i">(not
-            recommended)</em>.</dd>
+            an Ant target before the <code class="ph codeph">gen-list</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.keyref.pre</span></dt>
           <dd class="dd">Runs an
-            Ant target before the <code class="ph codeph">keyref</code> step in the pre-processing stage <em class="ph i">(not
-            recommended)</em>.</dd>
+            Ant target before the <code class="ph codeph">keyref</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.maplink.pre</span></dt>
           <dd class="dd">Runs an
-            Ant target before the <code class="ph codeph">maplink</code> step in the pre-processing stage <em class="ph i">(not
-            recommended)</em>.</dd>
+            Ant target before the <code class="ph codeph">maplink</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.mappull.pre</span></dt>
           <dd class="dd">Runs an
-            Ant target before the <code class="ph codeph">mappull</code> step in the pre-processing stage <em class="ph i">(not
-            recommended)</em>.</dd>
+            Ant target before the <code class="ph codeph">mappull</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.mapref.pre</span></dt>
           <dd class="dd">Runs an
-            Ant target before the <code class="ph codeph">mapref</code> step in the pre-processing stage <em class="ph i">(not
-            recommended)</em>.</dd>
+            Ant target before the <code class="ph codeph">mapref</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.move-meta-entries.pre</span></dt>
-          <dd class="dd">Runs an Ant target before the <code class="ph codeph">move-meta-entries</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+          <dd class="dd">Runs an Ant target before the <code class="ph codeph">move-meta-entries</code> step in the pre-processing stage.</dd>
         
         
           <dt class="dt dlterm"><span class="keyword parmname">depend.preprocess.topicpull.pre</span></dt>
           <dd class="dd">Runs
-            an Ant target before the <code class="ph codeph">topicpull</code> step in the pre-processing stage <em class="ph i">(not
-              recommended)</em>.</dd>
+            an Ant target before the <code class="ph codeph">topicpull</code> step in the pre-processing stage.</dd>
         
       </dl>
     </section>
