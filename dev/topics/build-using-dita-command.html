@@ -3,7 +3,7 @@
 layout: base
 title: "Building output using the dita command"
 index: "../toc.html"
-commit: "708a16074838789aaa7c1e03dc000a4aba83c68a"
+commit: "b1b416127bbd16c00cee758b3ab94df300cb3cc4"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -94,7 +94,8 @@ commit: "708a16074838789aaa7c1e03dc000a4aba83c68a"
           <dt class="dt pt dlterm">
             <span class="keyword parmname">-v</span>
           </dt>
-          <dd class="dd pd">Verbose logging.</dd>
+          <dd class="dd pd">Verbose logging prints additional information to the console, including directory settings, effective
+            values for Ant properties, input/output files, and informational messages to assist in troubleshooting.</dd>
         
         
           <dt class="dt pt dlterm">
@@ -102,7 +103,11 @@ commit: "708a16074838789aaa7c1e03dc000a4aba83c68a"
           <dt class="dt pt dlterm">
             <span class="keyword parmname">-d</span>
           </dt>
-          <dd class="dd pd">Debug logging.</dd>
+          <dd class="dd pd">Debug logging prints considerably more additional information. The debug log includes all information from
+            the verbose log, plus details on Java classes, additional Ant properties and overrides, preprocessing
+            filters, parameters, and stages, and the complete build sequence. Debug logging requires additional
+            resources and can slow down the build process, so it should only be enabled when further details are
+            required to diagnose problems.</dd>
         
         
           <dt class="dt pt dlterm">
