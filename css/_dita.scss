@@ -29,7 +29,13 @@ figcaption {
   padding: 0;
 }
 
-// Apply Bootstrap's <p> margins to definition descriptions (1rem bottom margin)
+// Apply Bootstrap's <p> margins to definition lists
+// 1rem bottom margin
 dd {
   margin: 0 0 $paragraph-margin-bottom;
+}
+
+// Top margin for first term in list
+dt {
+  margin: $paragraph-margin-bottom 0 0;
 }
