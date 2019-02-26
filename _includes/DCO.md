@@ -16,5 +16,26 @@ Your signature certifies that you are either the author of the contribution or h
 
 If you set your `user.name` and `user.email` as part of your Git configuration, you can sign your commit automatically with `git commit -s`.
 
+### Adding signoff to earlier commits
+
+To sign off your last commit from the command line, use:
+
+    git commit --amend --signoff
+
+Then force-push to update the branch on your fork with:
+
+    git push --force-with-lease
+
+### Signing off with a Git client
+
+Popular Git clients like [Sourcetree][3] allow you to sign off commits via a graphical user interface.
+
+While each client handles this differently, the basic process remains the same. Look for commit options in the repository settings or near the field where you enter your commit message:
+
+1. Select the option to _amend_ (change) your last commit.
+2. Select the option to _sign off_.
+3. You can then push the branch, making sure to select the "force push" option to update the branch in your pull request with the new (signed off) version of your commit.
+
 [1]: http://developercertificate.org/
 [2]: http://www.apache.org/licenses/LICENSE-2.0
+[3]: https://www.sourcetreeapp.com

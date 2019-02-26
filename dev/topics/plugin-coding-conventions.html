@@ -3,9 +3,10 @@
 layout: base
 title: "Plug-in coding conventions"
 index: "../toc.html"
-commit: "f98e6be8b042b669226ad71c35f2c718612b28a0"
+commit: "4c486e170b669cd184bb36e536d22f05dcca3f07"
 ---
-<nav class="col-lg-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-applications.html">Plug-in applications</a></li><li><a href="../topics/plugin-sample.html">Example plugin.xml file</a></li><li><a href="../topics/plugin-best-practices.html">Best practices</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-lg-9" role="main">
+
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-applications.html">Plug-in applications</a></li><li><a href="../topics/plugin-sample.html">Example plugin.xml file</a></li><li><a href="../topics/plugin-best-practices.html">Best practices</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Plug-in coding conventions</h1>
   
   
@@ -79,23 +80,23 @@ commit: "f98e6be8b042b669226ad71c35f2c718612b28a0"
       </div>
       <p class="p">The <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> resource collection can be used to select different types of
         files.</p>
-      <table class="table"><caption><span class="table--title-label">Table 1. </span><span class="title">Usage examples of <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code></span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+      <table class="table table-hover frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">Usage examples of <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code></span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
             <tr class="row">
-              <th class="entry" id="ID__entry__1">Example</th>
-              <th class="entry" id="ID__entry__2">Description</th>
+              <th class="entry colsep-0 rowsep-1" id="ID__entry__1">Example</th>
+              <th class="entry colsep-0 rowsep-1" id="ID__entry__2">Description</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
-              <td class="entry" headers="ID__entry__2 ">Selects all DITA topics in the temporary directory.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">Selects all DITA topics in the temporary directory.</td>
             </tr>
             <tr class="row">
-              <td class="entry" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
-              <td class="entry" headers="ID__entry__2 ">Selects all DITA maps in the temporary directory.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">Selects all DITA maps in the temporary directory.</td>
             </tr>
             <tr class="row">
-              <td class="entry" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
-              <td class="entry" headers="ID__entry__2 ">Selects images of all known types in the temporary directory.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">Selects images of all known types in the temporary directory.</td>
             </tr>
           </tbody></table>
     </section>
@@ -118,8 +119,8 @@ commit: "f98e6be8b042b669226ad71c35f2c718612b28a0"
       <div class="div" id="ID__d29e60">
         <p class="p">DITA-OT includes a RELAX NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
           files that define the capabilities of each plug-in.</p>
-        <p class="p">To ensure the syntax of your custom plug-in is correct, include the following <code class="keyword markupname xmlpi">&lt;?xml-model?&gt;</code>
-          processing instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
+        <p class="p">To ensure the syntax of your custom plug-in is correct, include an <code class="keyword markupname xmlpi">&lt;?xml-model?&gt;</code> processing
+          instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
         <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
         <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="ID__d29e83"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
@@ -128,4 +129,4 @@ commit: "f98e6be8b042b669226ad71c35f2c718612b28a0"
     </section>
 
   </div>
-<nav role="navigation" class="related-links"><div class="linklist relinfo relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization-approaches.html" title="Various methods may be used to customize the PDF output that DITA Open Toolkit produces. Each of these approaches have advantages and shortcomings that should be considered when preparing a customization project. Some of these methods are considered “anti-patterns” with disadvantages that outweigh their apparent appeal. In most cases, you should create a custom PDF plug-in.">PDF customization approaches</a></li><li class="linklist"><a class="link" href="../topics/plugin-best-practices.html" title="Adhering to certain development practices will properly isolate your code from that of DITA Open Toolkit. This will make it easier to you to upgrade to new versions of DITA-OT when they are released.">Best practices for custom plug-ins</a></li></ul></div><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization.html" title="You can create custom DITA-OT plug-ins that build on the default DITA to PDF transformation. Plug-ins can customize covers and page layouts, modify formatting, override logic of the default PDF plug-in, and much more.">Customizing PDF output</a></li></ul></div></nav></main>
+<nav role="navigation" class="related-links"><div class="linklist relinfo relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization-approaches.html" title="Various methods may be used to customize the PDF output that DITA Open Toolkit produces. Each of these approaches have advantages and shortcomings that should be considered when preparing a customization project. Some of these methods are considered “anti-patterns” with disadvantages that outweigh their apparent appeal. In most cases, you should create a custom PDF plug-in.">PDF customization approaches</a></li><li class="linklist"><a class="link" href="../topics/plugin-best-practices.html" title="Adhering to certain development practices will properly isolate your code from that of DITA Open Toolkit. This will make it easier to you to upgrade to new versions of DITA-OT when they are released.">Best practices for custom plug-ins</a></li></ul></div><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization.html" title="You can create custom DITA-OT plug-ins that build on the default DITA to PDF transformation. Plug-ins can customize covers and page layouts, modify formatting, override logic of the default PDF plug-in, and much more.">Customizing PDF output</a></li></ul></div></nav></article></main>

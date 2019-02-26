@@ -57,9 +57,7 @@ $navbar-dark-brand-color:       lighten($navbar-dark-color, 10%);
 @import 'navbar';
 @import 'notes';
 @import 'search';
+@import 'tables';
 @import 'toc';
 @import 'ui-d';
 @import 'xml-d';
-
-// Additional overrides
-@import 'shame';

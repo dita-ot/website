@@ -3,9 +3,10 @@
 layout: base
 title: "Markdown DITA syntax reference"
 index: "../toc.html"
-commit: "edf1f696452353f2e6242bad6980d170460ff653"
+commit: "07b319391bacad77c52e3f2c62acab948d92a2fc"
 ---
-<nav class="col-lg-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a><ul class="nav nav-list"><li><a href="../topics/markdown-input.html">Markdown content</a></li><li><a href="../topics/lwdita-input.html">Lightweight DITA</a></li><li class="active"><a href="../topics/markdown-dita-syntax-reference.html">Markdown DITA syntax</a></li></ul></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-lg-9" role="main">
+
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a><ul class="nav nav-list"><li><a href="../topics/markdown-input.html">Markdown content</a></li><li><a href="../topics/lwdita-input.html">Lightweight DITA</a></li><li class="active"><a href="../topics/markdown-dita-syntax-reference.html">Markdown DITA syntax</a></li></ul></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Markdown DITA syntax reference</h1>
   
   
@@ -115,27 +116,28 @@ Context
     <section class="section" id="markdown-dita-syntax-reference__links"><h2 class="title sectiontitle">Links</h2>
       
       <p class="p">The format of local link targets is detected based on file extension. The following extensions are treated as
-        DITA files:</p><table class="table"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+        DITA files:</p>
+      <table class="table table-hover frame-none"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
             <tr class="row">
-              <th class="entry" id="markdown-dita-syntax-reference__links__entry__1">extension</th>
-              <th class="entry" id="markdown-dita-syntax-reference__links__entry__2">format</th>
+              <th class="entry colsep-0 rowsep-1" id="markdown-dita-syntax-reference__links__entry__1">extension</th>
+              <th class="entry colsep-0 rowsep-1" id="markdown-dita-syntax-reference__links__entry__2">format</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.dita</code></td>
-              <td class="entry" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">dita</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.dita</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">dita</code></td>
             </tr>
             <tr class="row">
-              <td class="entry" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.xml</code></td>
-              <td class="entry" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">dita</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.xml</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">dita</code></td>
             </tr>
             <tr class="row">
-              <td class="entry" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.md</code></td>
-              <td class="entry" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">markdown</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.md</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">markdown</code></td>
             </tr>
             <tr class="row">
-              <td class="entry" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.markdown</code></td>
-              <td class="entry" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">markdown</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.markdown</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">markdown</code></td>
             </tr>
           </tbody></table>
       <p class="p">All other link targets use <code class="ph codeph">format</code> from file extension and are treated as non-DITA files.
@@ -316,4 +318,4 @@ workflow: review
   &lt;data name="workflow" value="review"/&gt;
 &lt;/prolog&gt;</code></pre></section>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/markdown-input.html" title="Markdown is a lightweight markup language that allows you to write using an easy-to-read plain text format and convert to structurally valid markup as necessary.">Markdown content</a></li><li class="linklist"><a class="link" href="../topics/lwdita-input.html" title="DITA-OT provides preview support for the authoring formats proposed for Lightweight DITA, or “LwDITA”. The XDITA, MDITA and HDITA formats are alternative representations of DITA content in XML, Markdown and HTML5.">Preview support for Lightweight DITA</a></li></ul></div></nav></main>
+<nav role="navigation" class="related-links"><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/markdown-input.html" title="Markdown is a lightweight markup language that allows you to write using an easy-to-read plain text format and convert to structurally valid markup as necessary.">Markdown content</a></li><li class="linklist"><a class="link" href="../topics/lwdita-input.html" title="DITA-OT provides preview support for the authoring formats proposed for Lightweight DITA, or “LwDITA”. The XDITA, MDITA and HDITA formats are alternative representations of DITA content in XML, Markdown and HTML5.">Preview support for Lightweight DITA</a></li></ul></div></nav></article></main>

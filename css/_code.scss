@@ -3,7 +3,7 @@
 // Common code rules (imported to other classes)
 @mixin codeclass {
   font-family: $font-family-monospace;
-  font-size: 90%;
+  font-size: $code-font-size; // set to 87.5% !default in `bootstrap/_variables.scss` (14px if browser default = 16px)
   color: $gray-light;
 }
 
@@ -14,18 +14,24 @@
   letter-spacing: 1px;
 }
 
+.highlight,
 .codeblock {
   background-color: $pre-bg;
-  margin: 10px 0;
+  margin: $spacer 0;
 }
 
 // Override Bootstrap _code partials
 
 pre {
-  padding: 6px 9.5px;
-  margin: 0 0 10px;
-  border: 1px solid #ccc;
+  border: 1px solid $pre-border-color;
   border-radius: 4px;
+  margin: 0 0 $spacer;
+  padding: 6px 9.5px;
+
+  // Reduce font size for DITA codeblocks
+  code {
+    font-size: $code-font-size;
+  }
 }
 
 // Inline code
@@ -52,12 +58,16 @@ kbd {
   @include codeclass;
 }
 
-// Ensure uniform font size for inline code classes nested within <codeblock> elements
-.codeblock .cmdname,
-.codeblock .filepath,
-.codeblock .option,
-.codeblock .varname {
-  font-size: 100%;
+// Let nested code classes inherit font size (don't scale twice)
+.codeblock {
+  .cmdname,
+  .filepath,
+  .msgnum,
+  .option,
+  .parmname,
+  .varname {
+    font-size: inherit;
+  }
 }
 
 .cmdname,
