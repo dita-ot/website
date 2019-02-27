@@ -3,7 +3,7 @@
 layout: base
 title: "DITA Open Toolkit 3.3 Release Notes"
 index: "../toc.html"
-commit: "e9e766196bc873ddc6004571998dc8ae237c06ab"
+commit: "854ccbb3d8522871af6a459c61b4e52a09ccde32"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -96,6 +96,12 @@ commit: "e9e766196bc873ddc6004571998dc8ae237c06ab"
           existing features:</p>
         
         <ul class="ul">
+          <li class="li" id="v3.3__2225">The <span class="keyword cmdname">dita</span> command now recognizes a wider range of “truthy” property values,
+            including <code class="ph codeph">true</code>, <code class="ph codeph">yes</code>, <code class="ph codeph">1</code>, and <code class="ph codeph">on</code> and
+            handles inconsistently cased values more gracefully.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2225" target="_blank">#2225</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3197" target="_blank">#3197</a>
+          </li>
           <li class="li" id="v3.3__3157">Various XSLT files and other resources have been moved from the root of the DITA-OT installation
             directory to the base plug-in directory <span class="ph filepath">plugins/org.dita.base</span>.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3157" target="_blank">#3157</a> (If
@@ -141,7 +147,7 @@ commit: "e9e766196bc873ddc6004571998dc8ae237c06ab"
           <li class="li" id="v3.3__3188">The DITA-OT fork of the
             <a class="xref" href="https://github.com/relaxng/jing-trang" target="_blank">jing-trang</a> project
             used to provide RELAX NG schema validation in DITA-OT 3.2 has been replaced with the upstream code after the
-            patches provided by the DITA-OT team were included.
+            patches provided by George Bina were included.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3188" target="_blank">#3188</a>
           </li>
           <li class="li" id="v3.3__3191">Several bundled dependencies have been upgraded to the latest versions.
@@ -170,11 +176,6 @@ commit: "e9e766196bc873ddc6004571998dc8ae237c06ab"
             of the preprocessing pipeline to match the order in map-first preprocessing (<code class="ph codeph">preprocess2</code>).
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3196" target="_blank">#3196</a>
           </li>
-          <li class="li" id="v3.3__3197">The <span class="keyword cmdname">dita</span> command now recognizes a wider range of “truthy” property values,
-            including <code class="ph codeph">true</code>, <code class="ph codeph">yes</code>, <code class="ph codeph">1</code>, and <code class="ph codeph">on</code> and
-            handles inconsistently cased values more gracefully.
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3197" target="_blank">#3197</a>
-          </li>
           <li class="li" id="v3.3__3204">The
             <a class="xref" href="https://gradle.org" target="_blank">Gradle</a> build system has been updated to the latest patch release (5.2.1).
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3204" target="_blank">#3204</a>
@@ -192,8 +193,6 @@ commit: "e9e766196bc873ddc6004571998dc8ae237c06ab"
           but this file may be removed in an upcoming release.</span>
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3230" target="_blank">#3230</a>
           </li>
-
-
         </ul>
       </section>
 
@@ -258,7 +257,7 @@ commit: "e9e766196bc873ddc6004571998dc8ae237c06ab"
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3239" target="_blank">#3239</a>
           </li>
           <li class="li" id="v3.3__3180">In earlier versions, setting an <code class="keyword markupname xmlatt">@id</code> attribute on a <code class="keyword markupname xmlelement">&lt;dt&gt;</code>
-            created duplicate definition terms in the XSL-FO file.
+            created duplicate IDs in the XSL-FO file, which caused warnings when rendering FO to PDF.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3180" target="_blank">#3180</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3185" target="_blank">#3185</a>
           </li>
