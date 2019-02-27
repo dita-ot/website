@@ -3,7 +3,7 @@
 layout: base
 title: "Migrating to release 3.3"
 index: "../toc.html"
-commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
+commit: "c72024785c6524c57a5b0cc715f315115ae60956"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li class="active"><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -13,8 +13,8 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
 
   
 
-  <div class="body refbody"><p class="shortdesc">DITA-OT 3.3 includes <span class="ph" id="migrating-to-3.3__summary">support for rotated table cells in PDF output and HTML support for
-      hazard statements</span>.</p>
+  <div class="body refbody"><p class="shortdesc">DITA-OT 3.3 includes <span class="ph" id="migrating-to-3.3__summary">new attribute sets for HTML5 customization, support for custom
+      integration processing, rotated table cells in PDF output, and hazard statements in HTML output</span>.</p>
     <section class="section">
       <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 3.3 that may require modifications to custom stylesheets
         or plug-ins. For more information on changes in this release, see the
@@ -45,10 +45,12 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
     <section class="section"><h2 class="title sectiontitle">Deprecated catalog file</h2>
       
       <p class="p">
-        <span class="ph" id="migrating-to-3.3__catalog">The legacy <span class="ph filepath">catalog-dita.xml</span> file in the root of the DITA-OT installation
-          directory has been deprecated and may be removed in an upcoming release. The contents of the catalog have been
-          moved to the base plug-in, and replaced with a <code class="keyword markupname xmlelement">&lt;nextCatalog&gt;</code> entry for backwards
-          compatibility.</span></p>
+        <span class="ph" id="migrating-to-3.3__catalog">The contents of the <span class="ph filepath">catalog-dita.xml</span> file in the root of the DITA-OT
+          installation directory have been moved to the base plug-in, and replaced with a
+            <code class="keyword markupname xmlelement">&lt;nextCatalog&gt;</code> entry for backwards compatibility. Any references to the catalog should
+          use the <code class="ph codeph">plugin</code> URI scheme to refer to the file as
+            <code class="ph codeph">${dita.plugin.org.dita.base.dir}/catalog-dita.xml</code>, as the legacy placeholder file in the
+          root of the DITA-OT installation directory may be removed in an upcoming release.</span></p>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Legacy catalog content</figcaption>
         
         <pre class="pre codeblock"><code>&lt;nextCatalog catalog="plugins/org.dita.base/catalog-dita.xml"/&gt;</code></pre>
@@ -63,8 +65,9 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
 
     <section class="section"><h2 class="title sectiontitle">New attribute sets for HTML5 customization</h2>
       
-      <div class="p">A series of new attribute sets has been added to the default HTML5 transformation to facilitate customization
-        with additional ARIA roles, attributes, or CSS classes. Attribute sets are provided for:
+      <div class="p" id="migrating-to-3.3__html5-att-sets">A series of new attribute sets has been added to the default HTML5 transformation to
+        facilitate customization with additional ARIA roles, attributes, or CSS classes. Attribute sets are provided
+        for:
         <ul class="ul">
           <li class="li"><code class="ph codeph">article</code></li>
           <li class="li"><code class="ph codeph">banner</code></li>
