@@ -3,7 +3,7 @@
 layout: base
 title: "DITA Open Toolkit 3.3 Release Notes"
 index: "../toc.html"
-commit: "c72024785c6524c57a5b0cc715f315115ae60956"
+commit: "e9e766196bc873ddc6004571998dc8ae237c06ab"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -183,12 +183,13 @@ commit: "c72024785c6524c57a5b0cc715f315115ae60956"
             provides a meaningful warning and then ignores this construct, which previously resulted in parser errors.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3217" target="_blank">#3217</a>
           </li>
-          <li class="li" id="v3.3__3230"><span class="ph">The contents of the <span class="ph filepath">catalog-dita.xml</span> file in the root of the DITA-OT
-          installation directory have been moved to the base plug-in, and replaced with a
-            <code class="keyword markupname xmlelement">&lt;nextCatalog&gt;</code> entry for backwards compatibility. Any references to the catalog should
-          use the <code class="ph codeph">plugin</code> URI scheme to refer to the file as
-            <code class="ph codeph">${dita.plugin.org.dita.base.dir}/catalog-dita.xml</code>, as the legacy placeholder file in the
-          root of the DITA-OT installation directory may be removed in an upcoming release.</span>
+          <li class="li" id="v3.3__3230"><span class="ph">Along with the other base plug-in files, the <span class="ph filepath">catalog-dita.xml</span> file has
+          been moved from the root of the DITA-OT installation directory to <span class="ph filepath">plugins/org.dita.base</span>.
+          External systems that rely on this catalog should be updated with the new location. Ant scripts and DITA-OT
+          plug-ins should use the plug-in directory property to refer to the file as
+            <code class="ph codeph">${dita.plugin.org.dita.base.dir}/catalog-dita.xml</code>. A placeholder with a
+            <code class="keyword markupname xmlelement">&lt;nextCatalog&gt;</code> entry is provided in the original location for backwards compatibility,
+          but this file may be removed in an upcoming release.</span>
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3230" target="_blank">#3230</a>
           </li>
 
