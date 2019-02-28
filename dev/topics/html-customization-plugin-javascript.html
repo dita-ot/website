@@ -3,10 +3,10 @@
 layout: base
 title: "Inserting JavaScript in generated HTML"
 index: "../toc.html"
-commit: "708a16074838789aaa7c1e03dc000a4aba83c68a"
+commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a><ul class="nav nav-list"><li><a href="../topics/html-customization-parameters.html">Setting HTML parameters</a></li><li><a href="../topics/html-customization-properties-file.html">Using a properties file</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a><ul class="nav nav-list"><li><a href="../topics/html-customization-plugin-bundle-css.html">Bundling custom CSS</a></li><li><a href="../topics/html-customization-plugin-webfont.html">Embedding web fonts</a></li><li class="active"><a href="../topics/html-customization-plugin-javascript.html">Inserting JavaScript</a></li></ul></li></ul></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a><ul class="nav nav-list"><li><a href="../topics/html-customization-parameters.html">Setting HTML parameters</a></li><li><a href="../topics/html-customization-properties-file.html">Using a properties file</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a><ul class="nav nav-list"><li><a href="../topics/html-customization-plugin-bundle-css.html">Bundling custom CSS</a></li><li><a href="../topics/html-customization-plugin-webfont.html">Embedding web fonts</a></li><li class="active"><a href="../topics/html-customization-plugin-javascript.html">Inserting JavaScript</a></li></ul></li></ul></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Inserting JavaScript in generated HTML</h1>
   
   
@@ -22,7 +22,7 @@ commit: "708a16074838789aaa7c1e03dc000a4aba83c68a"
       <div class="note note note_note"><span class="note__title">Note:</span> This example inserts a tracking snippet for Google Analytics, but the basic approach is the same for other
         analytics platforms or similar use cases that require custom JavaScript.</div>
     </section>
-    <div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">plugins</span> directory, create a directory named
             <span class="ph filepath">com.example.html5-javascript</span>.</span>
       </li><li class="li step stepexpand">
@@ -92,7 +92,7 @@ ga('send', 'pageview');
 &lt;/project&gt;</code></pre>
           </figure>
         </div>
-      </li></ol>
+      </li></ol></section>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
       <div class="note tip note_tip"><span class="note__title">Tip:</span> The files for this sample plug-in are included in the DITA-OT installation directory under
           <span class="ph filepath">docsrc/samples/plugins/com.example.html5-javascript/</span> and on <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-javascript" target="_blank">GitHub</a>.</div>

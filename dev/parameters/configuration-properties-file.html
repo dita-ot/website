@@ -3,10 +3,10 @@
 layout: base
 title: "The configuration.properties file"
 index: "../toc.html"
-commit: "fddba48666610e95263d7504614c23c99def6067"
+commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a><ul class="nav nav-list"><li><a href="../parameters/local-properties-file.html">local.properties</a></li><li><a href="../parameters/plugin-properties-file.html">plugin.properties</a></li><li class="active"><a href="../parameters/configuration-properties-file.html">configuration.properties</a></li><li><a href="../parameters/internal-ant-properties.html">Internal Ant properties</a></li></ul></li></ul></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a><ul class="nav nav-list"><li><a href="../parameters/local-properties-file.html">local.properties</a></li><li><a href="../parameters/plugin-properties-file.html">plugin.properties</a></li><li class="active"><a href="../parameters/configuration-properties-file.html">configuration.properties</a></li><li><a href="../parameters/internal-ant-properties.html">Internal Ant properties</a></li></ul></li></ul></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">The <span class="ph filepath">configuration.properties</span> file</h1>
   
   
@@ -44,9 +44,10 @@ commit: "fddba48666610e95263d7504614c23c99def6067"
           <dd class="dd pd">
             <p class="p">Specifies whether the <span class="keyword cmdname">dita</span> command prints colored output on the command line console.
               When set to <span class="keyword option">true</span>, error messages in <span class="keyword cmdname">dita</span> command output will appear in
-              red on terminals that support <a class="xref" href="https://en.wikipedia.org/wiki/ANSI_escape_code" target="_blank">ANSI escape codes</a>, such as on Linux or macOS. Set to <span class="keyword option">false</span> to
-              disable the color. (Colored output is not supported on Windows consoles such as <span class="keyword cmdname">cmd.exe</span>
-              or PowerShell).</p>
+              red on terminals that support
+              <a class="xref" href="https://en.wikipedia.org/wiki/ANSI_escape_code" target="_blank">ANSI escape
+                codes</a>, such as on Linux or macOS. Set to <span class="keyword option">false</span> to disable the color. (Colored
+              output is not supported on Windows consoles such as <span class="keyword cmdname">cmd.exe</span> or PowerShell).</p>
           </dd>
         
         
@@ -70,10 +71,11 @@ commit: "fddba48666610e95263d7504614c23c99def6067"
         
           <dt class="dt pt dlterm" id="configuration__registry"><span class="keyword parmname">registry</span></dt>
           <dd class="dd pd">Defines the list (and order) of plug-in repositories that are searched for available plug-ins during the
-            installation process. In addition to the main plug-in registry at <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank">dita-ot.org/plugins</a>, you
-            can create a registry of your own to store the custom plug-ins for your company or organization. To add a
-            new entry, append the URL for your custom registry directory to the <code class="ph codeph">registry</code> key value,
-            separating each entry with a space. For more information, see <a class="xref" href="../topics/plugins-registry.html" title="DITA-OT 3.2 supports a new plug-in registry that makes it easier to discover and install new plug-ins. The registry provides a searchable list of plug-ins at dita-ot.org/plugins.">Adding plug-ins via the registry</a>.</dd>
+            installation process. In addition to the main plug-in registry at
+            <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank">dita-ot.org/plugins</a>, you can create a registry of your own to store the custom plug-ins
+            for your company or organization. To add a new entry, append the URL for your custom registry directory to
+            the <code class="ph codeph">registry</code> key value, separating each entry with a space. For more information, see
+            <a class="xref" href="../topics/plugins-registry.html" title="DITA-OT 3.2 supports a new plug-in registry that makes it easier to discover and install new plug-ins. The registry provides a searchable list of plug-ins at dita-ot.org/plugins.">Adding plug-ins via the registry</a>.</dd>
         
         
             <dt class="dt pt dlterm"><span class="keyword parmname">org.dita.pdf2.i18n.enabled</span></dt>
@@ -95,6 +97,12 @@ commit: "fddba48666610e95263d7504614c23c99def6067"
                 plug-in. For details, see <a class="xref" href="http://www.elovirta.com/2016/02/18/font-configuration-in-pdf2.html" target="_blank">Font configuration in PDF2</a>.</div>
             </dd>
           
+        
+          <dt class="dt pt dlterm" id="configuration__charset"><span class="keyword parmname">default.coderef-charset</span></dt>
+          <dd class="dd pd">As of DITA-OT 3.3, the default character set for code references can be changed by specifying one of the
+            character set values supported by the Java
+            <a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html" target="_blank">Charset</a> class.</dd>
+        
       </dl>
     </section>
   </div>
