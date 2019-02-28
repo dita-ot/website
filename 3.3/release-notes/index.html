@@ -3,7 +3,7 @@
 layout: base
 title: "DITA Open Toolkit 3.3 Release Notes"
 index: "../toc.html"
-commit: "854ccbb3d8522871af6a459c61b4e52a09ccde32"
+commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -316,6 +316,13 @@ commit: "854ccbb3d8522871af6a459c61b4e52a09ccde32"
           <li class="li" id="v3.3__3235">Revised figures and tables are now marked with change bars in booklists when DITAVAL files
             define flagging for the corresponding revision values.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3235" target="_blank">#3235</a>
+          </li>
+          <li class="li" id="v3.3__3245">The command line syntax for the <span class="keyword cmdname">dita</span>
+            <span class="keyword parmname">--install</span> option has been updated to support the “=” equals sign.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3245" target="_blank">#3245</a>
+            <div class="p">Both of the following formats are now supported:
+              <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=<var class="keyword varname">plug-in-zip</var>
+<span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span> <var class="keyword varname">plug-in-zip</var></code></pre></div>
           </li>
         </ul>
       </section>
