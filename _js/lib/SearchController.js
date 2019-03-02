@@ -9,7 +9,7 @@ function SearchController($toc, index) {
   const $fullTextSearch = $('#search :input[name=q]')
   const $searchInput = $('#tocSearchInput')
   const $modal = jQuery('#tocSearch')
-  const $body = $modal.find('.modal-body')
+  const $body = $modal.find('.modal-footer')
   let isModelActive = false
   let currentResult = -1
   $modal

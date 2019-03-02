@@ -1,10 +1,15 @@
-.modal-header {
-  input {
-    margin-bottom: 10px;
-  }
+// Sass partial to override Bootstrap defaults for topic finder modal
 
-  p {
-    margin: 0 10px;
+// Override flex display
+#tocSearch .modal-footer {
+  display: block;
+
+  // Remove default margin between footer elements
+  > :not(:first-child) {
+    margin-left: 0;
+  }
+  > :not(:last-child) {
+    margin-right: 0;
   }
 }
 

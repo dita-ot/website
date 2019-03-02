@@ -3,7 +3,7 @@
 layout: base
 title: "DITA Open Toolkit 3.3 Release Notes"
 index: "../toc.html"
-commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
+commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -12,8 +12,9 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
 
   <div class="abstract">
     <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.3</span> is a feature release that provides new features and
-      enhancements, including <span class="ph">support for custom
-            integration processing, rotated table cells in PDF output, and hazard statements in HTML output</span>.</p>
+      enhancements, including <span class="ph">new attribute sets for HTML5
+            customization, support for custom integration processing, rotated table cells in PDF output, and hazard
+            statements in HTML output</span>.</p>
     <p class="p">DITA-OT releases follow
         <a class="xref" href="https://semver.org" target="_blank">Semantic Versioning 2.0.0</a> guidelines. Version numbers use the
             <code class="ph codeph"><var class="keyword varname">major</var>.<var class="keyword varname">minor</var>.<var class="keyword varname">patch</var></code> syntax, where
@@ -40,8 +41,9 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
       <span class="ph small text-muted">released February 28, 2019</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">3.3</span> includes <span class="ph" id="v3.3__summary">support for custom
-            integration processing, rotated table cells in PDF output, and hazard statements in HTML output</span>.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">3.3</span> includes <span class="ph" id="v3.3__summary">new attribute sets for HTML5
+            customization, support for custom integration processing, rotated table cells in PDF output, and hazard
+            statements in HTML output</span>.</p>
       </section>
 
       <section class="section" id="v3.3__features"><h3 class="title sectiontitle">Feature Highlights</h3>
@@ -49,22 +51,41 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
         <p class="p">DITA Open Toolkit Release <span class="keyword">3.3</span> includes the following new features:</p>
         
         <ul class="ul">
-          <li class="li" id="v3.3__1778">The <code class="keyword markupname xmlatt">@rotate</code> attribute on table <code class="keyword markupname xmlelement">&lt;entry&gt;</code> elements, which
-            was added in the DITA 1.3 specification, is now supported in PDF output.
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1778" target="_blank">#1778</a>,
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2717" target="_blank">#2717</a>,
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3161" target="_blank">#3161</a>
-          </li>
-          <li class="li" id="v3.3__3175">A new <code class="ph codeph">CustomIntegrator</code> interface provides a mechanism for custom plug-ins to
-            extend the default integration process via service provider classes declared via
-              <code class="keyword markupname xmlelement">&lt;service&gt;</code> elements in an Ant <code class="keyword markupname xmlelement">&lt;jar&gt;</code> task.
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3175" target="_blank">#3175</a>
-          </li>
-          <li class="li" id="v3.3__3207">HTML5 and XHTML output now provide generic hazard statement styling based on the ISO&nbsp;3864 and
-            ANSI&nbsp;Z535 standards, with an SVG icon and
-            <a class="xref" href="http://sass-lang.com" target="_blank">Sass</a> variables for the corresponding ISO and ANSI color definitions. The ANSI colors
-            are used by default to match the PDF styling previously added in DITA-OT 3.2.
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3207" target="_blank">#3207</a>
+          <li class="li" id="v3.3__1778">
+            <p class="p">The <code class="keyword markupname xmlatt">@rotate</code> attribute on table <code class="keyword markupname xmlelement">&lt;entry&gt;</code> elements, which was added
+              in the DITA 1.3 specification, is now supported in PDF output.
+              <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1778" target="_blank">#1778</a>,
+              <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2717" target="_blank">#2717</a>,
+              <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3161" target="_blank">#3161</a>
+            </p></li>
+          <li class="li" id="v3.3__3175">
+            <p class="p">A new <code class="ph codeph">CustomIntegrator</code> interface provides a mechanism for custom plug-ins to extend the
+              default integration process via service provider classes declared via a
+              <a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html" target="_blank">Java <code class="ph codeph">ServiceLoader</code></a>.
+              <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3175" target="_blank">#3175</a>
+            </p></li>
+          <li class="li" id="v3.3__3207">
+            <p class="p">HTML5 and XHTML output now provide generic hazard statement styling based on the ISO&nbsp;3864 and ANSI&nbsp;Z535
+              standards, with an SVG icon and
+              <a class="xref" href="http://sass-lang.com" target="_blank">Sass</a> variables for the corresponding ISO and ANSI color definitions. The ANSI colors
+              are used by default to match the PDF styling previously added in DITA-OT 3.2.
+              <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3207" target="_blank">#3207</a>,
+              <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3231" target="_blank">#3231</a>
+            </p></li>
+          <li class="li">
+            <div class="p">A series of new attribute sets has been added to the default HTML5 transformation to
+        facilitate customization with additional ARIA roles, attributes, or CSS classes. Attribute sets are provided
+        for:
+        <ul class="ul">
+          <li class="li"><code class="ph codeph">article</code></li>
+          <li class="li"><code class="ph codeph">banner</code></li>
+          <li class="li"><code class="ph codeph">footer</code></li>
+          <li class="li"><code class="ph codeph">main</code></li>
+          <li class="li"><code class="ph codeph">navigation</code></li>
+          <li class="li"><code class="ph codeph">toc</code></li>
+        </ul>If you have previously copied XSL templates (or template modes) to custom plug-ins only to add classes
+        required by web frameworks such as Bootstrap or Foundation (or your company CSS), you may be able to simplify
+        your customizations by using the new attribute sets instead of overriding the default templates.</div>
           </li>
         </ul>
       </section>
@@ -75,6 +96,12 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
           existing features:</p>
         
         <ul class="ul">
+          <li class="li" id="v3.3__2225">The <span class="keyword cmdname">dita</span> command now recognizes a wider range of “truthy” property values,
+            including <code class="ph codeph">true</code>, <code class="ph codeph">yes</code>, <code class="ph codeph">1</code>, and <code class="ph codeph">on</code> and
+            handles inconsistently cased values more gracefully.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2225" target="_blank">#2225</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3197" target="_blank">#3197</a>
+          </li>
           <li class="li" id="v3.3__3157">Various XSLT files and other resources have been moved from the root of the DITA-OT installation
             directory to the base plug-in directory <span class="ph filepath">plugins/org.dita.base</span>.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3157" target="_blank">#3157</a> (If
@@ -120,7 +147,7 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
           <li class="li" id="v3.3__3188">The DITA-OT fork of the
             <a class="xref" href="https://github.com/relaxng/jing-trang" target="_blank">jing-trang</a> project
             used to provide RELAX NG schema validation in DITA-OT 3.2 has been replaced with the upstream code after the
-            patches provided by the DITA-OT team were included.
+            patches provided by George Bina were included.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3188" target="_blank">#3188</a>
           </li>
           <li class="li" id="v3.3__3191">Several bundled dependencies have been upgraded to the latest versions.
@@ -149,11 +176,6 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
             of the preprocessing pipeline to match the order in map-first preprocessing (<code class="ph codeph">preprocess2</code>).
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3196" target="_blank">#3196</a>
           </li>
-          <li class="li" id="v3.3__3197">The <span class="keyword cmdname">dita</span> command now recognizes a wider range of “truthy” property values,
-            including <code class="ph codeph">true</code>, <code class="ph codeph">yes</code>, <code class="ph codeph">1</code>, and <code class="ph codeph">on</code> and
-            handles inconsistently cased values more gracefully.
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3197" target="_blank">#3197</a>
-          </li>
           <li class="li" id="v3.3__3204">The
             <a class="xref" href="https://gradle.org" target="_blank">Gradle</a> build system has been updated to the latest patch release (5.2.1).
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3204" target="_blank">#3204</a>
@@ -162,14 +184,15 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
             provides a meaningful warning and then ignores this construct, which previously resulted in parser errors.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3217" target="_blank">#3217</a>
           </li>
-          <li class="li" id="v3.3__3230"><span class="ph">The legacy <span class="ph filepath">catalog-dita.xml</span> file in the root of the DITA-OT installation
-          directory has been deprecated and may be removed in an upcoming release. The contents of the catalog have been
-          moved to the base plug-in, and replaced with a <code class="keyword markupname xmlelement">&lt;nextCatalog&gt;</code> entry for backwards
-          compatibility.</span>
+          <li class="li" id="v3.3__3230"><span class="ph">Along with the other base plug-in files, the <span class="ph filepath">catalog-dita.xml</span> file has
+          been moved from the root of the DITA-OT installation directory to <span class="ph filepath">plugins/org.dita.base</span>.
+          External systems that rely on this catalog should be updated with the new location. Ant scripts and DITA-OT
+          plug-ins should use the plug-in directory property to refer to the file as
+            <code class="ph codeph">${dita.plugin.org.dita.base.dir}/catalog-dita.xml</code>. A placeholder with a
+            <code class="keyword markupname xmlelement">&lt;nextCatalog&gt;</code> entry is provided in the original location for backwards compatibility,
+          but this file may be removed in an upcoming release.</span>
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3230" target="_blank">#3230</a>
           </li>
-
-
         </ul>
       </section>
 
@@ -226,8 +249,15 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
             HTML output, these files are now copied to the output directory as they were in earlier releases.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2899" target="_blank">#2899</a>
           </li>
+          <li class="li" id="v3.3__3162">On Linux and other systems where the DITA-OT installation directory and temporary directory are
+            not on the same volume, plug-in installation would fail when DITA-OT tried to move a non-empty directory.
+            The installation process has been refactored to ensure that plug-ins are correctly installed in these cases.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3162" target="_blank">#3162</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3238" target="_blank">#3238</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3239" target="_blank">#3239</a>
+          </li>
           <li class="li" id="v3.3__3180">In earlier versions, setting an <code class="keyword markupname xmlatt">@id</code> attribute on a <code class="keyword markupname xmlelement">&lt;dt&gt;</code>
-            created duplicate definition terms in the XSL-FO file.
+            created duplicate IDs in the XSL-FO file, which caused warnings when rendering FO to PDF.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3180" target="_blank">#3180</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3185" target="_blank">#3185</a>
           </li>
@@ -287,6 +317,13 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
             define flagging for the corresponding revision values.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3235" target="_blank">#3235</a>
           </li>
+          <li class="li" id="v3.3__3245">The command line syntax for the <span class="keyword cmdname">dita</span>
+            <span class="keyword parmname">--install</span> option has been updated to support the “=” equals sign.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3245" target="_blank">#3245</a>
+            <div class="p">Both of the following formats are now supported:
+              <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=<var class="keyword varname">plug-in-zip</var>
+<span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span> <var class="keyword varname">plug-in-zip</var></code></pre></div>
+          </li>
         </ul>
       </section>
 
@@ -329,7 +366,7 @@ commit: "5be62f43f435cd50a1a533e41ed386d29d226b7a"
           <li class="li">
             <a class="xref" href="../extension-points/plugin-extension-points-pre-processing.html" title="You can use these extension points to run an Ant target before or after the pre-processing stage. If necessary, you can also run an Ant target before a specific pre-processing step — but this approach is not recommended.">Pre-processing extension points</a></li>
           <li class="li">
-            <a class="xref" href="../topics/migrating-to-3.3.html" title="DITA-OT 3.3 includes support for rotated table cells in PDF output and HTML support for hazard statements.">Migrating to release 3.3</a></li>
+            <a class="xref" href="../topics/migrating-to-3.3.html" title="DITA-OT 3.3 includes new attribute sets for HTML5 customization, support for custom integration processing, rotated table cells in PDF output, and hazard statements in HTML output.">Migrating to release 3.3</a></li>
         </ul>
         <p class="p">For additional information on documentation issues resolved in DITA Open Toolkit Release <span class="keyword">3.3</span>, see the
           <a class="xref" href="https://github.com/dita-ot/docs/issues?q=milestone%3A3.3+is%3Aclosed" target="_blank">
