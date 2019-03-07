@@ -282,7 +282,9 @@ function list(json) {
 }
 
 function details(versions, version) {
-  const first = !!version ? versions.find(plugin => plugin.vers === version) : versions[0]
+  const first = !!version
+    ? versions.find(plugin => plugin.vers === version)
+    : versions[versions.length - 1]
   if (!first) {
     return null
   }
