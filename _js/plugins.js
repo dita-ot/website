@@ -291,7 +291,9 @@ function details(versions, version) {
 
   const div = document.createElement('div')
 
-  div.appendChild(elem('h2', [`${first.name}`, elem('small', ` ${first.vers}`)]))
+  div.appendChild(
+    elem('h2', [`${first.name}`, elem('small', { class: 'text-muted' }, ` ${first.vers}`)])
+  )
 
   if (!!first.description) {
     append(div, elem('p', { class: 'shortdesc' }, first.description))
