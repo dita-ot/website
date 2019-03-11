@@ -49,4 +49,4 @@ var n,t=arguments[3],r=require("buffer").Buffer;(function(){var r,e=200,u="Unsup
 },{"jquery":"juYr"}],"epB2":[function(require,module,exports) {
 "use strict";var e=t(require("./lib/TocController")),r=t(require("./lib/SearchController")),l=t(require("./lib/HelpController")),u=t(require("jquery")),a=t(require("urijs"));function t(e){return e&&e.__esModule?e:{default:e}}var i=(0,u.default)("link[rel=index]").attr("href");if(i&&window.history){var o=(0,a.default)(i).absoluteTo(window.location.href).href();u.default.ajax({url:o,success:function(a){var t=(0,u.default)("<body>").append(u.default.parseHTML(a)).find("nav");(0,e.default)(t,o),(0,r.default)(t,o),(0,l.default)()}})}
 },{"./lib/TocController":"78jU","./lib/SearchController":"ijS+","./lib/HelpController":"ceV7","jquery":"juYr","urijs":"467R"}]},{},["epB2"], null)
-//# sourceMappingURL=/main.js.map
+//# sourceMappingURL=/js/main.js.map
