@@ -10,6 +10,7 @@ import t from './translations'
 
 const REPOSITORY_URL = 'https://plugins.dita-ot.org/_all.json'
 const VERSIONS = [
+  '3.3',
   '3.2',
   // '3.1.3',
   // '3.1.2',
@@ -281,14 +282,18 @@ function list(json) {
 }
 
 function details(versions, version) {
-  const first = !!version ? versions.find(plugin => plugin.vers === version) : versions[0]
+  const first = !!version
+    ? versions.find(plugin => plugin.vers === version)
+    : versions[versions.length - 1]
   if (!first) {
     return null
   }
 
   const div = document.createElement('div')
 
-  div.appendChild(elem('h2', [`${first.name}`, elem('small', ` ${first.vers}`)]))
+  div.appendChild(
+    elem('h2', [`${first.name}`, elem('small', { class: 'text-muted' }, ` ${first.vers}`)])
+  )
 
   if (!!first.description) {
     append(div, elem('p', { class: 'shortdesc' }, first.description))
