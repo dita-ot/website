@@ -12,6 +12,7 @@
 #editLink {
   display: none;
 }
+
 @include media-breakpoint-up(sm) {
   #editLink {
     display: block;
