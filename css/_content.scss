@@ -6,7 +6,7 @@
     opacity: 1 !important;
   }
 
-  &:after {
+  &::after {
     content: '#';
     padding-left: 0.5em;
   }
