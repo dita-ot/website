@@ -1,4 +1,4 @@
-a.anchor-link {
+.anchor-link {
   opacity: 0;
   text-decoration: none;
 
@@ -12,6 +12,6 @@ a.anchor-link {
   }
 }
 
-.anchor-link-container:hover a.anchor-link {
+.anchor-link-container:hover .anchor-link {
   opacity: 0.5;
 }
