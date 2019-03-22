@@ -1,0 +1,5 @@
+# These rules will change if you change your site’s custom domains or HTTPS settings
+# Force-included in Jekyll `_site` folder per https://www.netlify.com/docs/redirects
+
+# Redirect default Netlify subdomain to primary domain
+https://dita-ot.netlify.com/* https://www.dita-ot.org/:splat 301!

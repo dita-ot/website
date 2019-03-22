@@ -36,6 +36,11 @@ plugins:
 whitelist:
   - jekyll-redirect-from
 
+# Force-include Netlify’s redirects file
+# https://www.netlify.com/docs/redirects
+include:
+  - _redirects
+
 # Preserve redirects (#44)
 keep_files:
   - 3.0/dev_ref/html-customization-plugin-bundle-css.html
