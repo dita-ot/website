@@ -2,7 +2,7 @@
   margin-bottom: 0;
 
   svg {
-    fill: rgb(133, 100, 4);
+    fill: $warning-icon-color;
   }
 }
 
@@ -12,6 +12,7 @@
 #editLink {
   display: none;
 }
+
 @include media-breakpoint-up(sm) {
   #editLink {
     display: block;
