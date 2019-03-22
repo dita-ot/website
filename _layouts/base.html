@@ -15,7 +15,8 @@
     <div id="content" class="container mt-4">
       {% if page.url contains '/dev/' %}
         {% include dev-docs-banner.html %}
-      {% elsif page.url contains '/3.1/'
+      {% elsif page.url contains '/3.2/'
+            or page.url contains '/3.1/'
             or page.url contains '/3.0/'
             or page.url contains '/2.5/'
             or page.url contains '/2.4/'
