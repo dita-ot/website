@@ -1,5 +1,5 @@
 {
-  "name": "dita-ot.github.io",
+  "name": "website",
   "version": "1.0.0",
   "description": "DITA-OT Website",
   "scripts": {
@@ -22,10 +22,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dita-ot/dita-ot.github.io.git"
+    "url": "https://github.com/dita-ot/website.git"
   },
   "license": "Apache-2.0",
-  "homepage": "https://github.com/dita-ot/dita-ot.github.io",
+  "homepage": "https://github.com/dita-ot/website",
   "devDependencies": {
     "@types/jest": "^24.0.11",
     "babel-core": "^6.26.3",

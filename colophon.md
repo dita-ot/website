@@ -11,7 +11,7 @@ title: 'Colophon'
 
 The DITA-OT project website is hosted on [Netlify][1] and deployed to [dita-ot.org][2].
 
-The website is maintained in Git and updated by pushing to the repository at [github.com/dita-ot/dita-ot.github.io][3].
+The website is maintained in Git and updated by pushing to the repository at [github.com/dita-ot/website][3].
 
 Source files for the project website are stored in [Markdown][4] and HTML, enriched with [Liquid][5] templating tags and styled with [Sass][6]. The [Bootstrap][7] framework provides the foundation for the site layout. The [Jekyll][8] publishing engine combines these plain text components to the final static website you see here.
 
@@ -25,7 +25,7 @@ The pages in the development documentation include **Edit this page** links that
 
 [1]: https://www.netlify.com
 [2]: https://www.dita-ot.org
-[3]: https://github.com/dita-ot/dita-ot.github.io
+[3]: https://github.com/dita-ot/website
 [4]: http://daringfireball.net/projects/markdown/
 [5]: https://github.com/Shopify/liquid/wiki
 [6]: http://sass-lang.com 'Sass: Syntactically Awesome Style Sheets'
