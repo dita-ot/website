@@ -1,17 +1,17 @@
-a.anchor-link {
-  text-decoration: none;
+.anchor-link {
   opacity: 0;
+  text-decoration: none;
 
   &:hover {
     opacity: 1 !important;
   }
 
-  &:after {
+  &::after {
     content: '#';
     padding-left: 0.5em;
   }
 }
 
-.anchor-link-container:hover a.anchor-link {
+.anchor-link-container:hover .anchor-link {
   opacity: 0.5;
 }

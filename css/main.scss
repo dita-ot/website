@@ -42,7 +42,10 @@ $navbar-dark-color:             #b9c8e0;
 $navbar-dark-link-hover-bg:     darken($navbar-dark-bg, 5%);
 
 // Inverted navbar brand label        // DITA Open Toolkit home page
-$navbar-dark-brand-color:       #eee; // match search box background
+$navbar-dark-brand-color:       lighten($navbar-dark-color, 10%);
+
+// Banner icon colors
+$warning-icon-color:            #856404;
 
 // Import DITA-OT custom subset of Bootstrap modules
 @import 'bootstrap-custom';

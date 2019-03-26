@@ -29,25 +29,11 @@ exclude:
   - package*.js*
   - README.md
 
-# Enable Octicons & redirects (#43)
+# Enable Octicons
 plugins:
   - jekyll-octicons
-  - jekyll-redirect-from
-whitelist:
-  - jekyll-redirect-from
 
-# Preserve redirects (#44)
-keep_files:
-  - 3.0/dev_ref/html-customization-plugin-bundle-css.html
-  - 3.0/dev_ref/migration.html
-  - 3.0/dev_ref/plugin-newtranstype.html
-  - dev/dev_ref/map-first-preprocessing.html
-  - dev/dev_ref/migrating-ant-to-dita.html
-  - dev/dev_ref/migration.html
-  - dev/dev_ref/pdf-customization-best-practices.html
-  - dev/dev_ref/plugin-addgeneratedtext.html
-  - dev/parameters/lib-configuration-properties.html
-  - dev/parameters/lib-plugin-properties.html
-  - dev/parameters/local-properties.html
-  - dev/topics/extending-the-ot.html
-  - dev/topics/rebuilding-the-dita-ot-documentation.html
+# Force-include Netlify’s redirects file
+# https://www.netlify.com/docs/redirects
+include:
+  - _redirects
