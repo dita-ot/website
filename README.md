@@ -1,4 +1,4 @@
-# website
+# DITA Open Toolkit website [![Netlify Status](https://api.netlify.com/api/v1/badges/0102588e-07a5-423b-8b26-aac92e14c168/deploy-status)](https://app.netlify.com/sites/dita-ot/deploys)
 
 This repository contains the source files for the **DITA Open Toolkit** project website at [dita-ot.org][1].
 
@@ -55,7 +55,7 @@ If you'd like to set up a local staging environment and build a copy of the site
 
 3.  Switch to your clone of the project website repository:
 
-        cd ~/dita\-ot\.github\.io
+        cd ~/dita-ot-website
 
 4.  Install all of the required gems from the project’s `Gemfile`:
 
@@ -91,13 +91,13 @@ _(This appears as unstyled HTML when viewed in place.)_
 
 To redirect the output to the `dev` development folder that Jekyll serves, pass the `outputDir` parameter to the build script as follows:
 
-    ./gradlew site -PoutputDir=~/website/dev
+    ./gradlew site -PoutputDir=~/dita-ot-website/dev
 
 After the build completes, you should find the results in the **Docs \> Development** section of the local staging environment [http://127.0.0.1:4000/dev/][7].
 
 To automatically regenerate the site output whenever documentation source files change, add the `--continuous` build option:
 
-    ./gradlew site -PoutputDir=~/website/dev --continuous
+    ./gradlew site -PoutputDir=~/dita-ot-website/dev --continuous
 
 ## Updating JavaScript
 
