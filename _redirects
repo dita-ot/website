@@ -1,8 +1,12 @@
 # These rules will change if you change your site’s custom domains or HTTPS settings
 # Force-included in Jekyll `_site` folder per https://www.netlify.com/docs/redirects
 
+# Proxy requests for 3.2.x plug-in registry URL to fix https://github.com/dita-ot/website/issues/184
+http://plugins.dita-ot.org/*                           https://plugins-dita-ot.netlify.com/:splat 200
+https://plugins.dita-ot.org/*                          https://plugins-dita-ot.netlify.com/:splat 200
+
 # Redirect default Netlify subdomain to primary domain
-https://dita-ot.netlify.com/* https://www.dita-ot.org/:splat 301!
+https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:splat 301!
 
 # Preserve publicly shared links to relocated topics:  #43 & #44
 /3.0/dev_ref/html-customization-plugin-bundle-css.html /3.0/topics/html-customization-plugin-bundle-css.html
