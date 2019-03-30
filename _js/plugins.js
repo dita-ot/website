@@ -8,7 +8,7 @@ import 'whatwg-fetch'
 import { elem, append, clear } from './dom'
 import t from './translations'
 
-const REPOSITORY_URL = 'https://plugins.dita-ot.org/_all.json'
+const REPOSITORY_URL = 'https://plugins-dita-ot.netlify.com/_all.json'
 const VERSIONS = [
   '3.3',
   '3.2',
