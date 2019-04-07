@@ -3,7 +3,6 @@
 layout: base
 title: "DITA Open Toolkit 3.3 Release Notes"
 index: "../toc.html"
-commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -11,8 +10,8 @@ commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.3</span> is a feature release that provides new features and
-      enhancements, including <span class="ph">new attribute sets for HTML5
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.3.1</span> is a maintenance release that fixes issues
+      reported in DITA-OT <span class="keyword">3.3</span>, which includes <span class="ph">new attribute sets for HTML5
             customization, support for custom integration processing, rotated table cells in PDF output, and hazard
             statements in HTML output</span>.</p>
     <p class="p">DITA-OT releases follow
@@ -21,7 +20,7 @@ commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.3</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.3.1</span>.zip</span>
             package from the project website at <a class="xref" href="https://www.dita-ot.org/download" target="_blank">dita-ot.org/download</a>.</span></div>
   </div>
 
@@ -30,14 +29,80 @@ commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
     <div class="body refbody">
       <section class="section">
         
-        <p class="p">DITA Open Toolkit Release <span class="keyword">3.3</span> requires the Java Runtime Environment (JRE) version
-            <span class="keyword">8</span> or later.</p>
+        <div class="p">DITA-OT is designed to run on Java version <span class="keyword">8u101</span> or later.
+        Compatible Java distributions are available from multiple sources:
+        <ul class="ul">
+          <li class="li">You can download the Oracle JRE or JDK from
+            <a class="xref" href="http://www.oracle.com/technetwork/java/javase/downloads" target="_blank">oracle.com/technetwork/java</a>.</li>
+          <li class="li">OpenJDK is an open-source implementation of Java available from
+            <a class="xref" href="https://adoptopenjdk.net" target="_blank">adoptopenjdk.net</a>.</li>
+          <li class="li">Amazon Corretto is an OpenJDK distribution with no-cost long-term support from
+            <a class="xref" href="https://aws.amazon.com/corretto/" target="_blank">aws.amazon.com/corretto</a>.</li>
+        </ul>
+      </div>
       </section>
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.3">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.3</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.3.1">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.3.1</span>
+      
+    </h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">3.3.1</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v3.3.1__3248">When processing content references in cases with more than one possible target for the
+              <code class="keyword markupname xmlatt">@conref</code> value, recent versions of DITA-OT warned about the duplicate ID, but failed to
+            include the reference target in the message. The <span class="keyword msgnum">DOTX011W</span> warning now restores this context
+            to aid in troubleshooting.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3248" target="_blank">#3248</a>
+          </li>
+          <li class="li" id="v3.3.1__3249">When processing source files with tables or figures in <code class="keyword markupname xmlelement">&lt;draft-comment&gt;</code> or
+              <code class="keyword markupname xmlelement">&lt;required-cleanup&gt;</code> elements, earlier versions of DITA-OT included them in lists and
+            numbered references even when DRAFT output was not active. Hidden elements are now excluded from lists of
+            figures and tables, and when numbering references.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3249" target="_blank">#3249</a>
+          </li>
+          <li class="li" id="v3.3.1__3251">The <code class="keyword markupname xmlatt">@type</code> attribute of the <span class="keyword parmname">args.css</span> and
+              <span class="keyword parmname">args.cssroot</span> parameters has been changed to <code class="ph codeph">string</code> to better support
+            values that include relative paths. The <span class="keyword parmname">transtype</span> has also been corrected to
+              <code class="ph codeph">string</code>.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3251" target="_blank">#3251</a>
+          </li>
+          <li class="li" id="v3.3.1__3260">When copying files to a temporary file scheme that flattens the directory structure, the
+            map-first preprocessing routine will now correctly handle indirect content references defined via
+              <code class="keyword markupname xmlatt">@conkeyref</code>.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3260" target="_blank">#3260</a>
+          </li>
+          <li class="li" id="v3.3.1__3272">The integrator and topic reader modules have been modified to use an alternative method
+            supported by the XML APIs library to prevent errors when compiling the toolkit’s JAR file.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3272" target="_blank">#3272</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3273" target="_blank">#3273</a>
+          </li>
+          <li class="li" id="v3.3.1__3278">The <span class="keyword cmdname">dita</span> command now uses a secure connection to the plug-in registry when
+            installing new plug-ins.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3278" target="_blank">#3278</a>
+            <div class="note attention note_attention"><span class="note__title">Attention:</span> To ensure data integrity during the plug-in installation process, Transport Layer
+              Security (TLS) will soon be required to access the plug-in registry. If you are using DITA-OT 3.3, 3.2, or
+              3.2.1 and are unable to upgrade to 3.3.1, modify the <code class="ph codeph">registry</code> key in the
+                <span class="ph filepath">config/configuration.properties</span> file to switch the URI schema to
+                  <code class="ph codeph">http<strong class="ph b">s</strong>://</code>, so the entry reads
+              <code class="ph codeph">https://plugins.dita-ot.org/</code>.</div>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.3.1+is%3Aclosed" target="_blank">3.3.1 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.3...3.3.1" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.3">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">3.3</span>
       <span class="ph small text-muted">released February 28, 2019</span></h2>
     <div class="body refbody">
       <section class="section">
