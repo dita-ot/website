@@ -1,15 +1,16 @@
 ---
 # Generated from DITA source
 layout: base
-title: "DITA Open Toolkit 3.2.1 Release Notes"
+title: "DITA Open Toolkit 3.2.2 Release Notes"
 index: "../toc.html"
 ---
-<nav class="col-lg-3" role="toc"><div class="well well-sm"><ul class="bs-docs-sidenav"><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></div></nav><main class="col-lg-9" role="main">
-  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">3.2.1</span> Release Notes</h1>
+
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.2</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">3.2.2</span> Release Notes</h1>
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.2.1</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.2.2</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">3.2</span>, which includes <span class="ph">new command-line options,
             support for RELAX NG parsing and validation, preliminary processing for the XDITA authoring format proposed
             for Lightweight DITA, and a plug-in registry that makes it easier to discover and install new
@@ -20,7 +21,7 @@ index: "../toc.html"
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.2.1</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.2.2</span>.zip</span>
             package from the project website at <a class="xref" href="https://www.dita-ot.org/download" target="_blank">dita-ot.org/download</a>.</span></div>
   </div>
 
@@ -29,17 +30,42 @@ index: "../toc.html"
     <div class="body refbody">
       <section class="section">
         
-        <p class="p">DITA Open Toolkit Release <span class="keyword">3.2</span> requires the Java Runtime Environment (JRE) version
-            <span class="keyword">8</span> or later.</p>
+        <div class="p">DITA-OT is designed to run on Java version <span class="keyword">8u101</span> or later.
+        Compatible Java distributions are available from multiple sources:
+        <ul class="ul">
+          <li class="li">You can download the Oracle JRE or JDK from
+            <a class="xref" href="http://www.oracle.com/technetwork/java/javase/downloads" target="_blank">oracle.com/technetwork/java</a>.</li>
+          <li class="li">OpenJDK is an open-source implementation of Java available from
+            <a class="xref" href="https://adoptopenjdk.net" target="_blank">adoptopenjdk.net</a>.</li>
+          <li class="li">Amazon Corretto is an OpenJDK distribution with no-cost long-term support from
+            <a class="xref" href="https://aws.amazon.com/corretto/" target="_blank">aws.amazon.com/corretto</a>.</li>
+        </ul>
+      </div>
       </section>
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.2.1">
-    <h2 class="title topictitle2" id="ariaid-title3">Maintenance Release <span class="keyword">3.2.1</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.2.2">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.2.2</span></h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">3.2.1</span> includes the following bug fixes.</p>
+        <p class="p">DITA Open Toolkit <span class="keyword">3.2.2</span> is a maintenance release that includes a single
+          change. The <span class="keyword cmdname">dita</span> command now uses a secure connection to the plug-in registry when
+          installing new plug-ins.</p>
+        <div class="note attention note_attention"><span class="note__title">Attention:</span> To ensure data integrity during the plug-in installation process, Transport Layer
+          Security (TLS) will soon be required to access the plug-in registry. If you are using DITA-OT 3.2 or 3.2.1 and
+          are unable to upgrade, modify the <code class="ph codeph">registry</code> key in the
+            <span class="ph filepath">config/configuration.properties</span> file to switch the URI schema to
+            <code class="ph codeph">http<strong class="ph b">s</strong>://</code>, so the entry reads <code class="ph codeph">https://plugins.dita-ot.org/</code>.</div>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.2.1">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.2.1 <span class="ph small text-muted">released December 6, 2018</span></h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit 3.2.1 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v3.2.1__3140">In earlier releases, the base directory resolution treated input files as local resources. Input
             file handling has been extended to support non-local (HTTP and HTTPS) input URIs.
@@ -78,9 +104,9 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.2">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">3.2</span>
-      <span class="ph small">released November 3, 2018</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v3.2">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT <span class="keyword">3.2</span>
+      <span class="ph small text-muted">released November 3, 2018</span></h2>
     <div class="body refbody">
       <section class="section">
         <p class="p">DITA Open Toolkit Release <span class="keyword">3.2</span> includes <span class="ph" id="v3.2__summary">new command-line options,
@@ -419,4 +445,4 @@ index: "../toc.html"
       </section>
     </div>
   </article>
-</main>
+</article></main>
