@@ -3,7 +3,7 @@
 layout: base
 title: "Adding plug-ins via the registry"
 index: "../toc.html"
-commit: "7e0f15679fd2c99a95288be264584ec6babca566"
+commit: "ae5adcb6e4f880a87d6a708b9b01467c44eb855a"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li class="active"><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-applications.html">Plug-in applications</a></li><li><a href="../topics/plugin-sample.html">Example plugin.xml file</a></li><li><a href="../topics/plugin-best-practices.html">Best practices</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -156,22 +156,24 @@ commit: "7e0f15679fd2c99a95288be264584ec6babca566"
     "cksum": "eaf06b0dca8d942bd4152615e39ee8cfb73a624b96d70e10ab269ed6f8a13e21"
   }
 ]</code></pre>
-    </section>
-    <section class="section" id="plugin-registry__adding-custom-registries"><h2 class="title sectiontitle">Adding custom registries</h2>
       <div class="p">When you have multiple versions of a plug-in, include a descriptor for each version,
         separated by a
         comma:<pre class="pre codeblock"><code>[
- { "name": "org.example.myplugin",
-   ...
-   "vers": "2.1.0",
-   ...
- }<strong class="ph b">,</strong>
- { "name": "org.example.myplugin",
-   ...
-   "vers": "1.0.1",
-   ...
- }
+  {
+    "name": "org.example.myplugin",
+     ⋮
+    "vers": "2.1.0",
+     ⋮
+  }<strong class="ph b">,</strong>
+  {
+    "name": "org.example.myplugin",
+     ⋮
+    "vers": "1.0.1",
+     ⋮
+  }
 ]</code></pre></div>
+    </section>
+    <section class="section" id="plugin-registry__adding-custom-registries"><h2 class="title sectiontitle">Adding custom registries</h2>
       
       <p class="p">In addition to the main plug-in registry at <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank">dita-ot.org/plugins</a>, you can create a registry of
         your own to store the custom plug-ins for your company or organization.</p>
