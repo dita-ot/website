@@ -3,7 +3,7 @@
 layout: base
 title: "Migrating customizations"
 index: "../toc.html"
-commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
+commit: "f53a3c1e7aa26695b1f2b1a8dbc34b36f7c7f4d5"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li class="active"><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -15,6 +15,12 @@ commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
     <section class="section">
       <p class="p">In some cases, you may be able to remove old code that is no longer needed. In other cases, you may need to
         refactor your code to point to the modified extension points, templates or modes in recent toolkit versions.</p>
+      <p class="p">When migrating customizations, identify the version of the toolkit you're currently using (base version) and
+        the version of the toolkit you want to migrate to (target version). Then, review all of the migration changes
+        described in <em class="ph i">all</em> of the versions from the base through the target. For instance, if you're currently on
+        2.2 and want to move to 3.3, you should review all of the changes in 2.3 through 3.3. You may want to start at
+        the oldest version and read forward so you can chronologically follow the changes, since it is possible that
+        files or topics have had multiple changes. </p>
       <div class="note note note_note"><span class="note__title">Note:</span> <p class="p">DITA-OT releases follow
         <a class="xref" href="https://semver.org" target="_blank">Semantic Versioning 2.0.0</a> guidelines. Version numbers use the
             <code class="ph codeph"><var class="keyword varname">major</var>.<var class="keyword varname">minor</var>.<var class="keyword varname">patch</var></code> syntax, where
