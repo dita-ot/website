@@ -43,7 +43,7 @@
     "parcel-bundler": "^1.12.3",
     "prettier": "1.17.0",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.4.3",
+    "typescript": "^3.4.4",
     "urijs": "^1.19.1",
     "whatwg-fetch": "^3.0.0"
   },
