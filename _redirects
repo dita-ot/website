@@ -18,3 +18,6 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 /dev/parameters/local-properties.html                  /dev/parameters/local-properties-file.html
 /dev/topics/extending-the-ot.html                      /dev/topics/customizing.html
 /dev/topics/rebuilding-the-dita-ot-documentation.html  /dev/topics/rebuilding-docs.html
+
+# Redirect old installation URL (linked from )
+/dev/getting-started/installing-client.html            /dev/topics/installing-client.html
