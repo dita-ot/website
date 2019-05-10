@@ -19,5 +19,5 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 /dev/topics/extending-the-ot.html                      /dev/topics/customizing.html
 /dev/topics/rebuilding-the-dita-ot-documentation.html  /dev/topics/rebuilding-docs.html
 
-# Redirect old installation URL (linked from )
+# Redirect old installation URL (linked from DITA-OT Gradle Plugin docs)
 /dev/getting-started/installing-client.html            /dev/topics/installing-client.html
