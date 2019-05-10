@@ -45,31 +45,37 @@ If you'd like to set up a local staging environment and build a copy of the site
 
 ## Install prerequisite software
 
-1.  Install [Jekyll][3]:
+1.  Check if [Ruby][3] is installed:
+
+        ruby -v
+
+    Ruby is installed on macOS and most Linux distributions by default. If the command above does not respond with information on the installed Ruby version, see [Installing Ruby][4] for instructions.
+
+1.  Install [Jekyll][5]:
 
         gem install jekyll
 
-2.  Install [Bundler][4]:
+1.  Install [Bundler][6]:
 
         gem install bundler
 
-3.  Switch to your clone of the project website repository:
+1.  Switch to your clone of the project website repository:
 
         cd ~/dita-ot-website
 
-4.  Install all of the required gems from the project’s `Gemfile`:
+1.  Install all of the required gems from the project’s `Gemfile`:
 
         bundle install
 
-5.  Run Jekyll.
+1.  Run Jekyll.
 
         bundle exec jekyll serve
 
-    This runs the production version of the site locally, so you can view your local clone of the project website at [http://127.0.0.1:4000/][5].
+    This runs the production version of the site locally, so you can view your local clone of the project website at [http://127.0.0.1:4000/][7].
 
     At this stage, what you see there should be identical to the production version of the project website at [www.dita-ot.org][1].
 
-    **Note:** For more details, see [Setting up your GitHub Pages site locally with Jekyll][6].
+    **Note:** For more details, see [Setting up your GitHub Pages site locally with Jekyll][8].
 
 ## Building site output
 
@@ -93,7 +99,7 @@ To redirect the output to the `dev` development folder that Jekyll serves, pass 
 
     ./gradlew site -PoutputDir=~/dita-ot-website/dev
 
-After the build completes, you should find the results in the **Docs \> Development** section of the local staging environment [http://127.0.0.1:4000/dev/][7].
+After the build completes, you should find the results in the **Docs \> Development** section of the local staging environment [http://127.0.0.1:4000/dev/][9].
 
 To automatically regenerate the site output whenever documentation source files change, add the `--continuous` build option:
 
@@ -101,11 +107,11 @@ To automatically regenerate the site output whenever documentation source files 
 
 ## Updating JavaScript
 
-If you need to change any of the JavaScript files in the site repository, you'll need to [download & install Node.js][8] and run the `npm` package manager for JavaScript to perform a clean install of the project dependencies:
+If you need to change any of the JavaScript files in the site repository, you'll need to [download & install Node.js][10] and run the `npm` package manager for JavaScript to perform a clean install of the project dependencies:
 
     npm ci
 
-This will install various Node modules including [Parcel][9], the web application bundler.
+This will install various Node modules including [Parcel][11], the web application bundler.
 
 To make changes to the JavaScript code, add or edit source files in the `_js` folder. You can then run the `install` script to re-bundle the modified JavaScript code to the `js` folder with Parcel:
 
@@ -115,15 +121,17 @@ To make changes to the JavaScript code, add or edit source files in the `_js` fo
 
 You can now use the local staging environment to test your changes before committing your work.
 
-When you're ready to share your progress, send us a [pull request][10].
+When you're ready to share your progress, send us a [pull request][12].
 
 [1]: https://www.dita-ot.org
 [2]: https://www.dita-ot.org/colophon
-[3]: https://jekyllrb.com
-[4]: https://bundler.io
-[5]: http://127.0.0.1:4000/
-[6]: https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
-[7]: http://127.0.0.1:4000/dev/
-[8]: https://nodejs.org/en/download/
-[9]: https://parceljs.org
-[10]: https://help.github.com/articles/about-pull-requests/
+[3]: https://www.ruby-lang.org
+[4]: https://www.ruby-lang.org/en/documentation/installation
+[5]: https://jekyllrb.com
+[6]: https://bundler.io
+[7]: http://127.0.0.1:4000/
+[8]: https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
+[9]: http://127.0.0.1:4000/dev/
+[10]: https://nodejs.org/en/download/
+[11]: https://parceljs.org
+[12]: https://help.github.com/articles/about-pull-requests/
