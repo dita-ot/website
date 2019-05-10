@@ -51,23 +51,23 @@ If you'd like to set up a local staging environment and build a copy of the site
 
     Ruby is installed on macOS and most Linux distributions by default. If the command above does not respond with information on the installed Ruby version, see [Installing Ruby][4] for instructions.
 
-1.  Install [Jekyll][5]:
+2.  Install [Jekyll][5]:
 
         gem install jekyll
 
-1.  Install [Bundler][6]:
+3.  Install [Bundler][6]:
 
         gem install bundler
 
-1.  Switch to your clone of the project website repository:
+4.  Switch to your clone of the project website repository:
 
         cd ~/dita-ot-website
 
-1.  Install all of the required gems from the project’s `Gemfile`:
+5.  Install all of the required gems from the project’s `Gemfile`:
 
         bundle install
 
-1.  Run Jekyll.
+6.  Run Jekyll.
 
         bundle exec jekyll serve
 
