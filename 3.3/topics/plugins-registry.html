@@ -46,9 +46,8 @@ index: "../toc.html"
         the <code class="ph codeph">--signoff</code> option to the <span class="keyword cmdname">git commit</span> command to certify that you have the
         rights to submit this contribution. For more information on this process, see <a class="xref" href="https://www.dita-ot.org/DCO" target="_blank">signing your work</a>.</div>
       <p class="p">The version entries for each plug-in are stored in a file that is named after the plug-in ID as
-          <code class="ph codeph">&lt;plugin-name&gt;.json</code>. The file contains an array of entries with a pre-defined
-        structure.</p>
-      <p class="p"></p>
+          <code class="ph codeph">&lt;plugin-name&gt;.json</code>. The file contains an array of entries with a pre-defined structure.
+        You should have one entry for each supported version of the plug-in.</p>
       <table class="table table-hover frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">Plug-in version entry structure</span></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:60%"></colgroup><thead class="thead">
             <tr class="row">
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__1">Key</th>
@@ -62,7 +61,7 @@ index: "../toc.html"
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3 ">Plug-in name</td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1 "><code class="ph codeph">version</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1 "><code class="ph codeph">vers</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2 ">yes</td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3 ">Plug-in version in <a class="xref" href="https://semver.org" target="_blank">Semantic Versioning 2.0.0</a> format</td>
             </tr>
@@ -126,7 +125,7 @@ index: "../toc.html"
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__33 ">Required plug-in version in <a class="xref" href="https://semver.org" target="_blank">Semantic Versioning 2.0.0</a> format that may contain <a class="xref" href="https://docs.npmjs.com/misc/semver#ranges" target="_blank">ranges</a>.</td>
             </tr>
           </tbody></table>
-      <div class="note note note_note"><span class="note__title">Note:</span> Version numbers in the <code class="ph codeph">version</code> and <code class="ph codeph">req</code> keys use the three-digit format
+      <div class="note note note_note"><span class="note__title">Note:</span> Version numbers in the <code class="ph codeph">vers</code> and <code class="ph codeph">req</code> keys use the three-digit format
         specified by <a class="xref" href="https://semver.org" target="_blank">Semantic Versioning 2.0.0</a>. An initial development release of a plug-in might start at version 0.1.0,
         and an initial production release at 1.0.0. If your plug-in requires DITA-OT 3.1 or later, set the
           <code class="ph codeph">req</code> key to <code class="ph codeph">&gt;=3.1.0</code>. Using the greater-than sign allows your plug-in to
@@ -155,6 +154,27 @@ index: "../toc.html"
     "cksum": "eaf06b0dca8d942bd4152615e39ee8cfb73a624b96d70e10ab269ed6f8a13e21"
   }
 ]</code></pre>
+    </section>
+    <section class="section" id="plugin-registry__multiple-versions"><h2 class="title sectiontitle">Maintaining multiple plug-in versions</h2>
+      
+      <p class="p">When you have multiple versions of a plug-in, include an entry for each version, separated by a comma:</p>
+      <pre class="pre codeblock"><code>[
+  {
+    "name": "org.example.myplugin",
+     ⋮
+    "vers": "1.0.1",
+     ⋮
+  }<strong class="ph b">,</strong>
+  {
+    "name": "org.example.myplugin",
+     ⋮
+    "vers": "2.1.0",
+     ⋮
+  }
+]</code></pre>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> To publish a new version of your plug-in to the registry, add a new entry to the array in the
+        existing plug-in entry file rather than overwriting an existing entry. This allows users to install the previous
+        version of the plug-in if they are using an older version of DITA-OT.</div>
     </section>
     <section class="section" id="plugin-registry__adding-custom-registries"><h2 class="title sectiontitle">Adding custom registries</h2>
       
