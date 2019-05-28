@@ -183,7 +183,7 @@ index: "../toc.html"
               transformation-type-specific build files via <code class="keyword markupname xmlelement">&lt;dita:extension&gt;</code> elements. When the
               plug-in installation process runs, template files are used to recreate build files, and the specified
               extension points are replaced with references to the appropriate plug-ins.</p>
-            <p class="p">The following attributes are supported: </p>
+            <p class="p">The following attributes are supported:</p>
             <table class="simpletable"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><thead><tr class="sthead">
                 <th class="stentry" scope="col">Attribute</th>
                 <th class="stentry" scope="col">Description</th>
@@ -248,8 +248,10 @@ index: "../toc.html"
             <dl class="dl parml">
               
                 <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;param&gt;</code></dt>
-                <dd class="dd pd">An optional element that specifies a parameter for the transformation type.
-                  <p class="p">The following parameter attributes are supported:</p><table class="simpletable"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><thead><tr class="sthead">
+                <dd class="dd pd">
+                  <p class="p">An optional element that specifies a parameter for the transformation type.</p>
+                  <p class="p">The following parameter attributes are supported:</p>
+                  <table class="simpletable"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><thead><tr class="sthead">
                       <th class="stentry" scope="col">Attribute</th>
                       <th class="stentry" scope="col">Description</th>
                       <th class="stentry" scope="col">Required?</th>
@@ -266,13 +268,23 @@ index: "../toc.html"
                       <td class="stentry">Parameter type (<span class="keyword option">enum</span>, <span class="keyword option">file</span>,
                         <span class="keyword option">string</span>)</td>
                       <td class="stentry">Yes</td>
+                    </tr><tr class="strow">
+                      <th scope="row" class="stentry">deprecated</th>
+                      <td class="stentry">When <span class="keyword option">true</span>, identifies this parameter as deprecated</td>
+                      <td class="stentry">No</td>
+                    </tr><tr class="strow">
+                      <th scope="row" class="stentry">required</th>
+                      <td class="stentry">When <span class="keyword option">true</span>, identifies this parameter as required</td>
+                      <td class="stentry">No</td>
                     </tr></tbody></table></dd>
               
               
                 <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;val&gt;</code></dt>
-                <dd class="dd pd">A child of <code class="keyword markupname xmlelement">&lt;param&gt;</code> (when <code class="keyword markupname xmlatt">@type</code>=<span class="keyword option">enum</span>) that
-                  specifies an enumeration value.
-                  <p class="p">The following attributes are supported:</p><table class="simpletable"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><thead><tr class="sthead">
+                <dd class="dd pd">
+                  <p class="p">A child of <code class="keyword markupname xmlelement">&lt;param&gt;</code> (when <code class="keyword markupname xmlatt">@type</code>=<span class="keyword option">enum</span>) that
+                    specifies an enumeration value.</p>
+                  <p class="p">The following attributes are supported:</p>
+                  <table class="simpletable"><colgroup><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"><col style="width:33.33333333333333%"></colgroup><thead><tr class="sthead">
                       <th class="stentry" scope="col">Attribute</th>
                       <th class="stentry" scope="col">Description</th>
                       <th class="stentry" scope="col">Required?</th>
@@ -289,7 +301,7 @@ index: "../toc.html"
       </dl>
       <p class="p">Any extension that is not recognized by DITA-OT is ignored. Since DITA-OT version 1.5.3, you can combine
         multiple extension definitions within a single <span class="ph filepath">plugin.xml</span> file; in older versions, only the
-        last extension definition was used. </p>
+        last extension definition was used.</p>
     </section>
   </div>
 <nav role="navigation" class="related-links"><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/plugin-newtranstype.html" title="Plug-ins can add an entirely new transformation type. The new transformation type can be very simple, such as an HTML build that creates an additional control file; it also can be very complex, adding any number of new processing steps.">Adding a new transformation type</a></li></ul></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/plugin-newextensions.html" title="If your plug-in needs to define its own extension point in an XML file, add the string &#34;_template&#34; to the filename before the file suffix. When the plug-in is installed, this file will be processed like the built-in DITA-OT templates.">Creating a new plug-in extension point</a></li><li class="linklist"><a class="link" href="../topics/plugin-sample.html" title="The following is a sample of a plugin.xml file. This file adds support for a new set of specialized DTDs, and includes an override for the XHTML output processor.">Example plugin.xml file</a></li></ul></div></nav></article></main>
