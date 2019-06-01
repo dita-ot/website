@@ -3,6 +3,7 @@ import SearchController from './lib/SearchController'
 import HelpController from './lib/HelpController'
 import $ from 'jquery'
 import URI from 'urijs'
+import Prism from 'prismjs'
 
 const indexAttr = $('link[rel=index]').attr('href')
 if (indexAttr && window.history) {
