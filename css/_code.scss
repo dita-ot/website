@@ -17,6 +17,7 @@
   letter-spacing: 1px;
 }
 
+pre[class*='language-'],
 .highlight,
 .codeblock {
   background-color: $pre-bg;
@@ -25,16 +26,21 @@
 
 // Override Bootstrap _code partials
 
+pre[class*='language-'],
 pre {
   border: 1px solid $pre-border-color;
   border-radius: 4px;
-  margin: 0 0 $spacer;
   padding: 6px 9.5px;
 
   // Reduce font size for DITA codeblocks
   code {
     font-size: $code-font-size;
   }
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  @include codeclass;
 }
 
 // Inline code
