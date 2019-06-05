@@ -12,7 +12,6 @@
           "markdown",
           "markup",
           "yaml"],
-        "plugins": ["line-numbers"],
         "theme": "twilight",
         "css": true
       }
