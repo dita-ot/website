@@ -5,6 +5,8 @@ import $ from 'jquery'
 import URI from 'urijs'
 import Prism from 'prismjs'
 
+Prism.highlightAll()
+
 const indexAttr = $('link[rel=index]').attr('href')
 if (indexAttr && window.history) {
   const index = URI(indexAttr)
