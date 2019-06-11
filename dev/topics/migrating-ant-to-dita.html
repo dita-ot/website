@@ -3,7 +3,7 @@
 layout: base
 title: "Migrating Ant builds to use the dita command"
 index: "../toc.html"
-commit: "559697d21d5f65aa64e56cf963468e17d812b4b9"
+commit: "78e4d56483f3a24e30ecca508cfb9a220cb5cda7"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li class="active"><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -132,10 +132,11 @@ args.rellinks = nofamily</code></pre></div>
   &lt;/target&gt;
   &lt;target name="main"&gt;
     &lt;description&gt;Build the CHM and PDF with the dita command&lt;/description&gt;
-    &lt;dita-cmd input="../sequence.ditamap" format="htmlhelp"
-              propertyfile="../properties/chm.properties"/&gt;
-    &lt;dita-cmd input="../taskbook.ditamap" format="pdf"
-              propertyfile="../properties/pdf.properties"/&gt;
+    &lt;property name="absolute.path.base" location="../"/&gt;
+    &lt;dita-cmd input="${absolute.path.base}/sequence.ditamap" format="htmlhelp"
+              propertyfile="${absolute.path.base}/properties/chm.properties"/&gt;
+    &lt;dita-cmd input="${absolute.path.base}/taskbook.ditamap" format="pdf"
+              propertyfile="${absolute.path.base}/properties/pdf.properties"/&gt;
   &lt;/target&gt;
   &lt;target name="post"&gt;
     &lt;description&gt;Postprocessing steps&lt;/description&gt;
