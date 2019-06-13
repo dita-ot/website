@@ -11,6 +11,7 @@
           "json",
           "markdown",
           "markup",
+          "properties",
           "yaml"],
         "theme": "twilight",
         "css": true
