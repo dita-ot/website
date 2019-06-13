@@ -3,7 +3,7 @@
 layout: base
 title: "Plug-in descriptor file"
 index: "../toc.html"
-commit: "61d9b2d678bf34201827a7e7d6856b1306306c3f"
+commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li class="active"><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-applications.html">Plug-in applications</a></li><li><a href="../topics/plugin-sample.html">Example plugin.xml file</a></li><li><a href="../topics/plugin-best-practices.html">Best practices</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -47,7 +47,7 @@ commit: "61d9b2d678bf34201827a7e7d6856b1306306c3f"
         required <code class="keyword markupname xmlatt">@id</code> attribute set to the unique plug-in identifier.</p>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample <code class="keyword markupname xmlelement">&lt;plugin&gt;</code> element</figcaption>
         
-        <pre class="pre codeblock"><code>&lt;plugin id="com.example.html5-javascript"&gt;</code></pre>
+        <pre class="pre codeblock language-xml"><code>&lt;plugin id="com.example.html5-javascript"&gt;</code></pre>
       </figure>
     </section>
     <section class="section"><h2 class="title sectiontitle">Plug-in elements</h2>
@@ -79,7 +79,7 @@ commit: "61d9b2d678bf34201827a7e7d6856b1306306c3f"
               defining plug-in and append one or more tokens, for example, <code class="ph codeph">org.dita.example.pre</code>.</div>
             <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample <code class="keyword markupname xmlelement">&lt;extension-point&gt;</code> element</figcaption>
               
-              <pre class="pre codeblock"><code>&lt;extension-point id="dita.xsl.html5" name="HTML5 XSLT import"/&gt;</code></pre>
+              <pre class="pre codeblock language-xml"><code>&lt;extension-point id="dita.xsl.html5" name="HTML5 XSLT import"/&gt;</code></pre>
             </figure>
           </dd>
         
@@ -117,8 +117,8 @@ commit: "61d9b2d678bf34201827a7e7d6856b1306306c3f"
               
               <p class="p">If more than one <code class="keyword markupname xmlelement">&lt;feature&gt;</code> element supplies values to the same extension point,
                 the values are additive. For example, the following are equivalent:</p>
-              <pre class="pre codeblock"><code>&lt;feature extension="org.dita.example.extension-point" value="a,b,c"/&gt;</code></pre>
-              <pre class="pre codeblock"><code>&lt;feature extension="org.dita.example.extension-point" value="a"/&gt;
+              <pre class="pre codeblock language-xml"><code>&lt;feature extension="org.dita.example.extension-point" value="a,b,c"/&gt;</code></pre>
+              <pre class="pre codeblock language-xml"><code>&lt;feature extension="org.dita.example.extension-point" value="a"/&gt;
 &lt;feature extension="org.dita.example.extension-point" value="b"/&gt;
 &lt;feature extension="org.dita.example.extension-point" value="c"/&gt;</code></pre>
             </figure>
@@ -144,7 +144,7 @@ commit: "61d9b2d678bf34201827a7e7d6856b1306306c3f"
               </tr></tbody></table>
             <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span>Sample <code class="keyword markupname xmlelement">&lt;meta&gt;</code> element</figcaption>
               
-              <pre class="pre codeblock"><code>&lt;meta type="foo" value="bar"/&gt;</code></pre>
+              <pre class="pre codeblock language-xml"><code>&lt;meta type="foo" value="bar"/&gt;</code></pre>
             </figure>
           </dd>
         
@@ -172,7 +172,7 @@ commit: "61d9b2d678bf34201827a7e7d6856b1306306c3f"
               </tr></tbody></table>
             <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 5. </span>Sample <code class="keyword markupname xmlelement">&lt;require&gt;</code> element</figcaption>
               
-              <pre class="pre codeblock normalize-space"><code>&lt;require plugin="org.dita.html5"/&gt;</code></pre>
+              <pre class="pre codeblock language-xml normalize-space"><code>&lt;require plugin="org.dita.html5"/&gt;</code></pre>
             </figure>
           </dd>
         
@@ -197,7 +197,7 @@ commit: "61d9b2d678bf34201827a7e7d6856b1306306c3f"
               </tr></tbody></table>
             <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span>Sample <code class="keyword markupname xmlelement">&lt;template&gt;</code> element</figcaption>
               
-              <pre class="pre codeblock"><code>&lt;template file="build_dita2html5_template.xml"/&gt;</code></pre>
+              <pre class="pre codeblock language-xml"><code>&lt;template file="build_dita2html5_template.xml"/&gt;</code></pre>
             </figure>
           </dd>
         
@@ -232,7 +232,7 @@ commit: "61d9b2d678bf34201827a7e7d6856b1306306c3f"
               </tr></tbody></table>
             <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 7. </span>Sample <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element</figcaption>
               
-              <pre class="pre codeblock"><code>&lt;transtype name="base" abstract="true" desc="Common"&gt;
+              <pre class="pre codeblock language-xml"><code>&lt;transtype name="base" abstract="true" desc="Common"&gt;
   &lt;!-- ⋮ --&gt;
   &lt;param name="link-crawl" 
          desc="Specifies whether to crawl only topic links found in maps, or all discovered topic links."

@@ -3,7 +3,7 @@
 layout: base
 title: "Migrating Ant builds to use the dita command"
 index: "../toc.html"
-commit: "78e4d56483f3a24e30ecca508cfb9a220cb5cda7"
+commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li class="active"><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -38,7 +38,7 @@ commit: "78e4d56483f3a24e30ecca508cfb9a220cb5cda7"
       
       <p class="p">Prior to DITA-OT 2.0, an Ant build like this was typically used to define the properties for each target.</p>
       <div class="p">Sample build file: <span class="ph filepath" id="migrating-ant-to-dita__samples-dir"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf.xml</span>
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="build-chm-pdf" default="all" basedir="."&gt;
   &lt;property name="dita.dir" location="${basedir}/../../.."/&gt;
   &lt;target name="all" description="build CHM and PDF" depends="chm,pdf"/&gt;
@@ -66,12 +66,12 @@ commit: "78e4d56483f3a24e30ecca508cfb9a220cb5cda7"
         example Ant build.</p>
       <p class="p">Sample <span class="ph filepath">.properties</span> file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/properties/chm.properties</span></p>
       <div class="p">
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>output.dir = out/chm
+        <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code>output.dir = out/chm
 args.gen.task.lbl = YES
 args.breadcrumbs = yes</code></pre></div>
       <p class="p">Sample <span class="ph filepath">.properties</span> file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/properties/pdf.properties</span></p>
       <div class="p">
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>output.dir = out/pdf
+        <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code>output.dir = out/pdf
 args.gen.task.lbl = YES
 args.rellinks = nofamily</code></pre></div>
       <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>:</p>
@@ -88,7 +88,7 @@ args.rellinks = nofamily</code></pre></div>
         task.</p>
       <p class="p">This example uses a <code class="keyword markupname xmlelement">&lt;dita-cmd&gt;</code> Ant macro defined in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/dita-cmd.xml</span> file:</p>
       <div class="p">
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;macrodef name="dita-cmd"&gt;
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;macrodef name="dita-cmd"&gt;
   &lt;attribute name="input"/&gt;
   &lt;attribute name="format"/&gt;
   &lt;attribute name="propertyfile"/&gt;
@@ -122,7 +122,7 @@ args.rellinks = nofamily</code></pre></div>
         each build.</div>
       <p class="p">Sample build file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf-hybrid.xml</span></p>
       <div class="p">
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="build-chm-pdf-hybrid" default="all" basedir="."&gt;
   &lt;description&gt;An Ant build that calls the dita command&lt;/description&gt;
   &lt;include file="dita-cmd.xml"/&gt;&lt;!-- defines the &lt;dita-cmd&gt; macro --&gt;

@@ -3,7 +3,7 @@
 layout: base
 title: "Creating an Ant build script"
 index: "../toc.html"
-commit: "7d504af3891173db99b420d8e8063e56dacf3c70"
+commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a><ul class="nav nav-list"><li><a href="../topics/ant.html">Ant</a></li><li><a href="../topics/building-with-ant.html">Building output using Ant</a></li><li class="active"><a href="../topics/creating-an-ant-build-script.html">Creating an Ant build script</a></li></ul></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -14,7 +14,7 @@ commit: "7d504af3891173db99b420d8e8063e56dacf3c70"
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Create an XML file that contains the following content:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="%project-name%" default="%default-target%" basedir="."&gt;
 
   &lt;property name="dita.dir" location="%path-to-DITA-OT%"/&gt;
@@ -66,7 +66,7 @@ commit: "7d504af3891173db99b420d8e8063e56dacf3c70"
     <section class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">The following Ant build script generates CHM and PDF output for the sample DITA maps.</p>
       <div class="p">
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project name="build-chm-pdf" default="all" basedir="."&gt;
   &lt;property name="dita.dir" location="${basedir}/../../.."/&gt;
   &lt;target name="all" description="build CHM and PDF" depends="chm,pdf"/&gt;
