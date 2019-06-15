@@ -3,7 +3,7 @@
 layout: base
 title: "Processing order"
 index: "../toc.html"
-commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
+commit: "8e95211beeb6b9a9be8359021603a619914720d4"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a><ul class="nav nav-list"><li><a href="../reference/processing-structure.html">Processing structure</a></li><li><a href="../reference/map-first-preprocessing.html">Map-first preprocessing</a></li><li><a href="../reference/processing-pipeline-modules.html">Processing modules</a></li><li class="active"><a href="../reference/processing-order.html">Processing order</a></li><li><a href="../reference/preprocessing.html">Pre-processing modules</a></li><li><a href="../reference/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../reference/pdf-transform.html">PDF processing modules</a></li></ul></li><li><a href="../reference/DITA_spec-support.html">DITA specification support</a></li><li><a href="../reference/java-api.html">Java API</a></li><li><a href="../reference/license.html">License</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -17,7 +17,7 @@ commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
       <div class="p">The DITA-OT project has found that filtering first provides several benefits. Consider the following sample
         that contains a <code class="keyword markupname xmlelement">&lt;note&gt;</code> element that both uses conref and contains a
           <code class="keyword markupname xmlatt">@product</code>
-        attribute:<pre class="pre codeblock"><code>&lt;note conref="documentA.dita#doc/note" product="MyProd"/&gt;</code></pre></div>
+        attribute:<pre class="pre codeblock language-xml"><code>&lt;note conref="documentA.dita#doc/note" product="MyProd"/&gt;</code></pre></div>
       <p class="p">If the <code class="keyword markupname xmlatt">@conref</code> attribute is evaluated first, then documentA must be parsed in order to retrieve
         the note content. That content is then stored in the current document (or in a representation of that document
         in memory). However, if all content with product="MyProd" is filtered out, then that work is all discarded later
@@ -37,7 +37,7 @@ commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
         will differ. For example, in the code sample above, the <code class="keyword markupname xmlatt">@product</code> attribute on the reference
         target will override the product setting on the referencing note. Assume that the referenced
           <code class="keyword markupname xmlelement">&lt;note&gt;</code> element in documentA is defined as follows:
-        <pre class="pre codeblock"><code>&lt;note id="note" product="SomeOtherProduct"&gt;This is an important note!&lt;/note&gt;</code></pre></div>
+        <pre class="pre codeblock language-xml"><code>&lt;note id="note" product="SomeOtherProduct"&gt;This is an important note!&lt;/note&gt;</code></pre></div>
       <p class="p">A process that filters out product="SomeOtherProduct" will remove the target of the original conref before that
         conref is ever evaluated, which will result in a broken reference. Evaluating conref first would resolve the
         reference, and only later filter out the target of the conref. While some use cases can be found where this is

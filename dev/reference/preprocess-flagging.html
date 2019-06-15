@@ -3,7 +3,7 @@
 layout: base
 title: "Flagging (flag-module)"
 index: "../toc.html"
-commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
+commit: "8e95211beeb6b9a9be8359021603a619914720d4"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a><ul class="nav nav-list"><li><a href="../reference/processing-structure.html">Processing structure</a></li><li><a href="../reference/map-first-preprocessing.html">Map-first preprocessing</a></li><li><a href="../reference/processing-pipeline-modules.html">Processing modules</a></li><li><a href="../reference/processing-order.html">Processing order</a></li><li><a href="../reference/preprocessing.html">Pre-processing modules</a><ul class="nav nav-list"><li><a href="../reference/preprocess-genlist.html">Generate lists (gen-list)</a></li><li><a href="../reference/preprocess-debugfilter.html">Debug and filter (debug-filter)</a></li><li><a href="../reference/preprocess-mapref.html">Resolve map references (mapref)</a></li><li><a href="../reference/preprocess-branch-filter.html">Branch filtering (branch-filter)</a></li><li><a href="../reference/preprocess-keyref.html">Resolve key references (keyref)</a></li><li><a href="../reference/preprocess-copy-to.html">Copy topics (copy-to)</a></li><li><a href="../reference/preprocess-conrefpush.html">Conref push (conrefpush)</a></li><li><a href="../reference/preprocess-conref.html">Resolve content references (conref)</a></li><li><a href="../reference/preprocess-profile.html">Filter conditional content (profile)</a></li><li><a href="../reference/preprocess-topic-fragment.html">Resolve topic fragments and code references (topic-fragment)</a></li><li><a href="../reference/preprocess-chunk.html">Chunk topics (chunk)</a></li><li><a href="../reference/preprocess-metadata.html">Move metadata (move-meta-entries) and pull content into maps (mappull) </a></li><li><a href="../reference/preprocess-maplink.html">Map based linking (maplink)</a></li><li><a href="../reference/preprocess-topicpull.html">Pull content into topics (topicpull)</a></li><li class="active"><a href="../reference/preprocess-flagging.html">Flagging (flag-module)</a></li><li><a href="../reference/preprocess-clean-map.html">Map cleanup (clean-map)</a></li><li><a href="../reference/preprocess-copyfiles.html">Copy related files (copy-files)</a></li></ul></li><li><a href="../reference/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../reference/pdf-transform.html">PDF processing modules</a></li></ul></li><li><a href="../reference/DITA_spec-support.html">DITA specification support</a></li><li><a href="../reference/java-api.html">Java API</a></li><li><a href="../reference/license.html">License</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -27,7 +27,7 @@ commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
           <dd class="dd pd">
             <p class="p">When any flag is active on an element, a <code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code> element will be
               created as the first child of the flagged element:</p>
-            <pre class="pre codeblock"><code>&lt;ditaval-startprop class="+ topic/foreign ditaot-d/ditaval-startprop "&gt;</code></pre>
+            <pre class="pre codeblock language-xml"><code>&lt;ditaval-startprop class="+ topic/foreign ditaot-d/ditaval-startprop "&gt;</code></pre>
             <div class="p">The <code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code> element will contain the following:
               <ul class="ul">
                 <li class="li">If the active flags should create a new style, that style is included using standard CSS markup on
@@ -48,7 +48,7 @@ commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
           <dd class="dd pd">
             <p class="p">When any flag is active on an element, a <code class="keyword markupname xmlelement">&lt;ditaval-endprop&gt;</code> element will be created
               as the last child of the flagged element:</p>
-            <pre class="pre codeblock"><code>&lt;ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop "&gt;</code></pre>
+            <pre class="pre codeblock language-xml"><code>&lt;ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop "&gt;</code></pre>
             <p class="p">CSS values and <code class="keyword markupname xmlelement">&lt;style-conflict&gt;</code> elements are not included on this element.</p>
             <p class="p">Any <code class="keyword markupname xmlelement">&lt;prop&gt;</code> or <code class="keyword markupname xmlelement">&lt;revprop&gt;</code> elements that define active flags
               will be copied in as children of <code class="keyword markupname xmlelement">&lt;ditaval-prop&gt;</code>. Any
@@ -115,7 +115,7 @@ commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
       <p class="p">Now assume the following paragraph exists in a topic. Class attributes are included, as they would normally be
         in the middle of the preprocess routine; <code class="keyword markupname xmlatt">@xtrf</code> and <code class="keyword markupname xmlatt">@xtrc</code> are left off for
         clarity.</p>
-      <pre class="pre codeblock"><code>&lt;p audience="user"&gt;Simple user; includes style but no images&lt;/p&gt;</code></pre>
+      <pre class="pre codeblock language-xml"><code>&lt;p audience="user"&gt;Simple user; includes style but no images&lt;/p&gt;</code></pre>
       <p class="p">Based on the DITAVAL above, audience="user" results in a style with underlining and with a green background.
         The interpreted CSS value is added to <code class="keyword markupname xmlatt">@outputclass</code> on
         <code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code>, and the actual property definition is included at the start and end
@@ -143,7 +143,7 @@ commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
       <p class="p">This example includes a paragraph with conflicting styles. When the audience and platform attributes are both
         evaluated, the DITAVAL indicates that the background color is both green and blue. In this situation, the
           <code class="keyword markupname xmlelement">&lt;style-conflict&gt;</code> element is evaluated to determine how to style the content.</p>
-      <pre class="pre codeblock"><code>&lt;p audience="user" platform="win"&gt;Conflicting styles (still no images)&lt;/p&gt;</code></pre>
+      <pre class="pre codeblock language-xml"><code>&lt;p audience="user" platform="win"&gt;Conflicting styles (still no images)&lt;/p&gt;</code></pre>
       <p class="p">The <code class="keyword markupname xmlelement">&lt;style-conflict&gt;</code> element results in a background color of red, so this value is
         added to <code class="keyword markupname xmlatt">@outputclass</code> on <code class="keyword markupname xmlelement">&lt;ditaval-startprop&gt;</code>. As above, active properties
         are copied into the generated elements; the <code class="keyword markupname xmlelement">&lt;style-conflict&gt;</code> element itself is also
