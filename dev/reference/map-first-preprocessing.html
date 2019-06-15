@@ -3,7 +3,7 @@
 layout: base
 title: "Map-first preprocessing"
 index: "../toc.html"
-commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
+commit: "d9f9b1d0b8b358756233dee5a860f6ff1b19f910"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a><ul class="nav nav-list"><li><a href="../reference/processing-structure.html">Processing structure</a></li><li class="active"><a href="../reference/map-first-preprocessing.html">Map-first preprocessing</a></li><li><a href="../reference/processing-pipeline-modules.html">Processing modules</a></li><li><a href="../reference/processing-order.html">Processing order</a></li><li><a href="../reference/preprocessing.html">Pre-processing modules</a></li><li><a href="../reference/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../reference/pdf-transform.html">PDF processing modules</a></li></ul></li><li><a href="../reference/DITA_spec-support.html">DITA specification support</a></li><li><a href="../reference/java-api.html">Java API</a></li><li><a href="../reference/license.html">License</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -43,7 +43,7 @@ commit: "6328fa32aeae09f4c66cf6795b3ac85386cefcbc"
         transformation types instead of using the default <code class="ph codeph">preprocess</code> target.</p>
       <p class="p">For example, if you have a custom HTML5 transformation type named "myhtml", then you may have a plug-in
         extension that looks this:</p>
-      <pre class="pre codeblock"><code><em class="ph i">&lt;!-- Simple variant: set properties and call default HTML5 --&gt;</em>
+      <pre class="pre codeblock language-xml"><code>&lt;!-- Simple variant: set properties and call default HTML5 --&gt;
 &lt;target name="dita2myhtml" depends="myhtml.init,dita2html5"/&gt;
 </code></pre>
       <p class="p">This type of extension is quite common, and is used to set default properties for your environment followed by
