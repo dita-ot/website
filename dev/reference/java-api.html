@@ -1,17 +1,17 @@
 ---
 # Generated from DITA source
 layout: base
-title: "Java API"
+title: "Using the Java API"
 index: "../toc.html"
-commit: "3dcef367a622235608f1f82e346c76952a6c82ab"
+commit: "8da4cbb5cf5945cef0185ff221741e1f31c5c0ee"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../reference/DITA_spec-support.html">DITA specification support</a></li><li class="active"><a href="../reference/java-api.html">Java API</a></li><li><a href="../reference/license.html">License</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="title topictitle1" id="ariaid-title1">Java API</h1>
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li class="active"><a href="../reference/java-api.html">Using the Java API</a></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Using the Java API</h1>
   
   
-  <div class="body conbody"><p class="shortdesc">DITA-OT includes a Java Application Programming Interface to allow developers to embed DITA-OT more easily
-    into other Java programs.</p>
+  <div class="body conbody"><p class="shortdesc">DITA Open Toolkit includes a Java Application Programming Interface to allow developers to embed the
+    toolkit more easily into other Java programs.</p>
     <p class="p">When using the API, programmers don’t need to know or care that DITA-OT uses Ant, they can just use Java. </p>
     <div class="note note note_note"><span class="note__title">Note:</span> When running DITA-OT via the <span class="keyword cmdname">dita</span> command, an <code class="ph codeph">ant</code> shell script handles the
       classpath setup, but when using the API the classpath should be set up as part of the normal classpath
