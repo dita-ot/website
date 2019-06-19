@@ -12,7 +12,8 @@ If you'd like to set up a local staging environment and build a copy of the site
 
 - [Environment setup](#environment-setup)
 - [Install prerequisite software](#install-prerequisite-software)
-- [Building site output](#building-site-output)
+- [Running Jekyll](#running-Jekyll)
+- [Building documentation output](#building-documentation-output)
 - [Updating JavaScript](#updating-javascript)
 - [Happy staging!](#happy-staging)
 
@@ -67,17 +68,23 @@ If you'd like to set up a local staging environment and build a copy of the site
 
         bundle install
 
-6.  Run Jekyll.
+## Running Jekyll
 
-        bundle exec jekyll serve
+To build a copy of the site locally, use the `bundle` command to start the Jekyll build:
 
-    This runs the production version of the site locally, so you can view your local clone of the project website at [http://127.0.0.1:4000/][7].
+    bundle exec jekyll serve
 
-    At this stage, what you see there should be identical to the production version of the project website at [www.dita-ot.org][1].
+This runs the Jekyll build process and starts a local web server, so you can view your local clone of the project website at [http://127.0.0.1:4000/][7].
 
-    **Note:** For more details, see [Setting up your GitHub Pages site locally with Jekyll][8].
+At this stage, what you see there should be identical to the production version of the site at [www.dita-ot.org][1].
 
-## Building site output
+**Note:** For more details, see [Setting up your GitHub Pages site locally with Jekyll][8].
+
+To refresh the page in your browser whenever source files change, pass the `--livereload` option:
+
+    bundle exec jekyll serve --livereload
+
+## Building documentation output
 
 1.  Switch to the `docsrc` submodule of the local `dita-ot` clone:
 
