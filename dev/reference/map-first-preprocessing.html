@@ -3,11 +3,12 @@
 layout: base
 title: "Map-first preprocessing"
 index: "../toc.html"
-commit: "8da4cbb5cf5945cef0185ff221741e1f31c5c0ee"
+commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a><ul class="nav nav-list"><li><a href="../reference/processing-structure.html">Processing structure</a></li><li class="active"><a href="../reference/map-first-preprocessing.html">Map-first preprocessing</a></li><li><a href="../reference/processing-pipeline-modules.html">Processing modules</a></li><li><a href="../reference/processing-order.html">Processing order</a></li><li><a href="../reference/preprocessing.html">Pre-processing modules</a></li><li><a href="../reference/XhtmlWithNavigation.html">HTML-based processing modules</a></li><li><a href="../reference/pdf-transform.html">PDF processing modules</a></li></ul></li><li><a href="../reference/DITA_spec-support.html">DITA specification support</a></li><li><a href="../reference/license.html">License</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Map-first preprocessing</h1>
+  
   
   
   <div class="body conbody"><p class="shortdesc"><span class="ph" id="ID__map-first-preproc-desc">DITA-OT 3.0 provides a map-first preprocessing option as an alternative to
@@ -22,7 +23,7 @@ commit: "8da4cbb5cf5945cef0185ff221741e1f31c5c0ee"
       referenced after filtering, for example, or to only process the map to validate the map structure.</p>
     <p class="p">The current preprocessing architecture was established during the DITA 1.0 era when there were fewer DITA
       features that operated on the map level. Initially, the difference between processing modes was not that great.
-      DITA 1.2 and 1.3 introduced many more map-level features such as keys and key scopes that make it difficult to
+      DITA 1.2 and 1.3 introduced many more map-level features, such as keys and key scopes, that make it difficult to
       reliably work with topics before all map features have been resolved. </p>
     <p class="p">The original preprocessing operation already handles many map operations first, but this was not the original
       design and requires regular refactoring to handle edge cases. The new map-first preprocessing is designed with

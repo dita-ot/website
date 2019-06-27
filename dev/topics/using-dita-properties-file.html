@@ -3,11 +3,12 @@
 layout: base
 title: "Setting build parameters with .properties files"
 index: "../toc.html"
-commit: "8da4cbb5cf5945cef0185ff221741e1f31c5c0ee"
+commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li class="active"><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Setting build parameters with <span class="ph filepath">.properties</span> files</h1>
+  
   
   
   <div class="body taskbody"><p class="shortdesc">Usually, DITA builds require setting a number of parameters that do not change frequently. You can
@@ -84,7 +85,10 @@ args.xhtml.toc = toc</code></pre>
           <div class="note tip note_tip"><span class="note__title">Tip:</span> If you are building in different environments where the location of the input
         files is not consistent, set <span class="keyword option">args.input.dir</span> with the <span class="keyword cmdname">dita</span> command and
         reference its value with <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span>
-        file.</div>
+        file.
+        
+        
+      </div>
         </div>
       </li></ol></section>
   </div>

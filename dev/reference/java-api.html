@@ -3,7 +3,7 @@
 layout: base
 title: "Using the Java API"
 index: "../toc.html"
-commit: "8da4cbb5cf5945cef0185ff221741e1f31c5c0ee"
+commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li class="active"><a href="../reference/java-api.html">Using the Java API</a></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -33,6 +33,7 @@ Processor p = pf.newProcessor("html5")
 p.run();</code></pre>
     </div>
     <section class="section">
+      
       <p class="p">By default, running DITA-OT via the API will write a debug log to the temporary directory. A custom SLF4J
         logger can also be used to access the log via the Simple Logging Facade for Java.</p>
       <p class="p">The processor cleans the temporary directory by default, but this can be disabled to simplify debugging in
@@ -42,6 +43,7 @@ p.run();</code></pre>
         the Java API.</div>
     </section>
     <section class="section"><h2 class="title sectiontitle">Downloading DITA-OT from Maven Central</h2>
+      
       
       <p class="p">As of version 2.5, the DITA Open Toolkit base library (<span class="ph filepath">dost.jar</span>) is available via the
         Maven 2 Central Repository. You can use this mechanism to download the main JAR file and include it in the build
