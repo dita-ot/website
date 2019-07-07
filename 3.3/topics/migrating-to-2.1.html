@@ -11,7 +11,7 @@ index: "../toc.html"
   
 
   
-
+  
   <div class="body refbody"><p class="shortdesc">In DITA-OT 2.1, the <code class="ph codeph">insertVariable</code> template was deprecated for PDF transformations and
     should be replaced with the <code class="ph codeph">getVariable</code> template. Various <code class="ph codeph">dita.<strong class="ph b">out.</strong>map.*</code>
     targets have been deprecated in favor of updated <code class="ph codeph">dita.map.*</code> equivalents.</p>
@@ -61,7 +61,7 @@ index: "../toc.html"
       </ul>
       <p class="p">Calls to that template will result in warnings in the build log.</p>
       <p class="p">To update your plug-in, make the following changes:</p>
-      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="<span style="text-decoration:line-through" class="ph line-through">insertVariable</span><strong class="ph b">getVariable</strong>"&gt;
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="<span style="text-decoration:line-through" class="ph line-through">insertVariable</span><strong class="ph b">getVariable</strong>"&gt;
   &lt;xsl:with-param name="<span style="text-decoration:line-through" class="ph line-through">theVariableID</span><strong class="ph b">id</strong>" select="<var class="keyword varname">var-id</var>"/&gt;
   &lt;xsl:with-param name="<span style="text-decoration:line-through" class="ph line-through">theParameters</span><strong class="ph b">params</strong>"&gt;
     <var class="keyword varname">params</var>
@@ -90,6 +90,9 @@ index: "../toc.html"
 
     <section class="section"><h2 class="title sectiontitle">XHTML</h2>
       
+      <div class="div div-index">
+        
+      </div>
       <p class="p">The <code class="ph codeph">dita.<strong class="ph b">out.</strong>map.xhtml.toc</code> target has been deprecated and should be replaced with the
         updated <code class="ph codeph">dita.map.xhtml.toc</code> equivalent.</p>
       <p class="p">Keydef processing has been removed from the XHTML rendering code. Keys are now resolved in one preprocessing
@@ -113,6 +116,9 @@ index: "../toc.html"
     </section>
     <section class="section"><h2 class="title sectiontitle">JavaHelp</h2>
       
+      <div class="div div-index">
+        
+      </div>
       <p class="p">The <code class="ph codeph">dita.<strong class="ph b">out.</strong>map.javahelp.*</code> targets have been deprecated and should be replaced with
         the updated <code class="ph codeph">dita.map.javahelp.*</code> equivalents:</p>
       <ul class="ul">

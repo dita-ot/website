@@ -5,11 +5,12 @@ title: "Building output using the dita command"
 index: "../toc.html"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
   
-  <div class="body taskbody"><p class="shortdesc">You can generate output using the DITA Open Toolkit <span class="keyword cmdname">dita</span> command-line tool. Build
-    parameters can be specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
+  
+  <div class="body taskbody"><p class="shortdesc">You can generate output using the <span class="keyword cmdname">dita</span> command-line tool. Build parameters can be
+    specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
     
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
@@ -27,8 +28,9 @@ index: "../toc.html"
                 Use the same values as for the <span class="keyword parmname">transtype</span> build
                 parameter, for example <span class="keyword option">html5</span> or <span class="keyword option">pdf</span>.
               </p>
-              <div class="p" id="using-command-line-tool__d12e226">You can create plug-ins to add new output formats; by default, the following values are
+              <div class="p" id="using-command-line-tool__d12e228">You can create plug-ins to add new output formats; by default, the following values are
                 available:
+                
                 <ul class="ul">
                   <li class="li"><span class="keyword option">dita</span></li>
                   <li class="li"><span class="keyword option">eclipsehelp</span></li>
@@ -42,7 +44,8 @@ index: "../toc.html"
                   <li class="li"><span class="keyword option">xhtml</span></li>
                 </ul>
                 <div class="note tip note_tip"><span class="note__title">Tip:</span> See <a class="xref" href="../resources/../topics/output-formats.html" title="DITA Open Toolkit ships with several core transformations that generate different output formats from DITA content. Each transformation represents an implementation of the processing that is defined by OASIS in the DITA specification.">DITA-OT transformations (output formats)</a> for sample command line syntax and more information
-                  on each transformation.</div>
+                  on each transformation.
+                </div>
               </div>
             </li>
             <li class="li">[<var class="keyword varname">options</var>] include the following optional build parameters:
@@ -54,7 +57,7 @@ index: "../toc.html"
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
-          <dd class="dd pd" id="using-command-line-tool__d12e307">
+          <dd class="dd pd" id="using-command-line-tool__d12e314">
             <p class="p">Specifies the path of the output directory; the path can be absolute or relative to the current
               directory.</p>
             <p class="p">This argument corresponds to the common parameter <span class="keyword parmname">output.dir</span>. By default, the output
@@ -66,8 +69,19 @@ index: "../toc.html"
             <span class="keyword parmname">--filter</span>=<var class="keyword varname">files</var>
           </dt>
           <dd class="dd pd">Specifies filter file(s) used to include, exclude, or flag content. </dd>
-          <dd class="dd pd ddexpand">This argument corresponds to the common parameter <span class="keyword parmname">args.filter</span>. Relative paths are
-            resolved against the current directory and internally converted to absolute paths.</dd>
+          <dd class="dd pd ddexpand">
+            <p class="p">This argument corresponds to the common parameter <span class="keyword parmname">args.filter</span>. Relative paths are
+              resolved against the current directory and internally converted to absolute paths.</p>
+            <div class="note note note_note"><span class="note__title">Note:</span> 
+              <p class="p">To specify multiple filter files, use the system path separator character to delimit individual file
+                paths (semicolon ‘<code class="ph codeph">;</code>’ on Windows, and colon ‘<code class="ph codeph">:</code>’ on macOS and Linux) and
+                wrap the value in quotes:</p>
+              <p class="p"><code class="ph codeph">--filter="filter1.ditaval;filter2.ditaval;filter3.ditaval"</code></p>
+              <p class="p">DITAVAL files are evaluated in the order specified, so conditions specified in the first file take
+                precedence over matching conditions specified in later files, just as conditions at the start of a
+                DITAVAL document take precedence over matching conditions later in the same document.</p>
+            </div>
+          </dd>
         
         
           <dt class="dt pt dlterm">
@@ -131,7 +145,10 @@ index: "../toc.html"
                 <span class="ph filepath">.properties</span> file are ignored.</p><div class="note tip note_tip"><span class="note__title">Tip:</span> If you are building in different environments where the location of the input
         files is not consistent, set <span class="keyword option">args.input.dir</span> with the <span class="keyword cmdname">dita</span> command and
         reference its value with <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span>
-        file.</div></dd>
+        file.
+        
+        
+      </div></dd>
         
         
           <dt class="dt pt dlterm">
@@ -147,8 +164,10 @@ index: "../toc.html"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
             specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
             directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d12e547"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
-              <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
+          <div class="note tip note_tip" id="using-command-line-tool__d12e590"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
+              <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.
+            
+          </div>
         </div>
       </div></section>
     
@@ -164,7 +183,7 @@ index: "../toc.html"
         the following additional parameters specified in the <span class="ph filepath">properties/sequence-html5.properties</span>
         file:</p>
       <div class="p">
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code># Don't generate headings for sections within task topics:
+        <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code># Don't generate headings for sections within task topics:
 args.gen.task.lbl = NO
 
 # Directory that contains the custom .css file:
@@ -185,6 +204,7 @@ nav-toc = full
 # Base name of the Table of Contents file:
 args.xhtml.toc = toc</code></pre>
       </div>
+      
     </section>
     <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
       

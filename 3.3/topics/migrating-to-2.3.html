@@ -11,7 +11,7 @@ index: "../toc.html"
   
 
   
-
+  
   <div class="body refbody"><p class="shortdesc">In DITA-OT 2.3, <span class="keyword option">HTML5</span> table processing has been refactored to use HTML5 best practices and
     improved CSS properties. In PDF output, table heads and key columns no longer include shading, and unused
     localization variables have been deprecated. The template for generated error messages has been updated to use a
@@ -30,6 +30,15 @@ index: "../toc.html"
     </section>
     <section class="section"><h2 class="title sectiontitle">HTML-based formats</h2>
       
+      <div class="div div-index">
+        
+        
+        
+        
+        
+        
+        
+      </div>
       <p class="p">The XSLT <code class="ph codeph">tm-area</code> named template, which used to toggle rendering of trademark symbols in US
         English and Asian languages (Japanese, Korean, and both Chinese) but ignore them in all other languages, has
         been deprecated. Trademark symbols are now rendered uniformly for all languages and the template will be removed
@@ -43,6 +52,13 @@ index: "../toc.html"
     </section>
     <section class="section"><h2 class="title sectiontitle">PDF</h2>
       
+      <div class="div div-index">
+        
+        
+        
+        
+        
+      </div>
       <p class="p">The <code class="ph codeph">antiquewhite</code> background color has been removed from table heads and key column contents in
           <code class="keyword markupname xmlelement">&lt;simpletable&gt;</code> and <code class="keyword markupname xmlelement">&lt;properties&gt;</code> tables to synchronize
         presentation with <code class="keyword markupname xmlelement">&lt;choicetable&gt;</code> and provide a more uniform customization baseline between
@@ -114,7 +130,7 @@ index: "../toc.html"
         single <code class="ph codeph">id</code> variable that contains the entire message ID.</p>
       <div class="p">Plug-ins that make use of the <code class="ph codeph">output-message</code> function should be updated to use the single
           <code class="ph codeph">id</code> variable, as
-        in:<pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="output-message"&gt;
+        in:<pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="output-message"&gt;
   &lt;xsl:with-param name="id" select="'FULLMESSAGENUMBER'"/&gt;
   &lt;xsl:with-param name="msgparams"&gt;optional-message-parameters&lt;/xsl:with-param&gt;
 &lt;/xsl:call-template&gt;</code></pre>

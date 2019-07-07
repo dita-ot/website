@@ -9,6 +9,7 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">XHTML migration for flagging updates in DITA-OT 1.7</h1>
   
   
+  
   <div class="body refbody"><p class="shortdesc">This topic is primarily of interest to developers with XHTML transform overrides written prior to DITA-OT
     1.7. Due to significant changes in the flagging process with the 1.7 release, some changes may be needed to make
     overrides work properly with DITAVAL-based flagging. The new design is significantly simpler than the old design; in
@@ -105,7 +106,7 @@ index: "../toc.html"
           <code class="ph codeph">"commonattributes"</code>, DITAVAL style will be processed when needed. Because virtually every
         element includes a call to this common template, there is little chance that your override needs to explicitly
         process the style. The new line in <code class="ph codeph">"commonattributes"</code> that handles the style is:
-        <pre class="pre codeblock"><code>&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-startprop ')]/@outputclass" mode="add-ditaval-style"/&gt;</code></pre></div></section>
+        <pre class="pre codeblock language-xml"><code>&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-startprop ')]/@outputclass" mode="add-ditaval-style"/&gt;</code></pre></div></section>
     <section class="section"><h2 class="title sectiontitle">Migrating <code class="ph codeph">"start-flagit"</code>, <code class="ph codeph">"start-revflag"</code>, <code class="ph codeph">"end-flagit"</code>,
         and <code class="ph codeph">"end-flagit"</code> named templates</h2>
       
@@ -124,14 +125,14 @@ index: "../toc.html"
       <ul class="ul">
         <li class="li">
           <p class="p">Create starting flag and revision images:</p>
-          <pre class="pre codeblock"><code>&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/&gt;</code></pre></li>
+          <pre class="pre codeblock language-xml"><code>&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/&gt;</code></pre></li>
         <li class="li">
           <p class="p">Create ending flag and revision images:</p>
-          <pre class="pre codeblock"><code>&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/&gt;</code></pre></li>
+          <pre class="pre codeblock language-xml"><code>&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/&gt;</code></pre></li>
       </ul>
       <div class="p">For example, the following lines are used in DITA-OT 1.7 to process the <code class="keyword markupname xmlelement">&lt;ul&gt;</code> element
         (replacing the 29 lines used in DITA-OT
-        1.6):<pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:template match="*[contains(@class,' topic/ul ')]"&gt;
+        1.6):<pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:template match="*[contains(@class,' topic/ul ')]"&gt;
   <strong class="ph b">&lt;xsl:apply-templates select="*[contains(@class,' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/&gt;</strong>
   &lt;xsl:call-template name="setaname"/&gt;
   &lt;ul&gt;

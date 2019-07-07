@@ -16,7 +16,7 @@ index: "../toc.html"
       <p class="p">For example, if you always use the same rendering engine to produce PDF output for all of your projects, you
         could create a <span class="ph filepath">local.properties</span> file in the root directory of your DITA-OT installation to
         set the <span class="keyword parmname">pdf.formatter</span> parameter and additional options for the XSL processor:</p>
-      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code># Use RenderX XEP Engine for PDF output
+      <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code># Use RenderX XEP Engine for PDF output
 pdf.formatter = xep
 
 # Specify the user configuration file for RenderX
@@ -24,7 +24,7 @@ custom.xep.config = /path/to/custom.config</code></pre>
       <p class="p">Backslash “\” characters in .properties files must be escaped with a second backslash as “\\”. If you use
         Antenna House Formatter on a Windows system, for example, you would set the path to the command using a
         properties file entry like this:</p>
-      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code># Use Antenna House Formatter for PDF output
+      <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code># Use Antenna House Formatter for PDF output
 pdf.formatter = ah
 
 # Specify the path to the Antenna House Formatter command

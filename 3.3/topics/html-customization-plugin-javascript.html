@@ -9,6 +9,7 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Inserting JavaScript in generated HTML</h1>
   
   
+  
   <div class="body taskbody"><p class="shortdesc">JavaScript code can be bundled in a custom plug-in and automatically inserted into the generated HTML pages
     to enable web analytics or dynamic content delivery.</p>
     <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
@@ -31,7 +32,7 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample <span class="ph filepath">plugin.xml</span> file</figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;
 
 &lt;plugin id="com.example.html5-javascript"&gt;
@@ -52,7 +53,7 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample <span class="ph filepath">javascript.ftr.xml</span> file</figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;div&gt;
+            <pre class="pre codeblock language-javascript normalize-space show-line-numbers show-whitespace"><code>&lt;div&gt;
 &lt;!-- Google Analytics --&gt;
 &lt;script&gt;
 console.log('Adding Google Analytics tracker');
@@ -78,7 +79,7 @@ ga('send', 'pageview');
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample build file: <span class="ph filepath">build_html5-javascript.xml</span></figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 
 &lt;project&gt;
   &lt;target name="dita2html5-javascript"

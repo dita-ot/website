@@ -9,6 +9,7 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Adding a Java library to the DITA-OT <span class="keyword parmname">classpath</span></h1>
   
   
+  
   <div class="body taskbody"><p class="shortdesc">You can use the <code class="ph codeph">dita.conductor.lib.import</code> extension point to add an additional Java
     library to the DITA-OT <span class="keyword parmname">classpath</span> parameter.</p>
     <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
@@ -26,7 +27,7 @@ index: "../toc.html"
         <span class="ph cmd">If necessary, compile the Java code into a JAR file.</span>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Create a <span class="ph filepath">plugin.xml</span> file that contains the following code:</span>
-        <div class="itemgroup info"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
+        <div class="itemgroup info"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
   &lt;feature extension="dita.conductor.lib.import" file="<var class="keyword varname">file</var>"/&gt;
 &lt;/plugin&gt;</code></pre>where:
           <ul class="ul">
@@ -51,7 +52,7 @@ index: "../toc.html"
       <p class="p">The files might look like the following:</p>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span><span class="ph filepath">plugin.xml</span> file</figcaption>
         
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;plugin id="com.example.samplejava"&gt;
   <em class="ph i">&lt;!-- Add the JAR file to the DITA-OT CLASSPATH --&gt;</em>
   <strong class="ph b">&lt;feature extension="dita.conductor.lib.import" 
@@ -65,7 +66,7 @@ index: "../toc.html"
       </figure>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span><span class="ph filepath">calljava-antcode.xml</span> file</figcaption>
         
-        <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;project default="validateWithJava"&gt;
   &lt;target name="validateWithJava"&gt;
     &lt;java classname="com.example.sampleValidation"&gt;

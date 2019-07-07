@@ -9,10 +9,16 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Plug-in coding conventions</h1>
   
   
+  
   <div class="body conbody"><p class="shortdesc">To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases,
     the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding
     patterns.</p>
     <section class="section"><h2 class="title sectiontitle">Upgrade stylesheets to XSLT 2.0</h2>
+      
+      
+      
+      
+      
       
       <p class="p">The Saxon project has announced plans to remove XSLT 1.0 support from the Saxon-HE library that ships with
         DITA-OT:</p>
@@ -29,17 +35,22 @@ index: "../toc.html"
     </section>
     <section class="section"><h2 class="title sectiontitle">Use custom <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> elements</h2>
       
+      <div class="div div-index">
+        
+        
+        
+      </div>
       <p class="p">In Ant scripts, use the XSLT module from DITA-OT instead of Ant’s built-in <code class="keyword markupname xmlelement">&lt;xslt&gt;</code> or
           <code class="keyword markupname xmlelement">&lt;style&gt;</code> tasks. </p>
       <p class="p">The XSLT module allows access to DITA-OT features like using the job configuration to select files in the
         temporary folder based on file metadata and custom XSLT extension functions. </p>
       <p class="p">Instead of:</p>
-      <div class="p"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;xslt style="${dita.plugin.example.dir}/custom.xsl"
+      <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt style="${dita.plugin.example.dir}/custom.xsl"
       basedir="${dita.temp.dir}"
       destdir="${dita.output.dir}"
       includesfile="${dita.temp.dir}/${fullditatopicfile}"/&gt;</code></pre></div>
       <p class="p">use:</p>
-      <div class="p"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;pipeline&gt;
+      <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;pipeline&gt;
   &lt;xslt style="${dita.plugin.example.dir}/custom.xsl"
         destdir="${dita.output.dir}"&gt;
     &lt;ditafileset format="dita" /&gt;
@@ -52,18 +63,24 @@ index: "../toc.html"
       <p class="p">In Ant scripts, always refer to files in other plug-ins using the
             <code class="ph codeph">dita.plugin.<var class="keyword varname">plugin-id</var>.dir</code> property.</p>
       <p class="p">Instead of:</p>
-      <div class="p"><pre class="pre codeblock"><code>&lt;property name="base" location="../example/custom.xsl"/&gt;</code></pre></div>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;property name="base" location="../example/custom.xsl"/&gt;</code></pre></div>
       <p class="p">use:</p>
-      <div class="p"><pre class="pre codeblock"><code>&lt;property name="base" location="${dita.plugin.example.dir}/custom.xsl"/&gt;</code></pre></div>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;property name="base" location="${dita.plugin.example.dir}/custom.xsl"/&gt;</code></pre></div>
       <p class="p">This fixes cases where plug-ins are installed to custom plug-in directories or the plug-in folder name doesn’t
         match the plug-in ID.</p>
     </section>
 
     <section class="section"><h2 class="title sectiontitle">Use <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> to select files</h2>
       
+      <div class="div div-index">
+        
+        
+        
+        
+      </div>
       <p class="p">In Ant scripts, use <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> to select resources in the temporary directory.</p>
       <p class="p">For example, to select all images referenced by input DITA files, instead of:</p>
-      <div class="p"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;copy todir="${copy-image.todir}"&gt;
+      <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;copy todir="${copy-image.todir}"&gt;
   &lt;fileset dir="${user.input.dir}"&gt;
     &lt;includes name="*.jpg"/&gt;
     &lt;includes name="*.jpeg"/&gt;
@@ -73,7 +90,7 @@ index: "../toc.html"
   &lt;/fileset&gt;
 &lt;/copy&gt;</code></pre></div>
       <p class="p">use:</p>
-      <div class="p"><pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;copy todir="${copy-image.todir}"&gt;
+      <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;copy todir="${copy-image.todir}"&gt;
   &lt;ditafileset format="image" /&gt;
 &lt;/copy&gt;</code></pre>
       </div>
@@ -86,28 +103,32 @@ index: "../toc.html"
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">Selects all DITA topics in the temporary directory.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects all DITA topics in the temporary directory.</td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">Selects all DITA maps in the temporary directory.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects all DITA maps in the temporary directory.</td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">Selects images of all known types in the temporary directory.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects images of all known types in the temporary directory.</td>
             </tr>
           </tbody></table>
     </section>
 
     <section class="section"><h2 class="title sectiontitle">Use the <code class="ph codeph">plugin</code> URI scheme</h2>
       
+      <div class="div div-index">
+        
+        
+      </div>
       <p class="p">In XSLT, use the <code class="ph codeph">plugin</code> URI scheme in <code class="keyword markupname xmlelement">&lt;xsl:import&gt;</code> and
           <code class="keyword markupname xmlelement">&lt;xsl:include&gt;</code> to reference files in other plug-ins.</p>
       <p class="p">Instead of:</p>
-      <div class="p"><pre class="pre codeblock"><code>&lt;xsl:import href="../../org.dita.base/xsl/common/output-message.xsl"/&gt;</code></pre></div>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="../../org.dita.base/xsl/common/output-message.xsl"/&gt;</code></pre></div>
       <p class="p">use:</p>
-      <div class="p"><pre class="pre codeblock"><code>&lt;xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/&gt;</code></pre></div>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/&gt;</code></pre></div>
       <p class="p">As with the plug-in directory property in Ant, this allows plug-ins to resolve to the correct directory even
         when a plug-in moves to a new location. The plug-in is referenced using the syntax
             <code class="ph codeph">plugin:<var class="keyword varname">plugin-id</var>:<var class="keyword varname">path/within/plugin/file.xsl</var></code>.</p>
@@ -115,14 +136,17 @@ index: "../toc.html"
 
     <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
       
-      <div class="div" id="ID__d29e60">
+      <div class="div" id="ID__d29e92">
         <p class="p">DITA-OT includes a RELAX NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
-          files that define the capabilities of each plug-in.</p>
+          files that define the capabilities of each plug-in.
+        
+        
+        </p>
         <p class="p">To ensure the syntax of your custom plug-in is correct, include an <code class="keyword markupname xmlpi">&lt;?xml-model?&gt;</code> processing
           instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
         <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
-        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="ID__d29e83"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
+        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="ID__d29e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
           your plug-in file.</p>
       </div>
     </section>

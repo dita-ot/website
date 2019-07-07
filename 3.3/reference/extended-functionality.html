@@ -5,12 +5,13 @@ title: "Extended codeblock processing"
 index: "../toc.html"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../reference/DITA_spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../reference/DITA_v1-2-support.html">DITA 1.2 support</a></li><li><a href="../reference/DITA_v1-3-support.html">DITA 1.3 support</a></li><li><a href="../reference/implementation-dependent-features.html">Implementation-dependent features</a></li><li class="active"><a href="../reference/extended-functionality.html">Codeblock extensions</a></li><li><a href="../reference/DITA-features-in-docs.html">DITA features in docs</a></li></ul></li><li><a href="../reference/java-api.html">Java API</a></li><li><a href="../reference/license.html">License</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../reference/DITA_spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../reference/DITA_v1-2-support.html">DITA 1.2 support</a></li><li><a href="../reference/DITA_v1-3-support.html">DITA 1.3 support</a></li><li><a href="../reference/implementation-dependent-features.html">Implementation-dependent features</a></li><li class="active"><a href="../reference/extended-functionality.html">Codeblock extensions</a></li><li><a href="../reference/DITA-features-in-docs.html">DITA features in docs</a></li></ul></li><li><a href="../reference/license.html">License</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
 
   <h1 class="title topictitle1" id="ariaid-title1">Extended codeblock processing</h1>
 
   
 
+  
   
 
   <div class="body refbody"><p class="shortdesc">DITA-OT provides additional processing support beyond that which is mandated by the DITA specification.
@@ -24,11 +25,11 @@ index: "../toc.html"
       <p class="p">If a character set is not defined, the system default character set will be used. If the character set is not
         recognized or supported, the <span class="keyword msgnum">DOTJ052E</span> error is thrown and the system default character set is
         used as a fallback.</p>
-      <pre class="pre codeblock"><code>&lt;coderef href="unicode.txt" format="txt; charset=UTF-8"/&gt;</code></pre>
+      <pre class="pre codeblock language-xml"><code>&lt;coderef href="unicode.txt" format="txt; charset=UTF-8"/&gt;</code></pre>
       <p class="p">As of DITA-OT 3.3, the default character set for code references can be changed by adding the
           <span class="keyword parmname">default.coderef-charset</span> key to the
         <a class="xref" href="../parameters/configuration-properties-file.html" title="The configuration.properties file controls certain common properties, as well as some properties that control PDF processing.">configuration.properties</a> file:</p>
-      <pre class="pre codeblock"><code>default.coderef-charset = ISO-8859-1</code></pre>
+      <pre class="pre codeblock language-properties"><code>default.coderef-charset = ISO-8859-1</code></pre>
       <p class="p">The character set values are those supported by the Java
         <a class="xref" href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/Charset.html" target="_blank">Charset</a> class.</p>
     </section>
@@ -42,10 +43,11 @@ index: "../toc.html"
         last line of the file.</p>
     </section>
     <div class="example">
-      <pre class="pre codeblock"><code>&lt;coderef href="Parser.scala#line-range(5, 10)" format="scala"/&gt;</code></pre>
+      <pre class="pre codeblock language-xml"><code>&lt;coderef href="Parser.scala#line-range(5, 10)" format="scala"/&gt;</code></pre>
       <p class="p">Only lines from 5 to 10 will be included in the output.</p>
     </div>
     <section class="section"><h2 class="title sectiontitle">RFC 5147</h2>
+      
       
       <p class="p">DITA-OT also supports the line position and range syntax from
         <a class="xref" href="http://tools.ietf.org/html/rfc5147" target="_blank">RFC 5147</a>. The format for line range is:</p>
@@ -57,7 +59,7 @@ index: "../toc.html"
       <p class="p">The position line number starts from 0.</p>
     </section>
     <div class="example">
-      <pre class="pre codeblock"><code>&lt;coderef href="Parser.scala#line=4,10" format="scala"/&gt;</code></pre>
+      <pre class="pre codeblock language-xml"><code>&lt;coderef href="Parser.scala#line=4,10" format="scala"/&gt;</code></pre>
       <p class="p">Only lines from 5 to 10 will be included in the output.</p>
     </div>
     <section class="section"><h2 class="title sectiontitle">Line range by content</h2>
@@ -75,18 +77,18 @@ index: "../toc.html"
     </section>
     <div class="example">
       <p class="p">Given a Haskell source file named <span class="ph filepath">fact.hs</span> with the following content,</p>
-      <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>-- START-FACT
+      <pre class="pre codeblock language-haskell normalize-space show-line-numbers show-whitespace"><code>-- START-FACT
 fact :: Int -&gt; Int
 fact 0 = 1
 fact n = n * fact (n-1)
 -- END-FACT
 main = print $ fact 7</code></pre>
       <p class="p">a range of lines can be referenced as:</p>
-      <pre class="pre codeblock"><code>&lt;coderef href="fact.hs#token=START-FACT,END-FACT"/&gt;</code></pre>
+      <pre class="pre codeblock language-xml"><code>&lt;coderef href="fact.hs#token=START-FACT,END-FACT"/&gt;</code></pre>
       <p class="p">to include the range of lines that follows the <code class="ph codeph">START-FACT</code> token on Line 1, up to (but not
         including) the line that contains the <code class="ph codeph">END-FACT</code> token (Line 5). The resulting
           <code class="keyword markupname xmlelement">&lt;codeblock&gt;</code> would contain lines 2–4:</p>
-      <pre class="pre codeblock"><code>fact :: Int -&gt; Int
+      <pre class="pre codeblock language-haskell"><code>fact :: Int -&gt; Int
 fact 0 = 1
 fact n = n * fact (n-1)</code></pre>
       <div class="note tip note_tip" id="code-reference__coderef-by-content-tip"><span class="note__title">Tip:</span> This approach can be used to reference code samples that are
@@ -97,11 +99,12 @@ fact n = n * fact (n-1)</code></pre>
     <div class="bodydiv refbodydiv" id="code-reference__normalize-codeblock-whitespace">
       <section class="section"><h2 class="title sectiontitle">Whitespace normalization</h2>
         
+        
         <p class="p">DITA-OT can adjust the leading whitespace in code blocks to remove excess indentation and keep lines short.
           Given an XML snippet in a codeblock with lines that all begin with spaces (indicated here as dots “·”),</p>
       </section>
       <div class="example">
-        <div class="p"><pre class="pre codeblock"><code>··&lt;subjectdef keys="audience"&gt;
+        <div class="p"><pre class="pre codeblock language-xml"><code>··&lt;subjectdef keys="audience"&gt;
 ····&lt;subjectdef keys="novice"/&gt;
 ····&lt;subjectdef keys="expert"/&gt;
 ··&lt;/subjectdef&gt;</code></pre></div>
@@ -111,7 +114,7 @@ fact n = n * fact (n-1)</code></pre>
         <p class="p">In this case, two spaces (“··”) would be removed from the beginning of each line, shifting content to the
           left by two characters, while preserving the indentation of lines that contain additional whitespace (beyond
           the common indent):</p>
-        <div class="p"><pre class="pre codeblock"><code>&lt;subjectdef keys="audience"&gt;
+        <div class="p"><pre class="pre codeblock language-xml"><code>&lt;subjectdef keys="audience"&gt;
 ··&lt;subjectdef keys="novice"/&gt;
 ··&lt;subjectdef keys="expert"/&gt;
 &lt;/subjectdef&gt;</code></pre></div>
@@ -132,6 +135,7 @@ fact n = n * fact (n-1)</code></pre>
     </div>
     <div class="bodydiv refbodydiv" id="code-reference__codeblock-line-numbers">
       <section class="section"><h2 class="title sectiontitle">Line numbering (PDF)</h2>
+        
         
         <p class="p">DITA-OT can be set to add line numbers to code blocks to make it easier to distinguish specific lines.</p>
         <p class="p">To enable this feature, set the <code class="keyword markupname xmlatt">@outputclass</code> attribute on the

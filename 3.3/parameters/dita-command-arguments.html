@@ -64,6 +64,19 @@ index: "../toc.html"
     </section>
     <section class="section"><h2 class="title sectiontitle">Arguments</h2>
       
+      <div class="div div-index">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
       <dl class="dl parml">
         
           <dt class="dt pt dlterm">
@@ -92,6 +105,7 @@ index: "../toc.html"
           <dd class="dd pd ddexpand">
             <div class="p">You can create plug-ins to add new output formats; by default, the following values are
                 available:
+                
                 <ul class="ul">
                   <li class="li"><span class="keyword option">dita</span></li>
                   <li class="li"><span class="keyword option">eclipsehelp</span></li>
@@ -105,7 +119,8 @@ index: "../toc.html"
                   <li class="li"><span class="keyword option">xhtml</span></li>
                 </ul>
                 <div class="note tip note_tip"><span class="note__title">Tip:</span> See <a class="xref" href="../resources/../topics/output-formats.html" title="DITA Open Toolkit ships with several core transformations that generate different output formats from DITA content. Each transformation represents an implementation of the processing that is defined by OASIS in the DITA specification.">DITA-OT transformations (output formats)</a> for sample command line syntax and more information
-                  on each transformation.</div>
+                  on each transformation.
+                </div>
               </div>
           </dd>
         
@@ -138,7 +153,8 @@ index: "../toc.html"
             <span class="keyword parmname">--plugins</span>.</dd>
           <dd class="dd pd ddexpand">
             <div class="note attention note_attention"><span class="note__title">Attention:</span> The <span class="keyword parmname">--uninstall</span> option also
-                  removes the corresponding subdirectory from the <span class="ph filepath">plugins</span> folder.</div>
+                  removes the corresponding subdirectory from the <span class="ph filepath">plugins</span>
+                folder.</div>
           </dd>
         
         
@@ -172,6 +188,25 @@ index: "../toc.html"
     </section>
     <section class="section"><h2 class="title sectiontitle">Options</h2>
       
+      <div class="div div-index">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
       <dl class="dl parml" id="dita-command-properties__dita_build_options">
         
           <dt class="dt pt dlterm">
@@ -192,8 +227,19 @@ index: "../toc.html"
             <span class="keyword parmname">--filter</span>=<var class="keyword varname">files</var>
           </dt>
           <dd class="dd pd">Specifies filter file(s) used to include, exclude, or flag content. </dd>
-          <dd class="dd pd ddexpand">This argument corresponds to the common parameter <span class="keyword parmname">args.filter</span>. Relative paths are
-            resolved against the current directory and internally converted to absolute paths.</dd>
+          <dd class="dd pd ddexpand">
+            <p class="p">This argument corresponds to the common parameter <span class="keyword parmname">args.filter</span>. Relative paths are
+              resolved against the current directory and internally converted to absolute paths.</p>
+            <div class="note note note_note"><span class="note__title">Note:</span> 
+              <p class="p">To specify multiple filter files, use the system path separator character to delimit individual file
+                paths (semicolon ‘<code class="ph codeph">;</code>’ on Windows, and colon ‘<code class="ph codeph">:</code>’ on macOS and Linux) and
+                wrap the value in quotes:</p>
+              <p class="p"><code class="ph codeph">--filter="filter1.ditaval;filter2.ditaval;filter3.ditaval"</code></p>
+              <p class="p">DITAVAL files are evaluated in the order specified, so conditions specified in the first file take
+                precedence over matching conditions specified in later files, just as conditions at the start of a
+                DITAVAL document take precedence over matching conditions later in the same document.</p>
+            </div>
+          </dd>
         
         
           <dt class="dt pt dlterm">
@@ -257,7 +303,10 @@ index: "../toc.html"
                 <span class="ph filepath">.properties</span> file are ignored.</p><div class="note tip note_tip"><span class="note__title">Tip:</span> If you are building in different environments where the location of the input
         files is not consistent, set <span class="keyword option">args.input.dir</span> with the <span class="keyword cmdname">dita</span> command and
         reference its value with <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span>
-        file.</div></dd>
+        file.
+        
+        
+      </div></dd>
         
         
           <dt class="dt pt dlterm">
@@ -270,4 +319,4 @@ index: "../toc.html"
       </dl>
     </section>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/build-using-dita-command.html" title="You can generate output using the DITA Open Toolkit dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a></li><li class="linklist"><a class="link" href="../topics/using-dita-properties-file.html" title="Usually, DITA builds require setting a number of parameters that do not change frequently. You can reference a set of build parameters defined in a .properties file when building output with the dita command. If needed, you can override any parameter by specifying it explicitly as an argument to the dita command.">Setting build parameters with .properties files</a></li></ul></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="../parameters/internal-ant-properties.html" title="Reference list of Ant properties used by DITA-OT internally.">Internal Ant properties</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><div class="linklist relinfo reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/build-using-dita-command.html" title="You can generate output using the dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a></li><li class="linklist"><a class="link" href="../topics/using-dita-properties-file.html" title="Usually, DITA builds require setting a number of parameters that do not change frequently. You can reference a set of build parameters defined in a .properties file when building output with the dita command. If needed, you can override any parameter by specifying it explicitly as an argument to the dita command.">Setting build parameters with .properties files</a></li></ul></div><div class="linklist relinfo relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="../parameters/internal-ant-properties.html" title="Reference list of Ant properties used by DITA-OT internally.">Internal Ant properties</a></li></ul></div></nav></article></main>

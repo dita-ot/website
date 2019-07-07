@@ -9,6 +9,7 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Implementing custom Saxon collation URI resolvers</h1>
   
   
+  
   <div class="body"><p class="shortdesc">Plug-ins can provide custom URI resolvers that provide collators for specific collation URIs.</p>
     <p class="p">To do custom sorting and grouping in XSLT, you identify collators using URIs that Saxon resolves to collator
       implementations. You implement the mapping from collation URIs to collators through custom collation URI
@@ -67,7 +68,7 @@ index: "../toc.html"
             <code class="ph codeph">org.dita.dost.module.saxon.DelegatingCollationUriResolver</code>:<pre class="pre codeblock"><code>org.example.i18n.saxon.MyCollationUriResolver</code></pre>
           <div class="p">You can create the services file using <code class="keyword markupname xmlelement">&lt;service&gt;</code> elements in an Ant
             <code class="keyword markupname xmlelement">&lt;jar&gt;</code>
-            task:<pre class="pre codeblock"><code>&lt;jar destfile="${basedir}/target/lib/example-saxon.jar"&gt;
+            task:<pre class="pre codeblock language-xml"><code>&lt;jar destfile="${basedir}/target/lib/example-saxon.jar"&gt;
   ⋮
   &lt;service type="org.dita.dost.module.saxon.DelegatingCollationUriResolver"&gt;
     &lt;provider classname="org.example.i18n.saxon.MyCollationUriResolver"/&gt;
@@ -76,7 +77,7 @@ index: "../toc.html"
 &lt;/jar&gt;</code></pre></div></li>
         <li class="li">To use the collator in XSLT style sheets, specify the collation URI on <code class="keyword markupname xmlatt">@xsl:sort</code> elements (or
           anywhere a collator URI can be
-          specified):<pre class="pre codeblock"><code>&lt;xsl:apply-templates select="word"&gt;
+          specified):<pre class="pre codeblock language-xml"><code>&lt;xsl:apply-templates select="word"&gt;
   &lt;xsl:sort collation="http://org.example.i18n.MyCollator"/&gt;
 &lt;/xsl:apply-templates&gt;</code></pre></li>
       </ol></div>
