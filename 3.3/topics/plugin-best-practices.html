@@ -9,6 +9,7 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Best practices for custom plug-ins</h1>
   
   
+  
   <div class="body conbody"><p class="shortdesc">Adhering to certain development practices will properly isolate your code from that of DITA Open Toolkit.
     This will make it easier to you to upgrade to new versions of DITA-OT when they are released.</p>
     <ul class="ul">
@@ -37,12 +38,15 @@ index: "../toc.html"
           releases before upgrading.</p></li>
       <li class="li"><div class="div">
         <p class="p">DITA-OT includes a RELAX NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
-          files that define the capabilities of each plug-in.</p>
+          files that define the capabilities of each plug-in.
+        
+        
+        </p>
         <p class="p">To ensure the syntax of your custom plug-in is correct, include an <code class="keyword markupname xmlpi">&lt;?xml-model?&gt;</code> processing
           instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
         <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
-        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="best-practices-pdf-customization-plugins__d29e83"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
+        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="best-practices-pdf-customization-plugins__d29e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
           your plug-in file.</p>
       </div></li>
       <li class="li">
@@ -53,8 +57,8 @@ index: "../toc.html"
         <p class="p">For example, instead of creating a template named <code class="ph codeph">searchbar</code>, use something like
             <code class="ph codeph">corp:searchbar</code> instead. This ensures that if future versions of DITA-OT add a
             <code class="ph codeph">searchbar</code> template, your custom version will be unaffected.</p>
-        <div class="p">Instead of: <pre class="pre codeblock"><code>&lt;xsl:template name="searchbar"/&gt;</code></pre></div>
-        <div class="p">use: <pre class="pre codeblock"><code>&lt;xsl:template name="corp:searchbar"/&gt;</code></pre></div>
+        <div class="p">Instead of: <pre class="pre codeblock language-xml"><code>&lt;xsl:template name="searchbar"/&gt;</code></pre></div>
+        <div class="p">use: <pre class="pre codeblock language-xml"><code>&lt;xsl:template name="corp:searchbar"/&gt;</code></pre></div>
       </li>
     </ul>
   </div>

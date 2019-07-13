@@ -8,6 +8,7 @@ index: "../toc.html"
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li class="active"><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-applications.html">Plug-in applications</a></li><li><a href="../topics/plugin-sample.html">Example plugin.xml file</a></li><li><a href="../topics/plugin-best-practices.html">Best practices</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Removing plug-ins</h1>
   
+  
   <div class="body taskbody"><p class="shortdesc">Use the <span class="keyword cmdname">dita</span> command to uninstall a plug-in.</p>
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
@@ -20,9 +21,12 @@ index: "../toc.html"
                 defined in the plug-in’s configuration file (<span class="ph filepath">plugin.xml</span>).</li>
           </ul>
           <div class="note attention note_attention"><span class="note__title">Attention:</span> The <span class="keyword parmname">--uninstall</span> option also
-                  removes the corresponding subdirectory from the <span class="ph filepath">plugins</span> folder.</div>
+                  removes the corresponding subdirectory from the <span class="ph filepath">plugins</span>
+                folder.</div>
           <div class="note tip note_tip"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
-              <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.</div>
+              <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.
+            
+          </div>
         </div>
       </div></section>
   </div>

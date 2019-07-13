@@ -9,6 +9,7 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Implementing Saxon extension functions</h1>
   
   
+  
   <div class="body"><p class="shortdesc">Plug-ins can contribute Saxon extension functions for use in XSLT transformations run by DITA Open
     Toolkit.</p>
     <p class="p">Starting with Saxon 9.2, the mechanism for implementing extension functions has changed such that Saxon HE, in
@@ -27,7 +28,7 @@ index: "../toc.html"
 com.example.saxon.functions.Substract</code></pre>
           <div class="p">You can create the file using <code class="keyword markupname xmlelement">&lt;service&gt;</code> elements in an Ant
               <code class="keyword markupname xmlelement">&lt;jar&gt;</code>
-            task:<pre class="pre codeblock"><code>&lt;jar destfile="${basedir}/target/lib/example-saxon.jar"&gt;
+            task:<pre class="pre codeblock language-xml"><code>&lt;jar destfile="${basedir}/target/lib/example-saxon.jar"&gt;
   ⋮
   &lt;service type="net.sf.saxon.lib.ExtensionFunctionDefinition"&gt;
     &lt;provider classname="com.example.saxon.functions.Add"/&gt;
@@ -36,12 +37,12 @@ com.example.saxon.functions.Substract</code></pre>
   ⋮
 &lt;/jar&gt;</code></pre></div></li>
         <li class="li">In your XSLT transformations, declare the namespace the functions are bound
-          to:<pre class="pre codeblock"><code>&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+          to:<pre class="pre codeblock language-xml"><code>&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 <strong class="ph b">xmlns:eg="http://example.com/saxon-extensions"</strong>
                 version="2.0"&gt;</code></pre></li>
       </ol></div>
     <div class="p">You should then be able to use the extension functions as you would any other
-      function:<pre class="pre codeblock"><code>&lt;xsl:variable name="test" select="<strong class="ph b">eg:add(1, 2)</strong>"/&gt;</code></pre></div>
+      function:<pre class="pre codeblock language-xml"><code>&lt;xsl:variable name="test" select="<strong class="ph b">eg:add(1, 2)</strong>"/&gt;</code></pre></div>
   </div>
 </article></main>

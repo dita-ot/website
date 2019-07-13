@@ -9,6 +9,7 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Embedding web fonts in HTML output</h1>
   
   
+  
   <div class="body taskbody"><p class="shortdesc">A custom plug-in can be created to generate HTML output that uses custom fonts for enhanced typographic
     features, extended character sets or a unique corporate identity.</p>
     <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
@@ -48,7 +49,7 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample <span class="ph filepath">plugin.xml</span> file</figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;
 
 &lt;plugin id="com.example.html5-webfont"&gt;
@@ -69,7 +70,7 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample <span class="ph filepath">webfont.hdf.xml</span> file</figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;div&gt;
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;div&gt;
   &lt;link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"&gt;&lt;/link&gt;
 &lt;/div&gt;</code></pre>
           </figure>
@@ -87,7 +88,7 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample <span class="ph filepath">custom.css</span> file</figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>body {
+            <pre class="pre codeblock language-css normalize-space show-line-numbers show-whitespace"><code>body {
   font-family: 'Noto Sans', sans-serif;
 }</code></pre>
           </figure>
@@ -100,7 +101,7 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span>Sample build file: <span class="ph filepath">build_html5-webfont.xml</span></figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 
 &lt;project&gt;
   &lt;target name="dita2html5-webfont"

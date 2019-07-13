@@ -9,6 +9,7 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Bundling CSS in a custom HTML plug-in</h1>
   
   
+  
   <div class="body taskbody"><p class="shortdesc">You can create a DITA-OT plug-in that provides a custom stylesheet with the typography and colors that
     define your corporate identity. Coworkers can install this plug-in to ensure consistent HTML output across projects
     without having to copy the stylesheet to each project.</p>
@@ -47,7 +48,7 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample <span class="ph filepath">plugin.xml</span> file</figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;
 
 &lt;plugin id="com.example.html5-custom-css"&gt;
@@ -68,7 +69,7 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample <span class="ph filepath">custom.css</span> file</figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>/* These custom styles extend or override DITA Open Toolkit default styles. */
+            <pre class="pre codeblock language-css normalize-space show-line-numbers show-whitespace"><code>/* These custom styles extend or override DITA Open Toolkit default styles. */
 
 body {
   color: red
@@ -85,7 +86,7 @@ body {
         <div class="itemgroup stepxmp">
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample build file: <span class="ph filepath">build_html5-custom-css.xml</span></figcaption>
             
-            <pre class="pre codeblock normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 
 &lt;project&gt;
   &lt;target name="dita2html5-custom-css"

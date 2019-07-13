@@ -9,6 +9,7 @@ index: "../toc.html"
   <h1 class="title topictitle1" id="ariaid-title1">Markdown DITA syntax reference</h1>
   
   
+  
 
   <div class="body"><p class="shortdesc">Markdown DITA uses
     <a class="xref" href="http://commonmark.org" target="_blank">CommonMark</a> as the underlying markup language.</p>
@@ -16,9 +17,9 @@ index: "../toc.html"
     <section class="section" id="markdown-dita-syntax-reference__titles-and-document-structure"><h2 class="title sectiontitle">Titles and document structure</h2>
       
       <p class="p">Each header level will generate a topic and associated title:</p>
-      <pre class="pre codeblock markdown"><code># Topic title
+      <pre class="pre codeblock language-markdown"><code># Topic title
 
-## Nested topic title</code></pre><pre class="pre codeblock xml"><code>&lt;topic id="topic_title"&gt;
+## Nested topic title</code></pre><pre class="pre codeblock language-xml"><code>&lt;topic id="topic_title"&gt;
   &lt;title&gt;Topic title&lt;/title&gt;
   &lt;topic id="nested_topic_title"&gt;
     &lt;title&gt;Nested topic title&lt;/title&gt;
@@ -26,17 +27,17 @@ index: "../toc.html"
 &lt;/topic&gt;</code></pre>
       <p class="p">Pandoc
         <a class="xref" href="http://pandoc.org/MANUAL.html#extension-header_attributes" target="_blank">header_attributes</a> can be used to define <code class="ph codeph">id</code> or
-          <code class="ph codeph">outputclass</code> attributes:</p><pre class="pre codeblock markdown"><code># Topic title {#carrot .juice}</code></pre><pre class="pre codeblock xml"><code>&lt;topic id="carrot" outputclass="juice"&gt;
+          <code class="ph codeph">outputclass</code> attributes:</p><pre class="pre codeblock language-markdown"><code># Topic title {#carrot .juice}</code></pre><pre class="pre codeblock language-xml"><code>&lt;topic id="carrot" outputclass="juice"&gt;
   &lt;title&gt;Topic title&lt;/title&gt;</code></pre>
       <p class="p">If topic ID is not defined using header_attributes, the ID is generated from title contents.</p>
       <p class="p">Pandoc
         <a class="xref" href="http://pandoc.org/MANUAL.html#extension-pandoc_title_block" target="_blank">pandoc_title_block</a>
         extension can be used to group multiple level 1 headers under a common
-      title:</p><pre class="pre codeblock markdown"><code>% Common title
+      title:</p><pre class="pre codeblock language-markdown"><code>% Common title
 
 # Topic title
 
-# Second title</code></pre><pre class="pre codeblock xml"><code>&lt;topic id="common_title"&gt;
+# Second title</code></pre><pre class="pre codeblock language-xml"><code>&lt;topic id="common_title"&gt;
   &lt;title&gt;Common title&lt;/title&gt;
   &lt;topic id="topic_title"&gt;
     &lt;title&gt;Topic title&lt;/title&gt;
@@ -62,13 +63,13 @@ index: "../toc.html"
           <p class="p"><code class="ph codeph">reference</code></p></li>
       </ul>
       <p class="p">They can be used to change the Markdown DITA topic type to one of the built-in structural specialization
-        types.</p><pre class="pre codeblock markdown"><code># Task {.task}
+        types.</p><pre class="pre codeblock language-markdown"><code># Task {.task}
 
 Context
 
 1.  Command
 
-    Info.</code></pre><pre class="pre codeblock xml"><code>&lt;task id="task"&gt;
+    Info.</code></pre><pre class="pre codeblock language-xml"><code>&lt;task id="task"&gt;
   &lt;title&gt;Task &lt;/title&gt;
   &lt;taskbody&gt;
     &lt;context&gt;
@@ -97,11 +98,11 @@ Context
       <p class="p">They are used to generate
         <a class="xref" href="http://docs.oasis-open.org/dita/v1.2/os/spec/langref/section.html" target="_blank"><code class="ph codeph">section</code></a> and
         <a class="xref" href="http://docs.oasis-open.org/dita/v1.2/os/spec/langref/example.html" target="_blank"><code class="ph codeph">example</code></a>
-      elements:</p><pre class="pre codeblock markdown"><code># Topic title
+      elements:</p><pre class="pre codeblock language-markdown"><code># Topic title
 
 ## Section title {.section}
 
-## Example title {.example}</code></pre><pre class="pre codeblock xml"><code>&lt;topic id="topic_title"&gt;
+## Example title {.example}</code></pre><pre class="pre codeblock language-xml"><code>&lt;topic id="topic_title"&gt;
   &lt;title&gt;Topic title&lt;/title&gt;
   &lt;body&gt;
     &lt;section&gt;
@@ -123,40 +124,43 @@ Context
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.dita</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">dita</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1"><code class="ph codeph">.dita</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2"><code class="ph codeph">dita</code></td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.xml</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">dita</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1"><code class="ph codeph">.xml</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2"><code class="ph codeph">dita</code></td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.md</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">markdown</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1"><code class="ph codeph">.md</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2"><code class="ph codeph">markdown</code></td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1 "><code class="ph codeph">.markdown</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2 "><code class="ph codeph">markdown</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__1"><code class="ph codeph">.markdown</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="markdown-dita-syntax-reference__links__entry__2"><code class="ph codeph">markdown</code></td>
             </tr>
           </tbody></table>
       <p class="p">All other link targets use <code class="ph codeph">format</code> from file extension and are treated as non-DITA files.
         Absolute links targets are treated as external scope
-      links:</p><pre class="pre codeblock markdown"><code>[Markdown](test.md)
+      links:</p><pre class="pre codeblock language-markdown"><code>[Markdown](test.md)
 [DITA](test.dita)
 [HTML](test.html)
-[External](http://www.example.com/test.html)</code></pre><pre class="pre codeblock xml"><code>&lt;xref href="test.md"&gt;Markdown&lt;/xref&gt;
+[External](http://www.example.com/test.html)</code></pre><pre class="pre codeblock language-xml"><code>&lt;xref href="test.md"&gt;Markdown&lt;/xref&gt;
 &lt;xref href="test.dita"&gt;DITA&lt;/xref&gt;
 &lt;xref href="test.html" format="html"&gt;HTML&lt;/xref&gt;
 &lt;xref href="http://www.example.com/test.html" format="html" scope="external"&gt;External&lt;/xref&gt;</code></pre></section>
     <section class="section" id="markdown-dita-syntax-reference__images"><h2 class="title sectiontitle">Images</h2>
       
+      <div class="div div-index">
+        
+      </div>
       <p class="p">Images used in inline content will result in inline placement. If a block level image contains a title, it will
         be treated as an image wrapped in
-      figure:</p><pre class="pre codeblock markdown"><code>An inline ![Alt](test.jpg).
+      figure:</p><pre class="pre codeblock language-markdown"><code>An inline ![Alt](test.jpg).
 
 ![Alt](test.jpg)
 
-![Alt](test.jpg "Title")</code></pre><pre class="pre codeblock xml"><code>&lt;p&gt;An inline &lt;image href="test.jpg"&gt;&lt;alt&gt;Alt&lt;/alt&gt;&lt;/image&gt;.&lt;/p&gt;
+![Alt](test.jpg "Title")</code></pre><pre class="pre codeblock language-xml"><code>&lt;p&gt;An inline &lt;image href="test.jpg"&gt;&lt;alt&gt;Alt&lt;/alt&gt;&lt;/image&gt;.&lt;/p&gt;
 &lt;image href="test.jpg" placement="break"&gt;
   &lt;alt&gt;Alt&lt;/alt&gt;
 &lt;/image&gt;
@@ -171,25 +175,25 @@ Context
       <p class="p">Key reference can be used with
         <a class="xref" href="http://spec.commonmark.org/0.18/#shortcut-reference-link" target="_blank">shortcut
           reference
-      links</a>:</p><pre class="pre codeblock markdown"><code>[key]
-![image-key]</code></pre><pre class="pre codeblock xml"><code>&lt;xref keyref="key"/&gt;
+      links</a>:</p><pre class="pre codeblock language-markdown"><code>[key]
+![image-key]</code></pre><pre class="pre codeblock language-xml"><code>&lt;xref keyref="key"/&gt;
 &lt;image keyref="image-key"/&gt;</code></pre></section>
     <section class="section" id="markdown-dita-syntax-reference__inline"><h2 class="title sectiontitle">Inline</h2>
       
       <p class="p">The following inline elements are
-      supported:</p><pre class="pre codeblock markdown"><code>**bold**
+      supported:</p><pre class="pre codeblock language-markdown"><code>**bold**
 *italic*
 `code`
-~~strikethrough~~</code></pre><pre class="pre codeblock xml"><code>&lt;b&gt;bold&lt;/b&gt;
+~~strikethrough~~</code></pre><pre class="pre codeblock language-xml"><code>&lt;b&gt;bold&lt;/b&gt;
 &lt;i&gt;italic&lt;/i&gt;
 &lt;codeph&gt;code&lt;/codeph&gt;
 &lt;ph status="deleted"&gt;strikethrough&lt;/ph&gt;</code></pre></section>
     <section class="section" id="markdown-dita-syntax-reference__lists"><h2 class="title sectiontitle">Lists</h2>
       
-      <p class="p">Unordered can be marked up with either hyphen or ampersand:</p><pre class="pre codeblock markdown"><code>*   one
+      <p class="p">Unordered can be marked up with either hyphen or ampersand:</p><pre class="pre codeblock language-markdown"><code>*   one
 *   two
     -   three
-    -   four</code></pre><pre class="pre codeblock xml"><code>&lt;ul&gt;
+    -   four</code></pre><pre class="pre codeblock language-xml"><code>&lt;ul&gt;
   &lt;li&gt;one&lt;/li&gt;
   &lt;li&gt;two
     &lt;ul&gt;
@@ -198,10 +202,10 @@ Context
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-      <p class="p">Ordered can be marked up with either number or number sign, followed by a period:</p><pre class="pre codeblock markdown"><code>1.  one
+      <p class="p">Ordered can be marked up with either number or number sign, followed by a period:</p><pre class="pre codeblock language-markdown"><code>1.  one
 2.  two
     #.  three
-    #.  four</code></pre><pre class="pre codeblock xml"><code>&lt;ol&gt;
+    #.  four</code></pre><pre class="pre codeblock language-xml"><code>&lt;ol&gt;
   &lt;li&gt;one&lt;/li&gt;
   &lt;li&gt;two
     &lt;ol&gt;
@@ -212,8 +216,8 @@ Context
 &lt;/ul&gt;</code></pre>
       <p class="p">Definition lists use the
         <a class="xref" href="http://michelf.com/projects/php-markdown/extra/#def-list" target="_blank">PHP
-          Markdown Extra</a> format:</p><pre class="pre codeblock markdown"><code>Term
-:   Definition.</code></pre><pre class="pre codeblock xml"><code>&lt;dl&gt;
+          Markdown Extra</a> format:</p><pre class="pre codeblock language-markdown"><code>Term
+:   Definition.</code></pre><pre class="pre codeblock language-xml"><code>&lt;dl&gt;
   &lt;delentry&gt;
     &lt;dt&gt;Term&lt;/dt&gt;
     &lt;dd&gt;Defintion.&lt;/dd&gt;
@@ -222,12 +226,15 @@ Context
       <p class="p">Each definition entry must have only one term and contain only inline content.</p></section>
     <section class="section" id="markdown-dita-syntax-reference__tables"><h2 class="title sectiontitle">Tables</h2>
       
+      <div class="div div-index">
+        
+      </div>
       <p class="p">Tables use
         <a class="xref" href="http://fletcherpenney.net/multimarkdown/" target="_blank">MultiMarkdown</a> table
-        extension format:</p><pre class="pre codeblock markdown"><code>| First Header | Second Header | Third Header |
+        extension format:</p><pre class="pre codeblock language-markdown"><code>| First Header | Second Header | Third Header |
 | ------------ | :-----------: | -----------: |
 | Content      | *Long Cell*                 ||
-| Content      | **Cell**      | Cell         |</code></pre><pre class="pre codeblock xml"><code>&lt;table&gt;
+| Content      | **Cell**      | Cell         |</code></pre><pre class="pre codeblock language-xml"><code>&lt;table&gt;
   &lt;tgroup cols="3"&gt;
     &lt;colspec colname="col1"/&gt;
     &lt;colspec colname="col2" align="center"/&gt;
@@ -256,6 +263,11 @@ Context
         Markdown DITA.</p></section>
     <section class="section" id="markdown-dita-syntax-reference__metadata"><h2 class="title sectiontitle">Metadata</h2>
       
+      <div class="div div-index">
+        
+        
+        
+      </div>
       <p class="p">
         <a class="xref" href="http://www.yaml.org/" target="_blank">YAML</a> metadata block as defined in Pandoc
         <a class="xref" href="http://pandoc.org/MANUAL.html#extension-yaml_metadata_block" target="_blank">pandoc_metadata_block</a> can be used to specify different metadata elements. The supported elements
@@ -279,7 +291,7 @@ Context
           <p class="p"><code class="ph codeph">resourceid</code></p></li>
       </ul>
       <p class="p">Unrecognized keys are output using <code class="ph codeph">data</code>
-      element.</p><pre class="pre codeblock markdown"><code>---
+      element.</p><pre class="pre codeblock language-markdown"><code>---
 author:
   - Author One
   - Author Two
@@ -297,7 +309,7 @@ resourceid:
 workflow: review
 ---
 
-# Sample with YAML header</code></pre><pre class="pre codeblock xml"><code>&lt;title&gt;Sample with YAML header&lt;/title&gt;
+# Sample with YAML header</code></pre><pre class="pre codeblock language-xml"><code>&lt;title&gt;Sample with YAML header&lt;/title&gt;
 &lt;prolog&gt;
   &lt;author&gt;Author One&lt;/author&gt;
   &lt;author&gt;Author Two&lt;/author&gt;

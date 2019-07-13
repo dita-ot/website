@@ -11,6 +11,8 @@ index: "../toc.html"
   
 
   
+  
+  
 
   <div class="body refbody"><p class="shortdesc">DITA-OT 1.5.4 adds new extension points to configure behavior based on file extensions, declare print
     transformation types and add mappings to the PDF configuration catalog file. PDF output supports mirrored page
@@ -39,24 +41,24 @@ index: "../toc.html"
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><span class="keyword parmname">dita.topic.extension</span></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">DITA topic</td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__3 "><span class="ph filepath">.dita</span>, <span class="ph filepath">.xml</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><span class="keyword parmname">dita.topic.extension</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">DITA topic</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__3"><span class="ph filepath">.dita</span>, <span class="ph filepath">.xml</span></td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><span class="keyword parmname">dita.map.extensions</span></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">DITA map</td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__3 "><span class="ph filepath">.ditamap</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><span class="keyword parmname">dita.map.extensions</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">DITA map</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__3"><span class="ph filepath">.ditamap</span></td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><span class="keyword parmname">dita.html.extensions</span></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">HTML file</td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__3 "><span class="ph filepath">.html</span>, <span class="ph filepath">.htm</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><span class="keyword parmname">dita.html.extensions</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">HTML file</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__3"><span class="ph filepath">.html</span>, <span class="ph filepath">.htm</span></td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1 "><span class="keyword parmname">dita.resource.extensions</span></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2 ">Resource file</td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__3 "><span class="ph filepath">.pdf</span>, <span class="ph filepath">.swf</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><span class="keyword parmname">dita.resource.extensions</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Resource file</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__3"><span class="ph filepath">.pdf</span>, <span class="ph filepath">.swf</span></td>
             </tr>
           </tbody></table>
       <p class="p">Both HTML and resource file extensions are used to determine if a file in source is copied to output.</p>
@@ -68,8 +70,8 @@ index: "../toc.html"
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__16 "><span class="keyword parmname">dita.transtype.print</span></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__17 ">Declare transformation type as a print type.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__16"><span class="keyword parmname">dita.transtype.print</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__17">Declare transformation type as a print type.</td>
             </tr>
           </tbody></table>
       <p class="p">The <code class="ph codeph">print_transtypes</code> property in <span class="ph filepath">integrator.properties</span> has been
@@ -79,7 +81,7 @@ index: "../toc.html"
       
       <p class="p">Support for the <span class="keyword">plugin</span> URI scheme has been added to XSLT stylesheets. Plug-ins can refer to
         files in other plug-ins without hard-coding relative paths, for example: </p>
-      <pre class="pre codeblock"><code>&lt;xsl:import href="plugin:org.dita.pdf2:xsl/fo/topic2fo_1.0.xsl"/&gt;</code></pre>
+      <pre class="pre codeblock language-xml"><code>&lt;xsl:import href="plugin:org.dita.pdf2:xsl/fo/topic2fo_1.0.xsl"/&gt;</code></pre>
     </section>
     <section class="section"><h2 class="title sectiontitle">XHTML</h2>
       
@@ -113,8 +115,8 @@ index: "../toc.html"
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__20 "><span class="keyword parmname">org.dita.pdf2.catalog.relative</span></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__21 ">Configuration catalog includes.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__20"><span class="keyword parmname">org.dita.pdf2.catalog.relative</span></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__21">Configuration catalog includes.</td>
             </tr>
           </tbody></table>
       <p class="p">Support for the following languages has been added:</p>
