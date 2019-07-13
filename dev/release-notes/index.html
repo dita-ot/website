@@ -3,7 +3,7 @@
 layout: base
 title: "DITA Open Toolkit 3.3 Release Notes"
 index: "../toc.html"
-commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
+commit: "bdcaf4cb328926d611c544b598bd0c01c5c3e7eb"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -11,7 +11,7 @@ commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.3.2</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.3.3</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">3.3</span>, which includes <span class="ph">new attribute sets for HTML5
             customization, support for custom integration processing, rotated table cells in PDF output, and hazard
             statements in HTML output</span>.</p>
@@ -21,7 +21,7 @@ commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.3.2</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.3.3</span>.zip</span>
             package from the project website at <a class="xref" href="https://www.dita-ot.org/download" target="_blank">dita-ot.org/download</a>.</span></div>
   </div>
 
@@ -50,15 +50,69 @@ commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.3.2">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.3.2</span>
-      <span class="ph small text-muted">released May 28, 2019</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.3.3">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.3.3</span>
+      
     </h2>
     
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit <span class="keyword">3.3.2</span> is a maintenance release that includes the
+        <p class="p">DITA Open Toolkit <span class="keyword">3.3.3</span> is a maintenance release that includes the
           following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v3.3.3__3313">The code that generates <code class="keyword markupname xmlatt">@headers</code> attributes in HTML-based output formats has
+            been simplified to prevent Saxon crashes when processing complex tables. (These attributes help screen
+            readers to identify the header cells to which table cells are related.)
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3313" target="_blank">#3313</a>
+          </li>
+          
+          <li class="li" id="v3.3.3__3317">In recent (3.x) versions of DITA-OT, flagging information is added before generated links are
+            created, so any flags on the topic reference are ignored. Processing has been updated to copy flags from the
+              <code class="keyword markupname xmlelement">&lt;topicref&gt;</code> to the links that are generated to point to that topic.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3317" target="_blank">#3317</a>
+          </li>
+          <li class="li" id="v3.3.3__3321">Earlier versions of DITA-OT failed to honor the effective <code class="keyword markupname xmlatt">@xml:lang</code> attribute
+            value when processing links. This error has been corrected to ensure that the closest language value is
+            preserved on the generated <code class="keyword markupname xmlelement">&lt;linklist&gt;</code>, so locale-based headings such as ”Related
+            information” are applied correctly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3321" target="_blank">#3321</a>
+          </li>
+          <li class="li" id="v3.3.3__3322">The strings files for each supported language now include default translations for the “Trouble”
+            note label that is used for <code class="keyword markupname xmlelement">&lt;note&gt;</code> elements with the <code class="keyword markupname xmlatt">@type</code> attribute
+            set to <code class="ph codeph">trouble</code>.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3322" target="_blank">#3322</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3336" target="_blank">#3336</a>
+          </li>
+          <li class="li" id="v3.3.3__3325">When generating HTML5 output, DITAVAL files can now preserve profiling attributes by default by
+            setting the <code class="keyword markupname xmlatt">@action</code> attribute of a <code class="keyword markupname xmlelement">&lt;prop&gt;</code> element to
+              <code class="ph codeph">passthrough</code>. Earlier versions of DITA-OT would only pass values through if the DITAVAL
+            filter defined matching attribute/value pairs via specific <code class="keyword markupname xmlatt">@att</code> and <code class="keyword markupname xmlatt">@val</code>
+            settings.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3325" target="_blank">#3325</a>
+          </li>
+          <li class="li" id="v3.3.3__3338">The LwDITA plugin has been updated to version 2.3.0 to fix several issues in Lightweight DITA
+            processing. (Nested lists are now properly generated in Markdown output when list items starts with inline
+            markup such as bold, or italics. Topic references with the <code class="keyword markupname xmlatt">@format</code> attribute set to
+              <code class="ph codeph">html</code> will no longer be interpreted as DITA content. LwDITA-specific processing can be
+            applied to HTML topics by setting the <code class="keyword markupname xmlatt">@format</code> attribute to <code class="ph codeph">hdita</code>.)
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3338" target="_blank">#3338</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.3.3+is%3Aclosed" target="_blank">3.3.3 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.3.2...3.3.3" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.3.2">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.3.2 <span class="ph small text-muted">released May 28, 2019</span>
+    </h2>
+    
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit 3.3.2 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           
           <li class="li" id="v3.3.2__2722">Earlier versions of DITA-OT would attempt to download remote media objects referenced via the
@@ -74,7 +128,7 @@ commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
             to ensure that the OASIS namespace is used when generating the <span class="ph filepath">catalog-dita.xml</span> file.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3284" target="_blank">#3284</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3287" target="_blank">#3287</a>
-            <div class="note note note_note"><span class="note__title">Note:</span> DITA-OT <span class="keyword">3.3.2</span> still ships with <span class="keyword">Saxon-HE</span>
+            <div class="note note note_note"><span class="note__title">Note:</span> DITA-OT 3.3.2 still ships with <span class="keyword">Saxon-HE</span>
               <span class="keyword">9.8.0.14</span>, but now also works with version 9.8.0.15.</div>
           </li>
           <li class="li" id="v3.3.2__3304">In PDF output, the bitmap warning icon has been replaced with the SVG image previously added for
@@ -98,8 +152,8 @@ commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.3.1">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.3.1 <span class="ph small text-muted">released April 8, 2019</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v3.3.1">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 3.3.1 <span class="ph small text-muted">released April 8, 2019</span></h2>
     
     <div class="body refbody">
       <section class="section">
@@ -153,8 +207,8 @@ commit: "ccdc191ce5fbf6dc42c2fed756e54fe902966eb6"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v3.3">
-    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT <span class="keyword">3.3</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v3.3">
+    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT <span class="keyword">3.3</span>
       <span class="ph small text-muted">released February 28, 2019</span></h2>
     
     <div class="body refbody">
