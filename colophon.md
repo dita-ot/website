@@ -17,7 +17,7 @@ Source files for the project website are stored in [Markdown][4] and HTML, enric
 
 The [Documentation][9] section is maintained in DITA using the source files from the DITA Open Toolkit documentation repository at [github.com/dita-ot/docs][10]. The OT docs are transformed to HTML5 using the [org.dita-ot.html][11] plugin, which extends the default `html5` transformation with additional processing specific to the project website.
 
-Site output is built with [Gradle][12] using the settings in the [site.gradle][13] build file. The [DITA Open Toolkit Gradle plugin][14] is used with the Gradle dæmon and the `--continuous` build option to automatically regenerate the site output whenever documentation source files change. A staging environment provides a preview of generated site output via the `jekyll serve` command for local testing. The `--livereload` option updates the content in the browser whenever source files change on disk.
+Site output is built with [Gradle][12] using the settings in the [site][13] build task. The [DITA Open Toolkit Gradle plugin][14] is used with the Gradle dæmon and the `--continuous` build option to automatically regenerate the site output whenever documentation source files change. A staging environment provides a preview of generated site output via the `jekyll serve` command for local testing. The `--livereload` option updates the content in the browser whenever source files change on disk.
 
 [Travis CI][15] continuous integration automatically republishes the latest [development version][9] of the documentation on the project website whenever changes are pushed to the `develop` branch of the [dita-ot/docs][10] repository. The development docs are indexed by [Algolia DocSearch][16], which provides the full text search capabilities available via the search form in the navigation bar.
 
@@ -35,7 +35,7 @@ The pages in the development documentation include **Edit this page** links that
 [10]: https://github.com/dita-ot/docs
 [11]: https://github.com/dita-ot/org.dita-ot.html
 [12]: http://gradle.org 'Gradle | Modern Open-Source Enterprise Build Automation'
-[13]: https://github.com/dita-ot/docs/blob/develop/site.gradle
+[13]: https://github.com/dita-ot/docs/blob/develop/build.gradle#L139-L153
 [14]: http://eerohele.github.io/dita-ot-gradle/
 [15]: https://travis-ci.org
 [16]: http://algolia.com/docsearch/
