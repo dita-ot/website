@@ -92,6 +92,12 @@ nav[role='toc'] {
   }
 }
 
+// Pre-2.3 static ToCs
+
+.bs-docs-sidenav li ul {
+  margin-left: 10px;
+}
+
 // Static page nav headers
 
 .nav-header {
