@@ -67,7 +67,12 @@ index: "../toc.html"
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3333" target="_blank">#3333</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3350" target="_blank">#3350</a>
           </li>
-          
+          <li class="li" id="v3.3.4__3346">In earlier releases, when a <code class="keyword markupname xmlelement">&lt;link&gt;</code> element without link text also
+            specified attributes that resulted in DITAVAL-based flag images, generated link text used the target
+            document’s file name instead of a title. The link text has been fixed to pull a title from the referenced
+            document.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3346" target="_blank">#3346</a>
+          </li>
           <li class="li" id="v3.3.4__3347">When a topic title contains elements with <code class="keyword markupname xmlatt">@id</code> attributes, and those topics are
             converted to PDF, earlier releases would place an extra copy of the ID in <code class="keyword markupname xmlelement">&lt;fo:marker&gt;</code>
             elements used to help with headers. The duplicate ID, which resulted in warnings from some FO processors,
@@ -89,7 +94,11 @@ index: "../toc.html"
             documents.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3351" target="_blank">#3351</a>
           </li>
-          
+          <li class="li" id="v3.3.4__3356">In DITA-OT 3.3.3, we updated XHTML and HTML5 processing to make more efficient use of table
+            metadata when calculating table cell positions for accessibility. That processing failed for some tables
+            that used invalid CALS markup. The processing has been updated to make it more tolerant of incorrect input.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3356" target="_blank">#3356</a>
+          </li>
         </ul>
         <p class="p">For additional information on the issues resolved since the previous release, see the
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.3.4+is%3Aclosed" target="_blank">3.3.4 milestone</a> and
