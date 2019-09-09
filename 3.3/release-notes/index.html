@@ -10,7 +10,7 @@ index: "../toc.html"
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.3.3</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.3.4</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">3.3</span>, which includes <span class="ph">new attribute sets for HTML5
             customization, support for custom integration processing, rotated table cells in PDF output, and hazard
             statements in HTML output</span>.</p>
@@ -20,7 +20,7 @@ index: "../toc.html"
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.3.3</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.3.4</span>.zip</span>
             package from the project website at <a class="xref" href="https://www.dita-ot.org/download" target="_blank">dita-ot.org/download</a>.</span></div>
   </div>
 
@@ -29,19 +29,20 @@ index: "../toc.html"
     <div class="body refbody">
       <section class="section">
         
-        <div class="p">DITA-OT is designed to run on Java version <span class="keyword">8u101</span> or later.
-        Compatible Java distributions are available from multiple sources:
-        <div class="div div-index">
+        <div class="p">DITA-OT is designed to run on Java version <span class="keyword">8u101</span> or later and
+        built and tested with the Open Java Development Kit (OpenJDK). Compatible Java distributions are available from
+        multiple sources: <div class="div div-index">
+          
           
           
           
         </div>
         <ul class="ul">
           <li class="li">You can download the Oracle JRE or JDK from
-            <a class="xref" href="http://www.oracle.com/technetwork/java/javase/downloads" target="_blank">oracle.com/technetwork/java</a>.</li>
-          <li class="li">OpenJDK is an open-source implementation of Java available from
+            <a class="xref" href="http://www.oracle.com/technetwork/java/javase/downloads" target="_blank">oracle.com/technetwork/java</a> under commercial license.</li>
+          <li class="li">OpenJDK is a free open-source implementation of Java available from
             <a class="xref" href="https://adoptopenjdk.net" target="_blank">adoptopenjdk.net</a>.</li>
-          <li class="li">Amazon Corretto is an OpenJDK distribution with no-cost long-term support from
+          <li class="li">Amazon Corretto is an OpenJDK distribution from
             <a class="xref" href="https://aws.amazon.com/corretto/" target="_blank">aws.amazon.com/corretto</a>.</li>
         </ul>
       </div>
@@ -49,15 +50,71 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.3.3">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.3.3</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.3.4">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.3.4</span>
       
     </h2>
     
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit <span class="keyword">3.3.3</span> is a maintenance release that includes the
+        <p class="p">DITA Open Toolkit <span class="keyword">3.3.4</span> is a maintenance release that includes the
           following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v3.3.4__3333">In earlier releases, when a topic contained links to files outside of the map directory (but the
+            map itself did not link to anything outside of the map directory), setting the parameter
+              <span class="keyword parmname">onlytopic.in.map</span> to <code class="ph codeph">true</code> would corrupt those peer links in the
+            topics. This has been fixed, and relative links within topics use the expected path.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3333" target="_blank">#3333</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3350" target="_blank">#3350</a>
+          </li>
+          <li class="li" id="v3.3.4__3346">In earlier releases, when a <code class="keyword markupname xmlelement">&lt;link&gt;</code> element without link text also
+            specified attributes that resulted in DITAVAL-based flag images, generated link text used the target
+            document’s file name instead of a title. The link text has been fixed to pull a title from the referenced
+            document.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3346" target="_blank">#3346</a>
+          </li>
+          <li class="li" id="v3.3.4__3347">When a topic title contains elements with <code class="keyword markupname xmlatt">@id</code> attributes, and those topics are
+            converted to PDF, earlier releases would place an extra copy of the ID in <code class="keyword markupname xmlelement">&lt;fo:marker&gt;</code>
+            elements used to help with headers. The duplicate ID, which resulted in warnings from some FO processors,
+            has been removed.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3347" target="_blank">#3347</a>
+          </li>
+          <li class="li" id="v3.3.4__3348">DITA-OT distribution packages are now built and tested with the open-source Java distribution
+            <a class="xref" href="https://adoptopenjdk.net" target="_blank">OpenJDK 8</a>.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3348" target="_blank">#3348</a>
+          </li>
+          <li class="li" id="v3.3.4__3349">In earlier releases, cross references to footnotes in XHTML and HTML5 applied superscript
+            styling too early in the build, resulting in errors from later processing stages. This has been corrected,
+            and the build creates the expected styling without any errors.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3349" target="_blank">#3349</a>
+          </li>
+          <li class="li" id="v3.3.4__3351">In earlier releases, when a map included an <code class="keyword markupname xmlelement">&lt;authorinformation&gt;</code> element
+            that did not provide an author or organization, formatters would generate errors when creating PDF metadata
+            based on that empty metadata. The build has been updated to ignore empty author information in source
+            documents.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3351" target="_blank">#3351</a>
+          </li>
+          <li class="li" id="v3.3.4__3356">In DITA-OT 3.3.3, we updated XHTML and HTML5 processing to make more efficient use of table
+            metadata when calculating table cell positions for accessibility. That processing failed for some tables
+            that used invalid CALS markup. The processing has been updated to make it more tolerant of incorrect input.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3356" target="_blank">#3356</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.3.4+is%3Aclosed" target="_blank">3.3.4 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.3.3...3.3.4" target="_blank">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.3.3">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.3.3 <span class="ph small text-muted">released July 13, 2019</span>
+    </h2>
+    
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit 3.3.3 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v3.3.3__3313">The code that generates <code class="keyword markupname xmlatt">@headers</code> attributes in HTML-based output formats has
             been simplified to prevent Saxon crashes when processing complex tables. (These attributes help screen
@@ -105,8 +162,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.3.2">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.3.2 <span class="ph small text-muted">released May 28, 2019</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v3.3.2">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 3.3.2 <span class="ph small text-muted">released May 28, 2019</span>
     </h2>
     
     <div class="body refbody">
@@ -151,8 +208,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v3.3.1">
-    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 3.3.1 <span class="ph small text-muted">released April 8, 2019</span></h2>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v3.3.1">
+    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT 3.3.1 <span class="ph small text-muted">released April 8, 2019</span></h2>
     
     <div class="body refbody">
       <section class="section">
@@ -206,8 +263,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v3.3">
-    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT <span class="keyword">3.3</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="v3.3">
+    <h2 class="title topictitle2" id="ariaid-title7">DITA-OT <span class="keyword">3.3</span>
       <span class="ph small text-muted">released February 28, 2019</span></h2>
     
     <div class="body refbody">
