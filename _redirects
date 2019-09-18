@@ -21,3 +21,6 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 
 # Redirect old installation URL (linked from DITA-OT Gradle Plugin docs)
 /dev/getting-started/installing-client.html            /dev/topics/installing-client.html
+
+# Redirect spurious resource requests (Top 404s)
+/dev/user-guide/dita2markdown.html                     /dev/topics/dita2markdown.html
