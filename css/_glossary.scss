@@ -1,0 +1,27 @@
+// This file is part of the DITA Open Toolkit project. See the accompanying LICENSE.md file for applicable licenses.
+
+// Sass partial for glossary style overrides
+
+.glossAbbreviation,
+.glossAcronym {
+  color: $gray-600;
+  font-size: $font-size-base;
+  font-style: italic;
+  margin-left: 1em;
+
+  &::before {
+    content: 'Abbreviated as “';
+  }
+
+  &::after {
+    content: '”';
+  }
+}
+
+.glossentry {
+  @extend .mb-3;
+}
+
+.glossterm {
+  font-size: $h4-font-size;
+}
