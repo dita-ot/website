@@ -7,10 +7,10 @@
   color: $gray-600;
   font-size: $font-size-base;
   font-style: italic;
-  margin-left: 1em;
+  margin: $spacer 1em;
 
   &::before {
-    content: 'Abbreviated as “';
+    content: 'Abbreviation: “';
   }
 
   &::after {
@@ -19,7 +19,7 @@
 }
 
 .glossentry {
-  @extend .mb-3;
+  margin-bottom: $spacer;
 }
 
 .glossterm {
