@@ -1,0 +1,125 @@
+---
+# Generated from DITA source
+layout: base
+title: "Sample XML project files"
+index: "../toc.html"
+commit: "816717134955182c83022241100480ea64be94f8"
+---
+
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li class="active"><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Sample XML project files</h1>
+  
+  
+  <div class="body conbody"><p class="shortdesc">DITA-OT includes sample XML project files that can be used to define a publication project. The XML format
+    can be validated with a RELAX NG schema provided in the <span class="ph filepath">resources</span> folder of the DITA-OT
+    installation (<span class="ph filepath">project.rnc</span>).</p>
+    <p class="p">Project files can be designed in a modular fashion to create reusable configuration structures that allow you to
+      define settings in one file and refer to them in other projects to publish multiple deliverables at once.</p>
+    <p class="p">For example, <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/html.xml</span> defines
+      a single HTML deliverable.</p>
+    <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample project file for HTML output</figcaption>
+      
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-model href="../../../resources/project.rnc" type="application/relax-ng-compact-syntax"?&gt;
+&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;include href="common.xml"/&gt;
+  &lt;deliverable name="HTML5" id="html"&gt;
+    &lt;context idref="html"/&gt;
+    &lt;output href="."/&gt;
+    &lt;publication transtype="html5"&gt;
+      &lt;param name="args.copycss" value="yes"/&gt;
+      &lt;param name="args.css" value="dita-ot-doc.css"/&gt;
+      &lt;param name="args.csspath" value="css"/&gt;
+      &lt;param name="args.cssroot" path="../../resources"/&gt;
+      &lt;param name="args.gen.task.lbl" value="YES"/&gt;
+      &lt;param name="args.hdr" href="../../resources/header.xml"/&gt;
+      &lt;param name="args.html5.toc" value="toc"/&gt;
+      &lt;param name="nav-toc" value="partial"/&gt;
+      &lt;param name="processing-mode" value="strict"/&gt;
+    &lt;/publication&gt;
+  &lt;/deliverable&gt;
+&lt;/project&gt;</code></pre>
+    </figure>
+    <p class="p">This file can be used to generate the HTML version of the DITA-OT documentation by running the following command
+      from the <span class="ph filepath">docsrc</span> folder of the DITA-OT installation directory:</p>
+    <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">samples/project-files/html.xml</var></code></pre>
+    <p class="p">The project file for HTML output imports the common <code class="ph codeph">html</code> context from a shared project context
+      defined in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/common.xml</span> file,
+      which includes the input map file and the DITAVAL file used to filter the output.</p>
+    <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample shared context for HTML-based output</figcaption>
+      
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-model href="../../../resources/project.rnc" type="application/relax-ng-compact-syntax"?&gt;
+&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;context id="html"&gt;
+    &lt;input href="../../userguide.ditamap"/&gt;
+    &lt;profile&gt;
+      &lt;ditaval href="../../resources/html.ditaval"/&gt;
+    &lt;/profile&gt;
+  &lt;/context&gt;
+&lt;/project&gt;</code></pre>
+    </figure>
+    <p class="p">The same common <code class="ph codeph">html</code> context is also referenced in the project file for HTMLHelp output, as
+      illustrated in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/htmlhelp.xml</span>.</p>
+    <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample project file for HTMLHelp output</figcaption>
+      
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-model href="../../../resources/project.rnc" type="application/relax-ng-compact-syntax"?&gt;
+&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;deliverable name="HTMLHelp" id="htmlhelp"&gt;
+    &lt;context idref="html"/&gt;
+    &lt;output href="htmlhelp"/&gt;
+    &lt;publication transtype="htmlhelp"&gt;
+      &lt;param name="args.copycss" value="yes"/&gt;
+      &lt;param name="args.css" value="dita-ot-doc.css"/&gt;
+      &lt;param name="args.csspath" value="css"/&gt;
+      &lt;param name="args.cssroot" path="../../resources"/&gt;
+      &lt;param name="args.gen.task.lbl" value="YES"/&gt;
+      &lt;param name="processing-mode" value="strict"/&gt;
+    &lt;/publication&gt;
+  &lt;/deliverable&gt;
+&lt;/project&gt;</code></pre>
+    </figure>
+    <p class="p">The <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/pdf.xml</span> file defines a
+      single PDF deliverable.</p>
+    <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span>Sample project file for PDF output</figcaption>
+      
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-model href="../../../resources/project.rnc" type="application/relax-ng-compact-syntax"?&gt;
+&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;deliverable id="pdf"&gt;
+    &lt;context&gt;
+      &lt;input href="../../userguide-book.ditamap"/&gt;
+    &lt;/context&gt;
+    &lt;output href="."/&gt;
+    &lt;publication transtype="pdf2"&gt;
+      &lt;param name="args.chapter.layout" value="BASIC"/&gt;
+      &lt;param name="args.gen.task.lbl" value="YES"/&gt;
+      &lt;param name="include.rellinks" value="friend"/&gt;
+      &lt;param name="outputFile.base" value="userguide"/&gt;
+      &lt;param name="processing-mode" value="strict"/&gt;
+    &lt;/publication&gt;
+  &lt;/deliverable&gt;
+&lt;/project&gt;</code></pre>
+    </figure>
+    <p class="p">This file can be used to generate the PDF version of the DITA-OT documentation by running the following command
+      from the <span class="ph filepath">docsrc</span> folder of the DITA-OT installation directory:</p>
+    <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">samples/project-files/pdf.xml</var></code></pre>
+    <p class="p">The <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/distribution-docs.xml</span> file
+      includes both the HTML and PDF projects as follows:</p>
+    <pre class="pre codeblock language-xml normalize-space show-whitespace"><code>&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;include href="html.xml"/&gt;
+  &lt;include href="pdf.xml"/&gt;
+&lt;/project&gt;</code></pre>
+    <p class="p">To build both the HTML and PDF versions of the documentation as included in the distribution package, run the
+      following command from the <span class="ph filepath">docsrc</span> folder of the DITA-OT installation directory:</p>
+    <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">samples/project-files/distribution-docs.xml</var></code></pre>
+    <p class="p">The <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/all.xml</span> file includes all
+      three project deliverables as follows:</p>
+    <pre class="pre codeblock language-xml normalize-space show-whitespace"><code>&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;include href="html.xml"/&gt;
+  &lt;include href="htmlhelp.xml"/&gt;
+  &lt;include href="pdf.xml"/&gt;
+&lt;/project&gt;</code></pre>
+  </div>
+</article></main>
