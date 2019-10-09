@@ -3,7 +3,7 @@
 layout: base
 title: "Publishing with project files"
 index: "../toc.html"
-commit: "b020efb457a8cd1912494273f00ff71782d099a4"
+commit: "d40b85f5a0695307db788a5d9493fede08b76b2a"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li class="active"><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -22,6 +22,9 @@ commit: "b020efb457a8cd1912494273f00ff71782d099a4"
         <a class="xref" href="https://json.org" target="_blank">JavaScript Object Notation (JSON)</a>, or
         <a class="xref" href="https://yaml.org" target="_blank">YAML</a>. The XML format can be validated with a RELAX NG schema provided in the
           <span class="ph filepath">resources</span> folder of the DITA-OT installation (<span class="ph filepath">project.rnc</span>).</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> The XML project file format is the normative version provided for interoperability with existing XML-based
+        toolchains. The JSON and YAML versions are alternative compact formats that are easier to read and write, but
+        otherwise equivalent to the XML syntax.</div>
       <p class="p" id="ID__projects-advantages">Whereas <span class="ph filepath">.properties</span> files can only be used to set parameters,
         project files go further, allowing you to define multiple deliverables with separate input files and output
         folders and formats for each publication. A project file can also refer to other project files, so you can
