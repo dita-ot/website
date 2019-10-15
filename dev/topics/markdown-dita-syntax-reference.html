@@ -3,7 +3,7 @@
 layout: base
 title: "Markdown DITA syntax reference"
 index: "../toc.html"
-commit: "5e44824a3d8a2671a976403adc9cff299f38695e"
+commit: "85dc6ef597c420d7fc68e7c219cb22823125c56e"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a><ul class="nav nav-list"><li><a href="../topics/markdown-input.html">Markdown content</a></li><li><a href="../topics/lwdita-input.html">Lightweight DITA</a></li><li class="active"><a href="../topics/markdown-dita-syntax-reference.html">Markdown DITA syntax</a></li></ul></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -152,9 +152,7 @@ Context
 &lt;xref href="http://www.example.com/test.html" format="html" scope="external"&gt;External&lt;/xref&gt;</code></pre></section>
     <section class="section" id="markdown-dita-syntax-reference__images"><h2 class="title sectiontitle">Images</h2>
       
-      <div class="div div-index">
-        
-      </div>
+      
       <p class="p">Images used in inline content will result in inline placement. If a block level image contains a title, it will
         be treated as an image wrapped in
       figure:</p><pre class="pre codeblock language-markdown"><code>An inline ![Alt](test.jpg).
@@ -227,9 +225,7 @@ Context
       <p class="p">Each definition entry must have only one term and contain only inline content.</p></section>
     <section class="section" id="markdown-dita-syntax-reference__tables"><h2 class="title sectiontitle">Tables</h2>
       
-      <div class="div div-index">
-        
-      </div>
+      
       <p class="p">Tables use
         <a class="xref" href="http://fletcherpenney.net/multimarkdown/" target="_blank">MultiMarkdown</a> table
         extension format:</p><pre class="pre codeblock language-markdown"><code>| First Header | Second Header | Third Header |
@@ -264,11 +260,9 @@ Context
         Markdown DITA.</p></section>
     <section class="section" id="markdown-dita-syntax-reference__metadata"><h2 class="title sectiontitle">Metadata</h2>
       
-      <div class="div div-index">
-        
-        
-        
-      </div>
+      
+      
+      
       <p class="p">
         <a class="xref" href="http://www.yaml.org/" target="_blank">YAML</a> metadata block as defined in Pandoc
         <a class="xref" href="http://pandoc.org/MANUAL.html#extension-yaml_metadata_block" target="_blank">pandoc_metadata_block</a> can be used to specify different metadata elements. The supported elements
