@@ -45,7 +45,7 @@
     "prettier": "1.18.2",
     "prismjs": "^1.17.1",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.6.3",
+    "typescript": "^3.6.4",
     "urijs": "^1.19.1",
     "whatwg-fetch": "^3.0.0"
   },
