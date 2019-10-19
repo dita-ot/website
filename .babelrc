@@ -4,15 +4,15 @@
       "prismjs",
       {
         "languages": [
-          "css",
+          "bash",
+          "dockerfile",
           "haskell",
           "java",
-          "javascript",
           "json",
           "markdown",
-          "markup",
           "properties",
-          "yaml"],
+          "yaml"
+        ],
         "theme": "twilight",
         "css": true
       }
