@@ -3,7 +3,7 @@
 layout: base
 title: "Building output using the dita command"
 index: "../toc.html"
-commit: "d9e844443fa809bf2811a0a3095eab4a7fa9310a"
+commit: "2524bb0ecf8f7358fd03ffc39d0460ad3cbdd9a0"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -182,10 +182,7 @@ commit: "d9e844443fa809bf2811a0a3095eab4a7fa9310a"
         the following additional parameters specified in the <span class="ph filepath">properties/sequence-html5.properties</span>
         file:</p>
       <div class="p">
-        <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code># Don't generate headings for sections within task topics:
-args.gen.task.lbl = NO
-
-# Directory that contains the custom .css file:
+        <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code># Directory that contains the custom .css file:
 args.cssroot = ${args.input.dir}/css/
 
 # Custom .css file used to style output:
@@ -198,10 +195,7 @@ args.copycss = yes
 args.csspath = branding
 
 # Generate a full navigation TOC in topic pages:
-nav-toc = full
-
-# Base name of the Table of Contents file:
-args.xhtml.toc = toc</code></pre>
+nav-toc = full</code></pre>
       </div>
       
     </section>
