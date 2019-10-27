@@ -8,6 +8,7 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 /3.0/dev_ref/html-customization-plugin-bundle-css.html /3.0/topics/html-customization-plugin-bundle-css.html
 /3.0/dev_ref/migration.html                            /3.0/topics/migration.html
 /3.0/dev_ref/plugin-newtranstype.html                  /3.0/topics/plugin-newtranstype.html
+/dev/dev_ref/html-customization-properties-file.html   /dev/topics/html-customization-properties-file.html
 /dev/dev_ref/map-first-preprocessing.html              /dev/reference/map-first-preprocessing.html
 /dev/dev_ref/migrating-ant-to-dita.html                /dev/topics/migrating-ant-to-dita.html
 /dev/dev_ref/migration.html                            /dev/topics/migration.html
@@ -24,3 +25,17 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 
 # Redirect spurious resource requests (Top 404s)
 /dev/user-guide/dita2markdown.html                     /dev/topics/dita2markdown.html
+
+# Redirect formerly-uppercase filenames
+/dev/reference/DITA-features-in-docs.html              /dev/reference/docs-dita-features.html
+/dev/reference/DITA_spec-support.html                  /dev/reference/dita-spec-support.html
+/dev/reference/DITA_v1-2-support.html                  /dev/reference/dita-v1-2-support.html
+/dev/reference/DITA_v1-3-support.html                  /dev/reference/dita-v1-3-support.html
+/dev/reference/html5.html                              /dev/reference/html5-processing.html
+/dev/reference/XhtmlCHM.html                           /dev/reference/htmlhelp-processing.html
+/dev/reference/XhtmlCommon.html                        /dev/reference/common-html-processing.html
+/dev/reference/XhtmlDefault.html                       /dev/reference/xhtml-processing.html
+/dev/reference/XhtmlEclipse.html                       /dev/reference/eclipsehelp-processing.html
+/dev/reference/XhtmlWithNavigation.html                /dev/reference/html-based-processing.html
+/dev/topics/DITA-messages.html                         /dev/topics/error-messages.html
+/dev/topics/using-plugin-URI-extension.html            /dev/topics/referencing-other-plugins.html
