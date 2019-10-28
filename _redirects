@@ -39,6 +39,7 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 /dev/reference/XhtmlWithNavigation.html                /dev/reference/html-based-processing.html
 /dev/topics/using-plugin-URI-extension.html            /dev/topics/referencing-other-plugins.html
 
-# Redirect deep links with message IDs first
+# Redirect deep links with message IDs first & catch lowercase variants
 /dev/topics/DITA-messages.html*                        /dev/topics/error-messages.html:splat 301!
+/dev/topics/dita-messages.html*                        /dev/topics/error-messages.html:splat 301!
 /dev/topics/DITA-messages.html                         /dev/topics/error-messages.html
