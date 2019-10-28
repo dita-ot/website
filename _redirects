@@ -4,7 +4,7 @@
 # Redirect default Netlify subdomain to primary domain
 https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:splat 301!
 
-# Preserve publicly shared links to relocated topics:  #43 & #44
+# Preserve publicly shared links to relocated topics   https://github.com/dita-ot/website/issues/43
 /3.0/dev_ref/html-customization-plugin-bundle-css.html /3.0/topics/html-customization-plugin-bundle-css.html
 /3.0/dev_ref/migration.html                            /3.0/topics/migration.html
 /3.0/dev_ref/plugin-newtranstype.html                  /3.0/topics/plugin-newtranstype.html
@@ -20,13 +20,15 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 /dev/topics/extending-the-ot.html                      /dev/topics/customizing.html
 /dev/topics/rebuilding-the-dita-ot-documentation.html  /dev/topics/rebuilding-docs.html
 
-# Redirect old installation URL (linked from DITA-OT Gradle Plugin docs)
+# Redirect old installation URL                        (linked from DITA-OT Gradle Plugin docs)
+# Fixed in DITA-OT Gradle Plugin docs source repo with https://github.com/eerohele/dita-ot-gradle/pull/22,
+# but the change was apparently never deployed to site https://eerohele.github.io/dita-ot-gradle
 /dev/getting-started/installing-client.html            /dev/topics/installing-client.html
 
 # Redirect spurious resource requests (Top 404s)
 /dev/user-guide/dita2markdown.html                     /dev/topics/dita2markdown.html
 
-# Redirect formerly-uppercase filenames
+# Redirect formerly-uppercase filenames                https://github.com/dita-ot/website/issues/282
 /dev/reference/DITA-features-in-docs.html              /dev/reference/docs-dita-features.html
 /dev/reference/DITA_spec-support.html                  /dev/reference/dita-spec-support.html
 /dev/reference/DITA_v1-2-support.html                  /dev/reference/dita-v1-2-support.html
