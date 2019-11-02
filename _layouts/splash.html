@@ -27,7 +27,11 @@
       apiKey: 'fdd89b9b35b9bd347f34111dbc1c6219',
       indexName: 'dita-ot',
       inputSelector: '#search input[type=text]',
-      debug: false // Set debug to true if you want to inspect the dropdown
+      algoliaOptions: {
+             hitsPerPage: 10,
+             // See https://www.algolia.com/doc/api-reference/api-parameters/
+             },
+      debug: false // Set debug to true if you want to inspect the dropdown,
       });
     </script>
   </body>
