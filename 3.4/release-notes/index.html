@@ -83,8 +83,10 @@ index: "../toc.html"
           processing targets to PDF output.</p>
         <p class="p">The built-in index processing has been disabled and deprecated. If you have overridden index processing via
           the <code class="ph codeph">transform.topic2fo</code> target in the past, you can set the new
-            <span class="keyword parmname">pdf2.index.skip</span> property to <span class="keyword option">yes</span> and re-enable the
-            <code class="ph codeph">transform.topic2fo.index</code> target to use your existing customizations.</p>
+            <span class="keyword parmname">org.dita.index.skip</span> property to <span class="keyword option">yes</span> and re-enable the
+            <code class="ph codeph">transform.topic2fo.index</code> target with <code class="keyword markupname xmlelement">&lt;feature
+            extension="depend.org.dita.pdf2.index" value="transform.topic2fo.index"/&gt;</code> in your plug-in
+          configuration.</p>
       </div>
         <p class="p" id="v3.4__3390">
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3390" target="_blank">#3390</a>,

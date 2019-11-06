@@ -29,8 +29,10 @@ index: "../toc.html"
           processing targets to PDF output.</p>
         <p class="p">The built-in index processing has been disabled and deprecated. If you have overridden index processing via
           the <code class="ph codeph">transform.topic2fo</code> target in the past, you can set the new
-            <span class="keyword parmname">pdf2.index.skip</span> property to <span class="keyword option">yes</span> and re-enable the
-            <code class="ph codeph">transform.topic2fo.index</code> target to use your existing customizations.</p>
+            <span class="keyword parmname">org.dita.index.skip</span> property to <span class="keyword option">yes</span> and re-enable the
+            <code class="ph codeph">transform.topic2fo.index</code> target with <code class="keyword markupname xmlelement">&lt;feature
+            extension="depend.org.dita.pdf2.index" value="transform.topic2fo.index"/&gt;</code> in your plug-in
+          configuration.</p>
       </div>
       <table class="table table-hover frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">New plug-ins</span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
             <tr class="row">
