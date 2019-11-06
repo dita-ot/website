@@ -3,7 +3,7 @@
 layout: base
 title: "HTML5 parameters"
 index: "../toc.html"
-commit: "85dc6ef597c420d7fc68e7c219cb22823125c56e"
+commit: "b92657e23c2efdea827cb233ec7a770184b5a2f3"
 generated: true
 ---
 
@@ -15,8 +15,8 @@ generated: true
               <div class="div">If an external process will copy your custom .css file to the output
                 directory, leave this parameter unset (or set it to <span class="keyword option">no</span>). If DITA-OT should copy the
                 file when generating output, set it to <span class="keyword option">yes</span>.</div></dd><dt class="dt pt dlterm" id="html5__args.css"><span class="keyword parmname">args.css</span><span class="ph"></span></dt><dd class="dd pd" id="html5__args.css.desc">Specifies the name of a custom .css file.</dd><dd class="dd pd ddexpand">
-              <div class="div">The value of this parameter should be only the file name (or an absolute path
-                to the file). A relative path can be specified with <span class="keyword parmname">args.cssroot</span>.</div></dd><dt class="dt pt dlterm" id="html5__args.csspath"><span class="keyword parmname">args.csspath</span><span class="ph"></span></dt><dd class="dd pd" id="html5__args.csspath.desc">
+              <div class="div">The value of this parameter should be only the file name. The absolute path to
+                the parent directory should be specified with <span class="keyword parmname">args.cssroot</span>.</div></dd><dt class="dt pt dlterm" id="html5__args.csspath"><span class="keyword parmname">args.csspath</span><span class="ph"></span></dt><dd class="dd pd" id="html5__args.csspath.desc">
               <div class="div">Specifies the <strong class="ph b">destination</strong> directory to which .css files are copied
                 (relative to the output directory).</div>
             </dd><dd class="dd pd ddexpand">
@@ -34,10 +34,8 @@ generated: true
                 file.</div></dd><dd class="dd pd ddexpand">
               <div class="div">
                 <p class="p">DITA-OT will copy the file <strong class="ph b">from</strong> this location.</p>
-                <div class="note tip note_tip"><span class="note__title">Tip:</span> The value you enter here will be interpreted relative to the location of the input map
-                  file. If your map is stored at the root level of your project folder and the CSS file is stored in a
-                  subfolder named <span class="ph filepath">resources</span>, set <span class="keyword parmname">args.cssroot</span> to
-                    <span class="keyword option">resources</span>.</div>
+                <div class="note important note_important"><span class="note__title">Important:</span> Enter the absolute path to the parent directory of the custom CSS file specified
+                  with <span class="keyword parmname">args.css</span>.</div>
               </div></dd><dt class="dt pt dlterm" id="html5__args.dita.locale"><span class="keyword parmname">args.dita.locale</span><span class="ph"></span></dt><dd class="dd pd" id="html5__args.dita.locale.desc">Specifies the language locale file to use for sorting index entries.</dd><dt class="dt pt dlterm" id="html5__args.ftr"><span class="keyword parmname">args.ftr</span><span class="ph"></span></dt><dd class="dd pd" id="html5__args.ftr.desc">Specifies an XML file that contains content for a running footer.</dd><dd class="dd pd ddexpand">
               <div class="div">
                 <span class="ph">Corresponds to the XSLT parameter <span class="keyword parmname">FTR</span>.</span>
