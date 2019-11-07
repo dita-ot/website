@@ -52,7 +52,7 @@ index: "../toc.html"
 
   <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.4">
     <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.4</span>
-      <span class="ph small text-muted">scheduled for release November 9, 2019</span>
+      <span class="ph small text-muted">released November 9, 2019</span>
     </h2>
     
     
@@ -127,7 +127,8 @@ index: "../toc.html"
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3298" target="_blank">#3298</a>,
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3300" target="_blank">#3300</a>,
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3382" target="_blank">#3382</a>,
-          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3388" target="_blank">#3388</a>
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3388" target="_blank">#3388</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3394" target="_blank">#3394</a>
         </p>
       </section>
 
@@ -141,6 +142,10 @@ index: "../toc.html"
           <li class="li" id="v3.4__3250">The original preprocessing and map-first preprocessing pipelines have been simplified to process
             only the merged root map, where previous versions would redundantly process all DITA maps.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3250" target="_blank">#3250</a>
+          </li>
+          <li class="li" id="v3.4__3264">Conref processing has been updated to resolve content references to specializations of the
+            referencing element
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3264" target="_blank">#3264</a>
           </li>
           <li class="li" id="v3.4__3288">The obsolete <span class="ph filepath">build_demo.xml</span> script that was previously used to build Ant
             samples has been removed from the source code repository. (The file was removed from distribution packages
@@ -170,6 +175,10 @@ index: "../toc.html"
               <li class="li">Ant 1.10.6
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3354" target="_blank">#3354</a>
               </li>
+              <li class="li">FOP 2.4
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3406" target="_blank">#3406</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3407" target="_blank">#3407</a>
+              </li>
               <li class="li">Gradle 5.6.3
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3375" target="_blank">#3375</a>,
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3402" target="_blank">#3402</a>
@@ -197,10 +206,11 @@ index: "../toc.html"
         source code is available on GitHub for anyone interested in maintaining the plug-ins for use with future toolkit
         versions.</div>
           </li>
-          <li class="li" id="v3.4__3371">The LwDITA plugin has been updated to version 2.3.1, pulling in a number of fixes for
-            Lightweight DITA processing, including support for absolute links in Markdown input, and updated processing
-            for escaped characters and nested blocks in Markdown output.
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3371" target="_blank">#3371</a>
+          <li class="li" id="v3.4__3371">The LwDITA plug-in has been updated to version 2.3.2, pulling in a number of fixes for
+            Lightweight DITA processing, including support for absolute links and strikethrough in Markdown input, and
+            updated processing for escaped characters and nested blocks in Markdown output.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3371" target="_blank">#3371</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3408" target="_blank">#3408</a>
           </li>
           <li class="li" id="v3.4__3399">The <span class="keyword parmname">args.logdir</span> parameter (deprecated since DITA-OT 2.5) has been removed.
             To write the log to a file, use <span class="keyword cmdname">dita</span>

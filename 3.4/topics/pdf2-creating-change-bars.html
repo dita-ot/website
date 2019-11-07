@@ -12,9 +12,6 @@ index: "../toc.html"
   <div class="body conbody"><p class="shortdesc">If you use Antenna House Formatter or RenderX XEP, you can generate revision bars in your PDF output by
     using the <code class="keyword markupname xmlatt">@changebar</code> and <code class="keyword markupname xmlatt">@color</code> attributes of the DITAVAL
       <code class="keyword markupname xmlelement">&lt;revprop&gt;</code> element.</p>
-    <div class="note note note_note"><span class="note__title">Note:</span> The Apache Formatting Objects Processor (FOP <span class="keyword">2.3</span>) bundled with DITA-OT does
-      not yet support the XSL <code class="ph codeph">fo:change-bar</code> formatting object. A patch has been submitted to enable
-      this support in a future version of FOP.</div>
     <div class="p">The DITA specification for <code class="keyword markupname xmlatt">@changebar</code> simply says:<blockquote class="lq">
         <dl class="dl">
           
@@ -29,8 +26,8 @@ index: "../toc.html"
     <ul class="ul">
       <li class="li">
         <p class="p">The <code class="keyword markupname xmlatt">@changebar</code> attribute value defines the style to use for the line. The list of possible
-          values is the same as for other XSL-FO rules (see <a class="xref" href="http://www.w3.org/TR/xsl/#change-bar-style" target="_blank">@change-bar-style</a>). The default
-          value is <span class="keyword option">groove</span>.</p></li>
+          values is the same as for other XSL-FO rules (see
+          <a class="xref" href="http://www.w3.org/TR/xsl/#change-bar-style" target="_blank">@change-bar-style</a>). The default value is <span class="keyword option">groove</span>.</p></li>
       <li class="li">
         <p class="p">The <code class="keyword markupname xmlatt">@color</code> attribute value specifies the change bar color using any color value recognized by
           XSL-FO, including the usual color names or a hex color value. The default value is
