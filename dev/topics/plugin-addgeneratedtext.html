@@ -3,7 +3,7 @@
 layout: base
 title: "Customizing generated text"
 index: "../toc.html"
-commit: "5e44824a3d8a2671a976403adc9cff299f38695e"
+commit: "11e9abce25936d90bb68711653706ac74e7df11a"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a><ul class="nav nav-list"><li><a href="../topics/globalization-support.html">Globalization support</a></li><li class="active"><a href="../topics/plugin-addgeneratedtext.html">Customizing generated text</a></li><li><a href="../topics/globalization-languages.html">Supported languages</a></li></ul></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -34,10 +34,10 @@ commit: "5e44824a3d8a2671a976403adc9cff299f38695e"
     </section>
     <div class="example"><h2 class="title sectiontitle">Example: adding new strings</h2>
       
-      <p class="p">First copy the file <span class="ph filepath">xsl/common/strings.xml</span> to your plug-in, and edit it to contain the
-        languages that you are providing translations for ("en-US" must be present). For this sample, copy the file into
-        your plug-in as <span class="ph filepath">xsl/my-new-strings.xml</span>. The new strings file will look something like
-        this:</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+      <p class="p">First, copy the file <span class="ph filepath">xsl/common/strings.xml</span> from the base plug-in directory
+          <span class="ph filepath">plugins/org.dita.base</span> to your plug-in, and edit it to contain the languages that you are
+        providing translations for ("en-US" must be present). For this sample, copy the file into your plug-in as
+          <span class="ph filepath">xsl/my-new-strings.xml</span>. The new strings file will look something like this:</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!-- Provide strings for my plug-in; this plug-in supports
      English, Icelandic, and Russian. --&gt;
 &lt;langlist&gt;
@@ -48,9 +48,10 @@ commit: "5e44824a3d8a2671a976403adc9cff299f38695e"
   &lt;lang xml:lang="ru"     filename="mystring-ru-ru.xml"/&gt;
   &lt;lang xml:lang="ru-RU"  filename="mystring-ru-ru.xml"/&gt;
 &lt;/langlist&gt;</code></pre>
-      <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and replace the content
-        with your own strings (be sure to give them unique name attributes). Do the same for each language that you are
-        providing a translation for. For example, the file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+      <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> from the base plug-in directory
+          <span class="ph filepath">plugins/org.dita.base</span> to your plug-in, and replace the content with your own strings (be
+        sure to give them unique name attributes). Do the same for each language that you are providing a translation
+        for. For example, the file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;strings xml:lang="en-US"&gt;
   &lt;str name="String1"&gt;English generated text&lt;/str&gt;
   &lt;str name="Another String"&gt;Another String in English&lt;/str&gt;
@@ -58,9 +59,9 @@ commit: "5e44824a3d8a2671a976403adc9cff299f38695e"
       <p class="p">Use the following extension code to include your strings in the set of generated text: </p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.strings"&gt;
   &lt;feature extension="dita.xsl.strings" file="xsl/my-new-strings.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
-      <p class="p">The string is now available to the "getVariable" template used in many DITA-OT XSLT files.
-        For example, if processing in a context where the xml:lang value is "en-US", the following
-        call would return "Another String in English":</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
+      <p class="p">The string is now available to the "getVariable" template used in many DITA-OT XSLT files. For example, if
+        processing in a context where the xml:lang value is "en-US", the following call would return "Another String in
+        English":</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
   &lt;xsl:with-param name="id" select="'Another String'"/&gt;
 &lt;/xsl:call-template&gt;</code></pre>
       <div class="note note note_note"><span class="note__title">Note:</span> If two plug-ins define the same string, the results will be non-deterministic, so multiple plug-ins should
@@ -72,10 +73,11 @@ commit: "5e44824a3d8a2671a976403adc9cff299f38695e"
       <p class="p">The process for modifying existing generated text is exactly the same as for adding new text, except that the
         strings you provide override values that already exist. To begin, set up the
           <span class="ph filepath">xsl/my-new-strings.xml</span> file in your plug-in as in the previous example. </p>
-      <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and choose the strings
-        you wish to change (be sure to leave the name attribute unchanged, because this is the key used to look up the
-        string). Create a strings file for each language that needs to modify existing strings. For example, the new
-        file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+      <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> from the base plug-in directory
+          <span class="ph filepath">plugins/org.dita.base</span> to your plug-in, and choose the strings you wish to change (be sure
+        to leave the name attribute unchanged, because this is the key used to look up the string). Create a strings
+        file for each language that needs to modify existing strings. For example, the new file
+          <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;strings xml:lang="en-US"&gt;
   &lt;str name="Figure"&gt;Fig&lt;/str&gt;
   &lt;str name="Draft comment"&gt;ADDRESS THIS DRAFT COMMENT&lt;/str&gt;
@@ -101,8 +103,9 @@ commit: "5e44824a3d8a2671a976403adc9cff299f38695e"
   &lt;lang xml:lang="vi"     filename="strings-vi.xml"/&gt;
   &lt;lang xml:lang="vi-VN"  filename="strings-vi.xml"/&gt;
 &lt;/langlist&gt;</code></pre></div>
-      <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> to your plug-in, and rename it to match
-        the language you wish to add. For example, to support Vietnamese strings you may want to pick a name like
+      <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> from the base plug-in directory
+          <span class="ph filepath">plugins/org.dita.base</span> to your plug-in, and rename it to match the language you wish to
+        add. For example, to support Vietnamese strings you may want to pick a name like
           <span class="ph filepath">strings-vi.xml</span>. In that file, change the <code class="keyword markupname xmlatt">@xml:lang</code> attribute on the root
         element to match your new language.</p>
       <p class="p">Once the file is ready, translate the contents of each <code class="keyword markupname xmlelement">&lt;str&gt;</code> element (be sure to leave
