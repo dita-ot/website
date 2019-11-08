@@ -15,12 +15,12 @@
 }
 
 #search input {
-  background: $navbar-dark-link-hover-bg;
+  background: $navbar-dark-color;
   border: $input-border-width inset $navbar-dark-link-hover-bg;
-  color: $navbar-dark-color;
+  color: $navbar-dark-link-hover-bg;
 
   &::placeholder {
-    color: darken($navbar-dark-color, 40%);
+    color: $brand-primary;
     font-style: italic;
   }
 }
