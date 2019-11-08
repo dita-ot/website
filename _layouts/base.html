@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% if page.url contains '/dev/' %}
     <meta name="docsearch:version" content="dev" />
+    {% elsif page.url contains '/3.4/' %}
+    <meta name="docsearch:version" content="3.4" />
+    {% elsif page.url contains '/3.3/' %}
+    <meta name="docsearch:version" content="3.3" />
     {% elsif page.url contains '/3.2/' %}
     <meta name="docsearch:version" content="3.2" />
     {% elsif page.url contains '/3.1/' %}
