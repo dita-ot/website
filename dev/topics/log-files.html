@@ -1,13 +1,14 @@
 ---
 # Generated from DITA source
 layout: base
-title: "Log files"
+title: "Logging build information"
 index: "../toc.html"
-commit: "4550d5e6cbef1e8b18a1732a3a05383ab4e496ad"
+commit: "9839255f9f196b3e634f3cda80438ab631773df9"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.3</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li class="active"><a href="../topics/log-files.html">Log files</a></li><li><a href="../topics/error-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Accessing help for the dita command</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Reducing processing time</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="title topictitle1" id="ariaid-title1">Log files</h1>
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li class="active"><a href="../topics/log-files.html">Logging</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/error-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Command line help</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Speeding up builds</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Logging build information</h1>
+  
   
   
   <div class="body conbody"><p class="shortdesc">When you run DITA-OT, key information is logged on the screen. This information can also be written to a
@@ -18,9 +19,30 @@ commit: "4550d5e6cbef1e8b18a1732a3a05383ab4e496ad"
     <dl class="dl">
       
         <dt class="dt dlterm"><span class="keyword cmdname">dita</span> command</dt>
-        <dd class="dd">By default, only warning and error messages are written to the screen. If you use the
-            <span class="keyword parmname">-v</span> option, logging will be more verbose and informative messages are also written out.
-          The <span class="keyword parmname">-l</span> option can be used to write the log messages into a file.</dd>
+        <dd class="dd">
+          <p class="p">By default, only warning and error messages are written to the screen.</p>
+          <ul class="ul">
+            <li class="li">
+              <p class="p">For more information, enable verbose logging with <span class="keyword cmdname">dita</span>
+                <span class="keyword parmname">--verbose</span>.</p>
+              <p class="p">Verbose logging prints additional information to the console, including directory settings, effective
+                values for Ant properties, input/output files, and informational messages to assist in
+                troubleshooting.</p></li>
+            <li class="li">
+              <p class="p">To enable debug logging, use <span class="keyword cmdname">dita</span>
+                <span class="keyword parmname">--debug</span>.</p>
+              <p class="p">Debug logging prints considerably more additional information. The debug log includes all information
+                from the verbose log, plus details on Java classes, additional Ant properties and overrides,
+                preprocessing filters, parameters, and stages, and the complete build sequence.</p>
+              <div class="note attention note_attention"><span class="note__title">Attention:</span> Debug logging requires additional resources and can slow down the build process, so
+                it should only be enabled when further details are required to diagnose problems.</div>
+            </li>
+            <li class="li">
+              <p class="p">To write the log to a file, use <span class="keyword cmdname">dita</span>
+                <span class="keyword parmname">--logfile</span>=<var class="keyword varname">file</var> and specify the path to the log file.</p>
+              <p class="p">Unless an absolute path is specified, the value will be interpreted relative to the current
+                directory.</p></li>
+          </ul></dd>
       
       
         <dt class="dt dlterm">Ant</dt>
@@ -66,9 +88,9 @@ commit: "4550d5e6cbef1e8b18a1732a3a05383ab4e496ad"
       
       
       
-      <p class="p">In PDF processing with Apache™ FOP, DITA-OT 3.1 now uses the Simple
-        Logging Facade for Java (SLF4J), allowing for better control and formatting of FOP log messages. To reduce noise
-        on the console, all FOP messages are set to the Info level and hidden by default.</p>
+      <p class="p">In PDF processing with Apache™ FOP, DITA-OT uses the Simple Logging
+        Facade for Java (SLF4J) for better control and formatting of FOP log messages. To reduce noise on the console,
+        all FOP messages are set to the Info level and hidden by default.</p>
       <p class="p">To enable debug logging, modify the <span class="ph filepath">config/logback.xml</span> file or add your own
           <span class="ph filepath">logback.xml</span> to the classpath with a higher priority to override the default settings. For
         more information, see the
