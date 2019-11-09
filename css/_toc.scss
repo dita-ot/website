@@ -30,7 +30,7 @@ nav.col-lg-3 {
 
   .active > a {
     @include border-radius($badge-border-radius);
-    background-color: $gray-200;
+    background-color: $navbar-dark-brand-color;
     color: $link-hover-color;
   }
 }

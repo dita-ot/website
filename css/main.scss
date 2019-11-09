@@ -39,10 +39,10 @@ $navbar-dark-bg:                $brand-primary;
 // Inverted navbar links
 $navbar-dark-hover-color:       #fff; // rgba($white, .75)
 $navbar-dark-color:             #b9c8e0;
-$navbar-dark-link-hover-bg:     darken($navbar-dark-bg, 5%);
+$navbar-dark-link-hover-bg:     darken($navbar-dark-bg, 5%); // #172b4a
 
 // Inverted navbar brand label        // DITA Open Toolkit home page
-$navbar-dark-brand-color:       lighten($navbar-dark-color, 10%);
+$navbar-dark-brand-color:       lighten($navbar-dark-color, 10%); // #dce4f0
 
 // Banner icon colors
 $warning-icon-color:            #856404;

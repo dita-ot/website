@@ -1,0 +1,129 @@
+---
+# Generated from DITA source
+layout: base
+title: "Publishing with project files"
+index: "../toc.html"
+---
+
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li class="active"><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Publishing with project files</h1>
+  
+  
+  
+  <div class="body taskbody"><p class="shortdesc"><span class="ph" id="ID__projects-desc">DITA-OT 3.4 introduces new project files to define publication projects with
+      multiple deliverables. Projects specify a context, output folder, and publication for each deliverable. A
+      re-usable context groups source files and filters, and a publication defines an output format with transformation
+      parameters. You can pass a project file to the <span class="keyword cmdname">dita</span> command to publish multiple deliverables at
+      once.</span></p>
+    <section class="section"><h2 class="title sectiontitle">About project files</h2>
+      
+      <p class="p" id="ID__projects-formats">Project files may be defined in one of three formats: XML,
+        <a class="xref" href="https://json.org" target="_blank">JSON</a>, or
+        <a class="xref" href="https://yaml.org" target="_blank">YAML</a>. The XML format can be validated with a RELAX NG schema provided in the
+          <span class="ph filepath">resources</span> folder of the DITA-OT installation (<span class="ph filepath">project.rnc</span>).</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> The XML project file format is the normative version provided for interoperability with existing XML-based
+        toolchains. The JSON and YAML versions are alternative compact formats that are easier to read and write, but
+        otherwise equivalent to the XML syntax.</div>
+      <p class="p" id="ID__projects-advantages">Whereas <span class="ph filepath">.properties</span> files can only be used to set parameters,
+        project files go further, allowing you to define multiple deliverables with separate input files and output
+        folders and formats for each publication. A project file can also refer to other project files, so you can
+        re-use common configuration structures across projects.</p>
+      <div class="p" id="ID__projects-relpaths">Another advantage of project files over <span class="ph filepath">.properties</span> files is that
+        they allow you to specify paths relative to the project file, even for parameters that require absolute paths,
+        such as:
+        <ul class="ul">
+          <li class="li"><code class="ph codeph">args.cssroot</code></li>
+          <li class="li"><code class="ph codeph">args.ftr</code></li>
+          <li class="li"><code class="ph codeph">args.hdf</code></li>
+          <li class="li"><code class="ph codeph">args.hdr</code></li>
+        </ul>
+      </div>
+      <p class="p" id="ID__projects-structure">Though the exact syntax differs slightly, the basic structure of project files is
+        similar in all supported formats.</p>
+      <ul class="ul" compact>
+        <li class="li">
+          <p class="p">You can link to other project files with <code class="ph codeph">include(s)</code></p></li>
+        <li class="li">
+          <div class="p">Projects can define multiple <code class="ph codeph">deliverables</code>, which consist of:
+            <ul class="ul">
+              <li class="li">
+                <div class="p">a publication <code class="ph codeph">context</code> that may include:
+                  <ul class="ul">
+                    <li class="li">an <code class="ph codeph">id</code> used to refer to this context from other projects</li>
+                    <li class="li">a series of <code class="ph codeph">input</code> files (DITA maps)</li>
+                    <li class="li">a <code class="ph codeph">profile</code> with a series of DITAVAL files used to filter the content</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="li">
+                <p class="p">an <code class="ph codeph">output</code> location (relative to the CLI <span class="keyword parmname">--output</span>
+                directory)</p></li>
+              <li class="li">a <code class="ph codeph">publication</code> that defines:
+                <ul class="ul" compact>
+                  <li class="li">an output format via <code class="ph codeph">transtype</code>, and</li>
+                  <li class="li">a series of parameters to set for this transformation type, specified via <code class="ph codeph">name</code>
+                    and either <code class="ph codeph">href</code>, <code class="ph codeph">path</code>, or <code class="ph codeph">value</code></li>
+                </ul>
+              </li>
+            </ul>
+          </div></li>
+      </ul>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> 
+        <ul class="ul">
+          <li class="li">Use <code class="ph codeph">href</code> for web addresses and other resources that should resolve to an absolute
+            URI.</li>
+          <li class="li">Use <code class="ph codeph">path</code> for parameters that require an absolute value, like
+              <span class="keyword parmname">args.cssroot</span>. Paths may be defined relative to the project file, but are always
+            expanded to an absolute system path.</li>
+          <li class="li">Use <code class="ph codeph">value</code> to define strings and relative values for properties like
+              <span class="keyword parmname">args.csspath</span>, which is used to describe a relative path in the output folder.</li>
+        </ul>
+      </div>
+    </section>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Create a project file to define the deliverables in your publication project.</span>
+        <div class="itemgroup stepxmp">
+          <p class="p">For example:</p>
+          <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample project file for PDF output: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/pdf.xml</span></figcaption>
+            
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-model href="../../../resources/project.rnc" type="application/relax-ng-compact-syntax"?&gt;
+&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;deliverable id="pdf"&gt;
+    &lt;context&gt;
+      &lt;input href="../../userguide-book.ditamap"/&gt;
+    &lt;/context&gt;
+    &lt;output href="."/&gt;
+    &lt;publication transtype="pdf2"&gt;
+      &lt;param name="args.chapter.layout" value="BASIC"/&gt;
+      &lt;param name="args.gen.task.lbl" value="YES"/&gt;
+      &lt;param name="include.rellinks" value="friend"/&gt;
+      &lt;param name="outputFile.base" value="userguide"/&gt;
+      &lt;param name="processing-mode" value="strict"/&gt;
+    &lt;/publication&gt;
+  &lt;/deliverable&gt;
+&lt;/project&gt;</code></pre>
+          </figure>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Pass your project file to the <span class="keyword cmdname">dita</span> command to build output.</span>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var></code></pre>
+        </div>
+      </li><li class="li step stepexpand"><strong>Optional: </strong>
+        <span class="ph cmd">If needed, pass additional arguments to the <span class="keyword cmdname">dita</span> command to override specific build
+          parameters. </span>
+        <div class="itemgroup stepxmp">
+          <p class="p">For example, to build output once with <code class="keyword markupname xmlelement">&lt;draft&gt;</code> and
+              <code class="keyword markupname xmlelement">&lt;required-cleanup&gt;</code> content:</p>
+          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var> <span class="keyword parmname">--args.draft</span>=<span class="keyword option">yes</span></code></pre>
+        </div>
+      </li><li class="li step stepexpand"><strong>Optional: </strong>
+        <span class="ph cmd">If your project contains multiple deliverables, you can pass the <span class="keyword parmname">--deliverable</span> option
+          to generate output for a single deliverable ID.</span>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">all.xml</var> <span class="keyword parmname">--deliverable</span>=<span class="keyword option">htmlhelp</span></code></pre>
+        </div>
+      </li></ol></section>
+  </div>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/project-files-xml.html">Sample XML project files</a></strong><br>DITA-OT includes sample XML project files that can be used to define a publication project. The XML format     can be validated with a RELAX NG schema provided in the <span class="ph filepath">resources</span> folder of the DITA-OT     installation (<span class="ph filepath">project.rnc</span>).</li><li class="link ulchildlink"><strong><a href="../topics/project-files-json.html">Sample JSON project files</a></strong><br>DITA-OT includes sample project files in     <a class="xref" href="https://json.org" target="_blank">JSON</a> format that can be used to define a publication project. Like the XML project samples, the     sample JSON files illustrate how deliverables can be described for use in publication projects. The JSON samples are     functionally equivalent to their XML and YAML counterparts, with minor adaptations to JSON file syntax.</li><li class="link ulchildlink"><strong><a href="../topics/project-files-yaml.html">Sample YAML project files</a></strong><br>DITA-OT includes sample project files in     <a class="xref" href="https://yaml.org" target="_blank">YAML</a> format that can be used to define a publication project. Like the XML project samples, the     sample YAML files illustrate how deliverables can be described for use in publication projects. The YAML samples are     functionally equivalent to their XML and JSON counterparts, with minor adaptations to YAML file syntax.</li></ul></nav></article></main>

@@ -45,3 +45,6 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 /dev/topics/DITA-messages.html*                        /dev/topics/error-messages.html:splat 301!
 /dev/topics/dita-messages.html*                        /dev/topics/error-messages.html:splat 301!
 /dev/topics/DITA-messages.html                         /dev/topics/error-messages.html
+
+# Point XML namespace for project files to corresponding docs topic
+/project                                               /dev/topics/using-project-files.html
