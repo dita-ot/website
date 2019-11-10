@@ -1,9 +1,12 @@
 // Style DITA note elements w/ Bootstrap components
 
 // Apply `.alert` rule from `_alerts.scss`
-div.note,
-div.important,
-div.attention {
+.attention,
+.caution,
+.important,
+.note,
+.tip,
+.warning {
   @extend .alert;
   margin: 1em;
 
@@ -17,22 +20,24 @@ div.attention {
 // Note = alert alert-info
 .note {
   @extend .alert-info;
+  background-color: $navbar-dark-brand-color;
+
   // Tip = alert alert-success
   &.tip {
     @extend .alert-success;
   }
-}
 
-// Important = alert alert-warning
-.attention,
-.important {
-  @extend .alert-warning;
-}
+  // Important = alert alert-warning
+  &.attention,
+  &.important {
+    @extend .alert-warning;
+  }
 
-// Caution, Warning = alert alert-danger
-.caution,
-.warning {
-  @extend .alert-danger;
+  // Caution, Warning = alert alert-danger
+  &.caution,
+  &.warning {
+    @extend .alert-danger;
+  }
 }
 
 // Title styles
