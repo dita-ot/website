@@ -48,3 +48,7 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 
 # Point XML namespace for project files to corresponding docs topic
 /project                                               /dev/topics/using-project-files.html
+
+# Retain & redirect slack subdomain for convenience    https://github.com/dita-ot/website/pull/291
+https://slack.dita-ot.org                              https://join.slack.com/t/dita-ot/shared_invite/enQtODMxNjQ0MzAyMDg3LWZhZjk4NmM3MmU4YWI4MTM2NTVkMDg3ZmY4MjA1YzM0ZWI3NmY3NTc5ZmY5NzQ2MGU1NjA4YWIwMTJlMWUyNTY
+http://slack.dita-ot.org                               https://join.slack.com/t/dita-ot/shared_invite/enQtODMxNjQ0MzAyMDg3LWZhZjk4NmM3MmU4YWI4MTM2NTVkMDg3ZmY4MjA1YzM0ZWI3NmY3NTc5ZmY5NzQ2MGU1NjA4YWIwMTJlMWUyNTY
