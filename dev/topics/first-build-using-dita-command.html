@@ -3,7 +3,7 @@
 layout: base
 title: "Building output using the dita command"
 index: "../toc.html"
-commit: "9839255f9f196b3e634f3cda80438ab631773df9"
+commit: "cbf14ce5be8c2d248d69f7c7d6586a4e92df0049"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/prerequisite-software.html">Prerequisite software</a></li><li><a href="../topics/determining-version-of-ditaot.html">Checking the version</a></li><li class="active"><a href="../topics/first-build-using-dita-command.html">Building output</a></li><li><a href="../topics/installing-via-homebrew.html">Installing via Homebrew</a></li></ul></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -31,12 +31,10 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
             <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li><li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to
               process.</li><li class="li">
               <p class="p" id="using-command-line-tool__d15e202">
-                <var class="keyword varname">format</var> is the output format (transformation type).
-                This argument corresponds to the common parameter
-                <span class="keyword parmname">transtype</span>.
-                Use the same values as for the <span class="keyword parmname">transtype</span> build
-                parameter, for example <span class="keyword option">html5</span> or <span class="keyword option">pdf</span>.
-              </p>
+                <var class="keyword varname">format</var> is the output format (transformation type). This argument corresponds to the
+                common parameter <span class="keyword parmname">transtype</span>. Use the same values as for the
+                  <span class="keyword parmname">transtype</span> build parameter, for example <span class="keyword option">html5</span> or
+                  <span class="keyword option">pdf</span>. </p>
             </li>
             
             
@@ -46,7 +44,7 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
             specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
             directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d15e595"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
+          <div class="note tip note_tip" id="using-command-line-tool__d15e596"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
               <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.
             
           </div>

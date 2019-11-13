@@ -3,7 +3,7 @@
 layout: base
 title: "Creating a new plug-in extension point"
 index: "../toc.html"
-commit: "9839255f9f196b3e634f3cda80438ab631773df9"
+commit: "cbf14ce5be8c2d248d69f7c7d6586a4e92df0049"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-applications.html">Plug-in applications</a><ul class="nav nav-list"><li><a href="../topics/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../topics/plugin-anttarget.html">Adding a new target to the Ant build process</a></li><li><a href="../topics/plugin-antpreprocess.html">Adding an Ant target to the pre-processing pipeline</a></li><li><a href="../topics/plugin-newtranstype.html">Adding a new transformation type</a></li><li><a href="../topics/plugin-overridestyle.html">Overriding an XSLT-processing step</a></li><li><a href="../topics/referencing-other-plugins.html">Referencing files from other plug-ins</a></li><li><a href="../topics/plugin-xsltparams.html">Adding parameters to existing XSLT steps</a></li><li><a href="../topics/plugin-javalib.html">Adding a Java library to the classpath</a></li><li><a href="../topics/plugin-messages.html">Adding new diagnostic messages</a></li><li class="active"><a href="../topics/plugin-newextensions.html">Creating a new plug-in extension point</a></li><li><a href="../topics/implement-saxon-customizations.html">Adding Saxon customizations</a></li></ul></li><li><a href="../topics/plugin-sample.html">Example plugin.xml file</a></li><li><a href="../topics/plugin-best-practices.html">Best practices</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -28,8 +28,8 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
     </section>
     <section class="section"><h2 class="title sectiontitle"><code class="keyword markupname xmlelement">&lt;dita:extension&gt;</code> element</h2>
       
-      <p class="p">The <code class="keyword markupname xmlelement">&lt;dita:extension&gt;</code> elements are used to insert generated content during the
-        plug-in installation process. There are two required attributes:</p>
+      <p class="p">The <code class="keyword markupname xmlelement">&lt;dita:extension&gt;</code> elements are used to insert generated content during the plug-in
+        installation process. There are two required attributes:</p>
       <ul class="ul">
         <li class="li">The <code class="keyword markupname xmlatt">@id</code> attribute defines the extension point ID that provides the argument data.</li>
         <li class="li">The <code class="keyword markupname xmlatt">@behavior</code> attribute defines which processing action is used.</li>
@@ -43,9 +43,9 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
         
         
           <dt class="dt pt dlterm"><code class="ph codeph">org.dita.dost.platform.ImportAntLibAction</code></dt>
-          <dd class="dd pd">Create Ant <code class="keyword markupname xmlelement">&lt;pathelement&gt;</code> elements for the <a class="xref" href="plugin-javalib.html" title="You can use the dita.conductor.lib.import extension point to add an additional Java library to the DITA-OT classpath parameter.">library
-              import extension point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is used to define the extension point
-            ID.</dd>
+          <dd class="dd pd">Create Ant <code class="keyword markupname xmlelement">&lt;pathelement&gt;</code> elements for the
+            <a class="xref" href="plugin-javalib.html" title="You can use the dita.conductor.lib.import extension point to add an additional Java library to the DITA-OT classpath parameter.">library import extension point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is
+            used to define the extension point ID.</dd>
         
         
           <dt class="dt pt dlterm"><code class="ph codeph">org.dita.dost.platform.ImportPluginCatalogAction</code></dt>
@@ -57,29 +57,33 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
         
         
           <dt class="dt pt dlterm"><code class="ph codeph">org.dita.dost.platform.ImportStringsAction</code></dt>
-          <dd class="dd pd">Include plug-in string file content based on the <a class="xref" href="plugin-addgeneratedtext.html" title="Generated text is the term for strings that are automatically added by the build, such as &#34;Note&#34; before the contents of a note element.">generated text
-              extension point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is used to define the extension point ID.</dd>
+          <dd class="dd pd">Include plug-in string file content based on the
+            <a class="xref" href="plugin-addgeneratedtext.html" title="Generated text is the term for strings that are automatically added by the build, such as &#34;Note&#34; before the contents of a note element.">generated text extension point</a>. The <code class="keyword markupname xmlatt">@id</code>
+            attribute is used to define the extension point ID.</dd>
         
         
           <dt class="dt pt dlterm"><code class="ph codeph">org.dita.dost.platform.ImportXSLAction</code></dt>
-          <dd class="dd pd">Create <code class="keyword markupname xmlelement">&lt;xsl:import&gt;</code> elements based on the <a class="xref" href="plugin-overridestyle.html" title="You can override specific XSLT-processing steps in both the pre-processing pipeline and certain DITA-OT transformations.">XSLT
-              import extension point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is used to define the extension point
-            ID.</dd>
+          <dd class="dd pd">Create <code class="keyword markupname xmlelement">&lt;xsl:import&gt;</code> elements based on the
+            <a class="xref" href="plugin-overridestyle.html" title="You can override specific XSLT-processing steps in both the pre-processing pipeline and certain DITA-OT transformations.">XSLT import extension point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is
+            used to define the extension point ID.</dd>
         
         
           <dt class="dt pt dlterm"><code class="ph codeph">org.dita.dost.platform.InsertAction</code></dt>
-          <dd class="dd pd">Include plug-in conductor content based on the <a class="xref" href="plugin-anttarget.html" title="As of DITA-OT 3.0, the ant.import extension point can be used to make new targets available to the Ant processing pipeline. This can be done as part of creating a new transformation, extending pre-processing, or simply to make new Ant targets available to other plug-ins.">Ant import extension
-              point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is used to define the extension point ID.</dd>
+          <dd class="dd pd">Include plug-in conductor content based on the
+            <a class="xref" href="plugin-anttarget.html" title="As of DITA-OT 3.0, the ant.import extension point can be used to make new targets available to the Ant processing pipeline. This can be done as part of creating a new transformation, extending pre-processing, or simply to make new Ant targets available to other plug-ins.">Ant import extension point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is used
+            to define the extension point ID.</dd>
         
         
           <dt class="dt pt dlterm"><code class="ph codeph">org.dita.dost.platform.InsertAntActionRelative</code></dt>
-          <dd class="dd pd">Include plug-in conductor content based on the <a class="xref" href="plugin-anttarget.html" title="As of DITA-OT 3.0, the ant.import extension point can be used to make new targets available to the Ant processing pipeline. This can be done as part of creating a new transformation, extending pre-processing, or simply to make new Ant targets available to other plug-ins.">relative Ant import
-              extension point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is used to define the extension point ID.</dd>
+          <dd class="dd pd">Include plug-in conductor content based on the
+            <a class="xref" href="plugin-anttarget.html" title="As of DITA-OT 3.0, the ant.import extension point can be used to make new targets available to the Ant processing pipeline. This can be done as part of creating a new transformation, extending pre-processing, or simply to make new Ant targets available to other plug-ins.">relative Ant import extension point</a>. The <code class="keyword markupname xmlatt">@id</code>
+            attribute is used to define the extension point ID.</dd>
         
         
           <dt class="dt pt dlterm"><code class="ph codeph">org.dita.dost.platform.InsertCatalogActionRelative</code></dt>
-          <dd class="dd pd">Include plug-in catalog content based on the <a class="xref" href="plugin-xmlcatalog.html" title="You can update either the main DITA-OT XML catalog or the XML catalog that is used by the PDF plug-in. This enables DITA-OT to support new specializations and document-type shells.">catalog import extension
-              point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is used to define the extension point ID.</dd>
+          <dd class="dd pd">Include plug-in catalog content based on the
+            <a class="xref" href="plugin-xmlcatalog.html" title="You can update either the main DITA-OT XML catalog or the XML catalog that is used by the PDF plug-in. This enables DITA-OT to support new specializations and document-type shells.">catalog import extension point</a>. The <code class="keyword markupname xmlatt">@id</code> attribute is
+            used to define the extension point ID.</dd>
         
         
           <dt class="dt pt dlterm"><code class="ph codeph">org.dita.dost.platform.ListTranstypeAction</code></dt>
@@ -113,8 +117,8 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
                    name="Custom target content"/&gt;
   &lt;template file="myBuildFile_template.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
-      <p class="p">When the plug-in is installed, this will be used to recreate <span class="ph filepath">myBuildFile.xml</span>, replacing Ant
-        file content based on extension point use.</p>
+      <p class="p">When the plug-in is installed, this will be used to recreate <span class="ph filepath">myBuildFile.xml</span>, replacing
+        Ant file content based on extension point use.</p>
       <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;project xmlns:dita="http://dita-ot.sourceforge.net"&gt;
   &lt;target name="dita2custom"
      dita:depends="dita2custom.init,

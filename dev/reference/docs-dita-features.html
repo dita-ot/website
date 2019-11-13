@@ -3,7 +3,7 @@
 layout: base
 title: "DITA features in the documentation"
 index: "../toc.html"
-commit: "9839255f9f196b3e634f3cda80438ab631773df9"
+commit: "cbf14ce5be8c2d248d69f7c7d6586a4e92df0049"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../reference/dita-spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../reference/dita-v1-2-support.html">DITA 1.2 support</a></li><li><a href="../reference/dita-v1-3-support.html">DITA 1.3 support</a></li><li><a href="../reference/implementation-dependent-features.html">Implementation-dependent features</a></li><li><a href="../reference/extended-functionality.html">Codeblock extensions</a></li><li class="active"><a href="../reference/docs-dita-features.html">DITA features in docs</a></li></ul></li><li><a href="../reference/license.html">License</a></li><li><a href="../reference/glossary.html#glossary">Glossary</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -28,12 +28,10 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
       <p class="p">Various topics, sections and elements in the docs are profiled by audience:</p>
       <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;li id="novice-variables-last" audience="novice"&gt;
   &lt;p id="common-format-info"&gt;
-    &lt;varname&gt;format&lt;/varname&gt; is the output format (transformation type).
-    This argument corresponds to the common parameter
-    &lt;parmname&gt;transtype&lt;/parmname&gt;.
-    Use the same values as for the &lt;parmname&gt;transtype&lt;/parmname&gt; build
-    parameter, for example &lt;option&gt;html5&lt;/option&gt; or &lt;option&gt;pdf&lt;/option&gt;.
-  &lt;/p&gt;
+    &lt;varname&gt;format&lt;/varname&gt; is the output format (transformation type). This argument corresponds to the
+    common parameter &lt;parmname&gt;transtype&lt;/parmname&gt;. Use the same values as for the
+      &lt;parmname&gt;transtype&lt;/parmname&gt; build parameter, for example &lt;option&gt;html5&lt;/option&gt; or
+      &lt;option&gt;pdf&lt;/option&gt;. &lt;/p&gt;
 &lt;/li&gt;</code></pre></div>
       <p class="p">An “audience” subject scheme controls the values that are available for the <code class="keyword markupname xmlatt">@audience</code>
         attribute:</p>

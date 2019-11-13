@@ -3,7 +3,7 @@
 layout: base
 title: "Embedding web fonts in HTML output"
 index: "../toc.html"
-commit: "9839255f9f196b3e634f3cda80438ab631773df9"
+commit: "cbf14ce5be8c2d248d69f7c7d6586a4e92df0049"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a><ul class="nav nav-list"><li><a href="../topics/html-customization-parameters.html">Setting HTML parameters</a></li><li><a href="../topics/html-customization-properties-file.html">Using a properties file</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a><ul class="nav nav-list"><li><a href="../topics/html-customization-plugin-bundle-css.html">Bundling custom CSS</a></li><li class="active"><a href="../topics/html-customization-plugin-webfont.html">Embedding web fonts</a></li><li><a href="../topics/html-customization-plugin-javascript.html">Inserting JavaScript</a></li></ul></li></ul></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -72,13 +72,14 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
           <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample <span class="ph filepath">webfont.hdf.xml</span> file</figcaption>
             
             <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;div&gt;
-  &lt;link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet"&gt;&lt;/link&gt;
+  &lt;link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" /&gt;
 &lt;/div&gt;</code></pre>
           </figure>
-          <p class="p">This example uses the <a class="xref" href="https://fonts.google.com/specimen/Noto+Sans" target="_blank">Noto Sans</a> font. You can use multiple fonts by creating
-            additional <code class="keyword markupname xmlelement">&lt;link&gt;</code> references in this file. The division wrapper will be discarded
-            when generating HTML files, and the contents will be inserted into the <code class="keyword markupname xmlelement">&lt;head&gt;</code> element
-            of each page.</p>
+          <p class="p">This example uses the
+            <a class="xref" href="https://fonts.google.com/specimen/Noto+Sans" target="_blank">Noto Sans</a> font. You can use multiple fonts by creating additional
+              <code class="keyword markupname xmlelement">&lt;link&gt;</code> references in this file. The division wrapper will be discarded when
+            generating HTML files, and the contents will be inserted into the <code class="keyword markupname xmlelement">&lt;head&gt;</code> element of
+            each page.</p>
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">com.example.html5-webfont</span> directory, create a subdirectory named
@@ -93,8 +94,9 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
   font-family: 'Noto Sans', sans-serif;
 }</code></pre>
           </figure>
-          <p class="p">This example uses <a class="xref" href="https://fonts.google.com/specimen/Noto+Sans" target="_blank">Noto Sans</a> for all body content. In practice, you would normally use
-            different fonts for headings, body content, tables, etc. by creating additional rules in your CSS file.</p>
+          <p class="p">This example uses
+            <a class="xref" href="https://fonts.google.com/specimen/Noto+Sans" target="_blank">Noto Sans</a> for all body content. In practice, you would normally use different fonts
+            for headings, body content, tables, etc. by creating additional rules in your CSS file.</p>
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">com.example.html5-webfont</span> root directory, add an Ant script
@@ -123,7 +125,8 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
       </li></ol></section>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
       <div class="note tip note_tip"><span class="note__title">Tip:</span> The files for this sample plug-in are included in the DITA-OT installation directory under
-          <span class="ph filepath">docsrc/samples/plugins/com.example.html5-webfont/</span> and on <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-webfont" target="_blank">GitHub</a>.</div>
+          <span class="ph filepath">docsrc/samples/plugins/com.example.html5-webfont/</span> and on
+        <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-webfont" target="_blank">GitHub</a>.</div>
       <p class="p">The plug-in directory has the following layout and files:</p>
       <pre class="pre codeblock"><code>com.example.html5-webfont
 ├── build_html5-webfont.xml
