@@ -6,9 +6,10 @@ _site/**
 css/bootstrap/**
 js/**
 
-# Preserve control flow tags in layouts & footer
+# Preserve control flow tags in layouts & includes
 # https://github.com/prettier/prettier/issues/5680
 _layouts/**
+_includes/docs-menu.html
 _includes/footer.html
 
 # Skip sidebar to prevent Prettier errors with nested list items
