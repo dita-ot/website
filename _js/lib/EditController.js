@@ -38,11 +38,11 @@ function EditController() {
       }
       if ($link.length === 0) {
         $link = $(
-          `<a class="btn btn-sm btn-success float-right" id="editLink" target="_blank" title="${t(
+          `<a class="btn btn-sm btn-success ml-md-auto" id="editLink" target="_blank" title="${t(
             'EDIT__TITLE'
           )}">${t('EDIT')}</a>`
         )
-        $('.dev-docs-banner').append($link)
+        $('.docs-banner-dev').append($link)
       }
       $link.attr('href', url)
     } else {

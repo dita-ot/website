@@ -1,8 +1,33 @@
-.dev-docs-banner {
-  margin-bottom: 0;
+.alert-info {
+  background-color: $navbar-dark-brand-color;
+}
 
-  svg {
-    fill: $warning-icon-color;
+.docs-banner {
+  kbd {
+    padding: 0 0.2rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .nav-link {
+    padding: 0;
+  }
+
+  &-dev {
+    svg {
+      fill: $warning-icon-color;
+    }
+  }
+
+  &-new {
+    background-color: $navbar-dark-brand-color;
+    color: $link-color;
+
+    .alert-link {
+      color: $link-color;
+    }
   }
 }
 
@@ -15,7 +40,8 @@
 
 @include media-breakpoint-up(sm) {
   #editLink {
-    display: block;
-    margin-top: -2px;
+    display: flex;
+    line-height: 1.2; // 1.5 !default;
+    padding: 0.2rem 0.4rem; // Y: .25rem X: .5rem !default;
   }
 }

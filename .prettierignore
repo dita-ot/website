@@ -11,7 +11,6 @@ js/**
 _layouts/**
 _includes/docs-menu.html
 _includes/footer.html
-_includes/old-docs-banner.html
 
 # Skip sidebar to prevent Prettier errors with nested list items
 # https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags
