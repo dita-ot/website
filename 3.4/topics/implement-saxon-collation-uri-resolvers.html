@@ -59,7 +59,8 @@ index: "../toc.html"
 }</code></pre></div>
     <div class="p">To implement a custom collation URI resolver:
       <ol class="ol">
-        <li class="li">Add your plugin’s JAR file in the DITA-OT class path as described in <a class="xref" href="plugin-javalib.html" title="You can use the dita.conductor.lib.import extension point to add an additional Java library to the DITA-OT classpath parameter.">Adding a Java library to the DITA-OT classpath</a>.</li>
+        <li class="li">Add your plugin’s JAR file in the DITA-OT class path as described in
+          <a class="xref" href="plugin-javalib.html" title="You can use the dita.conductor.lib.import extension point to add an additional Java library to the DITA-OT classpath parameter.">Adding a Java library to the DITA-OT classpath</a>.</li>
         <li class="li">Implement an instance of <code class="ph codeph">org.dita.dost.module.saxon.DelegatingCollationUriResolver</code> as
           described above.</li>
         <li class="li">Include a file named <span class="ph filepath">org.dita.dost.module.saxon.DelegatingCollationUriResolver</span> in the
@@ -67,7 +68,7 @@ index: "../toc.html"
           the file must be the name of a class that implements
             <code class="ph codeph">org.dita.dost.module.saxon.DelegatingCollationUriResolver</code>:<pre class="pre codeblock"><code>org.example.i18n.saxon.MyCollationUriResolver</code></pre>
           <div class="p">You can create the services file using <code class="keyword markupname xmlelement">&lt;service&gt;</code> elements in an Ant
-            <code class="keyword markupname xmlelement">&lt;jar&gt;</code>
+              <code class="keyword markupname xmlelement">&lt;jar&gt;</code>
             task:<pre class="pre codeblock language-xml"><code>&lt;jar destfile="${basedir}/target/lib/example-saxon.jar"&gt;
   ⋮
   &lt;service type="org.dita.dost.module.saxon.DelegatingCollationUriResolver"&gt;
@@ -75,8 +76,8 @@ index: "../toc.html"
   &lt;/service&gt;
   ⋮
 &lt;/jar&gt;</code></pre></div></li>
-        <li class="li">To use the collator in XSLT style sheets, specify the collation URI on <code class="keyword markupname xmlatt">@xsl:sort</code> elements (or
-          anywhere a collator URI can be
+        <li class="li">To use the collator in XSLT style sheets, specify the collation URI on <code class="keyword markupname xmlatt">@xsl:sort</code> elements
+          (or anywhere a collator URI can be
           specified):<pre class="pre codeblock language-xml"><code>&lt;xsl:apply-templates select="word"&gt;
   &lt;xsl:sort collation="http://org.example.i18n.MyCollator"/&gt;
 &lt;/xsl:apply-templates&gt;</code></pre></li>

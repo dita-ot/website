@@ -18,10 +18,12 @@ index: "../toc.html"
       DITA-OT provides a dynamic mechanism to perform this registration for plug-in-provided extension functions.</p>
     <div class="p">To implement extension functions, you must do the following:
       <ol class="ol">
-        <li class="li">Add your plug-in’s JAR file in the DITA-OT class path as described in <a class="xref" href="plugin-javalib.html" title="You can use the dita.conductor.lib.import extension point to add an additional Java library to the DITA-OT classpath parameter.">Adding a Java library to the DITA-OT classpath</a>.</li>
+        <li class="li">Add your plug-in’s JAR file in the DITA-OT class path as described in
+          <a class="xref" href="plugin-javalib.html" title="You can use the dita.conductor.lib.import extension point to add an additional Java library to the DITA-OT classpath parameter.">Adding a Java library to the DITA-OT classpath</a>.</li>
         <li class="li">For each function, implement a class that extends
             <code class="ph codeph">net.sf.saxon.lib.ExtensionFunctionDefinition</code>. This class provides the namespace name and
-          function name for the function as well as details about its arguments and so on. See <a class="xref" href="http://www.saxonica.com/html/documentation9.8/extensibility/integratedfunctions" target="_blank">Integrated extension functions</a> in the Saxon documentation.</li>
+          function name for the function as well as details about its arguments and so on. See
+          <a class="xref" href="http://www.saxonica.com/html/documentation9.8/extensibility/integratedfunctions" target="_blank">Integrated extension functions</a> in the Saxon documentation.</li>
         <li class="li">Include a file named <span class="ph filepath">net.sf.saxon.lib.ExtensionFunctionDefinition</span> in the directory
             <span class="ph filepath">META-INF/services</span> in the compiled JAR that your plug-in provides. Each line of the file
           must be the name of a class that implements <code class="ph codeph">net.sf.saxon.lib.ExtensionFunctionDefinition</code>: <pre class="pre codeblock"><code>com.example.saxon.functions.Add
