@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary flex-column flex-md-row">
     <div class="container">
       <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
       <button
@@ -15,29 +15,20 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarToggle">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item d-none d-lg-block">
-            <a class="nav-link" href="{{ site.baseurl }}/download">Download</a>
-          </li>
-          <li class="nav-item d-none d-lg-block">
-            <a class="nav-link" href="{{ site.baseurl }}/plugins">Plugins</a>
-          </li>
+        <ul class="navbar-nav mr-auto flex-row">
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               data-toggle="dropdown"
-              id="contributeDropdownMenuLink"
+              id="codeDropdownMenuLink"
               href="#"
               role="button"
               aria-expanded="false"
-              >Contribute <b class="caret"></b
-            ></a>
-            <div class="dropdown-menu" aria-labelledby="contributeDropdownMenuLink">
-              <a class="dropdown-item" href="{{ site.baseurl }}/contributing">How To Contribute</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/management">Project Management</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/who_we_are">Who We Are</a>
-              <a class="dropdown-item" href="http://slack.dita-ot.org">Join us on Slack</a>
-              <div class="dropdown-divider"></div>
+            >
+              Code <b class="caret"></b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdownMenuLink">
+              <h6 class="dropdown-header">Core repository</h6>
               <a class="dropdown-item" href="https://github.com/dita-ot/dita-ot"
                 >DITA-OT Source Code</a
               >
@@ -48,6 +39,7 @@
                 >DITA-OT Project Wiki</a
               >
               <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">Docs</h6>
               <a class="dropdown-item" href="https://github.com/dita-ot/docs"
                 >Documentation Source</a
               >
@@ -57,21 +49,30 @@
               <a class="dropdown-item" href="https://github.com/dita-ot/docs/wiki"
                 >Documentation Wiki</a
               >
+              <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">About This Website</h6>
+              <a class="dropdown-item" href="{{ site.baseurl }}/colophon">Colophon</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               data-toggle="dropdown"
+              id="communityDropdownMenuLink"
               href="#"
               role="button"
               aria-expanded="false"
-              id="supportDropdownMenuLink"
-              >Support <b class="caret"></b
-            ></a>
-            <div class="dropdown-menu" aria-labelledby="supportDropdownMenuLink">
-              <a class="dropdown-item" href="{{ site.baseurl }}/support">Support Forums</a>
+            >
+              Community <b class="caret"></b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdownMenuLink">
+              <a class="dropdown-item" href="{{ site.baseurl }}/who_we_are">Who We Are</a>
+              <a class="dropdown-item" href="{{ site.baseurl }}/contributing">How To Contribute</a>
+              <a class="dropdown-item" href="http://slack.dita-ot.org">Slack Discussions</a>
+              <a class="dropdown-item" href="{{ site.baseurl }}/management">Project Management</a>
               <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">Support Forums</h6>
+              <a class="dropdown-item" href="{{ site.baseurl }}/support">Community Support</a>
               <a class="dropdown-item" href="https://groups.io/g/dita-users">DITA Users Group</a>
               <a class="dropdown-item" href="https://groups.google.com/d/forum/dita-ot-users"
                 >DITA-OT Users Google Group</a
@@ -83,72 +84,13 @@
                 >OASIS DITA Technical Committee
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{{ site.baseurl }}/colophon">About This Website</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              data-toggle="dropdown"
-              href="#"
-              role="button"
-              aria-expanded="false"
-              id="docsDropdownMenuLink"
-              >Docs <b class="caret"></b
-            ></a>
-            <div class="dropdown-menu" aria-labelledby="docsDropdownMenuLink">
-              <a class="dropdown-item" href="{{ site.baseurl }}/dev/"
-                >Development Docs
-                <span class="badge badge-warning float-right my-1">Latest</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <h6 class="dropdown-header">Current version</h6>
-              <a class="dropdown-item" href="{{ site.baseurl }}/{{ site.release }}/"
-                >Release {{ site.release }}
-                <span class="badge badge-success float-right my-1">Current</span>
-              </a>
-              <div class="dropdown-divider"></div>
-              <h6 class="dropdown-header">Previous versions</h6>
-              <a class="dropdown-item" href="{{ site.baseurl }}/3.3/">3.3</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/3.2/">3.2</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/3.1/">3.1</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/3.0/">3.0</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{{ site.baseurl }}/2.5/">2.5</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/2.4/">2.4</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/2.3/">2.3</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/2.2/">2.2</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/2.1/">2.1</a>
-              <a class="dropdown-item" href="{{ site.baseurl }}/2.0/">2.0</a>
-              <div class="dropdown-divider"></div>
-              <h6 class="dropdown-header">Legacy versions for DITA ≤ 1.2</h6>
-              <a class="dropdown-item" href="{{ site.baseurl }}/1.8/">1.8</a>
-              <a class="dropdown-item" href="http://dita-ot.sourceforge.net/1.7/">1.7</a>
-              <a class="dropdown-item" href="http://dita-ot.sourceforge.net/1.6/">1.6</a>
-              <a class="dropdown-item" href="http://dita-ot.sourceforge.net/1.5.4/">1.5</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              data-toggle="dropdown"
-              href="#"
-              role="button"
-              aria-expanded="false"
-              title="DITA-OT Day 2019"
-              id="eventsDropdownMenuLink"
-              >Events <b class="caret"></b
-            ></a>
-            <div class="dropdown-menu" aria-labelledby="eventsDropdownMenuLink">
-              <h6 class="dropdown-header">Join us on November 9, 2019</h6>
+              <h6 class="dropdown-header">DITA-OT Day Events</h6>
               <a
                 class="dropdown-item"
                 href="https://www.oxygenxml.com/events/2019/dita-ot_day.html"
                 target="_blank"
-                >DITA-OT Day — Brussels</a
+                >2019 — Brussels</a
               >
-              <div class="dropdown-divider"></div>
-              <h6 class="dropdown-header">Previous events</h6>
               <a
                 class="dropdown-item"
                 href="https://www.oxygenxml.com/events/2018/dita-ot_day.html"
@@ -180,6 +122,15 @@
                 >2014 — Munich</a
               >
             </div>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="{{ site.baseurl }}/dev/">Docs</a>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="{{ site.baseurl }}/download">Download</a>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="{{ site.baseurl }}/plugins">Plugins</a>
           </li>
         </ul>
 

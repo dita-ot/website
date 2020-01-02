@@ -1,0 +1,116 @@
+<div class="dropdown">
+  <a
+    class="alert-link nav-link dropdown-toggle"
+    data-toggle="dropdown"
+    href="#"
+    role="button"
+    aria-expanded="false"
+    id="docsDropdownMenuLink"
+    >{% if page.url contains '/dev/' %}<span class="badge badge-warning mr-3">Latest</span> Dev Docs
+    {% elsif page.url contains '/3.4/' %}<span class="badge badge-success mr-2">Current</span> 3.4
+    {% elsif page.url contains '/3.3/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 3.3
+    {% elsif page.url contains '/3.2/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 3.2
+    {% elsif page.url contains '/3.1/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 3.1
+    {% elsif page.url contains '/3.0/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 3.0
+    {% elsif page.url contains '/2.5/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 2.5
+    {% elsif page.url contains '/2.4/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 2.4
+    {% elsif page.url contains '/2.3/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 2.3
+    {% elsif page.url contains '/2.2/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 2.2
+    {% elsif page.url contains '/2.1/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 2.1
+    {% elsif page.url contains '/2.0/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 2.0
+    {% elsif page.url contains '/1.8/' %}<span class="badge badge-secondary mr-2">Old Docs</span> 1.8
+    {% else %}Docs{% endif %} <b class="caret"></b
+  ></a>
+  <div class="dropdown-menu" aria-labelledby="docsDropdownMenuLink">
+    <a
+      class="dropdown-item
+     {% if page.url contains '/dev/' %} active{% endif %}"
+      href="{{ site.baseurl }}/dev/"
+      >Development Docs
+      <span class="badge badge-warning float-right my-1">Latest</span>
+    </a>
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header">Current version</h6>
+    <a
+      class="dropdown-item
+     {% if page.url contains '/3.4/' %} active{% endif %}"
+      href="{{ site.baseurl }}/{{ site.release }}/"
+      >Release {{ site.release }}
+      <span class="badge badge-success float-right my-1">Current</span>
+    </a>
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header">Previous versions</h6>
+    <a
+      class="dropdown-item
+     {% if page.url contains '/3.3/' %} active{% endif %}"
+      href="{{ site.baseurl }}/3.3/"
+      >3.3</a
+    >
+    <a
+      class="dropdown-item
+     {% if page.url contains '/3.2/' %} active{% endif %}"
+      href="{{ site.baseurl }}/3.2/"
+      >3.2</a
+    >
+    <a
+      class="dropdown-item
+     {% if page.url contains '/3.1/' %} active{% endif %}"
+      href="{{ site.baseurl }}/3.1/"
+      >3.1</a
+    >
+    <a
+      class="dropdown-item
+     {% if page.url contains '/3.0/' %} active{% endif %}"
+      href="{{ site.baseurl }}/3.0/"
+      >3.0</a
+    >
+    <div class="dropdown-divider"></div>
+    <a
+      class="dropdown-item
+     {% if page.url contains '/2.5/' %} active{% endif %}"
+      href="{{ site.baseurl }}/2.5/"
+      >2.5</a
+    >
+    <a
+      class="dropdown-item
+     {% if page.url contains '/2.4/' %} active{% endif %}"
+      href="{{ site.baseurl }}/2.4/"
+      >2.4</a
+    >
+    <a
+      class="dropdown-item
+     {% if page.url contains '/2.3/' %} active{% endif %}"
+      href="{{ site.baseurl }}/2.3/"
+      >2.3</a
+    >
+    <a
+      class="dropdown-item
+     {% if page.url contains '/2.2/' %} active{% endif %}"
+      href="{{ site.baseurl }}/2.2/"
+      >2.2</a
+    >
+    <a
+      class="dropdown-item
+     {% if page.url contains '/2.1/' %} active{% endif %}"
+      href="{{ site.baseurl }}/2.1/"
+      >2.1</a
+    >
+    <a
+      class="dropdown-item
+     {% if page.url contains '/2.0/' %} active{% endif %}"
+      href="{{ site.baseurl }}/2.0/"
+      >2.0</a
+    >
+    <div class="dropdown-divider"></div>
+    <h6 class="dropdown-header">Legacy versions for DITA ≤ 1.2</h6>
+    <a
+      class="dropdown-item
+     {% if page.url contains '/1.8/' %} active{% endif %}"
+      href="{{ site.baseurl }}/1.8/"
+      >1.8</a
+    >
+    <a class="dropdown-item" href="http://dita-ot.sourceforge.net/1.7/">1.7</a>
+    <a class="dropdown-item" href="http://dita-ot.sourceforge.net/1.6/">1.6</a>
+    <a class="dropdown-item" href="http://dita-ot.sourceforge.net/1.5.4/">1.5</a>
+  </div>
+</div>
