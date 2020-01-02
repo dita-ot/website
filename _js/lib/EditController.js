@@ -17,7 +17,7 @@ function EditController() {
     if (location.pathname.indexOf('/dev/') != -1 && $('.generated').length === 0) {
       const file = parse()
       const url = `${GITHUB_REPO}/${file}`
-      $('footer > div').append(
+      $('footer > div > p').append(
         ` · <a href="${url}" target="_blank" title="${t('FILE_HISTORY__TITLE')}">${t(
           'FILE_HISTORY'
         )}</a>`

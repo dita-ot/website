@@ -1,13 +1,18 @@
 // Sass partial for additional footer styles
 
 footer {
+  background-color: $jumbotron-bg;
   border-top: 1px solid $legend-border-color;
   font-size: $font-size-sm;
   margin-top: 30px;
   padding: $spacer 0;
-  text-align: center;
 
-  a {
+  a,
+  a:hover {
     color: $text-muted;
+  }
+
+  .row {
+    border-top: 1px solid $legend-border-color;
   }
 }
