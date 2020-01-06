@@ -48,6 +48,9 @@ $navbar-dark-brand-color:       lighten($navbar-dark-color, 10%); // #dce4f0
 // Banner icon colors
 $warning-icon-color:            #856404;
 
+// https://github.com/twbs/rfs
+$enable-responsive-font-sizes:  true;
+
 // Import DITA-OT custom subset of Bootstrap modules
 @import 'bootstrap-custom';
 
