@@ -10,14 +10,14 @@ toc: false
       <div class="col-md-2">
         <img
           src="images/dita-ot-logo.svg"
-          class="mr-4 mt-3"
+          class="mt-3"
           alt="DITA Open Toolkit logo"
           height="128px"
         />
       </div>
       <div class="col-md-10">
-        <h1 class="display-3">{{ page.title }}</h1>
-        <p class="lead">
+        <h1 class="display-3 ml-md-4 ml-lg-n2">{{ page.title }}</h1>
+        <p class="lead ml-md-4 ml-lg-n2">
           The open-source publishing engine for content authored in the
           <em>Darwin Information Typing Architecture</em>.
         </p>
@@ -34,17 +34,21 @@ toc: false
 <div class="container marketing">
   <div class="card-deck row teasers">
     <div class="card col-lg-4 text-center shadow-sm p-3 mb-5 rounded">
-      <p class="teaser"><a href="#features" role="button"> {% octicon checklist %} </a></p>
+      <p class="teaser">{% octicon checklist %}</p>
       <h2>Features</h2>
       <p class="lead">
         DITA Open Toolkit is a publishing tool used to process DITA content and convert it to other
         formats.
       </p>
-      <p><a class="btn btn-lg btn-light" href="#features" role="button">Learn more »</a></p>
+      <p>
+        <a class="btn btn-lg btn-light stretched-link" href="#features" role="button"
+          >Learn more »</a
+        >
+      </p>
     </div>
     <div class="card col-lg-4 text-center shadow-sm p-3 mb-5 rounded">
       <p class="teaser">
-        <a href="{{ site.baseurl }}/download" role="button"> {% octicon cloud-download %} </a>
+        {% octicon cloud-download %}
       </p>
       <h2>Download</h2>
       <p class="lead">
@@ -52,20 +56,24 @@ toc: false
         publishing workflows.
       </p>
       <p>
-        <a class="btn btn-lg btn-success" href="{{ site.baseurl }}/download" role="button">
+        <a
+          class="btn btn-lg btn-success stretched-link"
+          href="{{ site.baseurl }}/download"
+          role="button"
+        >
           {% octicon cloud-download %} Download DITA-OT {{ site.version }}
         </a>
       </p>
     </div>
     <div class="card col-lg-4 text-center shadow-sm p-3 mb-5 rounded">
-      <p class="teaser"><a href="{{ site.baseurl }}/dev" role="button"> {% octicon book %} </a></p>
+      <p class="teaser">{% octicon book %}</p>
       <h2>Docs</h2>
       <p class="lead">
         The DITA Open Toolkit docs provide information about running, configuring and extending the
         toolkit.
       </p>
       <p>
-        <a class="btn btn-lg btn-light" href="{{ site.baseurl }}/dev" role="button"
+        <a class="btn btn-lg btn-light stretched-link" href="{{ site.baseurl }}/dev" role="button"
           >Read the docs »</a
         >
       </p>
