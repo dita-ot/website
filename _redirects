@@ -27,6 +27,7 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 
 # Redirect spurious resource requests (Top 404s)
 /dev/user-guide/dita2markdown.html                     /dev/topics/dita2markdown.html
+/2.0/parameters/ant-parameters-javahelp-transformation.html   /2.0/readme/ant-parameters-javahelp-transformation.html
 
 # Redirect formerly-uppercase filenames                https://github.com/dita-ot/website/issues/282
 /dev/reference/DITA-features-in-docs.html              /dev/reference/docs-dita-features.html
