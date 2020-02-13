@@ -55,21 +55,21 @@ index: "../toc.html"
     <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.4.1</span>
       
     </h2>
+    
 
     <div class="body refbody">
       <section class="section">
         <p class="p">DITA Open Toolkit <span class="keyword">3.4.1</span> is a maintenance release that includes the
           following bug fixes.</p>
         <ul class="ul">
-          <li class="li" id="v3.4.1__2980">In earlier versions of DITA-OT, when the DITA 1.3 <code class="keyword markupname xmlelement">&lt;dvrResourcePrefix&gt;</code> or
-              <code class="keyword markupname xmlelement">&lt;dvrResourceSuffix&gt;</code> elements were used to rename filtered topics, the unfiltered
-            original resources were still copied to the output folder, even if they were not referenced elsewhere in the
-            publication. The branch filtering process has been revised to ensure only referenced resources are passed to
-            output.
+          <li class="li mark" id="v3.4.1__2980">In earlier versions of DITA-OT, when the DITA 1.3
+              <code class="keyword markupname xmlelement">&lt;dvrResourcePrefix&gt;</code> or <code class="keyword markupname xmlelement">&lt;dvrResourceSuffix&gt;</code> elements were
+            used to rename filtered topics, the unfiltered original resources were still copied to the output folder,
+            even if they were not referenced elsewhere in the publication. The branch filtering process has been revised
+            to ensure only referenced resources are passed to output.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2980" target="_blank">#2980</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3411" target="_blank">#3411</a>
           </li>
-
           <li class="li" id="v3.4.1__3202">Due to an omission in the DITA 1.3 shell files provided by the
             <a class="xref" href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dita" target="_blank">OASIS DITA Technical Committee</a>, classification maps based on the XML Schema Definition were considered invalid.
             The error was reported to the TC and resolved in the official OASIS repository and in the grammar files
@@ -95,7 +95,20 @@ index: "../toc.html"
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3420" target="_blank">#3420</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3421" target="_blank">#3421</a>
           </li>
-
+          <li class="li mark" id="v3.4.1__3447">With DITA-OT 3.1.3 or later, generating PDFs from maps with index terms with
+            the RenderX XEP processor throws “<samp class="ph msgph">no entries for index key</samp>” errors and fails to generate PDF
+            files. Index processing has been corrected to take the new <code class="keyword markupname xmlatt">@indexid</code> attribute into account,
+            which resolves the error and allows builds to complete successfully.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3447" target="_blank">#3447</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3450" target="_blank">#3450</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3455" target="_blank">#3455</a>
+          </li>
+          <li class="li mark" id="v3.4.1__3444">The license for the bundled ICU4J library has been updated to the latest
+            version.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3444" target="_blank">#3444</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3451" target="_blank">#3451 </a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3454" target="_blank">#3454</a>
+          </li>
         </ul>
         <p class="p">For additional information on the issues resolved since the previous release, see the
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.4.1+is%3Aclosed" target="_blank">3.4.1 milestone</a> and
@@ -188,6 +201,10 @@ index: "../toc.html"
       </section>
 
       <section class="section" id="v3.4__enhancements"><h3 class="title sectiontitle">Enhancements and changes</h3>
+        
+        
+        
+        
         
         
         <p class="p">In addition to the highlights mentioned above, DITA Open Toolkit Release <span class="keyword">3.4</span> includes
@@ -284,6 +301,10 @@ index: "../toc.html"
       </section>
 
       <section class="section" id="v3.4__bugs"><h3 class="title sectiontitle">Bugs</h3>
+        
+        
+        
+        
         
         
         <p class="p">DITA Open Toolkit Release <span class="keyword">3.4</span> provides fixes for the following bugs:</p>

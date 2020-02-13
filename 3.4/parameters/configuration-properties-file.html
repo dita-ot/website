@@ -51,9 +51,16 @@ index: "../toc.html"
         
         
           <dt class="dt pt dlterm" id="configuration__plugindirs"><span class="keyword parmname">plugindirs</span></dt>
-          <dd class="dd pd" id="configuration__plugindirs.desc">A semicolon-separated list of directory paths that DITA-OT searches for plug-ins to
-            install; any relative paths are resolved against the DITA-OT base directory. Any immediate subdirectory that
-            contains a <span class="ph filepath">plugin.xml</span> file is installed.</dd>
+          <dd class="dd pd" id="configuration__plugindirs.desc">
+            <p class="p">A semicolon-separated list of directory paths that DITA-OT searches for plug-ins to install; any relative
+              paths are resolved against the DITA-OT base directory. Any immediate subdirectory that contains a
+                <span class="ph filepath">plugin.xml</span> file is installed.</p>
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> You can use this property to test custom plug-ins that are stored in other locations. For
+              example, to install all of the sample plug-ins that are included in the DITA-OT documentation, append
+                <span class="ph filepath">;docsrc/samples/plugins</span> to the property value and run <span class="keyword cmdname">dita</span>
+              <span class="keyword parmname">--install</span>. You can maintain custom plug-ins in version-controlled repositories
+              outside of the DITA-OT installation directory, and add the repository locations to the list of plug-in
+              directories here to test your code.</div></dd>
         
         
           <dt class="dt pt dlterm" id="configuration__plugin.ignores"><span class="keyword parmname">plugin.ignores</span></dt>
