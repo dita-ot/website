@@ -69,6 +69,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="{{ site.baseurl }}/js/main.js" type="text/javascript" ></script>
+    <script>
+      (function (f, a, t, h, o, m) {
+        a[h] = a[h] || function () {
+          (a[h].q = a[h].q || []).push(arguments)
+        };
+        o = f.createElement('script'),
+          m = f.getElementsByTagName('script')[0];
+        o.async = 1; o.src = t; o.id = 'fathom-script';
+        m.parentNode.insertBefore(o, m)
+      })(document, window, 'https://cdn.usefathom.com/tracker.js', 'fathom');
+      fathom('set', 'siteId', 'MEDTXGXM');
+      fathom('trackPageview');
+    </script>
     <script type="text/javascript">
       docsearch({
         apiKey: 'fdd89b9b35b9bd347f34111dbc1c6219',
