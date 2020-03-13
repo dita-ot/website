@@ -11,7 +11,7 @@ index: "../toc.html"
   
 
   
-  
+
   
 
   <div class="body refbody"><p class="shortdesc">In DITA-OT 1.7, a new preprocessing step implements flagging for HTML-based output formats. PDF processing
@@ -69,12 +69,13 @@ index: "../toc.html"
       <p class="p">If you override the X/HTML transforms, you may need to update your overrides to use the new flagging logic. In
         most cases this just means deleting calls to the deprecated templates; in some cases, the calls can be replaced
         with 2 lines to process flags in new places. You should compare your override to the updated XHTML code and
-        update as needed. See <a class="xref" href="../reference/flagging-migration.html" title="This topic is primarily of interest to developers with XHTML transform overrides written prior to DITA-OT 1.7. Due to significant changes in the flagging process with the 1.7 release, some changes may be needed to make overrides work properly with DITAVAL-based flagging. The new design is significantly simpler than the old design; in many cases, migration will consist of deleting old code that is no longer needed.">XHTML migration for flagging updates in DITA-OT 1.7</a> for details.</p>
+        update as needed. See
+        <a class="xref" href="../reference/flagging-migration.html" title="This topic is primarily of interest to developers with XHTML transform overrides written prior to DITA-OT 1.7. Due to significant changes in the flagging process with the 1.7 release, some changes may be needed to make overrides work properly with DITAVAL-based flagging. The new design is significantly simpler than the old design; in many cases, migration will consist of deleting old code that is no longer needed.">XHTML migration for flagging updates in DITA-OT 1.7</a> for details.</p>
       <p class="p">Plug-ins that provide support for new transforms need to ensure that they properly support the DITA
         &lt;foreign&gt; element, which should be ignored by default; if so, this change will have no immediate impact.
         Support for flagging new transformation types may be more easily added based on this update, because there is no
-        need to re-implement flagging logic, but this is not required. See <a class="xref" href="../reference/preprocess-flagging.html" title="Beginning with DITA-OT 1.7, flagging support is implemented as a common flag-module preprocessing step. The module evaluates the DITAVAL against all flagging attributes, and adds DITA-OT–specific hints to the topic when flags are active. Any extended transformation type may use these hints to support flagging without adding logic to interpret the DITAVAL.">Flagging (flag-module)</a> for
-        details on how to add flagging support.</p>
+        need to re-implement flagging logic, but this is not required. See
+        <a class="xref" href="../reference/preprocess-flagging.html" title="Beginning with DITA-OT 1.7, flagging support is implemented as a common flag-module preprocessing step. The module evaluates the DITAVAL against all flagging attributes, and adds DITA-OT–specific hints to the topic when flags are active. Any extended transformation type may use these hints to support flagging without adding logic to interpret the DITAVAL.">Flagging (flag-module)</a> for details on how to add flagging support.</p>
     </section>
     <section class="section"><h2 class="title sectiontitle">PDF</h2>
       

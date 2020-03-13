@@ -11,13 +11,15 @@ index: "../toc.html"
   
   <div class="body conbody"><p class="shortdesc">The <code class="ph codeph">topicpull</code> step pulls content into <code class="keyword markupname xmlelement">&lt;xref&gt;</code> and
       <code class="keyword markupname xmlelement">&lt;link&gt;</code> elements. This step is implemented in XSLT.</p>
-    <section class="section"><p class="p">If an <code class="keyword markupname xmlelement">&lt;xref&gt;</code> element does not contain link text, the target is examined and the link text is
-        pulled. For example, a reference to a topic pulls the title of the topic; a reference to a list item pulls the
-        number of the item. If the <code class="keyword markupname xmlelement">&lt;xref&gt;</code> element references a topic that has a short
+    <section class="section">
+      <p class="p">If an <code class="keyword markupname xmlelement">&lt;xref&gt;</code> element does not contain link text, the target is examined and the link
+        text is pulled. For example, a reference to a topic pulls the title of the topic; a reference to a list item
+        pulls the number of the item. If the <code class="keyword markupname xmlelement">&lt;xref&gt;</code> element references a topic that has a short
         description, and the <code class="keyword markupname xmlelement">&lt;xref&gt;</code> element does not already contain a child
           <code class="keyword markupname xmlelement">&lt;desc&gt;</code> element, a <code class="keyword markupname xmlelement">&lt;desc&gt;</code> element is created that contains the
-        text from the topic short description.</p><p class="p">The process is similar for <code class="keyword markupname xmlelement">&lt;link&gt;</code> elements. If the <code class="keyword markupname xmlelement">&lt;link&gt;</code> element does
-        not have a child <code class="keyword markupname xmlelement">&lt;linktext&gt;</code> element, one is created with the appropriate link text.
+        text from the topic short description.</p>
+      <p class="p">The process is similar for <code class="keyword markupname xmlelement">&lt;link&gt;</code> elements. If the <code class="keyword markupname xmlelement">&lt;link&gt;</code> element
+        does not have a child <code class="keyword markupname xmlelement">&lt;linktext&gt;</code> element, one is created with the appropriate link text.
         Similarly, if the <code class="keyword markupname xmlelement">&lt;link&gt;</code> element does not have a child <code class="keyword markupname xmlelement">&lt;desc&gt;</code>
         element, and the short description of the target can be determined, a <code class="keyword markupname xmlelement">&lt;desc&gt;</code> element is
         created that contains the text from the topic short description.</p></section>
