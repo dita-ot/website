@@ -3,7 +3,7 @@
 layout: base
 title: "Migrating Ant builds to use the dita command"
 index: "../toc.html"
-commit: "9839255f9f196b3e634f3cda80438ab631773df9"
+commit: "2ffbb9261feef2549c27bb6dbd3c38c2c30fc9f9"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li class="active"><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -70,8 +70,7 @@ commit: "9839255f9f196b3e634f3cda80438ab631773df9"
       <p class="p">Sample <span class="ph filepath">.properties</span> file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/properties/chm.properties</span></p>
       <div class="p">
         <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code>output.dir = out/chm
-args.gen.task.lbl = YES
-args.breadcrumbs = yes</code></pre></div>
+args.gen.task.lbl = YES</code></pre></div>
       <p class="p">Sample <span class="ph filepath">.properties</span> file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/properties/pdf.properties</span></p>
       <div class="p">
         <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code>output.dir = out/pdf

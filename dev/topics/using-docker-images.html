@@ -3,7 +3,7 @@
 layout: base
 title: "Running the dita command from a Docker image"
 index: "../toc.html"
-commit: "a283431c3e74695a3019f59658b94eb673ddc685"
+commit: "2ffbb9261feef2549c27bb6dbd3c38c2c30fc9f9"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.4</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li class="active"><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -80,7 +80,7 @@ commit: "a283431c3e74695a3019f59658b94eb673ddc685"
             <span class="keyword cmdname">dita</span> command.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock"><code>$ <span class="keyword cmdname">docker</span> run -it \
-  -v /Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.4</span> \
+  -v /Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.4.1</span> \
   -i /src/input.ditamap \
   -o /src/out \
   -f html5 -v</code></pre>
@@ -98,7 +98,7 @@ commit: "a283431c3e74695a3019f59658b94eb673ddc685"
           <p class="p">On Windows, if your <span class="ph filepath">Users</span> directory is on the <span class="ph filepath">C:\</span> drive, use
               <span class="ph filepath">/c/Users/…</span> to map the host directory:</p>
           <pre class="pre codeblock"><code>C:\Users\username&gt; <span class="keyword cmdname">docker</span> run -it \
-  -v /c/Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.4</span> \
+  -v /c/Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.4.1</span> \
   -i /src/input.ditamap \
   -o /src/out \
   -f html5 -v</code></pre>
