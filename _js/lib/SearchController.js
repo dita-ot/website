@@ -12,10 +12,7 @@ function SearchController($toc, index) {
   const $body = $modal.find('.modal-footer')
   let isModelActive = false
   let currentResult = -1
-  $modal
-    .modal({ show: false })
-    .on('shown.bs.modal', onShow)
-    .on('hidden.bs.modal', onHide)
+  $modal.modal({ show: false }).on('shown.bs.modal', onShow).on('hidden.bs.modal', onHide)
   $searchInput.keyup(onType)
 
   $(document).keypress(openSearch)
@@ -68,7 +65,7 @@ function SearchController($toc, index) {
       const chars = value
         .trim()
         .split('')
-        .map(c => {
+        .map((c) => {
           switch (c) {
             case '.':
             case '\\':
@@ -89,8 +86,8 @@ function SearchController($toc, index) {
       const exact = new RegExp(chars.join(''), 'gi')
       const lax = new RegExp(chars.join('.*?'), 'gi')
       return {
-        exact: node => exact.test(node.title),
-        lax: node => lax.test(node.title)
+        exact: (node) => exact.test(node.title),
+        lax: (node) => lax.test(node.title),
       }
     }
   }
@@ -156,13 +153,11 @@ function SearchController($toc, index) {
   function getTitles($toc) {
     return $toc
       .find('a')
-      .map(function() {
+      .map(function () {
         const $node = $(this)
         return {
           title: $.trim($node.text()),
-          url: URI($node.attr('href'))
-            .absoluteTo(index)
-            .href()
+          url: URI($node.attr('href')).absoluteTo(index).href(),
         }
       })
       .toArray()

@@ -9,18 +9,14 @@ Prism.highlightAll()
 
 const indexAttr = $('link[rel=index]').attr('href')
 if (indexAttr && window.history) {
-  const index = URI(indexAttr)
-    .absoluteTo(window.location.href)
-    .href()
+  const index = URI(indexAttr).absoluteTo(window.location.href).href()
   $.ajax({
     url: index,
-    success: data => {
-      const $toc = $('<body>')
-        .append($.parseHTML(data))
-        .find('nav')
+    success: (data) => {
+      const $toc = $('<body>').append($.parseHTML(data)).find('nav')
       TocController($toc, index)
       SearchController($toc, index)
       HelpController()
-    }
+    },
   })
 }

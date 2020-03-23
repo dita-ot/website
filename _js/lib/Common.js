@@ -8,28 +8,24 @@ function Common(index) {
 
   const editController = EditController()
 
-  const base = URI('.')
-    .absoluteTo(index)
-    .href()
+  const base = URI('.').absoluteTo(index).href()
 
   const $nav = $('nav[role=toc]')
   const $main = $('main[role=main]')
   const $footer = $('footer')
 
-  window.onpopstate = function(event) {
+  window.onpopstate = function (event) {
     loadMain(document.location, undefined, false)
   }
 
   return {
     loadMain,
     initializeMain,
-    isLocal
+    isLocal,
   }
 
   function loadMain(href, $tocLink, pushState = true) {
-    const abs = URI(href)
-      .absoluteTo(window.location.href)
-      .href()
+    const abs = URI(href).absoluteTo(window.location.href).href()
     if (pushState) {
       history.pushState({}, '', href)
     }
@@ -38,7 +34,7 @@ function Common(index) {
       success(data) {
         updateToc(href, $tocLink)
         updateMain(data)
-      }
+      },
     })
 
     function updateToc(href, $tocLink) {
@@ -48,9 +44,7 @@ function Common(index) {
         $li.addClass('active')
         exposeNode($li)
       } else {
-        const abs = URI(href)
-          .absoluteTo(window.location.href)
-          .href()
+        const abs = URI(href).absoluteTo(window.location.href).href()
         const $li = $nav.find(`a[href="${abs}"]`).parent('li')
         $li.addClass('active')
         exposeNode($li)
@@ -83,10 +77,7 @@ function Common(index) {
     editController.createHistoryLink()
 
     function addLinkHandlers() {
-      $main
-        .find('a[href]')
-        .filter(isLocal)
-        .click(mainClickHandler)
+      $main.find('a[href]').filter(isLocal).click(mainClickHandler)
 
       function mainClickHandler(event) {
         event.preventDefault()
@@ -103,7 +94,7 @@ function Common(index) {
         .find(
           'article[id] > h2:first-child, section[id] > h2:first-child, section[id] > h3:first-child , dt[id]'
         )
-        .each(function() {
+        .each(function () {
           const $current = $(this)
           const id = getId($current)
           if (id) {
@@ -114,12 +105,7 @@ function Common(index) {
         })
 
       function getId($current) {
-        return $current
-          .parents('*[id]')
-          .addBack()
-          .filter(hasNonAriaId)
-          .last()
-          .attr('id')
+        return $current.parents('*[id]').addBack().filter(hasNonAriaId).last().attr('id')
 
         function hasNonAriaId() {
           const id = this.getAttribute('id')
@@ -137,9 +123,7 @@ function Common(index) {
 
   function isLocal() {
     const $a = $(this)
-    const abs = URI($a.attr('href'))
-      .absoluteTo(window.location.href)
-      .href()
+    const abs = URI($a.attr('href')).absoluteTo(window.location.href).href()
     return abs.indexOf(base) !== -1
   }
 }

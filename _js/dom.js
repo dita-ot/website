@@ -3,7 +3,7 @@ export function elem() {
   const attrs = arguments.length === 3 ? arguments[1] : {}
   const content = arguments.length === 3 ? arguments[2] : arguments[1]
   const installBlock = document.createElement(name)
-  Object.keys(attrs).forEach(key => {
+  Object.keys(attrs).forEach((key) => {
     installBlock.setAttribute(key, attrs[key])
   })
   append(installBlock, content)
@@ -20,7 +20,7 @@ export function append(parent, content) {
       break
     case 'object':
       if (Array.isArray(content)) {
-        content.forEach(c => {
+        content.forEach((c) => {
           append(parent, c)
         })
         break

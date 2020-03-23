@@ -10,7 +10,7 @@ function EditController() {
 
   return {
     createEditLink,
-    createHistoryLink
+    createHistoryLink,
   }
 
   function createHistoryLink() {

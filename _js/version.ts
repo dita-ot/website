@@ -6,13 +6,13 @@ interface Version {
 function parse(value: string): Version {
   const op = value.replace(/\./g, '').replace(/[^=<>.]/g, '') || '='
   const v = value.replace(/[=<>]/g, '')
-  const tokens = v.split('.').map(v => Number.parseInt(v))
+  const tokens = v.split('.').map((v) => Number.parseInt(v))
   if (tokens.length < 3) {
     for (let i = tokens.length; i < 3; i++) {
       tokens.push(0)
     }
   }
-  tokens.forEach(token => {
+  tokens.forEach((token) => {
     if (Number.isNaN(token)) {
       throw new Error()
     }
@@ -32,7 +32,7 @@ function compare(a: number = 0, b: number = 0): number {
   }
 }
 function zip(as: number[], bs: number[]): number[][] {
-  return as.map(function(e, i) {
+  return as.map(function (e, i) {
     return [e, bs[i]]
   })
 }
@@ -49,7 +49,7 @@ export function compareVersion(a: string, b: string): number {
 }
 
 function comparePairs(as: Version, bs: Version) {
-  return zip(as.tokens, bs.tokens).map(pair => compare(pair[0], pair[1]))
+  return zip(as.tokens, bs.tokens).map((pair) => compare(pair[0], pair[1]))
 }
 
 function reduceComparisons(pairs: number[]): number {

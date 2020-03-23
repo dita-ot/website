@@ -53,7 +53,7 @@ const VERSIONS = [
   // '1.8.3',
   // '1.8.2',
   // '1.8.1',
-  '1.8'
+  '1.8',
   // '1.7.5',
   // '1.7.4',
   // '1.7.3',
@@ -63,11 +63,11 @@ const VERSIONS = [
 
 let plugins = null
 
-document.addEventListener('DOMContentLoaded', event => {
+document.addEventListener('DOMContentLoaded', (event) => {
   fetch(REPOSITORY_URL)
-    .then(response => response.json())
+    .then((response) => response.json())
     .then(init)
-    .catch(err => {
+    .catch((err) => {
       console.error('Failed to fetch plugins: ' + err)
     })
 })
@@ -75,26 +75,23 @@ document.addEventListener('DOMContentLoaded', event => {
 function init(json) {
   plugins = json
   Object.values(plugins)
-    .filter(plugin => !!plugin)
-    .forEach(plugin => {
+    .filter((plugin) => !!plugin)
+    .forEach((plugin) => {
       if (plugin.alias) {
         // skip
       } else {
-        plugin.forEach(version => {
+        plugin.forEach((version) => {
           const buf =
             version.name +
             ' ' +
             (version.description && version.description) +
             ' ' +
             (version.keywords && version.keywords.join(' '))
-          version.search = buf
-            .toLocaleLowerCase()
-            .replace(/\W/g, ' ')
-            .replace(/\s+/g, ' ')
+          version.search = buf.toLocaleLowerCase().replace(/\W/g, ' ').replace(/\s+/g, ' ')
         })
       }
     })
-  window.onpopstate = event => {
+  window.onpopstate = (event) => {
     show(location.hash)
   }
   show(location.hash)
@@ -131,7 +128,7 @@ function notFound(name, version) {
 
 const query = {
   freetext: null,
-  version: null
+  version: null,
 }
 
 function queryHandler(event) {
@@ -151,7 +148,7 @@ function versionHandler(event) {
 function doFilter() {
   if (!!query.freetext || !!query.version) {
     let count = 0
-    document.querySelectorAll('#list > li').forEach(li => {
+    document.querySelectorAll('#list > li').forEach((li) => {
       const plugin = plugins[li.id]
       if (match(plugin[0])) {
         count++
@@ -184,7 +181,7 @@ function match(plugin) {
     freetext = true
   }
   let version = !query.version
-  const platform = plugin.deps.find(dep => dep.name === 'org.dita.base')
+  const platform = plugin.deps.find((dep) => dep.name === 'org.dita.base')
   if (!!query.version && !!platform && matchVersion(query.version, platform.req)) {
     version = true
   }
@@ -192,7 +189,7 @@ function match(plugin) {
 }
 
 function clearFilter() {
-  document.querySelectorAll('#list > li').forEach(li => {
+  document.querySelectorAll('#list > li').forEach((li) => {
     li.style.display = 'list-item'
   })
   const hits = document.querySelector('#hits')
@@ -219,14 +216,14 @@ function filterForm() {
       type: 'text',
       class: 'form-control',
       placeholder: t('FILTER_PLACEHOLDER'),
-      size: 50
+      size: 50,
     },
     undefined
   )
   input.oninput = queryHandler
   input.onkeypress = clearFilterHandler
 
-  const options = VERSIONS.map(version => {
+  const options = VERSIONS.map((version) => {
     const atts = { value: version }
     if (version === query.version) {
       atts.selected = 'selected'
@@ -243,7 +240,7 @@ function filterForm() {
   return elem('div', { class: 'form-row my-4' }, [
     elem('div', { class: 'col-md-8' }, input),
     ' ',
-    elem('div', { class: 'col-md-4' }, version)
+    elem('div', { class: 'col-md-4' }, version),
   ])
 }
 
@@ -260,10 +257,10 @@ function list(json) {
       'ul',
       { class: 'list-unstyled', id: 'list' },
       Object.values(json)
-        .filter(plugin => !!plugin && !plugin.alias)
+        .filter((plugin) => !!plugin && !plugin.alias)
         .sort((a, b) => a[0].name.localeCompare(b[0].name))
-        .map(plugin => plugin[0])
-        .map(first =>
+        .map((plugin) => plugin[0])
+        .map((first) =>
           elem('li', { id: first.name }, [
             elem('h3', elem('a', { href: `#!${first.name}` }, first.name)),
             elem('p', first.description),
@@ -274,16 +271,16 @@ function list(json) {
                   acc.concat([elem('code', { class: 'small' }, keyword), ' \u00A0']),
                 []
               )
-            )
+            ),
           ])
         )
-    )
+    ),
   ]
 }
 
 function details(versions, version) {
   const first = !!version
-    ? versions.find(plugin => plugin.vers === version)
+    ? versions.find((plugin) => plugin.vers === version)
     : versions[versions.length - 1]
   if (!first) {
     return null
@@ -304,7 +301,7 @@ function details(versions, version) {
       elem(
         'p',
         first.keywords.reduce((acc, keyword) => acc.concat([elem('code', keyword), ' \u00A0']), [])
-      )
+      ),
     ])
   }
   if (!!first.license) {
@@ -313,7 +310,7 @@ function details(versions, version) {
   if (!!first.homepage) {
     append(div, [
       elem('h3', t('HOMEPAGE')),
-      elem('p', elem('a', { href: first.homepage }, getDomain(first.homepage)))
+      elem('p', elem('a', { href: first.homepage }, getDomain(first.homepage))),
     ])
   }
   append(div, [
@@ -321,7 +318,7 @@ function details(versions, version) {
     elem('p', { class: 'small' }, t('INSTALL_CURRENT')),
     elem('pre', `dita --install ${first.name}`),
     elem('p', { class: 'small' }, t('INSTALL_OLD')),
-    elem('pre', `dita --install ${first.url}`)
+    elem('pre', `dita --install ${first.url}`),
   ])
 
   const deps = first.deps
@@ -331,25 +328,25 @@ function details(versions, version) {
     elem(
       'ul',
       deps
-        .filter(dep => dep.name === 'org.dita.base')
-        .map(dep => elem('li', `DITA-OT ${humanReadableVersion(dep.req) || ''}`))
+        .filter((dep) => dep.name === 'org.dita.base')
+        .map((dep) => elem('li', `DITA-OT ${humanReadableVersion(dep.req) || ''}`))
     ),
     elem(
       'ul',
       deps
-        .filter(dep => dep.name !== 'org.dita.base')
-        .map(dep => elem('li', `${dep.name} ${humanReadableVersion(dep.req) || ''}`))
-    )
+        .filter((dep) => dep.name !== 'org.dita.base')
+        .map((dep) => elem('li', `${dep.name} ${humanReadableVersion(dep.req) || ''}`))
+    ),
   ])
 
   append(div, [
     elem('h3', t('VERSIONS')),
     elem(
       'ul',
-      versions.map(version =>
+      versions.map((version) =>
         elem('li', elem('a', { href: `#!${first.name}/${version.vers}` }, version.vers))
       )
-    )
+    ),
   ])
 
   return div
