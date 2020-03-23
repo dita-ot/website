@@ -11,7 +11,7 @@
     "fix:script": "prettier --ignore-path .prettierignore --write \"**/*.{js,ts}\"",
     "fix:style": "prettier --ignore-path .prettierignore --write \"**/*.scss\"",
     "fix": "npm run fix:config && npm run fix:docs && npm run fix:html && npm run fix:script && npm run fix:style",
-    "test:script": "eslint --ignore-path .prettierignore \"**/*.{js,ts}\"",
+    "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\"",
     "test": "jest && npm run test:script"
   },
   "lint-staged": {
