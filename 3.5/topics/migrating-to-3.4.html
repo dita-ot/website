@@ -1,0 +1,84 @@
+---
+# Generated from DITA source
+layout: base
+title: "Migrating to release 3.4"
+index: "../toc.html"
+---
+
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/customizing.html">Customizing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/custom-plugins.html">Working with plug-ins</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li class="active"><a href="../topics/migrating-to-3.4.html">To 3.4</a></li><li><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 3.4</h1>
+  
+
+  
+
+  <div class="body refbody"><p class="shortdesc">DITA-OT 3.4 includes <span class="ph" id="migrating-to-3.4__summary">an official Docker container image, a separate plug-in for PDF
+      indexing, a new option to skip HTML5 cover pages, and initial support for project files that allow you to define
+      multiple deliverables in advance, and publish them all at once</span>.</p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 3.4 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the
+        <a class="xref" href="https://www.dita-ot.org/3.4/release-notes/" target="_blank" rel="external noopener">DITA-OT 3.4 Release Notes</a>.</div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">New indexing plug-in</h2>
+      
+      <div class="sectiondiv" id="migrating-to-3.4__indexing-plugin">
+        <p class="p">DITA-OT 3.4 extracts the PDF indexing code to a separate <span class="ph filepath">org.dita.index</span> plug-in, and
+          adds a new <code class="ph codeph">depend.org.dita.pdf2.index</code> extension point that can be used to add custom index
+          processing targets to PDF output.</p>
+        <p class="p">The built-in index processing has been disabled and deprecated. If you have overridden index processing via
+          the <code class="ph codeph">transform.topic2fo</code> target in the past, you can set the new
+            <span class="keyword parmname">org.dita.index.skip</span> property to <span class="keyword option">yes</span> and re-enable the
+            <code class="ph codeph">transform.topic2fo.index</code> target with <code class="keyword markupname xmlelement">&lt;feature
+            extension="depend.org.dita.pdf2.index" value="transform.topic2fo.index"/&gt;</code> in your plug-in
+          configuration.</p>
+      </div>
+      <table class="table table-hover frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">New plug-ins</span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+            <tr class="row">
+              <th class="entry colsep-0 rowsep-1" id="migrating-to-3.4__entry__1">Plug-in </th>
+              <th class="entry colsep-0 rowsep-1" id="migrating-to-3.4__entry__2">Source code location</th>
+            </tr>
+          </thead><tbody class="tbody">
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-3.4__entry__1">org.dita.index</td>
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-3.4__entry__2">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.index" target="_blank" rel="external noopener">https://github.com/dita-ot/org.dita.index</a></td>
+            </tr>
+          </tbody></table>
+    </section>
+
+    <section class="section" id="migrating-to-3.4__34-legacy-plugin-removal"><h2 class="title sectiontitle">Legacy plug-ins removed</h2>
+      
+      
+      
+      
+      <p class="p">DITA-OT 3.4 no longer includes the following legacy transformation plug-ins in the default distribution:</p>
+      <table class="table table-hover frame-none"><caption><span class="table--title-label">Table 2. </span><span class="title">Legacy plug-ins</span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+            <tr class="row">
+              <th class="entry colsep-0 rowsep-1" id="migrating-to-3.4__34-legacy-plugin-removal__entry__1">Plug-in </th>
+              <th class="entry colsep-0 rowsep-1" id="migrating-to-3.4__34-legacy-plugin-removal__entry__2">Source code location</th>
+            </tr>
+          </thead><tbody class="tbody">
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-3.4__34-legacy-plugin-removal__entry__1">TocJS</td>
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-3.4__34-legacy-plugin-removal__entry__2">
+                <a class="xref" href="https://github.com/dita-ot/com.sophos.tocjs" target="_blank" rel="external noopener">https://github.com/dita-ot/com.sophos.tocjs</a></td>
+            </tr>
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-3.4__34-legacy-plugin-removal__entry__1">troff</td>
+              <td class="entry colsep-0 rowsep-1" headers="migrating-to-3.4__34-legacy-plugin-removal__entry__2">
+                <a class="xref" href="https://github.com/dita-ot/org.dita.troff" target="_blank" rel="external noopener">https://github.com/dita-ot/org.dita.troff</a></td>
+            </tr>
+          </tbody></table>
+      <div class="note note note_note"><span class="note__title">Note:</span> If necessary, legacy plug-ins may be re-installed from earlier DITA-OT
+        distributions, but they are no longer actively maintained or supported by the core toolkit committers. The
+        source code is available on GitHub for anyone interested in maintaining the plug-ins for use with future toolkit
+        versions.</div>
+      <p class="p">To re-install the plug-in(s) from the plug-in registry at
+        <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a>, run the following command(s):</p>
+      <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=<span class="ph filepath">com.sophos.tocjs</span>
+<span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=<span class="ph filepath">org.dita.troff</span></code></pre>
+    </section>
+  </div>
+</article></main>
