@@ -275,6 +275,13 @@ index: "../toc.html"
             processing pushed these to nested elements; that behavior is now corrected to match the specification.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/1899" target="_blank" rel="external noopener">#1899</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3326" target="_blank" rel="external noopener">#3326</a></li>
+          <li class="li" id="v3.5__3232">When <code class="keyword markupname xmlelement">&lt;coderef&gt;</code> elements imported code samples with key references via the
+              <code class="keyword markupname xmlatt">@keyref</code> attribute, earlier versions of DITA-OT appended the (temporary) file name of the
+            referenced code sample to the last line of the parent <code class="keyword markupname xmlelement">&lt;codeblock&gt;</code> element. Processing
+            has been corrected to ensure that code blocks contain only the referenced code samples.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3232" target="_blank" rel="external noopener">#3232</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3496" target="_blank" rel="external noopener">#3496</a>
+          </li>
           <li class="li" id="v3.5__3429">To support
             <a class="xref" href="#v3.5__3412">additional resources</a>, the <code class="ph codeph">mapref</code> preprocessing stage now
             runs even if the input file is not a map. DITA-OT now checks whether maps with additional resources are
@@ -285,12 +292,24 @@ index: "../toc.html"
             attributes was dropped. Calls to that template have been restored, making it available for easy overrides.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3484" target="_blank" rel="external noopener">#3484</a>
           </li>
-          <li class="li" id="v3.5__3232">When <code class="keyword markupname xmlelement">&lt;coderef&gt;</code> elements imported code samples with key references via the
-              <code class="keyword markupname xmlatt">@keyref</code> attribute, earlier versions of DITA-OT appended the (temporary) file name of the
-            referenced code sample to the last line of the parent <code class="keyword markupname xmlelement">&lt;codeblock&gt;</code> element. Processing
-            has been corrected to ensure that code blocks contain only the referenced code samples.
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3232" target="_blank" rel="external noopener">#3232</a>,
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3496" target="_blank" rel="external noopener">#3496</a>
+          <li class="li" id="v3.5__3497">When key definitions with external scope were defined in maps in subdirectories, earlier
+            versions treated absolute paths beginning with slashes as relative paths, and prefixed the name of the
+            enclosing directory to the output path, resulting in broken links. Map reference processing has been
+            corrected to ensure that absolute paths are recognized as such and passed to the output as intended.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3497" target="_blank" rel="external noopener">#3497</a>
+          </li>
+          <li class="li" id="v3.5__3498">If <code class="keyword markupname xmlelement">&lt;term&gt;</code> elements pointed to missing topics using the
+              <code class="keyword markupname xmlatt">@keyref</code> attribute, earlier versions of DITA-OT would crash during the build process. An
+            additional check has been implemented to catch these cases, allowing the build to finish and report errors
+            for any unresolved term references.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3498" target="_blank" rel="external noopener">#3498</a>
+          </li>
+          <li class="li" id="v3.5__3502">In HTML5 output, earlier versions of DITA-OT displayed the “Note” label when the
+              <code class="keyword markupname xmlatt">@type</code> attribute of a <code class="keyword markupname xmlelement">&lt;note&gt;</code> element was set to
+              <code class="ph codeph">notice</code>. Processing has been updated to ensure that the “Notice” label is correctly
+            applied.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3502" target="_blank" rel="external noopener">#3502</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3503" target="_blank" rel="external noopener">#3503</a>
           </li>
         </ul>
       </section>
@@ -328,7 +347,7 @@ index: "../toc.html"
           <li class="li">
             <a class="xref" href="../topics/migrating-to-3.5.html" title="DITA-OT 3.5 includes support for additional input resources, an alternative subcommand syntax for the dita command, and an initial preview of features for the latest draft of the upcoming DITA 2.0 standard.">Migrating to release 3.5</a></li>
           <li class="li">
-            <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 3.5 provides an initial preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the DITA 2.0 DTD and RelaxNG grammar files from OASIS (as of March 2020).">DITA 2.0 support</a></li>
+            <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 3.5 provides an initial preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the DITA 2.0 DTD and RelaxNG grammar files from OASIS (as of March 2020).">DITA 2.0 preview support</a></li>
         </ul>
         <p class="p">For additional information on documentation issues resolved in DITA Open Toolkit Release <span class="keyword">3.5</span>, see the
           <a class="xref" href="https://github.com/dita-ot/docs/issues?q=milestone%3A3.5+is%3Aclosed" target="_blank" rel="external noopener">
