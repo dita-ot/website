@@ -5,7 +5,7 @@ title: "DITA Open Toolkit 3.5 Release Notes"
 index: "../toc.html"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-new-plugins.html">Adding new plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating custom plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">3.5</span> Release Notes</h1>
   
 
@@ -311,6 +311,12 @@ index: "../toc.html"
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3502" target="_blank" rel="external noopener">#3502</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3503" target="_blank" rel="external noopener">#3503</a>
           </li>
+          <li class="li" id="v3.5__3505">In previous releases, when <code class="keyword markupname xmlelement">&lt;chunk&gt;</code> was used to combine a branch of
+            content, and a file within that branch was missing or invalid, processing within the chunk module could fail
+            with a NullPointerException. This condition has been fixed, and processing will continue without the missing
+            file.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3505" target="_blank" rel="external noopener">#3505</a>
+          </li>
         </ul>
       </section>
 
@@ -358,6 +364,8 @@ index: "../toc.html"
         <ol class="ol">
           <li class="li">Roger Sheen</li>
           <li class="li">Robert D Anderson</li>
+          <li class="li">Shane Taylor</li>
+          <li class="li">Lief Erickson</li>
           <li class="li">Heston Hoffman</li>
         </ol>
         <p class="p">For the complete list of documentation changes since the previous release, see the

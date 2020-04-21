@@ -1,51 +1,57 @@
 ---
 # Generated from DITA source
 layout: base
-title: "Best practices for custom plug-ins"
+title: "Plug-in coding conventions"
 index: "../toc.html"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Setting parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-new-plugins.html">Adding new plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating custom plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-applications.html">Plug-in applications</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li class="active"><a href="../topics/plugin-best-practices.html">Best practices</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="title topictitle1" id="ariaid-title1">Best practices for custom plug-ins</h1>
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a><ul class="nav nav-list"><li><a href="../topics/referencing-other-plugins.html">Referencing files from other plug-ins</a></li></ul></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Plug-in coding conventions</h1>
   
   
   
   <div class="body conbody"><p class="shortdesc">To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases,
     the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding
     patterns.</p>
-    <ul class="ul">
-      <li class="li">
-        <p class="p">Use a properly-constructed DITA-OT plug-in.</p></li>
-      <li class="li">
-        <p class="p">Use a version control system to store your code.</p></li>
-      <li class="li">
-        <p class="p">Store your custom plug-ins outside of the DITA-OT installation directory, and add the repository location to
-          the list of plug-in directories defined in the <span class="keyword parmname">plugindirs</span> entry of the
-          <a class="xref" href="../parameters/configuration-properties-file.html" title="The configuration.properties file controls certain common properties, as well as some properties that control PDF processing."><span class="ph filepath">configuration.properties</span> file</a>.
-        </p></li>
-      <li class="li">
-        <p class="p">Never modify any of the core DITA-OT code.</p>
-        <div class="note tip note_tip"><span class="note__title">Tip:</span> You may want to set the permissions on default plug-in directories such as
-            <span class="ph filepath">org.dita.pdf2</span> to “read-only” to ensure that you do not accidentally modify the files
-          within as you develop your customized plug-in.</div></li>
-      <li class="li">
-        <p class="p">Avoid copying entire DITA-OT files into your customization plug-in. When you only copy the attribute sets and
-          templates that you need to override, there is less risk of impact from new features or fixes in the base code,
-          making your code more stable and easier to upgrade between releases.</p></li>
-      <li class="li">
-        <p class="p">If you only need to change a few attribute sets and templates, you may prefer to store your overrides in
-            <span class="ph filepath">custom.xsl</span> files, or a simple folder hierarchy within your custom plug-in.</p></li>
-      <li class="li">
-        <p class="p">In cases that require substantial customizations, you may prefer to organize the files in a folder structure
-          that mimics the hierarchy of the default plug-in you are customizing. This facilitates comparisons with the
-          default settings in the base plug-in and makes it easier to migrate your changes to new toolkit versions. See
-          <a class="xref" href="pdf-plugin-structure.html" title="In cases that require substantial customizations, it is often useful to organize the files in a folder structure that mimics the hierarchy of the default PDF plug-in.">PDF plug-in structure</a> for information on the files in the base PDF plug-in.</p></li>
-      <li class="li">
-        <p class="p">Upgrade your customization plug-in to new versions of DITA-OT regularly. Do not wait through several major
-          releases before upgrading.</p></li>
-    </ul>
+    <section class="section"><h2 class="title sectiontitle">Best practices</h2>
+      
+      <p class="p">Adhering to certain development practices will properly isolate your code from that of DITA Open Toolkit. This
+        will make it easier to you to upgrade to new versions of DITA-OT when they are released.</p>
+      <ul class="ul">
+        <li class="li">
+          <p class="p">Use a properly-constructed DITA-OT plug-in.</p></li>
+        <li class="li">
+          <p class="p">Use a version control system to store your code.</p></li>
+        <li class="li">
+          <p class="p">Store the source code of your plug-ins outside of the DITA-OT installation directory, and add the
+            repository location to the list of plug-in directories defined in the <span class="keyword parmname">plugindirs</span> entry
+            of the
+            <a class="xref" href="../parameters/configuration-properties-file.html" title="The configuration.properties file controls certain common properties, as well as some properties that control PDF processing."><span class="ph filepath">configuration.properties</span> file</a>.
+          </p></li>
+        <li class="li">
+          <p class="p">Never modify any of the core DITA-OT code.</p>
+          <div class="note tip note_tip"><span class="note__title">Tip:</span> You may want to set the permissions on default plug-in directories such as
+              <span class="ph filepath">org.dita.pdf2</span> to “read-only” to ensure that you do not accidentally modify the files
+            within as you develop your customized plug-in.</div></li>
+        <li class="li">
+          <p class="p">Avoid copying entire DITA-OT files into your customization plug-in. When you only copy the attribute sets
+            and templates that you need to override, there is less risk of impact from new features or fixes in the base
+            code, making your code more stable and easier to upgrade between releases.</p></li>
+        <li class="li">
+          <p class="p">If you only need to change a few attribute sets and templates, you may prefer to store your overrides in
+              <span class="ph filepath">custom.xsl</span> files, or a simple folder hierarchy within your custom plug-in.</p></li>
+        <li class="li">
+          <p class="p">In cases that require substantial customizations, you may prefer to organize the files in a folder
+            structure that mimics the hierarchy of the default plug-in you are customizing. This facilitates comparisons
+            with the default settings in the base plug-in and makes it easier to migrate your changes to new toolkit
+            versions. See
+            <a class="xref" href="pdf-plugin-structure.html" title="In cases that require substantial customizations, it is often useful to organize the files in a folder structure that mimics the hierarchy of the default PDF plug-in.">PDF plug-in structure</a> for information on the files in the base PDF plug-in.</p></li>
+        <li class="li">
+          <p class="p">Upgrade your customization plug-in to new versions of DITA-OT regularly. Do not wait through several major
+            releases before upgrading.</p></li>
+      </ul></section>
 
-    <section class="section"><h2 class="title sectiontitle">Use custom namespace</h2>
+    <section class="section"><h2 class="title sectiontitle">Use a custom namespace</h2>
       
       <p class="p">For XSLT customizations, use a custom namespace for any modified template modes, template names, attribute
         sets, functions, and variables. This helps to clarify which portions of the code are specific to your
@@ -57,6 +63,7 @@ index: "../toc.html"
       <div class="p">Instead of: <pre class="pre codeblock language-xml"><code>&lt;xsl:template name="searchbar"/&gt;</code></pre></div>
       <div class="p">use: <pre class="pre codeblock language-xml"><code>&lt;xsl:template name="corp:searchbar"/&gt;</code></pre></div>
     </section>
+
     <section class="section"><h2 class="title sectiontitle">Upgrade stylesheets to XSLT 2.0</h2>
       
       
@@ -77,6 +84,7 @@ index: "../toc.html"
         but the DITA Open Toolkit project recommends upgrading all stylesheets to XSLT 2.0 to ensure plug-ins remain
         compatible with future versions of DITA-OT and Saxon-HE.</div>
     </section>
+
     <section class="section"><h2 class="title sectiontitle">Use custom <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> elements</h2>
       
       
@@ -138,21 +146,21 @@ index: "../toc.html"
         files.</p>
       <table class="table table-hover frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">Usage examples of <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code></span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
             <tr class="row">
-              <th class="entry colsep-0 rowsep-1" id="best-practices-pdf-customization-plugins__entry__1">Example</th>
-              <th class="entry colsep-0 rowsep-1" id="best-practices-pdf-customization-plugins__entry__2">Description</th>
+              <th class="entry colsep-0 rowsep-1" id="ID__entry__1">Example</th>
+              <th class="entry colsep-0 rowsep-1" id="ID__entry__2">Description</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="best-practices-pdf-customization-plugins__entry__1"><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="best-practices-pdf-customization-plugins__entry__2">Selects all DITA topics in the temporary directory.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects all DITA topics in the temporary directory.</td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="best-practices-pdf-customization-plugins__entry__1"><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="best-practices-pdf-customization-plugins__entry__2">Selects all DITA maps in the temporary directory.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects all DITA maps in the temporary directory.</td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="best-practices-pdf-customization-plugins__entry__1"><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="best-practices-pdf-customization-plugins__entry__2">Selects images of all known types in the temporary directory.</td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects images of all known types in the temporary directory.</td>
             </tr>
           </tbody></table>
     </section>
@@ -174,7 +182,7 @@ index: "../toc.html"
 
     <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
       
-      <div class="div" id="best-practices-pdf-customization-plugins__d652e92">
+      <div class="div" id="ID__d652e92">
         <p class="p">DITA-OT includes a RELAX NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
           files that define the capabilities of each plug-in.
           
@@ -184,10 +192,10 @@ index: "../toc.html"
           instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
         <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
-        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="best-practices-pdf-customization-plugins__d652e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
+        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="ID__d652e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
           your plug-in file.</p>
       </div>
     </section>
 
   </div>
-<nav role="navigation" class="related-links"><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization-approaches.html" title="Various methods may be used to customize the PDF output that DITA Open Toolkit produces. Each of these approaches have advantages and shortcomings that should be considered when preparing a customization project. Some of these methods are considered “anti-patterns” with disadvantages that outweigh their apparent appeal. In most cases, you should create a custom PDF plug-in.">PDF customization approaches</a></li></ul></div><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization.html" title="You can create custom DITA-OT plug-ins that build on the default DITA to PDF transformation. Plug-ins can customize covers and page layouts, modify formatting, override logic of the default PDF plug-in, and much more.">Customizing PDF output</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/referencing-other-plugins.html">Referencing files from other plug-ins</a></strong><br>Starting with DITA-OT 1.5.4, you can use the <span class="ph filepath">plugin:<var class="keyword varname">plugin-id</var></span> URI extension and the <span class="ph filepath">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</span> Ant variable to reference the base path of another     installed DITA-OT plug-in.</li></ul><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization-approaches.html" title="Various methods may be used to customize the PDF output that DITA Open Toolkit produces. Each of these approaches have advantages and shortcomings that should be considered when preparing a customization project. Some of these methods are considered “anti-patterns” with disadvantages that outweigh their apparent appeal. In most cases, you should create a custom PDF plug-in.">PDF customization approaches</a></li></ul></div><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization.html" title="You can create custom DITA-OT plug-ins that build on the default DITA to PDF transformation. Plug-ins can customize covers and page layouts, modify formatting, override logic of the default PDF plug-in, and much more.">Customizing PDF output</a></li></ul></div></nav></article></main>
