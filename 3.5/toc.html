@@ -50,7 +50,8 @@
                   <li class="topicref"><a href="reference/java-api.html">Using the Java API</a></li>
                </ul>
             </li>
-            <li class="topicref"><a href="topics/alternative-input-formats.html">Authoring formats</a><ul>
+            <li class="topicref"><a href="topics/input-formats.html">Authoring formats</a><ul>
+                  <li class="topicref"><a href="topics/dita-xml-input.html">Standard DITA XML</a></li>
                   <li class="topicref"><a href="topics/markdown-input.html">Markdown content</a></li>
                   <li class="topicref"><a href="topics/lwdita-input.html">Lightweight DITA</a></li>
                   <li class="topicref"><a href="topics/markdown-dita-syntax-reference.html">Markdown DITA syntax</a></li>
@@ -97,28 +98,10 @@
                      </ul>
                   </li>
                   <li class="topicref"><a href="topics/html-customization-properties-file.html">Using a properties file</a></li>
-                  <li class="topicref"><a href="topics/html-customization-plugins.html">Custom HTML plug-ins</a><ul>
-                        <li class="topicref"><a href="topics/html-customization-plugin-bundle-css.html">Bundling custom CSS</a></li>
-                        <li class="topicref"><a href="topics/html-customization-plugin-webfont.html">Embedding web fonts</a></li>
-                        <li class="topicref"><a href="topics/html-customization-plugin-javascript.html">Inserting JavaScript</a></li>
-                     </ul>
-                  </li>
                </ul>
             </li>
             <li class="topicref"><a href="topics/pdf-customization.html">Customizing PDF</a><ul>
-                  <li class="topicref"><a href="topics/pdf-customization-approaches.html">PDF customization approaches</a></li>
-                  <li class="topicref"><a href="topics/pdf-customization-plugin-types.html">Types of custom PDF plug-ins</a></li>
-                  <li class="topicref"><a href="topics/pdf-plugin-structure.html">PDF plug-in structure</a><ul>
-                        <li class="topicref"><a href="topics/pdf-plugin-structure_common-artwork.html">Custom artwork</a></li>
-                        <li class="topicref"><a href="topics/pdf-plugin-structure_common-index.html">Index configuration</a></li>
-                        <li class="topicref"><a href="topics/pdf-plugin-structure_common-vars.html">Variable overrides</a></li>
-                        <li class="topicref"><a href="topics/pdf-plugin-structure_fo-attrs.html">Custom attributes</a></li>
-                        <li class="topicref"><a href="topics/pdf-plugin-structure_fo-i18n.html">Internationalization</a></li>
-                        <li class="topicref"><a href="topics/pdf-plugin-structure_fo-xsl.html">Custom stylesheets</a></li>
-                     </ul>
-                  </li>
-                  <li class="topicref"><a href="topics/pdf-customization-example.html">Simple PDF plug-in example</a></li>
-                  <li class="topicref"><a href="topics/pdf-customization-resources.html">Custom PDF plug-in resources</a></li>
+                  <li class="topicref"><a href="topics/pdf-customization-approaches.html">Customization approaches</a></li>
                   <li class="topicref"><a href="topics/pdf2-creating-change-bars.html">Generating revision bars</a></li>
                </ul>
             </li>
@@ -132,7 +115,11 @@
             <li class="topicref"><a href="topics/custom-plugins.html">Creating plug-ins</a><ul>
                   <li class="topicref"><a href="topics/plugin-benefits.html">Plug-in benefits</a></li>
                   <li class="topicref"><a href="topics/plugin-configfile.html">Plug-in descriptor file</a></li>
-                  <li class="topicref"><a href="topics/plugin-dependencies.html">Plug-in dependencies</a></li>
+                  <li class="topicref"><a href="topics/plugin-coding-conventions.html">Coding conventions</a></li>
+                  <li class="topicref"><a href="topics/plugin-dependencies.html">Plug-in dependencies</a><ul>
+                        <li class="topicref"><a href="topics/referencing-other-plugins.html">Referencing files from other plug-ins</a></li>
+                     </ul>
+                  </li>
                   <li class="topicref"><a href="topics/plugin-use-cases.html">Plug-in use cases</a><ul>
                         <li class="topicref"><a href="topics/plugin-xmlcatalog.html">Extending an XML catalog file</a></li>
                         <li class="topicref"><a href="topics/plugin-anttarget.html">Adding a new target to the Ant build process</a></li>
@@ -150,14 +137,31 @@
                         </li>
                      </ul>
                   </li>
+                  <li class="topicref"><a href="topics/html-customization-plugins.html">Custom HTML plug-ins</a><ul>
+                        <li class="topicref"><a href="topics/html-customization-plugin-bundle-css.html">Bundling custom CSS</a></li>
+                        <li class="topicref"><a href="topics/html-customization-plugin-webfont.html">Embedding web fonts</a></li>
+                        <li class="topicref"><a href="topics/html-customization-plugin-javascript.html">Inserting JavaScript</a></li>
+                     </ul>
+                  </li>
+                  <li class="topicref"><a href="topics/pdf-customization-plugins.html">Custom PDF plug-ins</a><ul>
+                        <li class="topicref"><a href="topics/pdf-customization-plugin-types.html">Types of PDF plug-ins</a></li>
+                        <li class="topicref"><a href="topics/pdf-plugin-structure.html">PDF plug-in structure</a><ul>
+                              <li class="topicref"><a href="topics/pdf-plugin-structure_common-artwork.html">Custom artwork</a></li>
+                              <li class="topicref"><a href="topics/pdf-plugin-structure_common-index.html">Index configuration</a></li>
+                              <li class="topicref"><a href="topics/pdf-plugin-structure_common-vars.html">Variable overrides</a></li>
+                              <li class="topicref"><a href="topics/pdf-plugin-structure_fo-attrs.html">Custom attributes</a></li>
+                              <li class="topicref"><a href="topics/pdf-plugin-structure_fo-i18n.html">Internationalization</a></li>
+                              <li class="topicref"><a href="topics/pdf-plugin-structure_fo-xsl.html">Custom stylesheets</a></li>
+                           </ul>
+                        </li>
+                        <li class="topicref"><a href="topics/pdf-customization-example.html">Simple PDF plug-in</a></li>
+                        <li class="topicref"><a href="topics/pdf-customization-resources.html">PDF plug-in resources</a></li>
+                     </ul>
+                  </li>
                   <li class="topicref"><a href="topics/globalization.html">Globalizing DITA content</a><ul>
                         <li class="topicref"><a href="topics/globalization-support.html">Globalization support</a></li>
                         <li class="topicref"><a href="topics/plugin-addgeneratedtext.html">Customizing generated text</a></li>
                         <li class="topicref"><a href="topics/globalization-languages.html">Supported languages</a></li>
-                     </ul>
-                  </li>
-                  <li class="topicref"><a href="topics/plugin-coding-conventions.html">Coding conventions</a><ul>
-                        <li class="topicref"><a href="topics/referencing-other-plugins.html">Referencing files from other plug-ins</a></li>
                      </ul>
                   </li>
                   <li class="topicref"><a href="topics/migration.html">Migrating customizations</a><ul>
@@ -185,7 +189,7 @@
                </ul>
             </li>
             <li class="topicref"><a href="topics/troubleshooting-overview.html">Troubleshooting</a><ul>
-                  <li class="topicref"><a href="topics/log-files.html">Logging</a></li>
+                  <li class="topicref"><a href="topics/logging.html">Logging</a></li>
                   <li class="topicref"><a href="topics/enabling-debug-mode.html">Enabling debug mode</a></li>
                   <li class="topicref"><a href="topics/error-messages.html">DITA-OT error messages</a></li>
                   <li class="topicref"><a href="topics/other-errors.html">Other error messages</a></li>

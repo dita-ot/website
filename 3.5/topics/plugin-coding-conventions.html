@@ -5,7 +5,7 @@ title: "Plug-in coding conventions"
 index: "../toc.html"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/alternative-input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a><ul class="nav nav-list"><li><a href="../topics/referencing-other-plugins.html">Referencing files from other plug-ins</a></li></ul></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Plug-in coding conventions</h1>
   
   
@@ -118,6 +118,25 @@ index: "../toc.html"
       <div class="p"><pre class="pre codeblock language-xml"><code>&lt;property name="base" location="${dita.plugin.example.dir}/custom.xsl"/&gt;</code></pre></div>
       <p class="p">This fixes cases where plug-ins are installed to custom plug-in directories or the plug-in folder name doesn’t
         match the plug-in ID.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> For details, see
+        <a class="xref" href="referencing-other-plugins.html" title="Starting with DITA-OT 1.5.4, you can use the plugin:plugin-id URI extension and the ${dita.plugin.plugin-id.dir} Ant variable to reference the base path of another installed DITA-OT plug-in.">Referencing files from other plug-ins</a>.</div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Use the <code class="ph codeph">plugin</code> URI scheme</h2>
+      
+      
+      
+      <p class="p">In XSLT, use the <code class="ph codeph">plugin</code> URI scheme in <code class="keyword markupname xmlelement">&lt;xsl:import&gt;</code> and
+          <code class="keyword markupname xmlelement">&lt;xsl:include&gt;</code> to reference files in other plug-ins.</p>
+      <p class="p">Instead of:</p>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="../../org.dita.base/xsl/common/output-message.xsl"/&gt;</code></pre></div>
+      <p class="p">use:</p>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/&gt;</code></pre></div>
+      <p class="p">As with the plug-in directory property in Ant, this allows plug-ins to resolve to the correct directory even
+        when a plug-in moves to a new location. The plug-in is referenced using the syntax
+            <code class="ph codeph">plugin:<var class="keyword varname">plugin-id</var>:<var class="keyword varname">path/within/plugin/file.xsl</var></code>.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> For details, see
+        <a class="xref" href="referencing-other-plugins.html" title="Starting with DITA-OT 1.5.4, you can use the plugin:plugin-id URI extension and the ${dita.plugin.plugin-id.dir} Ant variable to reference the base path of another installed DITA-OT plug-in.">Referencing files from other plug-ins</a>.</div>
     </section>
 
     <section class="section"><h2 class="title sectiontitle">Use <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> to select files</h2>
@@ -165,21 +184,6 @@ index: "../toc.html"
           </tbody></table>
     </section>
 
-    <section class="section"><h2 class="title sectiontitle">Use the <code class="ph codeph">plugin</code> URI scheme</h2>
-      
-      
-      
-      <p class="p">In XSLT, use the <code class="ph codeph">plugin</code> URI scheme in <code class="keyword markupname xmlelement">&lt;xsl:import&gt;</code> and
-          <code class="keyword markupname xmlelement">&lt;xsl:include&gt;</code> to reference files in other plug-ins.</p>
-      <p class="p">Instead of:</p>
-      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="../../org.dita.base/xsl/common/output-message.xsl"/&gt;</code></pre></div>
-      <p class="p">use:</p>
-      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/&gt;</code></pre></div>
-      <p class="p">As with the plug-in directory property in Ant, this allows plug-ins to resolve to the correct directory even
-        when a plug-in moves to a new location. The plug-in is referenced using the syntax
-            <code class="ph codeph">plugin:<var class="keyword varname">plugin-id</var>:<var class="keyword varname">path/within/plugin/file.xsl</var></code>.</p>
-    </section>
-
     <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
       
       <div class="div" id="ID__d652e92">
@@ -198,4 +202,4 @@ index: "../toc.html"
     </section>
 
   </div>
-<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/referencing-other-plugins.html">Referencing files from other plug-ins</a></strong><br>Starting with DITA-OT 1.5.4, you can use the <span class="ph filepath">plugin:<var class="keyword varname">plugin-id</var></span> URI extension and the <span class="ph filepath">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</span> Ant variable to reference the base path of another     installed DITA-OT plug-in.</li></ul><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization-approaches.html" title="Various methods may be used to customize the PDF output that DITA Open Toolkit produces. Each of these approaches have advantages and shortcomings that should be considered when preparing a customization project. Some of these methods are considered “anti-patterns” with disadvantages that outweigh their apparent appeal. In most cases, you should create a custom PDF plug-in.">PDF customization approaches</a></li></ul></div><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization.html" title="You can create custom DITA-OT plug-ins that build on the default DITA to PDF transformation. Plug-ins can customize covers and page layouts, modify formatting, override logic of the default PDF plug-in, and much more.">Customizing PDF output</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/html-customization-plugins.html" title="In addition to the basic modifications that can be made with parameter settings and property files, you can create custom HTML plug-ins that bundle custom fonts, JavaScript, and stylesheets; modify the HTML markup, or override other aspects of HTML processing.">Custom HTML plug-ins</a></li><li class="linklist"><a class="link" href="../topics/plugin-dependencies.html" title="A DITA-OT plug-in can be dependent on other plug-ins. Prerequisite plug-ins are installed first, which ensures that DITA-OT handles XSLT overrides correctly.">Plug-in dependencies</a></li></ul></div><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization-plugins.html" title="In most cases, PDF output should be customized by creating custom DITA-OT plug-ins that build on the default DITA to PDF transformation. PDF plug-ins can customize covers and page layouts, modify formatting, override the logic of the default PDF plug-in, and much more.">Custom PDF plug-ins</a></li><li class="linklist"><a class="link" href="../topics/referencing-other-plugins.html" title="Starting with DITA-OT 1.5.4, you can use the plugin:plugin-id URI extension and the ${dita.plugin.plugin-id.dir} Ant variable to reference the base path of another installed DITA-OT plug-in.">Referencing files from other plug-ins</a></li></ul></div></nav></article></main>
