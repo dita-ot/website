@@ -38,4 +38,8 @@ dd {
 // Top margin for first term in list
 dt {
   margin: $paragraph-margin-bottom 0 0;
+  // Remove top margin from adjacent term siblings
+  + dt {
+    margin: 0;
+  }
 }
