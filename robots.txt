@@ -11,3 +11,4 @@ Disallow: /3.1/
 Disallow: /3.2/
 Disallow: /3.3/
 Disallow: /3.4/
+Disallow: /3.5/
