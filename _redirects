@@ -53,3 +53,11 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 # Retain & redirect slack subdomain for convenience    https://github.com/dita-ot/website/pull/291
 https://slack.dita-ot.org                              https://join.slack.com/t/dita-ot/shared_invite/enQtODMxNjQ0MzAyMDg3LWZhZjk4NmM3MmU4YWI4MTM2NTVkMDg3ZmY4MjA1YzM0ZWI3NmY3NTc5ZmY5NzQ2MGU1NjA4YWIwMTJlMWUyNTY       301!
 http://slack.dita-ot.org                               https://join.slack.com/t/dita-ot/shared_invite/enQtODMxNjQ0MzAyMDg3LWZhZjk4NmM3MmU4YWI4MTM2NTVkMDg3ZmY4MjA1YzM0ZWI3NmY3NTc5ZmY5NzQ2MGU1NjA4YWIwMTJlMWUyNTY       301!
+
+# Redirect topics merged or renamed for 3.5
+/dev/topics/alternative-input-formats.html             /dev/topics/input-formats.html                               301!
+/dev/topics/customizing.html                           /dev/topics/custom-plugins.html                              301!
+/dev/topics/log-files.html                             /dev/topics/logging.html                                     301!
+/dev/topics/plugin-applications.html                   /dev/topics/plugin-use-cases.html                            301!
+/dev/topics/plugin-best-practices.html                 /dev/topics/plugin-coding-conventions.html                   301!
+/dev/topics/plugin-sample.html                         /dev/topics/plugin-configfile.html                           301!
