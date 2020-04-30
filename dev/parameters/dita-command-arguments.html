@@ -3,7 +3,7 @@
 layout: base
 title: "Arguments and options for the dita command"
 index: "../toc.html"
-commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
+commit: "a774ca8c85d8b4f22de9eca218572422a2974564"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a><ul class="nav nav-list"><li class="active"><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li></ul></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -374,10 +374,14 @@ commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
             <span class="keyword parmname">-r</span>
             <var class="keyword varname">file</var>
           </dt>
-          <dd class="dd pd">Process input with additional resources.
+          <dd class="dd pd">Convert partial documentation sets by processing input with additional resources.
             <div class="p">For example, to process a single topic file with a map that contains key definitions, use a command like
               this:
               <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+            </div>
+            <div class="p">To convert a chapter map to HTML5 and insert related links from relationship tables in a separate map,
+              use:
+              <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">chapter.ditamap</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">reltables.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
             </div></dd>
         
         
