@@ -3,7 +3,7 @@
 layout: base
 title: "DITA Open Toolkit 3.5 Release Notes"
 index: "../toc.html"
-commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
+commit: "69dd6291921f9ce24c22c24643f24abeaf9e8201"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -66,7 +66,7 @@ commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
       <section class="section" id="v3.5__dita-2-0-preview"><h3 class="title sectiontitle">DITA 2.0 preview</h3>
         
         <p class="p" id="v3.5__3449">DITA-OT <span class="keyword">3.5</span> includes processing support for the latest DRAFT versions of
-          the DITA 2.0 DTD and RelaxNG grammar files from OASIS (as of April 2020).
+          the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of April 2020).
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3449" target="_blank" rel="external noopener">#3449</a>
         </p>
         <p class="p">DITA documents that reference the draft grammar files can be parsed, and where features
@@ -312,6 +312,12 @@ commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
             for any unresolved term references.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3498" target="_blank" rel="external noopener">#3498</a>
           </li>
+          <li class="li mark" id="v3.5__3499">Earlier versions of DITA-OT stripped namespace declarations from
+              <code class="keyword markupname xmlelement">&lt;mathml&gt;</code> and <code class="keyword markupname xmlelement">&lt;svg&gt;</code> elements in topics based on RELAX&nbsp;NG
+            syntax. Pre-processing has been corrected to preserve the namespaces.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3499" target="_blank" rel="external noopener">#3499</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3501" target="_blank" rel="external noopener">#3501</a>
+          </li>
           <li class="li" id="v3.5__3502">In HTML5 output, earlier versions of DITA-OT displayed the “Note” label when the
               <code class="keyword markupname xmlatt">@type</code> attribute of a <code class="keyword markupname xmlelement">&lt;note&gt;</code> element was set to
               <code class="ph codeph">notice</code>. Processing has been updated to ensure that the “Notice” label is correctly
@@ -361,7 +367,7 @@ commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
           <li class="li">
             <a class="xref" href="../topics/migrating-to-3.5.html" title="DITA-OT 3.5 includes support for additional input resources, an alternative subcommand syntax for the dita command, and an initial preview of features for the latest draft of the upcoming DITA 2.0 standard.">Migrating to release 3.5</a></li>
           <li class="li">
-            <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 3.5 provides an initial preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the DITA 2.0 DTD and RelaxNG grammar files from OASIS (as of March 2020).">DITA 2.0 preview support</a></li>
+            <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 3.5 provides an initial preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of March 2020).">DITA 2.0 preview support</a></li>
         </ul>
         <p class="p">The topic hierarchy has been revised to promote information on common customization scenarios, including
           <a class="xref" href="../topics/html-customization.html" title="You can modify the look and feel of your HTML output by changing parameter settings to include custom CSS, headers and footers, or table-of-contents navigation in topics.">Customizing HTML output</a> and
