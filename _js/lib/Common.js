@@ -1,6 +1,7 @@
 import EditController from './EditController'
 import $ from 'jquery'
 import URI from 'urijs'
+import Prism from 'prismjs'
 
 function Common(index) {
   const CLASS_OPEN = 'expanded'
@@ -75,6 +76,7 @@ function Common(index) {
     addAnchorLinks()
     editController.createEditLink()
     editController.createHistoryLink()
+    Prism.highlightAll()
 
     function addLinkHandlers() {
       $main.find('a[href]').filter(isLocal).click(mainClickHandler)
