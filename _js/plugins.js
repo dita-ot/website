@@ -313,12 +313,58 @@ function details(versions, version) {
       elem('p', elem('a', { href: first.homepage }, getDomain(first.homepage))),
     ])
   }
+  const installCmds = [
+    {
+      title: 'DITA-OT 3.5 and newer',
+      cmd: `dita install ${first.name}`,
+    },
+    {
+      title: 'DITA-OT 3.2 and newer',
+      cmd: `dita --install ${first.name}`,
+    },
+    {
+      title: 'DITA-OT 3.1 and older',
+      cmd: `dita --install ${first.url}`,
+    },
+  ]
   append(div, [
     elem('h3', t('INSTALL')),
-    elem('p', { class: 'small' }, t('INSTALL_CURRENT')),
-    elem('pre', `dita --install ${first.name}`),
-    elem('p', { class: 'small' }, t('INSTALL_OLD')),
-    elem('pre', `dita --install ${first.url}`),
+    elem(
+      'ul',
+      { class: 'nav nav-tabs', role: 'tablist' },
+      installCmds.map((content, i) =>
+        elem(
+          'li',
+          { class: 'nav-item', role: 'presentation' },
+          elem(
+            'a',
+            {
+              class: `nav-link ${i === 0 ? 'active' : ''}`,
+              id: 'home-tab',
+              'data-toggle': 'tab',
+              href: `#v${i}`,
+              role: 'tab',
+            },
+            content.title
+          )
+        )
+      )
+    ),
+    elem(
+      'div',
+      { class: 'tab-content' },
+      installCmds.map((content, i) =>
+        elem(
+          'div',
+          { class: `tab-pane fade ${i === 0 ? 'show active' : ''}`, id: `v${i}`, role: 'tabpanel' },
+          elem(
+            'pre',
+            { class: 'pre codeblock language-properties normalize-space' },
+            elem('code', content.cmd)
+          )
+        )
+      )
+    ),
   ])
 
   const deps = first.deps
