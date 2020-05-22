@@ -109,7 +109,8 @@ function Common(index) {
               content: toWindows($current.clone()).get(0),
             },
           ]
-          $current.after(tabs(items))
+          $current.after(tabs(Math.floor(Math.random() * 26), items))
+          $current.remove()
         })
 
       function toWindows($contents) {

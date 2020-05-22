@@ -36,7 +36,7 @@ export function clear(myNode) {
   }
 }
 
-export function tabs(items) {
+export function tabs(id, items) {
   return [
     elem(
       'ul',
@@ -51,7 +51,7 @@ export function tabs(items) {
               class: `nav-link ${i === 0 ? 'active' : ''}`,
               id: 'home-tab',
               'data-toggle': 'tab',
-              href: `#v${i}`,
+              href: `#v${id}_${i}`,
               role: 'tab',
             },
             item.title
@@ -65,7 +65,11 @@ export function tabs(items) {
       items.map((content, i) =>
         elem(
           'div',
-          { class: `tab-pane fade ${i === 0 ? 'show active' : ''}`, id: `v${i}`, role: 'tabpanel' },
+          {
+            class: `tab-pane fade ${i === 0 ? 'show active' : ''}`,
+            id: `v${id}_${i}`,
+            role: 'tabpanel',
+          },
           content.content
         )
       )
