@@ -94,6 +94,7 @@ function Common(index) {
     }
 
     function addPlatformTabs() {
+      const activePlatform = getActivePlatform()
       $main
         .find('pre .filepath')
         .parents('pre')
@@ -102,11 +103,15 @@ function Common(index) {
           const items = [
             {
               title: 'Linux and macOS',
+              id: 'unix',
               content: $current.clone().get(0),
+              active: activePlatform === 'unix',
             },
             {
               title: 'Windows',
+              id: 'windows',
               content: toWindows($current.clone()).get(0),
+              active: activePlatform === 'windows',
             },
           ]
           $current.after(tabs(Math.floor(Math.random() * 26), items))
@@ -163,6 +168,16 @@ function Common(index) {
     const $a = $(this)
     const abs = URI($a.attr('href')).absoluteTo(window.location.href).href()
     return abs.indexOf(base) !== -1
+  }
+
+  function getActivePlatform() {
+    let active = window.localStorage.getItem('DITA-OT_PLATFORM')
+    if (!!active) {
+      return active
+    } else {
+      active = navigator.appVersion.indexOf('Win') !== -1 ? 'windows' : 'unix'
+      window.localStorage.setItem('DITA-OT_PLATFORM', active)
+    }
   }
 }
 

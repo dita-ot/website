@@ -45,32 +45,51 @@ export function tabs(id, items) {
         elem(
           'li',
           { class: 'nav-item', role: 'presentation' },
-          elem(
-            'a',
-            {
-              class: `nav-link ${i === 0 ? 'active' : ''}`,
-              id: 'home-tab',
-              'data-toggle': 'tab',
-              href: `#v${id}_${i}`,
-              role: 'tab',
-            },
-            item.title
+          $(
+            elem(
+              'a',
+              {
+                class: `nav-link platform-tab ${item.active ? 'active' : ''}`,
+                'data-value': item.id,
+                'data-toggle': 'tab',
+                href: `#v${id}_${i}`,
+                role: 'tab',
+              },
+              item.title
+            )
           )
+            .click(function () {
+              const $current = $(this)
+              const activatedHref = $current.attr('href')
+              $(`.platform-tab`)
+                .filter(function () {
+                  const $current = $(this)
+                  return (
+                    $current.attr('data-value') === item.id &&
+                    $current.attr('href') !== activatedHref
+                  )
+                })
+                .each(function () {
+                  $(this).tab('show')
+                  window.localStorage.setItem('DITA-OT_PLATFORM', item.id)
+                })
+            })
+            .get(0)
         )
       )
     ),
     elem(
       'div',
       { class: 'tab-content' },
-      items.map((content, i) =>
+      items.map((item, i) =>
         elem(
           'div',
           {
-            class: `tab-pane fade ${i === 0 ? 'show active' : ''}`,
+            class: `tab-pane fade ${item.active ? 'show active' : ''}`,
             id: `v${id}_${i}`,
             role: 'tabpanel',
           },
-          content.content
+          item.content
         )
       )
     ),
