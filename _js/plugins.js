@@ -10,6 +10,8 @@ import t from './translations'
 
 const REPOSITORY_URL = 'https://plugins.dita-ot.org/_all.json'
 const VERSIONS = [
+  '3.5',
+  '3.4',
   '3.3',
   '3.2',
   // '3.1.3',
@@ -285,6 +287,7 @@ function details(versions, version) {
   if (!first) {
     return null
   }
+  const platformDeps = first.deps.filter((dep) => dep.name === 'org.dita.base')
 
   const div = document.createElement('div')
 
@@ -316,17 +319,24 @@ function details(versions, version) {
   const installCmds = [
     {
       title: 'DITA-OT 3.5 and newer',
+      range: ['3.5'],
       cmd: `dita install ${first.name}`,
     },
     {
-      title: 'DITA-OT 3.2 and newer',
+      title: 'DITA-OT 3.2–3.4',
+      range: ['3.2', '3.3', '3.4'],
       cmd: `dita --install ${first.name}`,
     },
     {
       title: 'DITA-OT 3.1 and older',
+      range: ['3.1'],
       cmd: `dita --install ${first.url}`,
     },
-  ]
+  ].filter(
+    (content) =>
+      platformDeps.flatMap((platform) => content.range.filter((r) => matchVersion(r, platform.req)))
+        .length !== 0
+  )
   append(div, [
     elem('h3', t('INSTALL')),
     elem(
@@ -373,9 +383,7 @@ function details(versions, version) {
     elem('h3', t('DEPENDENCIES')),
     elem(
       'ul',
-      deps
-        .filter((dep) => dep.name === 'org.dita.base')
-        .map((dep) => elem('li', `DITA-OT ${humanReadableVersion(dep.req) || ''}`))
+      platformDeps.map((dep) => elem('li', `DITA-OT ${humanReadableVersion(dep.req) || ''}`))
     ),
     elem(
       'ul',
