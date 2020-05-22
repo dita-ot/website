@@ -35,3 +35,40 @@ export function clear(myNode) {
     myNode.removeChild(myNode.firstChild)
   }
 }
+
+export function tabs(items) {
+  return [
+    elem(
+      'ul',
+      { class: 'nav nav-tabs', role: 'tablist' },
+      items.map((item, i) =>
+        elem(
+          'li',
+          { class: 'nav-item', role: 'presentation' },
+          elem(
+            'a',
+            {
+              class: `nav-link ${i === 0 ? 'active' : ''}`,
+              id: 'home-tab',
+              'data-toggle': 'tab',
+              href: `#v${i}`,
+              role: 'tab',
+            },
+            item.title
+          )
+        )
+      )
+    ),
+    elem(
+      'div',
+      { class: 'tab-content' },
+      items.map((content, i) =>
+        elem(
+          'div',
+          { class: `tab-pane fade ${i === 0 ? 'show active' : ''}`, id: `v${i}`, role: 'tabpanel' },
+          content.content
+        )
+      )
+    ),
+  ]
+}

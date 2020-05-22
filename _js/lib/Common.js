@@ -2,6 +2,7 @@ import EditController from './EditController'
 import $ from 'jquery'
 import URI from 'urijs'
 import Prism from 'prismjs'
+import { tabs } from '../dom'
 
 function Common(index) {
   const CLASS_OPEN = 'expanded'
@@ -76,6 +77,7 @@ function Common(index) {
     addAnchorLinks()
     editController.createEditLink()
     editController.createHistoryLink()
+    addPlatformTabs()
     Prism.highlightAll()
 
     function addLinkHandlers() {
@@ -88,6 +90,39 @@ function Common(index) {
         const $target = $(event.currentTarget)
         const href = $target.attr('href')
         loadMain(href)
+      }
+    }
+
+    function addPlatformTabs() {
+      $main
+        .find('pre .filepath')
+        .parents('pre')
+        .each(function () {
+          const $current = $(this)
+          const items = [
+            {
+              title: 'Linux and macOS',
+              content: $current.clone().get(0),
+            },
+            {
+              title: 'Windows',
+              content: toWindows($current.clone()).get(0),
+            },
+          ]
+          $current.after(tabs(items))
+        })
+
+      function toWindows($contents) {
+        $contents
+          .find('.filepath')
+          .contents()
+          .filter(function () {
+            return this.nodeType === Node.TEXT_NODE
+          })
+          .each(function () {
+            this.data = this.data.replace(/\//g, '\\')
+          })
+        return $contents
       }
     }
 
