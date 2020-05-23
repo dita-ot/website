@@ -318,17 +318,17 @@ function details(versions, version) {
   }
   const installCmds = [
     {
-      title: 'DITA-OT 3.5 and newer',
+      title: t('INSTALL_3_5'),
       range: ['3.5'],
       cmd: `dita install ${first.name}`,
     },
     {
-      title: 'DITA-OT 3.2–3.4',
+      title: t('INSTALL_3_2'),
       range: ['3.2', '3.3', '3.4'],
       cmd: `dita --install ${first.name}`,
     },
     {
-      title: 'DITA-OT 3.1 and older',
+      title: t('INSTALL_3_1'),
       range: ['3.1'],
       cmd: `dita --install ${first.url}`,
     },
