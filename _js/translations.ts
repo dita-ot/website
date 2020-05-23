@@ -1,6 +1,7 @@
 const TRANSLATIONS: { [key: string]: string } = {
-  INSTALL_OLD: 'DITA-OT 3.1 and older',
-  INSTALL_CURRENT: 'DITA-OT 3.2 and newer',
+  INSTALL_3_1: 'DITA-OT 3.1 and older',
+  INSTALL_3_2: 'DITA-OT 3.2–3.4',
+  INSTALL_3_5: 'DITA-OT 3.5 and newer',
   LICENSE: 'License',
   HOMEPAGE: 'Homepage',
   KEYWORDS: 'Keywords',
