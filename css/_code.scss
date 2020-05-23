@@ -84,3 +84,26 @@ kbd {
   @include codeclass;
   font-weight: bold;
 }
+
+// Platform tabs
+
+.platform-tabs {
+  @include font-size(80%);
+  margin-top: $spacer;
+  margin-left: $spacer;
+  border-bottom: none;
+
+  .platform-tab {
+    border-bottom-color: transparent;
+    padding: .2rem .6rem;
+    &.active {
+      background-color: $pre-bg;
+      border-bottom-color: transparent;
+    }
+  }
+}
+.platform-tab-content {
+  pre {
+    margin-top: 0;
+  }
+}

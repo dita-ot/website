@@ -40,7 +40,7 @@ export function tabs(id, items) {
   return [
     elem(
       'ul',
-      { class: 'nav nav-tabs', role: 'tablist' },
+      { class: 'nav nav-tabs platform-tabs', role: 'tablist' },
       items.map((item, i) =>
         elem(
           'li',
@@ -80,7 +80,7 @@ export function tabs(id, items) {
     ),
     elem(
       'div',
-      { class: 'tab-content' },
+      { class: 'tab-content platform-tab-content' },
       items.map((item, i) =>
         elem(
           'div',
