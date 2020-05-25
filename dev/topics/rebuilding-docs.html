@@ -3,7 +3,7 @@
 layout: base
 title: "Rebuilding the DITA-OT documentation"
 index: "../toc.html"
-commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
+commit: "6b2381d18bfb588b2297b909615a850f1e3df0a4"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li class="active"><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -25,9 +25,9 @@ commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
       </li><li class="li step stepexpand">
         <span class="ph cmd">Run one of the following commands.</span>
         <ul class="ul choices">
-          <li class="li choice">On Linux and macOS:
+          <li class="li choice" data-platform="linux mac">On Linux and macOS:
             <pre class="pre codeblock"><code>./gradlew <var class="keyword varname">target</var></code></pre></li>
-          <li class="li choice">On Windows: <pre class="pre codeblock"><code>gradlew.bat <var class="keyword varname">target</var></code></pre></li>
+          <li class="li choice" data-platform="windows">On Windows: <pre class="pre codeblock"><code>gradlew.bat <var class="keyword varname">target</var></code></pre></li>
         </ul>
         <div class="itemgroup info">
           <div class="p">The <var class="keyword varname">target</var> parameter is optional and specifies a transformation type. It takes the
