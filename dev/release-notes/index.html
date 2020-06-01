@@ -3,7 +3,7 @@
 layout: base
 title: "DITA Open Toolkit 3.5 Release Notes"
 index: "../toc.html"
-commit: "69dd6291921f9ce24c22c24643f24abeaf9e8201"
+commit: "65d463e00c7118b667a69260823eed0e40b7f062"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -150,7 +150,9 @@ commit: "69dd6291921f9ce24c22c24643f24abeaf9e8201"
               <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
             </div></li>
           <li class="li" id="v3.5__3413">Two new parameters can be used to dynamically adjust the names and locations of output files in
-            transformations that use the map-first pre-processing routine (<code class="ph codeph">preprocess2</code>).
+            transformations that use the map-first pre-processing routine (<code class="ph codeph">preprocess2</code>). <span class="ph mark">These parameters can be passed on the command line, or included in a custom plug-in via
+                <code class="keyword markupname xmlelement">&lt;property&gt;</code> elements in an Ant script as described in
+              <a class="xref" href="../topics/plugin-rewrite-rules.html" title="To dynamically adjust the names and locations of output files in the map-first pre-processing routine (preprocess2), you can create a custom plug-in and specify the code that contains your custom rewrite rules.">Adjusting file names in map-first pre-processing</a>.</span>
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3413" target="_blank" rel="external noopener">#3413</a>
             <ul class="ul">
               <li class="li">Use <span class="keyword parmname">result.rewrite-rule.class</span> to rewrite filenames with a Java class</li>
