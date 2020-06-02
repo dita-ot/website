@@ -10,20 +10,20 @@ index: "../toc.html"
   
   
   
-  <div class="body taskbody"><p class="shortdesc">You can access a list of supported parameters for the <span class="keyword cmdname">dita</span> command by passing the
-      <span class="keyword parmname">--help</span> option on the command line.</p>
+  <div class="body taskbody"><p class="shortdesc">You can access a list of subcommands and supported parameters for the <span class="keyword cmdname">dita</span> command by
+    passing the <span class="keyword parmname">--help</span> option on the command line.</p>
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Open a command prompt or terminal session, and then change to the directory where DITA
           Open Toolkit is installed.</span>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Issue the following command:</span>
-        <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder"><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead><tr class="sthead chhead"><th scope="col" class="stentry choptionhd" style="vertical-align:bottom;text-align:left;">Option</th><th scope="col" class="stentry chdeschd" style="vertical-align:bottom;text-align:left;">Description</th></tr></thead><tbody><tr class="strow chrow">
+        <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder"><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead><tr class="sthead chhead"><th scope="col" class="stentry choptionhd" style="vertical-align:bottom;text-align:left;">Option</th><th scope="col" class="stentry chdeschd" style="vertical-align:bottom;text-align:left;">Description</th></tr></thead><tbody><tr class="strow chrow" data-platform="linux mac">
             <th style="vertical-align:top;" scope="row" class="stentry choption">Linux or macOS&nbsp;</th>
             <td style="vertical-align:top;" class="stentry chdesc">
               <span class="keyword cmdname">bin/dita</span>
               <span class="keyword parmname">--help</span>
             </td>
-          </tr><tr class="strow chrow">
+          </tr><tr class="strow chrow" data-platform="windows">
             <th style="vertical-align:top;" scope="row" class="stentry choption">Windows</th>
             <td style="vertical-align:top;" class="stentry chdesc">
               <span class="keyword cmdname">bin\dita</span>
@@ -31,14 +31,21 @@ index: "../toc.html"
             </td>
           </tr></tbody></table>
         <div class="itemgroup info">
-          <div class="note tip note_tip"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the <var class="keyword varname">PATH</var> environment variable to run the
-              <span class="keyword cmdname">dita</span> command from any location on the file system without typing the path.
+          <div class="note tip note_tip"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the
+            <a class="xref" href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank" rel="external noopener">PATH environment variable</a> to run the <span class="keyword cmdname">dita</span> command from any location on the file system
+            without typing the path.
             
           </div>
         </div>
+      </li><li class="li step stepexpand"><strong>Optional: </strong>
+        <span class="ph cmd">For details on the arguments and options available for each subcommand, pass the
+            <span class="keyword parmname">--help</span> option after the subcommand name.</span>
+        <div class="itemgroup stepxmp">For example: <span class="keyword cmdname">dita install</span>
+          <span class="keyword parmname">--help</span>.</div>
       </li></ol></section>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
-      <p class="p">A brief description of the supported parameters appears in the command-line window.</p>
+      <p class="p">A brief usage summary appears in the command-line window, along with a list of subcommands, arguments, and
+        options.</p>
     </section>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/build-using-dita-command.html" title="You can generate output using the dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="../parameters/internal-ant-properties.html" title="Reference list of Ant properties used by DITA-OT internally.">Internal Ant properties</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/build-using-dita-command.html" title="You can generate output using the dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="../parameters/internal-ant-properties.html" title="Reference list of Ant properties used by DITA-OT internally.">Internal Ant properties</a></li><li class="linklist"><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content. Subcommands can be used to manage plug-ins, or print information about the current configuration. A series of options are available to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></li></ul></div></nav></article></main>

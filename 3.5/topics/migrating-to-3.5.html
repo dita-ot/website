@@ -130,6 +130,42 @@ index: "../toc.html"
         <li class="li"><span class="ph filepath">user.input.file.list</span></li>
         <li class="li"><span class="ph filepath">usr.input.file.list</span></li>
       </ul>
+      <p class="p">For example, if your plug-in previously used the <code class="ph codeph">fullditatopicfile</code> to select resources in the
+        temporary directory like this:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt basedir="${dita.temp.dir}"
+      destdir="${output.dir}"
+      includesfile="${dita.temp.dir}${file.separator}${fullditatopicfile}"
+      style="${args.xsl}"&gt;
+  &lt;!-- ⋮ --&gt;
+&lt;/xslt&gt;</code></pre>
+      <p class="p"> With DITA-OT 2.4 or newer, use the <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> element instead: </p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt basedir="${dita.temp.dir}"
+      destdir="${output.dir}"
+      style="${args.xsl}"&gt;
+  &lt;ditafileset format="dita" processingRole="normal"/&gt;
+  &lt;!-- ⋮ --&gt;
+&lt;/xslt&gt;</code></pre>
+      <p class="p">If your plug-in previously used the <code class="ph codeph">user.input.file.listfile</code> to process the start map like
+        this:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt …
+      includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"/&gt;</code></pre>
+      <p class="p">Use the <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> element as follows:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt … &gt;
+  &lt;ditafileset input="true" format="ditamap"/&gt;
+&lt;/xslt&gt;</code></pre>
+    </section>
+    <section class="section" id="migrating-to-3.5__rewriting-output-files"><h2 class="title sectiontitle">Adjusting output file names</h2>
+      
+      <p class="p">Two new parameters can be used to dynamically adjust the names and locations of output files in transformations
+        that use the map-first pre-processing routine (<code class="ph codeph">preprocess2</code>).</p>
+      <div class="p">These parameters can be passed on the command line, or included in a custom plug-in via
+          <code class="keyword markupname xmlelement">&lt;property&gt;</code> elements in an Ant script as described in
+        <a class="xref" href="plugin-rewrite-rules.html" title="To dynamically adjust the names and locations of output files in the map-first pre-processing routine (preprocess2), you can create a custom plug-in and specify the code that contains your custom rewrite rules.">Adjusting file names in map-first pre-processing</a>.
+        <ul class="ul">
+          <li class="li">Use <span class="keyword parmname">result.rewrite-rule.class</span> to rewrite filenames with a Java class</li>
+          <li class="li">Use <span class="keyword parmname">result.rewrite-rule.xsl</span> to rewrite via an XSLT stylesheet</li>
+        </ul>
+      </div>
     </section>
   </div>
 </article></main>
