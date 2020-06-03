@@ -162,7 +162,8 @@ index: "../toc.html"
           <code class="keyword markupname xmlelement">&lt;property&gt;</code> elements in an Ant script as described in
         <a class="xref" href="plugin-rewrite-rules.html" title="To dynamically adjust the names and locations of output files in the map-first pre-processing routine (preprocess2), you can create a custom plug-in and specify the code that contains your custom rewrite rules.">Adjusting file names in map-first pre-processing</a>.
         <ul class="ul">
-          <li class="li">Use <span class="keyword parmname">result.rewrite-rule.class</span> to rewrite filenames with a Java class</li>
+          <li class="li">Use <span class="keyword parmname">result.rewrite-rule.class</span> to rewrite filenames with a Java class that implements
+            the <code class="ph codeph">org.dita.dost.module.RewriteRule</code> interface</li>
           <li class="li">Use <span class="keyword parmname">result.rewrite-rule.xsl</span> to rewrite via an XSLT stylesheet</li>
         </ul>
       </div>
