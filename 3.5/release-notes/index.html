@@ -10,8 +10,8 @@ index: "../toc.html"
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.5</span> is a feature release that provides new features and
-      enhancements, including <span class="ph">support for additional input
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.5.1</span> is a maintenance release that fixes issues
+      reported in DITA-OT <span class="keyword">3.5</span>, which includes <span class="ph">support for additional input
             resources, an alternative subcommand syntax for the <span class="keyword cmdname">dita</span> command, and an initial preview
             of features for the latest draft of the upcoming DITA 2.0 standard</span>.</p>
     <p class="p">DITA-OT releases follow
@@ -20,7 +20,7 @@ index: "../toc.html"
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.5</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.5.1</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div>
   </div>
@@ -50,9 +50,56 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.5">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.5</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v3.5.1">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.5.1</span>
       
+    </h2>
+
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">3.5.1</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v3.5.1__3508">In DITA-OT 3.5, Markdown builds failed due to an incompatible plug-in version. The LwDITA
+            plug-in has been updated to version 2.4, which is compatible with DITA-OT 2.4 and newer.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3508" target="_blank" rel="external noopener">#3508</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3512" target="_blank" rel="external noopener">#3512</a>
+          </li>
+          <li class="li" id="v3.5.1__3509">On macOS, DITA-OT 3.5 failed to build output if the input file was specified with a relative
+            path based at the current working directory with the <code class="ph codeph">./</code> notation. Paths specified on the
+            command line are now normalized to support this syntax.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3509" target="_blank" rel="external noopener">#3509</a>
+          </li>
+          <li class="li" id="v3.5.1__3513">Several bundled dependencies have been updated to address security vulnerabilities, including:
+            <ul class="ul">
+              <li class="li" id="v3.5.1__3515">The bundled Jackson data binding library was updated to version 2.11.0 to resolve several
+                vulnerabilities reported in previous versions, including an OWASP false positive for the SnakeYAML
+                library, which has been updated to version 1.27.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3513" target="_blank" rel="external noopener">#3513</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3515" target="_blank" rel="external noopener">#3515</a>
+              </li>
+              <li class="li" id="v3.5.1__3522">The bundled Ant version has been updated to version 1.10.8 to address
+                <a class="xref" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1945" target="_blank" rel="external noopener">CVE-2020-1945</a>.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3522" target="_blank" rel="external noopener">#3522</a></li>
+            </ul>
+          </li>
+          <li class="li" id="v3.5.1__3517">In DITA-OT 3.5, PDF customizations (and other plug-ins that use <code class="keyword markupname xmlelement">&lt;xslt&gt;</code>
+            elements within custom <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> elements) failed to properly compile the custom
+            XSLT code. The XSLT module has been corrected to resolve custom code correctly and apply the customizations.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3517" target="_blank" rel="external noopener">#3517</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.5.1+is%3Aclosed" target="_blank" rel="external noopener">3.5.1 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.5...3.5.1" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.5">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">3.5</span>
+      <span class="ph small text-muted">released April 27, 2020</span>
     </h2>
     
     <div class="body refbody">
@@ -65,7 +112,7 @@ index: "../toc.html"
       <section class="section" id="v3.5__dita-2-0-preview"><h3 class="title sectiontitle">DITA 2.0 preview</h3>
         
         <p class="p" id="v3.5__3449">DITA-OT <span class="keyword">3.5</span> includes processing support for the latest DRAFT versions of
-          the DITA 2.0 DTD and RelaxNG grammar files from OASIS (as of April 2020).
+          the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of April 2020).
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3449" target="_blank" rel="external noopener">#3449</a>
         </p>
         <p class="p">DITA documents that reference the draft grammar files can be parsed, and where features
@@ -149,10 +196,13 @@ index: "../toc.html"
               <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
             </div></li>
           <li class="li" id="v3.5__3413">Two new parameters can be used to dynamically adjust the names and locations of output files in
-            transformations that use the map-first pre-processing routine (<code class="ph codeph">preprocess2</code>).
+            transformations that use the map-first pre-processing routine (<code class="ph codeph">preprocess2</code>). <span class="ph mark">These parameters can be passed on the command line, or included in a custom plug-in via
+                <code class="keyword markupname xmlelement">&lt;property&gt;</code> elements in an Ant script as described in
+              <a class="xref" href="../topics/plugin-rewrite-rules.html" title="To dynamically adjust the names and locations of output files in the map-first pre-processing routine (preprocess2), you can create a custom plug-in and specify the code that contains your custom rewrite rules.">Adjusting file names in map-first pre-processing</a>.</span>
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3413" target="_blank" rel="external noopener">#3413</a>
             <ul class="ul">
-              <li class="li">Use <span class="keyword parmname">result.rewrite-rule.class</span> to rewrite filenames with a Java class</li>
+              <li class="li">Use <span class="keyword parmname">result.rewrite-rule.class</span> to rewrite filenames with a Java class that
+                implements the <code class="ph codeph">org.dita.dost.module.RewriteRule</code> interface</li>
               <li class="li">Use <span class="keyword parmname">result.rewrite-rule.xsl</span> to rewrite via an XSLT stylesheet</li>
             </ul>
           </li>
@@ -311,6 +361,12 @@ index: "../toc.html"
             for any unresolved term references.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3498" target="_blank" rel="external noopener">#3498</a>
           </li>
+          <li class="li mark" id="v3.5__3499">Earlier versions of DITA-OT stripped namespace declarations from
+              <code class="keyword markupname xmlelement">&lt;mathml&gt;</code> and <code class="keyword markupname xmlelement">&lt;svg&gt;</code> elements in topics based on RELAX&nbsp;NG
+            syntax. Pre-processing has been corrected to preserve the namespaces.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3499" target="_blank" rel="external noopener">#3499</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3501" target="_blank" rel="external noopener">#3501</a>
+          </li>
           <li class="li" id="v3.5__3502">In HTML5 output, earlier versions of DITA-OT displayed the “Note” label when the
               <code class="keyword markupname xmlatt">@type</code> attribute of a <code class="keyword markupname xmlelement">&lt;note&gt;</code> element was set to
               <code class="ph codeph">notice</code>. Processing has been updated to ensure that the “Notice” label is correctly
@@ -360,7 +416,7 @@ index: "../toc.html"
           <li class="li">
             <a class="xref" href="../topics/migrating-to-3.5.html" title="DITA-OT 3.5 includes support for additional input resources, an alternative subcommand syntax for the dita command, and an initial preview of features for the latest draft of the upcoming DITA 2.0 standard.">Migrating to release 3.5</a></li>
           <li class="li">
-            <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 3.5 provides an initial preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the DITA 2.0 DTD and RelaxNG grammar files from OASIS (as of March 2020).">DITA 2.0 preview support</a></li>
+            <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 3.5 provides an initial preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of March 2020).">DITA 2.0 preview support</a></li>
         </ul>
         <p class="p">The topic hierarchy has been revised to promote information on common customization scenarios, including
           <a class="xref" href="../topics/html-customization.html" title="You can modify the look and feel of your HTML output by changing parameter settings to include custom CSS, headers and footers, or table-of-contents navigation in topics.">Customizing HTML output</a> and
