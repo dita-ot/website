@@ -3,7 +3,7 @@
 layout: base
 title: "DITA Open Toolkit 3.5 Release Notes"
 index: "../toc.html"
-commit: "65d463e00c7118b667a69260823eed0e40b7f062"
+commit: "ff7666bb16828838c6f03795433641dd42f81c40"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -11,8 +11,8 @@ commit: "65d463e00c7118b667a69260823eed0e40b7f062"
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.5</span> is a feature release that provides new features and
-      enhancements, including <span class="ph">support for additional input
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.5.1</span> is a maintenance release that fixes issues
+      reported in DITA-OT <span class="keyword">3.5</span>, which includes <span class="ph">support for additional input
             resources, an alternative subcommand syntax for the <span class="keyword cmdname">dita</span> command, and an initial preview
             of features for the latest draft of the upcoming DITA 2.0 standard</span>.</p>
     <p class="p">DITA-OT releases follow
@@ -21,7 +21,7 @@ commit: "65d463e00c7118b667a69260823eed0e40b7f062"
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.5</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.5.1</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div>
   </div>
@@ -51,9 +51,56 @@ commit: "65d463e00c7118b667a69260823eed0e40b7f062"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.5">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.5</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v3.5.1">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.5.1</span>
       
+    </h2>
+
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">3.5.1</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v3.5.1__3508">In DITA-OT 3.5, Markdown builds failed due to an incompatible plug-in version. The LwDITA
+            plug-in has been updated to version 2.4, which is compatible with DITA-OT 2.4 and newer.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3508" target="_blank" rel="external noopener">#3508</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3512" target="_blank" rel="external noopener">#3512</a>
+          </li>
+          <li class="li" id="v3.5.1__3509">On macOS, DITA-OT 3.5 failed to build output if the input file was specified with a relative
+            path based at the current working directory with the <code class="ph codeph">./</code> notation. Paths specified on the
+            command line are now normalized to support this syntax.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3509" target="_blank" rel="external noopener">#3509</a>
+          </li>
+          <li class="li" id="v3.5.1__3513">Several bundled dependencies have been updated to address security vulnerabilities, including:
+            <ul class="ul">
+              <li class="li" id="v3.5.1__3515">The bundled Jackson data binding library was updated to version 2.11.0 to resolve several
+                vulnerabilities reported in previous versions, including an OWASP false positive for the SnakeYAML
+                library, which has been updated to version 1.27.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3513" target="_blank" rel="external noopener">#3513</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3515" target="_blank" rel="external noopener">#3515</a>
+              </li>
+              <li class="li" id="v3.5.1__3522">The bundled Ant version has been updated to version 1.10.8 to address
+                <a class="xref" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1945" target="_blank" rel="external noopener">CVE-2020-1945</a>.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3522" target="_blank" rel="external noopener">#3522</a></li>
+            </ul>
+          </li>
+          <li class="li" id="v3.5.1__3517">In DITA-OT 3.5, PDF customizations (and other plug-ins that use <code class="keyword markupname xmlelement">&lt;xslt&gt;</code>
+            elements within custom <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> elements) failed to properly compile the custom
+            XSLT code. The XSLT module has been corrected to resolve custom code correctly and apply the customizations.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3517" target="_blank" rel="external noopener">#3517</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.5.1+is%3Aclosed" target="_blank" rel="external noopener">3.5.1 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.5...3.5.1" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.5">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">3.5</span>
+      <span class="ph small text-muted">released April 27, 2020</span>
     </h2>
     
     <div class="body refbody">
@@ -155,7 +202,8 @@ commit: "65d463e00c7118b667a69260823eed0e40b7f062"
               <a class="xref" href="../topics/plugin-rewrite-rules.html" title="To dynamically adjust the names and locations of output files in the map-first pre-processing routine (preprocess2), you can create a custom plug-in and specify the code that contains your custom rewrite rules.">Adjusting file names in map-first pre-processing</a>.</span>
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3413" target="_blank" rel="external noopener">#3413</a>
             <ul class="ul">
-              <li class="li">Use <span class="keyword parmname">result.rewrite-rule.class</span> to rewrite filenames with a Java class</li>
+              <li class="li">Use <span class="keyword parmname">result.rewrite-rule.class</span> to rewrite filenames with a Java class that
+                implements the <code class="ph codeph">org.dita.dost.module.RewriteRule</code> interface</li>
               <li class="li">Use <span class="keyword parmname">result.rewrite-rule.xsl</span> to rewrite via an XSLT stylesheet</li>
             </ul>
           </li>
