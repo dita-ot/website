@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "07:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: gulp-babel
+    versions:
+    - ">= 8.a, < 9"
+  - dependency-name: husky
+    versions:
+    - ">= 2.7.0.a, < 2.7.1"
+  - dependency-name: prettier
+    versions:
+    - ">= 1.14.3.a, < 1.14.4"
+  - dependency-name: typescript
+    versions:
+    - ">= 3.3.4000.a, < 3.3.4001"
