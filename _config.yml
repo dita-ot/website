@@ -28,6 +28,10 @@ exclude:
   - node_modules
   - package*.js*
   - README.md
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 
 # Enable Octicons
 plugins:
