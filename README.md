@@ -12,7 +12,7 @@ If you'd like to set up a local staging environment and build a copy of the site
 
 - [Environment setup](#environment-setup)
 - [Install prerequisite software](#install-prerequisite-software)
-- [Running Jekyll](#running-Jekyll)
+- [Running Jekyll](#running-jekyll)
 - [Building documentation output](#building-documentation-output)
 - [Updating JavaScript](#updating-javascript)
 - [Happy staging!](#happy-staging)
@@ -52,25 +52,21 @@ If you'd like to set up a local staging environment and build a copy of the site
 
     Ruby is installed on macOS and most Linux distributions by default. If the command above does not respond with information on the installed Ruby version, see [Installing Ruby][4] for instructions.
 
-2.  Install [Jekyll][5]:
-
-        gem install jekyll
-
-3.  Install [Bundler][6]:
+2.  Install [Bundler][5]:
 
         gem install bundler
 
-4.  Switch to your clone of the project website repository:
+3.  Switch to your clone of the project website repository:
 
         cd ~/dita-ot-website
 
-5.  Install all of the required gems from the project’s `Gemfile`:
+4.  Install all of the required gems from the project’s `Gemfile`:
 
         bundle install
 
 ## Running Jekyll
 
-To build a copy of the site locally, use the `bundle` command to start the Jekyll build:
+To build a copy of the site locally, use the `bundle` command to start the [Jekyll][6] build:
 
     bundle exec jekyll serve
 
@@ -134,8 +130,8 @@ When you're ready to share your progress, send us a [pull request][12].
 [2]: https://www.dita-ot.org/colophon
 [3]: https://www.ruby-lang.org
 [4]: https://www.ruby-lang.org/en/documentation/installation
-[5]: https://jekyllrb.com
-[6]: https://bundler.io
+[5]: https://bundler.io
+[6]: https://jekyllrb.com
 [7]: http://127.0.0.1:4000/
 [8]: https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
 [9]: http://127.0.0.1:4000/dev/
