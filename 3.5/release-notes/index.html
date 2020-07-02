@@ -60,6 +60,13 @@ index: "../toc.html"
         <p class="p">DITA Open Toolkit <span class="keyword">3.5.2</span> is a maintenance release that includes the
           following bug fixes.</p>
         <ul class="ul">
+          <li class="li" id="v3.5.2__3524">DITA-OT 3.5 introduced a regression in key scope processing that saved the effective map too
+            early, before all topic references were updated. In certain cases, keys that were intended to point to
+            different reference targets were merged to a single reference. The keyref processing module has been updated
+            to handle these cases correctly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3524" target="_blank" rel="external noopener">#3524</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3542" target="_blank" rel="external noopener">#3542</a>
+          </li>
           <li class="li" id="v3.5.2__3526">In DITA-OT 3.5.1, generating output from a project file without setting the
               <span class="keyword parmname">--output</span> option caused the build to fail with a NullPointerException. The Java code
             has been updated to properly initialize the output directory.
@@ -105,14 +112,12 @@ index: "../toc.html"
   </article>
 
   <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.5.1">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.5.1
-      <span class="ph small text-muted">released June 4, 2020</span>
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.5.1 <span class="ph small text-muted">released June 4, 2020</span>
     </h2>
 
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit 3.5.1 is a maintenance release that includes the
-          following bug fixes.</p>
+        <p class="p">DITA Open Toolkit 3.5.1 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v3.5.1__3508">In DITA-OT 3.5, Markdown builds failed due to an incompatible plug-in version. The LwDITA
             plug-in has been updated to version 2.4, which is compatible with DITA-OT 2.4 and newer.
