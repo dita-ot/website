@@ -95,28 +95,70 @@ function Common(index) {
 
     function addPlatformTabs() {
       const activePlatform = getActivePlatform()
+      function activeFirst(items) {
+        const firstActive = items.find((item) => intersect(activePlatform, [item.id]).length !== 0)
+        if (firstActive) {
+          firstActive.active = true
+        } else {
+          items[0].active = true
+        }
+        return items
+      }
       $main
         .find('pre .filepath')
         .parents('pre')
         .each(function () {
           const $current = $(this)
-          const items = [
+          const items = activeFirst([
             {
               title: 'Linux and macOS',
               id: 'unix',
+              platforms: ['linux', 'mac'],
               content: $current.clone().get(0),
-              active: activePlatform === 'unix',
+              active: false,
             },
             {
               title: 'Windows',
               id: 'windows',
+              platforms: ['windows'],
               content: toWindows($current.clone()).get(0),
-              active: activePlatform === 'windows',
+              active: false,
             },
-          ]
+          ])
           $current.after(tabs(Math.floor(Math.random() * 26), items))
           $current.remove()
         })
+      $main.find('.choicetable').each(function () {
+        const $current = $(this)
+        // console.log('$current', $current)
+        const $rows = $current.find('.chrow')
+        // console.log('$rows', $rows)
+        if ($rows.length === $rows.filter('[data-platform]').length) {
+          // console.log('every row has platform', $rows)
+          const items = activeFirst(
+            $rows
+              .map(function () {
+                const $row = $(this)
+                const platforms = $row.attr('data-platform').trim().split(/\s+/)
+                return {
+                  title: $row.find('.choption').text(),
+                  id: platforms.join('_'),
+                  platforms,
+                  content: $(
+                    `<pre class="pre codeblock"><code>${$row.find('.chdesc').html()}</code></pre>`
+                  ).get(),
+                  active: false,
+                }
+              })
+              .get()
+          )
+          // console.log(items)
+          $current.after(tabs(Math.floor(Math.random() * 26), items))
+          $current.remove()
+        } else {
+          console.log('not every row has platform', $rows, $rows.filter('[data-platform]'))
+        }
+      })
 
       function toWindows($contents) {
         $contents
@@ -173,12 +215,24 @@ function Common(index) {
   function getActivePlatform() {
     let active = window.localStorage.getItem('DITA-OT_PLATFORM')
     if (!!active) {
-      return active
+      return JSON.parse(active)
     } else {
-      active = navigator.appVersion.indexOf('Win') !== -1 ? 'windows' : 'unix'
-      window.localStorage.setItem('DITA-OT_PLATFORM', active)
+      if (navigator.appVersion.indexOf('Win') !== -1) {
+        active = ['windows']
+      } else if (navigator.appVersion.indexOf('Mac') !== -1) {
+        active = ['mac']
+      } else if (navigator.appVersion.indexOf('Linux') !== -1) {
+        active = ['linux']
+      } else {
+        active = ['windows']
+      }
+      window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(active))
     }
   }
+}
+
+function intersect(array1, array2) {
+  return array1.filter((value) => array2.includes(value))
 }
 
 export default Common

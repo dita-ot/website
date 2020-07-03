@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "DITA-OT Website",
   "scripts": {
-    "install": "./node_modules/.bin/parcel build _js/plugins.js _js/main.js --out-dir js --public-url /js",
+    "install": "parcel build _js/plugins.js _js/main.js --out-dir js --public-url /js",
     "check": "prettier --ignore-path .prettierignore --check \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
     "format:config": "prettier --ignore-path .prettierignore --write \"**/*.{json,yaml,yml}\"",
     "format:docs": "prettier --ignore-path .prettierignore --write \"**/*.md\"",

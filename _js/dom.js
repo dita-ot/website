@@ -71,7 +71,7 @@ export function tabs(id, items) {
                 })
                 .each(function () {
                   $(this).tab('show')
-                  window.localStorage.setItem('DITA-OT_PLATFORM', item.id)
+                  window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(item.platforms))
                 })
             })
             .get(0)
