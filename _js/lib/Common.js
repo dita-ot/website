@@ -78,7 +78,7 @@ function Common(index) {
     editController.createEditLink()
     editController.createHistoryLink()
     try {
-      addPlatformTabs()
+      addPlatformTabs($main)
     } catch (e) {
       console.log(`Failed to add profiling controls: ${e}`)
     }
@@ -98,87 +98,6 @@ function Common(index) {
         const $target = $(event.currentTarget)
         const href = $target.attr('href')
         loadMain(href)
-      }
-    }
-
-    function addPlatformTabs() {
-      const activePlatform = getActivePlatform()
-      function activeFirst(items) {
-        const firstActive = items.find((item) => intersect(activePlatform, [item.id]).length !== 0)
-        if (firstActive) {
-          firstActive.active = true
-        } else {
-          items[0].active = true
-        }
-        return items
-      }
-      $main
-        .find('pre.multi-platform .filepath')
-        .parents('pre')
-        .each(function () {
-          const $current = $(this)
-          const items = activeFirst([
-            {
-              title: 'Linux and macOS',
-              id: 'unix',
-              platforms: ['linux', 'mac'],
-              content: $current.clone().wrapAll(`<div></div>`).parent().get(),
-              active: false,
-            },
-            {
-              title: 'Windows',
-              id: 'windows',
-              platforms: ['windows'],
-              content: toWindows($current.clone()).wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
-              active: false,
-            },
-          ])
-          $current.after(tabs(Math.floor(Math.random() * 26), items))
-          $current.remove()
-        })
-      $main.find('.choicetable.multi-platform').each(function () {
-        const $current = $(this)
-        // console.log('$current', $current)
-        const $rows = $current.find('.chrow')
-        // console.log('$rows', $rows)
-        if ($rows.length === $rows.filter('[data-platform]').length) {
-          // console.log('every row has platform', $rows)
-          const items = activeFirst(
-            $rows
-              .map(function () {
-                const $row = $(this)
-                const platforms = $row.attr('data-platform').trim().split(/\s+/)
-                const $content = $row.find('.chdesc').children().clone()
-                console.log($content.wrapAll(`<div class="tab-pane-wrapper"></div>`).html())
-                return {
-                  title: $row.find('.choption').text(),
-                  id: platforms.join('_'),
-                  platforms,
-                  content: $content.wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
-                  active: false,
-                }
-              })
-              .get()
-          )
-          // console.log(items)
-          $current.after(tabs(Math.floor(Math.random() * 26), items))
-          $current.remove()
-        } else {
-          console.log('not every row has platform', $rows, $rows.filter('[data-platform]'))
-        }
-      })
-
-      function toWindows($contents) {
-        $contents
-          .find('.filepath')
-          .contents()
-          .filter(function () {
-            return this.nodeType === Node.TEXT_NODE
-          })
-          .each(function () {
-            this.data = this.data.replace(/\//g, '\\')
-          })
-        return $contents
       }
     }
 
@@ -219,27 +138,143 @@ function Common(index) {
     const abs = URI($a.attr('href')).absoluteTo(window.location.href).href()
     return abs.indexOf(base) !== -1
   }
+}
 
-  function getActivePlatform() {
-    let active = window.localStorage.getItem('DITA-OT_PLATFORM')
-    if (!!active) {
-      try {
-        return JSON.parse(active)
-      } catch (e) {
-        console.log(`Failed to read platform profile from local storage: ${e}`)
-      }
-    }
-    if (navigator.appVersion.indexOf('Win') !== -1) {
-      active = ['windows']
-    } else if (navigator.appVersion.indexOf('Mac') !== -1) {
-      active = ['mac']
-    } else if (navigator.appVersion.indexOf('Linux') !== -1) {
-      active = ['linux']
+export function addPlatformTabs($main = $('main[role=main]')) {
+  const activePlatform = getActivePlatform()
+  function activeFirst(items) {
+    const firstActive = items.find((item) => intersect(activePlatform, [item.id]).length !== 0)
+    if (firstActive) {
+      firstActive.active = true
     } else {
-      active = ['windows']
+      items[0].active = true
     }
-    window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(active))
+    return items
   }
+  $main
+    .find('pre.multi-platform')
+    .filter(function () {
+      let $current = $(this)
+      return (
+        $current.parents('.platform-tab-content').length === 0 &&
+        $current.find('.filepath, .language-bash').length !== 0
+      )
+    })
+    .each(function () {
+      const $current = $(this)
+      const items = activeFirst([
+        {
+          title: 'Linux and macOS',
+          id: 'linux_mac',
+          platforms: ['linux', 'mac'],
+          content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
+          active: false,
+        },
+        {
+          title: 'Windows',
+          id: 'windows',
+          platforms: ['windows'],
+          content: toWindows($current.clone())
+            .wrapAll(`<div class="tab-pane-wrapper"></div>`)
+            .parent()
+            .get(),
+          active: false,
+        },
+      ])
+      $current.after(tabs(Math.floor(Math.random() * 26), items))
+      $current.remove()
+    })
+  $main
+    .find('.choicetable.multi-platform')
+    .filter(function () {
+      let $current = $(this)
+      return $current.parents('.platform-tab-content').length === 0
+    })
+    .each(function () {
+      const $current = $(this)
+      // console.log('$current', $current)
+      const $rows = $current.find('.chrow')
+      // console.log('$rows', $rows)
+      if ($rows.length === $rows.filter('[data-platform]').length) {
+        // console.log('every row has platform', $rows)
+        const items = activeFirst(
+          $rows
+            .map(function () {
+              const $row = $(this)
+              const platforms = $row.attr('data-platform').trim().split(/\s+/)
+              const $content = $row.find('.chdesc').children().clone()
+              // console.log($content.wrapAll(`<div class="tab-pane-wrapper"></div>`).html())
+              return {
+                title: $row.find('.choption').text(),
+                id: platforms.join('_'),
+                platforms,
+                content: $content.wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
+                active: false,
+              }
+            })
+            .get()
+        )
+        // console.log(items)
+        $current.after(tabs(Math.floor(Math.random() * 26), items))
+        $current.remove()
+      } else {
+        console.log('not every row has platform', $rows, $rows.filter('[data-platform]'))
+      }
+    })
+
+  function toWindows($contents) {
+    $contents
+      .find('.language-bash')
+      .addBack()
+      .removeClass('language-bash')
+      .addClass('language-batch')
+    $contents
+      .find('.filepath')
+      .children()
+      .addBack()
+      .contents()
+      .filter(function () {
+        return this.nodeType === Node.TEXT_NODE
+      })
+      .each(function () {
+        this.data = this.data.replace(/\//g, '\\')
+      })
+    $contents
+      .children()
+      .addBack()
+      .contents()
+      .filter(function () {
+        return this.nodeType === Node.TEXT_NODE
+      })
+      .each(function () {
+        this.data = this.data.replace(/\\\n/g, '^\n')
+      })
+    return $contents
+  }
+}
+
+function getActivePlatform() {
+  let stored = window.localStorage.getItem('DITA-OT_PLATFORM')
+  if (!!stored) {
+    try {
+      return JSON.parse(stored)
+    } catch (e) {
+      console.log(`Failed to read platform profile from local storage: ${e}`)
+    }
+  }
+  let active
+  if (navigator.appVersion.indexOf('Win') !== -1) {
+    active = ['windows']
+  } else if (navigator.appVersion.indexOf('Mac') !== -1) {
+    active = ['mac']
+  } else if (navigator.appVersion.indexOf('Linux') !== -1) {
+    active = ['linux']
+  } else {
+    active = ['windows']
+  }
+  console.log('store', JSON.stringify(active))
+  window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(active))
+  return active
 }
 
 function intersect(array1, array2) {

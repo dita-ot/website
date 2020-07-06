@@ -59,20 +59,7 @@ export function tabs(id, items) {
             )
           )
             .click(function () {
-              const $current = $(this)
-              const activatedHref = $current.attr('href')
-              $(`.platform-tab`)
-                .filter(function () {
-                  const $current = $(this)
-                  return (
-                    $current.attr('data-value') === item.id &&
-                    $current.attr('href') !== activatedHref
-                  )
-                })
-                .each(function () {
-                  $(this).tab('show')
-                  window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(item.platforms))
-                })
+              window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(item.platforms))
             })
             .get(0)
         )

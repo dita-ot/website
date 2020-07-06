@@ -4,8 +4,18 @@ import HelpController from './lib/HelpController'
 import $ from 'jquery'
 import URI from 'urijs'
 import Prism from 'prismjs'
+import { addPlatformTabs } from './lib/Common'
 
-Prism.highlightAll()
+try {
+  addPlatformTabs()
+} catch (e) {
+  console.log(`Failed to add profiling controls: ${e}`)
+}
+try {
+  Prism.highlightAll()
+} catch (e) {
+  console.log(`Failed to add syntax highlighting: ${e}`)
+}
 
 const indexAttr = $('link[rel=index]').attr('href')
 if (indexAttr && window.history) {
