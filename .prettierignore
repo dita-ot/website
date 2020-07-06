@@ -5,6 +5,7 @@
 _site/**
 css/bootstrap/**
 js/**
+vendor/**
 
 # Preserve control flow tags in layouts & includes
 # https://github.com/prettier/prettier/issues/5680

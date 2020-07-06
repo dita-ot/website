@@ -77,8 +77,16 @@ function Common(index) {
     addAnchorLinks()
     editController.createEditLink()
     editController.createHistoryLink()
-    addPlatformTabs()
-    Prism.highlightAll()
+    try {
+      addPlatformTabs()
+    } catch (e) {
+      console.log(`Failed to add profiling controls: ${e}`)
+    }
+    try {
+      Prism.highlightAll()
+    } catch (e) {
+      console.log(`Failed to add syntax highlighting: ${e}`)
+    }
 
     function addLinkHandlers() {
       $main.find('a[href]').filter(isLocal).click(mainClickHandler)
@@ -215,19 +223,22 @@ function Common(index) {
   function getActivePlatform() {
     let active = window.localStorage.getItem('DITA-OT_PLATFORM')
     if (!!active) {
-      return JSON.parse(active)
-    } else {
-      if (navigator.appVersion.indexOf('Win') !== -1) {
-        active = ['windows']
-      } else if (navigator.appVersion.indexOf('Mac') !== -1) {
-        active = ['mac']
-      } else if (navigator.appVersion.indexOf('Linux') !== -1) {
-        active = ['linux']
-      } else {
-        active = ['windows']
+      try {
+        return JSON.parse(active)
+      } catch (e) {
+        console.log(`Failed to read platform profile from local storage: ${e}`)
       }
-      window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(active))
     }
+    if (navigator.appVersion.indexOf('Win') !== -1) {
+      active = ['windows']
+    } else if (navigator.appVersion.indexOf('Mac') !== -1) {
+      active = ['mac']
+    } else if (navigator.appVersion.indexOf('Linux') !== -1) {
+      active = ['linux']
+    } else {
+      active = ['windows']
+    }
+    window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(active))
   }
 }
 
