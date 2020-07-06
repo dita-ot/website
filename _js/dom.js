@@ -35,3 +35,63 @@ export function clear(myNode) {
     myNode.removeChild(myNode.firstChild)
   }
 }
+
+export function tabs(id, items) {
+  return [
+    elem(
+      'ul',
+      { class: 'nav nav-tabs platform-tabs', role: 'tablist' },
+      items.map((item, i) =>
+        elem(
+          'li',
+          { class: 'nav-item', role: 'presentation' },
+          $(
+            elem(
+              'a',
+              {
+                class: `nav-link platform-tab ${item.active ? 'active' : ''}`,
+                'data-value': item.id,
+                'data-toggle': 'tab',
+                href: `#v${id}_${i}`,
+                role: 'tab',
+              },
+              item.title
+            )
+          )
+            .click(function () {
+              const $current = $(this)
+              const activatedHref = $current.attr('href')
+              $(`.platform-tab`)
+                .filter(function () {
+                  const $current = $(this)
+                  return (
+                    $current.attr('data-value') === item.id &&
+                    $current.attr('href') !== activatedHref
+                  )
+                })
+                .each(function () {
+                  $(this).tab('show')
+                  window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(item.platforms))
+                })
+            })
+            .get(0)
+        )
+      )
+    ),
+    elem(
+      'div',
+      { class: 'tab-content platform-tab-content' },
+      items.map((item, i) =>
+        elem(
+          'div',
+          {
+            class: `tab-pane fade ${item.active ? 'show active' : ''}`,
+            id: `v${id}_${i}`,
+            role: 'tabpanel',
+          },
+          item.content
+        )
+      )
+    ),
+  ]
+}

@@ -1,0 +1,28 @@
+// Style platform profiling w/ Bootstrap components
+
+.platform-tabs {
+  @include font-size(80%);
+  margin-top: $spacer;
+  margin-left: $spacer;
+  border-bottom: none;
+
+  .platform-tab {
+    border-top: solid 4px transparent;
+    border-radius: 0px;
+    border-bottom-color: transparent;
+    padding: .2rem .6rem;
+    &.active {
+      border-top-color: $link-color;
+      border-bottom-color: transparent;
+    }
+  }
+}
+.platform-tab-content > .tab-pane {
+  border: 1px solid $pre-border-color;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  > .tab-pane-wrapper {
+    margin-right: 1rem;
+    margin-right: 1rem;
+  }
+}
