@@ -105,7 +105,7 @@ function Common(index) {
         return items
       }
       $main
-        .find('pre .filepath')
+        .find('pre.multi-platform .filepath')
         .parents('pre')
         .each(function () {
           const $current = $(this)
@@ -114,21 +114,21 @@ function Common(index) {
               title: 'Linux and macOS',
               id: 'unix',
               platforms: ['linux', 'mac'],
-              content: $current.clone().get(0),
+              content: $current.clone().wrapAll(`<div></div>`).parent().get(),
               active: false,
             },
             {
               title: 'Windows',
               id: 'windows',
               platforms: ['windows'],
-              content: toWindows($current.clone()).get(0),
+              content: toWindows($current.clone()).wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
               active: false,
             },
           ])
           $current.after(tabs(Math.floor(Math.random() * 26), items))
           $current.remove()
         })
-      $main.find('.choicetable').each(function () {
+      $main.find('.choicetable.multi-platform').each(function () {
         const $current = $(this)
         // console.log('$current', $current)
         const $rows = $current.find('.chrow')
@@ -140,13 +140,13 @@ function Common(index) {
               .map(function () {
                 const $row = $(this)
                 const platforms = $row.attr('data-platform').trim().split(/\s+/)
+                const $content = $row.find('.chdesc').children().clone()
+                console.log($content.wrapAll(`<div class="tab-pane-wrapper"></div>`).html())
                 return {
                   title: $row.find('.choption').text(),
                   id: platforms.join('_'),
                   platforms,
-                  content: $(
-                    `<pre class="pre codeblock"><code>${$row.find('.chdesc').html()}</code></pre>`
-                  ).get(),
+                  content: $content.wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
                   active: false,
                 }
               })
