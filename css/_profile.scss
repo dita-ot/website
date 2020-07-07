@@ -22,12 +22,17 @@
 
   > .tab-pane {
     border: 1px solid $pre-border-color;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding: $spacer;
 
     > .tab-pane-wrapper {
-      margin-right: 1rem;
-      margin-right: 1rem;
+      //margin: $spacer;
+      > *:first-child {
+        margin-top: 0;
+      }
+      > *:last-child {
+        margin-bottom: 0;
+      }
+
     }
   }
 }
