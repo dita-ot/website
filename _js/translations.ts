@@ -19,6 +19,9 @@ const TRANSLATIONS: { [key: string]: string } = {
   FILE_HISTORY__TITLE: 'Show the list of changes to the source file on GitHub.',
   EDIT: 'Edit this page',
   EDIT__TITLE: 'Edit this page on GitHub to help improve the docs',
+  linux: 'Linux',
+  mac: 'macOS',
+  windows: 'Windows',
 }
 
 export default function t(name: string): string {

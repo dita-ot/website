@@ -3,6 +3,7 @@ import $ from 'jquery'
 import URI from 'urijs'
 import Prism from 'prismjs'
 import { tabs } from '../dom'
+import t from '../translations'
 
 function Common(index) {
   const CLASS_OPEN = 'expanded'
@@ -221,6 +222,69 @@ export function addPlatformTabs($main = $('main[role=main]')) {
         console.log('not every row has platform', $rows, $rows.filter('[data-platform]'))
       }
     })
+  $main
+    .find('.steps.multi-platform')
+    .filter(function () {
+      let $current = $(this)
+      return $current.parents('.platform-tab-content').length === 0
+    })
+    .each(function () {
+      const $current = $(this)
+      const platforms = [
+        ...new Set(
+          $current
+            .find('[data-platform]')
+            .map(function () {
+              return $(this).data('platform')
+            })
+            .get()
+            .map((platform) => platform.trim().split(/\s+/))
+            .flat()
+        ),
+      ].sort()
+      if (platforms.length !== 0) {
+        const items = activeFirst(
+          platforms.map((platform) => {
+            const $content = simplify(filterByPlatform(
+              platform === 'windows' ? toWindows($current.clone()) : $current.clone(),
+              platform
+            ))
+            return {
+              title: t(platform),
+              id: platform,
+              platforms: [platform],
+              content: $content.wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
+              active: false,
+            }
+          })
+        )
+        $current.after(tabs(Math.floor(Math.random() * 26), items))
+        $current.remove()
+      } else {
+        console.log('steps has no platform profiles')
+      }
+    })
+
+  function filterByPlatform($content, platform) {
+    $content.find('[data-platform]').filter(`:not([data-platform="${platform}"])`).remove()
+    return $content
+  }
+
+  function simplify($content) {
+    $content
+      .find('.choices')
+      .filter(function() {
+        const $current = $(this)
+        return $current.find(".choice").length === 1
+      })
+      .wrapAll('<div class="p"></div>')
+      .find('.choice')
+      .children()
+      .first()
+      .unwrap('.choice')
+      .unwrap('.choices')
+    return $content
+  }
 
   function toWindows($contents) {
     $contents
