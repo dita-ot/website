@@ -245,10 +245,12 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       if (platforms.length !== 0) {
         const items = activeFirst(
           platforms.map((platform) => {
-            const $content = simplify(filterByPlatform(
-              platform === 'windows' ? toWindows($current.clone()) : $current.clone(),
-              platform
-            ))
+            const $content = simplify(
+              filterByPlatform(
+                platform === 'windows' ? toWindows($current.clone()) : $current.clone(),
+                platform
+              )
+            )
             return {
               title: t(platform),
               id: platform,
@@ -273,9 +275,9 @@ export function addPlatformTabs($main = $('main[role=main]')) {
   function simplify($content) {
     $content
       .find('.choices')
-      .filter(function() {
+      .filter(function () {
         const $current = $(this)
-        return $current.find(".choice").length === 1
+        return $current.find('.choice').length === 1
       })
       .wrapAll('<div class="p"></div>')
       .find('.choice')
@@ -289,13 +291,12 @@ export function addPlatformTabs($main = $('main[role=main]')) {
   function toWindows($contents) {
     $contents
       .find('.language-bash')
-      .addBack()
+      .addBack('.language-bash')
       .removeClass('language-bash')
       .addClass('language-batch')
     $contents
-      .find('.filepath')
+      .find('.filepath, .filepath *')
       .children()
-      .addBack()
       .contents()
       .filter(function () {
         return this.nodeType === Node.TEXT_NODE
@@ -304,14 +305,15 @@ export function addPlatformTabs($main = $('main[role=main]')) {
         this.data = this.data.replace(/\//g, '\\')
       })
     $contents
+      .find('.language-batch, .language-batch *')
+      .addBack('.language-batch')
       .children()
-      .addBack()
       .contents()
       .filter(function () {
         return this.nodeType === Node.TEXT_NODE
       })
       .each(function () {
-        this.data = this.data.replace(/\\\n/g, '^\n')
+        this.data = this.data.replace(/\\\n/g, '^\n').replace(/(^|\n)\$/g, '$1>')
       })
     return $contents
   }
