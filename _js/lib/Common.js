@@ -165,9 +165,16 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       const $current = $(this)
       const items = activeFirst([
         {
-          title: 'Linux and macOS',
-          id: 'linux_mac',
-          platforms: ['linux', 'mac'],
+          title: 'Linux',
+          id: 'linux',
+          platforms: ['linux'],
+          content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
+          active: false,
+        },
+        {
+          title: 'macOS',
+          id: 'mac',
+          platforms: ['mac'],
           content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
           active: false,
         },
@@ -338,7 +345,7 @@ function getActivePlatform() {
   } else {
     active = ['windows']
   }
-  console.log('store', JSON.stringify(active))
+  // console.log('store', JSON.stringify(active))
   window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(active))
   return active
 }
