@@ -221,7 +221,7 @@ export function addPlatformTabs($main = $('main[role=main]')) {
             .map(function () {
               const $row = $(this)
               const platforms = getPlatforms($row)
-              const $content = $row.find('.chdesc').children().clone()
+              const $content = $row.find('.chdesc').contents().clone()
               return {
                 title: $row.find('.choption').text(),
                 id: platforms.join('_'),
