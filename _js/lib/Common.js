@@ -2,8 +2,12 @@ import EditController from './EditController'
 import $ from 'jquery'
 import URI from 'urijs'
 import Prism from 'prismjs'
-import { tabs } from '../dom'
+import {tabs} from '../dom'
 import t from '../translations'
+
+const platformMap = {
+  unix: ['linux', 'mac'],
+}
 
 function Common(index) {
   const CLASS_OPEN = 'expanded'
@@ -165,19 +169,26 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       const $current = $(this)
       const items = activeFirst([
         {
-          title: 'Linux',
-          id: 'linux',
-          platforms: ['linux'],
+          title: 'Linux or macOS',
+          id: 'linux_macos',
+          platforms: ['linux', 'mac'],
           content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
           active: false,
         },
-        {
-          title: 'macOS',
-          id: 'mac',
-          platforms: ['mac'],
-          content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
-          active: false,
-        },
+        // {
+        //   title: 'Linux',
+        //   id: 'linux',
+        //   platforms: ['linux'],
+        //   content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
+        //   active: false,
+        // },
+        // {
+        //   title: 'macOS',
+        //   id: 'mac',
+        //   platforms: ['mac'],
+        //   content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
+        //   active: false,
+        // },
         {
           title: 'Windows',
           id: 'windows',
@@ -209,9 +220,8 @@ export function addPlatformTabs($main = $('main[role=main]')) {
           $rows
             .map(function () {
               const $row = $(this)
-              const platforms = $row.attr('data-platform').trim().split(/\s+/)
+              const platforms = getPlatforms($row)
               const $content = $row.find('.chdesc').children().clone()
-              // console.log($content.wrapAll(`<div class="tab-pane-wrapper"></div>`).html())
               return {
                 title: $row.find('.choption').text(),
                 id: platforms.join('_'),
@@ -242,10 +252,9 @@ export function addPlatformTabs($main = $('main[role=main]')) {
           $current
             .find('[data-platform]')
             .map(function () {
-              return $(this).data('platform')
+              return getPlatforms($(this))
             })
             .get()
-            .map((platform) => platform.trim().split(/\s+/))
             .flat()
         ),
       ].sort()
@@ -274,8 +283,21 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       }
     })
 
+  function getPlatforms($elem) {
+    return $elem
+      .attr('data-platform')
+      .trim()
+      .split(/\s+/)
+      .map((p) => platformMap[p] || [p])
+      .flat();
+  }
+
   function filterByPlatform($content, platform) {
-    $content.find('[data-platform]').filter(`:not([data-platform="${platform}"])`).remove()
+    function noMatch(_, $elem) {
+      return !getPlatforms($elem).includes(platform);
+    }
+
+    $content.find('[data-platform]').filter(noMatch).remove()
     return $content
   }
 
