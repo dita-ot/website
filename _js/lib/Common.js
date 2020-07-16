@@ -325,7 +325,6 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       .addClass('language-batch')
     $contents
       .find('.filepath, .filepath *')
-      .children()
       .contents()
       .filter(function () {
         return this.nodeType === Node.TEXT_NODE
