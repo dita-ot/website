@@ -2,7 +2,7 @@ import EditController from './EditController'
 import $ from 'jquery'
 import URI from 'urijs'
 import Prism from 'prismjs'
-import {tabs} from '../dom'
+import { tabs } from '../dom'
 import t from '../translations'
 
 const platformMap = {
@@ -289,12 +289,12 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       .trim()
       .split(/\s+/)
       .map((p) => platformMap[p] || [p])
-      .flat();
+      .flat()
   }
 
   function filterByPlatform($content, platform) {
-    function noMatch(_, $elem) {
-      return !getPlatforms($elem).includes(platform);
+    function noMatch() {
+      return !getPlatforms($(this)).includes(platform)
     }
 
     $content.find('[data-platform]').filter(noMatch).remove()
@@ -367,7 +367,6 @@ function getActivePlatform() {
   } else {
     active = ['windows']
   }
-  // console.log('store', JSON.stringify(active))
   window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(active))
   return active
 }
