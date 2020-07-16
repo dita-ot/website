@@ -47,7 +47,7 @@ export function tabs(id, items) {
           { class: 'nav-item', role: 'presentation' },
           $(
             elem(
-              'a',
+              'span',
               {
                 class: `nav-link platform-tab ${item.active ? 'active' : ''}`,
                 'data-value': item.id,
@@ -58,9 +58,12 @@ export function tabs(id, items) {
               item.title
             )
           )
-            .click(function () {
+            .click(function (e) {
+              e.preventDefault()
+              $(this).tab('show')
               window.localStorage.setItem('DITA-OT_PLATFORM', JSON.stringify(item.platforms))
             })
+            .css('cursor', 'pointer')
             .get(0)
         )
       )
