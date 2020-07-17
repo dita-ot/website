@@ -175,20 +175,6 @@ export function addPlatformTabs($main = $('main[role=main]')) {
           content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
           active: false,
         },
-        // {
-        //   title: 'Linux',
-        //   id: 'linux',
-        //   platforms: ['linux'],
-        //   content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
-        //   active: false,
-        // },
-        // {
-        //   title: 'macOS',
-        //   id: 'mac',
-        //   platforms: ['mac'],
-        //   content: $current.clone().wrapAll(`<div class="tab-pane-wrapper"></div>`).parent().get(),
-        //   active: false,
-        // },
         {
           title: 'Windows',
           id: 'windows',
@@ -320,12 +306,12 @@ export function addPlatformTabs($main = $('main[role=main]')) {
   function toWindows($contents) {
     $contents
       .find('.language-bash')
-      .addBack('.language-bash')
+      .addBack()
       .removeClass('language-bash')
       .addClass('language-batch')
     $contents
       .find('.syntax-bash')
-      .addBack('.syntax-bash')
+      .addBack()
       .removeClass('syntax-bash')
       .addClass('syntax-batch')
     $contents
@@ -339,7 +325,7 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       })
     $contents
       .find('.language-batch, .language-batch *, .syntax-batch, .syntax-batch *')
-      .addBack('.language-batch, .syntax-batch')
+      .addBack()
       .children()
       .contents()
       .filter(function () {
