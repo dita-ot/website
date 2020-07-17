@@ -162,7 +162,7 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       let $current = $(this)
       return (
         $current.parents('.platform-tab-content').length === 0 &&
-        $current.find('.filepath, .language-bash').length !== 0
+        $current.find('.filepath, .language-bash, .syntax-bash').length !== 0
       )
     })
     .each(function () {
@@ -324,6 +324,11 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       .removeClass('language-bash')
       .addClass('language-batch')
     $contents
+      .find('.syntax-bash')
+      .addBack('.syntax-bash')
+      .removeClass('syntax-bash')
+      .addClass('syntax-batch')
+    $contents
       .find('.filepath, .filepath *')
       .contents()
       .filter(function () {
@@ -333,8 +338,8 @@ export function addPlatformTabs($main = $('main[role=main]')) {
         this.data = this.data.replace(/\//g, '\\')
       })
     $contents
-      .find('.language-batch, .language-batch *')
-      .addBack('.language-batch')
+      .find('.language-batch, .language-batch *, .syntax-batch, .syntax-batch *')
+      .addBack('.language-batch, .syntax-batch')
       .children()
       .contents()
       .filter(function () {
