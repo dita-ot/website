@@ -6,6 +6,10 @@
 nav.col-lg-3 {
   display: block;
   padding-top: 10px;
+  max-height: 100vh;
+  overflow-y: scroll;
+  position: sticky;
+  top: 0px;
 
   ul {
     display: block;

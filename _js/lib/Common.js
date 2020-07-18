@@ -73,7 +73,20 @@ function Common(index) {
       $main.html($dummy.find('[role=main]:first').html())
       $footer.html($dummy.find('footer:first').html())
       document.title = $dummy.find('title').text()
+      scrollToStart()
       initializeMain()
+    }
+  }
+
+  function scrollToStart() {
+    let target
+    if (location.hash === '') {
+      target = $main.get(0)
+    } else {
+      target = document.getElementById(location.hash.substring(1))
+    }
+    if (target) {
+      target.scrollIntoView()
     }
   }
 
