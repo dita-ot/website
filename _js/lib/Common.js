@@ -162,7 +162,8 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       let $current = $(this)
       return (
         $current.parents('.platform-tab-content').length === 0 &&
-        $current.find('.filepath, .language-bash, .syntax-bash').length !== 0
+        $current.find('.filepath:not(.preserve-separator), .language-bash, .syntax-bash').length !==
+          0
       )
     })
     .each(function () {
@@ -306,16 +307,16 @@ export function addPlatformTabs($main = $('main[role=main]')) {
   function toWindows($contents) {
     $contents
       .find('.language-bash')
-      .addBack()
+      .addBack('.language-bash')
       .removeClass('language-bash')
       .addClass('language-batch')
     $contents
       .find('.syntax-bash')
-      .addBack()
+      .addBack('.syntax-bash')
       .removeClass('syntax-bash')
       .addClass('syntax-batch')
     $contents
-      .find('.filepath, .filepath *')
+      .find('.filepath:not(.preserve-separator), .filepath:not(.preserve-separator) *')
       .contents()
       .filter(function () {
         return this.nodeType === Node.TEXT_NODE
