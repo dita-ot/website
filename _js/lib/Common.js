@@ -270,15 +270,6 @@ export function addPlatformTabs($main = $('main[role=main]')) {
       }
     })
 
-  function getPlatforms($elem) {
-    return $elem
-      .attr('data-platform')
-      .trim()
-      .split(/\s+/)
-      .map((p) => platformMap[p] || [p])
-      .flat()
-  }
-
   function filterByPlatform($content, platform) {
     function noMatch() {
       return !getPlatforms($(this)).includes(platform)
@@ -339,6 +330,14 @@ export function addPlatformTabs($main = $('main[role=main]')) {
   }
 }
 
+export function getPlatforms($elem) {
+  return expandPlatforms($elem.attr('data-platform').trim().split(/\s+/))
+}
+
+export function expandPlatforms(platforms) {
+  return platforms.map((p) => platformMap[p] || [p]).flat()
+}
+
 function getActivePlatform() {
   let stored = window.localStorage.getItem('DITA-OT_PLATFORM')
   if (!!stored) {
@@ -362,7 +361,7 @@ function getActivePlatform() {
   return active
 }
 
-function intersect(array1, array2) {
+export function intersect(array1, array2) {
   return array1.filter((value) => array2.includes(value))
 }
 
