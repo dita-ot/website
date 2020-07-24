@@ -3,7 +3,7 @@
 layout: base
 title: "Building output using the dita command"
 index: "../toc.html"
-commit: "11d3d4c9042320e34622985efacad3c8412e4a0d"
+commit: "f3fdf0b44d4e3630985bcc751ef465396650f1b6"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a><ul class="nav nav-list"><li><a href="../topics/prerequisite-software.html">Prerequisite software</a></li><li><a href="../topics/determining-version-of-ditaot.html">Checking the version</a></li><li class="active"><a href="../topics/first-build-using-dita-command.html">Building output</a></li><li><a href="../topics/installing-via-homebrew.html">Installing via Homebrew</a></li></ul></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -15,7 +15,7 @@ commit: "11d3d4c9042320e34622985efacad3c8412e4a0d"
     <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>The DITA-OT client is a command-line tool with no graphical user interface. To verify
       that your installation works correctly, you can build output using the sample files included in the distribution
       package.</section>
-    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps multi-platform"><li class="li step stepexpand">
         <span class="ph cmd">Open a terminal window by typing the following in the search bar:</span>
         <div class="itemgroup info">
           <ul class="ul">
@@ -25,7 +25,7 @@ commit: "11d3d4c9042320e34622985efacad3c8412e4a0d"
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
-        <div class="itemgroup info"><pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> </code></pre>
+        <div class="itemgroup info"><pre class="pre codeblock syntax-bash"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> </code></pre>
           <p class="p">where:</p>
           <ul class="ul">
             <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li><li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to
@@ -54,7 +54,7 @@ commit: "11d3d4c9042320e34622985efacad3c8412e4a0d"
     <section class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, the following command generates
         HTML5 output for the <span class="ph filepath">sequence.ditamap</span> file:</p>
-      <pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+      <pre class="pre codeblock syntax-bash multi-platform"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
       
     </section>
     

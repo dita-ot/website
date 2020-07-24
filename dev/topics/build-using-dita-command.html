@@ -3,7 +3,7 @@
 layout: base
 title: "Building output using the dita command"
 index: "../toc.html"
-commit: "11d3d4c9042320e34622985efacad3c8412e4a0d"
+commit: "f3fdf0b44d4e3630985bcc751ef465396650f1b6"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -15,7 +15,7 @@ commit: "11d3d4c9042320e34622985efacad3c8412e4a0d"
     
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
-        <div class="itemgroup info"><pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> <span class="ph">[<var class="keyword varname">options</var>]</span></code></pre>
+        <div class="itemgroup info"><pre class="pre codeblock syntax-bash"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> <span class="ph">[<var class="keyword varname">options</var>]</span></code></pre>
           <p class="p">where:</p>
           <ul class="ul">
             
@@ -155,11 +155,11 @@ commit: "11d3d4c9042320e34622985efacad3c8412e4a0d"
           <dd class="dd pd">Convert partial documentation sets by processing input with additional resources.
             <div class="p">For example, to process a single topic file with a map that contains key definitions, use a command like
               this:
-              <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+              <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
             </div>
             <div class="p">To convert a chapter map to HTML5 and insert related links from relationship tables in a separate map,
               use:
-              <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">chapter.ditamap</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">reltables.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+              <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">chapter.ditamap</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">reltables.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
             </div></dd>
         
         
@@ -198,7 +198,7 @@ commit: "11d3d4c9042320e34622985efacad3c8412e4a0d"
     <section class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">For example, from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, run:</p>
       <div class="p">
-        <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
+        <pre class="pre codeblock syntax-bash multi-platform"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
      <span class="keyword parmname">--output</span>=<span class="ph filepath">output/sequence</span> \
      <span class="keyword parmname">--args.input.dir</span>=<span class="ph filepath"><var class="keyword varname">/absolute/path/to/dita-ot-dir</var>/docsrc/samples</span> \
      <span class="keyword parmname">--propertyfile</span>=<span class="ph filepath">properties/sequence-html5.properties</span></code></pre>

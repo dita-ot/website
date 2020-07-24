@@ -3,7 +3,7 @@
 layout: base
 title: "Setting build parameters with .properties files"
 index: "../toc.html"
-commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
+commit: "f3fdf0b44d4e3630985bcc751ef465396650f1b6"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li class="active"><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -63,7 +63,7 @@ nav-toc = full</code></pre>
         <span class="ph cmd">Reference your <span class="ph filepath">.properties</span> file with the <span class="keyword cmdname">dita</span> command when building
           your output.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<var class="keyword varname">my.ditamap</var> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> <span class="keyword parmname">--propertyfile</span>=<var class="keyword varname">my.properties</var></code></pre>
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<var class="keyword varname">my.ditamap</var> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> <span class="keyword parmname">--propertyfile</span>=<var class="keyword varname">my.properties</var></code></pre>
         </div>
         <div class="itemgroup info"></div>
       </li><li class="li step stepexpand">
@@ -72,7 +72,7 @@ nav-toc = full</code></pre>
         <div class="itemgroup stepxmp">
           <p class="p">For example, to build output once with <code class="keyword markupname xmlelement">&lt;draft&gt;</code> and
               <code class="keyword markupname xmlelement">&lt;required-cleanup&gt;</code> content:</p>
-          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<var class="keyword varname">my.ditamap</var> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> <span class="keyword parmname">--propertyfile</span>=<var class="keyword varname">my.properties</var> \
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<var class="keyword varname">my.ditamap</var> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> <span class="keyword parmname">--propertyfile</span>=<var class="keyword varname">my.properties</var> \
      <span class="keyword parmname">--args.draft</span>=<span class="keyword option">yes</span></code></pre>
         </div>
         <div class="itemgroup info">

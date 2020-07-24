@@ -3,7 +3,7 @@
 layout: base
 title: "Publishing with project files"
 index: "../toc.html"
-commit: "69dd6291921f9ce24c22c24643f24abeaf9e8201"
+commit: "f3fdf0b44d4e3630985bcc751ef465396650f1b6"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li class="active"><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -109,7 +109,7 @@ commit: "69dd6291921f9ce24c22c24643f24abeaf9e8201"
       </li><li class="li step stepexpand">
         <span class="ph cmd">Pass your project file to the <span class="keyword cmdname">dita</span> command to build output.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var></code></pre>
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var></code></pre>
         </div>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
         <span class="ph cmd">If needed, pass additional arguments to the <span class="keyword cmdname">dita</span> command to override specific build
@@ -117,13 +117,13 @@ commit: "69dd6291921f9ce24c22c24643f24abeaf9e8201"
         <div class="itemgroup stepxmp">
           <p class="p">For example, to build output once with <code class="keyword markupname xmlelement">&lt;draft&gt;</code> and
               <code class="keyword markupname xmlelement">&lt;required-cleanup&gt;</code> content:</p>
-          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var> <span class="keyword parmname">--args.draft</span>=<span class="keyword option">yes</span></code></pre>
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var> <span class="keyword parmname">--args.draft</span>=<span class="keyword option">yes</span></code></pre>
         </div>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
         <span class="ph cmd">If your project contains multiple deliverables, you can pass the <span class="keyword parmname">--deliverable</span> option
           to generate output for a single deliverable ID.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">all.xml</var> <span class="keyword parmname">--deliverable</span>=<span class="keyword option">htmlhelp</span></code></pre>
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">all.xml</var> <span class="keyword parmname">--deliverable</span>=<span class="keyword option">htmlhelp</span></code></pre>
         </div>
       </li></ol></section>
   </div>

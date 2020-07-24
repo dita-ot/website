@@ -3,7 +3,7 @@
 layout: base
 title: "Running the dita command from a Docker image"
 index: "../toc.html"
-commit: "13a90fc307018d56f3c60d64eca5eef1372b03a7"
+commit: "f3fdf0b44d4e3630985bcc751ef465396650f1b6"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li class="active"><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -35,24 +35,24 @@ commit: "13a90fc307018d56f3c60d64eca5eef1372b03a7"
           <li class="li">To retrieve docker images from the GitHub Package Registry, you will also need a GitHub account.</li>
         </ul></div>
     </section>
-    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps multi-platform"><li class="li step stepexpand">
         <span class="ph cmd">Install Docker for your operating system.</span>
         <ul class="ul choices">
-          <li class="li choice">
+          <li class="li choice" data-platform="windows">
             <a class="xref" href="https://docs.docker.com/docker-for-windows/install/" target="_blank" rel="external noopener">Install
               Docker Desktop on Windows</a>
           </li>
-          <li class="li choice">
+          <li class="li choice" data-platform="mac">
             <a class="xref" href="https://docs.docker.com/docker-for-mac/install" target="_blank" rel="external noopener">Install Docker
               Desktop on Mac</a>
           </li>
-          <li class="li choice">On macOS, you can also install Docker Desktop via
+          <li class="li choice" data-platform="mac">On macOS, you can also install Docker Desktop via
             <a class="xref" href="https://brew.sh" target="_blank" rel="external noopener">Homebrew</a>:
-            <pre class="pre codeblock"><code>$ <span class="keyword cmdname">brew</span> cask install docker
+            <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">brew</span> cask install docker
 <samp class="ph systemoutput sysout">Downloading…</samp></code></pre>
           </li>
-          <li class="li choice">On Linux, install Docker Community Edition (CE) via your operating system’s package manager, for
-            example: <pre class="pre codeblock"><code>$ <span class="keyword cmdname">sudo</span> apt-get install docker-ce</code></pre></li>
+          <li class="li choice" data-platform="linux">On Linux, install Docker Community Edition (CE) via your operating system’s package manager, for
+            example: <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">sudo</span> apt-get install docker-ce</code></pre></li>
         </ul>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Log in to the GitHub Package Registry.</span>
@@ -69,7 +69,7 @@ commit: "13a90fc307018d56f3c60d64eca5eef1372b03a7"
             <span class="ph cmd">On the command line, run the <span class="keyword cmdname">docker</span> command to log in with your GitHub
               credentials.</span>
             <div class="itemgroup stepxmp">
-              <pre class="pre codeblock"><code><span class="keyword cmdname">docker</span> login docker.pkg.github.com -u <var class="keyword varname">USERNAME</var> -p <var class="keyword varname">PASSWORD/TOKEN</var></code></pre>
+              <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">docker</span> login docker.pkg.github.com -u <var class="keyword varname">USERNAME</var> -p <var class="keyword varname">PASSWORD/TOKEN</var></code></pre>
             </div>
             <div class="itemgroup info">For more information, see
               <a class="xref" href="https://help.github.com/en/articles/configuring-docker-for-use-with-github-package-registry#authenticating-to-github-package-registry" target="_blank" rel="external noopener">Authenticating to GitHub Package Registry</a>.</div>
@@ -79,7 +79,7 @@ commit: "13a90fc307018d56f3c60d64eca5eef1372b03a7"
         <span class="ph cmd">To build output, map a host directory to a container volume and specify options for the
             <span class="keyword cmdname">dita</span> command.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock"><code>$ <span class="keyword cmdname">docker</span> run -it \
+          <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> run -it \
   -v /Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.5.2</span> \
   -i /src/input.ditamap \
   -o /src/out \
@@ -87,7 +87,7 @@ commit: "13a90fc307018d56f3c60d64eca5eef1372b03a7"
           <div class="p">This command sequence specifies the following options:
             <ul class="ul">
               <li class="li"><span class="keyword option">-v</span> mounts the <span class="ph filepath">source</span> subfolder of your home directory and binds
-                it to the <span class="ph filepath">/src</span> volume in the container</li>
+                it to the <span class="ph filepath preserve-separator">/src</span> volume in the container</li>
               <li class="li"><span class="keyword option">-i</span> specifies the <span class="ph filepath">input.ditamap</span> file in your
                   <span class="ph filepath">source</span> folder as the input map file</li>
               <li class="li"><span class="keyword option">-o</span> writes the output to <span class="ph filepath">source/out</span></li>
@@ -95,17 +95,19 @@ commit: "13a90fc307018d56f3c60d64eca5eef1372b03a7"
               <li class="li"><span class="keyword option">-v</span> displays build progress messages with verbose logging</li>
             </ul>
           </div>
-          <p class="p">On Windows, if your <span class="ph filepath">Users</span> directory is on the <span class="ph filepath">C:\</span> drive, use
+          <div class="div" data-platform="windows">
+            <p class="p">On Windows, if your <span class="ph filepath">Users</span> directory is on the <span class="ph filepath">C:\</span> drive, use
               <span class="ph filepath">/c/Users/…</span> to map the host directory:</p>
-          <pre class="pre codeblock"><code>C:\Users\username&gt; <span class="keyword cmdname">docker</span> run -it \
-  -v /c/Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.5.2</span> \
-  -i /src/input.ditamap \
-  -o /src/out \
+            <pre class="pre codeblock"><code>&gt; C:\Users\username&gt; <span class="keyword cmdname">docker</span> run -it ^
+  -v /c/Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.5.2</span> ^
+  -i /src/input.ditamap ^
+  -o /src/out ^
   -f html5 -v</code></pre>
+          </div>
         </div>
         <div class="itemgroup info">
           <div class="note note note_note"><span class="note__title">Note:</span> The DITA-OT container image uses the <code class="ph codeph">ENTRYPOINT</code> instruction to run the
-              <span class="keyword cmdname">dita</span> command from the <span class="ph filepath">/opt/app/bin/</span> directory of the container
+              <span class="keyword cmdname">dita</span> command from the <span class="ph filepath preserve-separator">/opt/app/bin/</span> directory of the container
             automatically, so you there’s no need to include the <span class="keyword cmdname">dita</span> command itself, only the
             arguments and options you need to publish your content.</div>
         </div>
