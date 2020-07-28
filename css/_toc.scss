@@ -3,7 +3,8 @@
 // Common ToC styles shared by pre-2.3 static ToCs & dynamic ToCs
 // Select <nav> element based on new (Bootstrap 4) column classes
 
-nav.col-lg-3 {
+nav[role='toc'] {
+  @extend .col-lg-3;
   display: block;
   padding-top: 10px;
   max-height: 100vh;

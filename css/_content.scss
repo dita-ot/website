@@ -4,6 +4,10 @@
   padding-bottom: 30px;
 }
 
+main[role='main'] {
+  @extend .col-lg-9;
+}
+
 .anchor-link {
   opacity: 0;
   text-decoration: none;
