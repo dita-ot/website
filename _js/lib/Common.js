@@ -79,12 +79,8 @@ function Common(index) {
   }
 
   function scrollToStart() {
-    let target
-    if (location.hash === '') {
-      target = $main.get(0)
-    } else {
-      target = document.getElementById(location.hash.substring(1))
-    }
+    const id = location.hash === '' ? 'content' : location.hash.substring(1)
+    const target = document.getElementById(id)
     if (target) {
       target.scrollIntoView()
     }
