@@ -3,7 +3,7 @@
 layout: base
 title: "Building output using the dita command"
 index: "../toc.html"
-commit: "f3fdf0b44d4e3630985bcc751ef465396650f1b6"
+commit: "e8e6074e61d20873742e5d6dad42fd20d9668064"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -27,7 +27,7 @@ commit: "f3fdf0b44d4e3630985bcc751ef465396650f1b6"
                 common parameter <span class="keyword parmname">transtype</span>. Use the same values as for the
                   <span class="keyword parmname">transtype</span> build parameter, for example <span class="keyword option">html5</span> or
                   <span class="keyword option">pdf</span>. </p>
-              <div class="p" id="using-command-line-tool__d652e292">You can create plug-ins to add new output formats; by default, the following values are
+              <div class="p" id="using-command-line-tool__d652e302">You can create plug-ins to add new output formats; by default, the following values are
                 available:
                 
                 <ul class="ul">
@@ -66,7 +66,7 @@ commit: "f3fdf0b44d4e3630985bcc751ef465396650f1b6"
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
-          <dd class="dd pd" id="using-command-line-tool__d652e387">
+          <dd class="dd pd" id="using-command-line-tool__d652e397">
             <p class="p">Specifies the path of the output directory; the path can be absolute or relative to the current
               directory.</p>
             <p class="p">This argument corresponds to the common parameter <span class="keyword parmname">output.dir</span>. By default, the output
@@ -187,7 +187,7 @@ commit: "f3fdf0b44d4e3630985bcc751ef465396650f1b6"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
             specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
             directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d652e737"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the
+          <div class="note tip note_tip" id="using-command-line-tool__d652e747"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the
             <a class="xref" href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank" rel="external noopener">PATH environment variable</a> to run the <span class="keyword cmdname">dita</span> command from any location on the file system
             without typing the path.
             
