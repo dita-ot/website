@@ -3,7 +3,7 @@
 layout: base
 title: "Installing plug-ins"
 index: "../toc.html"
-commit: "e8e6074e61d20873742e5d6dad42fd20d9668064"
+commit: "0b9460d4a53aac3cbd3179581508516a15527891"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -35,12 +35,12 @@ commit: "e8e6074e61d20873742e5d6dad42fd20d9668064"
           <div class="note tip note_tip"><span class="note__title">Tip:</span> 
             <span class="ph">If no <var class="keyword varname">ID</var>, <var class="keyword varname">URL</var>, or
                     <var class="keyword varname">file</var> argument is provided, the installation process reloads the current set of
-                  plug-ins from the <span class="ph filepath">plugins</span> directory or that are defined in
-                    <span class="ph filepath">configuration.properties</span> using the <span class="keyword parmname">pluginsdir</span> property in the
-                    <span class="ph filepath">config</span> directory. This approach can be used to add or remove multiple plug-ins
-                  at once, or any individual plug-ins you have already copied to (or removed from) the
-                    <span class="ph filepath">plugins</span> directory. Any plug-ins added or removed in the process will be listed
-                  by their plug-in ID.</span>
+                  plug-ins from the <span class="ph filepath">plugins</span> directory (or any custom locations defined via the
+                    <span class="keyword parmname">pluginsdir</span> property in the <span class="ph filepath">configuration.properties</span> file
+                  in the <span class="ph filepath">config</span> directory). This approach can be used to add or remove multiple
+                  plug-ins at once, or any individual plug-ins you have already copied to (or removed from) the plug-in
+                  directories. Any plug-ins added or removed in the process will be listed by their plug-in
+                ID.</span>
           </div>
         </div>
       </div></section>
