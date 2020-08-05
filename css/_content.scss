@@ -1,10 +1,14 @@
-#content {
+div#content {
   padding-top: 24px;
   min-height: 100vh;
   padding-bottom: 30px;
 }
 
-main[role='main'] {
+main#content {
+  margin-bottom: 30px;
+}
+
+.row > main[role='main'] {
   @extend .col-lg-9;
 }
 
