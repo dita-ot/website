@@ -25,14 +25,14 @@ index: "../toc.html"
         <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a> and install new plug-ins by name and optional version.</p>
       <p class="p">Search the registry for a plug-in and install it by providing the plug-in name to the <span class="keyword cmdname">dita</span>
         command.</p>
-      <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=<var class="keyword varname">&lt;plugin-name&gt;</var></code></pre>
+      <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=<var class="keyword varname">&lt;plugin-name&gt;</var></code></pre>
       <p class="p">If the registry includes multiple versions of the same plug-in, you can specify the version to install as
         follows:</p>
-      <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=<var class="keyword varname">&lt;plugin-name&gt;@&lt;plugin-version&gt;</var></code></pre>
+      <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=<var class="keyword varname">&lt;plugin-name&gt;@&lt;plugin-version&gt;</var></code></pre>
       <p class="p">If the plug-in requires other plug-ins, those are also installed recursively.</p>
       <p class="p">For example, to revert PDF output to the legacy PDF2 layout that was the default in DITA-OT before 2.5, install
         the <span class="ph filepath">org.dita.pdf2.legacy</span> plug-in as follows:</p>
-      <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=org.dita.pdf2.legacy</code></pre>
+      <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=org.dita.pdf2.legacy</code></pre>
       <p class="p">If a matching plug-in cannot be found, an error message will appear. Possible reasons for failure include:</p>
       <ul class="ul">
         <li class="li">A plug-in with the specified name was not found in the registry</li>

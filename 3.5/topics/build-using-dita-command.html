@@ -12,21 +12,21 @@ index: "../toc.html"
   <div class="body taskbody"><p class="shortdesc">You can generate output using the <span class="keyword cmdname">dita</span> command-line tool. Build parameters can be
     specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
     
-    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="ol steps"><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
-        <div class="itemgroup info"><pre class="pre codeblock"><code><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/bin/<span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> <span class="ph">[<var class="keyword varname">options</var>]</span></code></pre>
+        <div class="itemgroup info"><pre class="pre codeblock syntax-bash"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> <span class="ph">[<var class="keyword varname">options</var>]</span></code></pre>
           <p class="p">where:</p>
           <ul class="ul">
             
-            <li class="li"><span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span> is the DITA-OT installation directory.</li><li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to
+            <li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to
               process.</li>
             <li class="li">
               <p class="p">
                 <var class="keyword varname">format</var> is the output format (transformation type). This argument corresponds to the
                 common parameter <span class="keyword parmname">transtype</span>. Use the same values as for the
                   <span class="keyword parmname">transtype</span> build parameter, for example <span class="keyword option">html5</span> or
-                  <span class="keyword option">pdf</span>. </p>
-              <div class="p" id="using-command-line-tool__d650e292">You can create plug-ins to add new output formats; by default, the following values are
+                  <span class="keyword option">pdf</span>.</p>
+              <div class="p" id="using-command-line-tool__d650e290">You can create plug-ins to add new output formats; by default, the following values are
                 available:
                 
                 <ul class="ul">
@@ -65,7 +65,7 @@ index: "../toc.html"
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
-          <dd class="dd pd" id="using-command-line-tool__d650e387">
+          <dd class="dd pd" id="using-command-line-tool__d650e385">
             <p class="p">Specifies the path of the output directory; the path can be absolute or relative to the current
               directory.</p>
             <p class="p">This argument corresponds to the common parameter <span class="keyword parmname">output.dir</span>. By default, the output
@@ -154,11 +154,11 @@ index: "../toc.html"
           <dd class="dd pd">Convert partial documentation sets by processing input with additional resources.
             <div class="p">For example, to process a single topic file with a map that contains key definitions, use a command like
               this:
-              <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+              <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
             </div>
             <div class="p">To convert a chapter map to HTML5 and insert related links from relationship tables in a separate map,
               use:
-              <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">chapter.ditamap</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">reltables.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+              <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">chapter.ditamap</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">reltables.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
             </div></dd>
         
         
@@ -186,18 +186,13 @@ index: "../toc.html"
           <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
             specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
             directory).</p>
-          <div class="note tip note_tip" id="using-command-line-tool__d650e737"><span class="note__title">Tip:</span> Add the absolute path for <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span><span class="ph filepath">/bin</span> to the
-            <a class="xref" href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank" rel="external noopener">PATH environment variable</a> to run the <span class="keyword cmdname">dita</span> command from any location on the file system
-            without typing the path.
-            
-          </div>
         </div>
-      </div></section>
+      </div></div></section>
     
     <section class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">For example, from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, run:</p>
       <div class="p">
-        <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
+        <pre class="pre codeblock syntax-bash multi-platform"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
      <span class="keyword parmname">--output</span>=<span class="ph filepath">output/sequence</span> \
      <span class="keyword parmname">--args.input.dir</span>=<span class="ph filepath"><var class="keyword varname">/absolute/path/to/dita-ot-dir</var>/docsrc/samples</span> \
      <span class="keyword parmname">--propertyfile</span>=<span class="ph filepath">properties/sequence-html5.properties</span></code></pre>

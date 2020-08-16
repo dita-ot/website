@@ -108,7 +108,7 @@ index: "../toc.html"
       </li><li class="li step stepexpand">
         <span class="ph cmd">Pass your project file to the <span class="keyword cmdname">dita</span> command to build output.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var></code></pre>
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var></code></pre>
         </div>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
         <span class="ph cmd">If needed, pass additional arguments to the <span class="keyword cmdname">dita</span> command to override specific build
@@ -116,13 +116,13 @@ index: "../toc.html"
         <div class="itemgroup stepxmp">
           <p class="p">For example, to build output once with <code class="keyword markupname xmlelement">&lt;draft&gt;</code> and
               <code class="keyword markupname xmlelement">&lt;required-cleanup&gt;</code> content:</p>
-          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var> <span class="keyword parmname">--args.draft</span>=<span class="keyword option">yes</span></code></pre>
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">pdf.xml</var> <span class="keyword parmname">--args.draft</span>=<span class="keyword option">yes</span></code></pre>
         </div>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
         <span class="ph cmd">If your project contains multiple deliverables, you can pass the <span class="keyword parmname">--deliverable</span> option
           to generate output for a single deliverable ID.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">all.xml</var> <span class="keyword parmname">--deliverable</span>=<span class="keyword option">htmlhelp</span></code></pre>
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">all.xml</var> <span class="keyword parmname">--deliverable</span>=<span class="keyword option">htmlhelp</span></code></pre>
         </div>
       </li></ol></section>
   </div>
