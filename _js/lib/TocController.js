@@ -15,6 +15,8 @@ function TocController($toc, index) {
   addTocControllers()
   loadFullToc()
 
+  $nav.wrapInner(`<div class="toc-wrapper"></div>`)
+
   function loadFullToc() {
     initializeToc($toc)
     $('nav[role=toc]').html($toc.html())
@@ -72,11 +74,23 @@ function TocController($toc, index) {
       if (!$li.hasClass(CLASS_OPEN)) {
         $li.addClass(CLASS_OPEN)
       }
-      if ($li.children('ul').length) {
+      if ($li.children('ul').length !== 0) {
         $('<span class="controller"></span>').click(toggleHandler).prependTo($li)
+        $li.children('a[href]').filter(common.isLocal).click(expandHandler)
       }
       $li.children('a[href]').filter(common.isLocal).click(navigateHandler)
     })
+
+    function expandHandler(event) {
+      event.preventDefault()
+      event.stopPropagation()
+
+      const $target = $(event.target)
+      const $node = $target.parent('li')
+      if ($node.hasClass(CLASS_CLOSED)) {
+        $node.addClass(CLASS_OPEN).removeClass(CLASS_CLOSED)
+      }
+    }
 
     function toggleHandler(event) {
       const $target = $(event.target)
