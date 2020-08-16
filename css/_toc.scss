@@ -9,7 +9,7 @@ nav.col-lg-3, nav[role='toc'] {
   padding-top: 10px;
   max-height: 100vh;
   overflow-y: scroll;
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 992px) {
     position: sticky;
   }
   top: 0px;
