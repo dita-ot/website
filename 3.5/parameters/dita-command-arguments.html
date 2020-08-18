@@ -195,10 +195,12 @@ index: "../toc.html"
           </dt>
           <dd class="dd pd"><span class="ph">If no <var class="keyword varname">ID</var>, <var class="keyword varname">URL</var>, or
                     <var class="keyword varname">file</var> argument is provided, the installation process reloads the current set of
-                  plug-ins from the <span class="ph filepath">plugins</span> directory. This approach can be used to add or remove
-                  multiple plug-ins at once, or any individual plug-ins you have already copied to (or removed from) the
-                    <span class="ph filepath">plugins</span> directory. Any plug-ins added or removed in the process will be listed
-                  by their plug-in ID.</span></dd>
+                  plug-ins from the <span class="ph filepath">plugins</span> directory (or any custom locations defined via the
+                    <span class="keyword parmname">pluginsdir</span> property in the <span class="ph filepath">configuration.properties</span> file
+                  in the <span class="ph filepath">config</span> directory). This approach can be used to add or remove multiple
+                  plug-ins at once, or any individual plug-ins you have already copied to (or removed from) the plug-in
+                  directories. Any plug-ins added or removed in the process will be listed by their plug-in
+                ID.</span></dd>
         
         
           <dt class="dt pt dlterm">
@@ -376,11 +378,11 @@ index: "../toc.html"
           <dd class="dd pd">Convert partial documentation sets by processing input with additional resources.
             <div class="p">For example, to process a single topic file with a map that contains key definitions, use a command like
               this:
-              <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+              <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
             </div>
             <div class="p">To convert a chapter map to HTML5 and insert related links from relationship tables in a separate map,
               use:
-              <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">chapter.ditamap</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">reltables.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+              <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">chapter.ditamap</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">reltables.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
             </div></dd>
         
         

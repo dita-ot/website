@@ -30,7 +30,7 @@ index: "../toc.html"
     &lt;varname&gt;format&lt;/varname&gt; is the output format (transformation type). This argument corresponds to the
     common parameter &lt;parmname&gt;transtype&lt;/parmname&gt;. Use the same values as for the
       &lt;parmname&gt;transtype&lt;/parmname&gt; build parameter, for example &lt;option&gt;html5&lt;/option&gt; or
-      &lt;option&gt;pdf&lt;/option&gt;. &lt;/p&gt;
+      &lt;option&gt;pdf&lt;/option&gt;.&lt;/p&gt;
 &lt;/li&gt;</code></pre></div>
       <p class="p">An “audience” subject scheme controls the values that are available for the <code class="keyword markupname xmlatt">@audience</code>
         attribute:</p>
@@ -39,6 +39,13 @@ index: "../toc.html"
   &lt;subjectdef keys="expert"/&gt;
   &lt;subjectdef keys="xslt-customizer"/&gt;
 &lt;/subjectdef&gt;</code></pre></div>
+      <p class="p">A dedicated subject scheme map defines several series of permissible values for <code class="keyword markupname xmlatt">@outputclass</code>
+        attributes, which apply styling to elements on the project website, enable
+        <a class="xref" href="extended-functionality.html" title="DITA-OT provides additional processing support beyond that which is mandated by the DITA specification. These extensions can be used to define character encodings or line ranges for code references, normalize indendation, add line numbers or display whitespace characters in code blocks.">extended codeblock processing</a> such as whitespace visualization and
+        line numbering in PDF output, or trigger
+        <a class="xref" href="https://www.w3.org/TR/html52/textlevel-semantics.html#the-code-element" target="_blank" rel="external noopener">HTML5-compliant syntax highlighting</a> via
+        <a class="xref" href="https://prismjs.com" target="_blank" rel="external noopener">prism.js</a>.</p>
+      <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;schemeref href="subjectscheme-outputclass.ditamap"/&gt;</code></pre></div>
     </section>
 
     <section class="section"><h2 class="title sectiontitle">Branch filtering: re-using profiled content</h2>
@@ -109,7 +116,7 @@ index: "../toc.html"
       <div class="p"><pre class="pre codeblock language-xml normalize-space"><code>&lt;keydef keys="maintenance-version"&gt;
   &lt;topicmeta&gt;
     &lt;keywords&gt;
-      &lt;keyword&gt;3.5.2&lt;/keyword&gt;
+      &lt;keyword&gt;3.5.3&lt;/keyword&gt;
     &lt;/keywords&gt;
   &lt;/topicmeta&gt;
 &lt;/keydef&gt;</code></pre></div>

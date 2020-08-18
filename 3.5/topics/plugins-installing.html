@@ -10,10 +10,10 @@ index: "../toc.html"
   
   
   <div class="body taskbody"><p class="shortdesc">Use the <span class="keyword cmdname">dita install</span> subcommand to install plug-ins.</p>
-    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="ol steps"><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
         <div class="itemgroup info">
-          <pre class="pre codeblock"><code><span class="keyword cmdname">dita install</span> <var class="keyword varname">&lt;plug-in&gt;</var></code></pre>
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita install</span> <var class="keyword varname">&lt;plug-in&gt;</var></code></pre>
           <p class="p">where:</p>
           <ul class="ul">
             <li class="li">the optional <span class="ph filepath"><var class="keyword varname">&lt;plug-in&gt;</var></span> argument is one of
@@ -34,12 +34,14 @@ index: "../toc.html"
           <div class="note tip note_tip"><span class="note__title">Tip:</span> 
             <span class="ph">If no <var class="keyword varname">ID</var>, <var class="keyword varname">URL</var>, or
                     <var class="keyword varname">file</var> argument is provided, the installation process reloads the current set of
-                  plug-ins from the <span class="ph filepath">plugins</span> directory. This approach can be used to add or remove
-                  multiple plug-ins at once, or any individual plug-ins you have already copied to (or removed from) the
-                    <span class="ph filepath">plugins</span> directory. Any plug-ins added or removed in the process will be listed
-                  by their plug-in ID.</span>
+                  plug-ins from the <span class="ph filepath">plugins</span> directory (or any custom locations defined via the
+                    <span class="keyword parmname">pluginsdir</span> property in the <span class="ph filepath">configuration.properties</span> file
+                  in the <span class="ph filepath">config</span> directory). This approach can be used to add or remove multiple
+                  plug-ins at once, or any individual plug-ins you have already copied to (or removed from) the plug-in
+                  directories. Any plug-ins added or removed in the process will be listed by their plug-in
+                ID.</span>
           </div>
         </div>
-      </div></section>
+      </div></div></section>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content. Subcommands can be used to manage plug-ins, or print information about the current configuration. A series of options are available to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></li></ul></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/plugins-registry.html" title="DITA-OT 3.2 supports a new plug-in registry that makes it easier to discover and install new plug-ins. The registry provides a searchable list of plug-ins at dita-ot.org/plugins.">Adding plug-ins via the registry</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/configuration-properties-file.html" title="The configuration.properties file controls certain common properties, as well as some properties that control PDF processing.">The configuration.properties file</a></li><li class="linklist"><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content. Subcommands can be used to manage plug-ins, or print information about the current configuration. A series of options are available to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></li></ul></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/plugins-registry.html" title="DITA-OT 3.2 supports a new plug-in registry that makes it easier to discover and install new plug-ins. The registry provides a searchable list of plug-ins at dita-ot.org/plugins.">Adding plug-ins via the registry</a></li></ul></div></nav></article></main>
