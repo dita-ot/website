@@ -2,30 +2,39 @@
   "name": "website",
   "version": "1.0.0",
   "description": "DITA-OT Website",
+  "homepage": "https://github.com/dita-ot/website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dita-ot/website.git"
+  },
+  "license": "Apache-2.0",
   "scripts": {
-    "install": "parcel build _js/plugins.js _js/main.js --out-dir js --public-url /js",
     "check": "prettier --ignore-path .prettierignore --check \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
+    "fmt": "npm run format",
+    "format": "npm run format:config && npm run format:docs && npm run format:html && npm run format:script && npm run format:style",
     "format:config": "prettier --ignore-path .prettierignore --write \"**/*.{json,yaml,yml}\"",
     "format:docs": "prettier --ignore-path .prettierignore --write \"**/*.md\"",
     "format:html": "prettier --ignore-path .prettierignore --write \"**/*.html\"",
     "format:script": "prettier --ignore-path .prettierignore --write \"**/*.{js,ts}\"",
     "format:style": "prettier --ignore-path .prettierignore --write \"**/*.scss\"",
-    "format": "npm run format:config && npm run format:docs && npm run format:html && npm run format:script && npm run format:style",
-    "fmt": "npm run format",
-    "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\"",
-    "test": "jest && npm run test:script"
+    "install": "parcel build _js/plugins.js _js/main.js --out-dir js --public-url /js",
+    "test": "jest && npm run test:script",
+    "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{html,js,json,md,scss,yaml,yml}": [
       "prettier --write"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dita-ot/website.git"
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "lodash": "^4.17.19"
   },
-  "license": "Apache-2.0",
-  "homepage": "https://github.com/dita-ot/website",
   "devDependencies": {
     "@types/jest": "^26.0.10",
     "babel-core": "^6.26.3",
@@ -48,14 +57,5 @@
     "typescript": "^3.9.7",
     "urijs": "^1.19.2",
     "whatwg-fetch": "^3.4.0"
-  },
-  "dependencies": {
-    "jquery": "^3.5.1",
-    "lodash": "^4.17.19"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
