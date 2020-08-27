@@ -25,7 +25,8 @@ To request an invitation and join the conversation, visit [slack.dita-ot.org][10
 
 _Have XSLT or Java coding skills?_
 
-You can contribute fixes to [bugs][11] or new features by sending [pull requests][12] via GitHub.
+You can contribute fixes to [bugs][11] or new features by sending [pull requests][12] via GitHub, the process of which is described in
+this [Contributing to the Toolkit video][15].
 
 ## Documentation
 
@@ -51,3 +52,4 @@ If you'd like to fix a typo or propose changes to an existing topic, you can use
 [12]: https://help.github.com/articles/using-pull-requests
 [13]: https://www.dita-ot.org/dev/
 [14]: https://github.com/dita-ot/docs/issues/new
+[15]: https://www.oxygenxml.com/events/2014/dita-ot_day.html#Contributing_to_the_Toolkit_via_GitHub
