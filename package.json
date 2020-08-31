@@ -51,7 +51,7 @@
     "lint-staged": "10.2.13",
     "object.values": "^1.1.1",
     "parcel-bundler": "^1.12.4",
-    "prettier": "2.0.5",
+    "prettier": "2.1.1",
     "prismjs": "^1.21.0",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.7",
