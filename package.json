@@ -56,6 +56,6 @@
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.7",
     "urijs": "^1.19.2",
-    "whatwg-fetch": "^3.4.0"
+    "whatwg-fetch": "^3.4.1"
   }
 }
