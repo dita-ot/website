@@ -5,12 +5,12 @@ title: "DITA Open Toolkit 3.5 Release Notes"
 index: "../toc.html"
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li class="active"><a href="../release-notes/index.html">Release Notes</a><ul class="nav nav-list"><li><a href="../topics/release-history.html">Release history</a></li></ul></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">DITA Open Toolkit <span class="keyword">3.5</span> Release Notes</h1>
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.5.3</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.5.4</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">3.5</span>, which includes <span class="ph">support for additional input
             resources, an alternative subcommand syntax for the <span class="keyword cmdname">dita</span> command, and an initial preview
             of features for the latest draft of the upcoming DITA 2.0 standard</span>.</p>
@@ -20,12 +20,12 @@ index: "../toc.html"
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.5.3</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.5.4</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div>
   </div>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title2" id="requirements">
+  <nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/release-history.html">DITA-OT release history</a></strong><br>If you need details about any DITA-OT version, you can find the information on these pages.</li></ul></nav><article class="topic reference nested1" aria-labelledby="ariaid-title2" id="requirements">
     <h2 class="title topictitle2" id="ariaid-title2">Requirements</h2>
     <div class="body refbody">
       <section class="section">
@@ -50,15 +50,84 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v3.5.3">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.5.3</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v3.5.4">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.5.4</span>
       
     </h2>
 
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit <span class="keyword">3.5.3</span> is a maintenance release that includes the
+        <p class="p">DITA Open Toolkit <span class="keyword">3.5.4</span> is a maintenance release that includes the
           following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v3.5.4__2147">In cases where maps contain references to submaps within key scopes, earlier versions of DITA-OT
+            failed to apply the scopes to relationship tables in the submaps. Processing has been updated to cascade key
+            scope information to the relationship table of the target map, so links between topics in different key
+            scopes work as expected.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2147" target="_blank" rel="external noopener">#2147</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2393" target="_blank" rel="external noopener">#2393</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3563" target="_blank" rel="external noopener">#3563</a>
+          </li>
+          <li class="li" id="v3.5.4__2410">In earlier versions, keys in nested key scopes were not resolved correctly. Key processing has
+            been updated to correctly generate key definitions from sibling key scopes.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2410" target="_blank" rel="external noopener">#2410</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3567" target="_blank" rel="external noopener">#3567</a>
+          </li>
+          <li class="li" id="v3.5.4__2981">In previous versions, the <span class="keyword parmname">dita.xsl.html5.cover</span> extension point did not
+            work. The corresponding templates have been moved from the
+              <span class="ph filepath">org.dita.html5/xsl/map2html5-coverImpl_template.xsl</span> wrapper to a new
+              <span class="ph filepath">org.dita.html5/xsl/cover.xsl</span> file to allow custom plug-ins to override the HTML5
+            cover page with a custom stylesheet.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2981" target="_blank" rel="external noopener">#2981</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3579" target="_blank" rel="external noopener">#3579</a>
+          </li>
+          <li class="li" id="v3.5.4__3566">DITA-OT 3.5.2 introduced a regression that caused builds to fail with a Java error when source
+            files contained irregular table markup. Table processing has been updated to normalize tables with multiple
+            groups and emit a <span class="keyword msgnum">DOTJ082E</span> error when invalid table markup prevents processing.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3566" target="_blank" rel="external noopener">#3566</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3573" target="_blank" rel="external noopener">#3573</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3575" target="_blank" rel="external noopener">#3575</a>
+          </li>
+          <li class="li" id="v3.5.4__3574">When parsing topics that contain DTD references, public IDs are now preferred when comparing
+            grammar descriptors with those stored in the grammar cache. This speeds up processing in projects with a
+            large number of topics and subfolders by allowing the parser to re-use the DTD grammars between them.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3574" target="_blank" rel="external noopener">#3574</a>
+          </li>
+          <li class="li">HTML versions of the documentation include new information in the following topics:
+            <ul class="ul">
+              <li class="li" id="v3.5.4__docs-218">A list of <cite class="cite">DITA-OT Day</cite> conference videos has been added to the
+                <a class="xref" href="../topics/dita-and-dita-ot-resources.html" title="In addition to the DITA Open Toolkit documentation, there are other resources about DITA and DITA-OT that you might find helpful.">Resources</a> section. Where applicable, individual topics
+                include links to relevant presentations from recent events.
+                <a class="xref" href="https://github.com/dita-ot/docs/issues/218" target="_blank" rel="external noopener">#218</a>,
+                <a class="xref" href="https://github.com/dita-ot/docs/pull/304" target="_blank" rel="external noopener">#304</a>
+              </li>
+              <li class="li" id="v3.5.4__docs-305">A new
+                <a class="xref" href="../topics/release-history.html" title="If you need details about any DITA-OT version, you can find the information on these pages.">DITA-OT release history</a> topic was added for easier access to details on prior releases.
+                <a class="xref" href="https://github.com/dita-ot/docs/pull/305" target="_blank" rel="external noopener">#305</a>
+              </li>
+              <li class="li" id="v3.5.4__docsearch-2364">In addition to the latest development version of the documentation, the site
+                search now returns results from all <cite class="cite">Release Notes</cite> from DITA-OT 2.0 forward, to make it
+                easier to find information about the changes in earlier releases.
+                <a class="xref" href="https://github.com/algolia/docsearch-configs/pull/2364" target="_blank" rel="external noopener">algolia/docsearch-configs#2364</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.5.4+is%3Aclosed" target="_blank" rel="external noopener">3.5.4 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.5.3...3.5.4" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.5.3">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.5.3 <span class="ph small text-muted">released August 18, 2020</span>
+    </h2>
+
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit 3.5.3 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           <li class="li" id="v3.5.3__3549">In DITA-OT 3.5, certain branch filtering scenarios prevented key references and content key
             references from resolving correctly in map-first preprocessing, resulting in missing content in PDF output.
@@ -80,8 +149,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.5.2">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.5.2 <span class="ph small text-muted">released July 2, 2020</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v3.5.2">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 3.5.2 <span class="ph small text-muted">released July 2, 2020</span>
     </h2>
 
     <div class="body refbody">
@@ -139,8 +208,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v3.5.1">
-    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 3.5.1 <span class="ph small text-muted">released June 4, 2020</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v3.5.1">
+    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT 3.5.1 <span class="ph small text-muted">released June 4, 2020</span>
     </h2>
 
     <div class="body refbody">
@@ -184,8 +253,8 @@ index: "../toc.html"
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v3.5">
-    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT <span class="keyword">3.5</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="v3.5">
+    <h2 class="title topictitle2" id="ariaid-title7">DITA-OT <span class="keyword">3.5</span>
       <span class="ph small text-muted">released April 27, 2020</span>
     </h2>
     
@@ -307,7 +376,7 @@ index: "../toc.html"
           <dd class="dd">Prints the list of deliverables in a project <var class="keyword varname">file</var></dd>
         
         
-          <dt class="dt dlterm" id="v3.5__d708e298"><span class="keyword cmdname">dita install</span></dt>
+          <dt class="dt dlterm" id="v3.5__d1237e298"><span class="keyword cmdname">dita install</span></dt>
           <dd class="dd">Installs or reloads plug-ins (replaces <span class="keyword cmdname">dita</span>
             <span class="keyword parmname">--install</span>)</dd>
         
@@ -319,7 +388,7 @@ index: "../toc.html"
         
           <dt class="dt dlterm"><span class="keyword cmdname">dita transtypes</span></dt>
           <dd class="dd">Prints a list of installed transformation types, or <em class="ph i">output formats</em> (replaces
-            <span class="keyword cmdname">dita</span>
+              <span class="keyword cmdname">dita</span>
             <span class="keyword parmname">--transtypes</span>)</dd>
         
         
@@ -328,7 +397,7 @@ index: "../toc.html"
             <span class="keyword parmname">--uninstall</span>)</dd>
         
         
-          <dt class="dt dlterm" id="v3.5__d708e366"><span class="keyword cmdname">dita version</span></dt>
+          <dt class="dt dlterm" id="v3.5__d1237e366"><span class="keyword cmdname">dita version</span></dt>
           <dd class="dd">Prints version information and exits (replaces <span class="keyword cmdname">dita</span>
             <span class="keyword parmname">--version</span>)</dd>
         
