@@ -3,7 +3,7 @@
 layout: base
 title: "Running the dita command from a Docker image"
 index: "../toc.html"
-commit: "8bdf678b1068ad43f0562d71d780139bdff65ae2"
+commit: "ff39d6b70bd76b32cf589d62c28f3a3d7b00eb26"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li class="active"><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -80,7 +80,7 @@ commit: "8bdf678b1068ad43f0562d71d780139bdff65ae2"
             <span class="keyword cmdname">dita</span> command.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> run -it \
-  -v /Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.5.3</span> \
+  -v /Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.5.4</span> \
   -i /src/input.ditamap \
   -o /src/out \
   -f html5 -v</code></pre>
@@ -99,7 +99,7 @@ commit: "8bdf678b1068ad43f0562d71d780139bdff65ae2"
             <p class="p">On Windows, if your <span class="ph filepath">Users</span> directory is on the <span class="ph filepath">C:\</span> drive, use
               <span class="ph filepath">/c/Users/…</span> to map the host directory:</p>
             <pre class="pre codeblock"><code>&gt; C:\Users\username&gt; <span class="keyword cmdname">docker</span> run -it ^
-  -v /c/Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.5.3</span> ^
+  -v /c/Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.5.4</span> ^
   -i /src/input.ditamap ^
   -o /src/out ^
   -f html5 -v</code></pre>
@@ -113,4 +113,4 @@ commit: "8bdf678b1068ad43f0562d71d780139bdff65ae2"
         </div>
       </li></ol></section>
   </div>
-<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/creating-docker-images.html">Installing plug-ins in a Docker image</a></strong><br>To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own       <span class="ph filepath">Dockerfile</span> and specify the official DITA-OT image as the basis for your image. </li></ul></nav></article></main>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/creating-docker-images.html">Installing plug-ins in a Docker image</a></strong><br>To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own       <span class="ph filepath">Dockerfile</span> and specify the official DITA-OT image as the basis for your image. </li></ul><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2016/dita-ot_day.html#Using_the_Open_Toolkit_Through_Docker_Containers" target="_blank" rel="external noopener" title="Docker containers make it easy to package and use different configurations of software components. Docker containers can also provide the dependencies needed to run a given piece of software. For the Open Toolkit, you can use Docker containers to easily provision and run the Open Toolkit without worrying about the local Java configuration or other dependencies. Docker also makes it easy to set up custom configurations of the Open Toolkit or use different versions. This presentation shows how to use Docker-based Open Toolkit packages.">Using the Open Toolkit Through Docker Containers</a></li></ul></div></nav></article></main>
