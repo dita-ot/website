@@ -3,7 +3,7 @@
 layout: base
 title: "Adding custom CSS"
 index: "../toc.html"
-commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
+commit: "8c14552cf712fc13b5db0620320fd012c17986c7"
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a><ul class="nav nav-list"><li><a href="../topics/html-customization-parameters.html">Setting HTML parameters</a><ul class="nav nav-list"><li><a href="../topics/html-customization-navigation.html">Adding navigation</a></li><li class="active"><a href="../topics/html-customization-css.html">Adding custom CSS</a></li><li><a href="../topics/html-customization-header.html">Headers and footers</a></li><li><a href="../parameters/generate-copy-outer.html">Handling content outside the map directory</a></li></ul></li><li><a href="../topics/html-customization-properties-file.html">Using a properties file</a></li></ul></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -30,19 +30,14 @@ commit: "68f2292f42ee54db7055a62352ad5f8e2dac3f4a"
       </li><li class="li step stepexpand">
         <span class="ph cmd">Set the <span class="keyword parmname">args.css</span> parameter to the name of your custom CSS file.</span>
         <div class="itemgroup info">
-          <p class="p">The value of this parameter should be only the file name. The relative path to the file can be specified
+          <p class="p">The value of this parameter should be only the file name. You can specify the absolute path to the file
             with <span class="keyword parmname">args.cssroot</span>.</p></div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Set the <span class="keyword parmname">args.copycss</span> parameter to <span class="keyword option">yes</span>.</span>
         <div class="itemgroup info">
           <p class="p">This setting ensures that your custom CSS file will be copied to the output directory.</p></div>
       </li><li class="li step stepexpand">
-        <span class="ph cmd">Set <span class="keyword parmname">args.cssroot</span> to the folder path that contains your custom CSS file.</span>
-        <div class="itemgroup info">
-          <p class="p">The value you enter here will be interpreted relative to the location of the input map file. If your map is
-            stored at the root level of your project folder and the CSS file is stored in a subfolder named
-              <span class="ph filepath">resources</span>, set <span class="keyword parmname">args.cssroot</span> to
-          <span class="keyword option">resources</span>.</p></div>
+        <span class="ph cmd">Set <span class="keyword parmname">args.cssroot</span> to the absolute path of the folder that contains your custom CSS file.</span>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
         <span class="ph cmd">Set <span class="keyword parmname">args.csspath</span> to specify the location of the CSS file in the output folder.</span>
         <div class="itemgroup info">
