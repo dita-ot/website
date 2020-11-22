@@ -11,6 +11,7 @@
 }
 
 // Based on Bootstrap code rules
+.apiname,
 .parmname {
   @include codeclass;
   color: $brand-primary;
