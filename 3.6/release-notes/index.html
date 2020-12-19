@@ -58,7 +58,7 @@ index: '../toc.html'
 
   <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.6">
     <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.6</span>
-      <span class="ph mark small text-muted">released MMM DD, 2020</span>
+      
     </h2>
     
     <div class="body refbody">
@@ -82,10 +82,11 @@ index: '../toc.html'
       
       
       <p class="p">DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing. The Cache Store can be
-        activated by setting the <span class="keyword parmname">store-type</span> parameter to <span class="keyword option">memory</span>. In-memory
-        processing provides performance advantages in I/O bound environments such as cloud computing platforms, where
-        processing time depends primarily on the time spent waiting for input/output. For more information, see
-        <a class="xref" href="../reference/store-api.html" title="DITA-OT originally assumed resources would be available on disk and available from file paths. Recent versions added URI input, so HTTPS resources could be used, but temporary and output resources were still file-based. DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing.">Store API – Processing in memory</a>.</p>
+        activated by setting the <span class="keyword parmname">store-type</span> parameter to <span class="keyword option">memory</span>. 
+        <span class="ph" id="v3.6__d1187e79">In-memory processing provides performance advantages in I/O bound environments such as cloud
+          computing platforms, where processing time depends primarily on how long it takes to read and write temporary
+          files.</span> For more information, see
+        <a class="xref" href="../reference/store-api.html" title="DITA-OT originally assumed resources would be available on disk and available from file paths. Recent versions added URI input, so HTTPS resources could be used, but temporary and output resources were still file-based. DITA-OT 3.6 introduces a new Store API that can process temporary resources in memory instead of writing them to disk.">Store API – Processing in memory</a>.</p>
     </section>
 
       <section class="section"><h3 class="title sectiontitle">Additional performance improvements</h3>
@@ -149,7 +150,8 @@ index: '../toc.html'
           for the latest DRAFT versions of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of October 2020).
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3586" target="_blank" rel="external noopener">#3586</a>,
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3601" target="_blank" rel="external noopener">#3601</a>,
-          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3617" target="_blank" rel="external noopener">#3617</a>
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3617" target="_blank" rel="external noopener">#3617</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3652" target="_blank" rel="external noopener">#3652</a>
         </p>
         <ul class="ul">
         
@@ -161,7 +163,19 @@ index: '../toc.html'
             <code class="keyword markupname xmlelement">&lt;i&gt;</code> elements in the highlighting domain.</li>
         <li class="li">The troubleshooting domain has been updated with additional constructs that can be used to provide detailed
           diagnostic information.</li>
-        <li class="li mark">Several obsolete elements have been removed, including …</li>
+        <li class="li">Several obsolete elements and attributes have been removed from DITA 2.0, including:
+          <ul class="ul">
+            <li class="li"><code class="keyword markupname xmlelement">&lt;boolean&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlelement">&lt;data-about&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlelement">&lt;indextermref&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@alt</code> on <code class="keyword markupname xmlelement">&lt;image&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@navtitle</code> on <code class="keyword markupname xmlelement">&lt;topicref&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@query</code> on <code class="keyword markupname xmlelement">&lt;topicref&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@refcols</code> on <code class="keyword markupname xmlelement">&lt;simpletable&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@xtrc</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@xtrf</code></li>
+          </ul>
+        </li>
       </ul>
         <p class="p">DITA documents that reference the draft grammar files can be parsed, and where features
       overlap with DITA 1.3, those features will work as expected.</p>
@@ -178,10 +192,13 @@ index: '../toc.html'
         <ul class="ul">
           <li class="li" id="v3.6__3448">The <code class="keyword markupname xmlatt">@rotate</code> attribute on table <code class="keyword markupname xmlelement">&lt;entry&gt;</code> elements is now
             respected when generating HTML5 output. The rotation is implemented by setting the CSS
-              <code class="ph codeph">writing-mode</code> property to <code class="ph codeph">sideways-lr</code> to rotate the cell content 90
-            degrees counterclockwise.
+              <code class="ph codeph">writing-mode</code> property to <code class="ph codeph">vertical-rl</code> to rotate the cell content. This
+            property is rendered correctly in Mozilla Firefox, but unevenly supported by other browsers. The
+              <code class="ph codeph">rotate</code> class is passed to HTML5 output, so custom plug-ins can implement alternative
+            presentation rules in CSS if necessary.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3448" target="_blank" rel="external noopener">#3448</a>,
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3541" target="_blank" rel="external noopener">#3541</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3541" target="_blank" rel="external noopener">#3541</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3651" target="_blank" rel="external noopener">#3651</a>
           </li>
           <li class="li" id="v3.6__3495">User-facing text for the <span class="keyword cmdname">dita</span> command line interface has been extracted to a
             strings file to facilitate editing. The <span class="ph filepath">cli_en_US.properties</span> is provided in the
@@ -212,8 +229,8 @@ index: '../toc.html'
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3630" target="_blank" rel="external noopener">#3630</a>
           </li>
           <li class="li" id="v3.6__3562">The deprecated <code class="ph codeph">msgprefix</code> XSL variable (“DOTX”) has been removed. This variable
-            was originally deprecated in DITA-OT 2.3, but still defined in several stylesheets. Customizing output
-            messages no longer requires this variable to be defined.
+            was originally deprecated in DITA-OT 2.3, but still defined in several stylesheets. Importing the common XSL
+            module <span class="ph filepath">output-message.xsl</span> no longer requires this variable to be defined.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3562" target="_blank" rel="external noopener">#3562</a>
           </li>
           <li class="li" id="v3.6__3564">The <span class="keyword apiname">S9api</span> message listener from the Saxon API is now used to forward log
@@ -286,7 +303,15 @@ index: '../toc.html'
               folder.
               <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2414" target="_blank" rel="external noopener">#2414</a>,
               <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3623" target="_blank" rel="external noopener">#3623</a>
-            </p></li>
+            </p>
+          </li>
+          <li class="li" id="v3.6__3608">
+            <p class="p">The license text for the beta DITA 2.0 grammar file plug-in was missing in DITA-OT 3.5 and is now
+              included in the distribution package.
+              <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3608" target="_blank" rel="external noopener">#3608</a>,
+              <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3649" target="_blank" rel="external noopener">#3649</a>
+            </p>
+          </li>
           <li class="li">The Java code has been refactored to anticipate cases where resources are missing or incorrectly defined.
             <ul class="ul">
               <li class="li" id="v3.6__3624">The <code class="ph codeph">File.toURI()</code> method has been updated to ensure that the generated URI
@@ -335,7 +360,7 @@ index: '../toc.html'
           improvements to existing topics, along with new information in the following topics:</p>
         <ul class="ul">
           <li class="li">
-            <a class="xref" href="../reference/store-api.html" title="DITA-OT originally assumed resources would be available on disk and available from file paths. Recent versions added URI input, so HTTPS resources could be used, but temporary and output resources were still file-based. DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing.">Store API – Processing in memory</a></li>
+            <a class="xref" href="../reference/store-api.html" title="DITA-OT originally assumed resources would be available on disk and available from file paths. Recent versions added URI input, so HTTPS resources could be used, but temporary and output resources were still file-based. DITA-OT 3.6 introduces a new Store API that can process temporary resources in memory instead of writing them to disk.">Store API – Processing in memory</a></li>
           <li class="li">
             <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 3.6 provides a preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of October 2020).">DITA 2.0 preview support</a></li>
           <li class="li">

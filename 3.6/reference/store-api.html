@@ -4,7 +4,8 @@ layout: base
 title: 'Store API – Processing in memory'
 description: 'DITA-OT originally assumed resources would be available on disk and available from file paths. Recent
     versions added URI input, so HTTPS resources could be used, but temporary and output resources were still
-    file-based. DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing.'
+    file-based. DITA-OT 3.6 introduces a new Store API that can process temporary resources in memory instead of writing
+    them to disk.'
 index: '../toc.html'
 ---
 
@@ -15,7 +16,8 @@ index: '../toc.html'
   
   <div class="body"><p class="shortdesc">DITA-OT originally assumed resources would be available on disk and available from file paths. Recent
     versions added URI input, so HTTPS resources could be used, but temporary and output resources were still
-    file-based. DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing.</p>
+    file-based. DITA-OT 3.6 introduces a new Store API that can process temporary resources in memory instead of writing
+    them to disk.</p>
     <p class="p">The Store API (<code class="ph codeph">org.dita.dost.store.Store</code>) is a Java abstraction over temporary file operations.
       So for example instead of reading resources directly with <code class="ph codeph">FileInputStream</code>, the Store API provides
       operations for this. This abstraction allows implementations of the Store API to choose how they handle resources,
@@ -53,8 +55,10 @@ index: '../toc.html'
       
       <p class="p">The initial implementation of the Cache Store is provided in DITA-OT 3.6 as a preview to allow integration
         partners to test this new feature.</p>
-      <p class="p">In-memory processing provides performance advantages in I/O bound environments such as cloud computing
-        platforms, where processing time depends primarily on the time spent waiting for input/output.</p>
+      <p class="p">
+        <span class="ph">In-memory processing provides performance advantages in I/O bound environments such as cloud
+          computing platforms, where processing time depends primarily on how long it takes to read and write temporary
+          files.</span></p>
       <p class="p">The Store API also makes the Saxon <span class="keyword apiname">S9api</span> easier to use. It offers an XML document model that
         is in most cases easier to work with than DOM. The abstraction Store makes it easier to work with XML, so
         various modules don’t need to repeat the same type of XML processing code.</p></section>

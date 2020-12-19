@@ -41,10 +41,10 @@ index: '../toc.html'
       <section class="section"><h2 class="title sectiontitle">Enable in-memory processing</h2>
          
          <p class="p">As of DITA-OT 3.6, the Cache Store can be activated by setting the <span class="keyword parmname">store-type</span> parameter
-            to <span class="keyword option">memory</span>. In-memory processing provides performance advantages in I/O bound environments
-            such as cloud computing platforms, where processing time depends primarily on the time spent waiting for
-            input/output. For more information, see
-            <a class="xref" href="../reference/store-api.html" title="DITA-OT originally assumed resources would be available on disk and available from file paths. Recent versions added URI input, so HTTPS resources could be used, but temporary and output resources were still file-based. DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing.">Store API – Processing in memory</a>.</p>
+            to <span class="keyword option">memory</span>. <span class="ph">In-memory processing provides performance advantages in I/O bound environments such as cloud
+          computing platforms, where processing time depends primarily on how long it takes to read and write temporary
+          files.</span> For more information, see
+            <a class="xref" href="../reference/store-api.html" title="DITA-OT originally assumed resources would be available on disk and available from file paths. Recent versions added URI input, so HTTPS resources could be used, but temporary and output resources were still file-based. DITA-OT 3.6 introduces a new Store API that can process temporary resources in memory instead of writing them to disk.">Store API – Processing in memory</a>.</p>
       </section>
       <section class="section"><h2 class="title sectiontitle">Reuse the JVM instance</h2>
          
