@@ -1,0 +1,85 @@
+---
+# Generated from DITA source
+layout: base
+title: 'Prerequisite software'
+description: 'The prerequisite software that DITA-OT requires depends on the types of transformations that you want to
+    use.'
+index: '../toc.html'
+---
+
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a><ul class="nav nav-list"><li class="active"><a href="../topics/prerequisite-software.html">Prerequisite software</a></li><li><a href="../topics/determining-version-of-ditaot.html">Checking the version</a></li><li><a href="../topics/first-build-using-dita-command.html">Building output</a></li><li><a href="../topics/installing-via-homebrew.html">Installing via Homebrew</a></li></ul></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Prerequisite software</h1>
+  
+  
+  <div class="body conbody"><p class="shortdesc">The prerequisite software that DITA-OT requires depends on the types of transformations that you want to
+    use.</p>
+    <section class="section"><h2 class="title sectiontitle">Software required for core DITA-OT processing</h2>
+      
+      <div class="p">DITA-OT requires the following software applications:
+        <dl class="dl">
+          
+            <dt class="dt dlterm">Java Runtime Environment (JRE) or Java Development Kit (JDK)</dt>
+            <dd class="dd">
+              <div class="p">DITA-OT is designed to run on Java version <span class="keyword">8u101</span> or later and
+        built and tested with the Open Java Development Kit (OpenJDK). Compatible Java distributions are available from
+        multiple sources:
+        
+        
+        
+        
+        <ul class="ul">
+          <li class="li">You can download the Oracle JRE or JDK from
+            <a class="xref" href="http://www.oracle.com/technetwork/java/javase/downloads" target="_blank" rel="external noopener">oracle.com/technetwork/java</a> under commercial license.</li>
+          <li class="li">OpenJDK is a free open-source implementation of Java available from
+            <a class="xref" href="https://adoptopenjdk.net" target="_blank" rel="external noopener">adoptopenjdk.net</a>.</li>
+          <li class="li">Free OpenJDK distributions are also available from other vendors, including
+            <a class="xref" href="https://aws.amazon.com/corretto/" target="_blank" rel="external noopener">Amazon Corretto</a>,
+            <a class="xref" href="https://www.azul.com/downloads/zulu/" target="_blank" rel="external noopener">Azul Zulu</a>, and
+            <a class="xref" href="https://developers.redhat.com/products/openjdk/download" target="_blank" rel="external noopener">Red Hat</a>.</li>
+        </ul>
+      </div>
+              <div class="note note note_note"><span class="note__title">Note:</span> This is the <em class="ph i">only</em> prerequisite software that you need to install. The remaining required
+                software is included in the distribution package.</div>
+            </dd>
+          
+          
+            <dt class="dt dlterm" id="prerequisite-software__antbuild">Apache Ant</dt>
+            <dd class="dd">Provides the standard setup and sequencing of processing steps. DITA-OT includes Ant version <span class="keyword">1.10.9</span>. You can download Ant from
+              <a class="xref" href="https://ant.apache.org" target="_blank" rel="external noopener">ant.apache.org</a>.</dd>
+          
+          
+            <dt class="dt dlterm">XSLT processor</dt>
+            <dd class="dd">Provides the main transformation services. It must be compliant with XSLT 2.0. DITA-OT includes Saxon
+              version <span class="keyword">9.9.1.4</span>. You can download Saxon from
+              <a class="xref" href="http://saxon.sourceforge.net" target="_blank" rel="external noopener">saxon.sourceforge.net</a>.</dd>
+          
+        </dl></div>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">Software required for specific transformations</h2>
+      
+      
+      <div class="p">Depending on the type of output that you want to generate, you might need the following applications:
+        <dl class="dl">
+          
+            <dt class="dt dlterm">ICU for Java</dt>
+            <dd class="dd">ICU for Java is a cross-platform, Unicode-based, globalization library. It
+              includes support for comparing locale-sensitive strings; formatting dates, times, numbers, currencies, and
+              messages; detecting text boundaries; and converting character sets. You can download ICU for Java from
+              <a class="xref" href="http://site.icu-project.org/download" target="_blank" rel="external noopener">icu-project.org/download</a>.</dd>
+          
+          
+            <dt class="dt dlterm">Microsoft Help Workshop</dt>
+            <dd class="dd">Required for generating HTML help. You can download the Help Workshop from
+              <a class="xref" href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms669985%28v=vs.85%29.aspx" target="_blank" rel="external noopener">msdn.microsoft.com</a>.</dd>
+          
+          
+            <dt class="dt dlterm">XSL-FO processor</dt>
+            <dd class="dd">Required for generating PDF output. Apache™ FOP (Formatting
+              Objects Processor) is included in the distribution package. You can download other versions from
+              <a class="xref" href="https://xmlgraphics.apache.org/fop/download.html" target="_blank" rel="external noopener">xmlgraphics.apache.org/fop</a>. You can also use commercial FO processors such as Antenna House Formatter
+              or RenderX XEP.</dd>
+          
+        </dl></div>
+    </section>
+  </div>
+</article></main>
