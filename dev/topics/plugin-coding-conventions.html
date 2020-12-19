@@ -6,10 +6,10 @@ description: 'To ensure custom plug-ins work well with the core toolkit code and
     the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding
     patterns.'
 index: '../toc.html'
-commit: 'b0db96d137e515b17c5be88a56a8c729f5313c4f'
+commit: '65d76364267e35b86f0aa852604b61e2d53528a7'
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Plug-in coding conventions</h1>
   
   
@@ -78,7 +78,7 @@ commit: 'b0db96d137e515b17c5be88a56a8c729f5313c4f'
       <p class="p">The Saxon project has announced plans to remove XSLT 1.0 support from the Saxon-HE library that ships with
         DITA-OT:</p>
       <blockquote class="lq">…we’re dropping XSLT 1.0
-        backwards compatibility mode from Saxon-HE, and hope to eliminate it entirely in due course.<br><div style="text-align:right"><a href="https://www.xml.com/news/release-saxon-98/"><cite>https://www.xml.com/news/release-saxon-98/</cite></a></div></blockquote>
+        backwards compatibility mode from Saxon-HE, and hope to eliminate it entirely in due course.<br><div><a href="https://www.xml.com/news/release-saxon-98/"><cite>https://www.xml.com/news/release-saxon-98/</cite></a></div></blockquote>
       <p class="p">DITA-OT 3.0 and 3.0.1 included Saxon-HE 9.8.0.5, which rejects XSLT stylesheets that specify
           <code class="ph codeph">version="1.0"</code>. Plug-ins with XSLT templates specifying version 1.0 will fail with the message
           “<samp class="ph msgph">XSLT 1.0 compatibility mode is not available in this configuration</samp>.”</p>
@@ -193,7 +193,7 @@ commit: 'b0db96d137e515b17c5be88a56a8c729f5313c4f'
 
     <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
       
-      <div class="div" id="ID__d1178e92">
+      <div class="div" id="ID__d1181e92">
         <p class="p">DITA-OT includes a RELAX&nbsp;NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
           files that define the capabilities of each plug-in.
           
@@ -203,7 +203,7 @@ commit: 'b0db96d137e515b17c5be88a56a8c729f5313c4f'
           instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
         <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
-        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="ID__d1178e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
+        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="ID__d1181e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
           your plug-in file.</p>
       </div>
     </section>

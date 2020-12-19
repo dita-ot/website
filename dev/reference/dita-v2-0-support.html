@@ -2,72 +2,104 @@
 # Generated from DITA source
 layout: base
 title: 'DITA 2.0 preview support'
-description: 'DITA Open Toolkit 3.5 provides an initial preview of features for the upcoming
-    OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT
-    versions of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of March 2020).'
+description: 'DITA Open Toolkit 3.6 provides a preview of features for the upcoming OASIS DITA
+    2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the
+    DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of October 2020).'
 index: '../toc.html'
-commit: 'b843f6a696638da40a9512d81a0703540e94f15e'
+commit: '65d76364267e35b86f0aa852604b61e2d53528a7'
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.5</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../reference/dita-spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../reference/dita-v1-2-support.html">DITA 1.2 support</a></li><li><a href="../reference/dita-v1-3-support.html">DITA 1.3 support</a></li><li class="active"><a href="../reference/dita-v2-0-support.html">DITA 2.0 preview</a></li><li><a href="../reference/implementation-dependent-features.html">Implementation-dependent features</a></li><li><a href="../reference/extended-functionality.html">Codeblock extensions</a></li><li><a href="../reference/docs-dita-features.html">DITA features in docs</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../reference/license.html">License</a></li><li><a href="../reference/glossary.html#glossary">Glossary</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../reference/dita-spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../reference/dita-v1-2-support.html">DITA 1.2 support</a></li><li><a href="../reference/dita-v1-3-support.html">DITA 1.3 support</a></li><li class="active"><a href="../reference/dita-v2-0-support.html">DITA 2.0 preview</a></li><li><a href="../reference/implementation-dependent-features.html">Implementation-dependent features</a></li><li><a href="../reference/extended-functionality.html">Codeblock extensions</a></li><li><a href="../reference/docs-dita-features.html">DITA features in docs</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../reference/license.html">License</a></li><li><a href="../reference/glossary.html#glossary">Glossary</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">DITA 2.0 preview support</h1>
-  
-  
-  
+
   
 
-  <div class="body conbody"><p class="shortdesc">DITA Open Toolkit <span class="keyword">3.5</span> provides an initial preview of features for the upcoming
-    OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT
-    versions of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of March 2020).</p>
+  
+
+  <div class="body conbody"><p class="shortdesc">DITA Open Toolkit <span class="keyword">3.6</span> provides a preview of features for the upcoming OASIS DITA
+    2.0 specification. This preliminary processing support is provided on the basis of the latest DRAFT versions of the
+    DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of October 2020).</p>
     <p class="p" id="ID__grammar-files">DITA documents that reference the draft grammar files can be parsed, and where features
       overlap with DITA 1.3, those features will work as expected.</p>
-    <ul class="ul">
-      <li class="li" id="ID__3453">
-        <p class="p">
-          <span class="ph" id="ID__include">The new <code class="keyword markupname xmlelement">&lt;include&gt;</code> element can be used to reference text or XML content
-            from other files. In addition to the processing mandated by the specification, DITA-OT also supports the
-            character set definition and line range extraction options previously provided for
-              <code class="keyword markupname xmlelement">&lt;coderef&gt;</code> elements (see
-            <a class="xref" href="extended-functionality.html" title="DITA-OT provides additional processing support beyond that which is mandated by the DITA specification. These extensions can be used to define character encodings or line ranges for code references, normalize indendation, add line numbers or display whitespace characters in code blocks.">Extended codeblock processing</a>).</span>
-        </p>
-      </li>
-      <li class="li" id="ID__3462">
-        <p class="p">
-          <span class="ph" id="ID__specializations">The new <code class="keyword markupname xmlatt">@specializations</code> attribute, which replaces the DITA 1.x
-              <code class="keyword markupname xmlatt">@domains</code> attribute, can now be used as an alternative method of declaring specialized
-            attributes.</span>
-        </p>
-      </li>
-      <li class="li" id="ID__3463">
-        <p class="p">
-          <span class="ph" id="ID__outputclass">The <code class="keyword markupname xmlatt">@outputclass</code> attribute can now be specified as a flagging behavior in
-            DITAVAL files. This allows you to flag an element with a CSS class keyword that will be added to the
-              <code class="keyword markupname xmlatt">@class</code> attribute value in the generated HTML. Output classes allow you to pick up
-            pre-defined styles from existing web frameworks, and are more easily overridden with custom CSS files than
-            the inline <code class="keyword markupname xmlatt">@style</code> attributes generated by DITA 1.x flagging options such as
-              <code class="keyword markupname xmlatt">@color</code> and <code class="keyword markupname xmlatt">@backcolor</code>.</span>
-        </p>
-      </li>
-      <li class="li" id="ID__3464">
-        <p class="p">
-          <span class="ph" id="ID__simple-table-titles">Titles can now be specified on simple tables, and
-              <code class="keyword markupname xmlelement">&lt;simpletable&gt;</code> entries now support row and column spanning attributes.</span>
-        </p>
-      </li>
-      <li class="li" id="ID__3483">
-        <p class="p">
-          <span class="ph" id="ID__topic-based-classes">Where DITA 1.x defined conflicting <code class="keyword markupname xmlatt">@class</code> values for
-              <code class="keyword markupname xmlelement">&lt;linktext&gt;</code>, <code class="keyword markupname xmlelement">&lt;shortdesc&gt;</code>, and
-              <code class="keyword markupname xmlelement">&lt;searchtitle&gt;</code> in maps and topics, the new draft of DITA 2.0 uses the topic-based
-              <code class="keyword markupname xmlatt">@class</code> value in all cases. Processing is updated to recognize the updated value when these
-            elements are used in maps.</span>
-        </p>
-      </li>
-    </ul>
-    <div class="note note note_note" id="ID__more-to-come"><span class="note__title">Note:</span> Other new or revised features proposed for DITA 2.0 are not yet supported. Additional
-      features will be implemented in future versions of DITA-OT as the specification evolves.</div>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> For the latest status information on DITA 2.0-related features and fixes, see the
-      <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=label%3A%22DITA+2.0%22" target="_blank" rel="external noopener">DITA 2.0 label</a> in the GitHub issues tracker.</div>
+    <section class="section"><h2 class="title sectiontitle">DITA-OT 3.5</h2>
+      
+      <p class="p">DITA-OT 3.5 provided an initial preview of DITA 2.0 features.</p>
+      <ul class="ul">
+        <li class="li" id="ID__3453">
+          <p class="p">
+            <span class="ph" id="ID__include">The new <code class="keyword markupname xmlelement">&lt;include&gt;</code> element can be used to reference text or XML
+              content from other files. In addition to the processing mandated by the specification, DITA-OT also
+              supports the character set definition and line range extraction options previously provided for
+                <code class="keyword markupname xmlelement">&lt;coderef&gt;</code> elements (see
+              <a class="xref" href="extended-functionality.html" title="DITA-OT provides additional processing support beyond that which is mandated by the DITA specification. These extensions can be used to define character encodings or line ranges for code references, normalize indendation, add line numbers or display whitespace characters in code blocks.">Extended codeblock processing</a>).</span>
+          </p>
+        </li>
+        <li class="li" id="ID__3462">
+          <p class="p">
+            <span class="ph" id="ID__specializations">The new <code class="keyword markupname xmlatt">@specializations</code> attribute, which replaces the DITA 1.x
+                <code class="keyword markupname xmlatt">@domains</code> attribute, can now be used as an alternative method of declaring specialized
+              attributes.</span>
+          </p>
+        </li>
+        <li class="li" id="ID__3463">
+          <p class="p">
+            <span class="ph" id="ID__outputclass">The <code class="keyword markupname xmlatt">@outputclass</code> attribute can now be specified as a flagging behavior
+              in DITAVAL files. This allows you to flag an element with a CSS class keyword that will be added to the
+                <code class="keyword markupname xmlatt">@class</code> attribute value in the generated HTML. Output classes allow you to pick up
+              pre-defined styles from existing web frameworks, and are more easily overridden with custom CSS files than
+              the inline <code class="keyword markupname xmlatt">@style</code> attributes generated by DITA 1.x flagging options such as
+                <code class="keyword markupname xmlatt">@color</code> and <code class="keyword markupname xmlatt">@backcolor</code>.</span>
+          </p>
+        </li>
+        <li class="li" id="ID__3464">
+          <p class="p">
+            <span class="ph" id="ID__simple-table-titles">Titles can now be specified on simple tables, and
+                <code class="keyword markupname xmlelement">&lt;simpletable&gt;</code> entries now support row and column spanning attributes.</span>
+          </p>
+        </li>
+        <li class="li" id="ID__3483">
+          <p class="p">
+            <span class="ph" id="ID__topic-based-classes">Where DITA 1.x defined conflicting <code class="keyword markupname xmlatt">@class</code> values for
+                <code class="keyword markupname xmlelement">&lt;linktext&gt;</code>, <code class="keyword markupname xmlelement">&lt;shortdesc&gt;</code>, and
+                <code class="keyword markupname xmlelement">&lt;searchtitle&gt;</code> in maps and topics, the new draft of DITA 2.0 uses the topic-based
+                <code class="keyword markupname xmlatt">@class</code> value in all cases. Processing is updated to recognize the updated value when
+              these elements are used in maps.</span>
+          </p>
+        </li>
+      </ul>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">DITA-OT 3.6</h2>
+      
+      <p class="p">DITA-OT 3.6 adds support for additional DITA 2.0 features.</p>
+      <ul class="ul" id="ID__added-in-3.6">
+        
+        <li class="li">Where earlier DITA versions relied on the <code class="keyword markupname xmlelement">&lt;object&gt;</code> to embed media in DITA source
+          files, DITA 2.0 provides new <code class="keyword markupname xmlelement">&lt;audio&gt;</code> and <code class="keyword markupname xmlelement">&lt;video&gt;</code> elements that
+          correspond to their HTML5 equivalents.</li>
+        <li class="li">For HTML5 compatibility, the new emphasis domain adds support for the <code class="keyword markupname xmlelement">&lt;strong&gt;</code> and
+            <code class="keyword markupname xmlelement">&lt;em&gt;</code> elements in addition to the existing <code class="keyword markupname xmlelement">&lt;b&gt;</code> and
+            <code class="keyword markupname xmlelement">&lt;i&gt;</code> elements in the highlighting domain.</li>
+        <li class="li">The troubleshooting domain has been updated with additional constructs that can be used to provide detailed
+          diagnostic information.</li>
+        <li class="li">Several obsolete elements and attributes have been removed from DITA 2.0, including:
+          <ul class="ul">
+            <li class="li"><code class="keyword markupname xmlelement">&lt;boolean&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlelement">&lt;data-about&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlelement">&lt;indextermref&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@alt</code> on <code class="keyword markupname xmlelement">&lt;image&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@navtitle</code> on <code class="keyword markupname xmlelement">&lt;topicref&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@query</code> on <code class="keyword markupname xmlelement">&lt;topicref&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@refcols</code> on <code class="keyword markupname xmlelement">&lt;simpletable&gt;</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@xtrc</code></li>
+            <li class="li"><code class="keyword markupname xmlatt">@xtrf</code></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="note note note_note" id="ID__more-to-come"><span class="note__title">Note:</span> Other new or revised features proposed for DITA 2.0 are not yet supported. Additional
+        features will be implemented in future versions of DITA-OT as the specification evolves.</div>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> For the latest status information on DITA 2.0-related features and fixes, see the
+        <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=label%3A%22DITA+2.0%22" target="_blank" rel="external noopener">DITA 2.0 label</a> in the GitHub issues tracker.</div>
+    </section>
   </div>
 
   <nav role="navigation" class="related-links"><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dita" target="_blank" rel="external noopener">OASIS DITA Technical Committee</a></li></ul></div></nav>
