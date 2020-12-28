@@ -55,7 +55,7 @@
     "prismjs": "^1.22.0",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.7",
-    "urijs": "^1.19.3",
+    "urijs": "^1.19.4",
     "whatwg-fetch": "^3.5.0"
   }
 }
