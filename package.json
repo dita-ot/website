@@ -52,7 +52,7 @@
     "object.values": "^1.1.2",
     "parcel-bundler": "^1.12.4",
     "prettier": "2.2.1",
-    "prismjs": "^1.22.0",
+    "prismjs": "^1.23.0",
     "ts-jest": "^25.5.1",
     "typescript": "^3.9.7",
     "urijs": "^1.19.4",
