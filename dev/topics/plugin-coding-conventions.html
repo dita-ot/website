@@ -6,7 +6,7 @@ description: 'To ensure custom plug-ins work well with the core toolkit code and
     the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding
     patterns.'
 index: '../toc.html'
-commit: '1ef36d2b1e93c366fb0c485985fcdaba5558ac6d'
+commit: '86ce3de926c1d422d3d5924b75e09844e7f75a43'
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -190,11 +190,16 @@ commit: '1ef36d2b1e93c366fb0c485985fcdaba5558ac6d'
             </tr>
           </tbody></table>
     </section>
-    <section class="section" id="ID__section_lnf_gsh_p4b"><h2 class="title sectiontitle">Match elements with their <code class="keyword markupname xmlatt">@class</code> attribute</h2>
+    <section class="section" id="ID__match-classes"><h2 class="title sectiontitle">Match elements with their <code class="keyword markupname xmlatt">@class</code> attribute</h2>
       
-      <p class="p">Use the <code class="keyword markupname xmlatt">@class</code> attribute to match elements in XPATH expression instead of element name. </p>
-      <div class="p">For example, instead of:<pre class="pre codeblock"><code>&lt;xsl:template match="p"/&gt;</code></pre></div>
-      <div class="p">use:<pre class="pre codeblock"><code>&lt;xsl:template match="*[contains(@class,' topic/p ')]"/&gt;</code></pre></div>
+      <p class="p">Use <code class="keyword markupname xmlatt">@class</code> attributes to match elements in XPATH expressions instead of element names.</p>
+      <div class="p">For example, instead of: <pre class="pre codeblock"><code>&lt;xsl:template match="p"/&gt;</code></pre></div>
+      <div class="p">use: <pre class="pre codeblock"><code>&lt;xsl:template match="*[contains(@class,' topic/p ')]"/&gt;</code></pre></div>
+      <p class="p">Specialization-aware processing uses these classes to distinguish the general class of elements to which the
+        current element belongs.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> Matching classes instead of elements ensures that the expression also applies to any specialized
+        elements as well as to their more general ancestors. This means you can define new markup without necessarily
+        requiring new processing rules.</div>
     </section>
 
     <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
