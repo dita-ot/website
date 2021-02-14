@@ -6,7 +6,7 @@ description: 'To ensure custom plug-ins work well with the core toolkit code and
     the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding
     patterns.'
 index: '../toc.html'
-commit: '9b039892275b5db0b73588f8983c83009515e611'
+commit: '1ef36d2b1e93c366fb0c485985fcdaba5558ac6d'
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -189,6 +189,12 @@ commit: '9b039892275b5db0b73588f8983c83009515e611'
               <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects images of all known types in the temporary directory.</td>
             </tr>
           </tbody></table>
+    </section>
+    <section class="section" id="ID__section_lnf_gsh_p4b"><h2 class="title sectiontitle">Match elements with their <code class="keyword markupname xmlatt">@class</code> attribute</h2>
+      
+      <p class="p">Use the <code class="keyword markupname xmlatt">@class</code> attribute to match elements in XPATH expression instead of element name. </p>
+      <div class="p">For example, instead of:<pre class="pre codeblock"><code>&lt;xsl:template match="p"/&gt;</code></pre></div>
+      <div class="p">use:<pre class="pre codeblock"><code>&lt;xsl:template match="*[contains(@class,' topic/p ')]"/&gt;</code></pre></div>
     </section>
 
     <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
