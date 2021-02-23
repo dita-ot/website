@@ -8,7 +8,7 @@ description: '
       3.4, the DITA-OT project provides an official Docker container image that includes everything you need to run the
       toolkit and publish DITA content from a containerized environment.'
 index: '../toc.html'
-commit: '65d76364267e35b86f0aa852604b61e2d53528a7'
+commit: '7eab14eb01ac11c75bc1ef5e123a2cfa72b31396'
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li class="active"><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -33,12 +33,12 @@ commit: '65d76364267e35b86f0aa852604b61e2d53528a7'
         directories from the host machine.</p>
     </section>
     <section class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>
-      <div class="p">To run the DITA-OT image, you will need to install Docker and log in to the GitHub Package Registry.
+      <div class="p">To run the DITA-OT image, you will need to install Docker and be able to access the GitHub Container Registry.
         <ul class="ul">
           <li class="li">To download Docker Desktop, you may be prompted to sign in with your Docker&nbsp;ID (or sign up to create
             one).</li>
-          <li class="li">To retrieve docker images from the GitHub Package Registry, you will also need a GitHub account.</li>
-        </ul></div>
+        </ul>
+      </div>
     </section>
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps multi-platform"><li class="li step stepexpand">
         <span class="ph cmd">Install Docker for your operating system.</span>
@@ -60,32 +60,11 @@ commit: '65d76364267e35b86f0aa852604b61e2d53528a7'
             example: <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">sudo</span> apt-get install docker-ce</code></pre></li>
         </ul>
       </li><li class="li step stepexpand">
-        <span class="ph cmd">Log in to the GitHub Package Registry.</span>
-        <ol type="a" class="ol substeps">
-          <li class="li substep substepexpand">
-            <span class="ph cmd">In your
-              <a class="xref" href="https://github.com/settings/tokens" target="_blank" rel="external noopener">GitHub profile
-                settings</a>, create a new personal access token with the <code class="ph codeph">read:packages</code> and
-                <code class="ph codeph">repo</code> scopes.</span>
-            <div class="itemgroup info">For more information, see
-              <a class="xref" href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line" target="_blank" rel="external noopener">Creating a personal access token for the command line</a>.</div>
-          </li>
-          <li class="li substep substepexpand">
-            <span class="ph cmd">On the command line, run the <span class="keyword cmdname">docker</span> command to log in with your GitHub
-              credentials.</span>
-            <div class="itemgroup stepxmp">
-              <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">docker</span> login docker.pkg.github.com -u <var class="keyword varname">USERNAME</var> -p <var class="keyword varname">PASSWORD/TOKEN</var></code></pre>
-            </div>
-            <div class="itemgroup info">For more information, see
-              <a class="xref" href="https://help.github.com/en/articles/configuring-docker-for-use-with-github-package-registry#authenticating-to-github-package-registry" target="_blank" rel="external noopener">Authenticating to GitHub Package Registry</a>.</div>
-          </li>
-        </ol>
-      </li><li class="li step stepexpand">
         <span class="ph cmd">To build output, map a host directory to a container volume and specify options for the
             <span class="keyword cmdname">dita</span> command.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> run -it \
-  -v /Users/<var class="keyword varname">username</var>/source:/src docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<span class="keyword">3.6</span> \
+  -v /Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">3.6</span> \
   -i /src/input.ditamap \
   -o /src/out \
   -f html5 -v</code></pre>
