@@ -5,7 +5,7 @@ title: 'Installing plug-ins in a Docker image'
 description: 'To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own
       Dockerfile and specify the official DITA-OT image as the basis for your image. '
 index: '../toc.html'
-commit: '87dfd001d599fab1e6921a6da20af2b5cbf4a398'
+commit: '62e8bc6472e1195a5d0849d243314c5633125395'
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li class="active"><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -23,7 +23,7 @@ commit: '87dfd001d599fab1e6921a6da20af2b5cbf4a398'
         <span class="ph cmd">Create a new <span class="ph filepath">Dockerfile</span> and specify the official DITA-OT image in the
             <span class="ph filepath">FROM</span> directive.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock language-dockerfile normalize-space show-line-numbers show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
+          <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
 FROM ghcr.io/dita-ot/dita-ot:3.6</code></pre>
         </div>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
@@ -31,14 +31,14 @@ FROM ghcr.io/dita-ot/dita-ot:3.6</code></pre>
           command from the container to install a custom plug-in, and specify the filename or URL of the plug-in’s
           distribution ZIP file.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock language-dockerfile normalize-space show-line-numbers show-whitespace"><code># Install a custom plug-in from a remote location:
+          <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Install a custom plug-in from a remote location:
 RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/3.4.1.zip</code></pre>
         </div>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
         <span class="ph cmd">You can also install custom plug-ins from the main DITA-OT plug-in registry at
           <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a>, or from your company plug-in registry.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock language-dockerfile normalize-space show-line-numbers show-whitespace"><code># Install from the registry at dita-ot.org/plugins:
+          <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Install from the registry at dita-ot.org/plugins:
 RUN dita --install org.dita-community.pdf-page-break</code></pre>
         </div>
       </li></ol></section>
