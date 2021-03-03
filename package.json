@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
