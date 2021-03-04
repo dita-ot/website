@@ -117,7 +117,7 @@ index: '../toc.html'
             <span class="keyword parmname">-i</span>
             <var class="keyword varname">file</var>
           </dt>
-          <dd class="dd pd" id="dita-command-properties__args.input.desc">Specifies the master file for your documentation project. This argument corresponds
+          <dd class="dd pd" id="dita-command-properties__args.input.desc">Specifies the main file for your documentation project. This argument corresponds
             to the common parameter <span class="keyword parmname">args.input</span>. Typically this is a DITA map, however it also can
             be a DITA topic if you want to transform a single DITA file. The path can be absolute, relative to
               <span class="keyword parmname">args.input.dir</span>, or relative to the current directory if
@@ -378,7 +378,8 @@ index: '../toc.html'
           <dd class="dd pd ddexpand">This option can be used by plug-in developers to measure performance. To run a conversion five times, for
             example, use <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>. The duration of each execution will appear in
             the console when the final transformation is complete.
-            <pre class="pre codeblock syntax-bash multi-platform"><code>$ <span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">docsrc/samples/sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>
+            <pre class="pre codeblock syntax-bash multi-platform"><code>$ <span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">docsrc/samples/sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
+       <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>
 1 11281ms
 2 4132ms
 3 3690ms

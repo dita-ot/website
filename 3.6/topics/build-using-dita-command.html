@@ -7,7 +7,7 @@ description: 'You can generate output using the dita command-line tool. Build pa
 index: '../toc.html'
 ---
 
-<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
   
   
@@ -28,7 +28,7 @@ index: '../toc.html'
                 common parameter <span class="keyword parmname">transtype</span>. Use the same values as for the
                   <span class="keyword parmname">transtype</span> build parameter, for example <span class="keyword option">html5</span> or
                   <span class="keyword option">pdf</span>.</p>
-              <div class="p" id="using-command-line-tool__d1250e274">You can create plug-ins to add new output formats; by default, the following values are
+              <div class="p" id="using-command-line-tool__d1181e290">You can create plug-ins to add new output formats; by default, the following values are
                 available:
                 
                 <ul class="ul">
@@ -67,7 +67,7 @@ index: '../toc.html'
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
-          <dd class="dd pd" id="using-command-line-tool__d1216e739">
+          <dd class="dd pd" id="using-command-line-tool__d1181e385">
             <p class="p">Specifies the path of the output directory; the path can be absolute or relative to the current
               directory.</p>
             <p class="p">This argument corresponds to the common parameter <span class="keyword parmname">output.dir</span>. By default, the output
@@ -155,7 +155,8 @@ index: '../toc.html'
           <dd class="dd pd ddexpand">This option can be used by plug-in developers to measure performance. To run a conversion five times, for
             example, use <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>. The duration of each execution will appear in
             the console when the final transformation is complete.
-            <pre class="pre codeblock syntax-bash multi-platform"><code>$ <span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">docsrc/samples/sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>
+            <pre class="pre codeblock syntax-bash multi-platform"><code>$ <span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">docsrc/samples/sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
+       <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>
 1 11281ms
 2 4132ms
 3 3690ms
