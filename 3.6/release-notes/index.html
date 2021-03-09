@@ -2,7 +2,8 @@
 # Generated from DITA source
 layout: base
 title: 'DITA Open Toolkit 3.6 Release Notes'
-description: 'DITA Open Toolkit 3.6 includes performance enhancements such
+description: 'DITA Open Toolkit 3.6.1 is a maintenance release that fixes issues
+      reported in DITA-OT 3.6, which includes performance enhancements such
             as processing in parallel and in memory, support for PDF changebars with Apache FOP, and an updated preview of features for the latest draft of the upcoming DITA 2.0
             standard, including the audio and video elements, and the
             new emphasis domain.'
@@ -14,7 +15,8 @@ index: '../toc.html'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.6</span> includes <span class="ph">performance enhancements such
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.6.1</span> is a maintenance release that fixes issues
+      reported in DITA-OT <span class="keyword">3.6</span>, which includes <span class="ph">performance enhancements such
             as processing in parallel and in memory, support for PDF changebars with Apache™ FOP, and an updated preview of features for the latest draft of the upcoming DITA 2.0
             standard, including the <code class="keyword markupname xmlelement">&lt;audio&gt;</code> and <code class="keyword markupname xmlelement">&lt;video&gt;</code> elements, and the
             new emphasis domain</span>.</p>
@@ -24,7 +26,7 @@ index: '../toc.html'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.6</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.6.1</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div>
   </div>
@@ -56,9 +58,110 @@ index: '../toc.html'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v3.6">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.6</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v3.6.1">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.6.1</span>
       
+    </h2>
+
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">3.6.1</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          <li class="li" id="v3.6.1__3656">In DITA-OT 3.6, builds failed with a NullPointerException when Ant targets in custom
+              <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> elements were run without passing references to the new Ant project by
+            setting the <code class="keyword markupname xmlatt">@inheritRefs</code> attribute on the <code class="keyword markupname xmlelement">&lt;antcall&gt;</code> to
+              <code class="ph codeph">true</code>. This case will no longer cause the build to fail, but custom plug-ins should still
+            set targets to inherit references to ensure that processing runs as expected.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3656" target="_blank" rel="external noopener">#3656</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3657" target="_blank" rel="external noopener">#3657</a>
+          </li>
+          <li class="li" id="v3.6.1__3659">The <code class="ph codeph">jsass</code> compiler used in the HTML5 plug-in build process up to DITA-OT 3.6
+            relied on LibSass, which has been deprecated in favor of Dart Sass and caused errors when building on the
+            64-bit extension of the ARM architecture. The SCSS source files are now converted to CSS using the official
+            Dart Sass compiler, which allows DITA-OT distribution builds to run on recent Macs and other ARM systems.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3659" target="_blank" rel="external noopener">#3659</a>
+          </li>
+          <li class="li" id="v3.6.1__3667">In DITA-OT 3.6, builds failed with a NullPointerException when an unset logger was called. A new
+            guard has been added to handle these cases more gracefully.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3667" target="_blank" rel="external noopener">#3667</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3706" target="_blank" rel="external noopener">#3706</a>
+          </li>
+          <li class="li" id="v3.6.1__3669">The <span class="keyword msgnum">DOTX037W</span> warning message that appears when source documents have no title
+            has been updated to clarify references to the fallback text that will be used for the HTML page title.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3669" target="_blank" rel="external noopener">#3669</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3670" target="_blank" rel="external noopener">#3670</a>
+          </li>
+          <li class="li" id="v3.6.1__3677">DITA-OT 3.6 failed with an IllegalArgumentException when maps contained topic references to
+            e-mail addresses or other peer resources that are not accessible at build time. Processing has been updated
+            to properly handle non-file references.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3677" target="_blank" rel="external noopener">#3677</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3698" target="_blank" rel="external noopener">#3698</a>
+          </li>
+          <li class="li" id="v3.6.1__3680">In DITA-OT 3.6, branch filtering with nested subtopics failed with an IllegalArgumentException:
+              <samp class="ph msgph">URI has a fragment component</samp>. Processing has been updated to correctly transform references
+            that contain anchors.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3680" target="_blank" rel="external noopener">#3680</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3696" target="_blank" rel="external noopener">#3696</a>
+          </li>
+          <li class="li" id="v3.6.1__3687">DITA-OT 3.6 in-memory processing calculated absolute paths incorrectly when merging maps. The
+            merge map and topic parsers have been updated to properly compute absolute locations.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3687" target="_blank" rel="external noopener">#3687</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3699" target="_blank" rel="external noopener">#3699</a>
+          </li>
+          <li class="li" id="v3.6.1__3688">DITA-OT 3.6 introduced a regression that prevented PDF2 custom font mappings from resolving
+            properly. The PDF pre-processor task has been updated with a delegating URI resolver to ensure that custom
+            resources in PDF plug-ins are applied as expected.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3688" target="_blank" rel="external noopener">#3688</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3695" target="_blank" rel="external noopener">#3695</a>
+          </li>
+          <li class="li" id="v3.6.1__3689">Custom rules used to adjust the names and locations of output files in the map-first
+            pre-processing routine were no longer applied in DITA-OT 3.6. Preprocessing has been updated to ensure that
+            stylesheets specified via the <span class="keyword parmname">result.rewrite-rule.xsl</span> parameter are correctly applied.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3689" target="_blank" rel="external noopener">#3689</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3697" target="_blank" rel="external noopener">#3697</a>
+          </li>
+          <li class="li" id="v3.6.1__3694">In DITA-OT 3.6, a regression prevented multi-level key references from resolving properly.
+            Processing has been updated to ensure that topic metadata is correctly copied between key definitions and
+            key references that point to other keys.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3694" target="_blank" rel="external noopener">#3694</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3701" target="_blank" rel="external noopener">#3701</a>
+          </li>
+          <li class="li" id="v3.6.1__ghcr">The GitHub Packages Docker registry used to publish DITA-OT Docker images prior to version 3.6
+            has been superseded by the GitHub Container Registry. The new registry offers anonymous access to public
+            container images, so you can use it without a GitHub account. As of DITA-OT 3.6.1, the official image is
+            published to the new registry at <a class="xref" href="https://ghcr.io" target="_blank" rel="external noopener">ghcr.io</a>.
+            If you’ve pulled from <code class="ph codeph">docker.pkg.github.com/dita-ot/dita-ot/dita-ot:<var class="keyword varname">version</var></code>
+            in the past, update your workflow to pull from
+            <code class="ph codeph">ghcr.io/dita-ot/dita-ot:<var class="keyword varname">version</var></code> instead.
+          </li>
+          <li class="li" id="v3.6.1__gh-action">The DITA-OT project now provides an official
+            <a class="xref" href="https://github.com/dita-ot/dita-ot-action" target="_blank" rel="external noopener">dita-ot-action</a> that can be used to publish documentation via
+            <a class="xref" href="https://github.com/features/actions" target="_blank" rel="external noopener">GitHub Actions</a> whenever your source files are changed.</li>
+          <li class="li" id="v3.6.1__docs"> The documentation for DITA Open Toolkit Release 3.6.1 provides corrections and improvements to
+            existing topics, along with new information in the following topics:
+            <ul class="ul">
+              <li class="li">
+                <a class="xref" href="../topics/using-github-actions.html" title="GitHub Actions are a CI/CD workflow mechanism attached to GitHub. Each action is an individual unit of functionality that can be combined with other GitHub Actions to create workflows, which are triggered in response to certain GitHub events. As of version 3.6.1, the DITA-OT project provides an official dita-ot-action that can be used as a step within a GitHub workflow to publish documentation as part of your CI/CD pipeline.">Running the dita command from a GitHub Action</a></li>
+              <li class="li">
+                <a class="xref" href="../topics/using-docker-images.html" title="Docker is a platform used to build, share, and run portable application containers. As of version 3.4, the DITA-OT project provides an official Docker container image that includes everything you need to run the toolkit and publish DITA content from a containerized environment.">Running the dita command from a Docker image</a></li>
+              <li class="li">
+                <a class="xref" href="../topics/creating-docker-images.html" title="To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own Dockerfile and specify the official DITA-OT image as the basis for your image.">Installing plug-ins in a Docker image</a></li>
+              <li class="li">
+                <a class="xref" href="../topics/plugin-coding-conventions.html" title="To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases, the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding patterns.">Plug-in coding conventions</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.6.1+is%3Aclosed" target="_blank" rel="external noopener">3.6.1 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.6...3.6.1" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.6">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">3.6</span>
+      <span class="ph small text-muted">released December 19, 2020</span>
     </h2>
     
     <div class="body refbody">
@@ -83,7 +186,7 @@ index: '../toc.html'
       
       <p class="p">DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing. The Cache Store can be
         activated by setting the <span class="keyword parmname">store-type</span> parameter to <span class="keyword option">memory</span>. 
-        <span class="ph" id="v3.6__d1187e79">In-memory processing provides performance advantages in I/O bound environments such as cloud
+        <span class="ph" id="v3.6__d1244e79">In-memory processing provides performance advantages in I/O bound environments such as cloud
           computing platforms, where processing time depends primarily on how long it takes to read and write temporary
           files.</span> For more information, see
         <a class="xref" href="../reference/store-api.html" title="DITA-OT originally assumed resources would be available on disk and available from file paths. Recent versions added URI input, so HTTPS resources could be used, but temporary and output resources were still file-based. DITA-OT 3.6 introduces a new Store API that can process temporary resources in memory instead of writing them to disk.">Store API – Processing in memory</a>.</p>
