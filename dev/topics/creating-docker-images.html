@@ -5,7 +5,7 @@ title: 'Installing plug-ins in a Docker image'
 description: 'To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own
       Dockerfile and specify the official DITA-OT image as the basis for your image. '
 index: '../toc.html'
-commit: '2ea3f6619e0c8c5bc986ac4cfd1c8a72125cd835'
+commit: '5070ecee150018511a4e8d4a728792b7663a142b'
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li class="active"><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -24,7 +24,7 @@ commit: '2ea3f6619e0c8c5bc986ac4cfd1c8a72125cd835'
             <span class="ph filepath">FROM</span> directive.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
-FROM ghcr.io/dita-ot/dita-ot:3.6</code></pre>
+FROM ghcr.io/dita-ot/dita-ot:3.6.1</code></pre>
         </div>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
         <span class="ph cmd">You can extend your image with a <code class="ph codeph">RUN</code> declaration that runs the <span class="keyword cmdname">dita</span>
@@ -48,7 +48,7 @@ RUN dita --install org.dita-community.pdf-page-break</code></pre>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample Dockerfile with custom plug-ins: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/docker/Dockerfile</span></figcaption>
         
         <pre class="pre codeblock language-dockerfile normalize-space show-line-numbers show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
-FROM ghcr.io/dita-ot/dita-ot:3.6
+FROM ghcr.io/dita-ot/dita-ot:3.6.1
 
 # Install a custom plug-in from a remote location:
 RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/3.4.1.zip
