@@ -16,6 +16,12 @@
   }
 }
 
+.navbar-brand {
+  svg {
+    margin-right: 0.5rem;
+  }
+}
+
 .navbar-nav {
   .nav-item {
     padding-bottom: $navbar-padding-y;
