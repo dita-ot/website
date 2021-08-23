@@ -2,6 +2,10 @@
 
 // Import Prism CSS for codeblock syntax highlighting
 @import 'prism.css';
+// Remove Prism's default background for inline code
+:not(pre) > code[class*='language-plaintext'] {
+  background: inherit;
+}
 
 // Common code rules (imported to other classes)
 @mixin codeclass {
