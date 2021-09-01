@@ -44,7 +44,7 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "4.0.0",
     "husky": "^7.0.1",
-    "jest": "^27.0.6",
+    "jest": "^27.1.0",
     "lint-staged": "11.1.2",
     "object.values": "^1.1.4",
     "parcel-bundler": "^1.9.4",
