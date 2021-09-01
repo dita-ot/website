@@ -19,7 +19,9 @@
     "format:style": "prettier --write \"**/*.scss\"",
     "install": "parcel build _js/plugins.js _js/main.js --out-dir js --public-url /js",
     "lint-staged": "lint-staged",
-    "test": "jest && npm run test:script",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "test": "jest && npm run test:script && npm run test:style",
+    "test:style": "stylelint \"css/*.scss\" ",
     "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\"",
     "prepare": "husky install"
   },
@@ -27,6 +29,13 @@
     "*.{html,js,json,md,scss,yaml,yml}": [
       "prettier --write"
     ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-twbs-bootstrap/scss",
+      "stylelint-config-prettier"
+    ],
+    "rules": {}
   },
   "dependencies": {
     "jquery": "^3.6.0",
@@ -50,6 +59,9 @@
     "parcel-bundler": "^1.9.4",
     "prettier": "2.3.2",
     "prismjs": "^1.24.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-twbs-bootstrap": "^2.2.3",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.2",
     "urijs": "^1.19.7",
