@@ -3,8 +3,12 @@
 // Common ToC styles shared by pre-2.3 static ToCs & dynamic ToCs
 // Select <nav> element based on new (Bootstrap 4) column classes
 
+// pre-2.3:
 nav.col-lg-3,
-nav[role='toc'] {
+// 2.3 – 3.6:
+nav[role='toc'],
+// as of 3.7:
+nav.toc {
   @extend .col-lg-3;
   display: block;
   padding-top: 10px;
@@ -51,7 +55,10 @@ nav[role='toc'] {
   opacity: 0.5;
 }
 
-nav[role='toc'] {
+// 2.3 – 3.6:
+nav[role='toc'],
+// as of 3.7:
+nav.toc {
   .controller {
     cursor: pointer;
     display: inline-block;
