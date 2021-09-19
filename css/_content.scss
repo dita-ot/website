@@ -13,16 +13,16 @@ main#content {
 }
 
 .anchor-link {
-  opacity: 0;
   text-decoration: none;
+  opacity: 0;
 
   &:hover {
-    opacity: 1 !important;
+    opacity: 1;
   }
 
   &::after {
-    content: '#';
     padding-left: 0.5em;
+    content: '#';
   }
 }
 

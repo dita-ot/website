@@ -7,10 +7,10 @@
   border-bottom: none;
 
   .platform-tab {
-    border-top: solid 4px transparent;
-    border-radius: 0px;
-    border-bottom-color: transparent;
     padding: 0.2rem 0.6rem;
+    border-top: solid 4px transparent;
+    border-bottom-color: transparent;
+    border-radius: 0;
     &.active {
       border-top-color: $link-color;
       border-bottom-color: transparent;
@@ -21,8 +21,8 @@
   margin-bottom: $spacer;
 
   > .tab-pane {
-    border: 1px solid $pre-border-color;
     padding: $spacer;
+    border: 1px solid $pre-border-color;
 
     > .tab-pane-wrapper {
       //margin: $spacer;

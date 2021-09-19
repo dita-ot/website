@@ -8,8 +8,8 @@
 }
 
 .navbar {
-  padding-bottom: 0;
   padding-top: 0;
+  padding-bottom: 0;
 
   svg {
     fill: $navbar-dark-color;
@@ -24,10 +24,10 @@
 
 .navbar-nav {
   .nav-item {
-    padding-bottom: $navbar-padding-y;
     padding-top: $navbar-padding-y;
+    padding-bottom: $navbar-padding-y;
 
-    @include hover-focus {
+    @include hover-focus() {
       background-color: $navbar-dark-link-hover-bg;
     }
   }

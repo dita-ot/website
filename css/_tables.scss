@@ -12,13 +12,13 @@
 .simpletable {
   @extend .table;
   @extend .table-sm;
-  font-size: $font-size-sm;
   margin: $spacer 0;
+  font-size: $font-size-sm;
 }
 
 .strow {
-  border-bottom: $table-border-width solid $table-border-color;
   border-top: $table-border-width solid $table-border-color;
+  border-bottom: $table-border-width solid $table-border-color;
 }
 
 caption {

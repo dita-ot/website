@@ -10,6 +10,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "check": "prettier --check \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
+    "fix:style": "stylelint \"css/*.scss\" --fix",
     "fmt": "npm run format",
     "format": "npm run format:config && npm run format:docs && npm run format:html && npm run format:script && npm run format:style",
     "format:config": "prettier --write \"**/*.{json,yaml,yml}\"",
@@ -19,14 +20,38 @@
     "format:style": "prettier --write \"**/*.scss\"",
     "install": "parcel build _js/plugins.js _js/main.js --out-dir js --public-url /js",
     "lint-staged": "lint-staged",
-    "test": "jest && npm run test:script",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "test": "jest && npm run test:script && npm run test:style",
+    "test:style": "stylelint \"css/*.scss\" ",
     "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\"",
     "prepare": "husky install"
   },
   "lint-staged": {
     "*.{html,js,json,md,scss,yaml,yml}": [
       "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint"
     ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-twbs-bootstrap/scss",
+      "stylelint-config-prettier"
+    ],
+    "ignoreFiles": [
+      "css/bootstrap/**/*.scss"
+    ],
+    "rules": {
+      "indentation": 2,
+      "no-descending-specificity": null,
+      "no-irregular-whitespace": null,
+      "selector-class-pattern": null,
+      "selector-max-id": 1,
+      "selector-max-type": 3,
+      "selector-no-qualifying-type": null,
+      "string-quotes": "single"
+    }
   },
   "dependencies": {
     "jquery": "^3.6.0",
@@ -50,6 +75,9 @@
     "parcel-bundler": "^1.9.4",
     "prettier": "2.3.2",
     "prismjs": "^1.24.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-twbs-bootstrap": "^2.2.3",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.2",
     "urijs": "^1.19.7",
