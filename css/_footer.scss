@@ -1,10 +1,10 @@
 // Sass partial for additional footer styles
 
 footer {
+  padding: $spacer 0;
+  font-size: $font-size-sm;
   background-color: $jumbotron-bg;
   border-top: 1px solid $legend-border-color;
-  font-size: $font-size-sm;
-  padding: $spacer 0;
 
   a,
   a:hover {

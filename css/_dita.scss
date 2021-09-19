@@ -2,8 +2,8 @@
 // See related partials for code, notes, tables, UI & XML domains
 
 .lq {
-  color: $text-muted;
   font-style: italic;
+  color: $text-muted;
 }
 
 // Add bottom margin to nested lists & short descriptions that appear in abstracts
@@ -25,8 +25,8 @@ div.shortdesc {
 figcaption {
   @extend caption;
   @extend .figure-caption;
-  margin: $table-cell-padding 0;
   padding: 0;
+  margin: $table-cell-padding 0;
 }
 
 // Apply Bootstrap's <p> margins to definition lists

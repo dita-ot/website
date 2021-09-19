@@ -4,10 +4,10 @@
 
 .glossAbbreviation,
 .glossAcronym {
-  color: $gray-600;
+  margin: $spacer 1em;
   font-size: $font-size-base;
   font-style: italic;
-  margin: $spacer 1em;
+  color: $gray-600;
 
   &::before {
     content: 'Abbreviation: “';

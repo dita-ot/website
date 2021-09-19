@@ -10,48 +10,48 @@ nav[role='toc'],
 // as of 3.7:
 nav.toc {
   @extend .col-lg-3;
+  top: 0;
   display: block;
-  padding-top: 10px;
   max-height: 100vh;
+  padding-top: 10px;
   overflow-y: scroll;
   @media screen and (min-width: 992px) {
     position: sticky;
   }
-  top: 0px;
 
   ul {
     display: block;
   }
 
   li {
-    display: block;
     position: relative;
+    display: block;
 
     > a {
       display: block;
-      margin: 0;
       padding: 3px 20px;
+      margin: 0;
 
-      @include hover-focus {
+      @include hover-focus() {
         @include border-radius($badge-border-radius);
-        background-color: $gray-100;
         text-decoration: none;
+        background-color: $gray-100;
       }
     }
   }
 
   .active > a {
     @include border-radius($badge-border-radius);
-    background-color: $navbar-dark-brand-color;
     color: $link-hover-color;
+    background-color: $navbar-dark-brand-color;
   }
 }
 
 // Dynamic ToC (after v2.2.2)
 
 @mixin controller($symbol) {
-  content: $symbol;
   font-size: 0.5em;
+  content: $symbol;
   opacity: 0.5;
 }
 
@@ -60,27 +60,27 @@ nav[role='toc'],
 // as of 3.7:
 nav.toc {
   .controller {
-    cursor: pointer;
-    display: inline-block;
-    height: 1em;
-    left: -0.8em;
-    padding-left: 0;
     position: absolute;
+    left: -0.8em;
+    display: inline-block;
     width: 1em;
+    height: 1em;
+    padding-left: 0;
+    cursor: pointer;
   }
 
   ul {
-    margin-left: 10px;
     padding-left: 0;
+    margin-left: 10px;
   }
 
   li {
     margin-left: 2px;
 
     > a {
-      margin-left: -13px;
-      padding-left: 13px;
       padding-right: 0;
+      padding-left: 13px;
+      margin-left: -13px;
     }
 
     &.active {
@@ -116,7 +116,7 @@ nav.toc {
 // Static page nav headers
 
 .nav-header {
-  color: $gray-light;
-  font-weight: bold;
   margin: 5px;
+  font-weight: 700; // bold
+  color: $gray-light;
 }
