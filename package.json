@@ -10,6 +10,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "check": "prettier --check \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
+    "fix:style": "stylelint \"css/*.scss\" --fix",
     "fmt": "npm run format",
     "format": "npm run format:config && npm run format:docs && npm run format:html && npm run format:script && npm run format:style",
     "format:config": "prettier --write \"**/*.{json,yaml,yml}\"",
@@ -28,6 +29,9 @@
   "lint-staged": {
     "*.{html,js,json,md,scss,yaml,yml}": [
       "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint"
     ]
   },
   "stylelint": {
@@ -35,7 +39,19 @@
       "stylelint-config-twbs-bootstrap/scss",
       "stylelint-config-prettier"
     ],
-    "rules": {}
+    "ignoreFiles": [
+      "css/bootstrap/**/*.scss"
+    ],
+    "rules": {
+      "indentation": 2,
+      "no-descending-specificity": null,
+      "no-irregular-whitespace": null,
+      "selector-class-pattern": null,
+      "selector-max-id": 1,
+      "selector-max-type": 3,
+      "selector-no-qualifying-type": null,
+      "string-quotes": "single"
+    }
   },
   "dependencies": {
     "jquery": "^3.6.0",
