@@ -20,11 +20,11 @@
     "format:style": "prettier --write \"**/*.scss\"",
     "install": "parcel build _js/plugins.js _js/main.js --out-dir js --public-url /js",
     "lint-staged": "lint-staged",
+    "prepare": "husky install",
     "stylelint-check": "stylelint-config-prettier-check",
     "test": "jest && npm run test:script && npm run test:style",
-    "test:style": "stylelint \"css/*.scss\" ",
     "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\"",
-    "prepare": "husky install"
+    "test:style": "stylelint \"css/*.scss\" "
   },
   "lint-staged": {
     "*.{html,js,json,md,scss,yaml,yml}": [
@@ -43,14 +43,12 @@
       "css/bootstrap/**/*.scss"
     ],
     "rules": {
-      "indentation": 2,
       "no-descending-specificity": null,
       "no-irregular-whitespace": null,
       "selector-class-pattern": null,
       "selector-max-id": 1,
       "selector-max-type": 3,
-      "selector-no-qualifying-type": null,
-      "string-quotes": "single"
+      "selector-no-qualifying-type": null
     }
   },
   "dependencies": {
