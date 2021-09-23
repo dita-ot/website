@@ -72,7 +72,7 @@
     "object.values": "^1.1.4",
     "parcel-bundler": "^1.9.4",
     "prettier": "2.3.2",
-    "prismjs": "^1.24.1",
+    "prismjs": "^1.25.0",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-twbs-bootstrap": "^2.2.3",
