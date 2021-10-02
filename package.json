@@ -40,7 +40,9 @@
       "stylelint-config-prettier"
     ],
     "ignoreFiles": [
-      "css/bootstrap/**/*.scss"
+      "css/bootstrap/**/*.scss",
+      "css/main.scss",
+      "js/*.css"
     ],
     "rules": {
       "no-descending-specificity": null,
