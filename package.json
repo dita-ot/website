@@ -9,7 +9,7 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "check": "prettier --check \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
+    "check": "npm run prettier-check && npm run stylelint-check && npm run stylelint",
     "fix:style": "stylelint \"css/*.scss\" --fix",
     "fmt": "npm run format",
     "format": "npm run format:config && npm run format:docs && npm run format:html && npm run format:script && npm run format:style",
@@ -21,10 +21,12 @@
     "install": "parcel build _js/plugins.js _js/main.js --out-dir js --public-url /js",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
+    "prettier": "prettier --write \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
+    "prettier-check": "prettier --check \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
+    "stylelint": "stylelint \"css/*.scss\"",
     "stylelint-check": "stylelint-config-prettier-check",
-    "test": "jest && npm run test:script && npm run test:style",
-    "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\"",
-    "test:style": "stylelint \"css/*.scss\" "
+    "test": "jest && npm run test:script && npm run stylelint",
+    "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\""
   },
   "lint-staged": {
     "*.{html,js,json,md,scss,yaml,yml}": [
