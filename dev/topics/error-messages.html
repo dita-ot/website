@@ -1,13 +1,14 @@
 ---
 # Generated from DITA source
-layout: base
+layout: 'base'
 title: 'DITA-OT error messages'
 description: 'This topic lists each error message generated
     by the toolkit and provides additional information that might be helpful in understanding and resolving the error
     condition. If your toolkit installation includes custom plug-ins that define additional messages, you can add to
     this list by rebuilding the DITA-OT documentation.'
 index: '../toc.html'
-commit: '65d76364267e35b86f0aa852604b61e2d53528a7'
+commit: '0e9eba00a841e8fdb48612caaf00f857274de1e1'
+src: 'topics/error-messages.xml'
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li><a href="../topics/logging.html">Logging</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li class="active"><a href="../topics/error-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Command line help</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Speeding up builds</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="msgs__title"><h1 class="title topictitle1" id="msgs__title">DITA-OT error messages</h1><div class="body refbody"><p class="shortdesc">This topic lists each error message generated
@@ -19,22 +20,22 @@ commit: '65d76364267e35b86f0aa852604b61e2d53528a7'
       <p class="p">The toolkit uses the following severity scale:</p>
       <dl class="dl" id="msgs__severity-levels">
         
-          <dt class="dt dlterm">Info (I)</dt>
+          <dt class="dt dlterm" id="info-(i)">Info (I)</dt>
           <dd class="dd">Informational messages highlight the progress of transformation and call attention to conditions of which
             you should be aware. For example, draft comments are enabled and will be rendered in the output.</dd>
         
         
-          <dt class="dt dlterm">Warning (W)</dt>
+          <dt class="dt dlterm" id="warning-(w)">Warning (W)</dt>
           <dd class="dd">The toolkit encountered a problem that should be corrected. Processing will continue, but the output might
             not be as expected.</dd>
         
         
-          <dt class="dt dlterm">Error (E)</dt>
+          <dt class="dt dlterm" id="error-(e)">Error (E)</dt>
           <dd class="dd">The toolkit encountered a more severe problem, and the output is affected. For example, some content is
             missing or invalid, or the content is not rendered in the output</dd>
         
         
-          <dt class="dt dlterm">Fatal (F)</dt>
+          <dt class="dt dlterm" id="fatal-(f)">Fatal (F)</dt>
           <dd class="dd">The toolkit encountered a severe condition, processing stopped, and no output is generated.</dd>
         
       </dl>

@@ -1,13 +1,14 @@
 ---
 # Generated from DITA source
-layout: base
+layout: 'base'
 title: 'DITA-OT error messages'
 description: 'This topic lists each error message generated
     by the toolkit and provides additional information that might be helpful in understanding and resolving the error
     condition. If your toolkit installation includes custom plug-ins that define additional messages, you can add to
     this list by rebuilding the DITA-OT documentation.'
 index: '../toc.html'
-commit: 'b843f6a696638da40a9512d81a0703540e94f15e'
+commit: '0e9eba00a841e8fdb48612caaf00f857274de1e1'
+src: 'topics/error-messages-details.xml'
 ---
 
 <nav role="toc" class="col-lg-3"><ul></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -23,22 +24,22 @@ commit: 'b843f6a696638da40a9512d81a0703540e94f15e'
       <p class="p">The toolkit uses the following severity scale:</p>
       <dl class="dl" id="errormessages__severity-levels">
         
-          <dt class="dt dlterm">Info (I)</dt>
+          <dt class="dt dlterm" id="info-(i)">Info (I)</dt>
           <dd class="dd">Informational messages highlight the progress of transformation and call attention to conditions of which
             you should be aware. For example, draft comments are enabled and will be rendered in the output.</dd>
         
         
-          <dt class="dt dlterm">Warning (W)</dt>
+          <dt class="dt dlterm" id="warning-(w)">Warning (W)</dt>
           <dd class="dd">The toolkit encountered a problem that should be corrected. Processing will continue, but the output might
             not be as expected.</dd>
         
         
-          <dt class="dt dlterm">Error (E)</dt>
+          <dt class="dt dlterm" id="error-(e)">Error (E)</dt>
           <dd class="dd">The toolkit encountered a more severe problem, and the output is affected. For example, some content is
             missing or invalid, or the content is not rendered in the output</dd>
         
         
-          <dt class="dt dlterm">Fatal (F)</dt>
+          <dt class="dt dlterm" id="fatal-(f)">Fatal (F)</dt>
           <dd class="dd">The toolkit encountered a severe condition, processing stopped, and no output is generated.</dd>
         
       </dl>
