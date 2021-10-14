@@ -6,7 +6,7 @@ description: 'In DITA-OT 2.1, the insertVariable template was deprecated for PDF
     should be replaced with the getVariable template. Various dita.out.map.*
     targets have been deprecated in favor of updated dita.map.* equivalents.'
 index: '../toc.html'
-commit: '0e9eba00a841e8fdb48612caaf00f857274de1e1'
+commit: '7386c7837a3d71eeadfd01e60fb6967f7c6454a0'
 src: 'topics/migrating-to-2.1.dita'
 ---
 
@@ -69,9 +69,9 @@ src: 'topics/migrating-to-2.1.dita'
       </ul>
       <p class="p">Calls to that template will result in warnings in the build log.</p>
       <p class="p">To update your plug-in, make the following changes:</p>
-      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="<span style="text-decoration:line-through" class="ph line-through">insertVariable</span><strong class="ph b">getVariable</strong>"&gt;
-  &lt;xsl:with-param name="<span style="text-decoration:line-through" class="ph line-through">theVariableID</span><strong class="ph b">id</strong>" select="<var class="keyword varname">var-id</var>"/&gt;
-  &lt;xsl:with-param name="<span style="text-decoration:line-through" class="ph line-through">theParameters</span><strong class="ph b">params</strong>"&gt;
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="<span class="ph line-through">insertVariable</span><strong class="ph b">getVariable</strong>"&gt;
+  &lt;xsl:with-param name="<span class="ph line-through">theVariableID</span><strong class="ph b">id</strong>" select="<var class="keyword varname">var-id</var>"/&gt;
+  &lt;xsl:with-param name="<span class="ph line-through">theParameters</span><strong class="ph b">params</strong>"&gt;
     <var class="keyword varname">params</var>
   &lt;/xsl:with-param&gt;
 &lt;/xsl:call-template&gt;</code></pre>

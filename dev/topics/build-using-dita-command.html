@@ -5,7 +5,7 @@ title: 'Building output using the dita command'
 description: 'You can generate output using the dita command-line tool. Build parameters can be
     specified on the command line or with .properties files.'
 index: '../toc.html'
-commit: '0e9eba00a841e8fdb48612caaf00f857274de1e1'
+commit: '7386c7837a3d71eeadfd01e60fb6967f7c6454a0'
 src: 'topics/build-using-dita-command.dita'
 ---
 
@@ -16,7 +16,7 @@ src: 'topics/build-using-dita-command.dita'
   <div class="body taskbody"><p class="shortdesc">You can generate output using the <span class="keyword cmdname">dita</span> command-line tool. Build parameters can be
     specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
     
-    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="li step p">
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="ol steps"><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
         <div class="itemgroup info"><pre class="pre codeblock syntax-bash"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> <span class="ph">[<var class="keyword varname">options</var>]</span></code></pre>
           <p class="p">where:</p>
@@ -30,7 +30,7 @@ src: 'topics/build-using-dita-command.dita'
                 common parameter <span class="keyword parmname">transtype</span>. Use the same values as for the
                   <span class="keyword parmname">transtype</span> build parameter, for example <span class="keyword option">html5</span> or
                   <span class="keyword option">pdf</span>.</p>
-              <div class="p" id="using-command-line-tool__d1180e290">You can create plug-ins to add new output formats; by default, the following values are
+              <div class="p" id="using-command-line-tool__d1183e290">You can create plug-ins to add new output formats; by default, the following values are
                 available:
                 
                 <ul class="ul">
@@ -69,7 +69,7 @@ src: 'topics/build-using-dita-command.dita'
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
-          <dd class="dd pd" id="using-command-line-tool__d1180e385">
+          <dd class="dd pd" id="using-command-line-tool__d1183e385">
             <p class="p">Specifies the path of the output directory; the path can be absolute or relative to the current
               directory.</p>
             <p class="p">This argument corresponds to the common parameter <span class="keyword parmname">output.dir</span>. By default, the output
@@ -210,7 +210,7 @@ src: 'topics/build-using-dita-command.dita'
             specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
             directory).</p>
         </div>
-      </div></section>
+      </div></div></section>
     
     <section class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
       <p class="p">For example, from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, run:</p>
