@@ -1,10 +1,11 @@
 ---
 # Generated from DITA source
-layout: base
+layout: 'base'
 title: 'Customizing generated text'
 description: 'Generated text is the term for strings that are automatically added by the build, such as "Note" before the
     contents of a note element.'
 index: '../toc.html'
+src: 'topics/plugin-addgeneratedtext.dita'
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a><ul class="nav nav-list"><li><a href="../topics/globalization-support.html">Globalization support</a></li><li class="active"><a href="../topics/plugin-addgeneratedtext.html">Customizing generated text</a></li><li><a href="../topics/globalization-languages.html">Supported languages</a></li></ul></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -28,17 +29,35 @@ index: '../toc.html'
         </ul></div>
       <dl class="dl">
         
-          <dt class="dt dlterm"><code class="ph codeph">dita.xsl.strings</code></dt>
+          <dt class="dt dlterm" id="dita.xsl.strings"><code class="ph codeph">dita.xsl.strings</code></dt>
           <dd class="dd">Add new strings to generated text file. </dd>
         
       </dl>
+      <div class="note note note_note"><span class="note__title">Note:</span> There are two different XML structures for adding new or modifying existing strings. Both can be used with
+        the latest DITA-OT. The new structure (root element <code class="keyword markupname xmlelement">&lt;vars&gt;</code>) has the benefit to add custom
+        parameters to the string, such as the current page number, but the old structure (root element
+          <code class="keyword markupname xmlelement">&lt;strings&gt;</code>) is still valid. For example, the old structure is still used in the
+          <strong class="ph b">org.dita.base</strong> plugin and the new structure is used in <strong class="ph b">org.dita.pdf2</strong>. The following code snippets
+        represent the same information in the old and the new structure. If you are interested in the capabilities of
+        the parameter mechanism, please have a look at the XML files stored in
+          <span class="ph filepath">org.dita.pdf2\cfg\common\vars</span>.
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;strings xml:lang="en-US"&gt;
+  &lt;str name="String1"&gt;English generated text&lt;/str&gt;
+&lt;/strings&gt;</code></pre>
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;vars xmlns="http://www.idiominc.com/opentopic/vars"&gt;
+  &lt;variable id="String1"&gt;English generated text&lt;/variable&gt;
+&lt;/vars&gt;</code></pre>
+      </div>
     </section>
     <div class="example"><h2 class="title sectiontitle">Example: adding new strings</h2>
       
       <p class="p">First, copy the file <span class="ph filepath">xsl/common/strings.xml</span> from the base plug-in directory
           <span class="ph filepath">plugins/org.dita.base</span> to your plug-in, and edit it to contain the languages that you are
         providing translations for ("en-US" must be present). For this sample, copy the file into your plug-in as
-          <span class="ph filepath">xsl/my-new-strings.xml</span>. The new strings file will look something like this:</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          <span class="ph filepath">xsl/my-new-strings.xml</span>. The new strings file will look something like this:</p>
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!-- Provide strings for my plug-in; this plug-in supports
      English, Icelandic, and Russian. --&gt;
 &lt;langlist&gt;
@@ -52,17 +71,20 @@ index: '../toc.html'
       <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> from the base plug-in directory
           <span class="ph filepath">plugins/org.dita.base</span> to your plug-in, and replace the content with your own strings (be
         sure to give them unique name attributes). Do the same for each language that you are providing a translation
-        for. For example, the file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+        for. For example, the file <span class="ph filepath">mystring-en-us.xml</span> might contain:</p>
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;strings xml:lang="en-US"&gt;
   &lt;str name="String1"&gt;English generated text&lt;/str&gt;
   &lt;str name="Another String"&gt;Another String in English&lt;/str&gt;
 &lt;/strings&gt;</code></pre>
-      <p class="p">Use the following extension code to include your strings in the set of generated text: </p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.strings"&gt;
+      <p class="p">Use the following extension code to include your strings in the set of generated text:</p>
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.strings"&gt;
   &lt;feature extension="dita.xsl.strings" file="xsl/my-new-strings.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
       <p class="p">The string is now available to the "getVariable" template used in many DITA-OT XSLT files. For example, if
         processing in a context where the xml:lang value is "en-US", the following call would return "Another String in
-        English":</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
+        English":</p>
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
   &lt;xsl:with-param name="id" select="'Another String'"/&gt;
 &lt;/xsl:call-template&gt;</code></pre>
       <div class="note note note_note"><span class="note__title">Note:</span> If two plug-ins define the same string, the results will be non-deterministic, so multiple plug-ins should
@@ -73,12 +95,13 @@ index: '../toc.html'
       
       <p class="p">The process for modifying existing generated text is exactly the same as for adding new text, except that the
         strings you provide override values that already exist. To begin, set up the
-          <span class="ph filepath">xsl/my-new-strings.xml</span> file in your plug-in as in the previous example. </p>
+          <span class="ph filepath">xsl/my-new-strings.xml</span> file in your plug-in as in the previous example.</p>
       <p class="p">Next, copy the file <span class="ph filepath">xsl/common/strings-en-us.xml</span> from the base plug-in directory
           <span class="ph filepath">plugins/org.dita.base</span> to your plug-in, and choose the strings you wish to change (be sure
         to leave the name attribute unchanged, because this is the key used to look up the string). Create a strings
         file for each language that needs to modify existing strings. For example, the new file
-          <span class="ph filepath">mystring-en-us.xml</span> might contain:</p><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+          <span class="ph filepath">mystring-en-us.xml</span> might contain:</p>
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;strings xml:lang="en-US"&gt;
   &lt;str name="Figure"&gt;Fig&lt;/str&gt;
   &lt;str name="Draft comment"&gt;ADDRESS THIS DRAFT COMMENT&lt;/str&gt;
