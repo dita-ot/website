@@ -1,11 +1,12 @@
 ---
 # Generated from DITA source
-layout: base
+layout: 'base'
 title: 'Arguments and options for the dita command'
 description: 'The dita command takes mandatory arguments to process DITA content. Subcommands can be
     used to manage plug-ins, or print information about the current configuration. A series of options are available to
     modify the command behavior or specify additional configuration parameters.'
 index: '../toc.html'
+src: 'parameters/dita-command-arguments.dita'
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a><ul class="nav nav-list"><li class="active"><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li></ul></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -111,9 +112,9 @@ index: '../toc.html'
       <p class="p">Each transformation requires you to specify at least the file to transform and the desired output format.</p>
       <dl class="dl parml">
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--input=file">
             <span class="keyword parmname">--input</span>=<var class="keyword varname">file</var></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-i-file">
             <span class="keyword parmname">-i</span>
             <var class="keyword varname">file</var>
           </dt>
@@ -124,9 +125,9 @@ index: '../toc.html'
               <span class="keyword parmname">args.input.dir</span> is not defined.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--format=name">
             <span class="keyword parmname">--format</span>=<var class="keyword varname">name</var></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-f-name">
             <span class="keyword parmname">-f</span>
             <var class="keyword varname">name</var>
           </dt>
@@ -174,26 +175,26 @@ index: '../toc.html'
       
       <dl class="dl parml">
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="deliverables-file">
             <span class="keyword parmname">deliverables</span>
             <var class="keyword varname">file</var></dt>
           <dd class="dd pd">Show a list of the available deliverables in the specified project <var class="keyword varname">file</var>.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="install-{-id-|-url-|-file-}">
             <span class="keyword parmname">install</span>
             <var class="keyword varname">{ ID | URL | file }</var></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--install={-id-|-url-|-file-}">
             <span class="keyword parmname">--install</span>=<var class="keyword varname">{ ID | URL | file }</var></dt>
           <dd class="dd pd">Install a single plug-in <var class="keyword varname">ID </var>from the registry at
             <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a> (or a local registry), from a remote <var class="keyword varname">URL</var>, or a
             local ZIP <var class="keyword varname">file</var>.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="install">
             <span class="keyword parmname">install</span>
           </dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--install">
             <span class="keyword parmname">--install</span>
           </dt>
           <dd class="dd pd"><span class="ph">If no <var class="keyword varname">ID</var>, <var class="keyword varname">URL</var>, or
@@ -206,11 +207,11 @@ index: '../toc.html'
                 ID.</span></dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="uninstall-id">
             <span class="keyword parmname">uninstall</span>
             <var class="keyword varname">ID</var>
           </dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--uninstall=id">
             <span class="keyword parmname">--uninstall</span>=<var class="keyword varname">ID</var>
           </dt>
           <dd class="dd pd">Remove the plug-in with the specified <var class="keyword varname">ID</var>.</dd>
@@ -222,29 +223,29 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="plugins">
             <span class="keyword parmname">plugins</span>
           </dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--plugins">
             <span class="keyword parmname">--plugins</span>
           </dt>
           <dd class="dd pd">Show a list of the currently installed plug-ins.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="transtypes">
             <span class="keyword parmname">transtypes</span>
           </dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--transtypes">
             <span class="keyword parmname">--transtypes</span>
           </dt>
           <dd class="dd pd">Show a list of the available output formats (transformation types).</dd>
           <dd class="dd pd ddexpand">The entries in this list may be passed as values to the <span class="keyword parmname">--format</span> argument.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="version">
             <span class="keyword parmname">version</span>
           </dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--version">
             <span class="keyword parmname">--version</span>
           </dt>
           <dd class="dd pd">Print version information and exit.</dd>
@@ -272,9 +273,9 @@ index: '../toc.html'
       
       <dl class="dl parml" id="dita-command-properties__dita_build_options">
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--debug">
             <span class="keyword parmname">--debug</span></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-d">
             <span class="keyword parmname">-d</span>
           </dt>
           <dd class="dd pd">Debug logging prints considerably more additional information. The debug log includes all information from
@@ -284,9 +285,9 @@ index: '../toc.html'
             required to diagnose problems.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--output=dir">
             <span class="keyword parmname">--output</span>=<var class="keyword varname">dir</var></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-o-dir">
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
@@ -298,7 +299,7 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--filter=files">
             <span class="keyword parmname">--filter</span>=<var class="keyword varname">files</var>
           </dt>
           <dd class="dd pd">
@@ -319,7 +320,7 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--force">
             <span class="keyword parmname">--force</span>
           </dt>
           <dd class="dd pd">Force-install an existing plug-in.</dd>
@@ -327,26 +328,26 @@ index: '../toc.html'
               install</span>&nbsp;<var class="keyword varname">plug-in-zip</var>&nbsp;<span class="keyword parmname">--force</span></dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--help">
             <span class="keyword parmname">--help</span></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-h">
             <span class="keyword parmname">-h</span>
           </dt>
           <dd class="dd pd">Print a list of available arguments, options, and subcommands.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--logfile=file">
             <span class="keyword parmname">--logfile</span>=<var class="keyword varname">file</var></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-l-file">
             <span class="keyword parmname">-l</span>
             <var class="keyword varname">file</var>
           </dt>
           <dd class="dd pd">Write logging messages to a file.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--parameter=value">
             <span class="keyword parmname">--parameter</span>=<var class="keyword varname">value</var></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-dparameter=value">
             <span class="keyword parmname">-D</span><var class="keyword varname">parameter</var>=<var class="keyword varname">value</var>
           </dt>
           <dd class="dd pd">Specify a value for a DITA-OT or Ant build parameter.</dd>
@@ -363,7 +364,7 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--propertyfile=file">
             <span class="keyword parmname">--propertyfile</span>=<var class="keyword varname">file</var>
           </dt>
           <dd class="dd pd">Use build parameters defined in the referenced <span class="ph filepath">.properties</span> file.</dd>
@@ -371,7 +372,7 @@ index: '../toc.html'
             file.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--repeat=n">
             <span class="keyword parmname">--repeat</span>=<var class="keyword varname">N</var>
           </dt>
           <dd class="dd pd">Repeat the transformation <var class="keyword varname">N</var> number of times.</dd>
@@ -388,10 +389,10 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--resource=file">
             <span class="keyword parmname">--resource</span>=<var class="keyword varname">file</var>
           </dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-r-file">
             <span class="keyword parmname">-r</span>
             <var class="keyword varname">file</var>
           </dt>
@@ -406,9 +407,9 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--temp=dir">
             <span class="keyword parmname">--temp</span>=<var class="keyword varname">dir</var></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-t-dir">
             <span class="keyword parmname">-t</span>
             <var class="keyword varname">dir</var>
           </dt>
@@ -416,9 +417,9 @@ index: '../toc.html'
           <dd class="dd pd ddexpand">This argument corresponds to the common parameter <span class="keyword parmname">dita.temp.dir</span>.</dd>
         
         
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="--verbose">
             <span class="keyword parmname">--verbose</span></dt>
-          <dt class="dt pt dlterm">
+          <dt class="dt pt dlterm" id="-v">
             <span class="keyword parmname">-v</span>
           </dt>
           <dd class="dd pd">Verbose logging prints additional information to the console, including directory settings, effective
