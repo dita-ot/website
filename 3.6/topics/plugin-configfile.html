@@ -1,11 +1,13 @@
 ---
 # Generated from DITA source
-layout: base
+layout: 'base'
 title: 'Plug-in descriptor file'
 description: 'The plug-in descriptor file (plugin.xml) controls all aspects of a plug-in, making
     each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and
     then integrates those changes into the core DITA-OT code.'
 index: '../toc.html'
+commit: '3107e230589ce3074b35eff308db034e9b03b423'
+src: 'topics/plugin-configfile.dita'
 ---
 
 <nav role="toc" class="col-lg-3"><ul><li><a href="../index.html">DITA Open Toolkit 3.6</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li class="active"><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
@@ -17,7 +19,7 @@ index: '../toc.html'
     then integrates those changes into the core DITA-OT code.</p>
     <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
       
-      <div class="div" id="plugin-configfile__d1183e92">
+      <div class="div" id="plugin-configfile__d1181e92">
         <p class="p">DITA-OT includes a RELAX&nbsp;NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
           files that define the capabilities of each plug-in.
           
@@ -27,7 +29,7 @@ index: '../toc.html'
           instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
         <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
-        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="plugin-configfile__d1183e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
+        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="plugin-configfile__d1181e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
           your plug-in file.</p>
       </div>
     </section>
@@ -64,7 +66,7 @@ index: '../toc.html'
       <p class="p">The <code class="keyword markupname xmlelement">&lt;plugin&gt;</code> element can contain the following child elements: </p>
       <dl class="dl parml">
         
-          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;extension-point&gt;</code></dt>
+          <dt class="dt pt dlterm" id="extension-point"><code class="keyword markupname xmlelement">&lt;extension-point&gt;</code></dt>
           <dd class="dd pd">
             
             <p class="p">An optional element that defines a new extension point that can be used by other DITA-OT plug-ins.</p>
@@ -93,7 +95,7 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;feature&gt;</code></dt>
+          <dt class="dt pt dlterm" id="feature"><code class="keyword markupname xmlelement">&lt;feature&gt;</code></dt>
           <dd class="dd pd">
             
             
@@ -137,7 +139,7 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;meta&gt;</code></dt>
+          <dt class="dt pt dlterm" id="meta"><code class="keyword markupname xmlelement">&lt;meta&gt;</code></dt>
           <dd class="dd pd">
             
             <p class="p">An optional element that defines metadata.</p>
@@ -162,7 +164,7 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;require&gt;</code></dt>
+          <dt class="dt pt dlterm" id="require"><code class="keyword markupname xmlelement">&lt;require&gt;</code></dt>
           <dd class="dd pd">
             
             <p class="p">An optional element that defines plug-in dependencies.</p>
@@ -191,7 +193,7 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;template&gt;</code></dt>
+          <dt class="dt pt dlterm" id="template"><code class="keyword markupname xmlelement">&lt;template&gt;</code></dt>
           <dd class="dd pd">
             
             
@@ -218,7 +220,7 @@ index: '../toc.html'
           </dd>
         
         
-          <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;transtype&gt;</code></dt>
+          <dt class="dt pt dlterm" id="transtype"><code class="keyword markupname xmlelement">&lt;transtype&gt;</code></dt>
           <dd class="dd pd">
             
             <p class="p">An optional element that defines a new output format (transformation type).</p>
@@ -265,7 +267,7 @@ index: '../toc.html'
               type using the following child elements.</p>
             <dl class="dl parml">
               
-                <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;param&gt;</code></dt>
+                <dt class="dt pt dlterm" id="param"><code class="keyword markupname xmlelement">&lt;param&gt;</code></dt>
                 <dd class="dd pd">
                   
                   <p class="p">An optional element that specifies a parameter for the transformation type.</p>
@@ -298,7 +300,7 @@ index: '../toc.html'
                     </tr></tbody></table></dd>
               
               
-                <dt class="dt pt dlterm"><code class="keyword markupname xmlelement">&lt;val&gt;</code></dt>
+                <dt class="dt pt dlterm" id="val"><code class="keyword markupname xmlelement">&lt;val&gt;</code></dt>
                 <dd class="dd pd">
                   
                   <p class="p">A child of <code class="keyword markupname xmlelement">&lt;param&gt;</code> (when <code class="keyword markupname xmlatt">@type</code>=<span class="keyword option">enum</span>) that
