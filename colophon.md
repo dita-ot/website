@@ -26,17 +26,17 @@ The pages in the development documentation include **Edit this page** links that
 [1]: https://www.netlify.com
 [2]: https://www.dita-ot.org
 [3]: https://github.com/dita-ot/website
-[4]: http://daringfireball.net/projects/markdown/
+[4]: https://daringfireball.net/projects/markdown/
 [5]: https://github.com/Shopify/liquid/wiki
-[6]: http://sass-lang.com 'Sass: Syntactically Awesome Style Sheets'
-[7]: http://getbootstrap.com
-[8]: http://jekyllrb.com 'Jekyll • Simple, blog-aware, static sites'
+[6]: https://sass-lang.com
+[7]: https://getbootstrap.com
+[8]: https://jekyllrb.com
 [9]: https://www.dita-ot.org/dev/
 [10]: https://github.com/dita-ot/docs
 [11]: https://github.com/dita-ot/org.dita-ot.html
-[12]: http://gradle.org 'Gradle | Modern Open-Source Enterprise Build Automation'
+[12]: https://gradle.org
 [13]: https://github.com/dita-ot/docs/blob/develop/build.gradle#L172-L188
-[14]: http://eerohele.github.io/dita-ot-gradle/
+[14]: https://github.com/eerohele/dita-ot-gradle
 [15]: https://github.com/features/actions
-[16]: http://algolia.com/docsearch/
+[16]: https://docsearch.algolia.com
 [17]: https://www.oxygenxml.com/webauthor/
