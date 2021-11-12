@@ -35,7 +35,7 @@ The pages in the development documentation include **Edit this page** links that
 [10]: https://github.com/dita-ot/docs
 [11]: https://github.com/dita-ot/org.dita-ot.html
 [12]: http://gradle.org 'Gradle | Modern Open-Source Enterprise Build Automation'
-[13]: https://github.com/dita-ot/docs/blob/develop/build.gradle#L139-L153
+[13]: https://github.com/dita-ot/docs/blob/develop/build.gradle#L172-L188
 [14]: http://eerohele.github.io/dita-ot-gradle/
 [15]: https://github.com/features/actions
 [16]: http://algolia.com/docsearch/
