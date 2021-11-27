@@ -17,7 +17,7 @@ function Common(index) {
 
   const base = URI('.').absoluteTo(index).href()
 
-  const $nav = $('nav[role=toc]')
+  const $nav = $('nav[role=toc], nav.toc')
   const $main = $('main[role=main]')
   const $footer = $('footer')
 

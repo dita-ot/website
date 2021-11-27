@@ -9,7 +9,7 @@ function TocController($toc, index) {
 
   const common = Common(index)
 
-  const $nav = $('nav[role=toc]')
+  const $nav = $('nav[role=toc], nav.toc')
 
   common.initializeMain()
   addTocControllers()
@@ -19,7 +19,7 @@ function TocController($toc, index) {
 
   function loadFullToc() {
     initializeToc($toc)
-    $('nav[role=toc]').html($toc.html())
+    $('nav[role=toc], nav.toc').html($toc.html())
     addTocControllers()
 
     function initializeToc($dummy) {
