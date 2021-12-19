@@ -10,8 +10,10 @@ Gemfile.lock
 .bundle/config
 install.log
 
-# Parcel cache
+# Parcel 1 cache
 .cache
+# Parcel 2 cache
+.parcel-cache
 
 # Spurious duplicates generated via branch filtering & @copy-to
 # See https://github.com/dita-ot/dita-ot/issues/2980
