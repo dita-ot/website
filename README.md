@@ -50,7 +50,12 @@ If you'd like to set up a local staging environment and build a copy of the site
 
         ruby -v
 
-    Ruby 2.2 to 2.8.dev is required. The unf_ext-0.0.7.7-x64-mingw32 gem is not compatible with Ruby 3.x. Ruby is installed on macOS and most Linux distributions by default. If the command above does not respond with information on the installed Ruby version, see [Installing Ruby][4] for instructions.
+    Ruby is installed on macOS and most Linux distributions by default. If the command above does not respond with information on the installed Ruby version, see [Installing Ruby][4] for instructions.
+
+    <details>
+    <summary>Use Ruby 2.2 to 2.8</summary>
+    Ruby 2.2 to 2.8.dev is required. Several of the bundled gems are not compatible with Ruby 3.x.
+    </details>
 
 2.  Install [Bundler][5]:
 
