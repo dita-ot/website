@@ -10,6 +10,7 @@ import t from './translations'
 
 const REPOSITORY_URL = 'https://plugins.dita-ot.org/_all.json'
 const VERSIONS = [
+  '3.7',
   '3.6',
   '3.5',
   '3.4',
@@ -320,7 +321,7 @@ function details(versions, version) {
   const installCmds = [
     {
       title: t('INSTALL_3_5'),
-      range: ['3.5', '3.6'],
+      range: ['3.5', '3.6', '3.7'],
       cmd: `dita install ${first.name}`,
     },
     {
