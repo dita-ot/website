@@ -1,0 +1,36 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Accessing help for the dita command'
+description: 'You can access a list of subcommands and supported parameters for the dita command by
+    passing the --help option on the command line.'
+index: '../toc.html'
+src: 'topics/dita-command-help.dita'
+---
+
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 3.7</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li><a href="../topics/logging.html">Logging</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/error-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li class="active"><a href="../topics/dita-command-help.html">Command line help</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Speeding up builds</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Accessing help for the dita command</h1>
+  
+  
+  
+  <div class="body taskbody"><p class="shortdesc">You can access a list of subcommands and supported parameters for the <span class="keyword cmdname">dita</span> command by
+    passing the <span class="keyword parmname">--help</span> option on the command line.</p>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Open a command prompt or terminal session.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Issue the following command:</span>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--help</span></code></pre>
+        </div>
+      </li><li class="li step stepexpand"><strong>Optional: </strong>
+        <span class="ph cmd">For details on the arguments and options available for each subcommand, pass the
+            <span class="keyword parmname">--help</span> option after the subcommand name.</span>
+        <div class="itemgroup stepxmp">For example: <span class="keyword cmdname">dita install</span>
+          <span class="keyword parmname">--help</span>.</div>
+      </li></ol></section>
+    <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
+      <p class="p">A brief usage summary appears in the command-line window, along with a list of subcommands, arguments, and
+        options.</p>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/build-using-dita-command.html" title="You can generate output using the dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="../parameters/internal-ant-properties.html" title="DITA-OT uses these Ant properties in certain internal operations. They are not intended for general use, but may be adjusted by plug-in developers to configure custom transform types.">Internal Ant properties</a></li><li class="linklist"><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content. Subcommands can be used to manage plug-ins, or print information about the current configuration. A series of options are available to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></li></ul></div></nav></article></main>
