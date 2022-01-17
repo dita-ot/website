@@ -1,0 +1,171 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Migrating to release 3.7'
+description: 'DITA-OT 3.7 includes 
+    stable IDs in re-used content, a common variable format for generated text strings, and an updated
+      preview of features for the latest draft of the upcoming DITA 2.0 standard, such as the new “combine” chunk
+      action, the titlealt element, and the alternative titles domain.
+  '
+index: '../toc.html'
+src: 'topics/migrating-to-3.7.dita'
+---
+
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 3.7</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li class="active"><a href="../topics/migrating-to-3.7.html">To 3.7</a></li><li><a href="../topics/migrating-to-3.6.html">To 3.6</a></li><li><a href="../topics/migrating-to-3.5.html">To 3.5</a></li><li><a href="../topics/migrating-to-3.4.html">To 3.4</a></li><li><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 3.7</h1>
+  
+
+  
+
+  <div class="body refbody"><p class="shortdesc">DITA-OT 3.7 includes 
+    <span class="ph" id="migrating-to-3.7__summary">stable IDs in re-used content, a common variable format for generated text strings, and an updated
+      preview of features for the latest draft of the upcoming DITA 2.0 standard, such as the new “combine” chunk
+      action, the <code class="keyword markupname xmlelement">&lt;titlealt&gt;</code> element, and the alternative titles domain</span>.
+  </p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 3.7 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the
+        <a class="xref" href="https://www.dita-ot.org/3.7/release-notes/" target="_blank" rel="external noopener">DITA-OT 3.7 Release Notes</a>.</div>
+    </section>
+
+    <section class="section" id="migrating-to-3.7__strings-format"><h2 class="title sectiontitle">Common format for generated text</h2>
+      
+      <div class="div" id="migrating-to-3.7__d1181e407">
+        <p class="p">Prior to DITA-OT 3.7, there were two different XML structures for adding or modifying generated text
+          (gentext). The base plug-in <strong class="ph b">org.dita.base</strong> and any custom overrides defined via the 
+          <span class="keyword parmname">dita.strings.xsl</span> extension point used a root element <code class="keyword markupname xmlelement">&lt;strings&gt;</code>,
+          with individual strings in <code class="keyword markupname xmlelement">&lt;str&gt;</code> elements with <code class="keyword markupname xmlatt">@name</code> attributes. This
+          format was previously used for HTML, and all other output formats except PDF.</p>
+        <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Base strings file structure prior to DITA-OT 3.7</figcaption>
+          
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;strings xml:lang="en-US"&gt;
+  &lt;str name="String1"&gt;English generated text&lt;/str&gt;
+&lt;/strings&gt;</code></pre>
+        </figure>
+        <p class="p">The PDF plug-in <strong class="ph b">org.dita.pdf2</strong> used a root element <code class="keyword markupname xmlelement">&lt;vars&gt;</code> with an XML namespace,
+          and strings in <code class="keyword markupname xmlelement">&lt;variable&gt;</code> elements with <code class="keyword markupname xmlatt">@id</code> attributes.</p>
+        <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>PDF2 strings file structure prior to DITA-OT 3.7</figcaption>
+          
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;vars xmlns="http://www.idiominc.com/opentopic/vars"&gt;
+  &lt;variable id="String1"&gt;English generated text&lt;/variable&gt;
+&lt;/vars&gt;</code></pre>
+        </figure>
+        <p class="p">Starting with DITA-OT 3.7, these structures have been deprecated and replaced with a new unified format. All
+          files now use <code class="keyword markupname xmlelement">&lt;variables&gt;</code> as the root element, with the
+            <code class="keyword markupname xmlelement">&lt;variable&gt;</code> elements previously used in PDF strings. The new format supports the XSL
+          parameters used by the earlier PDF strings format to pass dynamic information such as chapter numbers or
+          figure titles.</p>
+        <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>New common variable format as of DITA-OT 3.7</figcaption>
+          
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;variables&gt;
+  &lt;variable id="String1"&gt;English generated text&lt;/variable&gt;
+&lt;/variables&gt;</code></pre>
+        </figure>
+        <p class="p">The old formats are still supported, but plug-in developers should update any generated text files to reflect
+          the new structure, as support for the old formats may be removed in a future release.
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3817" target="_blank" rel="external noopener">#3817</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="migrating-to-3.7__css-precedence"><h2 class="title sectiontitle">CSS precedence</h2>
+      
+      <p class="p" id="migrating-to-3.7__3770">The order of elements in the <code class="keyword markupname xmlelement">&lt;head&gt;</code> element of the HTML template
+        files was changed to facilitate overrides. The common CSS stylesheets and any custom CSS files specified
+        via <span class="keyword parmname">args.css</span> now come <strong class="ph b">after</strong> the contents of the custom header file specified
+        via <span class="keyword parmname">args.hdf</span>. This change better supports use cases in which the custom header file
+        is used to insert references to external CSS stylesheets for frameworks like
+        <a class="xref" href="https://getbootstrap.com/docs/5.0/getting-started/introduction/#css" target="_blank" rel="external noopener">Bootstrap</a>. In previous versions of DITA-OT, framework styles took precedence
+        over any equivalent rules in the user’s custom stylesheet. This change allows rules in custom CSS files
+        specified via <span class="keyword parmname">args.css</span> to override any of the framework styles as necessary.
+      </p>
+    </section>
+
+    <section class="section" id="migrating-to-3.7__deprecated-templates"><h2 class="title sectiontitle">Deprecated legacy <code class="ph codeph">gen-user</code> templates</h2>
+      
+      <div class="p">The legacy <code class="ph codeph">gen-user</code> templates that were originally used to add content to
+        the <code class="keyword markupname xmlelement">&lt;head&gt;</code> element have been deprecated and will be removed in a future release.
+        For each of these templates, parameter-based customizations are available that can be used to specify
+        files that contain content that extends the default processing.
+        <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3835" target="_blank" rel="external noopener">#3835</a>
+        <ul class="ul">
+          <li class="li"><code class="ph codeph">gen-user-head</code> → use <span class="keyword parmname">args.hdf</span> instead</li>
+          <li class="li"><code class="ph codeph">gen-user-header</code> → use <span class="keyword parmname">args.hdr</span></li>
+          <li class="li"><code class="ph codeph">gen-user-footer</code> → use <span class="keyword parmname">args.ftr</span></li>
+          <li class="li"><code class="ph codeph">gen-user-scripts</code> → use <span class="keyword parmname">args.hdf</span></li>
+          <li class="li"><code class="ph codeph">gen-user-styles</code> → use <span class="keyword parmname">args.css</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="migrating-to-3.7__ancestor-links"><h2 class="title sectiontitle">Ancestor links</h2>
+      
+      <p class="p" id="migrating-to-3.7__3792">The mappull processing step has changed how related links are generated with
+          <span class="keyword parmname">args.rellinks</span>. Starting in 3.7, <span class="keyword option">noparent</span> will not generate any ancestor
+        links and <span class="keyword option">nofamily</span> will not generate sibling, cousin, ancestor, or descendant links.</p>
+      <p class="p">Prior to 3.7, <span class="keyword parmname">args.rellinks</span>=<span class="keyword option">all</span> did not actually include all links. Now
+        it will. As in previous versions, the default value for PDF output is <span class="keyword option">nofamily</span>, and other
+        output formats include all link roles except <code class="ph codeph">ancestor</code> links.</p>
+      <p class="p">The default processing sets the internal Ant property <span class="keyword parmname">include.rellinks</span> to <code class="ph codeph">#default
+          parent child sibling friend next previous cousin descendant sample external other</code>.</p>
+    </section>
+
+    <section class="section" id="migrating-to-3.7__toc-role"><h2 class="title sectiontitle">ToC navigation role</h2>
+      
+      <p class="p" id="migrating-to-3.7__3800">Table of contents navigation in HTML5 output used a <code class="keyword markupname xmlelement">&lt;nav&gt;</code> element with
+        the ARIA <code class="keyword markupname xmlatt">@role</code> attribute set to <code class="ph codeph">toc</code>. Certain accessibility tools flagged
+        this as an error. The invalid role has been replaced with the <code class="ph codeph">navigation</code> landmark role. A
+        new <code class="ph codeph">toc</code> class allows custom CSS styles to target the ToC navigation. CSS rules that use the
+        <code class="ph codeph">nav[role='toc']</code> selector can be simplified to <code class="ph codeph">nav.toc</code>.
+      </p>
+    </section>
+
+    <section class="section" id="migrating-to-3.7__common-attr-mode"><h2 class="title sectiontitle">Common attributes mode</h2>
+      
+      <div class="p" id="migrating-to-3.7__3806">A <code class="ph codeph">commonattributes</code> mode was added to the HTML5, PDF, and XHTML plug-ins to allow
+        for easier extension. This is a backwards compatible change, however, existing plug-ins should be changed to
+        use the new <code class="ph codeph">commonattributes</code> mode.
+        <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span>Named template prior to version 3.7</figcaption>
+          
+          <pre class="pre codeblock language-xml"><code>&lt;xsl:template name="commonattributes"&gt;
+  &lt;!-- whole copy of commonattributes named template with customizations --&gt;
+&lt;/xsl:template&gt;</code></pre>
+        </figure>
+        <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 5. </span>Template mode as of version 3.7</figcaption>
+          
+          <pre class="pre codeblock language-xml"><code>&lt;xsl:template match="@* | node()" mode="commonattributes"&gt;
+  &lt;xsl:param name="default-output-class" as="xs:string*"/&gt;
+  &lt;xsl:next-match&gt;
+    &lt;xsl:with-param name="default-output-class" select="$default-output-class"/&gt;
+  &lt;/xsl:next-match&gt;
+  &lt;!-- customizations --&gt;
+&lt;/xsl:template&gt;</code></pre>
+        </figure></div>
+    </section>
+
+    <section class="section" id="migrating-to-3.7__xsl-modes"><h2 class="title sectiontitle">XSL modes</h2>
+      
+      <p class="p">The HTML5 stylesheets were updated to use XSL modes instead of named templates.</p>
+      <div class="p">This is a backwards compatible change, however, existing plug-ins should be changed to use modes instead of
+        named templates for:
+        <ul class="ul">
+          <li class="li"><code class="ph codeph">copyright</code></li>
+          <li class="li"><code class="ph codeph">gen-endnotes</code></li>
+          <li class="li"><code class="ph codeph">generateDefaultMeta</code></li>
+          <li class="li"><code class="ph codeph">generateCssLinks</code></li>
+          <li class="li"><code class="ph codeph">generateChapterTitle</code></li>
+          <li class="li"><code class="ph codeph">processHDF</code></li>
+          <li class="li"><code class="ph codeph">generateBreadcrumbs</code></li>
+          <li class="li"><code class="ph codeph">processHDR</code></li>
+          <li class="li"><code class="ph codeph">processFTR</code></li>
+          <li class="li"><code class="ph codeph">generateCharset</code></li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+</article></main>
