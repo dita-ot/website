@@ -7,17 +7,18 @@ toc: false
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-3">{{ page.title }}</h1>
-    <p class="lead">Get the latest version:</p>
-    <p>
+    <p class="lead mt-3">
+      Current version:
       <a
-        class="btn btn-lg btn-success"
+        class="btn btn-lg btn-success mx-1"
         href="https://github.com/dita-ot/dita-ot/releases/download/{{ site.version }}/dita-ot-{{ site.version }}.zip"
       >
         {% octicon download %} DITA-OT {{ site.version }}</a
       >
+      released January 17, 2022
     </p>
     <p class="lead">
-      For information on the changes in the current release, see the
+      For details on the changes in this version, see the
       <a href="{{ site.baseurl }}/{{ site.release }}/release-notes">
         DITA-OT {{ site.release }} Release Notes</a
       >.
