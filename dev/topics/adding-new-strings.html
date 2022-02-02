@@ -4,7 +4,7 @@ layout: 'base'
 title: 'Adding new strings'
 description: 'Add new generated strings to your plug-in for the toolkit to include in your output.'
 index: '../toc.html'
-commit: '7c691589ab8d4ee32775574f50cbaf5d46d0a9fe'
+commit: '605c72f9ed48ece4760d62b714d5f81141afd134'
 src: 'topics/adding-new-strings.dita'
 ---
 
@@ -78,6 +78,24 @@ src: 'topics/adding-new-strings.dita'
           <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
   &lt;xsl:with-param name="id" select="'Another String'"/&gt;
 &lt;/xsl:call-template&gt;</code></pre>
+          <div class="p">You can also use the same strings in multiple languages by assigning a file with common strings to each 
+            language in addition to the language-specific custom strings files.
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;langlist&gt;
+  &lt;lang xml:lang="en"     filename="my-added-strings-en-us.xml"/&gt;
+  &lt;lang xml:lang="en-US"  filename="my-added-strings-en-us.xml"/&gt;
+  <strong class="ph b">&lt;lang xml:lang="en"     filename="my-added-strings-mul.xml"/&gt;</strong>
+  <strong class="ph b">&lt;lang xml:lang="en-US"  filename="my-added-strings-mul.xml"/&gt;</strong>
+  &lt;lang xml:lang="is"     filename="my-added-strings-is-is.xml"/&gt;
+  &lt;lang xml:lang="is-IS"  filename="my-added-strings-is-is.xml"/&gt;
+  <strong class="ph b">&lt;lang xml:lang="is"     filename="my-added-strings-mul.xml"/&gt;</strong>
+  <strong class="ph b">&lt;lang xml:lang="is-IS"  filename="my-added-strings-mul.xml"/&gt;</strong>
+  &lt;lang xml:lang="ru"     filename="my-added-strings-ru-ru.xml"/&gt;
+  &lt;lang xml:lang="ru-RU"  filename="my-added-strings-ru-ru.xml"/&gt;
+  <strong class="ph b">&lt;lang xml:lang="ru"     filename="my-added-strings-mul.xml"/&gt;</strong>
+  <strong class="ph b">&lt;lang xml:lang="ru-RU"  filename="my-added-strings-mul.xml"/&gt;</strong>
+&lt;/langlist&gt;</code></pre>
+          </div>
         </div>
       </li></ol></section>
   </div>
