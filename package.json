@@ -76,7 +76,7 @@
     "object.values": "^1.1.5",
     "parcel": "^2.0.0",
     "prettier": "2.5.1",
-    "prismjs": "^1.25.0",
+    "prismjs": "^1.26.0",
     "stylelint": "^14.3.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-twbs-bootstrap": "^3.0.1",
