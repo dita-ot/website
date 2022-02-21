@@ -74,7 +74,7 @@
     "jest": "^27.4.7",
     "lint-staged": "12.3.3",
     "object.values": "^1.1.5",
-    "parcel": "^2.3.2",
+    "parcel": "2.0.1",
     "prettier": "2.5.1",
     "prismjs": "^1.26.0",
     "process": "^0.11.10",
