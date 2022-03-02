@@ -18,7 +18,7 @@
     "format:html": "prettier --write \"**/*.html\"",
     "format:script": "prettier --write \"**/*.{js,ts}\"",
     "format:style": "prettier --write \"**/*.scss\"",
-    "install": "parcel build _js/plugins.js _js/main.js --dist-dir js --public-url /js",
+    "install": "PARCEL_WORKERS=0 parcel build _js/plugins.js _js/main.js --dist-dir js --public-url /js",
     "lint-staged": "lint-staged",
     "prepare": "husky install",
     "prettier": "prettier --write \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
