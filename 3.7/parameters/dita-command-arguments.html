@@ -112,27 +112,29 @@ src: 'parameters/dita-command-arguments.dita'
       <p class="p">Each transformation requires you to specify at least the file to transform and the desired output format.</p>
       <dl class="dl parml">
         
-          <dt class="dt pt dlterm" id="--input=file">
+          <dt class="dt pt dlterm" id="dita-command-properties__input">
             <span class="keyword parmname">--input</span>=<var class="keyword varname">file</var></dt>
           <dt class="dt pt dlterm" id="-i-file">
             <span class="keyword parmname">-i</span>
             <var class="keyword varname">file</var>
           </dt>
-          <dd class="dd pd" id="dita-command-properties__args.input.desc">Specifies the main file for your documentation project. This argument corresponds
-            to the common parameter <span class="keyword parmname">args.input</span>. Typically this is a DITA map, however it also can
-            be a DITA topic if you want to transform a single DITA file. The path can be absolute, relative to
-              <span class="keyword parmname">args.input.dir</span>, or relative to the current directory if
-              <span class="keyword parmname">args.input.dir</span> is not defined.</dd>
+          <dd class="dd pd">Specifies the main file for your documentation project.</dd>
+          <dd class="dd pd ddexpand">This argument corresponds to the common parameter
+            <a class="xref" href="parameters-base.html#base__args.input">args.input</a>.</dd>
+          <dd class="dd pd ddexpand">Typically this is a DITA map, however it also can be a DITA topic if you want to transform a single DITA
+            file. The path can be absolute, relative to <span class="keyword parmname">args.input.dir</span>, or relative to the current
+            directory if <span class="keyword parmname">args.input.dir</span> is not defined.</dd>
         
         
-          <dt class="dt pt dlterm" id="--format=name">
+          <dt class="dt pt dlterm" id="dita-command-properties__format">
             <span class="keyword parmname">--format</span>=<var class="keyword varname">name</var></dt>
           <dt class="dt pt dlterm" id="-f-name">
             <span class="keyword parmname">-f</span>
             <var class="keyword varname">name</var>
           </dt>
           <dd class="dd pd">Specifies the output format (transformation type).</dd>
-          <dd class="dd pd ddexpand">This argument corresponds to the common parameter <span class="keyword parmname">transtype</span>.</dd>
+          <dd class="dd pd ddexpand">This argument corresponds to the common parameter 
+            <a class="xref" href="parameters-base.html#base__transtype">transtype</a>.</dd>
           <dd class="dd pd ddexpand">To list the formats that are currently available in your environment, use <span class="keyword cmdname">dita
               transtypes</span>.</dd>
           <dd class="dd pd ddexpand">
@@ -285,17 +287,19 @@ src: 'parameters/dita-command-arguments.dita'
             required to diagnose problems.</dd>
         
         
-          <dt class="dt pt dlterm" id="--output=dir">
+          <dt class="dt pt dlterm" id="dita-command-properties__output">
             <span class="keyword parmname">--output</span>=<var class="keyword varname">dir</var></dt>
           <dt class="dt pt dlterm" id="-o-dir">
             <span class="keyword parmname">-o</span>
             <var class="keyword varname">dir</var>
           </dt>
-          <dd class="dd pd" id="dita-command-properties__output.dir.desc">
+          <dd class="dd pd">
             <p class="p">Specifies the path of the output directory; the path can be absolute or relative to the current
               directory.</p>
-            <p class="p">This argument corresponds to the common parameter <span class="keyword parmname">output.dir</span>. By default, the output
-              is written to the <span class="ph filepath">out</span> subdirectory of the current directory.</p>
+            <p class="p">This option corresponds to the common parameter
+              <a class="xref" href="parameters-base.html#base__output.dir">output.dir</a>.</p>
+            <p class="p">By default, the output is written to the <span class="ph filepath">out</span> subdirectory of the current
+              directory.</p>
           </dd>
         
         
@@ -389,14 +393,18 @@ src: 'parameters/dita-command-arguments.dita'
           </dd>
         
         
-          <dt class="dt pt dlterm" id="--resource=file">
+          <dt class="dt pt dlterm" id="dita-command-properties__resource">
             <span class="keyword parmname">--resource</span>=<var class="keyword varname">file</var>
           </dt>
           <dt class="dt pt dlterm" id="-r-file">
             <span class="keyword parmname">-r</span>
             <var class="keyword varname">file</var>
           </dt>
-          <dd class="dd pd">Convert partial documentation sets by processing input with additional resources.</dd>
+          <dd class="dd pd">Specifies resource files.</dd>
+          <dd class="dd pd ddexpand">This argument corresponds to the common parameter 
+            <a class="xref" href="parameters-base.html#base__args.resources">args.resources</a>.</dd>
+          <dd class="dd pd ddexpand">Resource files can be used to convert partial documentation sets by processing input with additional
+            information.</dd>
           <dd class="dd pd ddexpand">For example, to process a single topic file with a map that contains key definitions, use a command like
             this:
             <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
@@ -407,14 +415,17 @@ src: 'parameters/dita-command-arguments.dita'
           </dd>
         
         
-          <dt class="dt pt dlterm" id="--temp=dir">
+          <dt class="dt pt dlterm" id="dita-command-properties__temp">
             <span class="keyword parmname">--temp</span>=<var class="keyword varname">dir</var></dt>
           <dt class="dt pt dlterm" id="-t-dir">
             <span class="keyword parmname">-t</span>
             <var class="keyword varname">dir</var>
           </dt>
           <dd class="dd pd">Specifies the location of the temporary directory.</dd>
-          <dd class="dd pd ddexpand">This argument corresponds to the common parameter <span class="keyword parmname">dita.temp.dir</span>.</dd>
+          <dd class="dd pd ddexpand">This option corresponds to the common parameter 
+            <a class="xref" href="parameters-base.html#base__dita.temp.dir">dita.temp.dir</a>.</dd>
+          <dd class="dd pd ddexpand">The temporary directory is where DITA-OT writes intermediate files that are generated during the
+            transformation process.</dd>
         
         
           <dt class="dt pt dlterm" id="--verbose">
