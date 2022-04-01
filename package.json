@@ -75,7 +75,7 @@
     "lint-staged": "12.3.4",
     "object.values": "^1.1.5",
     "parcel": "^2.3.2",
-    "prettier": "2.5.1",
+    "prettier": "2.6.1",
     "prismjs": "^1.26.0",
     "process": "^0.11.10",
     "stylelint": "^14.5.3",
