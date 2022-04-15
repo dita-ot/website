@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% if page.url contains '/dev/' %}
+  <meta name="docsearch:version" content="dev">
+  {% elsif page.url contains '/3.7/' %}
+  <meta name="docsearch:version" content="3.7">
+  {% elsif page.url contains '/3.6/' %}
+  <meta name="docsearch:version" content="3.6">
+  {% elsif page.url contains '/3.5/' %}
+  <meta name="docsearch:version" content="3.5">
+  {% elsif page.url contains '/3.4/' %}
+  <meta name="docsearch:version" content="3.4">
+  {% elsif page.url contains '/3.3/' %}
+  <meta name="docsearch:version" content="3.3">
+  {% elsif page.url contains '/3.2/' %}
+  <meta name="docsearch:version" content="3.2">
+  {% elsif page.url contains '/3.1/' %}
+  <meta name="docsearch:version" content="3.1">
+  {% elsif page.url contains '/3.0/' %}
+  <meta name="docsearch:version" content="3.0">
+  {% elsif page.url contains '/2.5/' %}
+  <meta name="docsearch:version" content="2.5">
+  {% elsif page.url contains '/2.4/' %}
+  <meta name="docsearch:version" content="2.4">
+  {% elsif page.url contains '/2.3/' %}
+  <meta name="docsearch:version" content="2.3">
+  {% elsif page.url contains '/2.2/' %}
+  <meta name="docsearch:version" content="2.2">
+  {% elsif page.url contains '/2.1/' %}
+  <meta name="docsearch:version" content="2.1">
+  {% elsif page.url contains '/2.0/' %}
+  <meta name="docsearch:version" content="2.0">
+  {% elsif page.url contains '/1.8/' %}
+  <meta name="docsearch:version" content="1.8">
+  {% endif %}
+  <link href="{{ site.baseurl }}/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+  {% if page.index %}
+  <link href="{{ page.index }}" rel="index">
+  {% endif %}
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary flex-column flex-md-row">
+    <div class="container">
+      <a class="navbar-brand" href="{{ site.baseurl }}/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+          <path
+            d="M4.458.007A4.462 4.462 0 0 0-.014 4.48v23.057a4.462 4.462 0 0 0 4.472 4.471h23.057a4.462 4.462 0 0 0 4.471-4.471V18.45H29.505l-6.217 5.063v.001l-.008.011c-.02.017-.041.031-.063.049-.413.337-1.119.645-2.063-.26-.05-.049-.156-.14-.156-.14l-2.477-2.025a7.586 7.586 0 0 0 2.568.217 5.555 5.555 0 0 0 1.71-.443l.72-.36c1.719-.98 3.14-2.667 4.016-4.1 1.263-2.068 1.437-4.712 1.393-5.48-.043-.77-.392-3.702-.392-4.327s.13-1.01.13-1.01l2.222-.865-1.699-1.635s-.086-.865-.391-1.49C28.493 1.031 27.49.358 25.836.214a3.584 3.584 0 0 0-.31-.014c-1.913-.04-3.24.644-3.726 1.38-.701 1.058-1.581 4.403-1.973 5.7-.021.07-.048.142-.079.216.177.149.358.315.504.45 1.733 1.376.92 4.736-.168 6.73-.954 1.75-2.197 3.414-3.388 4.981l-.01-.008c-.18.252-.38.52-.59.797l-.068.09a64.19 64.19 0 0 1-.71.912l5.237 4.29c.194.14.386.252.573.341v3.595H7.388V14.953l4.553 3.73c.218-.988.36-1.564.597-2.424l-5.164-4.22 11.898-9.69V.007H4.458zm21.76 2.113c.226-.009.44.071.487.387.091.612-.092.874-.595.977-.504.103-1.1-.051-1.1-.411s.432-.743.825-.875c.11-.036.249-.073.384-.078zm-21.461.22h10.962l-.07.048-9.495 7.636c-.66.524-1.03 1.193-1.03 1.973 0 .033.002.065.003.097h-.002v17.58h-.368a2.432 2.432 0 0 1-2.437-2.437V4.778a2.432 2.432 0 0 1 2.437-2.437zm23.638.644 1.59 1.553-2.58.992s-.036-.475-.106-.863c-.071-.388-.248-.56-.248-.56s.212-.475.46-.734c.247-.259.884-.388.884-.388zM18.807 8.3c-.49-.015-1.062.458-1.36.817-.77.932-.922 1.202-1.332 1.838-.428.664-.839 1.344-1.172 2.06-.6 1.289-1.073 2.638-1.479 4.001-.239.805-.473 1.686-.693 2.713-.456 2.118-.65 3.074-.687 3.585-.015.205.06.112.13.045.966-.95 1.78-2.023 2.248-2.612.501-.63.925-1.189 1.368-1.798 1.832-2.52 2.22-2.846 3.28-4.8 1.18-2.174 1.426-4.87.02-5.753a.633.633 0 0 0-.323-.096zm10.846 12.968v5.969a2.432 2.432 0 0 1-2.437 2.437h-3.568V26.13c.13-.066.272-.156.406-.28l.026-.016 5.573-4.565z"
+            fill="currentColor"
+          />
+        </svg>
+        {{ site.title }}
+      </a>
+      <button
+        class="navbar-toggler my-2"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggle"
+        aria-controls="navbarToggle"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <ul class="navbar-nav mr-auto flex-row">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              id="codeDropdownMenuLink"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              Code <b class="caret"></b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="codeDropdownMenuLink">
+              <h6 class="dropdown-header">Core repository</h6>
+              <a class="dropdown-item" href="https://github.com/dita-ot/dita-ot"
+              >DITA-OT Source Code</a
+              >
+              <a class="dropdown-item" href="https://github.com/dita-ot/dita-ot/issues"
+              >DITA-OT Issue Tracker</a
+              >
+              <a class="dropdown-item" href="https://github.com/dita-ot/dita-ot/wiki"
+              >DITA-OT Project Wiki</a
+              >
+              <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">Docs</h6>
+              <a class="dropdown-item" href="https://github.com/dita-ot/docs"
+              >Documentation Source</a
+              >
+              <a class="dropdown-item" href="https://github.com/dita-ot/docs/issues"
+              >Documentation Issues</a
+              >
+              <a class="dropdown-item" href="https://github.com/dita-ot/docs/wiki"
+              >Documentation Wiki</a
+              >
+              <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">About This Website</h6>
+              <a class="dropdown-item" href="{{ site.baseurl }}/colophon">Colophon</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              id="communityDropdownMenuLink"
+              href="#"
+              role="button"
+              aria-expanded="false"
+            >
+              Community <b class="caret"></b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="communityDropdownMenuLink">
+              <a class="dropdown-item" href="{{ site.baseurl }}/who_we_are">Who We Are</a>
+              <a class="dropdown-item" href="{{ site.baseurl }}/contributing">How To Contribute</a>
+              <a class="dropdown-item" href="http://slack.dita-ot.org">Slack Discussions</a>
+              <a class="dropdown-item" href="{{ site.baseurl }}/management">Project Management</a>
+              <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">Support Forums</h6>
+              <a class="dropdown-item" href="{{ site.baseurl }}/support">Community Support</a>
+              <a class="dropdown-item" href="https://groups.io/g/dita-users">DITA Users Group</a>
+              <a class="dropdown-item" href="https://groups.google.com/d/forum/dita-ot-users"
+              >DITA-OT Users Google Group</a
+              >
+              <a class="dropdown-item" href="http://stackoverflow.com/questions/tagged/dita-ot"
+              >Stack Overflow Tag: DITA-OT</a
+              >
+              <a class="dropdown-item" href="https://www.oasis-open.org/committees/dita/"
+              >OASIS DITA Technical Committee
+              </a>
+              <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">DITA-OT Day Events</h6>
+              <a
+                class="dropdown-item"
+                href="https://www.oxygenxml.com/events/2019/dita-ot_day.html"
+                target="_blank"
+              >2019 — Brussels</a
+              >
+              <a
+                class="dropdown-item"
+                href="https://www.oxygenxml.com/events/2018/dita-ot_day.html"
+                target="_blank"
+              >2018 — Rotterdam</a
+              >
+              <a
+                class="dropdown-item"
+                href="https://www.oxygenxml.com/events/2017/dita-ot_day.html"
+                target="_blank"
+              >2017 — Berlin</a
+              >
+              <a
+                class="dropdown-item"
+                href="https://www.oxygenxml.com/events/2016/dita-ot_day.html"
+                target="_blank"
+              >2016 — Munich</a
+              >
+              <a
+                class="dropdown-item"
+                href="https://www.oxygenxml.com/events/2015/dita-ot_day.html"
+                target="_blank"
+              >2015 — Munich</a
+              >
+              <a
+                class="dropdown-item"
+                href="https://www.oxygenxml.com/events/2014/dita-ot_day.html"
+                target="_blank"
+              >2014 — Munich</a
+              >
+            </div>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="{{ site.baseurl }}/dev/">Docs</a>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="{{ site.baseurl }}/download">Download</a>
+          </li>
+          <li class="nav-item d-none d-lg-block">
+            <a class="nav-link" href="{{ site.baseurl }}/plugins">Plugins</a>
+          </li>
+        </ul>
+
+        <div id="docsearch">
+          <form class="form-inline" id="search" role="search">
+            <div class="form-group">
+              <label for="q">{% octicon search class:"bg-gradient-light mr-2" %}</label>
+              <input
+                type="text"
+                name="q"
+                class="form-control"
+                maxlength="255"
+                placeholder="Search the latest docs…"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+{% if page.url contains '/dev/' %}
+{% include docs-banner-dev.html %}
+{% elsif page.url contains '/3.7/' %}
+{% include docs-banner-new.html %}
+{% elsif page.url contains '/3.6/'
+or page.url contains '/3.5/'
+or page.url contains '/3.4/'
+or page.url contains '/3.3/'
+or page.url contains '/3.2/'
+or page.url contains '/3.1/'
+or page.url contains '/3.0/'
+or page.url contains '/2.5/'
+or page.url contains '/2.4/'
+or page.url contains '/2.3/'
+or page.url contains '/2.2/'
+or page.url contains '/2.1/'
+or page.url contains '/2.0/'
+or page.url contains '/1.8/' %}
+{% include docs-banner-old.html %}
+{% endif %}
+<div id="content" class="container">
+  <div class="row">
+    {% if page.toc != false %}
+    <nav role="toc" class="col-lg-3">
+      {% include toc.html %}
+    </nav>
+    {% endif %}
+    <main class="{% if page.toc != false %} col-lg-9 {% else %}  col-lg-12 {% endif %}">
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+    </main>
+  </div>
+</div>
+{% include footer.html %}
+{% include search.html %}
+{% include help.html %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="{{ site.baseurl }}/js/main.js" type="text/javascript" ></script>
+<script src="https://cdn.usefathom.com/script.js" site="MEDTXGXM" defer></script>
+<script type="text/javascript">
+  docsearch({
+    container: '#docsearch',
+    appId: '3RVXFPL77E',
+    apiKey: '10c10e348f7e5a284187d61528d54b5f',
+    indexName: 'dita-ot',
+    inputSelector: '#search input[type=text]',
+    algoliaOptions: {
+      hitsPerPage: 10,
+    },
+    debug: false
+  });
+</script>
+</body>
+</html>
