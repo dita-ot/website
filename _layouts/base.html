@@ -43,6 +43,10 @@
     {% if page.index %}
     <link href="{{ page.index }}" rel="index">
     {% endif %}
+    {% if page.name == 'index.html' %}
+      {% assign paths = page.path | split: '/' %}
+      <link href="/{% for path in paths %}{% if forloop.last == false %}{{ path }}/{% endif %}{% endfor %}" rel="canonical">
+    {% endif %}
   </head>
   <body>
     {% include header.html %}
