@@ -5,7 +5,7 @@ title: 'Inserting JavaScript in generated HTML'
 description: 'JavaScript code can be bundled in a custom plug-in and automatically inserted into the generated HTML pages
     to enable web analytics or dynamic content delivery.'
 index: '../toc.html'
-commit: '7c691589ab8d4ee32775574f50cbaf5d46d0a9fe'
+commit: 'bc893e57a89bb44d6f5aa93ed8716773afaee389'
 src: 'topics/html-customization-plugin-javascript.dita'
 ---
 
@@ -75,6 +75,19 @@ ga('send', 'pageview');
           </figure>
           <p class="p">The division wrapper will be discarded when generating HTML files, and the contents will be inserted into
             the <code class="keyword markupname xmlelement">&lt;footer&gt;</code> element of each page.</p>
+          <p class="p">The file contents must be well-formed XML. If your JavaScript snippets include attributes without values
+            (such as the <code class="ph codeph">async</code> script attribute), use valid XML syntax to define the empty
+            attribute:</p>
+          <div class="p">Instead of:
+            <pre class="pre codeblock language-javascript normalize-space show-line-numbers show-whitespace"><code>&lt;script&gt;
+  &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;
+&lt;/script&gt;</code></pre>
+          </div>
+          <div class="p">use:
+            <pre class="pre codeblock language-javascript normalize-space show-line-numbers show-whitespace"><code>&lt;script&gt;
+  &lt;script id="MathJax-script" <strong class="ph b">async=""</strong> src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;
+&lt;/script&gt;</code></pre>
+          </div>        
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">com.example.html5-javascript</span> root directory, add an Ant script
@@ -95,6 +108,11 @@ ga('send', 'pageview');
   &lt;/target&gt;
 &lt;/project&gt;</code></pre>
           </figure>
+        </div>
+        <div class="itemgroup info">
+          <div class="note note note_note"><span class="note__title">Note:</span> When defining the path to the footer file from the Ant script, use the plug-in directory property with
+            the <var class="keyword varname">plugin-id</var> as shown in the example above:
+                <code class="ph codeph">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</code>.</div>
         </div>
       </li></ol></section>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
