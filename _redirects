@@ -61,3 +61,9 @@ http://slack.dita-ot.org                               https://join.slack.com/t/
 /dev/topics/plugin-applications.html                   /dev/topics/plugin-use-cases.html                            301!
 /dev/topics/plugin-best-practices.html                 /dev/topics/plugin-coding-conventions.html                   301!
 /dev/topics/plugin-sample.html                         /dev/topics/plugin-configfile.html                           301!
+
+# Redirect to pretty URLs for chapter landing pages and preserve any fragment IDs
+/dev/index.html*                                       /dev/:splat                                                  301!
+/dev/release-notes/index.html*                         /dev/release-notes/:splat                                    301!
+/dev/parameters/index.html*                            /dev/parameters/:splat                                       301!
+/dev/reference/index.html*                             /dev/reference/:splat                                        301!
