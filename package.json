@@ -38,7 +38,7 @@
   },
   "stylelint": {
     "extends": [
-      "stylelint-config-twbs-bootstrap/scss",
+      "stylelint-config-twbs-bootstrap",
       "stylelint-config-prettier"
     ],
     "ignoreFiles": [
