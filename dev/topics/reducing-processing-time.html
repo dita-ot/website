@@ -4,7 +4,7 @@ layout: 'base'
 title: 'Speeding up builds'
 description: 'Several configuration changes can significantly reduce DITA-OT processing time.'
 index: '../toc.html'
-commit: '7c691589ab8d4ee32775574f50cbaf5d46d0a9fe'
+commit: '16645a5a5a9fcfc5686ed076225e9facbab5c26d'
 src: 'topics/reducing-processing-time.dita'
 ---
 
@@ -63,6 +63,15 @@ src: 'topics/reducing-processing-time.dita'
          
          <p class="p">DITA-OT 2.0 to 2.3 require Java 7, and DITA-OT 2.4 and newer require Java 8. However, using a newer version
             of Java may further reduce processing time, depending on your operating system.</p>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Re-enable Java file caching</h2>
+         
+         <p class="p">As of Java 12, the file canonicalization cache is no longer enabled by default (see
+            <a class="xref" href="https://bugs.openjdk.org/browse/JDK-8207005" target="_blank" rel="external noopener">JDK-8207005</a>). On Windows, this results in significantly longer build times, and slight
+            increases on Linux. To re-enable file caching, add <code class="ph codeph">-Dsun.io.useCanonCaches=true </code> to the Java
+            invocation command in the <span class="ph filepath">dita.bat</span> and <span class="ph filepath">ant.bat</span> wrapper
+            scripts.</p>
+         <div class="note note note_note"><span class="note__title">Note:</span> As of DITA-OT 3.7.3, this system property is set by default in the bundled wrapper scripts.</div>
       </section>
    </div>
 
