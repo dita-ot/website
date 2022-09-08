@@ -69,10 +69,11 @@ function Common(index) {
     }
 
     function updateMain(data) {
-      const $dummy = $('<body>').append($.parseHTML(data))
-      $main.html($dummy.find('[role=main]:first').html())
-      $footer.html($dummy.find('footer:first').html())
-      document.title = $dummy.find('title').text()
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(data, 'text/html')
+      $main.html(doc.querySelector('[role=main]').outerHTML)
+      $footer.html(doc.querySelector('footer').outerHTML)
+      document.title = doc.title
       scrollToStart()
       initializeMain()
     }

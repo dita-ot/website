@@ -23,7 +23,10 @@ if (indexAttr && window.history) {
   $.ajax({
     url: index,
     success: (data) => {
-      const $toc = $('<body>').append($.parseHTML(data)).find('nav')
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(data, 'text/html')
+      const nav = doc.getElementsByTagName('nav').item(0)
+      const $toc = $(nav.outerHTML)
       TocController($toc, index)
       SearchController($toc, index)
       HelpController()
