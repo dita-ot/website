@@ -161,6 +161,11 @@ src: 'release-notes/index.dita'
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3991" target="_blank" rel="external noopener">#3991</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3992" target="_blank" rel="external noopener">#3992</a>
           </li>
+          <li class="li" id="v3.7.3__3999">The bundled Jackson data format dependency was updated to resolve a security vulnerability in
+            the SnakeYAML library, which has been updated to version 1.31.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3999" target="_blank" rel="external noopener">#3999</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4000" target="_blank" rel="external noopener">#4000</a>
+          </li>
         </ul>
         <p class="p">For additional information on the issues resolved since the previous release, see the
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.7.3+is%3Aclosed" target="_blank" rel="external noopener">3.7.3 milestone</a> and
@@ -343,7 +348,7 @@ src: 'release-notes/index.dita'
 
       <section class="section" id="v3.7__3817"><h3 class="title sectiontitle">Common format for generated text</h3>
       
-      <div class="div" id="v3.7__d1244e407">
+      <div class="div" id="v3.7__gentext-string-structure">
         <p class="p">Prior to DITA-OT 3.7, there were two different XML structures for adding or modifying generated text
           (gentext). The base plug-in <strong class="ph b">org.dita.base</strong> and any custom overrides defined via the 
           <span class="keyword parmname">dita.strings.xsl</span> extension point used a root element <code class="keyword markupname xmlelement">&lt;strings&gt;</code>,
@@ -403,7 +408,7 @@ src: 'release-notes/index.dita'
           <p class="p">When the <code class="keyword markupname xmlatt">@chunk</code> attribute is set to <code class="ph codeph">combine</code> on a map, branch, or map
             reference, all source DITA documents grouped by that reference will be combined into a single document in
             the output.</p>
-          <p class="p" id="v3.7__d1245e255">(Support for the DITA 2.0 “split” chunk action has not yet been implemented.)</p>
+          <p class="p" id="v3.7__chunk-split">(Support for the DITA 2.0 “split” chunk action has not yet been implemented.)</p>
           <div class="note note note_note"><span class="note__title">Note:</span> The new chunk action is only applied if the root map has a DITA 2.0 doctype, such as:
             <p class="p"><code class="ph codeph">&lt;!DOCTYPE map PUBLIC "-//OASIS//DTD DITA 2.0 Map//EN" "map.dtd"&gt;</code></p>
             <p class="p">If the root map uses an unversioned (or 1.x) doctype, DITA 1.3 processing will be applied, and 2.0 chunk
