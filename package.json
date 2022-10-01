@@ -78,7 +78,7 @@
     "prettier": "2.7.1",
     "prismjs": "^1.29.0",
     "process": "^0.11.10",
-    "stylelint": "^14.11.0",
+    "stylelint": "^14.13.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-twbs-bootstrap": "^6.0.0",
     "ts-jest": "^27.1.3",
