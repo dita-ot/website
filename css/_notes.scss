@@ -34,7 +34,8 @@
 
   // Important = alert alert-warning
   &.attention,
-  &.important {
+  &.important,
+  &.restriction {
     @extend .alert-warning;
   }
 
