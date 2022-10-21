@@ -38,7 +38,7 @@
   },
   "stylelint": {
     "extends": [
-      "stylelint-config-twbs-bootstrap",
+      "stylelint-config-twbs-bootstrap/scss",
       "stylelint-config-prettier"
     ],
     "ignoreFiles": [
@@ -56,33 +56,33 @@
     }
   },
   "dependencies": {
-    "jquery": "^3.6.1",
+    "jquery": "^3.6.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.13",
+    "@babel/core": "^7.17.5",
     "@types/jest": "^27.4.1",
     "babel-plugin-prismjs": "^2.1.0",
     "babel-preset-es2015": "^6.3.13",
     "es6-promise": "^4.2.8",
-    "eslint": "8.23.0",
+    "eslint": "8.10.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "husky": "^8.0.1",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "4.0.0",
+    "husky": "^7.0.2",
     "jest": "^27.5.1",
-    "lint-staged": "13.0.3",
+    "lint-staged": "12.3.4",
     "object.values": "^1.1.5",
-    "parcel": "^2.7.0",
-    "prettier": "2.7.1",
-    "prismjs": "^1.29.0",
+    "parcel": "^2.3.2",
+    "prettier": "2.6.2",
+    "prismjs": "^1.26.0",
     "process": "^0.11.10",
-    "stylelint": "^14.11.0",
+    "stylelint": "^14.5.3",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-twbs-bootstrap": "^6.0.0",
+    "stylelint-config-twbs-bootstrap": "^3.0.1",
     "ts-jest": "^27.1.3",
-    "typescript": "^4.8.2",
+    "typescript": "^4.6.2",
     "urijs": "^1.19.11",
     "whatwg-fetch": "^3.6.2"
   }
