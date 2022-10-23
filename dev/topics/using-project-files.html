@@ -8,7 +8,7 @@ description: 'DITA-OT 3.4 introduces new project files to define publication pro
       parameters. You can pass a project file to the dita command to publish multiple deliverables at
       once.'
 index: '../toc.html'
-commit: '7c691589ab8d4ee32775574f50cbaf5d46d0a9fe'
+commit: 'c93d36c43bbf97e2c908f2a9840c72d4c44a1a24'
 src: 'topics/using-project-files.dita'
 ---
 
@@ -99,12 +99,14 @@ src: 'topics/using-project-files.dita'
   &lt;deliverable id="pdf"&gt;
     &lt;context name="User Guide"&gt;
       &lt;input href="../../userguide-book.ditamap"/&gt;
+      &lt;profile&gt;
+        &lt;ditaval href="../../resources/pdf.ditaval"/&gt;
+      &lt;/profile&gt;
     &lt;/context&gt;
     &lt;output href="."/&gt;
     &lt;publication transtype="pdf2"&gt;
       &lt;param name="args.chapter.layout" value="BASIC"/&gt;
       &lt;param name="args.gen.task.lbl" value="YES"/&gt;
-      &lt;param name="include.rellinks" value="friend"/&gt;
       &lt;param name="outputFile.base" value="userguide"/&gt;
       &lt;param name="processing-mode" value="strict"/&gt;
     &lt;/publication&gt;
