@@ -2,13 +2,13 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 3.7 Release Notes'
-description: 'DITA Open Toolkit 3.7.3 is a maintenance release that fixes issues
+description: 'DITA Open Toolkit 3.7.4 is a maintenance release that fixes issues
       reported in DITA-OT 3.7, which includes stable IDs in re-used
             content, a common variable format for generated text strings, and an updated preview of features for the
             latest draft of the upcoming DITA 2.0 standard, such as the new “combine” chunk action, the
               titlealt element, and the alternative titles domain.'
 index: '../toc.html'
-commit: '10a9ddfcb0c448bb8e0cd238928da36428ff5749'
+commit: '5c92e614aa5728eec6585e17849b1885d1d83ea8'
 src: 'release-notes/index.dita'
 ---
 
@@ -17,7 +17,7 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.7.3</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">3.7.4</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">3.7</span>, which includes <span class="ph">stable IDs in re-used
             content, a common variable format for generated text strings, and an updated preview of features for the
             latest draft of the upcoming DITA 2.0 standard, such as the new “combine” chunk action, the
@@ -28,7 +28,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.7.3</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">3.7.4</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div>
   </div>
@@ -60,15 +60,71 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v3.7.3">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.7.3</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v3.7.4">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">3.7.4</span>
+      <span class="ph small text-muted"> released October 26, 2022</span>
+    </h2>
+
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">3.7.4</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v3.7.4__3937">In PDF output generated with DITA-OT 3.3 and newer, <code class="keyword markupname xmlelement">&lt;abbreviated-form&gt;</code>
+            references did not work correctly when both <code class="keyword markupname xmlelement">&lt;topicref&gt;</code> elements and
+              <code class="keyword markupname xmlelement">&lt;glossentry&gt;</code> elements used the same <code class="keyword markupname xmlatt">@id</code> value. Processing has been
+            updated to filter any topic references and handle only glossary entries.
+            <a class="xref" href="https://github.com/orgs/dita-ot/discussions/3937" target="_blank" rel="external noopener">#3937</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4002" target="_blank" rel="external noopener">#4002</a>
+          </li>
+          <li class="li" id="v3.7.4__3940">When processing maps, the <code class="keyword markupname xmlatt">@processing-role</code> and <code class="keyword markupname xmlatt">@scope</code> attributes
+            were not cascading downward in the map. Processing has been updated to correctly apply these attributes to
+            any elements that are children of the element where the attributes are specified.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3940" target="_blank" rel="external noopener">#3940</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4003" target="_blank" rel="external noopener">#4003</a>
+          </li>
+          <li class="li" id="v3.7.4__3814">In earlier versions, builds failed when filtering removed content that was referenced elsewhere.
+            The XSLT matcher functions have been updated to handle cases when the class argument is an empty sequence,
+            which allows builds to continue.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3814" target="_blank" rel="external noopener">#3814</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4028" target="_blank" rel="external noopener">#4028</a>
+          </li>
+          <li class="li" id="v3.7.4__3989">In the
+            <a class="xref" href="../reference/preprocess-maplink.html" title="This step collects links based on a map and moves those links into the referenced topics. The links are created based on hierarchy in the DITA map, the collection-type attribute, and relationship tables. This step is implemented in XSLT and Java.">Map-based linking (maplink)</a> preprocessing step, related link processing has been updated to consider
+            references to topics duplicated by branch filtering.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3989" target="_blank" rel="external noopener">#3989</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3993" target="_blank" rel="external noopener">#3993</a>
+          </li>
+          <li class="li" id="v3.7.4__4007">In earlier versions, builds failed with a NullPointerException when a peer mapref and local
+            mapref used the same keyscope. Processing has been updated to allow builds to continue in these cases.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4007" target="_blank" rel="external noopener">#4007</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4010" target="_blank" rel="external noopener">#4010</a>
+          </li>
+          <li class="li" id="v3.7.4__4027">When files were parsed with a custom parser, earlier versions categorized the file as the 
+            original file format. (For example, when the LwDITA parser was used to parse Markdown, the file was 
+            treated as <code class="keyword markupname xmlatt">@format</code>=<code class="ph codeph">markdown</code>). The map-first preprocessing routines in the 
+            <code class="ph codeph">preprocess2</code> target have been updated to align with the default <code class="ph codeph">preprocess</code>
+            target, which ensures that files parsed with a custom parser are categorized as <code class="ph codeph">dita</code>.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4027" target="_blank" rel="external noopener">#4027</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A3.7.4+is%3Aclosed" target="_blank" rel="external noopener">3.7.4 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/3.7.3...3.7.4" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.7.3">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.7.3
       <span class="ph small text-muted">released September 6, 2022</span>
     </h2>
 
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit <span class="keyword">3.7.3</span> is a maintenance release that includes the
-          following bug fixes.</p>
+        <p class="p">DITA Open Toolkit 3.7.3 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           
           <li class="li" id="v3.7.3__2704">In earlier versions, links to non-DITA resources were broken in branch filtering scenarios that
@@ -176,8 +232,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v3.7.2">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 3.7.2
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v3.7.2">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 3.7.2
       <span class="ph small text-muted">released May 17, 2022</span>
     </h2>
 
@@ -223,8 +279,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v3.7.1">
-    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 3.7.1 <span class="ph small text-muted">released March 23, 2022</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v3.7.1">
+    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT 3.7.1 <span class="ph small text-muted">released March 23, 2022</span>
     </h2>
 
     <div class="body refbody">
@@ -334,8 +390,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v3.7">
-    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT <span class="keyword">3.7</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="v3.7">
+    <h2 class="title topictitle2" id="ariaid-title7">DITA-OT <span class="keyword">3.7</span>
       <span class="ph small text-muted">released January 17, 2022</span>
     </h2>
     

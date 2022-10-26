@@ -8,7 +8,7 @@ description: '
       3.4, the DITA-OT project provides an official Docker container image that includes everything you need to run the
       toolkit and publish DITA content from a containerized environment.'
 index: '../toc.html'
-commit: '16645a5a5a9fcfc5686ed076225e9facbab5c26d'
+commit: '5c92e614aa5728eec6585e17849b1885d1d83ea8'
 src: 'topics/using-docker-images.dita'
 ---
 
@@ -70,7 +70,7 @@ src: 'topics/using-docker-images.dita'
             <span class="keyword cmdname">dita</span> command.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> run -it \
-  -v /Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">3.7.3</span> \
+  -v /Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">3.7.4</span> \
   -i /src/input.ditamap \
   -o /src/out \
   -f html5 -v</code></pre>
@@ -89,7 +89,7 @@ src: 'topics/using-docker-images.dita'
             <p class="p">On Windows, if your <span class="ph filepath">Users</span> directory is on the <span class="ph filepath">C:\</span> drive, use
               <span class="ph filepath">/c/Users/…</span> to map the host directory:</p>
             <pre class="pre codeblock"><code>&gt; C:\Users\username&gt; <span class="keyword cmdname">docker</span> run -it ^
-  -v /c/Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">3.7.3</span> ^
+  -v /c/Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">3.7.4</span> ^
   -i /src/input.ditamap ^
   -o /src/out ^
   -f html5 -v</code></pre>
