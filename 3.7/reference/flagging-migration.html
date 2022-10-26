@@ -37,7 +37,7 @@ src: 'reference/flagging-migration.dita'
       <p class="p">For any override that needs migration, please see the instructions that follow.</p></section>
     <section class="section"><h2 class="title sectiontitle">Deprecated templates in DITA-OT 1.7</h2>
       
-      <p class="p">All of the old DITAVAL based templates are deprecated in DITA-OT 1.7. If your overrides include any of the
+      <p class="p">All of the old DITAVAL-based templates are deprecated in DITA-OT 1.7. If your overrides include any of the
         following templates, they should be migrated for the new release; in many cases the templates below will not
         have any effect on your output, but all instances should be migrated.</p>
       <ul class="ul">
@@ -65,7 +65,7 @@ src: 'reference/flagging-migration.dita'
     <section class="section"><h2 class="title sectiontitle">What replaces the templates?</h2>
       
       <p class="p">The new flagging design described in the preprocess design section now adds literal copies of relevant DITAVAL
-        elements, along with CSS based flagging information, into the relevant section of the topic. This allows most
+        elements, along with CSS-based flagging information, into the relevant section of the topic. This allows most
         flags to be processed in document order; in addition, there is never a need to read the DITAVAL, interpret CSS,
         or evaluate flagging logic. The <span class="ph filepath">htmlflag.xsl</span> file contains a few rules to match and process
         the start/end flags; in most cases, all code to explicitly process flags can be deleted.</p>
@@ -76,7 +76,7 @@ src: 'reference/flagging-migration.dita'
           <li class="li">Output start tag such as <code class="ph codeph">&lt;div&gt;</code> or <code class="ph codeph">&lt;span&gt;</code>
           </li>
           <li class="li">Call <code class="ph codeph">"commonattributes"</code> and ID processing </li>
-          <li class="li">Call <code class="ph codeph">"gen-style"</code> with <code class="ph codeph">$flagrules</code>, to create DITAVAL based CSS </li>
+          <li class="li">Call <code class="ph codeph">"gen-style"</code> with <code class="ph codeph">$flagrules</code>, to create DITAVAL-based CSS </li>
           <li class="li">Call <code class="ph codeph">"start-flagit"</code> with <code class="ph codeph">$flagrules</code>, to create start flag images </li>
           <li class="li">Call <code class="ph codeph">"start-revflag"</code> with <code class="ph codeph">$flagrules</code>, to create start revision images </li>
           <li class="li">Output contents </li>
