@@ -5,11 +5,11 @@ title: 'The configuration.properties file'
 description: 'The configuration.properties file controls certain common properties, as well as some
     properties that control PDF processing.'
 index: '../toc.html'
-commit: '7c691589ab8d4ee32775574f50cbaf5d46d0a9fe'
+commit: '6883b898af4a69b9ad75f8be2eabb72ef02e9647'
 src: 'parameters/configuration-properties-file.dita'
 ---
 
-<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 3.7</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a><ul class="nav nav-list"><li><a href="../parameters/local-properties-file.html">local.properties</a></li><li><a href="../parameters/plugin-properties-file.html">plugin.properties</a></li><li class="active"><a href="../parameters/configuration-properties-file.html">configuration.properties</a></li><li><a href="../parameters/internal-ant-properties.html">Internal Ant properties</a></li></ul></li></ul></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a><ul class="nav nav-list"><li><a href="../parameters/local-properties-file.html">local.properties</a></li><li><a href="../parameters/plugin-properties-file.html">plugin.properties</a></li><li class="active"><a href="../parameters/configuration-properties-file.html">configuration.properties</a></li><li><a href="../parameters/internal-ant-properties.html">Internal Ant properties</a></li></ul></li></ul></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">The <span class="ph filepath">configuration.properties</span> file</h1>
   
   
@@ -43,6 +43,31 @@ src: 'parameters/configuration-properties-file.dita'
           </dd>
         
         
+          <dt class="dt pt dlterm" id="configuration__filter-attributes"><span class="keyword parmname">filter-attributes</span></dt>
+          <dd class="dd pd">
+            <p class="p">Specifies additional attributes to be used for filtering, in addition to those defined in the DITA
+              specification. The value is a comma-separated list of attribute QNames in Clark notation.</p>
+            <p class="p">For example, to permit filtering by <code class="keyword markupname xmlatt">@importance</code> and <code class="keyword markupname xmlatt">@status</code> attributes,
+              set:</p>
+            <pre class="pre codeblock language-properties"><code>filter-attributes = importance, status</code></pre>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="configuration__flag-attributes"><span class="keyword parmname">flag-attributes</span></dt>
+          <dd class="dd pd">
+            <p class="p">Specifies additional attributes to be used for flagging, in addition to those defined in the DITA
+              specification. The value is a comma-separated list of attribute QNames in Clark notation.</p>
+            <p class="p">For example, to enable flagging based on a custom <code class="keyword markupname xmlatt">@cms:review</code> attribute,
+              set:</p>
+            <pre class="pre codeblock language-properties"><code>flag-attributes = {http://www.cms.com/}review</code></pre>
+            <p class="p">With this setting, a DITAVAL file could be used to flag content marked as <code class="ph codeph">new</code> with a
+              purple background:</p>
+            <pre class="pre codeblock language-xml"><code>&lt;val xmlns:cms="http://www.cms.com/"&gt;
+  &lt;prop action="flag" att="cms:review" val="new" backcolor="purple"/&gt;
+&lt;/val&gt;</code></pre>
+          </dd>
+        
+        
           <dt class="dt pt dlterm" id="configuration__cli-color"><span class="keyword parmname">cli.color</span></dt>
           <dd class="dd pd">
             <p class="p">Specifies whether the <span class="keyword cmdname">dita</span> command prints colored output on the command line console.
@@ -51,6 +76,12 @@ src: 'parameters/configuration-properties-file.dita'
               <a class="xref" href="https://en.wikipedia.org/wiki/ANSI_escape_code" target="_blank" rel="external noopener">ANSI escape
                 codes</a>, such as on Linux or macOS. Set to <span class="keyword option">false</span> to disable the color. (Colored
               output is not supported on Windows consoles such as <span class="keyword cmdname">cmd.exe</span> or PowerShell).</p>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="configuration__default-coderef-charset"><span class="keyword parmname">default.coderef-charset</span></dt>
+          <dd class="dd pd">
+            <p class="p">Specifies the default character set for code references.</p>
           </dd>
         
         

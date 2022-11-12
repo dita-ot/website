@@ -6,11 +6,11 @@ description: 'DITA-OT 3.2 supports a new plug-in registry that makes it easier t
       install new plug-ins. The registry provides a searchable list of plug-ins at
       dita-ot.org/plugins.'
 index: '../toc.html'
-commit: '7c691589ab8d4ee32775574f50cbaf5d46d0a9fe'
+commit: '6883b898af4a69b9ad75f8be2eabb72ef02e9647'
 src: 'topics/plugins-registry.dita'
 ---
 
-<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 3.7</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li class="active"><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li class="active"><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Adding plug-ins via the registry</h1>
   
   
@@ -58,7 +58,7 @@ src: 'topics/plugins-registry.dita'
       <p class="p">The version entries for each plug-in are stored in a file that is named after the plug-in ID as
           <code class="ph codeph">&lt;plugin-name&gt;.json</code>. The file contains an array of entries with a pre-defined structure.
         You should have one entry for each supported version of the plug-in.</p>
-      <table class="table table-hover frame-none"><caption><span class="table--title-label">Table 1. </span><span class="title">Plug-in version entry structure</span></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:60%"></colgroup><thead class="thead">
+      <table class="table table-hover frame-bottom"><caption><span class="table--title-label">Table 1. </span><span class="title">Plug-in version entry structure</span></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:60%"></colgroup><thead class="thead">
             <tr class="row">
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__1">Key</th>
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__2">Mandatory</th>
@@ -122,7 +122,7 @@ src: 'topics/plugins-registry.dita'
         
         
       </div>
-      <table class="table table-hover frame-none"><caption><span class="table--title-label">Table 2. </span><span class="title">Structure for dependency entries</span></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:60%"></colgroup><thead class="thead">
+      <table class="table table-hover frame-bottom"><caption><span class="table--title-label">Table 2. </span><span class="title">Structure for dependency entries</span></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:60%"></colgroup><thead class="thead">
             <tr class="row">
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__31">Key</th>
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__32">Mandatory</th>

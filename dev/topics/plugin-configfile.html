@@ -6,11 +6,11 @@ description: 'The plug-in descriptor file (plugin.xml) controls all aspects of a
     each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and
     then integrates those changes into the core DITA-OT code.'
 index: '../toc.html'
-commit: 'f2602dcc419c9fe3d1741721a475351f669ff004'
+commit: '6883b898af4a69b9ad75f8be2eabb72ef02e9647'
 src: 'topics/plugin-configfile.dita'
 ---
 
-<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 3.7</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li class="active"><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li class="active"><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Plug-in descriptor file</h1>
   
   
@@ -19,7 +19,7 @@ src: 'topics/plugin-configfile.dita'
     then integrates those changes into the core DITA-OT code.</p>
     <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
       
-      <div class="div" id="plugin-configfile__d1181e92">
+      <div class="div" id="plugin-configfile__d1205e92">
         <p class="p">DITA-OT includes a RELAX&nbsp;NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
           files that define the capabilities of each plug-in.
           
@@ -29,7 +29,7 @@ src: 'topics/plugin-configfile.dita'
           instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
         <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
-        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="plugin-configfile__d1181e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
+        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="plugin-configfile__d1205e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
           your plug-in file.</p>
       </div>
     </section>
