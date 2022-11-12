@@ -1,0 +1,115 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Migrating to release 3.6'
+description: 'DITA-OT 3.6 includes performance enhancements such as processing in parallel and in
+      memory, support for PDF changebars with Apache FOP, and an updated preview
+      of features for the latest draft of the upcoming DITA 2.0 standard, including the audio
+      and video elements, and the new emphasis domain.'
+index: '../toc.html'
+src: 'topics/migrating-to-3.6.dita'
+---
+
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../topics/migrating-to-4.0.html">To 4.0</a></li><li><a href="../topics/migrating-to-3.7.html">To 3.7</a></li><li class="active"><a href="../topics/migrating-to-3.6.html">To 3.6</a></li><li><a href="../topics/migrating-to-3.5.html">To 3.5</a></li><li><a href="../topics/migrating-to-3.4.html">To 3.4</a></li><li><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 3.6</h1>
+  
+
+  
+
+  <div class="body refbody"><p class="shortdesc">DITA-OT 3.6 includes <span class="ph" id="migrating-to-3.6__summary">performance enhancements such as processing in parallel and in
+      memory, support for PDF changebars with Apache™ FOP, and an updated preview
+      of features for the latest draft of the upcoming DITA 2.0 standard, including the <code class="keyword markupname xmlelement">&lt;audio&gt;</code>
+      and <code class="keyword markupname xmlelement">&lt;video&gt;</code> elements, and the new emphasis domain</span>.</p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 3.6 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the
+        <a class="xref" href="https://www.dita-ot.org/3.6/release-notes/" target="_blank" rel="external noopener">DITA-OT 3.6 Release Notes</a>.</div>
+    </section>
+
+    <section class="section" id="migrating-to-3.6__parallel-processing"><h2 class="title sectiontitle">Parallel processing</h2>
+      
+      
+      <p class="p">Preprocessing module code can now be run in parallel by setting the <span class="keyword parmname">parallel</span> parameter to
+          <span class="keyword option">true</span>. The performance benefits this option provides depend heavily on the source file set,
+        the DITA features used in the project, and the computer doing the processing, but under the right circumstances,
+        you may see notable improvements when this option is enabled.</p>
+    </section>
+
+    <section class="section" id="migrating-to-3.6__in-memory-processing"><h2 class="title sectiontitle">In-memory processing</h2>
+      
+      
+      <p class="p">DITA-OT 3.6 introduces a new Store API with preview support for in-memory processing. The Cache Store can be
+        activated by setting the <span class="keyword parmname">store-type</span> parameter to <span class="keyword option">memory</span>. 
+        <span class="ph" id="migrating-to-3.6__io-bound">In-memory processing provides performance advantages in I/O bound environments such as cloud
+          computing platforms, where processing time depends primarily on how long it takes to read and write temporary
+          files.</span> For more information, see
+        <a class="xref" href="../reference/store-api.html" title="DITA-OT originally assumed resources would be available on disk and available from file paths. Recent versions added URI input, so HTTPS resources could be used, but temporary and output resources were still file-based. DITA-OT 3.6 introduces a new Store API that can process temporary resources in memory instead of writing them to disk.">Store API – Processing in memory</a>.</p>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Caching DITA class instances</h2>
+      
+      <p class="p">The DITA-OT Java code uses a new caching <code class="ph codeph">DitaClass.getInstance(cls)</code> factory method rather than
+        generating <code class="ph codeph">DitaClass</code> instances directly. This allows previously created instances to be
+        re-used, which reduces the number of instances that need to be created.</p>
+      <div class="note important note_important"><span class="note__title">Important:</span> Custom plug-ins that use the <code class="ph codeph">DitaClass</code> constructor in Java code should be
+        updated to use the <code class="ph codeph">getInstance</code> factory method instead.</div>
+    </section>
+
+    <section class="section" id="migrating-to-3.6__fop-changebars"><h2 class="title sectiontitle">PDF changebars with Apache FOP</h2>
+      
+      
+      
+      <p class="p">For DITA-OT 3.4, the bundled Apache™ Formatting Objects Processor library was upgraded to version 2.4, which
+        included support for changebars, but those features were not yet enabled in DITA-OT 3.4 pending further testing.
+        DITA-OT 3.6 removes the FOP-specific overrides that disabled changebars in earlier versions, allowing the
+        default PDF2 flagging routines to be applied when generating PDFs with FOP. For details, see
+        <a class="xref" href="pdf2-creating-change-bars.html" title="You can generate revision bars in your PDF output by using the changebar and color attributes of the DITAVAL revprop element.">Generating revision bars</a>.</p>
+      <p class="p">Plug-ins that implemented custom FOP flagging by overriding the
+          <span class="ph filepath">org.dita.pdf2.fop/xsl/fo/flagging_fop.xsl</span> stylesheet in prior versions will need to be
+        updated, as this file is no longer available in DITA-OT 3.6.
+        <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3511" target="_blank" rel="external noopener">#3511</a>,
+        <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3591" target="_blank" rel="external noopener">#3591</a>
+      </p>
+    </section>
+
+    <section class="section" id="migrating-to-3.6__no-dublin-core"><h2 class="title sectiontitle">Dublin Core metadata removed from HTML5</h2>
+      
+      
+      <p class="p">Up to version 3.5, DITA-OT included the
+        <a class="xref" href="https://dublincore.org/specifications/dublin-core/dcmi-terms" target="_blank" rel="external noopener">Dublin Core Metadata Element Set</a> in both XHTML and HTML5 output. DITA-OT 3.6 no longer generates Dublin Core
+        metadata in HTML5 output.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> If necessary, the
+        <a class="xref" href="https://github.com/dita-ot/org.dita.html5.dublin-core/" target="_blank" rel="external noopener">org.dita.html5.dublin-core</a> plug-in can be installed from the plug-in registry at
+        <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a> to add Dublin Core metadata to HTML5.</div>
+      <p class="p">To install the plug-in, run the following command:</p>
+      <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita install</span> org.dita.html5.dublin-core</code></pre>
+    </section>
+
+    <section class="section" id="migrating-to-3.6__3.6-inline-styles"><h2 class="title sectiontitle">Legacy style attributes moved to CSS</h2>
+      
+      
+      
+      <div class="p">Remaining inline style attributes were removed from HTML5 code, which prevented custom plug-ins from overriding
+        the presentation of the corresponding elements, including:
+        <ul class="ul">
+          <li class="li"><span class="ph line-through"><code class="keyword markupname xmlelement">&lt;line-through&gt;</code></span> and
+                <span class="ph overline"><code class="keyword markupname xmlelement">&lt;overline&gt;</code></span> elements</li>
+          <li class="li">syntax diagrams</li>
+          <li class="li">long quote citations</li>
+          <li class="li">Boolean states</li>
+        </ul></div>
+      <p class="p">These changes move the default presentation rules to CSS to allow users to override these styles in custom
+        stylesheets. The output is visually equivalent to the results generated by previous toolkit versions. </p>
+      <div class="note important note_important"><span class="note__title">Important:</span> In publishing environments that do not use the default common CSS files, these styles may
+        need to be implemented in custom stylesheets.</div>
+    </section>
+
+    <section class="section" id="migrating-to-3.6__no-msgprefix"><h2 class="title sectiontitle">XSL variable <code class="ph codeph">msgprefix</code> removed</h2>
+      
+      <p class="p">The <code class="ph codeph">msgprefix</code> variable (“DOTX”) has been deprecated since DITA-OT 2.3 and is now removed from
+        DITA-OT 3.6. For more information, see
+        <a class="xref" href="migrating-to-2.3.html" title="In DITA-OT 2.3, HTML5 table processing has been refactored to use HTML5 best practices and improved CSS properties. In PDF output, table heads and key columns no longer include shading, and unused localization variables have been deprecated. The template for generated error messages has been updated to use a single id variable that contains the entire message ID.">Migrating to release 2.3</a>.</p>
+    </section>
+  </div>
+</article></main>

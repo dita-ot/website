@@ -1,0 +1,148 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Running the dita command from a GitHub Action'
+description: '
+    
+      GitHub Actions are a CI/CD workflow mechanism attached to GitHub. Each action is an individual
+      unit of functionality that can be combined with other GitHub Actions to create workflows, which are triggered in
+      response to certain GitHub events. As of version 3.6.1, the DITA-OT project provides an official
+      dita-ot-action that can be used as a step within a GitHub workflow to publish
+      documentation as part of your CI/CD pipeline.'
+index: '../toc.html'
+src: 'topics/using-github-actions.dita'
+---
+
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li class="active"><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Running the <span class="keyword cmdname">dita</span> command from a GitHub Action</h1>
+  
+  
+  
+  <div class="body taskbody"><p class="shortdesc">
+    <span class="ph" id="ID__github-actions-desc">
+      <a class="xref" href="https://github.com/features/actions" target="_blank" rel="external noopener">GitHub Actions</a> are a CI/CD workflow mechanism attached to GitHub. Each action is an individual
+      unit of functionality that can be combined with other GitHub Actions to create workflows, which are triggered in
+      response to certain GitHub events. As of version 3.6.1, the DITA-OT project provides an official
+      <a class="xref" href="https://github.com/dita-ot/dita-ot-action" target="_blank" rel="external noopener">dita-ot-action</a> that can be used as a step within a GitHub workflow to publish
+      documentation as part of your CI/CD pipeline.</span></p>
+    <section class="section"><h2 class="title sectiontitle">About GitHub Actions</h2>
+      
+      <p class="p">
+        GitHub Actions can automate tasks such as document generation as part of your
+        software development life cycle. GitHub Actions are event-driven, allowing a
+        series of tasks to run one after another when a specified event has occurred.
+      </p>
+      <p class="p">Each step is an individual atomic task that can run commands in a job. A step can be either an action or a
+        shell command. Each step in a job executes on the same runner, allowing the actions in that job to share data
+        with each other, therefore files generated through the <code class="ph codeph">dita-ot-build</code> action can be archived or
+        published by later actions within the same job.</p>
+    </section>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">In your GitHub repository, create the <code class="ph codeph">.github/workflows/</code> directory to store your workflow files.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">In the <code class="ph codeph">.github/workflows/</code> directory, create a new file called
+            <span class="ph filepath">dita-ot-build-actions.yml</span> and add the following code.</span>
+          <div class="itemgroup stepxmp">
+          <pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>name: CI
+'on':
+  push:
+    branches:
+      - master
+jobs:
+  build-dita:
+    name: Build DITA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2</code></pre>
+          </div>
+        <div class="itemgroup info">This setup ensures the action runs whenever code is updated on the <code class="ph codeph">master</code> branch and
+        checks out the codebase.</div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">In the same file, add the following code.</span>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock language-yaml show-whitespace"><code>      - name: Build PDF
+        uses: dita-ot/dita-ot-action@master
+        with:
+          input: document.ditamap
+          transtype: pdf
+          output-path: out</code></pre>
+          <div class="p">This action specifies the following:
+            <ul class="ul">
+              <li class="li"><span class="keyword parmname">name</span> defines the name of the action to be displayed within the GitHub repository</li>
+              <li class="li"><span class="keyword parmname">uses</span> specifies the  name and version of the GitHub Action to run. Use  <code class="ph codeph">dita-ot/dita-ot-action@master</code> to run the latest version.</li>
+              <li class="li"><span class="keyword parmname">input</span> specifies the name and location of the input map file within the GitHub
+                repository (relative to the repository root)</li>
+              <li class="li"><span class="keyword parmname">transtype</span> sets the output format to PDF, and</li>
+              <li class="li"><span class="keyword parmname">output-path</span> writes the output to the <span class="ph filepath">out</span> folder within the running action</li>
+            </ul>
+          </div>
+        </div>
+      </li></ol></section>
+    <section class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
+      <p class="p">The <span class="ph filepath">docsrc/samples</span> folder in the DITA-OT installation directory contains several complete
+        examples. The following GitHub Action generates styled HTML and PDF outputs.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample GitHub Action: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/github-actions/dita-ot-pipeline.yaml</span></figcaption>
+        
+        <pre class="pre codeblock language-yaml normalize-space show-line-numbers show-whitespace"><code>name: CI
+'on':
+  push:
+    branches:
+      - master
+jobs:
+  build-dita:
+    name: Build DITA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+      - name: Build HTML5 + Bootstrap
+        uses: dita-ot/dita-ot-action@master
+        with:
+          plugins: |
+            net.infotexture.dita-bootstrap
+          input: document.ditamap
+          transtype: html5-bootstrap
+          output-path: out
+
+      - name: Build PDF
+        uses: dita-ot/dita-ot-action@master
+        with:
+          install: |
+            # Run some arbitrary installation commands
+            apt-get update -q
+            apt-get install -qy --no-install-recommends nodejs
+            nodejs -v
+
+            # Install plugins
+            dita install fox.jason.extend.css
+            dita install org.doctales.xmltask
+            dita install fox.jason.prismjs
+          build: |
+            # Use the dita command line
+            dita -i document.ditamap -o out -f pdf --filter=filter1.ditaval
+
+      - name: Upload DITA Output to a ZIP file
+        uses: actions/upload-artifact@v2
+        with:
+          name: dita-artifact
+          path: 'out'
+
+      - name: Deploy DITA Output to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: out # The folder the action should deploy.</code></pre>
+      </figure>
+      <p class="p">The <cite class="cite">Build HTML5 + Bootstrap</cite> step reuses the <span class="keyword parmname">input</span>,
+          <span class="keyword parmname">transtype</span> and <span class="keyword parmname">output-path</span> settings. In addition, additional DITA-OT
+        plug-ins can be loaded using the <span class="keyword parmname">plugins</span> parameter, with each plug-in separated by a comma or
+        new line separator. </p>
+      <p class="p">The <cite class="cite">Build PDF</cite> step uses an alternative syntax where the <span class="keyword parmname">install</span> and
+          <span class="keyword parmname">build</span> parameters are used to run arbitrary commands from the command line.</p>
+    </section>
+    <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>See the <span class="ph filepath">docsrc/samples/github-actions</span> folder in the DITA-OT installation directory for
+      additional examples of GitHub Actions for different scenarios.</section>
+  </div>
+</article></main>

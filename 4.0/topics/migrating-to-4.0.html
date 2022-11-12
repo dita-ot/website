@@ -1,0 +1,87 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Migrating to release 4.0'
+description: 'DITA-OT 4.0 requires Java 17 and includes 
+    a new plug-in for easier PDF customization, project file improvements,
+      updates to LwDITA processing, and support for the split chunking feature in the latest draft of the upcoming
+      DITA 2.0 standard.
+  '
+index: '../toc.html'
+src: 'topics/migrating-to-4.0.dita'
+---
+
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li class="active"><a href="../topics/migrating-to-4.0.html">To 4.0</a></li><li><a href="../topics/migrating-to-3.7.html">To 3.7</a></li><li><a href="../topics/migrating-to-3.6.html">To 3.6</a></li><li><a href="../topics/migrating-to-3.5.html">To 3.5</a></li><li><a href="../topics/migrating-to-3.4.html">To 3.4</a></li><li><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 4.0</h1>
+  
+
+  
+
+  <div class="body refbody"><p class="shortdesc">DITA-OT 4.0 requires Java 17 and includes 
+    <span class="ph" id="migrating-to-4.0__summary">a new plug-in for easier PDF customization, project file improvements,
+      updates to LwDITA processing, and support for the split chunking feature in the latest draft of the upcoming
+      DITA 2.0 standard</span>.
+  </p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 4.0 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the
+        <a class="xref" href="https://www.dita-ot.org/4.0/release-notes/" target="_blank" rel="external noopener">DITA-OT 4.0 Release Notes</a>.</div>
+    </section>
+
+    <section class="section" id="migrating-to-4.0__java-17"><h2 class="title sectiontitle">DITA-OT now requires Java 17</h2>
+      
+      <div class="p">DITA-OT <span class="keyword">4.0</span> is designed to run on Java version <span class="keyword">17</span> or later and built and tested with the Open Java Development Kit (OpenJDK).
+        Compatible Java distributions are available from multiple sources:
+        
+        
+        
+        
+        <ul class="ul">
+          <li class="li">You can download the Oracle JRE or JDK from
+            <a class="xref" href="https://www.oracle.com/java/technologies/downloads/" target="_blank" rel="external noopener">oracle.com/java</a> under commercial license.</li>
+          <li class="li">Eclipse Temurin is the free OpenJDK distribution available from
+            <a class="xref" href="https://adoptium.net/temurin/releases/?version=17" target="_blank" rel="external noopener">adoptium.net</a>.</li>
+          <li class="li">Free OpenJDK distributions are also provided by
+            <a class="xref" href="https://aws.amazon.com/corretto/" target="_blank" rel="external noopener">Amazon Corretto</a>,
+            <a class="xref" href="https://www.azul.com/downloads/" target="_blank" rel="external noopener">Azul Zulu</a>, and
+            <a class="xref" href="https://developers.redhat.com/products/openjdk/download" target="_blank" rel="external noopener">Red Hat</a>.</li>
+        </ul>
+      </div>
+      <div class="p">
+        <div class="note note note_note"><span class="note__title">Note:</span> The Java virtual machine is generally backwards compatible, so class files built with earlier versions
+          should still run correctly with Java 17 and DITA-OT <span class="keyword">4.0</span>. If your DITA-OT installation
+          contains plug-ins with custom Java code, you may need to recompile these with Java 17 — but in most cases,
+          this step should not be necessary.</div>
+      </div>
+    </section>
+
+    <section class="section" id="migrating-to-4.0__attribute-set-reflection"><h2 class="title sectiontitle">Deprecated attribute set reflection in PDF2</h2>
+      
+      <p class="p">
+        <span class="ph" id="migrating-to-4.0__reflection">The legacy attribute set reflection in PDF2 has been replaced with code that generates new
+          attribute sets directly. This change is backwards-compatible as the old attribute set reflection code has
+          been retained, but PDF2 now uses the new attribute set generation mechanism everywhere reflection was used.
+          Custom plug-ins that still use reflection should be updated to the new approach, as the legacy code may be
+          removed in a future version.
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3827" target="_blank" rel="external noopener">#3827</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3829" target="_blank" rel="external noopener">#3829</a>
+        </span>
+      </p>
+    </section>
+
+    <section class="section" id="migrating-to-4.0__UTF8-coderef"><h2 class="title sectiontitle">Code references now default to UTF-8 encoding</h2>
+      
+      <p class="p">The default character set for code references has been changed from the system default encoding to UTF-8.</p>
+      <div class="p">This allows a wider range of characters to be used without needing to specify the <code class="keyword markupname xmlatt">@format</code>
+        attribute on the <code class="keyword markupname xmlelement">&lt;coderef&gt;</code> element as described in
+        <a class="xref" href="../reference/extended-functionality.html#code-reference__coderef-charset">character set definition</a> or change the default
+        encoding in the
+        <a class="xref" href="../parameters/configuration-properties-file.html" title="The configuration.properties file controls certain common properties, as well as some properties that control PDF processing."><span class="ph filepath">configuration.properties</span> file</a>.
+        <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4046" target="_blank" rel="external noopener">#4046</a>
+        <div class="note note note_note"><span class="note__title">Note:</span> If you have code references that require a different encoding, use either of these mechanisms to specify
+          the character set explicitly.</div>
+      </div>
+    </section>
+  </div>
+</article></main>

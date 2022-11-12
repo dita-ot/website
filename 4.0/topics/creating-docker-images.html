@@ -1,0 +1,110 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Installing plug-ins in a Docker image'
+description: 'To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own
+      Dockerfile and specify the official DITA-OT image as the basis for your image. '
+index: '../toc.html'
+src: 'topics/creating-docker-images.dita'
+---
+
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li class="active"><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Installing plug-ins in a Docker image</h1>
+  
+  
+  
+  <div class="body taskbody"><p class="shortdesc">To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own
+      <span class="ph filepath">Dockerfile</span> and specify the official DITA-OT image as the basis for your image. </p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+      <p class="p">Each subsequent declaration in the Dockerfile modifies this parent image, so you can start with the official
+        image, and add custom plug-ins or other commands as required to create a custom Docker image that includes
+        everything you need to publish your content.</p></section>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Create a new <span class="ph filepath">Dockerfile</span> and specify the official DITA-OT image in the
+            <span class="ph filepath">FROM</span> directive.</span>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
+FROM ghcr.io/dita-ot/dita-ot:4.0</code></pre>
+        </div>
+      </li><li class="li step stepexpand"><strong>Optional: </strong>
+        <span class="ph cmd">You can extend your image with a <code class="ph codeph">RUN</code> declaration that runs the <span class="keyword cmdname">dita</span>
+          command from the container to install a custom plug-in, and specify the filename or URL of the plug-in’s
+          distribution ZIP file.</span>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Install a custom plug-in from a remote location:
+RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip</code></pre>
+        </div>
+      </li><li class="li step stepexpand"><strong>Optional: </strong>
+        <span class="ph cmd">You can also install custom plug-ins from the main DITA-OT plug-in registry at
+          <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a>, or from your company plug-in registry.</span>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Install from the registry at dita-ot.org/plugins:
+RUN dita --install org.dita-community.pdf-page-break</code></pre>
+        </div>
+      </li></ol></section>
+    <section class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
+      <p class="p">The <span class="ph filepath">docsrc/samples</span> folder in the DITA-OT installation directory contains a complete
+        example:</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample Dockerfile with custom plug-ins: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/docker/Dockerfile</span></figcaption>
+        
+        <pre class="pre codeblock language-dockerfile normalize-space show-line-numbers show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
+FROM ghcr.io/dita-ot/dita-ot:4.0
+
+# Install a custom plug-in from a remote location:
+RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
+
+# Install from the registry at dita-ot.org/plugins:
+RUN dita --install org.dita-community.pdf-page-break</code></pre>
+      </figure>
+    </section>
+    <section class="example"><h2 class="title sectiontitle">Building a new image</h2>
+      
+      <p class="p">You can build a Docker image from this example by running the following command from the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span> directory:</p>
+      <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> image build -t sample-docker-image:1.0 docker/
+[+] Building 81.5s (4/6)                                                                                                                                                           
+ =&gt; [internal] load build definition from Dockerfile                                                                                                                          0.0s
+ =&gt; =&gt; transferring dockerfile: 367B                                                                                                                                          0.0s
+ =&gt; [internal] load .dockerignore                                                                                                                                             0.0s
+ =&gt; =&gt; transferring context: 2B                                                                                                                                               0.0s
+ =&gt; [internal] load metadata for ghcr.io/dita-ot/dita-ot:<span class="keyword">4.0</span>
+ =&gt; [1/3] FROM ghcr.io/dita-ot/dita-ot:<span class="keyword">4.0</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
+ =&gt; =&gt; resolve ghcr.io/dita-ot/dita-ot:<span class="keyword">4.0</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
+Step 2/3 : RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
+ ---&gt; Running in d510f874cae0
+Added net.infotexture.dita-bootstrap
+Removing intermediate container d510f874cae0
+ ---&gt; 63deb8e15b5b
+Step 3/3 : RUN dita --install org.dita-community.pdf-page-break
+ ---&gt; Running in b4ef2fcad916
+Added org.dita-community.pdf-page-break
+Removing intermediate container b4ef2fcad916
+ ---&gt; 402885636b7f
+Successfully built 402885636b7f
+Successfully tagged sample-docker-image:1.0
+</code></pre>
+      <p class="p">Docker steps through each instruction in the Dockerfile to build the sample image. In this case, the
+          <span class="keyword cmdname">dita</span> command provides feedback on each installed plug-in.</p>
+    </section>
+    <section class="example"><h2 class="title sectiontitle">Running the new container</h2>
+      
+      <p class="p">You can then start a container based on your new image:</p>
+      <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> container run -it \
+  -v /path/to/dita-ot-dir/docsrc:/src sample-docker-image:1.0 \
+  -i /src/userguide.ditamap \
+  -o /src/out/dita-bootstrap \
+  -f html5-bootstrap -v</code></pre>
+      <div class="p">This command sequence specifies the following options:
+        <ul class="ul">
+          <li class="li"><span class="keyword option">-v</span> mounts the <span class="ph filepath">docsrc</span> subfolder of the DITA-OT directory on your host
+            machine and binds it to the <span class="ph filepath">/src</span> volume in the container</li>
+          <li class="li"><span class="keyword option">-i</span> specifies <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc</span><span class="ph filepath">/userguide.ditamap</span> as the input map file</li>
+          <li class="li"><span class="keyword option">-o</span> writes the output to <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc</span><span class="ph filepath">/out/dita-bootstrap</span></li>
+          <li class="li"><span class="keyword option">-f</span> sets the output format to the Bootstrap template, and</li>
+          <li class="li"><span class="keyword option">-v</span> displays build progress messages with verbose logging</li>
+        </ul>
+      </div>
+      <p class="p">When the build is finished, you should find a copy of the DITA-OT documentation under <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc</span><span class="ph filepath">/out/dita-bootstrap</span>, styled with the basic Bootstrap
+        template from the custom plug-in.</p>
+    </section>
+  </div>
+</article></main>

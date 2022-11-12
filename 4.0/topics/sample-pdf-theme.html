@@ -1,0 +1,137 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Sample theme file'
+description: 'Theme files can be written in either
+    JSON or
+    YAML format. The docsrc/samples/themes folder in the DITA-OT installation
+    directory provides several examples.'
+index: '../toc.html'
+src: 'topics/sample-pdf-theme.dita'
+---
+
+<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a><ul class="nav nav-list"><li><a href="../topics/pdf-customization-approaches.html">Customization approaches</a></li><li><a href="../topics/pdf2-creating-change-bars.html">Generating revision bars</a></li><li><a href="../topics/pdf-themes.html">PDF themes</a><ul class="nav nav-list"><li class="active"><a href="../topics/sample-pdf-theme.html">Sample theme file</a></li><li><a href="../resources/theme/Page-settings.md">resources/theme/Page-settings.md</a></li><li><a href="../resources/theme/Header-and-footer.md">resources/theme/Header-and-footer.md</a></li><li><a href="../resources/theme/Styles.md">resources/theme/Styles.md</a></li><li><a href="../resources/theme/Variables.md">resources/theme/Variables.md</a></li><li><a href="../resources/theme/Extending-themes.md">resources/theme/Extending-themes.md</a></li><li><a href="../resources/theme/Syntactic-sugar.md">resources/theme/Syntactic-sugar.md</a></li></ul></li></ul></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Sample theme file</h1>
+  
+  <div class="body conbody"><p class="shortdesc">Theme files can be written in either
+    <a class="xref" href="https://json.org" target="_blank" rel="external noopener">JSON</a> or
+    <a class="xref" href="https://yaml.org" target="_blank" rel="external noopener">YAML</a> format. The <span class="ph filepath">docsrc/samples/themes</span> folder in the DITA-OT installation
+    directory provides several examples.</p>
+    <div class="note note note_note"><span class="note__title">Note:</span> The examples provided here are all in YAML format, which is generally more compact and readable than
+      JSON.</div>
+    <p class="p">The YAML theme file used to produce the PDF output for the DITA-OT documentation is included in the installation
+      directory as <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span>.</p>
+    <p class="p">The examples below include excerpts from this theme that show common customizations. You can adapt these examples
+      for your own requirements.</p>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> For an overview of the elements and other settings that the theme plug-in supports, see
+      <a class="xref" href="../resources/theme/Styles.md">resources/theme/Styles.md</a>,
+      <a class="xref" href="../resources/theme/Page-settings.md">resources/theme/Page-settings.md</a>,
+      <a class="xref" href="../resources/theme/Header-and-footer.md">resources/theme/Header-and-footer.md</a>, and
+      <a class="xref" href="../resources/theme/Variables.md">resources/theme/Variables.md</a>.</div>
+    <div class="example"><h2 class="title sectiontitle">Setting custom colors</h2>
+      
+      <p class="p">Like in CSS or
+        <a class="xref" href="http://sass-lang.com" target="_blank" rel="external noopener">Sass</a>, you can use
+        <a class="xref" href="../resources/theme/Variables.md">resources/theme/Variables.md</a> to define brand colors and other shared values, and re-use these them in other
+        <a class="xref" href="../resources/theme/Styles.md">resources/theme/Styles.md</a> using semantic references such as <code class="ph codeph">$brand-color-primary</code>.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Color variables in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span></figcaption>
+        
+        <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>brand:
+  color:
+    primary: '#1d365d'
+    secondary: '#6c757d'
+    tertiary: '#bac8d1'
+    inverse: '#e9ecef'
+    links: '#3563ab'
+    note:
+      background:
+        attention: '#fff3cd'
+        caution: '#f8d7da'
+        info: '#dce4f0'
+        tip: '#d1e7dd'</code></pre></div>
+      </figure>
+    </div>
+    <div class="example"><h2 class="title sectiontitle">Defining custom font stacks</h2>
+      
+      <p class="p">You can also use
+        <a class="xref" href="../resources/theme/Variables.md">resources/theme/Variables.md</a> to specify a prioritized list of one or more font family names and reference these
+        values in the <code class="ph codeph">font-family</code> property of other
+        <a class="xref" href="../resources/theme/Styles.md">style</a> keys.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Font families in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span></figcaption>
+        
+        <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>pdf2:
+  font:
+    sans: 'Helvetica, Arial Unicode MS, Tahoma, Batang, SimSun'
+    serif: 'Times New Roman, Times, Arial Unicode MS, Tahoma, Batang, SimSun'
+    monospaced: 'Courier New, Courier, Arial Unicode MS, Tahoma, Batang, SimSun'</code></pre></div>
+      </figure>
+      <p class="p">This theme uses the default font stacks from the default <code class="ph codeph">org.dita.pdf2</code> plug-in, but the same
+        approach can be used to define other font families as required by your corporate identity.</p>
+      <p class="p">The font variables defined here under the <code class="ph codeph">pdf2</code> prefix could just as well be added to the
+          <code class="ph codeph">brand</code> key, or under a company name prefix and re-used elsewhere with references such as
+          <code class="ph codeph">$company-font-sans</code>.</p>
+    </div>
+    <div class="example"><h2 class="title sectiontitle">Defining page sizes</h2>
+      
+      <p class="p">
+        <a class="xref" href="../resources/theme/Page-settings.md">resources/theme/Page-settings.md</a> include page <code class="ph codeph">size</code>, <code class="ph codeph">orientation</code>, and margins.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Page settings in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span></figcaption>
+        
+        <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>page:
+  size: PA4
+  mirror-margins: true</code></pre></div>
+      </figure>
+      <p class="p">The DITA-OT documentation theme uses the <code class="ph codeph">PA4</code> page size, a 21 × 28 cm transitional format 
+        suitable for printing on both A4 and US Letter paper.</p>
+      <p class="p">The <code class="ph codeph">mirror-margins</code> key sets up facing pages for double-sided documents, so the margins of the
+        left page are a mirror image of those on the right.</p>
+    </div>
+    <div class="example"><h2 class="title sectiontitle">Extending and overriding themes</h2>
+      
+      <p class="p">You can
+        <a class="xref" href="../resources/theme/Extending-themes.md">extend</a> one theme with another. The samples in the DITA-OT installation
+        directory include additional theme files that can be used to override the <code class="ph codeph">PA4</code> page size in the
+        documentation theme with either A4 or Letter.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span>Switching page size to A4 with <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs_A4.yaml</span></figcaption>
+        
+        <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code># Sample PDF theme that changes page size for printing on A4 paper
+extends: ./dita-ot-docs-theme.yaml
+page:
+  size: A4</code></pre></div>
+      </figure>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 5. </span>Switching page size to Letter with <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs_Letter.yaml</span></figcaption>
+        
+        <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code># Sample PDF theme that changes page size for printing on US Letter paper
+extends: ./dita-ot-docs-theme.yaml
+page:
+  size: Letter</code></pre></div>
+      </figure>
+      <p class="p">When one of these theme extensions is passed to the <span class="keyword cmdname">dita</span> command via the
+          <span class="keyword parmname">--theme</span> option, the <code class="ph codeph">page-size</code> value in the extending theme takes
+        precedence over the original value in <span class="ph filepath">dita-ot-docs-theme.yaml</span>.</p>
+      <p class="p">If you add any new keys to a theme extension, they will be overlaid onto the keys from the extended theme.</p>
+    </div>
+    <div class="example"><h2 class="title sectiontitle">Adding an image to the cover page</h2>
+      
+      <p class="p">The <code class="ph codeph">cover</code> and <code class="ph codeph">cover-title</code>
+        <a class="xref" href="../resources/theme/Styles.md">resources/theme/Styles.md</a> can be used to add a background image and adjust the formatting and placement of the
+        document title.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span>Cover page settings in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span></figcaption>
+        
+        <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>cover:
+  background-image: dita-ot-logo-inverse.svg
+  background-repeat: no-repeat
+  height: 25.7cm
+cover-title:
+  color: $brand-color-primary
+  font-size: 36pt
+  font-weight: bold
+  line-height: 1.5
+  space-before: 195mm</code></pre></div>
+      </figure>
+      <p class="p">The DITA-OT documentation theme references a background image stored in the same folder as the theme file, 
+        and places the title at the bottom of the page by
+        setting the <code class="ph codeph">space-before</code> property for the <code class="ph codeph">cover-title</code>.</p>
+    </div>
+  </div>
+</article></main>
