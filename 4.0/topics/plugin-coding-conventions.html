@@ -9,7 +9,7 @@ index: '../toc.html'
 src: 'topics/plugin-coding-conventions.dita'
 ---
 
-<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Plug-in coding conventions</h1>
   
   
@@ -173,20 +173,20 @@ src: 'topics/plugin-coding-conventions.dita'
       <table class="table table-hover frame-bottom"><caption><span class="table--title-label">Table 1. </span><span class="title">Usage examples of <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code></span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
             <tr class="row">
               <th class="entry colsep-0 rowsep-1" id="ID__entry__1">Example</th>
-              <th class="entry colsep-0 rowsep-1" id="ID__entry__2">Description</th>
+              <th class="entry rowsep-1" id="ID__entry__2">Description</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects all DITA topics in the temporary directory.</td>
+              <td class="entry rowsep-1" headers="ID__entry__2">Selects all DITA topics in the temporary directory.</td>
             </tr>
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects all DITA maps in the temporary directory.</td>
+              <td class="entry rowsep-1" headers="ID__entry__2">Selects all DITA maps in the temporary directory.</td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="ID__entry__2">Selects images of all known types in the temporary directory.</td>
+              <td class="entry colsep-0" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
+              <td class="entry" headers="ID__entry__2">Selects images of all known types in the temporary directory.</td>
             </tr>
           </tbody></table>
     </section>
@@ -204,7 +204,7 @@ src: 'topics/plugin-coding-conventions.dita'
 
     <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
       
-      <div class="div" id="ID__d1205e92">
+      <div class="div" id="ID__plugin.rnc">
         <p class="p">DITA-OT includes a RELAX&nbsp;NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
           files that define the capabilities of each plug-in.
           
@@ -214,7 +214,7 @@ src: 'topics/plugin-coding-conventions.dita'
           instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
           prolog:</p>
         <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
-        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="ID__d1205e123"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
+        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="ID__samples-dir"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
           your plug-in file.</p>
       </div>
     </section>

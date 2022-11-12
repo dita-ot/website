@@ -1,0 +1,33 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Syntactic sugar'
+description: 'Theme files can use syntactic sugar to make them easier to read and write. When theme files are read, any shorthand keys are “desugared” to their more verbose equivalents before they are passed to the stylesheet generator.'
+index: '../../toc.html'
+src: 'resources/theme/Syntactic-sugar.md'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../../release-notes/index.html">Release Notes</a></li><li><a href="../../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../../topics/building-output.html">Building output</a></li><li><a href="../../topics/input-formats.html">Authoring formats</a></li><li><a href="../../topics/output-formats.html">Output formats</a></li><li><a href="../../parameters/index.html">Parameters</a></li><li><a href="../../topics/html-customization.html">Customizing HTML</a></li><li><a href="../../topics/pdf-customization.html">Customizing PDF</a><ul class="nav nav-list"><li><a href="../../topics/pdf-customization-approaches.html">Customization approaches</a></li><li><a href="../../topics/pdf2-creating-change-bars.html">Generating revision bars</a></li><li><a href="../../topics/pdf-themes.html">PDF themes</a><ul class="nav nav-list"><li><a href="../../topics/sample-pdf-theme.html">Sample theme file</a></li><li><a href="../../resources/theme/Page-settings.html">Page settings</a></li><li><a href="../../resources/theme/Header-and-footer.html">Header and footer</a></li><li><a href="../../resources/theme/Styles.html">Styles</a></li><li><a href="../../resources/theme/Variables.html">Variables</a></li><li><a href="../../resources/theme/Extending-themes.html">Extending themes</a></li><li class="active"><a href="../../resources/theme/Syntactic-sugar.html">Syntactic sugar</a></li></ul></li></ul></li><li><a href="../../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../../reference/index.html">Reference</a></li><li><a href="../../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Syntactic sugar</h1><div class="body"><p class="shortdesc">Theme files can use <a class="xref" href="https://en.wikipedia.org/wiki/Syntactic_sugar" target="_blank" rel="external noopener">syntactic sugar</a> to make them easier to read and write. When theme files are read, any shorthand keys are “desugared” to their more verbose equivalents before they are passed to the stylesheet generator.</p></div><article class="topic nested1" aria-labelledby="ariaid-title2" id="content"><h2 class="title topictitle2" id="ariaid-title2">Content</h2><div class="body"><p class="shortdesc">The authoring format of the <code class="ph codeph">content</code> key is a <a class="xref" href="https://en.wikipedia.org/wiki/Domain-specific_language" target="_blank" rel="external noopener">DSL</a> that supports field and variable references mixed with text.</p><p class="p">You can reference DITA-OT variables by name by prefixing them with the number sign <code class="ph codeph">#</code> and wrapping them in braces <code class="ph codeph">{</code> <code class="ph codeph">}.</code> For example:</p><pre class="pre codeblock yaml"><code>content: '{#copyright} {year} ACME Corporation'</code></pre><p class="p">desugars to</p><pre class="pre codeblock yaml"><code>content:
+  - kind: variable
+    value: copyright
+  - kind: text
+    value: ' '
+  - kind: field
+    value: year
+  - kind: text
+    value: ' ACME Corporation'</code></pre><p class="p">which would result in a line like this:</p><blockquote class="lq"><p class="p">© 2022 ACME Corporation</p></blockquote></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="page-dimensions"><h2 class="title topictitle2" id="ariaid-title3">Page dimensions</h2><div class="body"><p class="shortdesc">When page dimensions are defined using the <code class="ph codeph">size</code> and <code class="ph codeph">orientation</code> keys, they are desugared to <code class="ph codeph">width</code> and <code class="ph codeph">height</code> keys using a mapping table for known page sizes.</p><pre class="pre codeblock yaml"><code>page:
+  size: A4</code></pre><p class="p">desugars to</p><pre class="pre codeblock yaml"><code>page:
+  width: 210mm
+  height: 297mm</code></pre></div></article><article class="topic nested1" aria-labelledby="ariaid-title4" id="header-and-footer"><h2 class="title topictitle2" id="ariaid-title4">Header and footer</h2><div class="body"><p class="shortdesc">Style keys for <code class="ph codeph">header</code> and <code class="ph codeph">footer</code> are collected under the <code class="ph codeph">odd</code> and <code class="ph codeph">even</code> keys.</p><pre class="pre codeblock yaml"><code>header:
+  color: silver
+  odd:
+    font-weight: bold</code></pre><p class="p">desugars to</p><pre class="pre codeblock yaml"><code>header:
+  odd:
+    font-weight: bold
+    color: silver
+  even:
+    color: silver</code></pre></div></article><article class="topic nested1" aria-labelledby="ariaid-title5" id="topic-titles"><h2 class="title topictitle2" id="ariaid-title5">Topic titles</h2><div class="body"><p class="shortdesc">Style keys <code class="ph codeph">h1</code>, <code class="ph codeph">h2</code>, <code class="ph codeph">h3</code>, and <code class="ph codeph">h4</code> are desugared to <code class="ph codeph">topic</code>, <code class="ph codeph">topic-topic</code>, <code class="ph codeph">topic-topic-topic</code>, and <code class="ph codeph">topic-topic-topic-topic</code>, respectively.</p><pre class="pre codeblock yaml"><code>style:
+  h2:
+    font-weight: bold</code></pre><p class="p">desugars to</p><pre class="pre codeblock yaml"><code>header:
+  topic-topic:
+    font-weight: bold</code></pre></div></article></article></main>
