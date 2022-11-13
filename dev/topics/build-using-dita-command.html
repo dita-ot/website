@@ -5,11 +5,11 @@ title: 'Building output using the dita command'
 description: 'You can generate output using the dita command-line tool. Build parameters can be
     specified on the command line or with .properties files.'
 index: '../toc.html'
-commit: '6883b898af4a69b9ad75f8be2eabb72ef02e9647'
+commit: '3b1c9c12faeaeb0abf5411e7ade2495934b089a2'
 src: 'topics/build-using-dita-command.dita'
 ---
 
-<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
   
   
@@ -31,7 +31,7 @@ src: 'topics/build-using-dita-command.dita'
                 <a class="xref" href="../parameters/parameters-base.html#base__transtype"><span class="keyword parmname">transtype</span></a>. Use the same values as
                 for the <span class="keyword parmname">transtype</span> build parameter, for example <span class="keyword option">html5</span> or
                   <span class="keyword option">pdf</span>.</p>
-              <div class="p" id="using-command-line-tool__d1207e292">You can create plug-ins to add new output formats; by default, the following values are
+              <div class="p" id="using-command-line-tool__transtypes">You can create plug-ins to add new output formats; by default, the following values are
                 available:
                 
                 <ul class="ul">
@@ -64,7 +64,7 @@ src: 'topics/build-using-dita-command.dita'
             required to diagnose problems.</dd>
         
         
-          <dt class="dt pt dlterm" id="using-command-line-tool__d1207e368">
+          <dt class="dt pt dlterm" id="using-command-line-tool__output">
             <span class="keyword parmname">--output</span>=<var class="keyword varname">dir</var></dt>
           <dt class="dt pt dlterm" id="-o-dir">
             <span class="keyword parmname">-o</span>
@@ -170,7 +170,7 @@ src: 'topics/build-using-dita-command.dita'
           </dd>
         
         
-          <dt class="dt pt dlterm" id="using-command-line-tool__d1207e667">
+          <dt class="dt pt dlterm" id="using-command-line-tool__resource">
             <span class="keyword parmname">--resource</span>=<var class="keyword varname">file</var>
           </dt>
           <dt class="dt pt dlterm" id="-r-file">
@@ -192,7 +192,7 @@ src: 'topics/build-using-dita-command.dita'
           </dd>
         
         
-          <dt class="dt pt dlterm" id="using-command-line-tool__d1207e754">
+          <dt class="dt pt dlterm" id="using-command-line-tool__temp">
             <span class="keyword parmname">--temp</span>=<var class="keyword varname">dir</var></dt>
           <dt class="dt pt dlterm" id="-t-dir">
             <span class="keyword parmname">-t</span>

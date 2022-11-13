@@ -6,11 +6,11 @@ description: 'DITA-OT 3.2 supports a new plug-in registry that makes it easier t
       install new plug-ins. The registry provides a searchable list of plug-ins at
       dita-ot.org/plugins.'
 index: '../toc.html'
-commit: '6883b898af4a69b9ad75f8be2eabb72ef02e9647'
+commit: '3b1c9c12faeaeb0abf5411e7ade2495934b089a2'
 src: 'topics/plugins-registry.dita'
 ---
 
-<nav role="navigation" class="col-lg-3 toc"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li class="active"><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li class="active"><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Adding plug-ins via the registry</h1>
   
   
@@ -62,55 +62,55 @@ src: 'topics/plugins-registry.dita'
             <tr class="row">
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__1">Key</th>
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__2">Mandatory</th>
-              <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__3">Description</th>
+              <th class="entry rowsep-1" id="plugin-registry__publishing-to-registry__entry__3">Description</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">name</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2">yes</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Plug-in name</td>
+              <td class="entry rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Plug-in name</td>
             </tr>
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">vers</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2">yes</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Plug-in version in
+              <td class="entry rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Plug-in version in
                 <a class="xref" href="https://semver.org" target="_blank" rel="external noopener">semantic versioning</a> format</td>
             </tr>
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">deps</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2">yes</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Array of dependency entries. The only mandatory plug-in dependency is
+              <td class="entry rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Array of dependency entries. The only mandatory plug-in dependency is
                   <code class="ph codeph">org.dita.base</code>, which defines the supported DITA-OT platform.</td>
             </tr>
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">url</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2">yes</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Absolute URL to plug-in distribution file</td>
+              <td class="entry rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Absolute URL to plug-in distribution file</td>
             </tr>
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">cksum</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2">no</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">SHA-256 hash of the plug-in distribution file</td>
+              <td class="entry rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">SHA-256 hash of the plug-in distribution file</td>
             </tr>
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">description</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2">no</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Description of the plug-in</td>
+              <td class="entry rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Description of the plug-in</td>
             </tr>
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">keywords</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2">no</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Array of keywords</td>
+              <td class="entry rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Array of keywords</td>
             </tr>
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">homepage</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2">no</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Plug-in homepage URL</td>
+              <td class="entry rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">Plug-in homepage URL</td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">license</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__2">no</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__3">License in
+              <td class="entry colsep-0" headers="plugin-registry__publishing-to-registry__entry__1"><code class="ph codeph">license</code></td>
+              <td class="entry colsep-0" headers="plugin-registry__publishing-to-registry__entry__2">no</td>
+              <td class="entry" headers="plugin-registry__publishing-to-registry__entry__3">License in
                 <a class="xref" href="https://spdx.org/licenses/" target="_blank" rel="external noopener">SPDX</a> format</td>
             </tr>
           </tbody></table>
@@ -126,18 +126,18 @@ src: 'topics/plugins-registry.dita'
             <tr class="row">
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__31">Key</th>
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__32">Mandatory</th>
-              <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__33">Description</th>
+              <th class="entry rowsep-1" id="plugin-registry__publishing-to-registry__entry__33">Description</th>
             </tr>
           </thead><tbody class="tbody">
             <tr class="row">
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__31"><code class="ph codeph">name</code></td>
               <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__32">yes</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__33">Plug-in name</td>
+              <td class="entry rowsep-1" headers="plugin-registry__publishing-to-registry__entry__33">Plug-in name</td>
             </tr>
             <tr class="row">
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__31"><code class="ph codeph">req</code></td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__32">yes</td>
-              <td class="entry colsep-0 rowsep-1" headers="plugin-registry__publishing-to-registry__entry__33">Required plug-in version in
+              <td class="entry colsep-0" headers="plugin-registry__publishing-to-registry__entry__31"><code class="ph codeph">req</code></td>
+              <td class="entry colsep-0" headers="plugin-registry__publishing-to-registry__entry__32">yes</td>
+              <td class="entry" headers="plugin-registry__publishing-to-registry__entry__33">Required plug-in version in
                 <a class="xref" href="https://semver.org" target="_blank" rel="external noopener">semantic versioning</a> format that may contain
                 <a class="xref" href="https://docs.npmjs.com/misc/semver#ranges" target="_blank" rel="external noopener">ranges</a>.</td>
             </tr>
