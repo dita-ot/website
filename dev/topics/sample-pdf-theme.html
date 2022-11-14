@@ -7,7 +7,7 @@ description: 'Theme files can be written in either
     YAML format. The docsrc/samples/themes folder in the DITA-OT installation
     directory provides several examples.'
 index: '../toc.html'
-commit: '3b1c9c12faeaeb0abf5411e7ade2495934b089a2'
+commit: 'fb6fa72d8042f3cbda7eda5196209e17d452d4b0'
 src: 'topics/sample-pdf-theme.dita'
 ---
 
@@ -29,7 +29,7 @@ src: 'topics/sample-pdf-theme.dita'
       <a class="xref" href="../resources/theme/Page-settings.html" title="Page size and orientation can be set with the size and orientation keys. Page margins are set with the top, outside, bottom, and inside keys.">Page settings</a>,
       <a class="xref" href="../resources/theme/Header-and-footer.html" title="The content key in header or footer can be used to add text to running header or footer content. Content can include static text, or reference variables using curly braces.">Header and footer</a>, and
       <a class="xref" href="../resources/theme/Variables.html" title="Theme key values can use variables to reference settings in other keys. Any previously defined key can be referenced in the value of another key.">Variables</a>.</div>
-    <div class="example"><h2 class="title sectiontitle">Setting custom colors</h2>
+    <div class="example" id="ID__colors"><h2 class="title sectiontitle">Setting custom colors</h2>
       
       <p class="p">Like in CSS or
         <a class="xref" href="http://sass-lang.com" target="_blank" rel="external noopener">Sass</a>, you can use
@@ -52,7 +52,7 @@ src: 'topics/sample-pdf-theme.dita'
         tip: '#d1e7dd'</code></pre></div>
       </figure>
     </div>
-    <div class="example"><h2 class="title sectiontitle">Defining custom font stacks</h2>
+    <div class="example" id="ID__fonts"><h2 class="title sectiontitle">Defining custom font stacks</h2>
       
       <p class="p">You can also use
         <a class="xref" href="../resources/theme/Variables.html" title="Theme key values can use variables to reference settings in other keys. Any previously defined key can be referenced in the value of another key.">Variables</a> to specify a prioritized list of one or more font family names and reference these
@@ -72,7 +72,7 @@ src: 'topics/sample-pdf-theme.dita'
           <code class="ph codeph">brand</code> key, or under a company name prefix and re-used elsewhere with references such as
           <code class="ph codeph">$company-font-sans</code>.</p>
     </div>
-    <div class="example"><h2 class="title sectiontitle">Defining page sizes</h2>
+    <div class="example" id="ID__page-size"><h2 class="title sectiontitle">Defining page sizes</h2>
       
       <p class="p">
         <a class="xref" href="../resources/theme/Page-settings.html" title="Page size and orientation can be set with the size and orientation keys. Page margins are set with the top, outside, bottom, and inside keys.">Page settings</a> include page <code class="ph codeph">size</code>, <code class="ph codeph">orientation</code>, and margins.</p>
@@ -87,7 +87,7 @@ src: 'topics/sample-pdf-theme.dita'
       <p class="p">The <code class="ph codeph">mirror-margins</code> key sets up facing pages for double-sided documents, so the margins of the
         left page are a mirror image of those on the right.</p>
     </div>
-    <div class="example"><h2 class="title sectiontitle">Extending and overriding themes</h2>
+    <div class="example" id="ID__overrides"><h2 class="title sectiontitle">Extending and overriding themes</h2>
       
       <p class="p">You can
         <a class="xref" href="../resources/theme/Extending-themes.html" title="A theme can extend another theme using the extends key. The value of extends is a relative path from the current theme file to the theme being extended.">extend</a> one theme with another. The samples in the DITA-OT installation
@@ -112,12 +112,60 @@ page:
         precedence over the original value in <span class="ph filepath">dita-ot-docs-theme.yaml</span>.</p>
       <p class="p">If you add any new keys to a theme extension, they will be overlaid onto the keys from the extended theme.</p>
     </div>
-    <div class="example"><h2 class="title sectiontitle">Adding an image to the cover page</h2>
+    <div class="example"><h2 class="title sectiontitle">Setting up headers and footers</h2>
+      
+      <p class="p">The documentation theme includes sample customizations to adjust the content of the running headers and footers
+        that appear on each page.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span>Formatting headers and running content in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span></figcaption>
+        
+        <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>header:
+  color: $brand-color-secondary
+  display-align: before
+  end-indent: 10mm
+  font-family: $pdf2-font-sans
+  padding-after: 6pt
+  padding-before: 12pt
+  start-indent: 10mm
+  odd:
+    content: '{chapter}'
+    text-align: end
+  even:
+    content: '{title}'
+    text-align: start</code></pre></div>
+      </figure>
+      <p class="p">These settings use the secondary brand color for page headers (as defined above under
+        <a class="xref" href="sample-pdf-theme.html#ID__colors">Setting custom colors</a>), the sans-serif font families defined above under
+        <a class="xref" href="sample-pdf-theme.html#ID__fonts">Defining custom font stacks</a>, and position the content with indentation and padding.</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 7. </span>Formatting footers and page numbers in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span></figcaption>
+        
+        <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>footer:
+  color: $brand-color-secondary
+  end-indent: 10mm
+  font-family: $pdf2-font-sans
+  padding-after: 12pt
+  padding-before: 6pt
+  start-indent: 10mm
+  odd:
+    content: '{folio}'
+    font-weight: bold
+    text-align: end
+  even:
+    content: '{folio}'
+    font-weight: bold
+    text-align: start</code></pre></div>
+      </figure>
+      <p class="p">These settings use the <code class="ph codeph">{folio}</code> field to place the current page number on the outside edges of
+        each page footer. The <code class="ph codeph">content</code> key may include combinations of static text, or reference
+        variables using curly braces. For details on the available options, see
+        <a class="xref" href="../resources/theme/Header-and-footer.html" title="The content key in header or footer can be used to add text to running header or footer content. Content can include static text, or reference variables using curly braces.">Header and footer</a> and
+        <a class="xref" href="../resources/theme/Variables.html" title="Theme key values can use variables to reference settings in other keys. Any previously defined key can be referenced in the value of another key.">Variables</a>.</p>
+    </div>
+    <div class="example" id="ID__cover-page"><h2 class="title sectiontitle">Adding an image to the cover page</h2>
       
       <p class="p">The <code class="ph codeph">cover</code> and <code class="ph codeph">cover-title</code>
         <a class="xref" href="../resources/theme/Styles.html" title="The presentation of various block and inline elements can be adjusted by setting style keys. Each category takes XSL-FO key definitions and keys specific to that style.">Styles</a> can be used to add a background image and adjust the formatting and placement of the
         document title.</p>
-      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 6. </span>Cover page settings in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span></figcaption>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 8. </span>Cover page settings in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span></figcaption>
         
         <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>cover:
   background-image: dita-ot-logo-inverse.svg
@@ -133,6 +181,8 @@ cover-title:
       <p class="p">The DITA-OT documentation theme references a background image stored in the same folder as the theme file, 
         and places the title at the bottom of the page by
         setting the <code class="ph codeph">space-before</code> property for the <code class="ph codeph">cover-title</code>.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> The latest version of the documentation theme is available on GitHub:
+        <a class="xref" href="https://github.com/dita-ot/docs/blob/develop/samples/themes/dita-ot-docs-theme.yaml" target="_blank" rel="external noopener">dita-ot-docs-theme.yaml</a>.</div>
     </div>
   </div>
 </article></main>
