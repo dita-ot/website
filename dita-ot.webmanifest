@@ -1,4 +1,6 @@
 {
+  "short_name": "DITA-OT",
+  "name": "DITA Open Toolkit",
   "icons": [
     { "src": "/images/touch/icon-192.png", "type": "image/png", "sizes": "192x192" },
     { "src": "/images/touch/icon-512.png", "type": "image/png", "sizes": "512x512" }
