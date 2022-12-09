@@ -2,10 +2,10 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.0 Release Notes'
-description: 'DITA-OT 4.0 requires Java 17 and includes a new plug-in for easier PDF customization, project file improvements,
+description: 'DITA Open Toolkit 4.0.1 is a maintenance release that fixes issues
+      reported in DITA-OT 4.0, which includes a new plug-in for easier PDF customization, project file improvements,
             updates to LwDITA processing, and support for the split chunking feature in the latest drafts of the
-            upcoming DITA 2.0 standard.
-    '
+            upcoming DITA 2.0 standard.'
 index: '../toc.html'
 src: 'release-notes/index.dita'
 ---
@@ -15,17 +15,17 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA-OT <span class="keyword">4.0</span> requires Java 17 and includes <span class="ph">a new plug-in for easier PDF customization, project file improvements,
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.0.1</span> is a maintenance release that fixes issues
+      reported in DITA-OT <span class="keyword">4.0</span>, which includes <span class="ph">a new plug-in for easier PDF customization, project file improvements,
             updates to LwDITA processing, and support for the split chunking feature in the latest drafts of the
-            upcoming DITA 2.0 standard</span>.
-    </p>
+            upcoming DITA 2.0 standard</span>.</p>
     <p class="p">DITA-OT releases follow
         <a class="xref" href="https://semver.org" target="_blank" rel="external noopener">semantic versioning</a> guidelines. Version numbers use the
             <code class="ph codeph"><var class="keyword varname">major</var>.<var class="keyword varname">minor</var>.<var class="keyword varname">patch</var></code> syntax, where
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.0</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.0.1</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div>
   </div>
@@ -62,8 +62,70 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v4.0">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.0</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.0.1">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.0.1</span>
+      
+    </h2>
+
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">4.0.1</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v4.0.1__3435">
+            <span class="ph">The <code class="ph codeph">place-tbl-lbl</code> template that was originally used to define table
+          titles in XHTML has been deprecated in HTML5 processing and will be removed in a future release. This template
+          was carried over from XHTML code (which still has a copy that is used), but the copy in HTML5 is not called.
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3435" target="_blank" rel="external noopener">#3435</a>,
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4056" target="_blank" rel="external noopener">#4056</a>
+        </span>
+          </li>
+          <li class="li" id="v4.0.1__4015">In earlier versions, the <span class="keyword parmname">args.xhtml.toc.class</span> and
+              <span class="keyword parmname">args.html5.toc.class</span> properties did not work. HTML processing has been updated to
+            ensure that the value of the <code class="keyword markupname xmlatt">@class</code> attribute is correctly set on the
+              <code class="keyword markupname xmlelement">&lt;body&gt;</code> element in the table of contents (TOC) files generated for XHTML and HTML5
+            output.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4015" target="_blank" rel="external noopener">#4015</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4065" target="_blank" rel="external noopener">#4065</a>
+          </li>
+          <li class="li" id="v4.0.1__4016">The bundled Jackson data binding library was updated the latest version (2.14.0) to resolve a
+            security vulnerability.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4016" target="_blank" rel="external noopener">#4016</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4058" target="_blank" rel="external noopener">#4058</a>
+          </li>
+          <li class="li" id="v4.0.1__4017">When link targets included index terms, PDF output generated by earlier versions added the text
+            of the index entries to the end of cross-reference link text. Processing has been updated to correctly
+            filter <code class="keyword markupname xmlelement">&lt;indexterm&gt;</code> elements when computing the target text for
+              <code class="keyword markupname xmlelement">&lt;xref&gt;</code> elements.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4017" target="_blank" rel="external noopener">#4017</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4030" target="_blank" rel="external noopener">#4030</a>
+          </li>
+          <li class="li" id="v4.0.1__4021">In earlier releases, syntax diagrams with an <code class="keyword markupname xmlatt">@id</code> attribute did not preserve the
+            ID in HTML5 output. This is now fixed.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4021" target="_blank" rel="external noopener">#4021</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4057" target="_blank" rel="external noopener">#4057</a>
+          </li>
+          <li class="li" id="v4.0.1__4029">A spelling mistake has been corrected in the <span class="keyword msgnum">DOTX034E</span> message that appears when
+            unordered list items are cross-referenced without specifying link text.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4029" target="_blank" rel="external noopener">#4029</a>
+          </li>
+          <li class="li" id="v4.0.1__4043">In earlier versions, conditional processing did not work as expected when specialized attributes
+            were used for flagging. The flagging module has been updated to work correctly with specialized attributes.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4043" target="_blank" rel="external noopener">#4043</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4053" target="_blank" rel="external noopener">#4053</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.0.1+is%3Aclosed" target="_blank" rel="external noopener">4.0.1 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/4.0...4.0.1" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.0">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">4.0</span>
       <span class="ph small text-muted">released November 12, 2022</span>
     </h2>
     
@@ -260,6 +322,8 @@ src: 'release-notes/index.dita'
           </li>
           <li class="li" id="v4.0__3926">Grammar caching and validation has been added for RELAX&nbsp;NG–based DITA topics and maps. Together
             these enhancements make publishing faster and more reliable for RNG-based content.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3253" target="_blank" rel="external noopener">#3253</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3661" target="_blank" rel="external noopener">#3661</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3926" target="_blank" rel="external noopener">#3926</a>
           </li>
           <li class="li" id="v4.0__3974">Many XSLT files have been updated to use <code class="ph codeph">#current</code> for the processing mode. This
