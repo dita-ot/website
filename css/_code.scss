@@ -68,12 +68,14 @@ kbd {
 
 .codeph,
 .filepath,
-.option {
+.option,
+.varname {
   @include codeclass();
 }
 
 // Let nested code classes inherit font size (don't scale twice)
-.codeblock {
+.codeblock,
+.filepath {
   .cmdname,
   .filepath,
   .msgnum,
