@@ -72,7 +72,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "husky": "^7.0.2",
     "jest": "^27.5.1",
-    "lint-staged": "12.3.4",
+    "lint-staged": "13.1.0",
     "object.values": "^1.1.5",
     "parcel": "^2.3.2",
     "prettier": "2.6.2",
