@@ -6,7 +6,7 @@ description: 'DITA-OT includes sample XML project files that can be used to defi
     can be validated with a RELAX&nbsp;NG schema provided in the resources folder of the DITA-OT
     installation (project.rnc).'
 index: '../toc.html'
-commit: '3b1c9c12faeaeb0abf5411e7ade2495934b089a2'
+commit: '4364e19f8e6594bb1e1d8717bc95a487bb755e09'
 src: 'topics/project-files-xml.dita'
 ---
 
@@ -47,7 +47,7 @@ src: 'topics/project-files-xml.dita'
     </figure>
     <p class="p">This file can be used to generate the HTML version of the DITA-OT documentation by running the following command
       from the <span class="ph filepath">docsrc</span> folder of the DITA-OT installation directory:</p>
-    <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">samples/project-files/html.xml</var></code></pre>
+    <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<span class="ph filepath">samples/project-files/html.xml</span></code></pre>
     <p class="p">The project file for HTML output imports the common <code class="ph codeph">html</code> context from a shared project context
       defined in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/common.xml</span> file,
       which includes the input map file and the DITAVAL file used to filter the output.</p>
@@ -113,7 +113,7 @@ src: 'topics/project-files-xml.dita'
     </figure>
     <p class="p">This file can be used to generate the PDF version of the DITA-OT documentation by running the following command
       from the <span class="ph filepath">docsrc</span> folder of the DITA-OT installation directory:</p>
-    <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">samples/project-files/pdf.xml</var></code></pre>
+    <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<span class="ph filepath">samples/project-files/pdf.xml</span></code></pre>
     <p class="p">The <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/distribution-docs.xml</span> file
       includes both the HTML and PDF projects as follows:</p>
     <pre class="pre codeblock language-xml normalize-space show-whitespace"><code>&lt;project xmlns="https://www.dita-ot.org/project"&gt;
@@ -122,7 +122,7 @@ src: 'topics/project-files-xml.dita'
 &lt;/project&gt;</code></pre>
     <p class="p">To build both the HTML and PDF versions of the documentation as included in the distribution package, run the
       following command from the <span class="ph filepath">docsrc</span> folder of the DITA-OT installation directory:</p>
-    <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">samples/project-files/distribution-docs.xml</var></code></pre>
+    <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<span class="ph filepath">samples/project-files/distribution-docs.xml</span></code></pre>
     <p class="p">The <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/all.xml</span> file includes all
       three project deliverables as follows:</p>
     <pre class="pre codeblock language-xml normalize-space show-whitespace"><code>&lt;project xmlns="https://www.dita-ot.org/project"&gt;
