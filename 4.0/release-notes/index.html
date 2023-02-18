@@ -2,7 +2,7 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.0 Release Notes'
-description: 'DITA Open Toolkit 4.0.1 is a maintenance release that fixes issues
+description: 'DITA Open Toolkit 4.0.2 is a maintenance release that fixes issues
       reported in DITA-OT 4.0, which includes a new plug-in for easier PDF customization, project file improvements,
             updates to LwDITA processing, and support for the split chunking feature in the latest drafts of the
             upcoming DITA 2.0 standard.'
@@ -15,7 +15,7 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.0.1</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.0.2</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">4.0</span>, which includes <span class="ph">a new plug-in for easier PDF customization, project file improvements,
             updates to LwDITA processing, and support for the split chunking feature in the latest drafts of the
             upcoming DITA 2.0 standard</span>.</p>
@@ -25,7 +25,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.0.1</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.0.2</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div>
   </div>
@@ -62,14 +62,71 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.0.1">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.0.1</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.0.2">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.0.2</span>
       
     </h2>
 
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit <span class="keyword">4.0.1</span> is a maintenance release that includes the
+        <p class="p">DITA Open Toolkit <span class="keyword">4.0.2</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v4.0.2__4071">Earlier versions of DITA-OT did not respect key references defined on long descriptions within
+            image elements. Processing has been updated to ensure that <code class="keyword markupname xmlatt">@keyref</code> attributes on
+              <code class="keyword markupname xmlelement">&lt;longdescref&gt;</code> elements are resolved to the resource defined by the
+              <code class="keyword markupname xmlatt">@href</code> attribute on the key.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4071" target="_blank" rel="external noopener">#4071</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4080" target="_blank" rel="external noopener">#4080</a>
+          </li>
+          <li class="li" id="v4.0.2__4076">If <code class="keyword markupname xmlatt">@copy-to</code> attributes were used to create duplicate versions of topics,
+            previous versions did not resolve key references to content inside the topic copies correctly. Key reference
+            processing has been corrected to ensure that topic IDs for copied topics are properly adjusted when
+            calculating link targets.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4076" target="_blank" rel="external noopener">#4076</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4110" target="_blank" rel="external noopener">#4110</a>
+          </li>
+          <li class="li" id="v4.0.2__4104">In certain cases, when a context map resource was passed to the <span class="keyword cmdname">dita</span> command
+            with the <span class="keyword parmname">--resource</span> option or the <span class="keyword parmname">args.resources</span> parameter, the
+            resource map was overwritten with its temporary version from preprocessing. These maps are now copied and
+            processed to the temporary files folder instead of being overwritten in-place, and the key values they
+            contain are correctly resolved from the copies in the temporary folder.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4104" target="_blank" rel="external noopener">#4104</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4112" target="_blank" rel="external noopener">#4112</a>
+          </li>
+          <li class="li" id="v4.0.2__4106">In earlier versions, the DITA-OT logging configuration mistakenly enabled full debug logging for
+            all Java packages in any of the installed plug-ins. This error has been corrected to preserve the default
+              <code class="ph codeph">INFO</code> level for custom plug-ins, and only enable debug logging for Java code in DITA-OT
+            itself.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4106" target="_blank" rel="external noopener">#4106</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4114" target="_blank" rel="external noopener">#4114</a>
+          </li>
+          <li class="li" id="v4.0.2__4117">Content key references in map titles were not resolved if they pointed to phrase elements that
+            contained another <code class="keyword markupname xmlelement">&lt;ph&gt;</code> element. Key references are now handled correctly, even when
+              <code class="keyword markupname xmlatt">@conkeyref</code> targets contain nested phrase elements.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4117" target="_blank" rel="external noopener">#4117</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4120" target="_blank" rel="external noopener">#4120</a>
+          </li>
+          <li class="li" id="v4.0.2__4118">Obsolete Travis configuration files have been removed from the DITA-OT repository.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4118" target="_blank" rel="external noopener">#4118</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.0.2+is%3Aclosed" target="_blank" rel="external noopener">4.0.2 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/4.0.1...4.0.2" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.0.1">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 4.0.1 <span class="ph small text-muted"> released December 9, 2022</span>
+    </h2>
+
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">4.0.2</span> is a maintenance release that includes the
           following bug fixes.</p>
         <ul class="ul">
           
@@ -124,8 +181,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.0">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">4.0</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v4.0">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT <span class="keyword">4.0</span>
       <span class="ph small text-muted">released November 12, 2022</span>
     </h2>
     
