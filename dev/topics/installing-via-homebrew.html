@@ -5,7 +5,7 @@ title: 'Installing DITA-OT via Homebrew'
 description: 'An alternative installation method can be used to install DITA-OT via
     Homebrew, one of the most popular open-source package managers on macOS and Linux.'
 index: '../toc.html'
-commit: '94784185cdbce7919fa68f25b8c73abb39de7da2'
+commit: '7f43846be28bef627b36c39dc522a1499095e7ba'
 src: 'topics/installing-via-homebrew.dita'
 ---
 
@@ -37,11 +37,12 @@ Already up-to-date.</code></pre></div>
 <samp class="ph systemoutput sysout">dita-ot: stable <span class="keyword">4.0.2</span>
 DITA Open Toolkit is an implementation of the OASIS DITA specification
 https://www.dita-ot.org/
-/usr/local/Cellar/dita-ot/<span class="keyword">4.0.2</span> (<var class="keyword varname">number of files</var>, <var class="keyword varname">package size</var>) *
-  Built from source on <var class="keyword varname">YYYY-MM-DD</var> at <var class="keyword varname">hh:mm:ss</var>
+/opt/homebrew/Cellar/dita-ot/<span class="keyword">4.0.2</span> (<var class="keyword varname">number of files</var>, <var class="keyword varname">package size</var>) *
+  Poured from bottle using the formulae.brew.sh API on <var class="keyword varname">YYYY-MM-DD</var> at <var class="keyword varname">hh:mm:ss</var>
 From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/dita-ot.rb
-==&gt; Requirements
-Required: java &gt;= 1.8 ✔</samp>
+License: Apache-2.0
+==&gt; Dependencies
+Required: openjdk ✔</samp>
 </code></pre></div>
         <div class="itemgroup stepresult">
           <p class="p">The version of the DITA-OT formula is shown, along with basic information on the package.</p></div>
@@ -57,7 +58,7 @@ Required: java &gt;= 1.8 ✔</samp>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
         <span class="ph cmd">Verify the installation:</span>
         <div class="itemgroup stepxmp"><pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">which dita</span>
-<samp class="ph systemoutput sysout">/usr/local/bin/dita</samp></code></pre></div>
+<samp class="ph systemoutput sysout">/opt/homebrew/bin/dita</samp></code></pre></div>
         <div class="itemgroup stepresult">
           <p class="p">The response confirms that the system will use the Homebrew-installed version of DITA-OT.</p></div>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
