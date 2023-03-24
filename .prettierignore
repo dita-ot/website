@@ -21,6 +21,7 @@ _includes/toc.html
 1.*/**
 2.*/**
 3.*/**
+4.*/**
 dev/**
 
 # Ignore to preserve comments in YAML front matter
