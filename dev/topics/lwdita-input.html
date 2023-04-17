@@ -6,7 +6,7 @@ description: 'DITA-OT provides preview support for the authoring formats propose
     Lightweight DITA, or “LwDITA”. The XDITA, MDITA and HDITA formats are alternative
     representations of DITA content in XML, Markdown and HTML5.'
 index: '../toc.html'
-commit: '3b1c9c12faeaeb0abf5411e7ade2495934b089a2'
+commit: 'bbba0ec1dc242b38527e901e67d009eca47aa41c'
 src: 'topics/lwdita-input.dita'
 ---
 
@@ -86,6 +86,12 @@ src: 'topics/lwdita-input.dita'
       </div>
       <div class="note attention note_attention"><span class="note__title">Attention:</span> The HDITA map format is not yet supported. To include HDITA content, use an XDITA map or a
         DITA 1.3 map.</div>
+    </section>
+    <section class="section" id="lwdita-input__conditional-processing"><h2 class="title sectiontitle">Using conditional processing in MDITA and HDITA</h2>
+      
+      <p class="p">When you set up conditional processing in MDITA and HDITA, use the <code class="keyword markupname xmlatt">@data-props</code> attribute in the
+        element that will have the conditional processing applied. In the <span class="ph filepath">.ditaval</span> file, however,
+        use the <code class="keyword markupname xmlatt">@props</code> attribute.</p>
     </section>
     <section class="section"><h2 class="title sectiontitle">Converting lightweight formats to DITA XML</h2>
       
