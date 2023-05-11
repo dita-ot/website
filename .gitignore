@@ -7,11 +7,8 @@
 Gemfile.lock
 
 # Bundler configuration & installation log
-.bundle/config
-install.log
+.bundle/
 
-# Parcel 1 cache
-.cache
 # Parcel 2 cache
 .parcel-cache
 
