@@ -67,3 +67,6 @@ http://slack.dita-ot.org                               https://join.slack.com/t/
 /dev/release-notes/index.html*                         /dev/release-notes/:splat                                    301!
 /dev/parameters/index.html*                            /dev/parameters/:splat                                       301!
 /dev/reference/index.html*                             /dev/reference/:splat                                        301!
+
+# Plug-in registry SPA
+/plugins/*                                             /plugins.html                                                 200
