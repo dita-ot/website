@@ -95,16 +95,21 @@ function init(json) {
         })
       }
     })
-  window.onpopstate = (event) => {
-    show(location.hash)
-  }
-  show(location.hash)
+  window.addEventListener('popstate', (event) => {
+    show()
+  })
+  show()
 }
 
-function show(hash) {
+function show() {
+  let path = location.pathname.split('/').splice(2)
+  if (path.length === 0 && !!location.hash) {
+    path = location.hash.substring(location.hash.charAt(1) === '!' ? 2 : 1).split('/')
+  }
+
   let content = null
-  if (!!hash) {
-    const [name, version] = hash.substring(hash.charAt(1) === '!' ? 2 : 1).split('/')
+  if (path.length > 0) {
+    const [name, version] = path
     const pluginVersions = plugins[name].slice()
     pluginVersions.sort(compareVersion)
     content = details(pluginVersions, version) || notFound(name, version)
@@ -114,7 +119,7 @@ function show(hash) {
   const wrapper = document.getElementById('plugins')
   clear(wrapper)
   append(wrapper, content)
-  if (!hash) {
+  if (path.length === 0) {
     doFilter()
   } else {
     window.scrollTo(0, 0)
@@ -266,7 +271,7 @@ function list(json) {
         .map((plugin) => plugin[0])
         .map((first) =>
           elem('li', { id: first.name }, [
-            elem('h3', elem('a', { href: `#!${first.name}` }, first.name)),
+            elem('h3', elem('a', { href: `/plugins/${first.name}` }, first.name)),
             elem('p', first.description),
             elem(
               'p',
@@ -400,7 +405,7 @@ function details(versions, version) {
     elem(
       'ul',
       versions.map((version) =>
-        elem('li', elem('a', { href: `#!${first.name}/${version.vers}` }, version.vers))
+        elem('li', elem('a', { href: `/plugins/${first.name}/${version.vers}` }, version.vers))
       )
     ),
   ])
