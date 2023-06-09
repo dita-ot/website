@@ -6,7 +6,7 @@ description: 'DITA-OT includes sample XML project files that can be used to defi
     can be validated with a RELAX&nbsp;NG schema provided in the resources folder of the DITA-OT
     installation (project.rnc).'
 index: '../toc.html'
-commit: '4364e19f8e6594bb1e1d8717bc95a487bb755e09'
+commit: '2b4329c67e6b8b8dbcc5899903bffe668dfa829a'
 src: 'topics/project-files-xml.dita'
 ---
 
@@ -95,9 +95,6 @@ src: 'topics/project-files-xml.dita'
   &lt;deliverable id="pdf"&gt;
     &lt;context name="User Guide"&gt;
       &lt;input href="../../userguide-book.ditamap"/&gt;
-      &lt;profile&gt;
-        &lt;ditaval href="../../resources/pdf.ditaval"/&gt;
-      &lt;/profile&gt;
     &lt;/context&gt;
     &lt;output href="."/&gt;
     &lt;publication transtype="pdf2"&gt;
@@ -107,6 +104,9 @@ src: 'topics/project-files-xml.dita'
       &lt;param name="outputFile.base" value="userguide"/&gt;
       &lt;param name="processing-mode" value="strict"/&gt;
       &lt;param name="theme" path="../themes/dita-ot-docs-theme.yaml"/&gt;
+      &lt;profile&gt;
+        &lt;ditaval href="../../resources/pdf.ditaval"/&gt;
+      &lt;/profile&gt;
     &lt;/publication&gt;
   &lt;/deliverable&gt;
 &lt;/project&gt;</code></pre>

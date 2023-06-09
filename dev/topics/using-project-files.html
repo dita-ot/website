@@ -7,7 +7,7 @@ description: 'DITA-OT 3.4 introduced project files that allow you to publish mul
     publish, an output folder, and a publication format (such as HTML, or PDF) with
     transformation parameters.'
 index: '../toc.html'
-commit: '612cad078e0a34bd209dfd6e757dc9d7d64f3209'
+commit: '2b4329c67e6b8b8dbcc5899903bffe668dfa829a'
 src: 'topics/using-project-files.dita'
 ---
 
@@ -79,7 +79,25 @@ src: 'topics/using-project-files.dita'
                 publication (in addition to any filters defined in the map context)</li>
             </ul></div>
           <p class="p">Parameters defined in a publication can override those in other publications that are referenced via
-              <code class="ph codeph">idref</code>.</p></li>
+              <code class="ph codeph">idref</code>.</p>
+          <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample project file with publication parameter overrides: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/param-override.xml</span></figcaption>
+            
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;project xmlns="https://www.dita-ot.org/project"&gt;
+  &lt;publication transtype="html5" id="common-html5"&gt;
+    &lt;param name="nav-toc" value="partial"/&gt;
+  &lt;/publication&gt;
+  &lt;deliverable&gt;
+    &lt;context&gt;
+      &lt;input href="root.ditamap"/&gt;
+    &lt;/context&gt;
+    &lt;output href="./out"/&gt;
+    &lt;publication idref="common-html5"&gt;
+      &lt;param name="nav-toc" value="full"/&gt; &lt;!-- override common HTML publication --&gt;
+    &lt;/publication&gt;
+  &lt;/deliverable&gt;
+&lt;/project&gt;</code></pre>
+          </figure>
+        </li>
       </ul>
       <div class="note tip note_tip"><span class="note__title">Tip:</span> 
         <ul class="ul">
@@ -101,7 +119,7 @@ src: 'topics/using-project-files.dita'
         contexts.</p>
       <div class="p"> For example, consider a case with 100 maps that have multiple <code class="keyword markupname xmlatt">@product</code> variants, but every one
         of which is published in two <code class="keyword markupname xmlatt">@audience</code> conditions (internal or external). If
-          <code class="keyword markupname xmlatt">@audience</code> is varied in publications, the structure is orthogonal and well-organized: <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample filtering scenario</figcaption>
+          <code class="keyword markupname xmlatt">@audience</code> is varied in publications, the structure is orthogonal and well-organized: <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample filtering scenario</figcaption>
           
           <img class="image" src="../reference/images/sample-project-filtering-scenario.svg">
         </figure>
@@ -111,7 +129,7 @@ src: 'topics/using-project-files.dita'
         <span class="ph cmd">Create a project file to define the deliverables in your publication project.</span>
         <div class="itemgroup stepxmp">
           <p class="p">For example:</p>
-          <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample project file for PDF output: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/pdf.xml</span></figcaption>
+          <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Sample project file for PDF output: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/pdf.xml</span></figcaption>
             
             <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;?xml-model href="https://www.dita-ot.org/rng/project.rnc" type="application/relax-ng-compact-syntax"?&gt;
@@ -119,9 +137,6 @@ src: 'topics/using-project-files.dita'
   &lt;deliverable id="pdf"&gt;
     &lt;context name="User Guide"&gt;
       &lt;input href="../../userguide-book.ditamap"/&gt;
-      &lt;profile&gt;
-        &lt;ditaval href="../../resources/pdf.ditaval"/&gt;
-      &lt;/profile&gt;
     &lt;/context&gt;
     &lt;output href="."/&gt;
     &lt;publication transtype="pdf2"&gt;
@@ -131,6 +146,9 @@ src: 'topics/using-project-files.dita'
       &lt;param name="outputFile.base" value="userguide"/&gt;
       &lt;param name="processing-mode" value="strict"/&gt;
       &lt;param name="theme" path="../themes/dita-ot-docs-theme.yaml"/&gt;
+      &lt;profile&gt;
+        &lt;ditaval href="../../resources/pdf.ditaval"/&gt;
+      &lt;/profile&gt;
     &lt;/publication&gt;
   &lt;/deliverable&gt;
 &lt;/project&gt;</code></pre>
