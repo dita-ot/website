@@ -5,7 +5,7 @@ title: 'Example: Creating a simple PDF plug-in'
 description: 'This scenario walks through the process of creating a very simple plug-in
       (com.example.print-pdf) that creates a new transformation type: print-pdf.'
 index: '../toc.html'
-commit: '5a9d780ce0509195d1c67dd0f01da9b4e09d15f0'
+commit: '45be7585968a9794b60fc40f03e60b89678a335b'
 src: 'topics/pdf-customization-example.dita'
 ---
 
@@ -21,6 +21,7 @@ src: 'topics/pdf-customization-example.dita'
       <ul class="ul">
         <li class="li">Uses A4 paper </li>
         <li class="li">Renders figures with a title at the top and a description at the bottom</li>
+        <li class="li">Removes the period after the number for an ordered-list item</li>
         <li class="li">Use em dashes as the symbols for unordered lists</li>
       </ul>
     </section>
@@ -122,11 +123,11 @@ src: 'topics/pdf-customization-example.dita'
             <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;variables&gt;
   &lt;!-- Remove dot from list number --&gt;
-  &lt;variable id="Ordered List Number"&gt;
+  &lt;variable id="Ordered List Number 1"&gt;
     &lt;param ref-name="number"/&gt;
   &lt;/variable&gt;
   &lt;!-- Change unordered list bullet to an em dash --&gt;
-  &lt;variable id="Unordered List bullet"&gt;&amp;#x2014;&lt;/variable&gt;
+  &lt;variable id="Unordered List bullet 1"&gt;&amp;#x2014;&lt;/variable&gt;
 &lt;/variables&gt;</code></pre>
           </figure></div>
       </li></ol></section>
