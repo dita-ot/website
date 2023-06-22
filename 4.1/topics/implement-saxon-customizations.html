@@ -1,0 +1,50 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Adding Saxon customizations'
+description: 'Plug-ins can contribute XSLT extension functions and collation URI resolvers. These customizations are
+    automatically configured to work with Saxon when transformations are run using the DITA-OT
+      pipeline task with custom XSLT.'
+index: '../toc.html'
+src: 'topics/implement-saxon-customizations.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a><ul class="nav nav-list"><li><a href="../topics/plugin-set-parameters.html">Setting parameters</a></li><li><a href="../topics/plugin-anttarget.html">Adding a new Ant target</a></li><li><a href="../topics/plugin-antpreprocess.html">Adding a pre-processing step</a></li><li><a href="../topics/plugin-newtranstype.html">Adding a new output format</a></li><li><a href="../topics/plugin-xsltparams.html">Adding new parameters</a></li><li><a href="../topics/plugin-overridestyle.html">Overriding XSLT steps</a></li><li><a href="../topics/plugin-javalib.html">Adding a Java library</a></li><li><a href="../topics/plugin-messages.html">Adding new messages</a></li><li><a href="../topics/plugin-newextensions.html">New extension points</a></li><li><a href="../topics/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../topics/plugin-rewrite-rules.html">Rewriting file names</a></li><li class="active"><a href="../topics/implement-saxon-customizations.html">Saxon customizations</a><ul class="nav nav-list"><li><a href="../topics/implement-saxon-extension-functions.html">Saxon extensions</a></li><li><a href="../topics/implement-saxon-collation-uri-resolvers.html">Custom collation URI resolvers</a></li></ul></li></ul></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Adding Saxon customizations</h1>
+  
+  
+  
+  <div class="body"><p class="shortdesc">Plug-ins can contribute XSLT extension functions and collation URI resolvers. These customizations are
+    automatically configured to work with Saxon when transformations are run using the DITA-OT
+      <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> task with custom XSLT.</p>
+    <div class="p">Plug-ins can provide the following Saxon extensions:
+      <ul class="ul">
+        <li class="li">Extension functions</li>
+        <li class="li">Collation URI resolvers</li>
+      </ul></div>
+    <p class="p">Extensions are declared in plug-in-provided JAR files using the Java ServiceLoader feature that looks for
+      service-declaring files in JAR files and loads classes. This requires adding one or more files in the
+        <span class="ph filepath">META-INF/services</span> directory in plug-in-provided JAR files.</p>
+    <p class="p">You can create the file manually or generate it dynamically using <code class="keyword markupname xmlelement">&lt;service&gt;</code> elements in
+      Ant <code class="keyword markupname xmlelement">&lt;jar&gt;</code> tasks. See the topics for the different extension types for details.</p>
+    <div class="p">These extensions use the DITA Open Toolkit Ant <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> element to wrap
+        <code class="keyword markupname xmlelement">&lt;xslt&gt;</code> elements. You can do this in plug-ins as shown in this excerpt from the DITA
+      Community I18N plugin’s <span class="ph filepath">build.xml</span>
+      file:<pre class="pre codeblock language-xml"><code>&lt;target name="org.dita-community.i18n-saxon-extension-test"&gt;
+  &lt;pipeline message="Test the DITA Community i18n Saxon extension functions"
+            taskname="i18n-extension-function-test"&gt;
+    &lt;xslt
+      in="${dita.plugin.org.dita-community.i18n.dir}/test/xsl/data/test-data.xml"
+      style="${dita.plugin.org.dita-community.i18n.dir}/test/xsl/test-extension-functions.xsl"
+      out="${basedir}/out/extension-function-test-results.xml"
+      &gt;
+    &lt;/xslt&gt;
+  &lt;/pipeline&gt;
+&lt;/target&gt;</code></pre></div>
+    <p class="p">Normal XSLT extensions to built-in transformation types will automatically have the extensions available to
+      them.</p>
+    <p class="p">The dynamic Saxon configuration is implemented in the class <code class="ph codeph">org.dita.dost.module.XsltModule</code>,
+      which backs the <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code>/<code class="keyword markupname xmlelement">&lt;xslt&gt;</code> element.</p>
+    <p class="p"> </p>
+  </div>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/implement-saxon-extension-functions.html">Implementing Saxon extension functions</a></strong><br>Plug-ins can contribute Saxon extension functions for use in XSLT transformations run by DITA Open     Toolkit.</li><li class="link ulchildlink"><strong><a href="../topics/implement-saxon-collation-uri-resolvers.html">Implementing custom Saxon collation URI resolvers</a></strong><br>Plug-ins can provide custom URI resolvers that provide collators for specific collation URIs.</li></ul></nav></article></main>

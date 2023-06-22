@@ -1,0 +1,33 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Customizing PDF output'
+description: 'You can adjust various aspects of PDF output by changing parameter settings or using
+      a theme file. For more complex customizations, you can create custom DITA-OT plug-ins.'
+index: '../toc.html'
+src: 'topics/pdf-customization.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li class="active"><a href="../topics/pdf-customization.html">Customizing PDF</a><ul class="nav nav-list"><li><a href="../topics/pdf-customization-approaches.html">Customization approaches</a></li><li><a href="../topics/pdf2-creating-change-bars.html">Generating revision bars</a></li><li><a href="../topics/pdf-themes.html">PDF themes</a></li></ul></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Customizing PDF output</h1>
+  
+  
+  
+
+  <div class="body conbody"><p class="shortdesc">You can <span class="ph" id="customizing-pdf-output__shortdesc-ph">adjust various aspects of PDF output by changing parameter settings or using
+      a theme file</span>. For more complex customizations, you can create custom DITA-OT plug-ins.</p>
+    <p class="p">For example:</p>
+    <ul class="ul">
+      <li class="li">To print the file names of the graphics underneath figures, set <span class="keyword parmname">args.artlbl</span> to
+          <span class="keyword option">yes.</span></li>
+      <li class="li">To disable the subsection links on the first page of each chapter, set
+          <span class="keyword parmname">args.chapter.layout</span> to <span class="keyword option">BASIC</span>.</li>
+      <li class="li">To change the name of the PDF file to something other than the input map name, set
+          <span class="keyword parmname">outputFile.base</span> to the desired file name (without the <span class="ph filepath">.pdf</span>
+        extension).</li>
+    </ul>
+    <div class="note note note_note"><span class="note__title">Note:</span> For the full list of settings for PDF output, see
+      <a class="xref" href="../parameters/parameters-pdf.html" title="Certain parameters are specific to the PDF transformation.">PDF parameters</a>.</div>
+
+  </div>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/pdf-customization-approaches.html">PDF customization approaches</a></strong><br>Various methods may be used to customize the PDF output that DITA Open Toolkit produces. Each of these     approaches have advantages and shortcomings that should be considered when preparing a customization     project.</li><li class="link ulchildlink"><strong><a href="../topics/pdf2-creating-change-bars.html">Generating revision bars</a></strong><br>You can generate revision bars in your PDF output by using the <code class="keyword markupname xmlatt">@changebar</code> and       <code class="keyword markupname xmlatt">@color</code> attributes of the DITAVAL <code class="keyword markupname xmlelement">&lt;revprop&gt;</code> element.</li><li class="link ulchildlink"><strong><a href="../topics/pdf-themes.html">PDF themes</a></strong><br><span class="ph">DITA-OT 4.0 includes the <code class="ph codeph">com.elovirta.pdf</code> plug-in, which extends the       default PDF2 plug-in with a new <span class="keyword parmname">theme</span> parameter. The <span class="keyword parmname">--theme</span> option       takes a path to a theme file and changes the styling of the PDF output without requiring changes to XSLT       stylesheets.</span></li></ul><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/pdf-customization-plugins.html" title="In most cases, PDF output should be customized by creating custom DITA-OT plug-ins that build on the default DITA to PDF transformation. PDF plug-ins can customize covers and page layouts, modify formatting, override the logic of the default PDF plug-in, and much more.">Custom PDF plug-ins</a></li></ul></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../reference/books.html" title="Several DITA-related publications include information on configuring and customizing DITA Open Toolkit with detailed examples on creating custom plug-ins for PDF output.">Books</a></li></ul></div></nav></article></main>
