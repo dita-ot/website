@@ -7,11 +7,11 @@ description: 'DITA-OT 3.4 introduced project files that allow you to publish mul
     publish, an output folder, and a publication format (such as HTML, or PDF) with
     transformation parameters.'
 index: '../toc.html'
-commit: '2b4329c67e6b8b8dbcc5899903bffe668dfa829a'
+commit: '02af209f2eaba79e66755b8b38280e725f1be3fe'
 src: 'topics/using-project-files.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li class="active"><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li class="active"><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Publishing with project files</h1>
   
   
@@ -117,13 +117,13 @@ src: 'topics/using-project-files.dita'
       <p class="p">As of DITA-OT 4.0, you can add DITAVAL filters to both contexts and publications. If a set of filter conditions
         applies to most or all of your deliverables, then it should probably be defined in a publication, rather than in
         contexts.</p>
-      <div class="p"> For example, consider a case with 100 maps that have multiple <code class="keyword markupname xmlatt">@product</code> variants, but every one
+      <p class="p"> For example, consider a case with 100 maps that have multiple <code class="keyword markupname xmlatt">@product</code> variants, but every one
         of which is published in two <code class="keyword markupname xmlatt">@audience</code> conditions (internal or external). If
-          <code class="keyword markupname xmlatt">@audience</code> is varied in publications, the structure is orthogonal and well-organized: <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample filtering scenario</figcaption>
-          
-          <img class="image" src="../reference/images/sample-project-filtering-scenario.svg">
-        </figure>
-      </div>
+          <code class="keyword markupname xmlatt">@audience</code> is varied in publications, the structure is orthogonal and well-organized:</p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample filtering scenario</figcaption>
+        
+        <br><img class="image" src="../reference/images/sample-project-filtering-scenario.svg" width="624"><br>
+      </figure>
     </section>
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Create a project file to define the deliverables in your publication project.</span>
@@ -144,7 +144,6 @@ src: 'topics/using-project-files.dita'
       &lt;param name="args.gen.task.lbl" value="YES"/&gt;
       &lt;param name="include.rellinks" value="#default external"/&gt;
       &lt;param name="outputFile.base" value="userguide"/&gt;
-      &lt;param name="processing-mode" value="strict"/&gt;
       &lt;param name="theme" path="../themes/dita-ot-docs-theme.yaml"/&gt;
       &lt;profile&gt;
         &lt;ditaval href="../../resources/pdf.ditaval"/&gt;

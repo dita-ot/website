@@ -6,11 +6,11 @@ description: 'DITA-OT includes sample XML project files that can be used to defi
     can be validated with a RELAX&nbsp;NG schema provided in the resources folder of the DITA-OT
     installation (project.rnc).'
 index: '../toc.html'
-commit: '2b4329c67e6b8b8dbcc5899903bffe668dfa829a'
+commit: '02af209f2eaba79e66755b8b38280e725f1be3fe'
 src: 'topics/project-files-xml.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li class="active"><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li class="active"><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Sample XML project files</h1>
   
   
@@ -38,9 +38,9 @@ src: 'topics/project-files-xml.dita'
       &lt;param name="args.cssroot" path="../../resources"/&gt;
       &lt;param name="args.gen.task.lbl" value="YES"/&gt;
       &lt;param name="args.hdr" href="../../resources/header.xml"/&gt;
+      &lt;param name="args.rellinks" value="noparent"/&gt;
       &lt;param name="html5.toc.generate" value="no"/&gt;
       &lt;param name="nav-toc" value="partial"/&gt;
-      &lt;param name="processing-mode" value="strict"/&gt;
     &lt;/publication&gt;
   &lt;/deliverable&gt;
 &lt;/project&gt;</code></pre>
@@ -80,7 +80,6 @@ src: 'topics/project-files-xml.dita'
       &lt;param name="args.csspath" value="css"/&gt;
       &lt;param name="args.cssroot" path="../../resources"/&gt;
       &lt;param name="args.gen.task.lbl" value="YES"/&gt;
-      &lt;param name="processing-mode" value="strict"/&gt;
     &lt;/publication&gt;
   &lt;/deliverable&gt;
 &lt;/project&gt;</code></pre>
@@ -102,7 +101,6 @@ src: 'topics/project-files-xml.dita'
       &lt;param name="args.gen.task.lbl" value="YES"/&gt;
       &lt;param name="include.rellinks" value="#default external"/&gt;
       &lt;param name="outputFile.base" value="userguide"/&gt;
-      &lt;param name="processing-mode" value="strict"/&gt;
       &lt;param name="theme" path="../themes/dita-ot-docs-theme.yaml"/&gt;
       &lt;profile&gt;
         &lt;ditaval href="../../resources/pdf.ditaval"/&gt;

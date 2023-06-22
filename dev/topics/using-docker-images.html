@@ -8,11 +8,11 @@ description: '
       3.4, the DITA-OT project provides an official Docker container image that includes everything you need to run the
       toolkit and publish DITA content from a containerized environment.'
 index: '../toc.html'
-commit: '94784185cdbce7919fa68f25b8c73abb39de7da2'
+commit: '02af209f2eaba79e66755b8b38280e725f1be3fe'
 src: 'topics/using-docker-images.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.0</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li class="active"><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li class="active"><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Running the <span class="keyword cmdname">dita</span> command from a Docker image</h1>
   
   
@@ -70,7 +70,7 @@ src: 'topics/using-docker-images.dita'
             <span class="keyword cmdname">dita</span> command.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> run -it \
-  -v /Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.0.2</span> \
+  -v /Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.1</span> \
   -i /src/input.ditamap \
   -o /src/out \
   -f html5 -v</code></pre>
@@ -89,7 +89,7 @@ src: 'topics/using-docker-images.dita'
             <p class="p">On Windows, if your <span class="ph filepath">Users</span> directory is on the <span class="ph filepath">C:\</span> drive, use
               <span class="ph filepath">/c/Users/…</span> to map the host directory:</p>
             <pre class="pre codeblock"><code>&gt; C:\Users\username&gt; <span class="keyword cmdname">docker</span> run -it ^
-  -v /c/Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.0.2</span> ^
+  -v /c/Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.1</span> ^
   -i /src/input.ditamap ^
   -o /src/out ^
   -f html5 -v</code></pre>
