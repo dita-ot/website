@@ -1,0 +1,48 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Extension point reference'
+description: 'DITA Open Toolkit provides a series of extension points that can be used to integrate changes into the core
+    code. Extension points are defined in the plugin.xml file for each plug-in. When plug-ins are
+    installed, DITA-OT makes each extension visible to the rest of the toolkit.'
+index: '../toc.html'
+src: 'extension-points/plugin-extension-points.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../reference/dita-spec-support.html">DITA specification support</a></li><li class="active"><a href="../extension-points/plugin-extension-points.html">Extension points</a><ul class="nav nav-list"><li><a href="../extension-points/all-extension-points.html">All extension points</a></li><li><a href="../extension-points/plugin-extension-points-general.html">General extension points</a></li><li><a href="../extension-points/plugin-extension-points-pre-processing.html">Pre-processing extension points</a></li><li><a href="../extension-points/plugin-extension-points-xslt-import.html">XSLT-import extension points</a></li><li><a href="../extension-points/plugin-extension-points-xslt-parameters.html">XSLT-parameter extension points</a></li><li><a href="../extension-points/plugin-extension-points-support.html">Version and support information</a></li><li><a href="../extension-points/extension-points-by-plugin.html">Plug-in extension points</a></li></ul></li><li><a href="../reference/markdown-formats.html">Markdown formats</a></li><li><a href="../reference/license.html">License</a></li><li><a href="../reference/glossary.html#glossary">Glossary</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Extension point reference</h1>
+  
+  
+  
+  <div class="body refbody"><p class="shortdesc">DITA Open Toolkit provides a series of extension points that can be used to integrate changes into the core
+    code. Extension points are defined in the <span class="ph filepath">plugin.xml</span> file for each plug-in. When plug-ins are
+    installed, DITA-OT makes each extension visible to the rest of the toolkit.</p>
+    <section class="section">
+      <p class="p">Depending on which extension points you use, your custom code will either run whenever output is generated,
+        before or after certain processing stages, or only with certain transformation types.</p>
+    </section>
+    <div class="example"><h2 class="title sectiontitle">Extension points govern when code runs</h2>
+      
+      <ul class="ul">
+        <li class="li">To run a custom Ant target after the pre-processing stage regardless of transformation type, use
+            <span class="keyword parmname">depend.preprocess.post</span></li>
+        <li class="li">To run an Ant target before the <code class="ph codeph">copy-html</code> step when generating HTML output, use
+            <span class="keyword parmname">depend.preprocess.copy-html.pre</span></li>
+      </ul>
+    </div>
+    <div class="example"><h2 class="title sectiontitle">Checking the transformation type</h2>
+      
+      <p class="p">If you want to isolate your custom code so it only runs when output is generated for a particular
+        transformation type, you can define a condition that checks the transtype before running the custom code.</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;!-- Add a condition that checks the transtype --&gt;
+&lt;condition property="isYourTranstype"&gt;
+  &lt;matches pattern="your.transtype" string="${transtype}"/&gt;
+&lt;/condition&gt;</code></pre>
+      <p class="p">You can then check this condition before running your custom code:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;!-- Check the condition before running your target --&gt;
+&lt;target name="your-target" if="${isYourTranstype}"&gt;
+  ⋮
+&lt;/target&gt;</code></pre>
+    </div>
+  </div>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../extension-points/all-extension-points.html">All DITA-OT extension points</a></strong><br>The pre-defined extension points can be used to add new functionality to DITA-OT. If         your toolkit installation includes custom plug-ins that define additional extension points, you can add to this         list by rebuilding the DITA-OT documentation.</li><li class="link ulchildlink"><strong><a href="../extension-points/plugin-extension-points-general.html">General extension points</a></strong><br>These extension points enable you to extend DITA-OT. You can add Ant targets or imports; add a Java library     to the <span class="keyword parmname">classpath</span> parameter; add a new transformation type; extend a catalog file; add new     diagnostic messages, and more.</li><li class="link ulchildlink"><strong><a href="../extension-points/plugin-extension-points-pre-processing.html">Pre-processing extension points</a></strong><br>You can use these extension points to run an Ant target before or after the pre-processing stage. If     necessary, you can also run an Ant target before a specific pre-processing step — but this approach is not     recommended.</li><li class="link ulchildlink"><strong><a href="../extension-points/plugin-extension-points-xslt-import.html">XSLT-import extension points</a></strong><br>You can use these extension points to override XSLT processing steps in pre-processing and certain     transformation types. The value of the <code class="keyword markupname xmlatt">@file</code> attribute in the <code class="keyword markupname xmlelement">&lt;feature&gt;</code>     element specifies a relative path to an XSL file in the current plug-in. The plug-in installer adds a XSL import     statement to the default DITA-OT code, so that the XSL override becomes part of the normal build.</li><li class="link ulchildlink"><strong><a href="../extension-points/plugin-extension-points-xslt-parameters.html">XSLT-parameter extension points</a></strong><br>You can use these extension points to pass parameters into existing XSLT steps in both the pre-processing     pipeline and DITA-OT transformation. The parameters generally will be available as global       <code class="keyword markupname xmlelement">&lt;xsl:param&gt;</code> values with XSLT overrides.</li><li class="link ulchildlink"><strong><a href="../extension-points/plugin-extension-points-support.html">Version and support information</a></strong><br>You can use these extension points to define version and support information for a plug-in. Currently,     DITA-OT does not do anything with this information, but it might do so in the future.</li><li class="link ulchildlink"><strong><a href="../extension-points/extension-points-by-plugin.html">Extension points by plug-in</a></strong><br>The default plug-ins that ship with DITA Open Toolkit include a series of extension points that can be used     to modify various aspects of toolkit processing.</li></ul><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2014/dita-ot_day.html#Extending_the_DITA_Open_Toolkit" target="_blank" rel="external noopener" title="DITA-OT includes extension points that let you do any number of things. This session will cover what's available, what you should or shouldn't extend, and give out sample plugins to slice and dice your content.">Extending the DITA Open Toolkit: How crazy can you get?</a></li></ul></div></nav></article></main>

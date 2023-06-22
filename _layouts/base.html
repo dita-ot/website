@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% if page.url contains '/dev/' %}
     <meta name="docsearch:version" content="dev">
+    {% elsif page.url contains '/4.1/' %}
+    <meta name="docsearch:version" content="4.1">
     {% elsif page.url contains '/4.0/' %}
     <meta name="docsearch:version" content="4.0">
     {% elsif page.url contains '/3.7/' %}
@@ -58,9 +60,10 @@
     {% include header.html %}
     {% if page.url contains '/dev/' %}
       {% include docs-banner-dev.html %}
-    {% elsif page.url contains '/4.0/' %}
+    {% elsif page.url contains '/4.1/' %}
       {% include docs-banner-new.html %}
-    {% elsif page.url contains '/3.7/'
+    {% elsif page.url contains '/4.0/'
+          or page.url contains '/3.7/'
           or page.url contains '/3.6/'
           or page.url contains '/3.5/'
           or page.url contains '/3.4/'

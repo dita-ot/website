@@ -1,0 +1,78 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Speeding up builds'
+description: 'Several configuration changes can significantly reduce DITA-OT processing time.'
+index: '../toc.html'
+src: 'topics/reducing-processing-time.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li><a href="../topics/logging.html">Logging</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/error-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Command line help</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li class="active"><a href="../topics/reducing-processing-time.html">Speeding up builds</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">Speeding up builds</h1>
+   
+   
+   <div class="body"><p class="shortdesc">Several configuration changes can significantly reduce DITA-OT processing time.</p>
+      <section class="section"><h2 class="title sectiontitle">Disable debug attribute generation</h2>
+         
+         <p class="p">The <span class="keyword parmname">generate-debug-attributes</span> parameter determines whether debugging attributes are
+            generated in the temporary files. By changing the value to <code class="ph codeph">false</code>, DITA-OT will no longer
+            generate the <code class="keyword markupname xmlatt">@xtrf</code> and <code class="keyword markupname xmlatt">@xtrc</code> debug attributes. This will make it more
+            difficult to track down the source file location from which a given issue may have originated, but it will
+            reduce the size of the temporary files. As a result, XML parsing will take less time and overall processing
+            time will be reduced.</p>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Use a fast disk for the temporary directory</h2>
+         
+         <p class="p">DITA-OT keeps topic and map files as separate files and processes each file multiple times during
+            preprocessing. Thus reading from disk, parsing XML, serializing XML, and writing to disk makes processing
+            quite I/O intensive. Use either an
+            <a class="xref" href="http://en.wikipedia.org/wiki/Solid-state_drive" target="_blank" rel="external noopener">SSD</a> or a
+            <a class="xref" href="http://en.wikipedia.org/wiki/RAM_drive" target="_blank" rel="external noopener">RAM disk</a> for
+            temporary files, and never use a temporary directory that is not located on the same machine as where the
+            processing takes place.</p>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Enable parallel processing</h2>
+         
+         <p class="p">As of DITA-OT 3.6, preprocessing module code can be run in parallel by setting the
+               <span class="keyword parmname">parallel</span> parameter to <span class="keyword option">true</span>. The performance benefits this option
+            provides depend heavily on the source file set, the DITA features used in the project, and the computer
+            doing the processing, but under the right circumstances, you may see notable improvements when this option
+            is enabled.</p>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Enable in-memory processing</h2>
+         
+         <p class="p">As of DITA-OT 3.6, the Cache Store can be activated by setting the <span class="keyword parmname">store-type</span> parameter
+            to <span class="keyword option">memory</span>. <span class="ph">In-memory processing provides performance advantages in I/O bound environments such as cloud
+          computing platforms, where processing time depends primarily on how long it takes to read and write temporary
+          files.</span> For more information, see
+            <a class="xref" href="../reference/store-api.html" title="DITA-OT originally assumed resources would be available on disk and available from file paths. Recent versions added URI input, so HTTPS resources could be used, but temporary and output resources were still file-based. DITA-OT 3.6 introduces a new Store API that can process temporary resources in memory instead of writing them to disk.">Store API – Processing in memory</a>.</p>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Reuse the JVM instance</h2>
+         
+         <p class="p">For all but large source sets, the Java virtual machine (JVM) will not have enough time to warm-up. By
+            reusing the same JVM instance, the first few DITA-OT conversions will be “normal”, but when the Just-In-Time
+            (JIT) compiler starts to kick in, the performance increase may be 2-10 fold. This is especially noticeable
+            with smaller source sets, as much of the DITA-OT processing is I/O intensive.</p>
+         <div class="note tip note_tip"><span class="note__title">Tip:</span> The
+            <a class="xref" href="https://docs.gradle.org/current/userguide/gradle_daemon.html" target="_blank" rel="external noopener">Gradle Daemon</a> uses this mechanism (along with incremental builds) to reduce processing
+            time. You can run DITA-OT with these features via the
+            <a class="xref" href="https://github.com/eerohele/dita-ot-gradle" target="_blank" rel="external noopener">DITA-OT Gradle Plugin</a>.</div>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Use the latest Java version</h2>
+         
+         <p class="p">DITA-OT 2.0 to 2.3 require Java 7, and DITA-OT 2.4 and newer require Java 8. However, using a newer version
+            of Java may further reduce processing time, depending on your operating system.</p>
+      </section>
+      <section class="section"><h2 class="title sectiontitle">Re-enable Java file caching</h2>
+         
+         <p class="p">As of Java 12, the file canonicalization cache is no longer enabled by default (see
+            <a class="xref" href="https://bugs.openjdk.org/browse/JDK-8207005" target="_blank" rel="external noopener">JDK-8207005</a>). On Windows, this results in significantly longer build times, and slight
+            increases on Linux. To re-enable file caching, add <code class="ph codeph">-Dsun.io.useCanonCaches=true </code> to the Java
+            invocation command in the <span class="ph filepath">dita.bat</span> and <span class="ph filepath">ant.bat</span> wrapper
+            scripts.</p>
+         <div class="note note note_note"><span class="note__title">Note:</span> As of DITA-OT 3.7.3, this system property is set by default in the bundled wrapper scripts.</div>
+      </section>
+   </div>
+
+   <nav role="navigation" class="related-links"><div class="linklist"><strong>Collected links</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="http://en.wikipedia.org/wiki/Solid-state_drive" target="_blank" rel="external noopener">SSD</a></li><li class="linklist"><a class="link" href="http://en.wikipedia.org/wiki/RAM_drive" target="_blank" rel="external noopener">RAM disk</a></li></ul></div></nav>
+</article></main>

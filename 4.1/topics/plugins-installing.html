@@ -1,0 +1,49 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Installing plug-ins'
+description: 'Use the dita install subcommand to install plug-ins.'
+index: '../toc.html'
+src: 'topics/plugins-installing.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Installing plug-ins</h1>
+  
+  
+  <div class="body taskbody"><p class="shortdesc">Use the <span class="keyword cmdname">dita install</span> subcommand to install plug-ins.</p>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="ol steps"><div class="li step p">
+        <span class="ph cmd">At the command-line prompt, enter the following command:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita install</span> <var class="keyword varname">&lt;plug-in&gt;</var></code></pre>
+          <p class="p">where:</p>
+          <ul class="ul">
+            <li class="li">the optional <span class="ph filepath"><var class="keyword varname">&lt;plug-in&gt;</var></span> argument is one of
+                the following:
+                <ul class="ul">
+                  <li class="li">the unique <var class="keyword varname">ID</var> of the plug-in as defined in the plug-in registry at
+                    <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a> (or a local registry)</li>
+                  <li class="li">the remote <var class="keyword varname">URL</var> of the plug-in’s distribution ZIP file</li>
+                  <li class="li">the name of a local ZIP <var class="keyword varname">file</var></li>
+                </ul>
+              </li>
+          </ul>
+          <div class="note note note_note"><span class="note__title">Note:</span> <span class="ph">In earlier versions of DITA-OT (2.4–3.4), use the double-hyphen option
+                    syntax <span class="keyword cmdname">dita</span></span>
+            <span class="keyword parmname">--install</span>. <span class="ph">In DITA-OT 2.0–2.3, use the
+                    single-hyphen form: <span class="keyword cmdname">dita</span></span>
+            <span class="keyword parmname">-install</span>.</div>
+          <div class="note tip note_tip"><span class="note__title">Tip:</span> 
+            <span class="ph">If no <var class="keyword varname">ID</var>, <var class="keyword varname">URL</var>, or
+                    <var class="keyword varname">file</var> argument is provided, the installation process reloads the current set of
+                  plug-ins from the <span class="ph filepath">plugins</span> directory (or any custom locations defined via the
+                    <span class="keyword parmname">pluginsdir</span> property in the <span class="ph filepath">configuration.properties</span> file
+                  in the <span class="ph filepath">config</span> directory). This approach can be used to add or remove multiple
+                  plug-ins at once, or any individual plug-ins you have already copied to (or removed from) the plug-in
+                  directories. Any plug-ins added or removed in the process will be listed by their plug-in
+                ID.</span>
+          </div>
+        </div>
+      </div></div></section>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/configuration-properties-file.html" title="The configuration.properties file controls certain common properties, as well as some properties that control PDF processing.">The configuration.properties file</a></li><li class="linklist"><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content. Subcommands can be used to manage plug-ins, or print information about the current configuration. A series of options are available to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></li></ul></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/plugins-registry.html" title="DITA-OT 3.2 supports a new plug-in registry that makes it easier to discover and install new plug-ins. The registry provides a searchable list of plug-ins at dita-ot.org/plugins.">Adding plug-ins via the registry</a></li><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2018/dita-ot_day.html#plug-in_installation_made_easier" target="_blank" rel="external noopener" title="Description and a demo of the new DITA-OT plug-in repository.">Plug-in installation made easier</a></li></ul></div></nav></article></main>

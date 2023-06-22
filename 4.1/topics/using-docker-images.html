@@ -1,0 +1,105 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Running the dita command from a Docker image'
+description: '
+    
+      Docker is a platform used to build, share, and run portable application containers. As of version
+      3.4, the DITA-OT project provides an official Docker container image that includes everything you need to run the
+      toolkit and publish DITA content from a containerized environment.'
+index: '../toc.html'
+src: 'topics/using-docker-images.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li class="active"><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Running the <span class="keyword cmdname">dita</span> command from a Docker image</h1>
+  
+  
+  
+  <div class="body taskbody"><p class="shortdesc">
+    <span class="ph" id="ID__docker-desc">
+      <a class="xref" href="https://www.docker.com" target="_blank" rel="external noopener">Docker</a> is a platform used to build, share, and run portable application containers. As of version
+      3.4, the DITA-OT project provides an official Docker container image that includes everything you need to run the
+      toolkit and publish DITA content from a containerized environment.</span></p>
+    <section class="section"><h2 class="title sectiontitle">About application containers</h2>
+      
+      <p class="p">Using containers to deploy applications isolates software from its environment to ensure that it works
+        consistently despite any differences in the host operating system, for example.</p>
+      <p class="p">Docker containers are designed as stateless machines that can be quickly created and destroyed, started and
+        stopped. Each Docker image provides its own private filesystem that includes only the code required to run the
+        application itself — it is not intended for persistent data storage.</p>
+      <p class="p">When a container is stopped, any changes made within the container are lost, so source files and generated
+        output should be stored outside the container. These resources are attached to the container by mounting
+        directories from the host machine.</p>
+    </section>
+    <section class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>
+      <div class="p">To run the DITA-OT image, you will need to install Docker and be able to access the GitHub Container Registry.
+        <ul class="ul">
+          <li class="li">To download Docker Desktop, you may be prompted to sign in with your Docker&nbsp;ID (or sign up to create
+            one).</li>
+        </ul>
+      </div>
+    </section>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps multi-platform"><li class="li step stepexpand">
+        <span class="ph cmd">Install Docker for your operating system.</span>
+        <ul class="ul choices">
+          <li class="li choice" data-platform="windows">
+            <a class="xref" href="https://docs.docker.com/desktop/windows/install/" target="_blank" rel="external noopener">Install
+              Docker Desktop on Windows</a>
+          </li>
+          <li class="li choice" data-platform="mac">
+            <a class="xref" href="https://docs.docker.com/desktop/mac/install/" target="_blank" rel="external noopener">Install Docker
+              Desktop on Mac</a>
+          </li>
+          <li class="li choice" data-platform="mac">On macOS, you can also install Docker Desktop via
+            <a class="xref" href="https://brew.sh" target="_blank" rel="external noopener">Homebrew</a>:
+            <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">brew</span> install homebrew/cask/docker
+<samp class="ph systemoutput sysout">Downloading…</samp></code></pre>
+          </li>
+          <li class="li choice" data-platform="mac windows">
+            When you first run the Docker Desktop application, you may be prompted to grant privileged access to allow
+            Docker to install its networking components and links to the Docker apps. Grant this access and accept the
+            service agreement to proceed.
+          </li>
+          <li class="li choice" data-platform="linux">On Linux, install Docker Community Edition (CE) via your operating system’s package manager, for
+            example: <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">sudo</span> apt-get install docker-ce</code></pre></li>
+        </ul>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">To build output, map a host directory to a container volume and specify options for the
+            <span class="keyword cmdname">dita</span> command.</span>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> run -it \
+  -v /Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.1</span> \
+  -i /src/input.ditamap \
+  -o /src/out \
+  -f html5 -v</code></pre>
+          <div class="p">This command sequence specifies the following options:
+            <ul class="ul">
+              <li class="li"><span class="keyword option">-v</span> mounts the <span class="ph filepath">source</span> subfolder of your home directory and binds
+                it to the <span class="ph filepath preserve-separator">/src</span> volume in the container</li>
+              <li class="li"><span class="keyword option">-i</span> specifies the <span class="ph filepath">input.ditamap</span> file in your
+                  <span class="ph filepath">source</span> folder as the input map file</li>
+              <li class="li"><span class="keyword option">-o</span> writes the output to <span class="ph filepath">source/out</span></li>
+              <li class="li"><span class="keyword option">-f</span> sets the output format to HTML5, and</li>
+              <li class="li"><span class="keyword option">-v</span> displays build progress messages with verbose logging</li>
+            </ul>
+          </div>
+          <div class="div" data-platform="windows">
+            <p class="p">On Windows, if your <span class="ph filepath">Users</span> directory is on the <span class="ph filepath">C:\</span> drive, use
+              <span class="ph filepath">/c/Users/…</span> to map the host directory:</p>
+            <pre class="pre codeblock"><code>&gt; C:\Users\username&gt; <span class="keyword cmdname">docker</span> run -it ^
+  -v /c/Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.1</span> ^
+  -i /src/input.ditamap ^
+  -o /src/out ^
+  -f html5 -v</code></pre>
+          </div>
+        </div>
+        <div class="itemgroup info">
+          <div class="note note note_note"><span class="note__title">Note:</span> The DITA-OT container image uses the <code class="ph codeph">ENTRYPOINT</code> instruction to run the
+              <span class="keyword cmdname">dita</span> command from the <span class="ph filepath preserve-separator">/opt/app/bin/</span> directory of the container
+            automatically, so you there’s no need to include the <span class="keyword cmdname">dita</span> command itself, only the
+            arguments and options you need to publish your content.</div>
+        </div>
+      </li></ol></section>
+  </div>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/creating-docker-images.html">Installing plug-ins in a Docker image</a></strong><br>To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own       <span class="ph filepath">Dockerfile</span> and specify the official DITA-OT image as the basis for your image.</li></ul><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2022/dita-ot_day.html#DITA_and_Markdown_and_Docker" target="_blank" rel="external noopener" title="Nokia’s Cloud and Network Services is one of three major business groups in Nokia, all of which use DITA and DITA-OT for the great majority of customer-facing documentation. Unlike Nokia’s Mobile Networks or Network Infrastructure groups, CNS focuses entirely on software for both cloud and core network solutions and services. With the advent of co-authoring between DITA content from Technical Writers and Markdown content from R&amp;D developers, Lw-DITA and the Lw-DITA OT-plugin have now become key aspects of our documentation ecosystem. The CNS User Assistance Tools team has implemented a dozen OT Plugins, and leverages Ant, Maven, Git, and Jenkins plugins to support both local documentation builds on writers’ workstations as well as CI builds on a server farm orchestrated by Kubernetes. By packaging our Maven, Ant, and DITA-OT customizations into separate Docker layers, we're able to allow R&amp;D pipelines to build the corresponding documentation during a software build to support rapid CI/CD deployments going forward. With the generation of OT Project files by our pipeline, we were able to further eliminate the need for some of our previous scaffolding. Local workstation builds are facilitated by OxygenXML SDK plugins to marshal writer configuration info to OT. Unit testing of our OT customizations is accomplished using a combination of XSpec, AntUnit and Jenkins. The next wave of OT plugins will support OpenAPI3 conversion to DITA in a pre-process plugin and to Markdown. We will also be enriching our content to better support modern presentation solutions, including the application of machine learning and AI-assisted solutions.">DITA and Markdown and Docker, oh my…</a></li><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2016/dita-ot_day.html#Using_the_Open_Toolkit_Through_Docker_Containers" target="_blank" rel="external noopener" title="Docker containers make it easy to package and use different configurations of software components. Docker containers can also provide the dependencies needed to run a given piece of software. For the Open Toolkit, you can use Docker containers to easily provision and run the Open Toolkit without worrying about the local Java configuration or other dependencies. Docker also makes it easy to set up custom configurations of the Open Toolkit or use different versions. This presentation shows how to use Docker-based Open Toolkit packages.">Using the Open Toolkit Through Docker Containers</a></li></ul></div></nav></article></main>

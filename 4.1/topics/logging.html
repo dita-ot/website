@@ -1,0 +1,109 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Logging build information'
+description: 'When you run DITA-OT, key information is logged on the screen. This information can also be written to a
+    log file. If you encounter a problem, you can analyze this information to determine the source of the problem and
+    then take action to resolve it.'
+index: '../toc.html'
+src: 'topics/logging.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li class="active"><a href="../topics/logging.html">Logging</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/error-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Command line help</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Speeding up builds</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Logging build information</h1>
+  
+  
+  
+  <div class="body conbody"><p class="shortdesc">When you run DITA-OT, key information is logged on the screen. This information can also be written to a
+    log file. If you encounter a problem, you can analyze this information to determine the source of the problem and
+    then take action to resolve it.</p>
+    <p class="p">The logging behavior varies depending on whether you use the <span class="keyword cmdname">dita</span> command or Ant to invoke a
+      toolkit build.</p>
+    <dl class="dl">
+      
+        <dt class="dt dlterm" id="dita-command"><span class="keyword cmdname">dita</span> command</dt>
+        <dd class="dd">
+          <p class="p">By default, only warning and error messages are written to the screen.</p>
+          <ul class="ul">
+            <li class="li">
+              <p class="p">For more information, enable verbose logging with <span class="keyword cmdname">dita</span>
+                <span class="keyword parmname">--verbose</span>.</p>
+              <p class="p">Verbose logging prints additional information to the console, including directory settings, effective
+                values for Ant properties, input/output files, and informational messages to assist in
+                troubleshooting.</p></li>
+            <li class="li">
+              <p class="p">To enable debug logging, use <span class="keyword cmdname">dita</span>
+                <span class="keyword parmname">--debug</span>.</p>
+              <p class="p">Debug logging prints considerably more additional information. The debug log includes all information
+                from the verbose log, plus details on Java classes, additional Ant properties and overrides,
+                preprocessing filters, parameters, and stages, and the complete build sequence.</p>
+              <div class="note attention note_attention"><span class="note__title">Attention:</span> Debug logging requires additional resources and can slow down the build process, so
+                it should only be enabled when further details are required to diagnose problems.</div>
+            </li>
+            <li class="li">
+              <p class="p">To write the log to a file, use <span class="keyword cmdname">dita</span>
+                <span class="keyword parmname">--logfile</span>=<var class="keyword varname">file</var> and specify the path to the log file.</p>
+              <p class="p">Unless an absolute path is specified, the value will be interpreted relative to the current
+                directory.</p></li>
+          </ul></dd>
+      
+      
+        <dt class="dt dlterm" id="ant">Ant</dt>
+        <dd class="dd">By default, status information is written to the screen. If you issue the <span class="keyword parmname">-l</span> parameter,
+          the build runs silently and the information is written to a log file with the name and location that you
+          specified.</dd>
+      
+    </dl>
+    <section class="section"><h2 class="title sectiontitle">Using other Ant loggers</h2>
+      
+      <p class="p">You also can use other Ant loggers; see
+        <a class="xref" href="https://ant.apache.org/manual/listeners.html" target="_blank" rel="external noopener">Listeners &amp;
+          Loggers</a> in the Ant documentation for more information.</p>
+      <p class="p">For example, you can use the <strong class="ph b">AnsiColorLogger</strong> to colorize the messages written on the screen.</p>
+      <dl class="dl">
+        
+          <dt class="dt dlterm" id="dita-command"><span class="keyword cmdname">dita</span> command</dt>
+          <dd class="dd">
+            <p class="p">To use a custom Ant logger with the <span class="keyword cmdname">dita</span> command, add the logger to the
+                <code class="ph codeph">ANT_ARGS</code> environment variable by calling the following command before calling the
+                <span class="keyword cmdname">dita</span> command:</p>
+            <pre class="pre codeblock syntax-bash"><code>export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger"</code></pre>
+            <p class="p">Now you will get colorized messages when the <span class="keyword cmdname">dita</span> command runs.</p>
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> Environment variables can also be set permanently. See
+              <a class="xref" href="https://www.java.com/en/download/help/path.xml" target="_blank" rel="external noopener">How do I set or
+                change the PATH system variable?</a> for information on how to set the
+              <a class="xref" href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank" rel="external noopener">PATH environment variable</a>. You can set the <code class="ph codeph">ANT_ARGS</code> environment variable in the same
+              way.</div>
+          </dd>
+        
+        
+          <dt class="dt dlterm" id="ant">Ant</dt>
+          <dd class="dd">
+            <p class="p">If you prefer to launch DITA-OT directly from Ant, you can also add the logger to the
+                <code class="ph codeph">ANT_ARGS</code> environment variable, as explained above. You can also set the logger with the
+                <code class="ph codeph">-logger</code> parameter when calling Ant.</p>
+            <pre class="pre codeblock syntax-bash"><code>ant -logger org.apache.tools.ant.listener.AnsiColorLogger</code></pre>
+          </dd>
+        
+      </dl>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">FOP debug logging</h2>
+      
+      
+      
+      <p class="p">In PDF processing with Apache™ FOP, DITA-OT uses the Simple Logging
+        Facade for Java (SLF4J) for better control and formatting of FOP log messages. To reduce noise on the console,
+        all FOP messages are set to the Info level and hidden by default.</p>
+      <p class="p">To enable debug logging, modify the <span class="ph filepath">config/logback.xml</span> file or add your own
+          <span class="ph filepath">logback.xml</span> to the classpath with a higher priority to override the default settings. For
+        more information, see the
+        <a class="xref" href="https://logback.qos.ch/manual/configuration.html" target="_blank" rel="external noopener">Logback
+          configuration documentation</a>.</p>
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> Enabling FOP debug logging will dramatically increase the size of generated log
+        files.</div>
+    </section>
+    
+    
+    
+  </div>
+</article></main>
