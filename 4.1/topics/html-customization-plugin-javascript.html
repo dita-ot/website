@@ -127,9 +127,11 @@ ga('send', 'pageview');
     </section>
     <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
       <ol class="ol">
-        <li class="li">Run <span class="ph filepath"><span class="keyword cmdname">dita</span></span>
-          <span class="keyword parmname">--install</span> to install the plug-in and make the <span class="keyword option">html5-javascript</span>
-          transformation available.</li>
+        <li class="li">
+          <p class="p">Use the <span class="keyword cmdname">dita install</span> subcommand to install the plug-in.</p>
+          <div class="note note note_note"><span class="note__title">Note:</span> For more information, see
+            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div>
+        </li>
         <li class="li">Build output with the new transformation type to verify that the plug-in works as intended.
           <pre class="pre codeblock"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">my.ditamap</var> <span class="keyword parmname">--format</span>=<span class="keyword option">html5-javascript</span></code></pre></li>
         <li class="li">Open one of the generated HTML topic files in a modern web browser and check the JavaScript

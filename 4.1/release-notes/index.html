@@ -2,7 +2,8 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.1 Release Notes'
-description: 'DITA Open Toolkit 4.1 includes a new version of the
+description: 'DITA Open Toolkit 4.1.1 is a maintenance release that fixes issues
+      reported in DITA-OT 4.1, which includes a new version of the
             Lightweight DITA plug-in with significant enhancements to Markdown processing, and updates for the latest
             DITA 2.0 draft standard.'
 index: '../toc.html'
@@ -14,7 +15,8 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.1</span> includes <span class="ph">a new version of the
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.1.1</span> is a maintenance release that fixes issues
+      reported in DITA-OT <span class="keyword">4.1</span>, which includes <span class="ph">a new version of the
             Lightweight DITA plug-in with significant enhancements to Markdown processing, and updates for the latest
             DITA 2.0 draft standard</span>.</p>
     <p class="p">DITA-OT releases follow
@@ -22,7 +24,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.1</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.1.1</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div>
   </div>
@@ -59,9 +61,90 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v4.1">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.1</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.1.1">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.1.1</span>
       
+    </h2>
+
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">4.1.1</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v4.1.1__4155">In previous releases, there were some cases in which a <code class="keyword markupname xmlelement">&lt;desc&gt;</code> element
+            inside an <code class="keyword markupname xmlelement">&lt;xref&gt;</code> or <code class="keyword markupname xmlelement">&lt;link&gt;</code> element was not annotated with the
+            expected <code class="keyword markupname xmlpi">&lt;?ditaot usershortdesc?&gt;</code> processing instruction during preprocessing. These omissions
+            have been corrected to aid in debugging. (This change is relevant only within preprocessing, as these
+            processing instructions are deleted when preprocessing completes.)
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4155" target="_blank" rel="external noopener">#4155</a>
+          </li>
+          <li class="li" id="v4.1.1__4218">When building HTML output, earlier versions reported XSLT errors while resolving custom header
+            files if paths used Windows backslash characters “<code class="ph codeph">\</code>” as separators. Path separators in
+              <span class="keyword parmname">args.ftr</span>, <span class="keyword parmname">args.hdf</span>, and <span class="keyword parmname">args.hdr</span> parameter
+            values are now converted to the forward slash character “<code class="ph codeph">/</code>” to ensure URLs are valid before
+            they are passed to XSLT.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4218" target="_blank" rel="external noopener">#4218</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4226" target="_blank" rel="external noopener">#4226</a>
+          </li>
+          <li class="li" id="v4.1.1__4221">For cross-references to a topic, the target topic’s short description is processed to create a
+            link description. When that <code class="keyword markupname xmlelement">&lt;shortdesc&gt;</code> element contained another cross-reference,
+            earlier versions did not process it correctly, and reported <span class="keyword msgnum">DOTX031E</span> (file not available)
+            errors during processing. This issue is now fixed, and link descriptions are created correctly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4221" target="_blank" rel="external noopener">#4221</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4239" target="_blank" rel="external noopener">#4239</a>
+          </li>
+          <li class="li" id="v4.1.1__4230">Build scripts have been updated to ensure unit tests run correctly during Gradle builds.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4230" target="_blank" rel="external noopener">#4230</a>
+          </li>
+          <li class="li" id="v4.1.1__4234">The RELAX&nbsp;NG grammar caching changes in DITA-OT 4.0 introduced a configuration bug that
+            accidentally disabled XML Schema Definition validation. Processing and tests have been updated to ensure
+            that XSD-based maps and topic files can be published correctly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3926" target="_blank" rel="external noopener">#3926</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4234" target="_blank" rel="external noopener">#4234</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4238" target="_blank" rel="external noopener">#4238</a>
+          </li>
+          <li class="li" id="v4.1.1__4240">When logging was changed to use processing mode in DITA-OT 4.1, the change logged the exception
+            without location. Logging code has been corrected to restore the location information to the exception, so
+            errors once again show the line/column number where the problem appears.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4187" target="_blank" rel="external noopener">#4187</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4240" target="_blank" rel="external noopener">#4240</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4248" target="_blank" rel="external noopener">#4248</a>
+          </li>          
+          <li class="li">Several dependencies have been upgraded to include the latest utility versions and fix security issues in
+            bundled libraries:
+            <ul class="ul">
+              <li class="li" id="v4.1.1__4227">Guava 32.1.1
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4227" target="_blank" rel="external noopener">#4227</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4245" target="_blank" rel="external noopener">#4245</a>
+              </li>
+              <li class="li" id="v4.1.1__4216">Jackson 2.15.2
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4216" target="_blank" rel="external noopener">#4216</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4228" target="_blank" rel="external noopener">#4228</a>
+              </li>
+              <li class="li" id="v4.1.1__4246">Logback 1.4.8 and SLF4J 2.0.7
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4246" target="_blank" rel="external noopener">#4246</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4250" target="_blank" rel="external noopener">#4250</a>
+              </li>
+              <li class="li" id="v4.1.1__4241">Saxon 12.3
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4241" target="_blank" rel="external noopener">#4241</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4247" target="_blank" rel="external noopener">#4247</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4250" target="_blank" rel="external noopener">#4250</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.1.1+is%3Aclosed" target="_blank" rel="external noopener">4.1.1 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/4.1...4.1.1" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.1">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">4.1</span>
+      <span class="ph small text-muted">released June 22, 2023</span>
     </h2>
     
     <div class="body refbody">
@@ -238,6 +321,9 @@ src: 'release-notes/index.dita'
               </li>
               <li class="li" id="v4.1__4197">Gradle wrapper 7.6.1
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4197" target="_blank" rel="external noopener">#4197</a>
+              </li>
+              <li class="li" id="v4.1__4130">Saxon 12.2
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4130" target="_blank" rel="external noopener">#4130</a>
               </li>
             </ul>
           </li>
