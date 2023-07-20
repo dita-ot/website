@@ -9,7 +9,7 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "check": "npm run prettier-check && npm run stylelint-check && npm run stylelint",
+    "check": "npm run prettier-check && npm run stylelint",
     "fix:style": "stylelint \"css/*.scss\" --fix",
     "fmt": "npm run format",
     "format": "npm run format:config && npm run format:docs && npm run format:html && npm run format:script && npm run format:style",
@@ -24,7 +24,6 @@
     "prettier": "prettier --write \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
     "prettier-check": "prettier --check \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
     "stylelint": "stylelint \"css/*.scss\"",
-    "stylelint-check": "stylelint-config-prettier-check",
     "test": "jest && npm run test:script && npm run stylelint",
     "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\""
   },
@@ -38,8 +37,7 @@
   },
   "stylelint": {
     "extends": [
-      "stylelint-config-twbs-bootstrap",
-      "stylelint-config-prettier"
+      "stylelint-config-twbs-bootstrap"
     ],
     "ignoreFiles": [
       "css/bootstrap/**/*.scss",
@@ -78,9 +76,8 @@
     "prettier": "2.8.8",
     "prismjs": "^1.29.0",
     "process": "^0.11.10",
-    "stylelint": "^14.5.3",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-twbs-bootstrap": "^3.0.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-twbs-bootstrap": "^11.0.1",
     "ts-jest": "^27.1.3",
     "typescript": "^4.6.2",
     "urijs": "^1.19.11",
