@@ -1,12 +1,12 @@
 // Sass partial for icon presentation
 
 // Append video icon to DITA-OT Day links in related links and link lists (but not in page footers)
-a.link[href*='dita-ot_day']::after,
-.link a[href*='dita-ot_day']::after {
+a.link[href*="dita-ot_day"]::after,
+.link a[href*="dita-ot_day"]::after {
   display: inline;
   margin-left: 6px;
-  content: '    ';
-  background-image: url('../images/device-camera-video-16.svg');
+  content: "    ";
+  background-image: url("../images/device-camera-video-16.svg");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;

@@ -6,7 +6,7 @@
 // pre-2.3:
 nav.col-lg-3,
 // 2.3 – 3.6:
-nav[role='toc'],
+nav[role="toc"],
 // as of 3.7:
 nav.toc {
   @extend .col-lg-3;
@@ -56,7 +56,7 @@ nav.toc {
 }
 
 // 2.3 – 3.6:
-nav[role='toc'],
+nav[role="toc"],
 // as of 3.7:
 nav.toc {
   .controller {
@@ -91,13 +91,13 @@ nav.toc {
 
     &.expanded {
       > .controller::before {
-        @include controller('\25BC');
+        @include controller("\25BC");
       }
     }
 
     &.collapsed {
       > .controller::before {
-        @include controller('\25B6');
+        @include controller("\25B6");
       }
 
       > ul {

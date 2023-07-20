@@ -5,3 +5,9 @@ printWidth: 100
 proseWrap: "preserve"
 singleQuote: true
 semi: false
+
+# per stylelint-config-twbs-bootstrap
+overrides:
+  - files: "*.scss"
+    options:
+      singleQuote: false

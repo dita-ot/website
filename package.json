@@ -50,7 +50,8 @@
       "selector-class-pattern": null,
       "selector-max-id": 1,
       "selector-max-type": 3,
-      "selector-no-qualifying-type": null
+      "selector-no-qualifying-type": null,
+      "stylistic/number-leading-zero": null
     }
   },
   "dependencies": {

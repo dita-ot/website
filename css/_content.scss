@@ -8,7 +8,7 @@ main#content {
   margin-bottom: 30px;
 }
 
-.row > main[role='main'] {
+.row > main[role="main"] {
   @extend .col-lg-9;
 }
 
@@ -22,7 +22,7 @@ main#content {
 
   &::after {
     padding-left: 0.5em;
-    content: '#';
+    content: "#";
   }
 }
 

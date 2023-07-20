@@ -1,9 +1,9 @@
 // Sass partial to override Bootstrap & user agent defaults for code styles
 
 // Import Prism CSS for codeblock syntax highlighting
-@import 'prism.css';
+@import "prism.css";
 // Remove Prism's default background for inline code
-:not(pre) > code[class*='language-plaintext'] {
+:not(pre) > code[class*="language-plaintext"] {
   background: inherit;
 }
 
@@ -22,7 +22,7 @@
   letter-spacing: 1px;
 }
 
-pre[class*='language-'],
+pre[class*="language-"],
 .highlight,
 .codeblock {
   margin: $spacer 0;
@@ -31,7 +31,7 @@ pre[class*='language-'],
 
 // Override Bootstrap _code partials
 
-pre[class*='language-'],
+pre[class*="language-"],
 pre {
   padding: 6px 9.5px;
   border: 1px solid $pre-border-color;
@@ -43,8 +43,8 @@ pre {
   }
 }
 
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   @include codeclass();
 }
 

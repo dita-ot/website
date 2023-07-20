@@ -1,6 +1,7 @@
 // Sass partial to override Bootstrap defaults for topic finder modal
 
 // Override flex display
+/* stylelint-disable-next-line selector-id-pattern -- Permit this ID */
 #tocSearch .modal-footer {
   display: block;
 

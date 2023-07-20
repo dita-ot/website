@@ -38,11 +38,13 @@
 // Hide edit link on extra-small devices like phones in portrait mode
 // Begin showing at small breakpoint (landscape phones, 576px and up)
 
+/* stylelint-disable-next-line selector-id-pattern -- Permit this ID */
 #editLink {
   display: none;
 }
 
 @include media-breakpoint-up(sm) {
+  /* stylelint-disable-next-line selector-id-pattern -- Permit this ID */
   #editLink {
     display: flex;
     padding: 0.2rem 0.4rem; // Y: .25rem X: .5rem !default;

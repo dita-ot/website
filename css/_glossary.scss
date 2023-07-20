@@ -10,11 +10,11 @@
   color: $gray-600;
 
   &::before {
-    content: 'Abbreviation: “';
+    content: "Abbreviation: “";
   }
 
   &::after {
-    content: '”';
+    content: "”";
   }
 }
 
