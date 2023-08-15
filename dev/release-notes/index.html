@@ -7,7 +7,7 @@ description: 'DITA Open Toolkit 4.1.1 is a maintenance release that fixes issues
             Lightweight DITA plug-in with significant enhancements to Markdown processing, and updates for the latest
             DITA 2.0 draft standard.'
 index: '../toc.html'
-commit: '625ea3db47c28f9178b4ee846c12b209588af5d0'
+commit: '0b434eb989f124b0d37030ec7ccf510050757b97'
 src: 'release-notes/index.dita'
 ---
 
@@ -200,7 +200,7 @@ src: 'release-notes/index.dita'
               <li class="li">Standard Markdown syntax can now be used to indicate a span of code by wrapping it with backtick
                 quotes (<code class="ph codeph">`</code>). In Markdown DITA input, these constructs are converted to DITA
                   <code class="keyword markupname xmlelement">&lt;codeph&gt;</code> elements on import, and rendered as <code class="keyword markupname xmlelement">&lt;code&gt;</code>
-                elements in HTML output. In MDITA input, this syntax is converted to teletype
+                elements in HTML output. In MDITA input, backtick code spans are parsed as teletype
                   <code class="keyword markupname xmlelement">&lt;tt&gt;</code> elements to align with LwDITA, which supports teletype highlighting in
                 XDITA.</li>
               <li class="li">The LwDITA plug-in supports a new <code class="ph codeph">$schema</code> key in the YAML front matter block. This
