@@ -2,7 +2,7 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.1 Release Notes'
-description: 'DITA Open Toolkit 4.1.1 is a maintenance release that fixes issues
+description: 'DITA Open Toolkit 4.1.2 is a maintenance release that fixes issues
       reported in DITA-OT 4.1, which includes a new version of the
             Lightweight DITA plug-in with significant enhancements to Markdown processing, and updates for the latest
             DITA 2.0 draft standard.'
@@ -15,7 +15,7 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.1.1</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.1.2</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">4.1</span>, which includes <span class="ph">a new version of the
             Lightweight DITA plug-in with significant enhancements to Markdown processing, and updates for the latest
             DITA 2.0 draft standard</span>.</p>
@@ -24,7 +24,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.1.1</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.1.2</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div>
   </div>
@@ -61,15 +61,131 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.1.1">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.1.1</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.1.2">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.1.2</span>
       
     </h2>
-
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit <span class="keyword">4.1.1</span> is a maintenance release that includes the
+        <p class="p">DITA Open Toolkit <span class="keyword">4.1.2</span> is a maintenance release that includes the
           following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v4.1.2__4237">Various issues in map-first preprocessing have been resolved in this release.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4237" target="_blank" rel="external noopener">#4237</a>
+            <ul class="ul">
+              <li class="li" id="v4.1.2__2420">Earlier versions failed to expand content references that were specified in key definitions.
+                In&nbsp;<code class="ph codeph">preprocess2</code>, content references are now expanded before key references to ensure
+                that all topics are available when the map is processed.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2420" target="_blank" rel="external noopener">#2420</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4258" target="_blank" rel="external noopener">#4258</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4261" target="_blank" rel="external noopener">#4261</a>
+              </li>
+              <li class="li" id="v4.1.2__3007">Key references to duplicate topics created via <code class="keyword markupname xmlatt">@copy-to</code> attributes caused
+                builds to fail. This issue was initially resolved for the original preprocessing routine in DITA-OT
+                3.1.1. The original source information is now also correctly recorded for copy-to targets in
+                  <code class="ph codeph">preprocess2</code>, allowing builds to continue.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3007" target="_blank" rel="external noopener">#3007</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3015" target="_blank" rel="external noopener">#3015</a>
+              </li>
+              <li class="li" id="v4.1.2__3281">Earlier versions failed to catch certain validation errors in <code class="ph codeph">preprocess2</code>.
+                Map-first preprocessing has been updated to validate files correctly.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3281" target="_blank" rel="external noopener">#3281</a>
+              </li>
+              <li class="li" id="v4.1.2__3446">In DITA-OT 3.5 to 4.1, map-first preprocessing failed to report unresolved content
+                references to topics that were not referenced in the map, and any key references they contained were not
+                expanded. In the past, this issue could be avoided by adding content reference targets to the map with
+                the <code class="keyword markupname xmlatt">@processing-role</code> attribute set to <code class="ph codeph">resource-only</code>, but this
+                workaround is no longer necessary. Unresolved references should now be reported, and keys expanded even
+                if the target topics are not referenced in the map.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3446" target="_blank" rel="external noopener">#3446</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3546" target="_blank" rel="external noopener">#3546</a>
+              </li>
+              <li class="li" id="v4.1.2__3514">Map-first preprocessing set incorrect values for the <code class="keyword markupname xmlpi">&lt;?path2project?&gt;</code>,
+                  <code class="keyword markupname xmlpi">&lt;?path2project-uri?&gt;</code>, and <code class="keyword markupname xmlpi">&lt;?path2rootmap-uri?&gt;</code> processing instructions. In
+                  <code class="ph codeph">preprocess2</code>, they are now set with correct values that match the original preprocess
+                output.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3514" target="_blank" rel="external noopener">#3514</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4252" target="_blank" rel="external noopener">#4252</a>
+              </li>
+              <li class="li" id="v4.1.2__4268">The map-first preprocessing test code has been simplified to use the same expected output
+                for the original preprocessing routines and <code class="ph codeph">preprocess2</code>.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4268" target="_blank" rel="external noopener">#4268</a>
+              </li>
+            </ul>
+          </li>
+          <li class="li" id="v4.1.2__3718">Network file URI validation has been fixed to allow builds to continue when cross-references
+            point to invalid URIs. Up until DITA-OT 3.6, the non-standard 2-slash format could be used to represent the
+            server name in Windows UNC filenames such as <span class="ph filepath">\\server\folder\file.pdf</span> using the
+            Authority part of the URI as <span class="ph filepath">file://server/folder/file.pdf</span>. Recent versions of DITA-OT
+            required the correct 3-slash notation with an explicitly empty authority component
+              (<span class="ph filepath">file:///server/folder/file.pdf</span>), or builds would fail. Validation has been relaxed
+            to restore support for the 2-slash format.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/3718" target="_blank" rel="external noopener">#3718</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4255" target="_blank" rel="external noopener">#4255</a>
+          </li>
+          <li class="li" id="v4.1.2__4064">Chunk-to-content publishing failed on DITA map files whose paths included spaces. The chunk map
+            reader module now normalizes map file paths to allow publishing to continue in these cases.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4064" target="_blank" rel="external noopener">#4064</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4257" target="_blank" rel="external noopener">#4257</a>
+          </li>
+          <li class="li" id="v4.1.2__4254">The HTML5 plug-in has been updated to remove the remaining inline style attributes that
+            prevented custom plug-ins from overriding the monospace font presentation of teletype
+              <code class="keyword markupname xmlelement">&lt;tt&gt;</code> elements. These changes move the default teletype styling to CSS to allow
+            users to override the presentation in custom stylesheets. The output is visually equivalent to the results
+            generated by previous toolkit versions.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4254" target="_blank" rel="external noopener">#4254</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4267" target="_blank" rel="external noopener">#4267</a>
+            <div class="note important note_important"><span class="note__title">Important:</span> In publishing environments that do not use the default common CSS files, these styles
+              may need to be implemented in custom stylesheets.</div>
+          </li>
+          <li class="li" id="v4.1.2__4259">Test coverage has been improved to include unit tests for preprocessing, integration tests for
+            subject schemes, and unit tests for cascading metadata in duplicate topicrefs.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4259" target="_blank" rel="external noopener">#4259</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4264" target="_blank" rel="external noopener">#4264</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4280" target="_blank" rel="external noopener">#4280</a>
+          </li>
+          <li class="li" id="v4.1.2__4269">In earlier versions, cross-references or other links to titles that contained footnotes included
+            the footnote text. For a link to a target element that has no explicit link text, DITA-OT computes default
+            link text from the target element. Link text computation now ignores any <code class="keyword markupname xmlelement">&lt;fn&gt;</code>
+            elements it encounters, so the link shows only the text from the <code class="keyword markupname xmlelement">&lt;title&gt;</code> element.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4269" target="_blank" rel="external noopener">#4269</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4276" target="_blank" rel="external noopener">#4276</a>
+          </li>
+          <li class="li" id="v4.1.2__4275">When maps point to the same resource in multiple topic references with different navigation
+            titles (or other topic metadata), older versions of DITA-OT used the metadata from the first reference for
+            all subsequent instances. The original code was written to cascade metadata within the map and also collect
+            metadata to be pushed to topics. This code worked when each topic was only referenced once. When there were
+            duplicates, only the first topic reference got the correct cascaded metadata; the second reference was
+            processed with the cascaded metadata, but also with the metadata from the first topicref. The code has been
+            refactored to separate metadata cascading within maps from the collection of metadata to push to topics, so
+            subsequent references to the same resource now retain the correct metadata for each instance.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4275" target="_blank" rel="external noopener">#4275</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4283" target="_blank" rel="external noopener">#4283</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4284" target="_blank" rel="external noopener">#4284</a>
+          </li>
+          <li class="li" id="v4.1.2__4274">The bundled XML Resolver has been upgraded to version 5.2.1, which no longer fails on invalid
+            URI characters like spaces or Windows backslashes, and now also runs in environments with a restrictive
+            security manager.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4274" target="_blank" rel="external noopener">#4274</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4279" target="_blank" rel="external noopener">#4279</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.1.2+is%3Aclosed" target="_blank" rel="external noopener">4.1.2 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/4.1.1...4.1.2" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.1.1">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 4.1.1
+      <span class="ph small text-muted">released July 20, 2023</span>
+    </h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit 4.1.1 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           
           <li class="li" id="v4.1.1__4155">In previous releases, there were some cases in which a <code class="keyword markupname xmlelement">&lt;desc&gt;</code> element
@@ -110,7 +226,7 @@ src: 'release-notes/index.dita'
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4187" target="_blank" rel="external noopener">#4187</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4240" target="_blank" rel="external noopener">#4240</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4248" target="_blank" rel="external noopener">#4248</a>
-          </li>          
+          </li>
           <li class="li">Several dependencies have been upgraded to include the latest utility versions and fix security issues in
             bundled libraries:
             <ul class="ul">
@@ -142,8 +258,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.1">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">4.1</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v4.1">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT <span class="keyword">4.1</span>
       <span class="ph small text-muted">released June 22, 2023</span>
     </h2>
     
@@ -199,7 +315,7 @@ src: 'release-notes/index.dita'
               <li class="li">Standard Markdown syntax can now be used to indicate a span of code by wrapping it with backtick
                 quotes (<code class="ph codeph">`</code>). In Markdown DITA input, these constructs are converted to DITA
                   <code class="keyword markupname xmlelement">&lt;codeph&gt;</code> elements on import, and rendered as <code class="keyword markupname xmlelement">&lt;code&gt;</code>
-                elements in HTML output. In MDITA input, this syntax is converted to teletype
+                elements in HTML output. In MDITA input, backtick code spans are parsed as teletype
                   <code class="keyword markupname xmlelement">&lt;tt&gt;</code> elements to align with LwDITA, which supports teletype highlighting in
                 XDITA.</li>
               <li class="li">The LwDITA plug-in supports a new <code class="ph codeph">$schema</code> key in the YAML front matter block. This
