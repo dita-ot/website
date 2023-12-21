@@ -5,7 +5,7 @@ title: 'Installing plug-ins in a Docker image'
 description: 'To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own
       Dockerfile and specify the official DITA-OT image as the basis for your image.'
 index: '../toc.html'
-commit: 'c08ddba83332cf3fae7d2646c8bf6a234a1fe96c'
+commit: '08b12f861c9f30ba6a60480709bf85e78ae4a1c1'
 src: 'topics/creating-docker-images.dita'
 ---
 
@@ -89,7 +89,7 @@ Successfully tagged sample-docker-image:1.0
     <section class="example"><h2 class="title sectiontitle">Running the new container</h2>
       
       <p class="p">You can then start a container based on your new image:</p>
-      <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> container run -it \
+      <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> container run --rm \
   -v /path/to/dita-ot-dir/docsrc:/src sample-docker-image:1.0 \
   -i /src/userguide.ditamap \
   -o /src/out/dita-bootstrap \
