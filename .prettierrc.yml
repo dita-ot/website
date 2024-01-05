@@ -1,13 +1,13 @@
-# .prettierrc
+# Prettier Configuration File
 
 # https://prettier.io/docs/en/configuration.html
 printWidth: 100
-proseWrap: "preserve"
+proseWrap: 'preserve'
 singleQuote: true
 semi: false
 
 # per stylelint-config-twbs-bootstrap
 overrides:
-  - files: "*.scss"
+  - files: '*.scss'
     options:
       singleQuote: false
