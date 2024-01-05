@@ -58,8 +58,8 @@ export function tabs(id, items) {
                 href: `#v${id}_${i}`,
                 role: 'tab',
               },
-              item.title
-            )
+              item.title,
+            ),
           )
             .click(function (e) {
               e.preventDefault()
@@ -89,9 +89,9 @@ export function tabs(id, items) {
                 })
             })
             .css('cursor', 'pointer')
-            .get(0)
-        )
-      )
+            .get(0),
+        ),
+      ),
     ),
     elem(
       'div',
@@ -104,9 +104,9 @@ export function tabs(id, items) {
             id: `v${id}_${i}`,
             role: 'tabpanel',
           },
-          item.content
-        )
-      )
+          item.content,
+        ),
+      ),
     ),
   ]
 }

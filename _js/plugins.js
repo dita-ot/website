@@ -133,7 +133,7 @@ function notFound(name, version) {
     'p',
     !!version
       ? t('VERSION_NOT_FOUND', name, version) //`Plugin ${name} version ${version} not found.`
-      : t('NOT_FOUND', name) //`Plugin ${name} not found.`
+      : t('NOT_FOUND', name), //`Plugin ${name} not found.`
   )
 }
 
@@ -229,7 +229,7 @@ function filterForm() {
       placeholder: t('FILTER_PLACEHOLDER'),
       size: 50,
     },
-    undefined
+    undefined,
   )
   input.oninput = queryHandler
   input.onkeypress = clearFilterHandler
@@ -244,7 +244,7 @@ function filterForm() {
   const version = elem(
     'select',
     { id: 'version', class: 'form-control' },
-    [elem('option', { value: '' }, t('FILTER_ANY_VERSION'))].concat(options)
+    [elem('option', { value: '' }, t('FILTER_ANY_VERSION'))].concat(options),
   )
   version.onchange = versionHandler
 
@@ -261,7 +261,7 @@ function list(json) {
     elem(
       'p',
       { id: 'empty', style: 'display: none; margin-top: 1em', class: 'alert alert-info' },
-      t('NO_MATCHES')
+      t('NO_MATCHES'),
     ),
     elem('p', { id: 'hits', style: 'display: none; margin-top: 1em' }, ''),
     elem(
@@ -280,11 +280,11 @@ function list(json) {
               (first.keywords || []).reduce(
                 (acc, keyword) =>
                   acc.concat([elem('code', { class: 'small' }, keyword), ' \u00A0']),
-                []
-              )
+                [],
+              ),
             ),
-          ])
-        )
+          ]),
+        ),
     ),
   ]
 }
@@ -301,7 +301,7 @@ function details(versions, version) {
   const div = document.createElement('div')
 
   div.appendChild(
-    elem('h2', [`${first.name}`, elem('small', { class: 'text-muted' }, ` ${first.vers}`)])
+    elem('h2', [`${first.name}`, elem('small', { class: 'text-muted' }, ` ${first.vers}`)]),
   )
 
   if (!!first.description) {
@@ -312,7 +312,7 @@ function details(versions, version) {
       elem('h3', t('KEYWORDS')),
       elem(
         'p',
-        first.keywords.reduce((acc, keyword) => acc.concat([elem('code', keyword), ' \u00A0']), [])
+        first.keywords.reduce((acc, keyword) => acc.concat([elem('code', keyword), ' \u00A0']), []),
       ),
     ])
   }
@@ -344,7 +344,7 @@ function details(versions, version) {
   ].filter(
     (content) =>
       platformDeps.flatMap((platform) => content.range.filter((r) => matchVersion(r, platform.req)))
-        .length !== 0
+        .length !== 0,
   )
   append(div, [
     elem('h3', t('INSTALL')),
@@ -364,10 +364,10 @@ function details(versions, version) {
               href: `#v${i}`,
               role: 'tab',
             },
-            content.title
-          )
-        )
-      )
+            content.title,
+          ),
+        ),
+      ),
     ),
     elem(
       'div',
@@ -379,10 +379,10 @@ function details(versions, version) {
           elem(
             'pre',
             { class: 'pre codeblock language-properties normalize-space' },
-            elem('code', content.cmd)
-          )
-        )
-      )
+            elem('code', content.cmd),
+          ),
+        ),
+      ),
     ),
   ])
 
@@ -392,13 +392,13 @@ function details(versions, version) {
     elem('h3', t('DEPENDENCIES')),
     elem(
       'ul',
-      platformDeps.map((dep) => elem('li', `DITA-OT ${humanReadableVersion(dep.req) || ''}`))
+      platformDeps.map((dep) => elem('li', `DITA-OT ${humanReadableVersion(dep.req) || ''}`)),
     ),
     elem(
       'ul',
       deps
         .filter((dep) => dep.name !== 'org.dita.base')
-        .map((dep) => elem('li', `${dep.name} ${humanReadableVersion(dep.req) || ''}`))
+        .map((dep) => elem('li', `${dep.name} ${humanReadableVersion(dep.req) || ''}`)),
     ),
   ])
 
@@ -407,8 +407,8 @@ function details(versions, version) {
     elem(
       'ul',
       versions.map((version) =>
-        elem('li', elem('a', { href: `/plugins/${first.name}/${version.vers}` }, version.vers))
-      )
+        elem('li', elem('a', { href: `/plugins/${first.name}/${version.vers}` }, version.vers)),
+      ),
     ),
   ])
 
@@ -421,7 +421,7 @@ function license(spdx) {
       return elem(
         'a',
         { href: 'https://www.apache.org/licenses/LICENSE-2.0' },
-        'Apache License 2.0'
+        'Apache License 2.0',
       )
     case 'MIT':
       return elem('a', { href: 'https://opensource.org/licenses/MIT' }, 'MIT License')

@@ -19,8 +19,8 @@ function EditController() {
       const url = `${GITHUB_REPO}/${file}`
       $('footer > div > p').append(
         ` · <a href="${url}" target="_blank" title="${t('FILE_HISTORY__TITLE')}">${t(
-          'FILE_HISTORY'
-        )}</a>`
+          'FILE_HISTORY',
+        )}</a>`,
       )
     }
   }
@@ -39,8 +39,8 @@ function EditController() {
       if ($link.length === 0) {
         $link = $(
           `<a class="btn btn-sm btn-success ml-md-auto" id="editLink" target="_blank" title="${t(
-            'EDIT__TITLE'
-          )}">${t('EDIT')}</a>`
+            'EDIT__TITLE',
+          )}">${t('EDIT')}</a>`,
         )
         $('.docs-banner-dev').append($link)
       }
