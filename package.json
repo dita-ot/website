@@ -51,7 +51,7 @@
       "selector-max-id": 1,
       "selector-max-type": 3,
       "selector-no-qualifying-type": null,
-      "stylistic/number-leading-zero": null
+      "@stylistic/number-leading-zero": "always"
     }
   },
   "dependencies": {
@@ -77,8 +77,8 @@
     "prettier": "3.1.1",
     "prismjs": "^1.29.0",
     "process": "^0.11.10",
-    "stylelint": "^15.11.0",
-    "stylelint-config-twbs-bootstrap": "^12.0.0",
+    "stylelint": "^16.1.0",
+    "stylelint-config-twbs-bootstrap": "^13.0.0",
     "ts-jest": "^27.1.3",
     "typescript": "^4.6.2",
     "urijs": "^1.19.11",
