@@ -68,3 +68,9 @@ blockquote.lq p.p,
 .othertitle {
   font-weight: 700; // bold
 }
+
+// Keep note title & body inline w/ DITA-OT 4.2
+// https://github.com/dita-ot/dita-ot/pull/3955
+.note__body {
+  display: inline;
+}
