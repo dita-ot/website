@@ -6,11 +6,11 @@ description: 'You can create a DITA-OT plug-in that provides a custom stylesheet
     define your corporate identity. Coworkers can install this plug-in to ensure consistent HTML output across projects
     without having to copy the stylesheet to each project.'
 index: '../toc.html'
-commit: '625ea3db47c28f9178b4ee846c12b209588af5d0'
+commit: '23f1f8a55d9dde3510b0797e4c1fc2271215e087'
 src: 'topics/html-customization-plugin-bundle-css.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../topics/html-customization-plugin-bundle-css.html">Bundling custom CSS</a></li><li><a href="../topics/html-customization-plugin-webfont.html">Embedding web fonts</a></li><li><a href="../topics/html-customization-plugin-javascript.html">Inserting JavaScript</a></li></ul></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a><ul class="nav nav-list"><li class="active"><a href="../topics/html-customization-plugin-bundle-css.html">Bundling custom CSS</a></li><li><a href="../topics/html-customization-plugin-webfont.html">Embedding web fonts</a></li><li><a href="../topics/html-customization-plugin-javascript.html">Inserting JavaScript</a></li></ul></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Bundling CSS in a custom HTML plug-in</h1>
   
   
@@ -62,8 +62,8 @@ src: 'topics/html-customization-plugin-bundle-css.dita'
   &lt;feature extension="ant.import" file="build_html5-custom-css.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
           </figure>
-          <div class="note note note_note"><span class="note__title">Note:</span> This plug-in will extend the default HTML5 transformation, so the <code class="keyword markupname xmlelement">&lt;require&gt;</code>
-            element explicitly defines <span class="ph filepath">org.dita.html5</span> as a dependency.</div>
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This plug-in will extend the default HTML5 transformation, so the <code class="keyword markupname xmlelement">&lt;require&gt;</code>
+            element explicitly defines <span class="ph filepath">org.dita.html5</span> as a dependency.</div></div>
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">com.example.html5-custom-css</span> directory, create a subdirectory named
@@ -80,10 +80,10 @@ body {
   color: #F00;
 }</code></pre>
           </figure>
-          <div class="note tip note_tip"><span class="note__title">Tip:</span> When you first create the plug-in, you may want to include a rule in your custom stylesheet
+          <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">When you first create the plug-in, you may want to include a rule in your custom stylesheet
             that makes it readily apparent when the custom styles are applied (the example above will change body text
             to “red”). Once you have verified that the plug-in works as intended, replace the placeholder rule with your
-            own custom styles.</div>
+            own custom styles.</div></div>
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">com.example.html5-custom-css</span> root directory, add an Ant script
@@ -109,9 +109,9 @@ body {
         </div>
       </li></ol></section>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> The files for this sample plug-in are included in the DITA-OT installation directory under
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">The files for this sample plug-in are included in the DITA-OT installation directory under
           <span class="ph filepath">docsrc/samples/plugins/com.example.html5-custom-css/</span> and on
-        <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-custom-css" target="_blank" rel="external noopener">GitHub</a>.</div>
+        <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-custom-css" target="_blank" rel="external noopener">GitHub</a>.</div></div>
       <p class="p">The plug-in directory has the following layout and files:</p>
       <pre class="pre codeblock"><code>com.example.html5-custom-css
 ├── build_html5-custom-css.xml
@@ -123,8 +123,8 @@ body {
       <ol class="ol">
         <li class="li">
           <p class="p">Use the <span class="keyword cmdname">dita install</span> subcommand to install the plug-in.</p>
-          <div class="note note note_note"><span class="note__title">Note:</span> For more information, see
-            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div>
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">For more information, see
+            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div></div>
         </li>
         <li class="li">Build output with the new transformation type to verify that the plug-in works as intended.
           <pre class="pre codeblock"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">my.ditamap</var> <span class="keyword parmname">--format</span>=<span class="keyword option">html5-custom-css</span></code></pre>

@@ -6,11 +6,11 @@ description: 'DITA-OT 3.2 supports a new plug-in registry that makes it easier t
       install new plug-ins. The registry provides a searchable list of plug-ins at
       dita-ot.org/plugins.'
 index: '../toc.html'
-commit: '02af209f2eaba79e66755b8b38280e725f1be3fe'
+commit: '23f1f8a55d9dde3510b0797e4c1fc2271215e087'
 src: 'topics/plugins-registry.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li class="active"><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li class="active"><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Adding plug-ins via the registry</h1>
   
   
@@ -51,10 +51,10 @@ src: 'topics/plugins-registry.dita'
         <a class="xref" href="https://github.com/dita-ot/registry" target="_blank" rel="external noopener">github.com/dita-ot/registry</a>. New plug-ins or new versions can be added by sending a
         <a class="xref" href="https://help.github.com/articles/about-pull-requests/" target="_blank" rel="external noopener">pull request</a> that includes a single new plug-in entry in JavaScript Object Notation (JSON)
         format.</p>
-      <div class="note note note_note"><span class="note__title">Note:</span> As for all other contributions to the project, pull requests to the registry must be signed off by passing
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">As for all other contributions to the project, pull requests to the registry must be signed off by passing
         the <code class="ph codeph">--signoff</code> option to the <span class="keyword cmdname">git commit</span> command to certify that you have the
         rights to submit this contribution. For more information on this process, see
-        <a class="xref" href="https://www.dita-ot.org/DCO" target="_blank" rel="external noopener">signing your work</a>.</div>
+        <a class="xref" href="https://www.dita-ot.org/DCO" target="_blank" rel="external noopener">signing your work</a>.</div></div>
       <p class="p">The version entries for each plug-in are stored in a file that is named after the plug-in ID as
           <code class="ph codeph">&lt;plugin-name&gt;.json</code>. The file contains an array of entries with a pre-defined structure.
         You should have one entry for each supported version of the plug-in.</p>
@@ -114,14 +114,14 @@ src: 'topics/plugins-registry.dita'
                 <a class="xref" href="https://spdx.org/licenses/" target="_blank" rel="external noopener">SPDX</a> format</td>
             </tr>
           </tbody></table>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> To calculate the SHA-256 checksum for the <code class="ph codeph">cksum</code> key, use <code class="ph codeph">shasum&nbsp;-a&nbsp;256
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">To calculate the SHA-256 checksum for the <code class="ph codeph">cksum</code> key, use <code class="ph codeph">shasum&nbsp;-a&nbsp;256
             <var class="keyword varname">&lt;plugin-file&gt;</var></code> on macOS or Linux. With&nbsp;Windows&nbsp;PowerShell, use <code class="ph codeph">
           <a class="xref" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-6" target="_blank" rel="external noopener">Get-FileHash</a>&nbsp;<var class="keyword varname">&lt;plugin-file&gt;</var> |
           Format-List</code>.
         
         
         
-      </div>
+      </div></div>
       <table class="table table-hover frame-topbot"><caption><span class="table--title-label">Table 2. </span><span class="title">Structure for dependency entries</span></caption><colgroup><col style="width:20%"><col style="width:20%"><col style="width:60%"></colgroup><thead class="thead">
             <tr class="row">
               <th class="entry colsep-0 rowsep-1" id="plugin-registry__publishing-to-registry__entry__31">Key</th>
@@ -142,13 +142,13 @@ src: 'topics/plugins-registry.dita'
                 <a class="xref" href="https://docs.npmjs.com/misc/semver#ranges" target="_blank" rel="external noopener">ranges</a>.</td>
             </tr>
           </tbody></table>
-      <div class="note note note_note"><span class="note__title">Note:</span> Version numbers in the <code class="ph codeph">vers</code> and <code class="ph codeph">req</code> keys use the three-digit format
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">Version numbers in the <code class="ph codeph">vers</code> and <code class="ph codeph">req</code> keys use the three-digit format
         specified by
         <a class="xref" href="https://semver.org" target="_blank" rel="external noopener">semantic versioning</a>. An initial development release of a plug-in might start at version 0.1.0, and an
         initial production release at 1.0.0. If your plug-in requires DITA-OT 3.1 or later, set the <code class="ph codeph">req</code>
         key to <code class="ph codeph">&gt;=3.1.0</code>. Using the greater-than sign allows your plug-in to work with compatible
         maintenance releases, such as 3.1.3. If the requirement is set to <code class="ph codeph">=3.1.0</code>, the registry will
-        only offer it for installation on that exact version.</div>
+        only offer it for installation on that exact version.</div></div>
     </section>
     <section class="section" id="plugin-registry__example-1"><h2 class="title sectiontitle">Sample plug-in entry file</h2>
       
@@ -192,9 +192,9 @@ src: 'topics/plugins-registry.dita'
      [...]
   }
 ]</code></pre>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> To publish a new version of your plug-in to the registry, add a new entry to the array in the
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">To publish a new version of your plug-in to the registry, add a new entry to the array in the
         existing plug-in entry file rather than overwriting an existing entry. This allows users to install the previous
-        version of the plug-in if they are using an older version of DITA-OT.</div>
+        version of the plug-in if they are using an older version of DITA-OT.</div></div>
     </section>
     <section class="section" id="plugin-registry__adding-custom-registries"><h2 class="title sectiontitle">Adding custom registries</h2>
       
@@ -206,8 +206,8 @@ src: 'topics/plugins-registry.dita'
           <span class="ph filepath">config/configuration.properties</span> file in the DITA-OT installation directory and add the
         URL for your custom registry directory to the <code class="ph codeph">registry</code> key value, separating each entry with a
         space.</p>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> Custom registry entries are a simple way to test your own plug-in entry file before submitting to
-        a common registry.</div>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">Custom registry entries are a simple way to test your own plug-in entry file before submitting to
+        a common registry.</div></div>
     </section>
     <section class="section" id="plugin-registry__testing-custom-registry"><h2 class="title sectiontitle">Testing with a custom registry</h2>
       <p class="p">To test your plug-in entry with a custom registry:</p>
