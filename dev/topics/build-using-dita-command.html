@@ -5,7 +5,7 @@ title: 'Building output using the dita command'
 description: 'You can generate output using the dita command-line tool. Build parameters can be
     specified on the command line or with .properties files.'
 index: '../toc.html'
-commit: 'cfb0301bbd975173a4e8209f0b2e17a7a571fef2'
+commit: 'df50829fc9c8a47cd8dec042d0403dae24e11ed9'
 src: 'topics/build-using-dita-command.dita'
 ---
 
@@ -115,6 +115,15 @@ src: 'topics/build-using-dita-command.dita'
             <var class="keyword varname">file</var>
           </dt>
           <dd class="dd pd">Write logging messages to a file.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="--no-color">
+            <span class="keyword parmname">--no-color</span>
+          </dt>
+          <dd class="dd pd">By default, DITA-OT prints certain log messages to the console in color. In terminal environments that do
+            not support colored output, the ANSI color escape codes will be shown instead. To deactivate colored output,
+            pass the <span class="keyword parmname">--no-color</span> option to the <span class="keyword cmdname">dita</span> command, or set the
+              <code class="ph codeph">TERM=dumb</code> or <code class="ph codeph">NO_COLOR</code> environment variables.</dd>
         
         
           <dt class="dt pt dlterm" id="--parameter=value">
