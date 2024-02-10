@@ -1,0 +1,18 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Extending themes'
+description: 'A theme can extend another theme using the extends key. The value of extends is a relative path from the current theme file to the theme being extended.'
+index: '../../toc.html'
+src: 'resources/theme/Extending-themes.md'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../../release-notes/index.html">Release Notes</a></li><li><a href="../../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../../topics/building-output.html">Building output</a></li><li><a href="../../topics/input-formats.html">Authoring formats</a></li><li><a href="../../topics/output-formats.html">Output formats</a></li><li><a href="../../parameters/index.html">Parameters</a></li><li><a href="../../topics/html-customization.html">Customizing HTML</a></li><li><a href="../../topics/pdf-customization.html">Customizing PDF</a><ul class="nav nav-list"><li><a href="../../topics/pdf-customization-approaches.html">Customization approaches</a></li><li><a href="../../topics/pdf2-creating-change-bars.html">Generating revision bars</a></li><li><a href="../../topics/pdf-themes.html">PDF themes</a><ul class="nav nav-list"><li><a href="../../topics/sample-pdf-theme.html">Sample theme file</a></li><li><a href="../../resources/theme/Page-settings.html">Page settings</a></li><li><a href="../../resources/theme/Header-and-footer.html">Header and footer</a></li><li><a href="../../resources/theme/Styles.html">Styles</a></li><li><a href="../../resources/theme/Variables.html">Variables</a></li><li class="active"><a href="../../resources/theme/Extending-themes.html">Extending themes</a></li><li><a href="../../resources/theme/Syntactic-sugar.html">Syntactic sugar</a></li></ul></li></ul></li><li><a href="../../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../../reference/index.html">Reference</a></li><li><a href="../../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Extending themes</h1><div class="body"><p class="shortdesc">A theme can extend another theme using the <code class="ph codeph">extends</code> key. The value of <code class="ph codeph">extends</code> is a relative path from the current theme file to the theme being extended.</p><p class="p"><code class="ph codeph">base.yaml</code></p><pre class="pre codeblock yaml"><code>brand:
+  primary-color: orange
+page:
+  size: A4</code></pre><p class="p"><code class="ph codeph">product/theme.yaml</code></p><pre class="pre codeblock yaml"><code>extends: ../base.yaml
+page:
+  size: Letter
+style:
+  topic:
+    color: $brand-primary-color</code></pre></div></article></main>
