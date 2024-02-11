@@ -1,0 +1,83 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Overriding strings'
+description: 'Override the default strings in the toolkit when you want to replace an existing string with one of your
+    own; for example, it could be used to reset the English string “Figure” to 
+        “Fig.”'
+index: '../toc.html'
+src: 'topics/overriding-strings.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a><ul class="nav nav-list"><li><a href="../topics/globalization-support.html">Globalization support</a></li><li><a href="../topics/globalization-languages.html">Supported languages</a></li><li><a href="../topics/plugin-addgeneratedtext.html">Customizing generated text</a><ul class="nav nav-list"><li><a href="../topics/adding-new-strings.html">Adding new strings</a></li><li class="active"><a href="../topics/overriding-strings.html">Overriding strings</a></li><li><a href="../topics/adding-new-languages.html">Adding new languages</a></li></ul></li></ul></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Overriding strings</h1>
+  
+  
+  <div class="body taskbody"><p class="shortdesc">Override the default strings in the toolkit when you want to replace an existing string with one of your
+    own; for example, it could be used to reset the English string <cite class="cite">“Figure”</cite> to 
+        <cite class="cite">“Fig.”</cite></p>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Copy this file to your plug-in.</span>
+        <ul class="ul choices">
+          <li class="li choice">non-PDF output: <span class="ph filepath">plugins/org.dita.base/xsl/common/strings.xml</span></li>
+          <li class="li choice">PDF output: <span class="ph filepath">plugins/org.dita.pdf2/cfg/common/vars/strings.xml</span></li>
+        </ul>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">In your plug-in, edit <span class="ph filepath">strings.xml</span> to contain references to the language files you want
+          to override.</span>
+        <div class="itemgroup info">
+          <div class="p">
+            <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!-- Provide strings for my plug-in; this plug-in supports
+     English and German. --&gt;
+&lt;langlist&gt;
+  &lt;lang xml:lang="en"     filename="strings-en-us.xml"/&gt;
+  &lt;lang xml:lang="en-US"  filename="strings-en-us.xml"/&gt;
+  &lt;lang xml:lang="de"     filename="strings-de-de.xml"/&gt;
+  &lt;lang xml:lang="de-DE"  filename="strings-de-de.xml"/&gt;
+&lt;/langlist&gt;</code></pre>
+          </div>
+        </div>
+      </li><li class="li step stepexpand" id="overriding-strings__copy-strings">
+        <span class="ph cmd">Copy the language file from you want to override. Paste it into your plug-in's
+            <span class="ph filepath">xsl/common</span> or <span class="ph filepath">cfg/common/vars</span> directory.</span>
+        <div class="itemgroup info">
+          <p class="p">Language files are found in:</p>
+        </div>
+        <ul class="ul choices">
+          <li class="li choice">non-PDF output: <span class="ph filepath">plugins/org.dita.base/xsl/common/</span></li>
+          <li class="li choice">PDF output: <span class="ph filepath">plugins/org.dita.pdf2/cfg/common/vars/</span></li>
+        </ul>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Open the language file. Remove all of the variables except those you want to override.</span>
+        <div class="itemgroup info">
+          <p class="p">By removing the variables you will not override, you limit where variables are defined in the toolkit while
+            making your file easier to maintain. </p>
+        </div>
+      </li><li class="li step stepexpand" id="overriding-strings__change-strings">
+        <span class="ph cmd">Change the contents of the variable to your desired text.</span>
+        <div class="itemgroup info">
+          <p class="p">Do not modify the <code class="keyword markupname xmlatt">@id</code> attribute.</p>
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;variables&gt;
+   &lt;variable id="Figure"&gt;Fig.&lt;/variable&gt;
+&lt;/variables&gt;</code></pre>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Update your <span class="ph filepath">plugin.xml</span> file to extend the strings available.</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.your-plugin"&gt;
+  &lt;feature extension="dita.xsl.strings" file="xsl/common/strings.xml"/&gt;
+&lt;/plugin&gt;</code></pre>
+        </div>
+        <div class="itemgroup stepresult">Your overrides are available to your stylesheets. For example, if processing in a context where the
+            <code class="keyword markupname xmlatt">@xml:lang</code> value is <code class="ph codeph">en-US</code>, the following call returns <cite class="cite">“Fig.”</cite>,
+          because it was defined as the text for the variable with <code class="keyword markupname xmlatt">@id</code> value of <code class="ph codeph">Figure</code>
+          in step
+          <a class="xref" href="overriding-strings.html#overriding-strings__change-strings">5</a>, which overrides the default text found in <strong class="ph b">org.dita.base</strong>.
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
+  &lt;xsl:with-param name="id" select="Figure"/&gt;
+&lt;/xsl:call-template&gt;</code></pre>
+        </div>
+      </li></ol></section>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/adding-new-strings.html" title="Add new generated strings to your plug-in for the toolkit to include in your output.">Adding new strings</a></li><li class="linklist"><a class="link" href="../topics/adding-new-languages.html" title="Extend the toolkit’s generated text capabilities by adding new language files.">Adding new languages</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/plugin-addgeneratedtext.html" title="Generated text is the term for strings that are automatically added by the build process, such as the word “Note” before the contents of a note element.">How to add or modify generated text strings</a></li></ul></div></nav></article></main>

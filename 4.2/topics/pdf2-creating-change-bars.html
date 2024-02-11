@@ -1,0 +1,53 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Generating revision bars'
+description: 'You can generate revision bars in your PDF output by using the changebar and
+      color attributes of the DITAVAL revprop element.'
+index: '../toc.html'
+src: 'topics/pdf2-creating-change-bars.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a><ul class="nav nav-list"><li><a href="../topics/pdf-customization-approaches.html">Customization approaches</a></li><li class="active"><a href="../topics/pdf2-creating-change-bars.html">Generating revision bars</a></li><li><a href="../topics/pdf-themes.html">PDF themes</a></li></ul></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Generating revision bars</h1>
+  
+  
+  <div class="body conbody"><p class="shortdesc">You can generate revision bars in your PDF output by using the <code class="keyword markupname xmlatt">@changebar</code> and
+      <code class="keyword markupname xmlatt">@color</code> attributes of the DITAVAL <code class="keyword markupname xmlelement">&lt;revprop&gt;</code> element.</p>
+    <div class="p">The DITA
+      <a class="xref" href="http://docs.oasis-open.org/dita/dita/v1.3/errata02/os/complete/part3-all-inclusive/langRef/ditaval/ditaval-revprop.html#ditaval-revprop" target="_blank" rel="external noopener">specification</a> for the <code class="keyword markupname xmlatt">@changebar</code> attribute of the
+        <code class="keyword markupname xmlelement">&lt;revprop&gt;</code> element simply says:<blockquote class="lq">
+        <dl class="dl">
+          
+            <dt class="dt dlterm" id="changebar"><code class="keyword markupname xmlatt">@changebar</code></dt>
+            <dd class="dd">When flag has been set, specify a changebar color, style, or character, according to the changebar
+              support of the target output format. If flag has not been set, this attribute is ignored.</dd>
+          
+        </dl>
+      </blockquote></div>
+    <p class="p">The current version of DITA Open Toolkit uses two <code class="keyword markupname xmlelement">&lt;revprop&gt;</code> attribute values to define
+      revision bars:</p>
+    <ul class="ul">
+      <li class="li">
+        <p class="p">The <code class="keyword markupname xmlatt">@changebar</code> attribute value defines the style to use for the line. The list of possible
+          values is the same as for other XSL-FO rules (see
+          <a class="xref" href="http://www.w3.org/TR/xsl/#change-bar-style" target="_blank" rel="external noopener">@change-bar-style</a>). The default value is <span class="keyword option">groove</span>.</p></li>
+      <li class="li">
+        <p class="p">The <code class="keyword markupname xmlatt">@color</code> attribute value specifies the change bar color using any color value recognized by
+          XSL-FO, including the usual color names or a hex color value. The default value is
+        <span class="keyword option">black</span>.</p></li>
+    </ul>
+    <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample revision bar configuration</figcaption>
+      
+      <pre class="pre codeblock language-xml"><code>&lt;revprop action="flag" changebar="solid" color="green"/&gt;</code></pre>
+    </figure>
+    <p class="p">DITA-OT uses a default offset of 2&nbsp;mm to place the revision bar near the edge of the text column. The offset,
+      placement and width are not currently configurable via attribute values.</p>
+    
+    
+    
+    <p class="p">XSL-FO 1.1 does not provide for revision bars that are not rules, so there is no way to get text revision
+      indicators instead of rules, for example, using a number in place of a rule. Antenna House Formatter provides a
+      proprietary extension to enable this, but the DITA-OT PDF transformation does not take advantage of it.</p>
+  </div>
+</article></main>

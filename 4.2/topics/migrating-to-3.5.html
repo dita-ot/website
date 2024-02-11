@@ -1,0 +1,176 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Migrating to release 3.5'
+description: 'DITA-OT 3.5 includes support for additional input resources, an alternative subcommand
+      syntax for the dita command, and an initial preview of features for the latest draft of the
+      upcoming DITA 2.0 standard.'
+index: '../toc.html'
+src: 'topics/migrating-to-3.5.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../topics/migrating-to-4.2.html">To 4.2</a></li><li><a href="../topics/migrating-to-4.1.html">To 4.1</a></li><li><a href="../topics/migrating-to-4.0.html">To 4.0</a></li><li><a href="../topics/migrating-to-3.7.html">To 3.7</a></li><li><a href="../topics/migrating-to-3.6.html">To 3.6</a></li><li class="active"><a href="../topics/migrating-to-3.5.html">To 3.5</a></li><li><a href="../topics/migrating-to-3.4.html">To 3.4</a></li><li><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 3.5</h1>
+  
+
+  
+
+  <div class="body refbody"><p class="shortdesc">DITA-OT 3.5 includes <span class="ph" id="migrating-to-3.5__summary">support for additional input resources, an alternative subcommand
+      syntax for the <span class="keyword cmdname">dita</span> command, and an initial preview of features for the latest draft of the
+      upcoming DITA 2.0 standard</span>.</p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 3.5 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the
+        <a class="xref" href="https://www.dita-ot.org/3.5/release-notes/" target="_blank" rel="external noopener">DITA-OT 3.5 Release Notes</a>.</div>
+    </section>
+
+    <section class="section" id="migrating-to-3.5__subcommands"><h2 class="title sectiontitle">New subcommands</h2>
+      
+      <p class="p">The <span class="keyword cmdname">dita</span> command line interface has been refactored to support subcommands for common
+        operations.</p>
+      <div class="note important note_important"><span class="note__title">Important:</span> The new subcommands supersede the deprecated X-Toolkit–style single-hyphen keyword variants
+        (such as <span class="keyword parmname">-install</span>), and the corresponding GNU-style option keywords preceded by two hyphens
+        (such as <span class="keyword parmname">--install</span>).</div>
+      <dl class="dl">
+        
+          <dt class="dt dlterm" id="dita-install"><span class="keyword cmdname">dita install</span></dt>
+          <dd class="dd">Installs or reloads plug-ins (replaces <span class="keyword cmdname">dita</span>
+            <span class="keyword parmname">--install</span>)</dd>
+        
+          <dt class="dt dlterm" id="dita-plugins"><span class="keyword cmdname">dita plugins</span></dt>
+          <dd class="dd">Prints a list of installed plug-ins (replaces <span class="keyword cmdname">dita</span>
+            <span class="keyword parmname">--plugins</span>)</dd>
+        
+          <dt class="dt dlterm" id="dita-transtypes"><span class="keyword cmdname">dita transtypes</span></dt>
+          <dd class="dd">Prints a list of installed transformation types, or <em class="ph i">output formats</em> (replaces
+              <span class="keyword cmdname">dita</span>
+            <span class="keyword parmname">--transtypes</span>)</dd>
+        
+          <dt class="dt dlterm" id="dita-uninstall"><span class="keyword cmdname">dita uninstall</span></dt>
+          <dd class="dd">Removes and deletes a plug-in (replaces <span class="keyword cmdname">dita</span>
+            <span class="keyword parmname">--uninstall</span>)</dd>
+        
+          <dt class="dt dlterm" id="dita-version"><span class="keyword cmdname">dita version</span></dt>
+          <dd class="dd">Prints version information and exits (replaces <span class="keyword cmdname">dita</span>
+            <span class="keyword parmname">--version</span>)</dd>
+        
+      </dl>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> The double-hyphen option syntax has been retained for backwards compatibility, so if you use
+        commands like <span class="keyword cmdname">dita</span>
+        <span class="keyword parmname">--install</span> in scripts, they will still work, but you may want to migrate your scripts to the
+        new subcommand syntax.</div>
+    </section>
+    <section class="section" id="migrating-to-3.5__3.5-legacy-target-removal"><h2 class="title sectiontitle">Legacy constructs removed</h2>
+      
+      <p class="p">DITA-OT 3.5 no longer includes the following legacy properties, list files, and targets, which were deprecated
+        in previous releases. These constructs were no longer used in recent releases, and have now been removed
+        entirely.</p>
+      <p class="p">The following Ant targets have been removed from the pre-processing pipeline:</p>
+      <ul class="ul">
+        <li class="li"><code class="ph codeph">mappull</code> and <code class="ph codeph">mappull-check</code>, which were used to pull metadata (such as
+          navtitle) into the map from referenced topics prior to DITA-OT 2.2 (merged with
+            <code class="ph codeph">move-meta-entries</code>)</li>
+        <li class="li"><code class="ph codeph">conref-check</code>, deprecated since 2.3</li>
+        <li class="li"><code class="ph codeph">coderef</code>, which was used to resolve code references in input files prior to 2.3 (merged with
+            <code class="ph codeph">topic-fragment</code>)</li>
+        <li class="li"><code class="ph codeph">copy-subsidiary</code> and <code class="ph codeph">copy-subsidiary-check</code>, which were used to copy files
+          to the temporary directory prior to 2.1</li>
+      </ul>
+      <p class="p">Recent DITA-OT versions provide alternative mechanisms to achieve the same results, such as the
+          <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> element to select resources in the temporary directory.</p>
+      <p class="p">Along with the obsolete targets, the following Ant properties have been removed:</p>
+      <ul class="ul">
+        <li class="li"><code class="ph codeph">canditopicsfile</code></li>
+        <li class="li"><code class="ph codeph">canditopicslist</code></li>
+        <li class="li"><code class="ph codeph">conreffile</code></li>
+        <li class="li"><code class="ph codeph">conreflist</code></li>
+        <li class="li"><code class="ph codeph">conreftargetsfile</code></li>
+        <li class="li"><code class="ph codeph">conreftargetslist</code></li>
+        <li class="li"><code class="ph codeph">copytosourcefile</code></li>
+        <li class="li"><code class="ph codeph">copytosourcelist</code></li>
+        <li class="li"><code class="ph codeph">fullditamapandtopicfile</code></li>
+        <li class="li"><code class="ph codeph">fullditamapandtopiclist</code></li>
+        <li class="li"><code class="ph codeph">fullditamapfile</code></li>
+        <li class="li"><code class="ph codeph">fullditamaplist</code></li>
+        <li class="li"><code class="ph codeph">fullditatopicfile</code></li>
+        <li class="li"><code class="ph codeph">fullditatopiclist</code></li>
+        <li class="li"><code class="ph codeph">hrefditatopicfile</code></li>
+        <li class="li"><code class="ph codeph">hrefditatopiclist</code></li>
+        <li class="li"><code class="ph codeph">hreftargetsfile</code></li>
+        <li class="li"><code class="ph codeph">hreftargetslist</code></li>
+        <li class="li"><code class="ph codeph">htmlfile</code></li>
+        <li class="li"><code class="ph codeph">htmllist</code></li>
+        <li class="li"><code class="ph codeph">imagefile</code></li>
+        <li class="li"><code class="ph codeph">imagelist</code></li>
+        <li class="li"><code class="ph codeph">outditafilesfile</code></li>
+        <li class="li"><code class="ph codeph">outditafileslist</code></li>
+        <li class="li"><code class="ph codeph">resourceonlyfile</code></li>
+        <li class="li"><code class="ph codeph">resourceonlylist</code></li>
+        <li class="li"><code class="ph codeph">subjectschemefile</code></li>
+        <li class="li"><code class="ph codeph">subjectschemelist</code></li>
+        <li class="li"><code class="ph codeph">subtargetsfile</code></li>
+        <li class="li"><code class="ph codeph">subtargetslist</code></li>
+        <li class="li"><code class="ph codeph">user.input.file.listfile</code></li>
+        <li class="li"><code class="ph codeph">user.input.file</code></li>
+      </ul>
+      <p class="p">The following obsolete list files are no longer generated in the temporary directory:</p>
+      <ul class="ul">
+        <li class="li"><span class="ph filepath">canditopics.list</span></li>
+        <li class="li"><span class="ph filepath">conref.list</span></li>
+        <li class="li"><span class="ph filepath">conreftargets.list</span></li>
+        <li class="li"><span class="ph filepath">copytosource.list</span></li>
+        <li class="li"><span class="ph filepath">fullditamap.list</span></li>
+        <li class="li"><span class="ph filepath">fullditamapandtopic.list</span></li>
+        <li class="li"><span class="ph filepath">fullditatopic.list</span></li>
+        <li class="li"><span class="ph filepath">hrefditatopic.list</span></li>
+        <li class="li"><span class="ph filepath">hreftargets.list</span></li>
+        <li class="li"><span class="ph filepath">html.list</span></li>
+        <li class="li"><span class="ph filepath">image.list</span></li>
+        <li class="li"><span class="ph filepath">outditafiles.list</span></li>
+        <li class="li"><span class="ph filepath">resourceonly.list</span></li>
+        <li class="li"><span class="ph filepath">subjectscheme.list</span></li>
+        <li class="li"><span class="ph filepath">subtargets.list</span></li>
+        <li class="li"><span class="ph filepath">user.input.file.list</span></li>
+        <li class="li"><span class="ph filepath">usr.input.file.list</span></li>
+      </ul>
+      <p class="p">For example, if your plug-in previously used the <code class="ph codeph">fullditatopicfile</code> to select resources in the
+        temporary directory like this:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt basedir="${dita.temp.dir}"
+      destdir="${output.dir}"
+      includesfile="${dita.temp.dir}${file.separator}${fullditatopicfile}"
+      style="${args.xsl}"&gt;
+  [...]
+&lt;/xslt&gt;</code></pre>
+      <p class="p"> With DITA-OT 2.4 or newer, use the <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> element instead: </p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt basedir="${dita.temp.dir}"
+      destdir="${output.dir}"
+      style="${args.xsl}"&gt;
+  &lt;ditafileset format="dita" processingRole="normal"/&gt;
+  [...]
+&lt;/xslt&gt;</code></pre>
+      <p class="p">If your plug-in previously used the <code class="ph codeph">user.input.file.listfile</code> to process the start map like
+        this:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt [...]
+      includesfile="${dita.temp.dir}${file.separator}${user.input.file.listfile}"/&gt;</code></pre>
+      <p class="p">Use the <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> element as follows:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt [...] &gt;
+  &lt;ditafileset input="true" format="ditamap"/&gt;
+&lt;/xslt&gt;</code></pre>
+    </section>
+    <section class="section" id="migrating-to-3.5__rewriting-output-files"><h2 class="title sectiontitle">Adjusting output file names</h2>
+      
+      <p class="p">Two new parameters can be used to dynamically adjust the names and locations of output files in transformations
+        that use the map-first pre-processing routine (<code class="ph codeph">preprocess2</code>).</p>
+      <div class="p">These parameters can be passed on the command line, or included in a custom plug-in via
+          <code class="keyword markupname xmlelement">&lt;property&gt;</code> elements in an Ant script as described in
+        <a class="xref" href="plugin-rewrite-rules.html" title="To dynamically adjust the names and locations of output files in the map-first pre-processing routine (preprocess2), you can create a custom plug-in and specify the code that contains your custom rewrite rules.">Adjusting file names in map-first pre-processing</a>.
+        <ul class="ul">
+          <li class="li">Use <span class="keyword parmname">result.rewrite-rule.class</span> to rewrite filenames with a Java class that implements
+            the <code class="ph codeph">org.dita.dost.module.RewriteRule</code> interface</li>
+          <li class="li">Use <span class="keyword parmname">result.rewrite-rule.xsl</span> to rewrite via an XSLT stylesheet</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</article></main>

@@ -1,0 +1,101 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Sample JSON project files'
+description: 'DITA-OT includes sample project files in
+    JSON format that can be used to define a publication project. Like the XML project samples, the
+    sample JSON files illustrate how deliverables can be described for use in publication projects. The JSON samples are
+    functionally equivalent to their XML and YAML counterparts, with minor adaptations to JSON file syntax.'
+index: '../toc.html'
+src: 'topics/project-files-json.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li><a href="../topics/project-files-xml.html">XML project files</a></li><li class="active"><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Sample JSON project files</h1>
+  
+  
+  
+  <div class="body conbody"><p class="shortdesc">DITA-OT includes sample project files in
+    <a class="xref" href="https://json.org" target="_blank" rel="external noopener">JSON</a> format that can be used to define a publication project. Like the XML project samples, the
+    sample JSON files illustrate how deliverables can be described for use in publication projects. The JSON samples are
+    functionally equivalent to their XML and YAML counterparts, with minor adaptations to JSON file syntax.</p>
+    <p class="p">Project files can be designed in a modular fashion to create reusable configuration structures that allow you to
+      define settings in one file and refer to them in other projects to publish multiple deliverables at once.</p>
+    <p class="p">For example, <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/html.json</span> defines
+      a single HTML deliverable.</p>
+    <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample project file for HTML output</figcaption>
+      
+      <pre class="pre codeblock language-json normalize-space show-line-numbers show-whitespace"><code>{
+  "includes": ["common.json"],
+  "deliverables": [
+    {
+      "name": "HTML5",
+      "context": {"idref": "html"},
+      "output": ".",
+      "publication": {
+        "transtype": "html5",
+        "params": [
+          {
+            "name": "args.copycss",
+            "value": "yes"
+          },
+          {
+            "name": "args.css",
+            "value": "dita-ot-doc.css"
+          },
+          {
+            "name": "args.csspath",
+            "value": "css"
+          },
+          {
+            "name": "args.cssroot",
+            "path": "../../resources"
+          },
+          {
+            "name": "args.gen.task.lbl",
+            "value": "YES"
+          },
+          {
+            "name": "args.hdr",
+            "href": "../../resources/header.xml"
+          },
+          {
+            "name": "args.rellinks",
+            "value": "noparent"
+          },
+          {
+            "name": "html5.toc.generate",
+            "value": "no"
+          },
+          {
+            "name": "nav-toc",
+            "value": "partial"
+          }
+        ]
+      }
+    }
+  ]
+}</code></pre>
+    </figure>
+    <p class="p">This file can be used to generate the HTML version of the DITA-OT documentation by running the following command
+      from the <span class="ph filepath">docsrc</span> folder of the DITA-OT installation directory:</p>
+    <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--project</span>=<var class="keyword varname">samples/project-files/html.json</var></code></pre>
+    <p class="p">The project file for HTML output imports the common <code class="ph codeph">html</code> context from a shared project context
+      defined in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/project-files/common.json</span>
+      file, which includes the input map file and the DITAVAL file used to filter the output.</p>
+    <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample shared context for HTML-based output</figcaption>
+      
+      <pre class="pre codeblock language-json normalize-space show-line-numbers show-whitespace"><code>{
+  "contexts": [
+    {
+      "id": "html",
+      "input": "../../userguide.ditamap",
+      "profiles": {
+        "ditavals": ["../../resources/html.ditaval"]
+      }
+    }
+  ]
+}</code></pre>
+    </figure>
+  </div>
+</article></main>

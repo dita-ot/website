@@ -1,0 +1,223 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Plug-in coding conventions'
+description: 'To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases,
+    the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding
+    patterns.'
+index: '../toc.html'
+src: 'topics/plugin-coding-conventions.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li class="active"><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Plug-in coding conventions</h1>
+  
+  
+  
+  <div class="body conbody"><p class="shortdesc">To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases,
+    the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding
+    patterns.</p>
+    <section class="section"><h2 class="title sectiontitle">Best practices</h2>
+      
+      <p class="p">Adhering to certain development practices will properly isolate your code from that of DITA Open Toolkit. This
+        will make it easier to you to upgrade to new versions of DITA-OT when they are released.</p>
+      <ul class="ul">
+        <li class="li">
+          <p class="p">Use a properly-constructed DITA-OT plug-in.</p></li>
+        <li class="li">
+          <p class="p">Use a version control system to store your code.</p></li>
+        <li class="li">
+          <p class="p">Store the source code of your plug-ins outside of the DITA-OT installation directory, and add the
+            repository location to the list of plug-in directories defined in the <span class="keyword parmname">plugindirs</span> entry
+            of the
+            <a class="xref" href="../parameters/configuration-properties-file.html" title="The configuration.properties file controls certain common properties, as well as some properties that control PDF processing."><span class="ph filepath">configuration.properties</span> file</a>.
+          </p></li>
+        <li class="li">
+          <p class="p">Never modify any of the core DITA-OT code.</p>
+          <div class="note tip note_tip"><span class="note__title">Tip:</span> You may want to set the permissions on default plug-in directories such as
+              <span class="ph filepath">org.dita.pdf2</span> to “read-only” to ensure that you do not accidentally modify the files
+            within as you develop your customized plug-in.</div></li>
+        <li class="li">
+          <p class="p">Avoid copying entire DITA-OT files into your customization plug-in. When you only copy the attribute sets
+            and templates that you need to override, there is less risk of impact from new features or fixes in the base
+            code, making your code more stable and easier to upgrade between releases.</p></li>
+        <li class="li">
+          <p class="p">If you only need to change a few attribute sets and templates, you may prefer to store your overrides in
+              <span class="ph filepath">custom.xsl</span> files, or a simple folder hierarchy within your custom plug-in.</p></li>
+        <li class="li">
+          <p class="p">In cases that require substantial customizations, you may prefer to organize the files in a folder
+            structure that mimics the hierarchy of the default plug-in you are customizing. This facilitates comparisons
+            with the default settings in the base plug-in and makes it easier to migrate your changes to new toolkit
+            versions. See
+            <a class="xref" href="pdf-plugin-structure.html" title="In cases that require substantial customizations, it is often useful to organize the files in a folder structure that mimics the hierarchy of the default PDF plug-in.">PDF plug-in structure</a> for information on the files in the base PDF plug-in.</p></li>
+        <li class="li">
+          <p class="p">Upgrade your customization plug-in to new versions of DITA-OT regularly. Do not wait through several major
+            releases before upgrading.</p></li>
+      </ul></section>
+
+    <section class="section"><h2 class="title sectiontitle">Use a custom namespace</h2>
+      
+      <p class="p">For XSLT customizations, use a custom namespace for any modified template modes, template names, attribute
+        sets, functions, and variables. This helps to clarify which portions of the code are specific to your
+        customizations, and serves to isolate your changes in the event that items with the same name are added to the
+        base plug-ins in the future.</p>
+      <p class="p">For example, instead of creating a template named <code class="ph codeph">searchbar</code>, use something like
+          <code class="ph codeph">corp:searchbar</code> instead. This ensures that if future versions of DITA-OT add a
+          <code class="ph codeph">searchbar</code> template, your custom version will be unaffected.</p>
+      <div class="p">Instead of: <pre class="pre codeblock language-xml"><code>&lt;xsl:template name="searchbar"/&gt;</code></pre></div>
+      <div class="p">use: <pre class="pre codeblock language-xml"><code>&lt;xsl:template name="corp:searchbar"/&gt;</code></pre></div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Upgrade stylesheets to XSLT 2.0</h2>
+      
+      
+      
+      
+      
+      
+      <p class="p">The Saxon project has announced plans to remove XSLT 1.0 support from the Saxon-HE library that ships with
+        DITA-OT:</p>
+      <blockquote class="lq">…we’re dropping XSLT 1.0
+        backwards compatibility mode from Saxon-HE, and hope to eliminate it entirely in due course.<br><div><a href="https://www.xml.com/news/release-saxon-98/"><cite>https://www.xml.com/news/release-saxon-98/</cite></a></div></blockquote>
+      <p class="p">DITA-OT 3.0 and 3.0.1 included Saxon-HE 9.8.0.5, which rejects XSLT stylesheets that specify
+          <code class="ph codeph">version="1.0"</code>. Plug-ins with XSLT templates specifying version 1.0 will fail with the message
+          “<samp class="ph msgph">XSLT 1.0 compatibility mode is not available in this configuration</samp>.”</p>
+      <p class="p">To resolve this issue, change any occurrences of <code class="ph codeph">&lt;xsl:stylesheet version="1.0"&gt;</code> in custom
+        plug-in stylesheets to at least <code class="ph codeph">&lt;xsl:stylesheet version="2.0"&gt;</code>.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> DITA-OT 3.0.2 includes Saxon-HE 9.8.0.7, which restores XSLT 1.0 backwards-compatibility mode,
+        but the DITA Open Toolkit project recommends upgrading all stylesheets to XSLT 2.0 to ensure plug-ins remain
+        compatible with future versions of DITA-OT and Saxon-HE.</div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Use custom <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> elements</h2>
+      
+      
+      
+      
+      <p class="p">In Ant scripts, use the XSLT module from DITA-OT instead of Ant’s built-in <code class="keyword markupname xmlelement">&lt;xslt&gt;</code> or
+          <code class="keyword markupname xmlelement">&lt;style&gt;</code> tasks. </p>
+      <p class="p">The XSLT module allows access to DITA-OT features like using the job configuration to select files in the
+        temporary folder based on file metadata and custom XSLT extension functions.</p>
+      <div class="note important note_important"><span class="note__title">Important:</span> Future versions of DITA-OT may switch to a new XML resolver or in-memory storage features
+        that are not supported by Ant’s XSLT task. To ensure compatibility with future releases, plug-ins should replace
+        these constructs with custom <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> elements.</div>
+      <p class="p">Instead of:</p>
+      <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xslt style="${dita.plugin.example.dir}/custom.xsl"
+      basedir="${dita.temp.dir}"
+      destdir="${dita.output.dir}"
+      includesfile="${dita.temp.dir}/${fullditatopicfile}"/&gt;</code></pre></div>
+      <p class="p">use:</p>
+      <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;pipeline&gt;
+  &lt;xslt style="${dita.plugin.example.dir}/custom.xsl"
+        destdir="${dita.output.dir}"&gt;
+    &lt;ditafileset format="dita" /&gt;
+  &lt;/xslt&gt;
+&lt;/pipeline&gt;</code></pre></div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Use the plug-in directory property</h2>
+      
+      <p class="p">In Ant scripts, always refer to files in other plug-ins using the
+            <code class="ph codeph">dita.plugin.<var class="keyword varname">plugin-id</var>.dir</code> property.</p>
+      <p class="p">Instead of:</p>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;property name="base" location="../example/custom.xsl"/&gt;</code></pre></div>
+      <p class="p">use:</p>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;property name="base" location="${dita.plugin.example.dir}/custom.xsl"/&gt;</code></pre></div>
+      <p class="p">This fixes cases where plug-ins are installed to custom plug-in directories or the plug-in folder name doesn’t
+        match the plug-in ID.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> For details, see
+        <a class="xref" href="referencing-other-plugins.html" title="Starting with DITA-OT 1.5.4, you can use the plugin:plugin-id URI extension and the ${dita.plugin.plugin-id.dir} Ant variable to reference the base path of another installed DITA-OT plug-in.">Referencing files from other plug-ins</a>.</div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Use the <code class="ph codeph">plugin</code> URI scheme</h2>
+      
+      
+      
+      <p class="p">In XSLT, use the <code class="ph codeph">plugin</code> URI scheme in <code class="keyword markupname xmlelement">&lt;xsl:import&gt;</code> and
+          <code class="keyword markupname xmlelement">&lt;xsl:include&gt;</code> to reference files in other plug-ins.</p>
+      <p class="p">Instead of:</p>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="../../org.dita.base/xsl/common/output-message.xsl"/&gt;</code></pre></div>
+      <p class="p">use:</p>
+      <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/&gt;</code></pre></div>
+      <p class="p">As with the plug-in directory property in Ant, this allows plug-ins to resolve to the correct directory even
+        when a plug-in moves to a new location. The plug-in is referenced using the syntax
+            <code class="ph codeph">plugin:<var class="keyword varname">plugin-id</var>:<var class="keyword varname">path/within/plugin/file.xsl</var></code>.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> For details, see
+        <a class="xref" href="referencing-other-plugins.html" title="Starting with DITA-OT 1.5.4, you can use the plugin:plugin-id URI extension and the ${dita.plugin.plugin-id.dir} Ant variable to reference the base path of another installed DITA-OT plug-in.">Referencing files from other plug-ins</a>.</div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Use <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> to select files</h2>
+      
+      
+      
+      
+      
+      <p class="p">In Ant scripts, use <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> to select resources in the temporary directory.</p>
+      <p class="p">For example, to select all images referenced by input DITA files, instead of:</p>
+      <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;copy todir="${copy-image.todir}"&gt;
+  &lt;fileset dir="${user.input.dir}"&gt;
+    &lt;includes name="*.jpg"/&gt;
+    &lt;includes name="*.jpeg"/&gt;
+    &lt;includes name="*.png"/&gt;
+    &lt;includes name="*.gif"/&gt;
+    &lt;includes name="*.svg"/&gt;
+  &lt;/fileset&gt;
+&lt;/copy&gt;</code></pre></div>
+      <p class="p">use:</p>
+      <div class="p"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;copy todir="${copy-image.todir}"&gt;
+  &lt;ditafileset format="image" /&gt;
+&lt;/copy&gt;</code></pre>
+      </div>
+      <p class="p">The <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code> resource collection can be used to select different types of
+        files.</p>
+      <table class="table table-hover frame-topbot"><caption><span class="table--title-label">Table 1. </span><span class="title">Usage examples of <code class="keyword markupname xmlelement">&lt;ditafileset&gt;</code></span></caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead class="thead">
+            <tr class="row">
+              <th class="entry colsep-0 rowsep-1" id="ID__entry__1">Example</th>
+              <th class="entry rowsep-1" id="ID__entry__2">Description</th>
+            </tr>
+          </thead><tbody class="tbody">
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="dita"/&gt;</code></td>
+              <td class="entry rowsep-1" headers="ID__entry__2">Selects all DITA topics in the temporary directory.</td>
+            </tr>
+            <tr class="row">
+              <td class="entry colsep-0 rowsep-1" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="ditamap"/&gt;</code></td>
+              <td class="entry rowsep-1" headers="ID__entry__2">Selects all DITA maps in the temporary directory.</td>
+            </tr>
+            <tr class="row">
+              <td class="entry colsep-0" headers="ID__entry__1"><code class="ph codeph">&lt;ditafileset format="image"/&gt;</code></td>
+              <td class="entry" headers="ID__entry__2">Selects images of all known types in the temporary directory.</td>
+            </tr>
+          </tbody></table>
+    </section>
+    <section class="section" id="ID__match-classes"><h2 class="title sectiontitle">Match elements with their <code class="keyword markupname xmlatt">@class</code> attribute</h2>
+      
+      <p class="p">Use <code class="keyword markupname xmlatt">@class</code> attributes to match elements in XPATH expressions instead of element names.</p>
+      <div class="p">For example, instead of: <pre class="pre codeblock"><code>&lt;xsl:template match="p"/&gt;</code></pre></div>
+      <div class="p">use: <pre class="pre codeblock"><code>&lt;xsl:template match="*[contains(@class,' topic/p ')]"/&gt;</code></pre></div>
+      <p class="p">Specialization-aware processing uses these classes to distinguish the general class of elements to which the
+        current element belongs.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> Matching classes instead of elements ensures that the expression also applies to any specialized
+        elements as well as to their more general ancestors. This means you can define new markup without necessarily
+        requiring new processing rules.</div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Validating plug-ins</h2>
+      
+      <div class="div" id="ID__plugin.rnc">
+        <p class="p">DITA-OT includes a RELAX&nbsp;NG schema file that can be used to validate the <span class="ph filepath">plugin.xml</span>
+          files that define the capabilities of each plug-in.
+          
+          
+        </p>
+        <p class="p">To ensure the syntax of your custom plug-in is correct, include an <code class="keyword markupname xmlpi">&lt;?xml-model?&gt;</code> processing
+          instruction at the beginning of the <span class="ph filepath">plugin.xml</span> file, immediately after the XML
+          prolog:</p>
+        <p class="p"><code class="keyword markupname xmlpi">&lt;?xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;</code></p>
+        <p class="p">If your authoring environment does not apply this schema automatically, point your editor to <span class="ph filepath" id="ID__samples-dir"><var class="keyword varname">dita-ot-dir</var>/resources/plugin.rnc</span> to associate the schema with
+          your plug-in file.</p>
+      </div>
+    </section>
+
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/html-customization-plugins.html" title="In addition to the basic modifications that can be made with parameter settings and property files, you can create custom HTML plug-ins that bundle custom fonts, JavaScript, and stylesheets; modify the HTML markup, or override other aspects of HTML processing.">Custom HTML plug-ins</a></li><li class="linklist"><a class="link" href="../topics/pdf-customization-plugins.html" title="In most cases, PDF output should be customized by creating custom DITA-OT plug-ins that build on the default DITA to PDF transformation. PDF plug-ins can customize covers and page layouts, modify formatting, override the logic of the default PDF plug-in, and much more.">Custom PDF plug-ins</a></li><li class="linklist"><a class="link" href="../topics/plugin-dependencies.html" title="A DITA-OT plug-in can be dependent on other plug-ins. Prerequisite plug-ins are installed first, which ensures that DITA-OT handles XSLT overrides correctly.">Plug-in dependencies</a></li></ul></div><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/referencing-other-plugins.html" title="Starting with DITA-OT 1.5.4, you can use the plugin:plugin-id URI extension and the ${dita.plugin.plugin-id.dir} Ant variable to reference the base path of another installed DITA-OT plug-in.">Referencing files from other plug-ins</a></li></ul></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2018/dita-ot_day.html#apply_your_style_guide_rules_during_the_publication" target="_blank" rel="external noopener" title="DITA-OT warns about technical issues in the input. Why not warn about style guide violations? This talk shows how Schematron can be used to check topics and maps after the preprocessing phase and stop the build if content does not pass the defined quality gates.">Validation meets publication - Apply your style guide rules during the publication</a></li><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2018/dita-ot_day.html#unit_testing_DITA-OT_plugin_extensions" target="_blank" rel="external noopener" title="I have created a Unit Testing Framework for DITA-OT Plugins https://github.com/jason-fox/fox.jason.unit-test - This is a DITA-OT Plugin to test DITA-OT Plugins. The complete functionality would include HTML and command line test results, ANT script profiling, XSL template code coverage, e automated CI testing - integration with Travis, and how to write maintainable tests swiftly and painlessly.">Unit Testing DITA-OT Plugin Extensions</a></li><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2018/dita-ot_day.html#meta_DITA_samples" target="_blank" rel="external noopener" title="Over the past few years I've developed a number of test cases that are exhaustive but on very specific features. The sample files are not well suited for automated testing, but can often be used to manually test custom plugins. In this lightning talk, I'll describe the samples that exist today, and also solicit feedback on other similar test sets that might prove useful.">Meta DITA samples: testing around the edge cases</a></li><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2017/dita-ot_day.html#Managing_a_large_scale_build_environment" target="_blank" rel="external noopener" title="Tips and tricks, mistakes made, and lessons learned: how IBM manages a single build environment for hundreds of authors with 50+ plugins -- including new doctypes, new transform types, and externally contributed plugins -- while keeping up with the latest DITA-OT releases.">Managing a large scale build environment with 50+ custom plugins</a></li><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2015/dita-ot_day.html#DITA-OT_Patterns_and_Anti-patterns" target="_blank" rel="external noopener" title="What might often seem like a good way to use or extend DITA-OT, but likely result in trouble later? What is the alternative? This session will cover known traps that organizations have fallen into when using DITA-OT, and suggest how to avoid those issues or (perhaps with difficulty) recover from the mistakes. The session will leave time for discussion about other traps that audience members may have fallen into.">DITA-OT Patterns and Anti-patterns</a></li><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2015/dita-ot_day.html#Multiple_OT_With_Git" target="_blank" rel="external noopener" title="If you need to maintain multiple configurations of the OT for day-to-day or minute-by-minute changes to the OT for different projects, clients, etc., you can use git to do it. There are some tricks and gotchas but it does work.">Multiple OT with Git</a></li></ul></div></nav></article></main>
