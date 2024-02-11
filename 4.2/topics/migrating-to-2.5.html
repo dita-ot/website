@@ -18,9 +18,9 @@ src: 'topics/migrating-to-2.5.dita'
   <div class="body refbody"><p class="shortdesc">In DITA-OT 2.5, several frequently-overridden legacy style settings were removed from the default PDF
     plug-in. A separate plug-in can be used to restore the original settings.</p>
     <section class="section">
-      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 2.5 that may require modifications to custom stylesheets
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This topic provides a summary of changes in DITA-OT 2.5 that may require modifications to custom stylesheets
         or plug-ins. For more information on changes in this release, see the
-        <a class="xref" href="https://www.dita-ot.org/2.5/release-notes/" target="_blank" rel="external noopener">DITA-OT 2.5 Release Notes</a>.</div>
+        <a class="xref" href="https://www.dita-ot.org/2.5/release-notes/" target="_blank" rel="external noopener">DITA-OT 2.5 Release Notes</a>.</div></div>
     </section>
     <section class="section"><h2 class="title sectiontitle">Deprecated logging parameters</h2>
       
@@ -30,8 +30,8 @@ src: 'topics/migrating-to-2.5.dita'
         <li class="li">
           <p class="p">To enable debug logging, use <span class="keyword cmdname">dita</span>
             <span class="keyword parmname">--debug</span>.</p>
-          <div class="note attention note_attention"><span class="note__title">Attention:</span> Debug logging requires additional resources and can slow down the build process, so it
-            should only be enabled when further details are required to diagnose problems.</div>
+          <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">Debug logging requires additional resources and can slow down the build process, so it
+            should only be enabled when further details are required to diagnose problems.</div></div>
         </li>
         <li class="li">
           <p class="p">To write the log to a file, use <span class="keyword cmdname">dita</span>
@@ -80,9 +80,9 @@ src: 'topics/migrating-to-2.5.dita'
           </tbody></table>
       <p class="p">To install the legacy PDF plug-in, run the following command:</p>
       <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span>=<span class="ph filepath">https://github.com/dita-ot/org.dita.pdf2.legacy/archive/2.5.zip</span></code></pre>
-      <div class="note attention note_attention"><span class="note__title">Attention:</span> Only install the legacy PDF plug-in if you have a custom PDF plug-in that requires the
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">Only install the legacy PDF plug-in if you have a custom PDF plug-in that requires the
         pre–2.5 styles. If your plug-in was designed for DITA-OT 2.4 and does not override these settings, there is no
-        need to install the legacy PDF plug-in.</div>
+        need to install the legacy PDF plug-in.</div></div>
     </section>
 
   </div>

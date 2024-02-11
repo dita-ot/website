@@ -36,8 +36,8 @@ src: 'reference/store-api.dita'
           <code class="ph codeph">dita.temp.dir</code> path.</p>
       <p class="p">The Stream Store is activated by setting the <span class="keyword parmname">store-type</span> parameter to
         <span class="keyword option">file</span>.</p>
-      <div class="note note note_note"><span class="note__title">Note:</span> To ensure backwards compatibility, the <span class="keyword option">file</span> Store is the default setting in DITA-OT
-        3.6.</div>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">To ensure backwards compatibility, the <span class="keyword option">file</span> Store is the default setting in DITA-OT
+        3.6.</div></div>
     </section>
     <section class="section" id="store-api__cache-store"><h2 class="title sectiontitle">Cache Store for in-memory processing</h2>
       
@@ -49,8 +49,8 @@ src: 'reference/store-api.dita'
       <p class="p">While the Store doesn't write anything to the temporary directory, it will still use URIs where the resources
         are under the temporary directory. The URIs are simply used for addressing, similarly to URNs. Future releases
         of DITA-OT may use some other method of addressing, such as a <code class="ph codeph">tmp</code> URI scheme.</p>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> As of DITA-OT 3.6, the Cache Store can be activated by setting the
-          <span class="keyword parmname">store-type</span> parameter to <span class="keyword option">memory</span>.</div>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">As of DITA-OT 3.6, the Cache Store can be activated by setting the
+          <span class="keyword parmname">store-type</span> parameter to <span class="keyword option">memory</span>.</div></div>
     </section>
     <section class="section" id="store-api__benefits"><h2 class="title sectiontitle">Benefits</h2>
       
@@ -67,9 +67,9 @@ src: 'reference/store-api.dita'
       
       <p class="p">Not all custom plug-ins will work with the Cache Store, because they may assume files are used and expect direct file
         access for resource operations.</p>
-      <div class="note important note_important"><span class="note__title">Important:</span> To take advantage of the Store API, custom plug-ins must use DITA-OT XSLT modules in custom
+      <div class="note important note_important"><span class="note__title">Important:</span> <div class="note__body">To take advantage of the Store API, custom plug-ins must use DITA-OT XSLT modules in custom
           <code class="keyword markupname xmlelement">&lt;pipeline&gt;</code> elements instead of Ant’s built-in <code class="keyword markupname xmlelement">&lt;xslt&gt;</code> tasks as
-        recommended in <a class="xref" href="../topics/plugin-coding-conventions.html" title="To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases, the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding patterns.">Plug-in coding conventions</a>.</div>
+        recommended in <a class="xref" href="../topics/plugin-coding-conventions.html" title="To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases, the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding patterns.">Plug-in coding conventions</a>.</div></div>
     </section>
   </div>
 </article></main>

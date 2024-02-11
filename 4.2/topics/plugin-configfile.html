@@ -38,8 +38,8 @@ src: 'topics/plugin-configfile.dita'
       <p class="p">Every DITA-OT plug-in must have a unique identifier composed of one or more dot-delimited tokens, for example,
           <code class="ph codeph">com.example.rss</code>. This identifier is used to identify the plug-in to the toolkit for
         installation, processing, and when determining plug-in dependencies.</p>
-      <div class="note note note_note"><span class="note__title">Note:</span> The default DITA-OT plug-ins use a reverse domain naming convention, as in <code class="ph codeph">org.dita.html5</code>;
-        this is strongly recommended to avoid plug-in naming conflicts.</div>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The default DITA-OT plug-ins use a reverse domain naming convention, as in <code class="ph codeph">org.dita.html5</code>;
+        this is strongly recommended to avoid plug-in naming conflicts.</div></div>
       <div class="p" id="plugin-configfile__tokendef">Each token can include only the following characters:
         <ul class="ul">
           <li class="li">Lower-case letters (a-z)</li>
@@ -85,8 +85,8 @@ src: 'topics/plugin-configfile.dita'
               </tr></tbody></table>
             <p class="p" id="plugin-configfile__extension-point-ids">Like plug-in identifiers, extension point identifiers are composed of one or
               more dot-delimited tokens.</p>
-            <div class="note note note_note" id="plugin-configfile__entension-point-ids-note"><span class="note__title">Note:</span> Extension point identifiers should begin with the identifier of the
-              defining plug-in and append one or more tokens, for example, <code class="ph codeph">org.dita.example.pre</code>.</div>
+            <div class="note note note_note" id="plugin-configfile__entension-point-ids-note"><span class="note__title">Note:</span> <div class="note__body">Extension point identifiers should begin with the identifier of the
+              defining plug-in and append one or more tokens, for example, <code class="ph codeph">org.dita.example.pre</code>.</div></div>
             <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Sample <code class="keyword markupname xmlelement">&lt;extension-point&gt;</code> element</figcaption>
               
               <pre class="pre codeblock language-xml"><code>&lt;extension-point id="dita.xsl.html5" name="HTML5 XSLT import"/&gt;</code></pre>
@@ -345,4 +345,4 @@ src: 'topics/plugin-configfile.dita'
 &lt;/plugin&gt;</code></pre>
     </div>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/plugin-newtranstype.html" title="Plug-ins can add an entirely new transformation type. The new transformation type can be very simple, such as an HTML build that creates an additional control file; it also can be very complex, adding any number of new processing steps.">Adding a new transformation type</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/plugin-newextensions.html" title="If your plug-in needs to define its own extension points in an XML file, add the string &#34;_template&#34; to the filename before the file suffix. When the plug-in is installed, this file will be processed like the built-in DITA-OT templates.">Creating a new plug-in extension point</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="plugin-newtranstype.html" title="Plug-ins can add an entirely new transformation type. The new transformation type can be very simple, such as an HTML build that creates an additional control file; it also can be very complex, adding any number of new processing steps.">Adding a new transformation type</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="plugin-newextensions.html" title="If your plug-in needs to define its own extension points in an XML file, add the string &#34;_template&#34; to the filename before the file suffix. When the plug-in is installed, this file will be processed like the built-in DITA-OT templates.">Creating a new plug-in extension point</a></li></ul></div></nav></article></main>

@@ -25,9 +25,9 @@ src: 'topics/using-project-files.dita'
         <a class="xref" href="https://json.org" target="_blank" rel="external noopener">JSON</a>, or
         <a class="xref" href="https://yaml.org" target="_blank" rel="external noopener">YAML</a>. The XML format can be validated with a RELAX&nbsp;NG schema provided in the
           <span class="ph filepath">resources</span> folder of the DITA-OT installation (<span class="ph filepath">project.rnc</span>).</p>
-      <div class="note note note_note"><span class="note__title">Note:</span> The XML project file format is the normative version provided for interoperability with existing XML-based
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The XML project file format is the normative version provided for interoperability with existing XML-based
         toolchains. The JSON and YAML versions are alternative compact formats that are easier to read and write, but
-        otherwise equivalent to the XML syntax.</div>
+        otherwise equivalent to the XML syntax.</div></div>
       <p class="p" id="ID__projects-advantages">Whereas <span class="ph filepath">.properties</span> files can only be used to set parameters,
         project files go further, allowing you to define multiple deliverables with separate input files and output
         folders and formats for each publication. A project file can also refer to other project files with
@@ -50,10 +50,10 @@ src: 'topics/using-project-files.dita'
       <p class="p" id="ID__projects-structure">Though the exact syntax differs slightly, the basic structure of project files is
         similar in all supported formats.</p>
       <p class="p">The following settings can be defined for each <code class="ph codeph">deliverable</code>:</p>
-      <ul class="ul" compact>
+      <ul class="ul compact">
         <li class="li">
           <div class="p">a source <code class="ph codeph">context</code> that may include:
-            <ul class="ul" compact>
+            <ul class="ul compact">
               <li class="li">an <code class="ph codeph">id</code> that allows you to refer to this context from other contexts or projects</li>
               <li class="li">an <code class="ph codeph">idref</code> that refers to another context</li>
               <li class="li">a series of <code class="ph codeph">input</code> files (the DITA maps or topics you want to publish)</li>
@@ -66,7 +66,7 @@ src: 'topics/using-project-files.dita'
           <p class="p">an <code class="ph codeph">output</code> location (relative to the CLI <span class="keyword parmname">--output</span> directory)</p></li>
         <li class="li">
           <div class="p">a <code class="ph codeph">publication</code> type that defines:
-            <ul class="ul" compact>
+            <ul class="ul compact">
               <li class="li">an <code class="ph codeph">id</code> that allows you to refer to this publication from other publications or
                 projects</li>
               <li class="li">an <code class="ph codeph">idref</code> that refers to another publication</li>
@@ -98,7 +98,7 @@ src: 'topics/using-project-files.dita'
           </figure>
         </li>
       </ul>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> 
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">
         <ul class="ul">
           <li class="li">Use <code class="ph codeph">href</code> for web addresses and other resources that should resolve to an absolute
             URI. Relative references are resolved using the project file as a base directory.</li>
@@ -109,7 +109,7 @@ src: 'topics/using-project-files.dita'
               <span class="keyword parmname">args.csspath</span>, which is used to describe a relative path in the output folder. String
             values are passed as is.</li>
         </ul>
-      </div>
+      </div></div>
     </section>
     <section class="section" id="ID__project-filtering"><h2 class="title sectiontitle">Project filtering</h2>
       
@@ -173,4 +173,4 @@ src: 'topics/using-project-files.dita'
         </div>
       </li></ol></section>
   </div>
-<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="../topics/project-files-xml.html">Sample XML project files</a></strong><br>DITA-OT includes sample XML project files that can be used to define a publication project. The XML format     can be validated with a RELAX&nbsp;NG schema provided in the <span class="ph filepath">resources</span> folder of the DITA-OT     installation (<span class="ph filepath">project.rnc</span>).</li><li class="link ulchildlink"><strong><a href="../topics/project-files-json.html">Sample JSON project files</a></strong><br>DITA-OT includes sample project files in     <a class="xref" href="https://json.org" target="_blank" rel="external noopener">JSON</a> format that can be used to define a publication project. Like the XML project samples, the     sample JSON files illustrate how deliverables can be described for use in publication projects. The JSON samples are     functionally equivalent to their XML and YAML counterparts, with minor adaptations to JSON file syntax.</li><li class="link ulchildlink"><strong><a href="../topics/project-files-yaml.html">Sample YAML project files</a></strong><br>DITA-OT includes sample project files in     <a class="xref" href="https://yaml.org" target="_blank" rel="external noopener">YAML</a> format that can be used to define a publication project. Like the XML project samples, the     sample YAML files illustrate how deliverables can be described for use in publication projects. The YAML samples are     functionally equivalent to their XML and JSON counterparts, with minor adaptations to YAML file syntax.</li></ul><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2019/dita-ot_day.html#editing_dita_open_toolkit_project_files" target="_blank" rel="external noopener" title="DITA Open Toolkit project files can store the entire set of main DITA Maps, output formats and parameters necessary for publishing your DITA project. We'll explore how an XML editing tool can provide editing, validation and publishing support for the project file.">Editing DITA Open Toolkit Project files</a></li><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2019/dita-ot_day.html#one_file_to_rule" target="_blank" rel="external noopener" title="DITA-OT 3.4 introduces support for project files to define reusable input context and publications. We discuss why the feature was developed, how to use them and in the darkness bind them.">One file to rule them all (DITA Project)</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="project-files-xml.html">Sample XML project files</a></strong><br>DITA-OT includes sample XML project files that can be used to define a publication project. The XML format     can be validated with a RELAX&nbsp;NG schema provided in the <span class="ph filepath">resources</span> folder of the DITA-OT     installation (<span class="ph filepath">project.rnc</span>).</li><li class="link ulchildlink"><strong><a href="project-files-json.html">Sample JSON project files</a></strong><br>DITA-OT includes sample project files in     <a class="xref" href="https://json.org" target="_blank" rel="external noopener">JSON</a> format that can be used to define a publication project. Like the XML project samples, the     sample JSON files illustrate how deliverables can be described for use in publication projects. The JSON samples are     functionally equivalent to their XML and YAML counterparts, with minor adaptations to JSON file syntax.</li><li class="link ulchildlink"><strong><a href="project-files-yaml.html">Sample YAML project files</a></strong><br>DITA-OT includes sample project files in     <a class="xref" href="https://yaml.org" target="_blank" rel="external noopener">YAML</a> format that can be used to define a publication project. Like the XML project samples, the     sample YAML files illustrate how deliverables can be described for use in publication projects. The YAML samples are     functionally equivalent to their XML and JSON counterparts, with minor adaptations to YAML file syntax.</li></ul><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2019/dita-ot_day.html#editing_dita_open_toolkit_project_files" target="_blank" rel="external noopener" title="DITA Open Toolkit project files can store the entire set of main DITA Maps, output formats and parameters necessary for publishing your DITA project. We'll explore how an XML editing tool can provide editing, validation and publishing support for the project file.">Editing DITA Open Toolkit Project files</a></li><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2019/dita-ot_day.html#one_file_to_rule" target="_blank" rel="external noopener" title="DITA-OT 3.4 introduces support for project files to define reusable input context and publications. We discuss why the feature was developed, how to use them and in the darkness bind them.">One file to rule them all (DITA Project)</a></li></ul></div></nav></article></main>

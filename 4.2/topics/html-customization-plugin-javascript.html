@@ -22,8 +22,8 @@ src: 'topics/html-customization-plugin-javascript.dita'
       <p class="p">The <span class="keyword option">html5-javascript</span> transformation includes a custom page footer file with a JavaScript
         tracking snippet and sets the <span class="keyword parmname">args.ftr</span> parameter to integrate the script content in the
         HTML5 <code class="keyword markupname xmlelement">&lt;footer&gt;</code> element of the generated pages.</p>
-      <div class="note note note_note"><span class="note__title">Note:</span> This example inserts a tracking snippet for Google Analytics, but the basic approach is the same for other
-        analytics platforms or similar use cases that require custom JavaScript.</div>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This example inserts a tracking snippet for Google Analytics, but the basic approach is the same for other
+        analytics platforms or similar use cases that require custom JavaScript.</div></div>
     </section>
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">plugins</span> directory, create a directory named
@@ -44,8 +44,8 @@ src: 'topics/html-customization-plugin-javascript.dita'
   &lt;feature extension="ant.import" file="build_html5-javascript.xml"/&gt;
 &lt;/plugin&gt;</code></pre>
           </figure>
-          <div class="note note note_note"><span class="note__title">Note:</span> This plug-in will extend the default HTML5 transformation, so the <code class="keyword markupname xmlelement">&lt;require&gt;</code>
-            element explicitly defines <span class="ph filepath">org.dita.html5</span> as a dependency.</div>
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This plug-in will extend the default HTML5 transformation, so the <code class="keyword markupname xmlelement">&lt;require&gt;</code>
+            element explicitly defines <span class="ph filepath">org.dita.html5</span> as a dependency.</div></div>
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">In the <span class="ph filepath">com.example.html5-javascript</span> directory, create a subdirectory named
@@ -109,15 +109,15 @@ ga('send', 'pageview');
           </figure>
         </div>
         <div class="itemgroup info">
-          <div class="note note note_note"><span class="note__title">Note:</span> When defining the path to the footer file from the Ant script, use the plug-in directory property with
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">When defining the path to the footer file from the Ant script, use the plug-in directory property with
             the <var class="keyword varname">plugin-id</var> as shown in the example above:
-                <code class="ph codeph">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</code>.</div>
+                <code class="ph codeph">${dita.plugin.<var class="keyword varname">plugin-id</var>.dir}</code>.</div></div>
         </div>
       </li></ol></section>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> The files for this sample plug-in are included in the DITA-OT installation directory under
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">The files for this sample plug-in are included in the DITA-OT installation directory under
           <span class="ph filepath">docsrc/samples/plugins/com.example.html5-javascript/</span> and on
-        <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-javascript" target="_blank" rel="external noopener">GitHub</a>.</div>
+        <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.html5-javascript" target="_blank" rel="external noopener">GitHub</a>.</div></div>
       <p class="p">The plug-in directory has the following layout and files:</p>
       <pre class="pre codeblock"><code>com.example.html5-javascript
 ├── build_html5-javascript.xml
@@ -129,8 +129,8 @@ ga('send', 'pageview');
       <ol class="ol">
         <li class="li">
           <p class="p">Use the <span class="keyword cmdname">dita install</span> subcommand to install the plug-in.</p>
-          <div class="note note note_note"><span class="note__title">Note:</span> For more information, see
-            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div>
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">For more information, see
+            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div></div>
         </li>
         <li class="li">Build output with the new transformation type to verify that the plug-in works as intended.
           <pre class="pre codeblock"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">my.ditamap</var> <span class="keyword parmname">--format</span>=<span class="keyword option">html5-javascript</span></code></pre></li>
@@ -141,11 +141,11 @@ ga('send', 'pageview');
             <code class="ph codeph">'UA-XXXXX-Y'</code> placeholder string with the tracking ID of the Google Analytics property you
           wish to track.</li>
       </ol>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> This example places the JavaScript code in the page footer to ensure that page display is not
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">This example places the JavaScript code in the page footer to ensure that page display is not
         delayed while the script is loaded. If your JavaScript code supports pre-loading and your application targets
         modern browsers that recognize the <code class="ph codeph">async</code> script attribute, you may prefer to insert the
         JavaScript snippet in the <code class="keyword markupname xmlelement">&lt;head&gt;</code> element of the generated HTML files using the
-          <span class="keyword parmname">args.hdf</span> parameter instead.</div>
+          <span class="keyword parmname">args.hdf</span> parameter instead.</div></div>
     </section>
   </div>
 <nav role="navigation" class="related-links"><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters-base-html.html" title="Certain parameters apply to all HTML-based transformation types: HTML5, XHTML, HTML&nbsp;Help, and Eclipse help.">HTML-based output parameters</a></li></ul></div></nav></article></main>

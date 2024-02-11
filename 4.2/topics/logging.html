@@ -37,8 +37,8 @@ src: 'topics/logging.dita'
               <p class="p">Debug logging prints considerably more additional information. The debug log includes all information
                 from the verbose log, plus details on Java classes, additional Ant properties and overrides,
                 pre-processing filters, parameters, and stages, and the complete build sequence.</p>
-              <div class="note attention note_attention"><span class="note__title">Attention:</span> Debug logging requires additional resources and can slow down the build process, so
-                it should only be enabled when further details are required to diagnose problems.</div>
+              <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">Debug logging requires additional resources and can slow down the build process, so
+                it should only be enabled when further details are required to diagnose problems.</div></div>
             </li>
             <li class="li">
               <p class="p">To write the log to a file, use <span class="keyword cmdname">dita</span>
@@ -69,11 +69,11 @@ src: 'topics/logging.dita'
                 <span class="keyword cmdname">dita</span> command:</p>
             <pre class="pre codeblock syntax-bash"><code>export ANT_ARGS="-logger org.apache.tools.ant.listener.AnsiColorLogger"</code></pre>
             <p class="p">Now you will get colorized messages when the <span class="keyword cmdname">dita</span> command runs.</p>
-            <div class="note tip note_tip"><span class="note__title">Tip:</span> Environment variables can also be set permanently. See
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">Environment variables can also be set permanently. See
               <a class="xref" href="https://www.java.com/en/download/help/path.xml" target="_blank" rel="external noopener">How do I set or
                 change the PATH system variable?</a> for information on how to set the
               <a class="xref" href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank" rel="external noopener">PATH environment variable</a>. You can set the <code class="ph codeph">ANT_ARGS</code> environment variable in the same
-              way.</div>
+              way.</div></div>
           </dd>
         
         
@@ -99,8 +99,8 @@ src: 'topics/logging.dita'
         more information, see the
         <a class="xref" href="https://logback.qos.ch/manual/configuration.html" target="_blank" rel="external noopener">Logback
           configuration documentation</a>.</p>
-      <div class="note attention note_attention"><span class="note__title">Attention:</span> Enabling FOP debug logging will dramatically increase the size of generated log
-        files.</div>
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">Enabling FOP debug logging will dramatically increase the size of generated log
+        files.</div></div>
     </section>
     
     
