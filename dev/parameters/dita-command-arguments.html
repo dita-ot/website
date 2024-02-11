@@ -6,11 +6,11 @@ description: 'The dita command takes mandatory arguments to process DITA content
     used to manage plug-ins, or print information about the current configuration. A series of options are available to
     modify the command behavior or specify additional configuration parameters.'
 index: '../toc.html'
-commit: '541fee32b647fa9688e43486f7412058148b0530'
+commit: '63d8e93048bbfb1d8622ed330ff3f408ac3b4f2a'
 src: 'parameters/dita-command-arguments.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.1</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a><ul class="nav nav-list"><li class="active"><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li></ul></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a><ul class="nav nav-list"><li class="active"><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li></ul></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Arguments and options for the <span class="keyword cmdname">dita</span> command</h1>
   
   
@@ -163,6 +163,8 @@ src: 'parameters/dita-command-arguments.dita'
             <span class="keyword parmname">--project</span>=<var class="keyword varname">file</var>
           </dt>
           <dd class="dd pd">Publish a project file with multiple deliverables.</dd>
+          <dd class="dd pd ddexpand">You can add the <span class="keyword parmname">--deliverable</span> option to specify a single deliverable in the
+            project.</dd>
           <dd class="dd pd ddexpand">For more information, see
             <a class="xref" href="../topics/using-project-files.html" title="DITA-OT 3.4 introduced project files that allow you to publish multiple deliverables at once. Each deliverable specifies a re-usable source context that groups the maps or topics you want to publish, an output folder, and a publication format (such as HTML, or PDF) with transformation parameters.">Publishing with project files</a>.</dd>
         
@@ -301,7 +303,7 @@ src: 'parameters/dita-command-arguments.dita'
             <span class="keyword parmname">-d</span>
           </dt>
           <dd class="dd pd">Debug logging prints considerably more additional information. The debug log includes all information from
-            the verbose log, plus details on Java classes, additional Ant properties and overrides, preprocessing
+            the verbose log, plus details on Java classes, additional Ant properties and overrides, pre-processing
             filters, parameters, and stages, and the complete build sequence. Debug logging requires additional
             resources and can slow down the build process, so it should only be enabled when further details are
             required to diagnose problems.</dd>
@@ -449,7 +451,15 @@ src: 'parameters/dita-command-arguments.dita'
             transformation process.</dd>
         
         
-          <dt class="dt pt dlterm" id="--verbose">
+          <dt class="dt pt dlterm" id="dita-command-properties__theme">
+            <span class="keyword parmname">--theme</span>=<var class="keyword varname">file</var>
+          </dt>
+          <dd class="dd pd">Publish PDF output with a theme configuration file.</dd>
+          <dd class="dd pd ddexpand">For more information, see
+            <a class="xref" href="../topics/pdf-themes.html" title="DITA-OT 4.0 includes the com.elovirta.pdf plug-in, which extends the default PDF2 plug-in with a new theme parameter. The --theme option takes a path to a theme file and changes the styling of the PDF output without requiring changes to XSLT stylesheets.">PDF themes</a>.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__verbose">
             <span class="keyword parmname">--verbose</span></dt>
           <dt class="dt pt dlterm" id="-v">
             <span class="keyword parmname">-v</span>
