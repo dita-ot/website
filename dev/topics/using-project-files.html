@@ -7,7 +7,7 @@ description: 'DITA-OT 3.4 introduced project files that allow you to publish mul
     publish, an output folder, and a publication format (such as HTML, or PDF) with
     transformation parameters.'
 index: '../toc.html'
-commit: '02af209f2eaba79e66755b8b38280e725f1be3fe'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'topics/using-project-files.dita'
 ---
 
@@ -26,9 +26,9 @@ src: 'topics/using-project-files.dita'
         <a class="xref" href="https://json.org" target="_blank" rel="external noopener">JSON</a>, or
         <a class="xref" href="https://yaml.org" target="_blank" rel="external noopener">YAML</a>. The XML format can be validated with a RELAX&nbsp;NG schema provided in the
           <span class="ph filepath">resources</span> folder of the DITA-OT installation (<span class="ph filepath">project.rnc</span>).</p>
-      <div class="note note note_note"><span class="note__title">Note:</span> The XML project file format is the normative version provided for interoperability with existing XML-based
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The XML project file format is the normative version provided for interoperability with existing XML-based
         toolchains. The JSON and YAML versions are alternative compact formats that are easier to read and write, but
-        otherwise equivalent to the XML syntax.</div>
+        otherwise equivalent to the XML syntax.</div></div>
       <p class="p" id="ID__projects-advantages">Whereas <span class="ph filepath">.properties</span> files can only be used to set parameters,
         project files go further, allowing you to define multiple deliverables with separate input files and output
         folders and formats for each publication. A project file can also refer to other project files with
@@ -51,10 +51,10 @@ src: 'topics/using-project-files.dita'
       <p class="p" id="ID__projects-structure">Though the exact syntax differs slightly, the basic structure of project files is
         similar in all supported formats.</p>
       <p class="p">The following settings can be defined for each <code class="ph codeph">deliverable</code>:</p>
-      <ul class="ul" compact>
+      <ul class="ul compact">
         <li class="li">
           <div class="p">a source <code class="ph codeph">context</code> that may include:
-            <ul class="ul" compact>
+            <ul class="ul compact">
               <li class="li">an <code class="ph codeph">id</code> that allows you to refer to this context from other contexts or projects</li>
               <li class="li">an <code class="ph codeph">idref</code> that refers to another context</li>
               <li class="li">a series of <code class="ph codeph">input</code> files (the DITA maps or topics you want to publish)</li>
@@ -67,7 +67,7 @@ src: 'topics/using-project-files.dita'
           <p class="p">an <code class="ph codeph">output</code> location (relative to the CLI <span class="keyword parmname">--output</span> directory)</p></li>
         <li class="li">
           <div class="p">a <code class="ph codeph">publication</code> type that defines:
-            <ul class="ul" compact>
+            <ul class="ul compact">
               <li class="li">an <code class="ph codeph">id</code> that allows you to refer to this publication from other publications or
                 projects</li>
               <li class="li">an <code class="ph codeph">idref</code> that refers to another publication</li>
@@ -99,7 +99,7 @@ src: 'topics/using-project-files.dita'
           </figure>
         </li>
       </ul>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> 
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">
         <ul class="ul">
           <li class="li">Use <code class="ph codeph">href</code> for web addresses and other resources that should resolve to an absolute
             URI. Relative references are resolved using the project file as a base directory.</li>
@@ -110,7 +110,7 @@ src: 'topics/using-project-files.dita'
               <span class="keyword parmname">args.csspath</span>, which is used to describe a relative path in the output folder. String
             values are passed as is.</li>
         </ul>
-      </div>
+      </div></div>
     </section>
     <section class="section" id="ID__project-filtering"><h2 class="title sectiontitle">Project filtering</h2>
       

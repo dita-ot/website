@@ -6,7 +6,7 @@ description: 'These extension points enable you to extend DITA-OT. You can add A
     to the classpath parameter; add a new transformation type; extend a catalog file; add new
     diagnostic messages, and more.'
 index: '../toc.html'
-commit: '02af209f2eaba79e66755b8b38280e725f1be3fe'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'extension-points/plugin-extension-points-general.dita'
 ---
 
@@ -33,7 +33,7 @@ src: 'extension-points/plugin-extension-points-general.dita'
           <dd class="dd">Adds an Ant
             import to the main Ant build file.
             <div class="p">
-              <div class="note attention note_attention"><span class="note__title">Attention:</span> This extension point is deprecated; use <code class="ph codeph">ant.import</code> instead.</div>
+              <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">This extension point is deprecated; use <code class="ph codeph">ant.import</code> instead.</div></div>
             </div>
           </dd>
         
@@ -42,8 +42,8 @@ src: 'extension-points/plugin-extension-points-general.dita'
           <dd class="dd">Adds
             an Ant import to the main Ant build file.
             <div class="p">
-              <div class="note tip note_tip"><span class="note__title">Tip:</span> As of DITA-OT 3.0, the <code class="ph codeph">ant.import</code> extension point can be used
-                instead.</div>
+              <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">As of DITA-OT 3.0, the <code class="ph codeph">ant.import</code> extension point can be used
+                instead.</div></div>
             </div>
           </dd>
         
@@ -51,16 +51,16 @@ src: 'extension-points/plugin-extension-points-general.dita'
           <dt class="dt dlterm" id="dita.conductor.transtype.check"><span class="keyword parmname">dita.conductor.transtype.check</span></dt>
           <dd class="dd">
             <p class="p">Adds a new value to the list of valid transformation types.</p>
-            <div class="note tip note_tip"><span class="note__title">Tip:</span> This extension point is still supported for backwards compatibility, but since DITA-OT 2.1,
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">This extension point is still supported for backwards compatibility, but since DITA-OT 2.1,
               any new customizations should instead use the <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element in the
-              <a class="xref" href="../topics/plugin-configfile.html" title="The plug-in descriptor file (plugin.xml) controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and then integrates those changes into the core DITA-OT code.">Plug-in descriptor file</a> to define a new transformation.</div>
+              <a class="xref" href="../topics/plugin-configfile.html" title="The plug-in descriptor file (plugin.xml) controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and then integrates those changes into the core DITA-OT code.">Plug-in descriptor file</a> to define a new transformation.</div></div>
           </dd>
         
         
           <dt class="dt dlterm" id="dita.specialization.catalog"><span class="keyword parmname">dita.specialization.catalog</span></dt>
           <dd class="dd">Adds the
-            content of a catalog file to the main DITA-OT catalog file. <div class="note attention note_attention"><span class="note__title">Attention:</span> This extension point is
-              deprecated; use <code class="ph codeph">dita.specialization.catalog.relative</code> instead.</div></dd>
+            content of a catalog file to the main DITA-OT catalog file. <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">This extension point is
+              deprecated; use <code class="ph codeph">dita.specialization.catalog.relative</code> instead.</div></div></dd>
         
         
           <dt class="dt dlterm" id="dita.specialization.catalog.relative"><span class="keyword parmname">dita.specialization.catalog.relative</span></dt>

@@ -5,7 +5,7 @@ title: 'Building output using the dita command'
 description: 'You can generate output using the dita command-line tool. Build parameters can be
     specified on the command line or with .properties files.'
 index: '../toc.html'
-commit: '64689b67029450b001364de0d620cfeeb4bd15a7'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'topics/build-using-dita-command.dita'
 ---
 
@@ -43,9 +43,9 @@ src: 'topics/build-using-dita-command.dita'
                   <li class="li"><span class="keyword option">pdf</span></li>
                   <li class="li"><span class="keyword option">xhtml</span></li>
                 </ul>
-                <div class="note tip note_tip"><span class="note__title">Tip:</span> See
+                <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">See
                   <a class="xref" href="output-formats.html" title="DITA Open Toolkit ships with several core transformations that convert DITA content to different output formats. Additional formats are available from the plug-in registry at dita-ot.org/plugins.">DITA-OT transformations (output formats)</a> for sample command line syntax and more information on each
-                  transformation. </div>
+                  transformation. </div></div>
               </div>
             </li>
             <li class="li">[<var class="keyword varname">options</var>] include the following optional build parameters:
@@ -70,7 +70,7 @@ src: 'topics/build-using-dita-command.dita'
             
             <p class="p">Specifies filter file(s) used to include, exclude, or flag content. Relative paths are resolved against
               the current directory and internally converted to absolute paths.</p>
-            <div class="note note note_note"><span class="note__title">Note:</span> 
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
               <p class="p">To specify multiple filter files, use the system path separator character to delimit individual file
                 paths (semicolon ‘<code class="ph codeph">;</code>’ on Windows, and colon ‘<code class="ph codeph">:</code>’ on macOS and Linux) and
                 wrap the value in quotes:</p>
@@ -80,7 +80,7 @@ src: 'topics/build-using-dita-command.dita'
               <p class="p">DITAVAL files are evaluated in the order specified, so conditions specified in the first file take
                 precedence over matching conditions specified in later files, just as conditions at the start of a
                 DITAVAL document take precedence over matching conditions later in the same document.</p>
-            </div>
+            </div></div>
           </dd>
         
         
@@ -136,12 +136,12 @@ src: 'topics/build-using-dita-command.dita'
             parameters that are configured in the plug-in configuration file; the Java-style <span class="keyword parmname">-D</span>
             form can also be used to specify additional non-configured parameters or set system properties.</dd>
           <dd class="dd pd ddexpand">Parameters not implemented by the specified transformation type or referenced in a
-              <span class="ph filepath">.properties</span> file are ignored. <div class="note tip note_tip"><span class="note__title">Tip:</span> If you are building in different environments where the location of the input
+              <span class="ph filepath">.properties</span> file are ignored. <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">If you are building in different environments where the location of the input
         files is not consistent, set <span class="keyword option">args.input.dir</span> with the <span class="keyword cmdname">dita</span> command and
         reference its value with <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span> file.
         
         
-      </div>
+      </div></div>
           </dd>
         
         

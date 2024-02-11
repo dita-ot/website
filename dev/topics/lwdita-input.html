@@ -6,7 +6,7 @@ description: 'DITA-OT provides preview support for the authoring formats propose
     Lightweight DITA, or “LwDITA”. The XDITA, MDITA and HDITA
     formats are alternative representations of DITA content in XML, Markdown and HTML5.'
 index: '../toc.html'
-commit: '02af209f2eaba79e66755b8b38280e725f1be3fe'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'topics/lwdita-input.dita'
 ---
 
@@ -19,10 +19,10 @@ src: 'topics/lwdita-input.dita'
   <div class="body"><p class="shortdesc">DITA-OT provides preview support for the authoring formats proposed for
     <a class="xref" href="http://docs.oasis-open.org/dita/LwDITA/v1.0/cn01/LwDITA-v1.0-cn01.pdf" target="_blank" rel="external noopener">Lightweight DITA</a>, or “<dfn class="term">LwDITA</dfn>”. The <dfn class="term">XDITA</dfn>, <dfn class="term">MDITA</dfn> and <dfn class="term">HDITA</dfn>
     formats are alternative representations of DITA content in XML, Markdown and HTML5.</p>
-    <div class="note attention note_attention"><span class="note__title">Attention:</span> Since
+    <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">Since
       <a class="xref" href="http://docs.oasis-open.org/dita/LwDITA/v1.0/cn01/LwDITA-v1.0-cn01.pdf" target="_blank" rel="external noopener">Lightweight DITA</a> has not yet been released as a formal specification, the implementation for
         <dfn class="term">XDITA</dfn>, <dfn class="term">MDITA</dfn> and <dfn class="term">HDITA</dfn> authoring formats is subject to change. Future
-      versions of DITA Open Toolkit will be updated as LwDITA evolves.</div>
+      versions of DITA Open Toolkit will be updated as LwDITA evolves.</div></div>
     <section class="section"><h2 class="title sectiontitle">XDITA</h2>
       
       <p class="p"><dfn class="term">XDITA</dfn> is the LwDITA authoring format that uses XML to structure information. XDITA is a subset of
@@ -37,9 +37,9 @@ src: 'topics/lwdita-input.dita'
   &lt;topicref href="xdita-topic.xml" <strong class="ph b">format="xdita"</strong>/&gt;
 &lt;/map&gt;</code></pre>
       </div>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> For examples of cross-format content sharing between topics in <dfn class="term">XDITA</dfn>,
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For examples of cross-format content sharing between topics in <dfn class="term">XDITA</dfn>,
           <dfn class="term">HDITA</dfn>, extended-profile <dfn class="term">MDITA</dfn>, and DITA 1.3, see the LwDITA sample files in the
-        DITA-OT installation directory under <span class="ph filepath">plugins/org.oasis-open.xdita.v0_2_2/samples</span>.</div>
+        DITA-OT installation directory under <span class="ph filepath">plugins/org.oasis-open.xdita.v0_2_2/samples</span>.</div></div>
     </section>
     <section class="section"><h2 class="title sectiontitle">MDITA</h2>
       
@@ -65,11 +65,11 @@ src: 'topics/lwdita-input.dita'
       </div>
       <p class="p">In this case, the first paragraph in the topic will be treated as a short description, for example, and
         additional metadata can be specified for the topic via a YAML front matter block.</p>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> For details on the differences in
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For details on the differences in
         <a class="xref" href="../reference/markdown-formats.html" title="The following topics show how DITA XML constructs are represented in Markdown and MDITA, provide details on common syntax, differences between the markdown and mdita formats, and describe additional configuration options.">Markdown formats</a>, see
         <a class="xref" href="../resources/../reference/markdown/Markdown-DITA-syntax.html" title="In 2015, the original DITA-OT Markdown plug-in introduced a series of conventions to convert Markdown content to DITA, and vice-versa. This Markdown flavor was called “Markdown DITA”. The markdown format adds several complementary constructs to represent DITA content in Markdown, beyond those proposed for the MDITA format in the Lightweight DITA specification drafts.">Markdown DITA syntax</a>,
         <a class="xref" href="../resources/../reference/markdown/MDITA-syntax.html" title="In 2017, the Markdown plug-in was superseded by the LwDITA plug-in, which was bundled with DITA-OT 3.0, and added new formats for Lightweight DITA. The mdita format implements the subset of Markdown features proposed in the latest specification drafts, but differs in some ways from the original Markdown DITA format.">MDITA syntax</a>, and
-        <a class="xref" href="../reference/markdown/Format-comparison.html" title="Although the original Markdown DITA format and the MDITA format for LwDITA share some common syntax, there are several differences to consider when choosing which format to use.">Format comparison</a>.</div>
+        <a class="xref" href="../reference/markdown/Format-comparison.html" title="Although the original Markdown DITA format and the MDITA format for LwDITA share some common syntax, there are several differences to consider when choosing which format to use.">Format comparison</a>.</div></div>
     </section>
 
     <section class="section"><h2 class="title sectiontitle">HDITA</h2>
@@ -86,8 +86,8 @@ src: 'topics/lwdita-input.dita'
   &lt;topicref href="hdita-topic.html" <strong class="ph b">format="hdita"</strong>/&gt;
 &lt;/map&gt;</code></pre>
       </div>
-      <div class="note attention note_attention"><span class="note__title">Attention:</span> The HDITA map format is not yet supported. To include HDITA content, use an XDITA map or a
-        DITA 1.3 map.</div>
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">The HDITA map format is not yet supported. To include HDITA content, use an XDITA map or a
+        DITA 1.3 map.</div></div>
     </section>
     <section class="section" id="lwdita-input__conditional-processing"><h2 class="title sectiontitle">Using conditional processing in MDITA and HDITA</h2>
       

@@ -6,7 +6,7 @@ description: 'To dynamically adjust the names and locations of output files in t
       (preprocess2), you can create a custom plug-in and specify the code that contains your custom
     rewrite rules.'
 index: '../toc.html'
-commit: '182e2bbe4809a127eafc044f17b078503241392f'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'topics/plugin-rewrite-rules.dita'
 ---
 
@@ -46,9 +46,9 @@ src: 'topics/plugin-rewrite-rules.dita'
   &lt;xsl:attribute name="{local-name()}" select="concat('images/', .)"/&gt;
 &lt;/xsl:template&gt;</code></pre>
     </div>
-    <div class="note note note_note"><span class="note__title">Note:</span> If your rewrite rules are contained in a Java class, you can set the
+    <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If your rewrite rules are contained in a Java class, you can set the
         <span class="keyword parmname">result.rewrite-rule.class</span> parameter instead, and pass the name of your Java class in the
       <code class="keyword markupname xmlatt">@value attribute.</code> The custom class should implement the
-      <code class="ph codeph">org.dita.dost.module.RewriteRule</code> interface.</div>
+      <code class="ph codeph">org.dita.dost.module.RewriteRule</code> interface.</div></div>
   </div>
 </article></main>

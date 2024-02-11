@@ -4,7 +4,7 @@ layout: 'base'
 title: 'Implementing custom Saxon collation URI resolvers'
 description: 'Plug-ins can provide custom URI resolvers that provide collators for specific collation URIs.'
 index: '../toc.html'
-commit: '182e2bbe4809a127eafc044f17b078503241392f'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'topics/implement-saxon-collation-uri-resolvers.dita'
 ---
 
@@ -25,9 +25,9 @@ src: 'topics/implement-saxon-collation-uri-resolvers.dita'
     <p class="p">Implementations of <code class="ph codeph">DelegatingCollationUriResolver</code> should delegate to their base resolver if they
       do not resolve the URI specified on the resolve request. When multiple plug-ins provide resolvers it results in a
       chain of resolvers, ending with the built-in Saxon default resolver.</p>
-    <div class="note note note_note"><span class="note__title">Note:</span> The order in which plug-ins will be processed during collation URI resolver configuration is variable, so two
+    <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The order in which plug-ins will be processed during collation URI resolver configuration is variable, so two
       plug-ins should not try to resolve the same collation URI. In that case the first one configured will be used at
-      run time.</div>
+      run time.</div></div>
     <div class="p">A typical delegating collation URI resolver looks like
       this:<pre class="pre codeblock language-java"><code>public class DCI18nCollationUriResolver implements DelegatingCollationUriResolver {
 

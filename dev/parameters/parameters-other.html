@@ -5,7 +5,7 @@ title: 'Other parameters'
 description: 'These parameters enable you to reload style sheets that DITA-OT uses for specific pre-processing
     stages.'
 index: '../toc.html'
-commit: '02af209f2eaba79e66755b8b38280e725f1be3fe'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'parameters/parameters-other.dita'
 ---
 
@@ -61,9 +61,9 @@ src: 'parameters/parameters-other.dita'
               faster, because it will not need to parse/compile the XSLT stylesheets and only needs to read the source
               trees with <code class="ph codeph">document()</code> once. The downside is that it will not release the source trees
               from memory, so you can run out of memory.</p>
-            <div class="note tip note_tip"><span class="note__title">Tip:</span> For large projects that generate Java out-of-memory errors during transformation, set the
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For large projects that generate Java out-of-memory errors during transformation, set the
               parameter to <span class="keyword option">true</span> to allow the XSLT processor to release memory. You may also need to
-              increase the memory available to Java.</div>
+              increase the memory available to Java.</div></div>
           </dd>
         
       </dl>

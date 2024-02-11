@@ -5,7 +5,7 @@ title: 'Example: Creating a simple PDF plug-in'
 description: 'This scenario walks through the process of creating a very simple plug-in
       (com.example.print-pdf) that creates a new transformation type: print-pdf.'
 index: '../toc.html'
-commit: '625ea3db47c28f9178b4ee846c12b209588af5d0'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'topics/pdf-customization-example.dita'
 ---
 
@@ -132,9 +132,9 @@ src: 'topics/pdf-customization-example.dita'
           </figure></div>
       </li></ol></section>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> The files for this sample plug-in are included in the DITA-OT installation directory under
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">The files for this sample plug-in are included in the DITA-OT installation directory under
           <span class="ph filepath">docsrc/samples/plugins/com.example.print-pdf/</span> and on
-        <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.print-pdf" target="_blank" rel="external noopener">GitHub</a>.</div>
+        <a class="xref" href="https://github.com/dita-ot/docs/tree/develop/samples/plugins/com.example.print-pdf" target="_blank" rel="external noopener">GitHub</a>.</div></div>
       <p class="p">The plug-in directory has the following layout and files:</p>
       <pre class="pre codeblock"><code>com.example.print-pdf
 ├── cfg
@@ -154,8 +154,8 @@ src: 'topics/pdf-customization-example.dita'
       <ol class="ol">
         <li class="li">
           <p class="p">Use the <span class="keyword cmdname">dita install</span> subcommand to install the plug-in.</p>
-          <div class="note note note_note"><span class="note__title">Note:</span> For more information, see
-            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div>
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">For more information, see
+            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div></div>
         </li>
         <li class="li">Build output with the new transformation type to verify that the plug-in works as intended.
           <pre class="pre codeblock"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">my.ditamap</var> <span class="keyword parmname">--format</span>=<span class="keyword option">print-pdf</span></code></pre>

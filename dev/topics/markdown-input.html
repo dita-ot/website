@@ -6,7 +6,7 @@ description: '
     Markdown is a lightweight markup language that allows you to write using an easy-to-read plain text
     format and convert to structurally valid markup as necessary.'
 index: '../toc.html'
-commit: '02af209f2eaba79e66755b8b38280e725f1be3fe'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'topics/markdown-input.dita'
 ---
 
@@ -38,11 +38,11 @@ src: 'topics/markdown-input.dita'
         complementary constructs to represent DITA content in Markdown, beyond those proposed for the
         <a class="xref" href="../reference/markdown/MDITA-syntax.html" title="In 2017, the Markdown plug-in was superseded by the LwDITA plug-in, which was bundled with DITA-OT 3.0, and added new formats for Lightweight DITA. The mdita format implements the subset of Markdown features proposed in the latest specification drafts, but differs in some ways from the original Markdown DITA format.">MDITA</a> format in the
         <a class="xref" href="lwdita-input.html" title="DITA-OT provides preview support for the authoring formats proposed for Lightweight DITA, or “LwDITA”. The XDITA, MDITA and HDITA formats are alternative representations of DITA content in XML, Markdown and HTML5.">Lightweight DITA</a> specification drafts.</p>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> For details on the differences in
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For details on the differences in
         <a class="xref" href="../reference/markdown-formats.html" title="The following topics show how DITA XML constructs are represented in Markdown and MDITA, provide details on common syntax, differences between the markdown and mdita formats, and describe additional configuration options.">Markdown formats</a>, see
         <a class="xref" href="../resources/../reference/markdown/Markdown-DITA-syntax.html" title="In 2015, the original DITA-OT Markdown plug-in introduced a series of conventions to convert Markdown content to DITA, and vice-versa. This Markdown flavor was called “Markdown DITA”. The markdown format adds several complementary constructs to represent DITA content in Markdown, beyond those proposed for the MDITA format in the Lightweight DITA specification drafts.">Markdown DITA syntax</a>,
         <a class="xref" href="../resources/../reference/markdown/MDITA-syntax.html" title="In 2017, the Markdown plug-in was superseded by the LwDITA plug-in, which was bundled with DITA-OT 3.0, and added new formats for Lightweight DITA. The mdita format implements the subset of Markdown features proposed in the latest specification drafts, but differs in some ways from the original Markdown DITA format.">MDITA syntax</a>, and
-        <a class="xref" href="../reference/markdown/Format-comparison.html" title="Although the original Markdown DITA format and the MDITA format for LwDITA share some common syntax, there are several differences to consider when choosing which format to use.">Format comparison</a>.</div>
+        <a class="xref" href="../reference/markdown/Format-comparison.html" title="Although the original Markdown DITA format and the MDITA format for LwDITA share some common syntax, there are several differences to consider when choosing which format to use.">Format comparison</a>.</div></div>
       <p class="p">To add a Markdown topic to a DITA publication, create a topic reference in your map and set the
           <code class="keyword markupname xmlatt">@format</code> attribute to <code class="ph codeph">markdown</code> so the toolkit will recognize the source file
         as Markdown and convert it to DITA:</p>
@@ -54,9 +54,9 @@ src: 'topics/markdown-input.dita'
       <p class="p">When you add Markdown topics to a DITA publication as described above, the content is temporarily converted to
         DITA in the background when generating other output formats like HTML or PDF, but the Markdown source files
         remain unchanged.</p>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> This approach is recommended in cases where simple content is authored collaboratively over
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">This approach is recommended in cases where simple content is authored collaboratively over
         multiple versions, as Markdown topics can be edited by a wide range of authors and combined as necessary with
-        more complex content maintained in DITA XML.</div>
+        more complex content maintained in DITA XML.</div></div>
     </section>
     <section class="section"><h2 class="title sectiontitle">Converting Markdown to DITA</h2>
       

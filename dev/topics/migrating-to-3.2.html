@@ -6,7 +6,7 @@ description: 'DITA-OT 3.2 includes new command-line options, support for RELAX&n
       validation, preliminary processing for the XDITA authoring format proposed for Lightweight DITA, and a plug-in
       registry that makes it easier to discover and install new plug-ins.'
 index: '../toc.html'
-commit: 'c08ddba83332cf3fae7d2646c8bf6a234a1fe96c'
+commit: '541fee32b647fa9688e43486f7412058148b0530'
 src: 'topics/migrating-to-3.2.dita'
 ---
 
@@ -23,9 +23,9 @@ src: 'topics/migrating-to-3.2.dita'
       validation, preliminary processing for the XDITA authoring format proposed for Lightweight DITA, and a plug-in
       registry that makes it easier to discover and install new plug-ins</span>.</p>
     <section class="section">
-      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 3.2 that may require modifications to custom stylesheets
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This topic provides a summary of changes in DITA-OT 3.2 that may require modifications to custom stylesheets
         or plug-ins. For more information on changes in this release, see the
-        <a class="xref" href="https://www.dita-ot.org/3.2/release-notes/" target="_blank" rel="external noopener">DITA-OT 3.2 Release Notes</a>.</div>
+        <a class="xref" href="https://www.dita-ot.org/3.2/release-notes/" target="_blank" rel="external noopener">DITA-OT 3.2 Release Notes</a>.</div></div>
     </section>
 
     <section class="section"><h2 class="title sectiontitle">Deprecated targets</h2>
@@ -39,11 +39,11 @@ src: 'topics/migrating-to-3.2.dita'
 
     <section class="section"><h2 class="title sectiontitle">Secure connections to the plug-in registry</h2>
       
-      <div class="note attention note_attention"><span class="note__title">Attention:</span> To ensure data integrity during the plug-in installation process, Transport Layer Security
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">To ensure data integrity during the plug-in installation process, Transport Layer Security
         (TLS) will soon be required to access the plug-in registry. If you are using DITA-OT 3.2 or 3.2.1 and are unable
         to upgrade to the latest version, modify the <code class="ph codeph">registry</code> key in the
           <span class="ph filepath">config/configuration.properties</span> file to switch the URI schema to
-          <code class="ph codeph">http<strong class="ph b">s</strong>://</code>, so the entry reads <code class="ph codeph">https://plugins.dita-ot.org/</code>.</div>
+          <code class="ph codeph">http<strong class="ph b">s</strong>://</code>, so the entry reads <code class="ph codeph">https://plugins.dita-ot.org/</code>.</div></div>
       <p class="p">For more information, see
         <a class="xref" href="plugins-registry.html" title="DITA-OT 3.2 supports a new plug-in registry that makes it easier to discover and install new plug-ins. The registry provides a searchable list of plug-ins at dita-ot.org/plugins.">Adding plug-ins via the registry</a>.</p>
     </section>
