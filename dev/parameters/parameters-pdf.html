@@ -5,7 +5,7 @@ title: 'PDF parameters'
 description: 'Certain parameters are specific to the
       PDF transformation.'
 index: '../toc.html'
-commit: '63d8e93048bbfb1d8622ed330ff3f408ac3b4f2a'
+commit: 'd001d52a930a147bf997382cce7167e6d6b9d3a7'
 src: 'parameters/parameters-pdf.dita'
 generated: true
 ---
@@ -23,7 +23,7 @@ generated: true
             </dd><dt class="dt pt dlterm" id="pdf__org.dita.pdf2.chunk.enabled"><span class="keyword parmname">org.dita.pdf2.chunk.enabled</span><span class="ph"></span></dt><dd class="dd pd" id="pdf__org.dita.pdf2.chunk.enabled.desc">Enables chunk attribute processing. The following values are supported:<ul class="ul"><li class="li"><span class="keyword option">true</span> – Enables chunk processing</li><li class="li"><span class="keyword option">false</span> (default) – Disables chunk processing</li></ul></dd><dt class="dt pt dlterm" id="pdf__org.dita.pdf2.i18n.enabled"><span class="keyword parmname">org.dita.pdf2.i18n.enabled</span><span class="ph"></span></dt><dd class="dd pd" id="pdf__org.dita.pdf2.i18n.enabled.desc">
               <p class="p">Enables internationalization (I18N) font processing to provide per-character font selection for FO
                 renderers that do not support the <code class="ph codeph">font-selection-strategy</code> property (such as Apache
-                FOP).
+                FOP prior to version 2.9).
                 
                 
                 
@@ -38,9 +38,10 @@ generated: true
                 <li class="li"><span class="keyword option">true</span> (default) — Enables font mapping</li>
                 <li class="li"><span class="keyword option">false</span> — Disables font mapping</li>
               </ul>
-              <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">If you don’t use custom character mappings, turning off font mapping makes it easier to
-                define custom fonts simply by changing font names in the XSL attributes files of your custom PDF
-                plug-in. For details, see
+              <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">DITA-OT 4.2 includes FOP 2.9, which supports <code class="ph codeph">font-selection-strategy</code>. As
+                of this version (or if you don’t use custom character mappings), you can turn off font mapping and
+                specify fonts directly in the XSL attributes files of your custom PDF plug-in. For background
+                information, see
                 <a class="xref" href="http://www.elovirta.com/2016/02/18/font-configuration-in-pdf2.html" target="_blank" rel="external noopener">Font configuration in PDF2</a>.</div></div>
             </dd><dt class="dt pt dlterm" id="pdf__outputFile.base"><span class="keyword parmname">outputFile.base</span><span class="ph"></span></dt><dd class="dd pd" id="pdf__outputFile.base.desc">Specifies the base file name of the generated PDF file.</dd><dd class="dd pd ddexpand">By default, the PDF file uses the base filename of the input
                 <span class="ph filepath">.ditamap</span> file.
@@ -51,4 +52,4 @@ generated: true
             </dd><dt class="dt pt dlterm" id="pdf__publish.required.cleanup"><span class="keyword parmname">publish.required.cleanup</span><span class="ph"></span></dt><dd class="dd pd" id="pdf__publish.required.cleanup.desc">Specifies whether draft-comment and required-cleanup elements are included in the output. The allowed values are <span class="keyword option">yes</span>, <span class="keyword option">no</span>, <span class="keyword option">yes</span>, and <span class="keyword option">no</span>.</dd><dd class="dd pd ddexpand">The default value is the value of the <span class="keyword parmname">args.draft</span> parameter.
                 <span class="ph">Corresponds to the XSLT parameter
                   <span class="keyword parmname">publishRequiredCleanup</span>.</span><div class="note notice note_notice"><span class="note__title">Notice:</span> <div class="note__body">This parameter is deprecated in
-                favor of the <span class="keyword parmname">args.draft</span> parameter.</div></div></dd><dt class="dt pt dlterm" id="pdf__theme"><span class="keyword parmname">theme</span><span class="ph"></span></dt><dd class="dd pd" id="pdf__theme.desc">Theme configuration file.</dd><dt class="dt pt dlterm" id="pdf__xep.dir"><span class="keyword parmname">xep.dir</span><span class="ph"></span></dt><dd class="dd pd" id="pdf__xep.dir.desc">RenderX installation directory.</dd></dl></section></div><nav role="navigation" class="related-links"><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/dita2pdf.html" title="The pdf transformation generates output in Portable Document Format.">PDF transformation</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters-base.html" title="Certain parameters apply to all transformations that DITA Open Toolkit supports.">Common parameters</a></li></ul></div></nav></article></main>
+                favor of the <span class="keyword parmname">args.draft</span> parameter.</div></div></dd><dt class="dt pt dlterm" id="pdf__theme"><span class="keyword parmname">theme</span><span class="ph"></span></dt><dd class="dd pd" id="pdf__theme.desc">Theme configuration file.</dd><dt class="dt pt dlterm" id="pdf__xep.dir"><span class="keyword parmname">xep.dir</span><span class="ph"></span></dt><dd class="dd pd" id="pdf__xep.dir.desc">RenderX installation directory.</dd></dl></section></div><nav role="navigation" class="related-links"><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/dita2pdf.html" title="The pdf transformation generates output in Portable Document Format.">PDF transformation</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="parameters-base.html" title="Certain parameters apply to all transformations that DITA Open Toolkit supports.">Common parameters</a></li></ul></div></nav></article></main>

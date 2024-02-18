@@ -5,7 +5,7 @@ title: 'The configuration.properties file'
 description: 'The configuration.properties file controls certain common properties, as well as some
     properties that control PDF processing.'
 index: '../toc.html'
-commit: '63d8e93048bbfb1d8622ed330ff3f408ac3b4f2a'
+commit: 'd001d52a930a147bf997382cce7167e6d6b9d3a7'
 src: 'parameters/configuration-properties-file.dita'
 ---
 
@@ -123,7 +123,7 @@ src: 'parameters/configuration-properties-file.dita'
             <dd class="dd pd">
               <p class="p">Enables internationalization (I18N) font processing to provide per-character font selection for FO
                 renderers that do not support the <code class="ph codeph">font-selection-strategy</code> property (such as Apache
-                FOP).
+                FOP prior to version 2.9).
                 
                 
                 
@@ -138,9 +138,10 @@ src: 'parameters/configuration-properties-file.dita'
                 <li class="li"><span class="keyword option">true</span> (default) — Enables font mapping</li>
                 <li class="li"><span class="keyword option">false</span> — Disables font mapping</li>
               </ul>
-              <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">If you don’t use custom character mappings, turning off font mapping makes it easier to
-                define custom fonts simply by changing font names in the XSL attributes files of your custom PDF
-                plug-in. For details, see
+              <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">DITA-OT 4.2 includes FOP 2.9, which supports <code class="ph codeph">font-selection-strategy</code>. As
+                of this version (or if you don’t use custom character mappings), you can turn off font mapping and
+                specify fonts directly in the XSL attributes files of your custom PDF plug-in. For background
+                information, see
                 <a class="xref" href="http://www.elovirta.com/2016/02/18/font-configuration-in-pdf2.html" target="_blank" rel="external noopener">Font configuration in PDF2</a>.</div></div>
             </dd>
           
