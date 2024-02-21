@@ -5,7 +5,7 @@ title: 'Implementing Saxon extension functions'
 description: 'Plug-ins can contribute Saxon extension functions for use in XSLT transformations run by DITA Open
     Toolkit.'
 index: '../toc.html'
-commit: '63d8e93048bbfb1d8622ed330ff3f408ac3b4f2a'
+commit: '8379a3651ac96fadb6373eb9dbd84a6aaa411ce6'
 src: 'topics/implement-saxon-extension-functions.dita'
 ---
 
@@ -31,7 +31,7 @@ src: 'topics/implement-saxon-extension-functions.dita'
         <li class="li">Include a file named <span class="ph filepath">net.sf.saxon.lib.ExtensionFunctionDefinition</span> in the directory
             <span class="ph filepath">META-INF/services</span> in the compiled JAR that your plug-in provides. Each line of the file
           must be the name of a class that implements <code class="ph codeph">net.sf.saxon.lib.ExtensionFunctionDefinition</code>: <pre class="pre codeblock"><code>com.example.saxon.functions.Add
-com.example.saxon.functions.Substract</code></pre>
+com.example.saxon.functions.Subtract</code></pre>
           <div class="p">You can create the file using <code class="keyword markupname xmlelement">&lt;service&gt;</code> elements in an Ant
               <code class="keyword markupname xmlelement">&lt;jar&gt;</code>
             task:<pre class="pre codeblock language-xml"><code>&lt;jar destfile="${basedir}/target/lib/example-saxon.jar"&gt;
