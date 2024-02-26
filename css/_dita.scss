@@ -16,7 +16,7 @@ div.shortdesc {
   color: $text-muted;
 }
 
-p.shortdesc,
+p.shortdesc:not(.nested1 *),
 div.shortdesc {
   @extend .lead;
 }
