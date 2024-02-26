@@ -1,7 +1,7 @@
 // Style DITA note elements w/ Bootstrap components
 
 // Apply `.alert` rule from `_alerts.scss`
-blockquote.lq p.p,
+blockquote.lq p.p:not(.refbody *),
 .note.attention,
 .note.caution,
 .note.important,
@@ -24,7 +24,7 @@ blockquote.lq p.p,
 // Import alert settings for note variants
 
 // Note = alert alert-info
-blockquote.lq p.p,
+blockquote.lq p.p:not(.refbody *),
 .note {
   @extend .alert-info;
   background-color: $navbar-dark-brand-color;
