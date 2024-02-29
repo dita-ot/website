@@ -22,7 +22,7 @@ Besides this, there are applications which come with the **DITA Open Toolkit** b
 
 ## What version of DITA Open Toolkit should I use?
 
-You should try to use the latest **DITA Open Toolkit** release available on the official [download][6] page.
+You should try to use the latest **DITA Open Toolkit** release available on the [download][6] page.
 
 ## What outputs can I obtain using the DITA Open Toolkit?
 
@@ -30,7 +30,7 @@ The entire set of default available output formats is available here: [https://w
 
 ## What is the general architecture of the DITA Open Toolkit?
 
-The **DITA Open Toolkit** is a quite large mixture of [ANT][8] build scripts, Java libraries and [XSLT scripts][9]. It has a [pipeline-based architecture][10] which uses plugins to publish DITA content to various output formats. Most of the **DITA Open Toolkit** customizations that you want to make in order to add new publishing capabilities or to customize existing publishing choices can be made without modifying its internal core.
+The **DITA Open Toolkit** is a quite large mixture of [Ant][8] build scripts, Java libraries and [XSLT scripts][9]. It has a [pipeline-based architecture][10] which uses plugins to publish DITA content to various output formats. Most of the **DITA Open Toolkit** customizations that you want to make in order to add new publishing capabilities or to customize existing publishing choices can be made without modifying its internal core.
 
 ## What is a DITA Open Toolkit plugin?
 
@@ -46,13 +46,11 @@ You can also create a plugin to customize the HTML outputs by adding a custom XS
 
 ## How do I customize the PDF output?
 
-Oxygen comes bundled with a **DITA Open Toolkit** plugin which uses CSS to style the DITA content and produce PDF: [https://www.oxygenxml.com/doc/ug-editor/topics/pdf-css-customization.html][20]. This plugin is free to use from inside Oxygen but is part of a commercial product if you want to automate the publishing on the server side. This is our recommended plugin for publishing DITA to PDF.
+The **DITA Open Toolkit** comes bundled with a free PDF generation plugin which uses XSL-FO. The PDF output is obtained by passing the original **DITA** content to **XSL-FO** and then generating **PDF** using an **XSL-FO** processor. The default bundled and used XSL-FO processor is the [Apache FOP][21] but you can also install separately and use commercial PDF processors like [Antenna House][22] or [RenderX XEP][23].
 
-In addition the **DITA Open Toolkit** comes bundled with a free PDF generation plugin which uses XSL-FO. The PDF output is obtained by passing the original **DITA** content to **XSL-FO** and then generating **PDF** using an **XSL-FO** processor. The default bundled and used XSL-FO processor is the [Apache FOP][21] but you can also install separately and use commercial PDF processors like [Antenna House][22] or [RenderX XEP][23].
+You can customize the **PDF** output using [PDF Themes][24].
 
-You can customize the **PDF** output either using a [PDF customization folder][24] or by creating a [PDF customization plugin][25].
-
-There are a number of other solutions for obtaining **PDF** from **DITA**: [Possibilities to obtain PDF from DITA][26].
+There are a number of other solutions for obtaining **PDF** from **DITA**: [Possibilities to obtain PDF from DITA][25].
 
 [1]: https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dita
 [2]: http://www.dita-ot.org/download
@@ -77,6 +75,5 @@ There are a number of other solutions for obtaining **PDF** from **DITA**: [Poss
 [21]: https://xmlgraphics.apache.org/fop/
 [22]: https://www.antennahouse.com/
 [23]: http://www.renderx.com/
-[24]: https://www.oxygenxml.com/doc/ug-editor/#topics/dita_pdf_output_customization.html
-[25]: https://blog.oxygenxml.com/topics/creating-simple-dita-open-toolkit.html
-[26]: https://blog.oxygenxml.com/topics/ditaToPDF.html
+[24]: https://www.dita-ot.org/4.2/topics/pdf-themes
+[25]: https://blog.oxygenxml.com/topics/ditaToPDF.html
