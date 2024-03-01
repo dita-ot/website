@@ -19,9 +19,9 @@ src: 'topics/plugin-antpreprocess.dita'
       <p class="p">You can use the <code class="ph codeph">depend.preprocess.pre</code> and <code class="ph codeph">depend.preprocess.post</code> extension
         points to run a target before or after the entire pre-processing operation. In addition, there are extension
         points that enable you to run an Ant target before specific pre-processing steps.</p>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> For maximum compatibility with future versions of
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For maximum compatibility with future versions of
             DITA-OT, most plug-ins should use the extension points that run <strong class="ph b">before</strong> or <strong class="ph b">after</strong>
-            pre-processing.</div>
+            pre-processing.</div></div>
     </section>
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
         <span class="ph cmd">Define and integrate the new Ant target.</span>
@@ -38,8 +38,8 @@ src: 'topics/plugin-antpreprocess.dita'
       </li><li class="li step stepexpand">
         <span class="ph cmd">Use the <span class="keyword cmdname">dita install</span> subcommand to install the plug-in.</span>
         <div class="itemgroup info">
-          <div class="note note note_note"><span class="note__title">Note:</span> For more information, see
-            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div></div>
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">For more information, see
+            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div></div></div>
       </li></ol></section>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>The new target is added to the Ant dependency list. The new target is now always run in conjunction with the
       specified step in the pre-processing pipeline.</section>
@@ -54,10 +54,10 @@ src: 'topics/plugin-antpreprocess.dita'
 &lt;/plugin&gt;</code></pre>
       <p class="p">It assumes that the <span class="keyword parmname">myAntTargetBeforeChunk</span> target has already been defined and
         integrated.</p>
-      <div class="note caution note_caution"><span class="note__title">CAUTION:</span> The internal order of preprocessing steps is
+      <div class="note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">The internal order of preprocessing steps is
             subject to change between versions of DITA-OT. New versions may remove, reorder, combine, or add steps to
             the process, so the extension points <strong class="ph b">within</strong> the pre-processing stage should only be used if absolutely
-            necessary.</div>
+            necessary.</div></div>
     </section>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../extension-points/plugin-extension-points-pre-processing.html" title="You can use these extension points to run an Ant target before or after the pre-processing stage. If necessary, you can also run an Ant target before a specific pre-processing step — but this approach is not recommended.">Pre-processing extension points</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../extension-points/plugin-extension-points-pre-processing.html" title="You can use these extension points to run an Ant target before or after the pre-processing stage. If necessary, you can also run an Ant target before a specific pre-processing step — but this approach is not recommended.">Pre-processing extension points</a></li></ul></div></nav></article></main>

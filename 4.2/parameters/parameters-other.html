@@ -60,9 +60,9 @@ src: 'parameters/parameters-other.dita'
               faster, because it will not need to parse/compile the XSLT stylesheets and only needs to read the source
               trees with <code class="ph codeph">document()</code> once. The downside is that it will not release the source trees
               from memory, so you can run out of memory.</p>
-            <div class="note tip note_tip"><span class="note__title">Tip:</span> For large projects that generate Java out-of-memory errors during transformation, set the
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For large projects that generate Java out-of-memory errors during transformation, set the
               parameter to <span class="keyword option">true</span> to allow the XSLT processor to release memory. You may also need to
-              increase the memory available to Java.</div>
+              increase the memory available to Java.</div></div>
           </dd>
         
       </dl>
