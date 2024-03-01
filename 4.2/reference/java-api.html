@@ -15,9 +15,9 @@ src: 'reference/java-api.dita'
   <div class="body conbody"><p class="shortdesc">DITA Open Toolkit includes a Java Application Programming Interface to allow developers to embed the
     toolkit more easily into other Java programs.</p>
     <p class="p">When using the API, programmers don’t need to know or care that DITA-OT uses Ant, they can just use Java. </p>
-    <div class="note note note_note"><span class="note__title">Note:</span> When running DITA-OT via the <span class="keyword cmdname">dita</span> command, an <code class="ph codeph">ant</code> shell script handles the
+    <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">When running DITA-OT via the <span class="keyword cmdname">dita</span> command, an <code class="ph codeph">ant</code> shell script handles the
       classpath setup, but when using the API the classpath should be set up as part of the normal classpath
-      configuration for the Java application.</div>
+      configuration for the Java application.</div></div>
     <div class="example"><h2 class="title sectiontitle">Example usage</h2>
       
       <pre class="pre codeblock language-java normalize-space show-line-numbers show-whitespace"><code>// Create a reusable processor factory with DITA-OT base directory
@@ -40,9 +40,9 @@ p.run();</code></pre>
         logger can also be used to access the log via the Simple Logging Facade for Java.</p>
       <p class="p">The processor cleans the temporary directory by default, but this can be disabled to simplify debugging in
         cases where the processor failed.</p>
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> See the <cite class="cite">DITA-OT Java API documentation</cite> in the <span class="ph filepath">doc/api/</span> folder
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">See the <cite class="cite">DITA-OT Java API documentation</cite> in the <span class="ph filepath">doc/api/</span> folder
         of the DITA-OT distribution package for information on the packages, classes, interfaces and methods provided by
-        the Java API.</div>
+        the Java API.</div></div>
     </section>
     <section class="section"><h2 class="title sectiontitle">Downloading DITA-OT from Maven Central</h2>
       
@@ -52,10 +52,10 @@ p.run();</code></pre>
         for other Java projects.</p>
       <p class="p">To locate the latest version,
         <a class="xref" href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.dita-ot%22" target="_blank" rel="external noopener">search for the <code class="ph codeph">org.dita-ot</code> group ID</a>.</p>
-      <div class="note important note_important"><span class="note__title">Important:</span> The <span class="ph filepath">dost.jar</span> file provides only the DITA Open Toolkit base library. It
+      <div class="note important note_important"><span class="note__title">Important:</span> <div class="note__body">The <span class="ph filepath">dost.jar</span> file provides only the DITA Open Toolkit base library. It
         does <strong class="ph b">not</strong> contain the full DITA-OT distribution and cannot be used to run DITA-OT by itself. You will need
         to ensure that your build installs the other files and directories required for the toolkit along with the
-        dependencies for your project.</div>
+        dependencies for your project.</div></div>
     </section>
   </div>
 </article></main>

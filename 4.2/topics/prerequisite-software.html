@@ -17,7 +17,7 @@ src: 'topics/prerequisite-software.dita'
       <div class="p">DITA-OT requires the following software applications:
         <dl class="dl">
           
-            <dt class="dt dlterm" id="java-runtime-environment-(jre)-or-java-development-kit-(jdk)">Java Runtime Environment (JRE) or Java Development Kit (JDK)</dt>
+            <dt class="dt dlterm" id="java-development-kit-(jdk)-or-java-runtime-environment-(jre)">Java Development Kit (JDK) or Java Runtime Environment (JRE)</dt>
             <dd class="dd">
               <div class="p">DITA-OT <span class="keyword">4.2</span> is designed to run on Java version <span class="keyword">17</span> or later and built and tested with the Open Java Development Kit (OpenJDK).
         Compatible Java distributions are available from multiple sources:
@@ -26,7 +26,7 @@ src: 'topics/prerequisite-software.dita'
         
         
         <ul class="ul">
-          <li class="li">You can download the Oracle JRE or JDK from
+          <li class="li">You can download Oracle distributions from
             <a class="xref" href="https://www.oracle.com/java/technologies/downloads/" target="_blank" rel="external noopener">oracle.com/java</a> under commercial license.</li>
           <li class="li">Eclipse Temurin is the free OpenJDK distribution available from
             <a class="xref" href="https://adoptium.net/temurin/releases/?version=17" target="_blank" rel="external noopener">adoptium.net</a>.</li>
@@ -34,16 +34,20 @@ src: 'topics/prerequisite-software.dita'
             <a class="xref" href="https://aws.amazon.com/corretto/" target="_blank" rel="external noopener">Amazon Corretto</a>,
             <a class="xref" href="https://www.azul.com/downloads/" target="_blank" rel="external noopener">Azul Zulu</a>, and
             <a class="xref" href="https://developers.redhat.com/products/openjdk/download" target="_blank" rel="external noopener">Red Hat</a>.</li>
+          <li class="li">Java versions are also available via package managers such as
+            <a class="xref" href="https://chocolatey.org/" target="_blank" rel="external noopener">Chocolatey</a>,
+            <a class="xref" href="https://brew.sh" target="_blank" rel="external noopener">Homebrew</a>, or
+            <a class="xref" href="https://sdkman.io/jdks" target="_blank" rel="external noopener">SDKMAN!</a></li>
         </ul>
       </div>
-              <div class="note note note_note"><span class="note__title">Note:</span> This is the <em class="ph i">only</em> prerequisite that you need to install. All other required software is
+              <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This is the <em class="ph i">only</em> prerequisite that you need to install. All other required software is
                 provided in the distribution package, including
                 <a class="xref" href="https://ant.apache.org" target="_blank" rel="external noopener">Apache Ant™</a>
                 <span class="keyword">1.10.14</span>,
                 <a class="xref" href="http://saxon.sourceforge.net" target="_blank" rel="external noopener">Saxon</a>
                 <span class="keyword">12.4</span>, and
                 <a class="xref" href="http://site.icu-project.org/download" target="_blank" rel="external noopener">ICU for Java</a>
-                <span class="keyword">74.2</span>.</div>
+                <span class="keyword">74.2</span>.</div></div>
             </dd>
           
         </dl>
@@ -55,9 +59,10 @@ src: 'topics/prerequisite-software.dita'
       <div class="p">Depending on the type of output that you want to generate, you might need the following applications:
         <dl class="dl">
           
-            <dt class="dt dlterm" id="microsoft-help-workshop">Microsoft Help Workshop</dt>
-            <dd class="dd">Required for generating HTML help. You can download the Help Workshop from
-              <a class="xref" href="http://msdn.microsoft.com/en-us/library/windows/desktop/ms669985%28v=vs.85%29.aspx" target="_blank" rel="external noopener">msdn.microsoft.com</a>.</dd>
+            <dt class="dt dlterm" id="html-help-workshop">HTML Help Workshop</dt>
+            <dd class="dd">Microsoft no longer provides the software required for generating Compiled HTML Help (.chm) files. You
+              can download an archived copy of the HTML Help Workshop from the Internet Archive’s Wayback Machine at
+              <a class="xref" href="http://web.archive.org/web/20160201063255/http://download.microsoft.com/download/0/A/9/0A939EF6-E31C-430F-A3DF-DFAE7960D564/htmlhelp.exe" target="_blank" rel="external noopener">web.archive.org</a>.</dd>
           
           
             <dt class="dt dlterm" id="xsl-fo-processor">XSL-FO processor</dt>

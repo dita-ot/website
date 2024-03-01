@@ -48,9 +48,9 @@ src: 'parameters/dita-command-arguments.dita'
            </blockquote>
         </div>
       </div>
-      <div class="note note note_note"><span class="note__title">Note:</span> Most <span class="keyword cmdname">dita</span> command options support several syntax alternatives. All options can be
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">Most <span class="keyword cmdname">dita</span> command options support several syntax alternatives. All options can be
         specified with a GNU-style option keyword preceded by two hyphens. In many cases, Unix-style single-letter
-        options (preceded by a single hyphen) are also available for brevity and backwards compatibility.</div>
+        options (preceded by a single hyphen) are also available for brevity and backwards compatibility.</div></div>
       <p class="p">The <span class="keyword cmdname">dita</span> command also supports a series of subcommands that can be used to manage plug-ins,
         or print information about the current configuration or version.</p>
       <div class="fig syntaxdiagram">
@@ -98,9 +98,9 @@ src: 'parameters/dita-command-arguments.dita'
            </blockquote>
         </div>
       </div>
-      <div class="note attention note_attention"><span class="note__title">Attention:</span> Prior to DITA-OT 3.5, subcommands were specified with the double-hyphen option syntax,
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">Prior to DITA-OT 3.5, subcommands were specified with the double-hyphen option syntax,
         which is still supported for backwards compatibility. (For example, <span class="keyword cmdname">dita</span>
-        <span class="keyword parmname">--install</span> will still work.)</div>
+        <span class="keyword parmname">--install</span> will still work.)</div></div>
     </section>
 
     <section class="section" id="dita-command-properties__args"><h2 class="title sectiontitle">Arguments</h2>
@@ -151,9 +151,9 @@ src: 'parameters/dita-command-arguments.dita'
                   <li class="li"><span class="keyword option">pdf</span></li>
                   <li class="li"><span class="keyword option">xhtml</span></li>
                 </ul>
-                <div class="note tip note_tip"><span class="note__title">Tip:</span> See
+                <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">See
                   <a class="xref" href="../topics/output-formats.html" title="DITA Open Toolkit ships with several core transformations that convert DITA content to different output formats. Additional formats are available from the plug-in registry at dita-ot.org/plugins.">DITA-OT transformations (output formats)</a> for sample command line syntax and more information on each
-                  transformation. </div>
+                  transformation. </div></div>
               </div>
           </dd>
         
@@ -202,15 +202,15 @@ src: 'parameters/dita-command-arguments.dita'
             <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a> (or a local registry), from a remote <var class="keyword varname">URL</var>, or a
             local ZIP <var class="keyword varname">file</var>.</dd>
           <dd class="dd pd ddexpand">
-            <div class="note note note_note"><span class="note__title">Note:</span> The <span class="keyword parmname">--force</span> option can be passed as an additional option to the installation
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The <span class="keyword parmname">--force</span> option can be passed as an additional option to the installation
               subcommand to force-install an existing plug-in: <span class="keyword cmdname">dita
-                install</span>&nbsp;<var class="keyword varname">plug-in-zip</var>&nbsp;<span class="keyword parmname">--force</span>.</div></dd>
+                install</span>&nbsp;<var class="keyword varname">plug-in-zip</var>&nbsp;<span class="keyword parmname">--force</span>.</div></div></dd>
           <dd class="dd pd ddexpand">
-            <div class="note tip note_tip"><span class="note__title">Tip:</span> The <span class="keyword cmdname">dita install</span> command uses a network connection to install plug-ins
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">The <span class="keyword cmdname">dita install</span> command uses a network connection to install plug-ins
               from the configured registry or process remote referenced resources. In environments where an HTTP proxy
               is used to establish a network connection, you can provide the proxy configuration via the
                 <code class="ph codeph">ANT_OPTS</code> environment variable. For more information, see
-              <a class="xref" href="../topics/configuring-proxies.html" title="Certain commands, for example, the dita install command, use a network connection to install plug-ins from the configured registry or process remote referenced resources. In environments where an HTTP proxy is used to establish a network connection, you can provide the proxy configuration via the ANT_OPTS environment variable.">Configuring proxies</a>.</div>
+              <a class="xref" href="../topics/configuring-proxies.html" title="Certain commands, for example, the dita install command, use a network connection to install plug-ins from the configured registry or process remote referenced resources. In environments where an HTTP proxy is used to establish a network connection, you can provide the proxy configuration via the ANT_OPTS environment variable.">Configuring proxies</a>.</div></div>
           </dd>
         
         
@@ -240,9 +240,9 @@ src: 'parameters/dita-command-arguments.dita'
           <dd class="dd pd">Remove the plug-in with the specified <var class="keyword varname">ID</var>.</dd>
           <dd class="dd pd ddexpand">For a list of the currently installed plug-in IDs, use <span class="keyword cmdname">dita plugins</span>.</dd>
           <dd class="dd pd ddexpand">
-            <div class="note attention note_attention"><span class="note__title">Attention:</span> The <span class="keyword cmdname">uninstall</span> subcommand also
+            <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">The <span class="keyword cmdname">uninstall</span> subcommand also
                   removes the corresponding plug-in directory from the <span class="ph filepath">plugins</span> folder.
-                  </div>
+                  </div></div>
           </dd>
         
         
@@ -315,7 +315,7 @@ src: 'parameters/dita-command-arguments.dita'
             
             <p class="p">Specifies filter file(s) used to include, exclude, or flag content. Relative paths are resolved against
               the current directory and internally converted to absolute paths.</p>
-            <div class="note note note_note"><span class="note__title">Note:</span> 
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
               <p class="p">To specify multiple filter files, use the system path separator character to delimit individual file
                 paths (semicolon ‘<code class="ph codeph">;</code>’ on Windows, and colon ‘<code class="ph codeph">:</code>’ on macOS and Linux) and
                 wrap the value in quotes:</p>
@@ -325,7 +325,7 @@ src: 'parameters/dita-command-arguments.dita'
               <p class="p">DITAVAL files are evaluated in the order specified, so conditions specified in the first file take
                 precedence over matching conditions specified in later files, just as conditions at the start of a
                 DITAVAL document take precedence over matching conditions later in the same document.</p>
-            </div>
+            </div></div>
           </dd>
         
         
@@ -381,12 +381,12 @@ src: 'parameters/dita-command-arguments.dita'
             parameters that are configured in the plug-in configuration file; the Java-style <span class="keyword parmname">-D</span>
             form can also be used to specify additional non-configured parameters or set system properties.</dd>
           <dd class="dd pd ddexpand">Parameters not implemented by the specified transformation type or referenced in a
-              <span class="ph filepath">.properties</span> file are ignored. <div class="note tip note_tip"><span class="note__title">Tip:</span> If you are building in different environments where the location of the input
+              <span class="ph filepath">.properties</span> file are ignored. <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">If you are building in different environments where the location of the input
         files is not consistent, set <span class="keyword option">args.input.dir</span> with the <span class="keyword cmdname">dita</span> command and
         reference its value with <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span> file.
         
         
-      </div>
+      </div></div>
           </dd>
         
         
@@ -469,4 +469,4 @@ src: 'parameters/dita-command-arguments.dita'
       </dl>
     </section>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/build-using-dita-command.html" title="You can generate output using the dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a></li><li class="linklist"><a class="link" href="../topics/using-dita-properties-file.html" title="Usually, DITA builds require setting a number of parameters that do not change frequently. You can reference a set of build parameters defined in a .properties file when building output with the dita command. If needed, you can override any parameter by specifying it explicitly as an argument to the dita command.">Setting build parameters with .properties files</a></li><li class="linklist"><a class="link" href="../topics/dita-command-help.html" title="You can access a list of subcommands and supported parameters for the dita command by passing the --help option on the command line.">Accessing help for the dita command</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="../parameters/internal-ant-properties.html" title="DITA-OT uses these Ant properties in certain internal operations. They are not intended for general use, but may be adjusted by plug-in developers to configure custom transform types.">Internal Ant properties</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/build-using-dita-command.html" title="You can generate output using the dita command-line tool. Build parameters can be specified on the command line or with .properties files.">Building output using the dita command</a></li><li class="linklist"><a class="link" href="../topics/using-dita-properties-file.html" title="Usually, DITA builds require setting a number of parameters that do not change frequently. You can reference a set of build parameters defined in a .properties file when building output with the dita command. If needed, you can override any parameter by specifying it explicitly as an argument to the dita command.">Setting build parameters with .properties files</a></li><li class="linklist"><a class="link" href="../topics/dita-command-help.html" title="You can access a list of subcommands and supported parameters for the dita command by passing the --help option on the command line.">Accessing help for the dita command</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="internal-ant-properties.html" title="DITA-OT uses these Ant properties in certain internal operations. They are not intended for general use, but may be adjusted by plug-in developers to configure custom transform types.">Internal Ant properties</a></li></ul></div></nav></article></main>

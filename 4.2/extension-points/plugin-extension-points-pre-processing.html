@@ -16,9 +16,9 @@ src: 'extension-points/plugin-extension-points-pre-processing.dita'
     necessary, you can also run an Ant target before a specific pre-processing step — but this approach is not
     recommended.</p>
     <section class="section">
-      <div class="note tip note_tip"><span class="note__title">Tip:</span> For maximum compatibility with future versions of
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For maximum compatibility with future versions of
             DITA-OT, most plug-ins should use the extension points that run <strong class="ph b">before</strong> or <strong class="ph b">after</strong>
-            pre-processing.</div>
+            pre-processing.</div></div>
       <dl class="dl">
         
           <dt class="dt dlterm" id="depend.preprocess.pre"><span class="keyword parmname">depend.preprocess.pre</span></dt>
@@ -38,10 +38,10 @@ src: 'extension-points/plugin-extension-points-pre-processing.dita'
         by default for all transformations prior to DITA-OT 3.0. These extensions are not available in the newer
         <a class="xref" href="../reference/map-first-preprocessing.html" title="DITA-OT provides a map-first pre-processing option as an alternative to the default preprocess operation. The method, which was introduced in DITA-OT 2.5 as an experimental feature, has since been improved and is ready for use in production scenarios. Map-first pre-processing provides the same functionality as the default preprocess, but takes a different approach.">map-first pre-processing</a> pipeline (<code class="ph codeph">preprocess2</code>), which
         is used in the PDF and HTML Help transformations as of DITA-OT 3.0.</p>
-      <div class="note caution note_caution"><span class="note__title">CAUTION:</span> The internal order of preprocessing steps is
+      <div class="note caution note_caution"><span class="note__title">CAUTION:</span> <div class="note__body">The internal order of preprocessing steps is
             subject to change between versions of DITA-OT. New versions may remove, reorder, combine, or add steps to
             the process, so the extension points <strong class="ph b">within</strong> the pre-processing stage should only be used if absolutely
-            necessary.</div>
+            necessary.</div></div>
       <dl class="dl">
         
           <dt class="dt dlterm" id="depend.preprocess.chunk.pre"><span class="keyword parmname">depend.preprocess.chunk.pre</span></dt>
@@ -133,4 +133,4 @@ src: 'extension-points/plugin-extension-points-pre-processing.dita'
       </dl>
     </section>
   </div>
-<nav role="navigation" class="related-links"><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../extension-points/extension-points-in-org.dita.base.html" title="The org.dita.base plug-in provides common extension points that are available to extend processing in all transformations that DITA Open Toolkit supports.">Extension points in org.dita.base</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="extension-points-in-org.dita.base.html" title="The org.dita.base plug-in provides common extension points that are available to extend processing in all transformations that DITA Open Toolkit supports.">Extension points in org.dita.base</a></li></ul></div></nav></article></main>

@@ -37,10 +37,10 @@ src: 'reference/map-first-preprocessing.dita'
       processing steps, and is better able to handle topics referenced outside of the map directory (that case has
       resulted in a variety of issues with the original model).</p>
     <p class="p">As of DITA-OT 4.2, the map-first pre-processing pipeline also supports additional subject scheme features.</p>
-    <div class="note note note_note" id="ID__map-first-preproc-note"><span class="note__title">Note:</span> The map-first pre-processing option is enabled by default in DITA-OT 3.0 for PDF
+    <div class="note note note_note" id="ID__map-first-preproc-note"><span class="note__title">Note:</span> <div class="note__body">The map-first pre-processing option is enabled by default in DITA-OT 3.0 for PDF
       and HTML Help. These formats were chosen because they generate a compiled result file, so temporarily hashed file
       names should all be invisible to the build. After further testing and feedback, the new option has been enabled
-      for HTML5 output as of DITA-OT 4.2.</div>
+      for HTML5 output as of DITA-OT 4.2.</div></div>
     <section class="section"><h2 class="title sectiontitle">How to use map-first pre-processing</h2>
       
       <p class="p">To use (or test) map-first pre-processing, call the <code class="ph codeph">preprocess2</code> Ant target in your custom
@@ -64,8 +64,8 @@ src: 'reference/map-first-preprocessing.dita'
                  html5.topic,
                  html5.map,
                  html5.css"/&gt;</code></pre>
-      <div class="note note note_note"><span class="note__title">Note:</span> If you use this simple method for customized PDF or HTML Help builds, you will automatically be using
-          <code class="ph codeph">preprocess2</code>.</div>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If you use this simple method for customized PDF or HTML Help builds, you will automatically be using
+          <code class="ph codeph">preprocess2</code>.</div></div>
       <p class="p">Some custom transformation types already require you to repeat the default dependencies, in which case you
         should already call <code class="ph codeph">preprocess</code> directly, as in the following:</p>
       <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;!-- More complex variant: add processing steps to default HTML5 --&gt;

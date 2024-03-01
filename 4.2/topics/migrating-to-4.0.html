@@ -24,9 +24,9 @@ src: 'topics/migrating-to-4.0.dita'
       DITA 2.0 standard</span>.
   </p>
     <section class="section">
-      <div class="note note note_note"><span class="note__title">Note:</span> This topic provides a summary of changes in DITA-OT 4.0 that may require modifications to custom stylesheets
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This topic provides a summary of changes in DITA-OT 4.0 that may require modifications to custom stylesheets
         or plug-ins. For more information on changes in this release, see the
-        <a class="xref" href="https://www.dita-ot.org/4.0/release-notes/" target="_blank" rel="external noopener">DITA-OT 4.0 Release Notes</a>.</div>
+        <a class="xref" href="https://www.dita-ot.org/4.0/release-notes/" target="_blank" rel="external noopener">DITA-OT 4.0 Release Notes</a>.</div></div>
     </section>
 
     <section class="section" id="migrating-to-4.0__java-17"><h2 class="title sectiontitle">DITA-OT now requires Java 17</h2>
@@ -38,7 +38,7 @@ src: 'topics/migrating-to-4.0.dita'
         
         
         <ul class="ul">
-          <li class="li">You can download the Oracle JRE or JDK from
+          <li class="li">You can download Oracle distributions from
             <a class="xref" href="https://www.oracle.com/java/technologies/downloads/" target="_blank" rel="external noopener">oracle.com/java</a> under commercial license.</li>
           <li class="li">Eclipse Temurin is the free OpenJDK distribution available from
             <a class="xref" href="https://adoptium.net/temurin/releases/?version=17" target="_blank" rel="external noopener">adoptium.net</a>.</li>
@@ -46,13 +46,17 @@ src: 'topics/migrating-to-4.0.dita'
             <a class="xref" href="https://aws.amazon.com/corretto/" target="_blank" rel="external noopener">Amazon Corretto</a>,
             <a class="xref" href="https://www.azul.com/downloads/" target="_blank" rel="external noopener">Azul Zulu</a>, and
             <a class="xref" href="https://developers.redhat.com/products/openjdk/download" target="_blank" rel="external noopener">Red Hat</a>.</li>
+          <li class="li">Java versions are also available via package managers such as
+            <a class="xref" href="https://chocolatey.org/" target="_blank" rel="external noopener">Chocolatey</a>,
+            <a class="xref" href="https://brew.sh" target="_blank" rel="external noopener">Homebrew</a>, or
+            <a class="xref" href="https://sdkman.io/jdks" target="_blank" rel="external noopener">SDKMAN!</a></li>
         </ul>
       </div>
       <div class="p">
-        <div class="note note note_note"><span class="note__title">Note:</span> The Java virtual machine is generally backwards compatible, so class files built with earlier versions
+        <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The Java virtual machine is generally backwards compatible, so class files built with earlier versions
           should still run correctly with Java 17 and DITA-OT <span class="keyword">4.2</span>. If your DITA-OT installation
           contains plug-ins with custom Java code, you may need to recompile these with Java 17 — but in most cases,
-          this step should not be necessary.</div>
+          this step should not be necessary.</div></div>
       </div>
     </section>
 
@@ -79,8 +83,8 @@ src: 'topics/migrating-to-4.0.dita'
         encoding in the
         <a class="xref" href="../parameters/configuration-properties-file.html" title="The configuration.properties file controls certain common properties, as well as some properties that control PDF processing."><span class="ph filepath">configuration.properties</span> file</a>.
         <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4046" target="_blank" rel="external noopener">#4046</a>
-        <div class="note note note_note"><span class="note__title">Note:</span> If you have code references that require a different encoding, use either of these mechanisms to specify
-          the character set explicitly.</div>
+        <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If you have code references that require a different encoding, use either of these mechanisms to specify
+          the character set explicitly.</div></div>
       </div>
     </section>
     

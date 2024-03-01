@@ -24,7 +24,7 @@ src: 'topics/creating-docker-images.dita'
             <span class="ph filepath">FROM</span> directive.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
-FROM ghcr.io/dita-ot/dita-ot:4.2</code></pre>
+FROM ghcr.io/dita-ot/dita-ot:4.2.1</code></pre>
         </div>
       </li><li class="li step stepexpand"><strong>Optional: </strong>
         <span class="ph cmd">You can extend your image with a <code class="ph codeph">RUN</code> declaration that runs the <span class="keyword cmdname">dita</span>
@@ -48,7 +48,7 @@ RUN dita --install org.dita-community.pdf-page-break</code></pre>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample Dockerfile with custom plug-ins: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/docker/Dockerfile</span></figcaption>
         
         <pre class="pre codeblock language-dockerfile normalize-space show-line-numbers show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
-FROM ghcr.io/dita-ot/dita-ot:4.2
+FROM ghcr.io/dita-ot/dita-ot:4.2.1
 
 # Install a custom plug-in from a remote location:
 RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
@@ -66,9 +66,9 @@ RUN dita --install org.dita-community.pdf-page-break</code></pre>
  =&gt; =&gt; transferring dockerfile: 367B                                                                                                                                          0.0s
  =&gt; [internal] load .dockerignore                                                                                                                                             0.0s
  =&gt; =&gt; transferring context: 2B                                                                                                                                               0.0s
- =&gt; [internal] load metadata for ghcr.io/dita-ot/dita-ot:<span class="keyword">4.2</span>
- =&gt; [1/3] FROM ghcr.io/dita-ot/dita-ot:<span class="keyword">4.2</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
- =&gt; =&gt; resolve ghcr.io/dita-ot/dita-ot:<span class="keyword">4.2</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
+ =&gt; [internal] load metadata for ghcr.io/dita-ot/dita-ot:<span class="keyword">4.2.1</span>
+ =&gt; [1/3] FROM ghcr.io/dita-ot/dita-ot:<span class="keyword">4.2.1</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
+ =&gt; =&gt; resolve ghcr.io/dita-ot/dita-ot:<span class="keyword">4.2.1</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
 Step 2/3 : RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
  ---&gt; Running in d510f874cae0
 Added net.infotexture.dita-bootstrap
