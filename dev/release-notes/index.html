@@ -2,12 +2,12 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.2 Release Notes'
-description: 'DITA Open Toolkit 4.2.1 is a maintenance release that fixes issues
+description: 'DITA Open Toolkit 4.2.2 is a maintenance release that fixes issues
       reported in DITA-OT 4.2, which uses map-first pre-processing for HTML5 output and includes a new local configuration file,
             better CLI messages with support for overrides, a new version of the Lightweight DITA plug-in with
             enhancements to Markdown processing, and updates for the latest DITA 2.0 draft standard.'
 index: '../toc.html'
-commit: 'c624ee2a434df406e9baec63f84029cf37d6a613'
+commit: 'c0034a20933d7062be49b2b40ae480d134315699'
 src: 'release-notes/index.dita'
 ---
 
@@ -16,7 +16,7 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.2.1</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.2.2</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">4.2</span>, which <span class="ph">uses map-first pre-processing for HTML5 output and includes a new local configuration file,
             better CLI messages with support for overrides, a new version of the Lightweight DITA plug-in with
             enhancements to Markdown processing, and updates for the latest DITA 2.0 draft standard</span>.</p>
@@ -25,7 +25,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.2.1</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.2.2</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div></div>
   </div>
@@ -66,14 +66,63 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.2.1">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.2.1</span>
-      <span class="ph small text-muted">released March 1, 2024</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.2.2">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.2.2</span>
+      <span class="ph small text-muted">released March 24, 2024</span>
+    </h2>
+    <div class="body refbody">
+      <section class="section" id="v4.2.2__bugs">
+        <p class="p">DITA Open Toolkit <span class="keyword">4.2.2</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        
+        <ul class="ul">
+          <li class="li" id="v4.2.2__4380">In earlier versions, the map-first pre-processing routine created extra HTML files in the output
+            folder when branch filtering topic references that include fragments. Duplicate branches are now handled
+            correctly and links are resolved as expected.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4380" target="_blank" rel="external noopener">#4380</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/4427" target="_blank" rel="external noopener">#4427</a>
+          </li>
+          <li class="li" id="v4.2.2__4383">Earlier versions of map-first pre-processing would sometimes attempt to access topics that were
+            excluded in DITAVAL files, which resulted in spurious errors. XLST transformations and SAX filter pipes are
+            now skipped for any source files that don’t exist.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4383" target="_blank" rel="external noopener">#4383</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/4435" target="_blank" rel="external noopener">#4435</a>
+          </li>
+          <li class="li" id="v4.2.2__4419">In earlier versions, passing a URL as an input file on the Windows command line resulted in an
+              <samp class="ph msgph">InvalidPathException</samp> error. URI input is now handled correctly on Windows.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4419" target="_blank" rel="external noopener">#4419</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/4425" target="_blank" rel="external noopener">#4425</a>
+          </li>
+          <li class="li" id="v4.2.2__4430">In debug logging mode, DITA-OT 4.2 no longer passed exceptions to the CLI output. Logging has
+            been corrected to ensure that errors from Ant tasks once again include the stack trace as expected.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4430" target="_blank" rel="external noopener">#4430</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/4436" target="_blank" rel="external noopener">#4436</a>
+          </li>
+          <li class="li" id="v4.2.2__4431">When missing translations for the PDF <cite class="cite">“on page”</cite> variable were added in DITA-OT 4.2,
+            the Montenegrin translation <cite class="cite">“na stranici”</cite> was accidentally copied to the Swedish language file.
+            The Swedish translation has been updated to use <cite class="cite">“på sidan”</cite> as expected.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4431" target="_blank" rel="external noopener">#4431</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/4433" target="_blank" rel="external noopener">#4433</a>
+          </li>
+          <li class="li" id="v4.2.2__4412">When project files contained input map names with URI-escaped characters like spaces, earlier
+            versions of DITA-OT used the escape character sequences like <code class="ph codeph">%20</code> in the output file name.
+            The map-first pre-processing routine has been updated to construct the output base file name using the
+            unescaped equivalents.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4412" target="_blank" rel="external noopener">#4412</a>
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/4440" target="_blank" rel="external noopener">#4440</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.2.1">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 4.2.1
+      <span class="ph small text-muted"> released March 1, 2024</span>
     </h2>
     <div class="body refbody">
       <section class="section" id="v4.2.1__bugs">
-        <p class="p">DITA Open Toolkit <span class="keyword">4.2.1</span> is a maintenance release that includes the
-          following bug fixes.</p>
+        <p class="p">DITA Open Toolkit 4.2.1 is a maintenance release that includes the following bug fixes.</p>
         
         <ul class="ul">
           <li class="li" id="v4.2.1__4401">When using the in-memory store, earlier versions of the map-first pre-processing pipeline failed
@@ -109,8 +158,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.2">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">4.2</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v4.2">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT <span class="keyword">4.2</span>
       <span class="ph small text-muted"> released February 11, 2024</span>
     </h2>
     
@@ -324,7 +373,7 @@ src: 'release-notes/index.dita'
                 <p class="p">(For details on recent changes, see the
                   <a class="xref" href="https://xmlgraphics.apache.org/fop/2.9/releaseNotes_2.9.html" target="_blank" rel="external noopener">Apache FOP 2.9 Release Notes</a>.)</p>
               </li>
-              <li class="li" id="v4.2__4346">The logback libraries have been updated to <span class="ph">1.4.14</span> to 
+              <li class="li" id="v4.2__4346">The logback libraries have been updated to <span class="ph">1.4.14</span> to
                 resolve a serialization vulnerability in the logback receiver component reported as <a class="xref" href="https://nvd.nist.gov/vuln/detail/CVE-2023-6378" target="_blank" rel="external noopener">CVE-2023-6378</a>.
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4346" target="_blank" rel="external noopener">#4346</a>
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4361" target="_blank" rel="external noopener">#4361</a>
@@ -387,7 +436,7 @@ src: 'release-notes/index.dita'
               <code class="ph codeph">usr.input.file.list</code> with temporary file names. The list is now generated correctly.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4311" target="_blank" rel="external noopener">#4311</a>
           </li>
-          <li class="li" id="v4.2__4315">Missing translations for the <cite class="cite">“on page”</cite> variable have been added to the Bosnian,
+          <li class="li" id="v4.2__4315">Missing translations for the PDF <cite class="cite">“on page”</cite> variable have been added to the Bosnian,
             Finnish, Montenegrin, Romanian, Russian, Swedish, and Simplified Chinese PDF localizations.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4315" target="_blank" rel="external noopener">#4315</a>,
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4320" target="_blank" rel="external noopener">#4320</a>

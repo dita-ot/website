@@ -7,7 +7,7 @@ description: 'This topic lists each error message generated
     condition. If your toolkit installation includes custom plug-ins that define additional messages, you can add to
     this list by rebuilding the DITA-OT documentation.'
 index: '../toc.html'
-commit: '8379a3651ac96fadb6373eb9dbd84a6aaa411ce6'
+commit: 'c0034a20933d7062be49b2b40ae480d134315699'
 src: 'topics/error-messages.xml'
 ---
 
@@ -256,7 +256,10 @@ src: 'topics/error-messages.xml'
                 instead of the original extension used by the file; it may also include a path to the temporary
                 directory rather than to the original.</span>
               <p class="p">If the target element exists in your source file, check to make sure it is not filtered out of the
-                build with a DITAVAL file (which will remove the target before conref processing runs).</p></td></tr><tr class="row" id="msgs__DOTX011W"><td class="entry colsep-0 rowsep-1" headers="msgs__entry__1"><span class="keyword msgnum">DOTX011W</span></td><td class="entry colsep-0 rowsep-1" headers="msgs__entry__2">Warning</td><td class="entry colsep-0 rowsep-1" headers="msgs__entry__3">There is more than one possible target for the @conref attribute value '<var class="keyword varname">%1</var>'. Using the first value found. Remove the duplicate ID in the referenced resource.</td><td class="entry rowsep-1" id="msgs__DOTX011W-extra" headers="msgs__entry__4">When pulling content with a
+                build with a DITAVAL file (which will remove the target before conref processing runs).</p>
+              <p class="p">This message may also appear if the path to either the source file or the content reference target
+                exceeds the platform’s maximum path length in bytes.</p>
+            </td></tr><tr class="row" id="msgs__DOTX011W"><td class="entry colsep-0 rowsep-1" headers="msgs__entry__1"><span class="keyword msgnum">DOTX011W</span></td><td class="entry colsep-0 rowsep-1" headers="msgs__entry__2">Warning</td><td class="entry colsep-0 rowsep-1" headers="msgs__entry__3">There is more than one possible target for the @conref attribute value '<var class="keyword varname">%1</var>'. Using the first value found. Remove the duplicate ID in the referenced resource.</td><td class="entry rowsep-1" id="msgs__DOTX011W-extra" headers="msgs__entry__4">When pulling content with a
                 <code class="keyword markupname xmlatt">@conref</code> attribute, you may only pull from a single element, but the target ID appears
               twice in the referenced topic. <span class="ph">The name of the file in this message may have been changed to
                 use a standard DITA topic file name extension (<span class="ph filepath">.dita</span> or <span class="ph filepath">.xml</span>)
