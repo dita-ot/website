@@ -3,77 +3,92 @@ layout: default
 title: 'Frequently Asked Questions'
 ---
 
-A set of frequently asked questions and useful links about the **DITA Open Toolkit**.
+A few things people often ask about _DITA_ and _DITA Open Toolkit_.
 {: .lead}
 
 ## What is DITA?
 
-**DITA** is the Darwin Information Typing Architecture, an **XML standard** for authoring modular documents with an emphasis on reuse, maintained by the [DITA Technical Committee at OASIS][1].
+DITA is the _Darwin Information Typing Architecture_, an XML standard for authoring modular documents with an emphasis on reuse, maintained by the [DITA Technical Committee at OASIS][1].
 
-## What is the DITA Open Toolkit?
+## What is DITA Open Toolkit?
 
-The **DITA Open Toolkit** (DITA-OT) is a publishing tool used to convert **DITA** content into various output formats.
+DITA Open Toolkit _(DITA-OT)_ is an open-source publishing tool used to convert DITA content from XML into various [output formats][2].
 
-## How do I use the DITA Open Toolkit?
+## How do I use DITA-OT?
 
-You can [download][2], [install][3] and [build output][4] from **DITA** content using the command line.
+You can [download][3], [install][4] and [build output][5] on the command line for free using the `dita` command.
 
-Besides this, there are applications which come with the **DITA Open Toolkit** bundled. For example Oxygen XML Editor usually comes bundled with the latest **DITA Open Toolkit**. Oxygen provides visual means to run the bundled **DITA Open Toolkit** using a concept called [transformation scenarios][5].
+If you prefer a graphical user interface, many of the best-known [XML editors, enterprise authoring solutions and commercial content management systems][6] rely on DITA-OT to publish XML content.
 
-## What version of DITA Open Toolkit should I use?
+For example, _Oxygen XML Editor_ provides a visual means to run the bundled DITA-OT using a concept called [transformation scenarios][7].
 
-You should try to use the latest **DITA Open Toolkit** release available on the [download][6] page.
+## What version should I use?
 
-## What outputs can I obtain using the DITA Open Toolkit?
+In most cases, you should [download the latest release][8]: **DITA-OT {{ site.version }}**.
 
-The entire set of default available output formats is available here: [https://www.dita-ot.org/dev/topics/output-formats.html][7]. But the **DITA Open Toolkit** can be enhanced by installing plugins to provide additional output formats.
+If you’re using other software that hasn’t yet been updated for the latest version, earlier versions are also available on the [Download][3] page.
 
-## What is the general architecture of the DITA Open Toolkit?
+## What output formats does DITA-OT support?
 
-The **DITA Open Toolkit** is a quite large mixture of [Ant][8] build scripts, Java libraries and [XSLT scripts][9]. It has a [pipeline-based architecture][10] which uses plugins to publish DITA content to various output formats. Most of the **DITA Open Toolkit** customizations that you want to make in order to add new publishing capabilities or to customize existing publishing choices can be made without modifying its internal core.
+The [default transformations][2] include several HTML-based formats, PDF, and Markdown.
 
-## What is a DITA Open Toolkit plugin?
+The toolkit’s extensible plug-in mechanism allows you to add your own transformations and install additional formats from the plug-in registry at [dita-ot.org/plugins][9].
 
-A **DITA Open Toolkit** plugin can either provide a [new publishing format][11], [customize an existing publishing stage][12] or provide a DITA [specialization vocabulary][13]. The plugin can use one of the numerous extension points available in the **DITA Open Toolkit**: [https://www.dita-ot.org/dev/extension-points/plugin-extension-points.html][14].
+## How does DITA-OT work?
 
-Once you have [created][15] a plugin you can install it in the **DITA Open Toolkit** either by [manual installation][16] or using the new [automated installation procedure][17].
+DITA Open Toolkit uses [Ant][10], [XSLT][11], and Java libraries to transform DITA maps and topics into different deliverable formats. The modular [pipeline-based architecture][12] allows processing to be extended via plug-ins.
 
-## How do I customize the HTML-based outputs?
+All of the [default output formats][2] are implemented as plug-ins, and you can create new plug-ins to add new publishing capabilities or customize processing without modifying the core code.
 
-There are a number of parameters which can be set to customize the HTML-based outputs: [http://www.dita-ot.org/dev/parameters/parameters-base-html.html][18]. For example you can specify your own **CSS** stylesheet to be used with the generated HTML output.
+## What are plug-ins for?
 
-You can also create a plugin to customize the HTML outputs by adding a custom XSLT stylesheet: [Creating a simple DITA Open Toolkit plugin to customize published HTML and PDF content][19].
+Plug-ins allow you to extend the toolkit in a way that is consistent, easy to share, and safe to upgrade. Plug-ins can [customize publishing stages][13], [add new formats][14], or [extend an XML catalog][15] to support new specializations and document-type shells. A wide range of [extension points][16] allow you to integrate your changes into the core code.
+
+Once you have [created][17] a plug-in, you can install it using the [automated installation procedure][18].
+
+## How do I customize the HTML output?
+
+For simple branded HTML pages, you can adjust the look and feel of the default output to match your company style by [setting parameters][19] to include [custom CSS][20], [header and footer branding][21], or [table-of-contents navigation][22]. _(These changes do not require a custom plug-in.)_
+
+In addition to the basic modifications that can be made with parameter settings alone, you can create [custom HTML plug-ins][23] that bundle custom fonts, JavaScript, and stylesheets; modify the HTML markup, or override other aspects of HTML processing.
 
 ## How do I customize the PDF output?
 
-The **DITA Open Toolkit** comes bundled with a free PDF generation plugin which uses XSL-FO. The PDF output is obtained by passing the original **DITA** content to **XSL-FO** and then generating **PDF** using an **XSL-FO** processor. The default bundled and used XSL-FO processor is the [Apache FOP][21] but you can also install separately and use commercial PDF processors like [Antenna House][22] or [RenderX XEP][23].
+DITA-OT includes a free PDF plug-in that converts the original DITA content to XSL-FO and generates a PDF file using [Apache FOP][24]. You can also install and use commercial PDF processors like [Antenna House][25] or [RenderX XEP][26].
 
-You can customize the **PDF** output using [PDF Themes][24].
+You can [adjust various aspects of the default PDF output][27] by changing parameter settings.
 
-There are a number of other solutions for obtaining **PDF** from **DITA**: [Possibilities to obtain PDF from DITA][25].
+As of DITA-OT 4.0, you can easily customize PDF output using [theme files][28]. The `--theme` option takes a path to a theme file and changes the styling of the PDF output without requiring changes to XSLT stylesheets.
+
+For more complex customizations, you can create [custom PDF plug-ins][29].
 
 [1]: https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dita
-[2]: http://www.dita-ot.org/download
-[3]: http://www.dita-ot.org/dev/getting-started/installing-client.html
-[4]: https://www.dita-ot.org/dev/topics/first-build-using-dita-command.html#ariaid-title1
-[5]: https://www.oxygenxml.com/doc/ug-editor/topics/create-dita-ot-transformation.html
-[6]: http://www.dita-ot.org/download
-[7]: https://www.dita-ot.org/dev/topics/output-formats.html
-[8]: http://ant.apache.org/
-[9]: https://www.w3.org/TR/2007/REC-xslt20-20070123/
-[10]: https://www.dita-ot.org/dev/reference/architecture.html
-[11]: https://www.dita-ot.org/dev/topics/plugin-newtranstype.html
-[12]: https://www.dita-ot.org/dev/topics/plugin-applications.html
-[13]: https://www.dita-ot.org/dev/topics/plugin-xmlcatalog.html
-[14]: https://www.dita-ot.org/dev/extension-points/plugin-extension-points.html
-[15]: https://www.dita-ot.org/dev/topics/plugin-newtranstype.html#ariaid-title1
-[16]: https://www.oxygenxml.com/doc/ug-editor/topics/dita-ot-install-plugin.html
-[17]: https://www.dita-ot.org/dev/topics/plugins-installing.html
-[18]: http://www.dita-ot.org/dev/parameters/parameters-base-html.html
-[19]: https://blog.oxygenxml.com/topics/creating-simple-dita-open-toolkit.html
-[20]: https://www.oxygenxml.com/doc/ug-editor/topics/pdf-css-customization.html
-[21]: https://xmlgraphics.apache.org/fop/
-[22]: https://www.antennahouse.com/
-[23]: http://www.renderx.com/
-[24]: https://www.dita-ot.org/4.2/topics/pdf-themes
-[25]: https://blog.oxygenxml.com/topics/ditaToPDF.html
+[2]: https://www.dita-ot.org/#output-formats
+[3]: https://www.dita-ot.org/download
+[4]: https://www.dita-ot.org/dev/topics/installing-client
+[5]: https://www.dita-ot.org/dev/topics/first-build-using-dita-command
+[6]: https://www.dita-ot.org/#dita-ot-powers-these-tools
+[7]: https://www.oxygenxml.com/doc/ug-editor/topics/create-dita-ot-transformation.html
+
+[8]: https://github.com/dita-ot/dita-ot/releases/download/{{ site.version }}/dita-ot-{{ site.version }}.zip
+[9]: https://www.dita-ot.org/plugins
+[10]: https://ant.apache.org/
+[11]: https://www.w3.org/TR/xslt20/
+[12]: https://www.dita-ot.org/dev/reference/architecture
+[13]: https://www.dita-ot.org/dev/topics/plugin-use-cases
+[14]: https://www.dita-ot.org/dev/topics/plugin-newtranstype
+[15]: https://www.dita-ot.org/dev/topics/plugin-xmlcatalog
+[16]: https://www.dita-ot.org/dev/extension-points/plugin-extension-points
+[17]: https://www.dita-ot.org/dev/topics/custom-plugins
+[18]: https://www.dita-ot.org/dev/topics/plugins-installing
+[19]: https://www.dita-ot.org/dev/parameters/parameters-base-html
+[20]: https://www.dita-ot.org/dev/topics/html-customization-css
+[21]: https://www.dita-ot.org/dev/topics/html-customization-header
+[22]: https://www.dita-ot.org/dev/topics/html-customization-navigation
+[23]: https://www.dita-ot.org/dev/topics/html-customization-plugins
+[24]: https://xmlgraphics.apache.org/fop/
+[25]: https://www.antennahouse.com/
+[26]: https://www.renderx.com/
+[27]: https://www.dita-ot.org/dev/topics/pdf-customization
+[28]: https://www.dita-ot.org/dev/topics/pdf-themes
+[29]: https://www.dita-ot.org/dev/topics/pdf-customization-plugins
