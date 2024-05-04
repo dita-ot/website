@@ -6,6 +6,11 @@
   color: $text-muted;
 }
 
+// Add bottom margin to nested topics
+article article {
+  margin-top: ($spacer * 2);
+}
+
 // Add bottom margin to nested lists & short descriptions that appear in abstracts
 li.li ul.ul,
 div.shortdesc {
