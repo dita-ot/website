@@ -2,7 +2,7 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.2 Release Notes'
-description: 'DITA Open Toolkit 4.2.2 is a maintenance release that fixes issues
+description: 'DITA Open Toolkit 4.2.3 is a maintenance release that fixes issues
       reported in DITA-OT 4.2, which uses map-first pre-processing for HTML5 output and includes a new local configuration file,
             better CLI messages with support for overrides, a new version of the Lightweight DITA plug-in with
             enhancements to Markdown processing, and updates for the latest DITA 2.0 draft standard.'
@@ -15,7 +15,7 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.2.2</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.2.3</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">4.2</span>, which <span class="ph">uses map-first pre-processing for HTML5 output and includes a new local configuration file,
             better CLI messages with support for overrides, a new version of the Lightweight DITA plug-in with
             enhancements to Markdown processing, and updates for the latest DITA 2.0 draft standard</span>.</p>
@@ -24,7 +24,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.2.2</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.2.3</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div></div>
   </div>
@@ -65,14 +65,34 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.2.2">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.2.2</span>
-      
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.2.3">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.2.3</span>
+      <span class="ph small text-muted">released May 5, 2024</span>
+    </h2>
+    <div class="body refbody">
+      <section class="section" id="v4.2.3__bugs">
+        <p class="p">DITA Open Toolkit <span class="keyword">4.2.3</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        
+        <ul class="ul">
+          <li class="li" id="v4.2.3__4449">DITA-OT 4.2.2 included a regression bug that caused the map-first pre-processing routine to fail
+            with a NullPointerException when maps referred to topics that didn’t exist and other topics contained key
+            references. Processing now proceeds and warns of missing files as in previous versions.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4449" target="_blank" rel="external noopener">#4449</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4454" target="_blank" rel="external noopener">#4454</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </article>
+  
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.2.2">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 4.2.2
+      <span class="ph small text-muted">released March 24, 2024</span>
     </h2>
     <div class="body refbody">
       <section class="section" id="v4.2.2__bugs">
-        <p class="p">DITA Open Toolkit <span class="keyword">4.2.2</span> is a maintenance release that includes the
-          following bug fixes.</p>
+        <p class="p">DITA Open Toolkit 4.2.2 is a maintenance release that includes the following bug fixes.</p>
         
         <ul class="ul">
           <li class="li" id="v4.2.2__4380">In earlier versions, the map-first pre-processing routine created extra HTML files in the output
@@ -115,8 +135,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.2.1">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 4.2.1
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v4.2.1">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 4.2.1
       <span class="ph small text-muted"> released March 1, 2024</span>
     </h2>
     <div class="body refbody">
@@ -157,8 +177,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v4.2">
-    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT <span class="keyword">4.2</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v4.2">
+    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT <span class="keyword">4.2</span>
       <span class="ph small text-muted"> released February 11, 2024</span>
     </h2>
     
