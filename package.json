@@ -55,8 +55,7 @@
     }
   },
   "dependencies": {
-    "jquery": "^3.6.0",
-    "lodash": "^4.17.21"
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
