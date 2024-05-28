@@ -1,5 +1,4 @@
 import Common from './Common'
-import _ from 'lodash'
 import $ from 'jquery'
 import URI from 'urijs'
 
@@ -40,10 +39,10 @@ function TocController($toc, index) {
         }
       }
       if (!$current || !$current.length) {
-        if (_.endsWith(window.location.href, '/')) {
+        if (window.location.href.endsWith('/')) {
           const target = `${window.location.href}index.html`
           $current = $dummy.find(`a[href="${target}"]:first`)
-        } else if (_.endsWith(window.location.href, '/index')) {
+        } else if (window.location.href.endsWith('/index')) {
           const target = window.location.href.substring(0, window.location.href.length - 10)
           $current = $dummy.find(`a[href="${target}"]:first`)
         }
