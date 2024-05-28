@@ -27,3 +27,6 @@ css/_bootstrap.scss
 
 # Node.js modules
 node_modules/
+
+# Compiled JS
+js
