@@ -1,5 +1,6 @@
 import EditController from './EditController'
 import $ from 'jquery'
+import 'whatwg-fetch'
 import URI from 'urijs'
 import Prism from 'prismjs'
 import { tabs } from '../dom'
@@ -36,13 +37,12 @@ function Common(index) {
     if (pushState) {
       history.pushState({}, '', href)
     }
-    $.ajax({
-      url: abs,
-      success(data) {
+    fetch(abs)
+      .then((response) => response.text())
+      .then((data) => {
         updateToc(href, $tocLink)
         updateMain(data)
-      },
-    })
+      })
 
     function updateToc(href, $tocLink) {
       $nav.find('.active').removeClass('active')
