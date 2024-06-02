@@ -13,7 +13,6 @@ If you'd like to set up a local staging environment and build a copy of the site
 - [Environment setup](#environment-setup)
 - [Install prerequisite software](#install-prerequisite-software)
 - [Running Jekyll](#running-jekyll)
-- [Running Jekyll from Docker](#running-jekyll-from-docker)
 - [Building documentation output](#building-documentation-output)
 - [Updating JavaScript](#updating-javascript)
 - [Happy staging!](#happy-staging)
@@ -51,9 +50,7 @@ If you'd like to set up a local staging environment and build a copy of the site
 
         ruby -v
 
-    Ruby is installed on macOS and most Linux distributions by default. If the command above does not respond with information on the installed Ruby version, see [Installing Ruby][4] for instructions.
-
-    Ruby 3.3 is required.
+    Ruby is installed on macOS and most Linux distributions by default. If the command above does not respond with information on the installed Ruby version, see [Installing Ruby][4] for instructions. _(Ruby 3.3 is required.)_
 
 2.  Install [Bundler][5]:
 
@@ -73,7 +70,7 @@ To build a copy of the site locally, use the `bundle` command to start the [Jeky
 
     bundle exec jekyll serve
 
-This runs the Jekyll build process and starts a local web server, so you can view your local clone of the project website at [http://127.0.0.1:4000/][7].
+This runs the Jekyll build process and starts a local web server, so you can view your local clone of the project website at [127.0.0.1:4000][7].
 
 At this stage, what you see there should be identical to the production version of the site at [www.dita-ot.org][1].
 
@@ -83,15 +80,15 @@ To refresh the page in your browser whenever source files change, pass the `--li
 
     bundle exec jekyll serve --livereload
 
-## Running Jekyll from Docker
+### Running Jekyll from Docker
 
-Jekyll can also be run from a Docker image no additional dependencies need to be installed:
+Jekyll can also be run from a Docker image. No additional dependencies need to be installed:
 
 ```shell
 docker run -it --rm -v $PWD:/website -e 4000 -p 4000:4000 ruby:$(head -1 .ruby-version) bash -c 'cd /website && bundle install && jekyll serve -H 0.0.0.0'
 ```
 
-This runs a local copy of the project website at [http://127.0.0.1:4000/][7].
+This runs a local copy of the project website at [127.0.0.1:4000][7].
 
 ## Building documentation output
 
@@ -115,7 +112,7 @@ To redirect the output to the `dev` development folder that Jekyll serves, pass 
 
     ./gradlew site -PoutputDir=~/dita-ot-website/dev
 
-After the build completes, you should find the results in the **Docs \> Development** section of the local staging environment [http://127.0.0.1:4000/dev/][9].
+After the build completes, you should find the results in the **Docs \> Development** section of the local staging environment [127.0.0.1:4000/dev/][9].
 
 To automatically regenerate the site output whenever documentation source files change, add the `--continuous` build option:
 
@@ -129,7 +126,7 @@ If you need to change any of the JavaScript files in the site repository, you'll
 
 This will install various Node modules including [Parcel][11], the web application bundler.
 
-To make changes to the JavaScript code, add or edit source files in the `_js` folder. You can then run the `install` script to re-bundle the modified JavaScript code to the `js` folder with Parcel:
+To make changes to the JavaScript code, add or edit source files in the `_js` folder. You can then run the `install` script to compile the modified JavaScript code to the (ignored) `js` folder with Parcel:
 
     npm run install
 
