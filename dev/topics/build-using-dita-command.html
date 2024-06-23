@@ -5,7 +5,7 @@ title: 'Building output using the dita command'
 description: 'You can generate output using the dita command-line tool. Build parameters can be
     specified on the command line or with .properties files.'
 index: '../toc.html'
-commit: 'd001d52a930a147bf997382cce7167e6d6b9d3a7'
+commit: '4f35bcf106b6365cafd1d2027ef19704febbc1c6'
 src: 'topics/build-using-dita-command.dita'
 ---
 
@@ -92,13 +92,17 @@ src: 'topics/build-using-dita-command.dita'
           <dd class="dd pd">Print a list of available arguments, options, and subcommands.</dd>
         
         
-          <dt class="dt pt dlterm" id="--logfile=file">
+          <dt class="dt pt dlterm" id="using-command-line-tool__logfile">
             <span class="keyword parmname">--logfile</span>=<var class="keyword varname">file</var></dt>
           <dt class="dt pt dlterm" id="-l-file">
             <span class="keyword parmname">-l</span>
             <var class="keyword varname">file</var>
           </dt>
-          <dd class="dd pd">Write logging messages to a file.</dd>
+          <dd class="dd pd">Write logging messages to a file. 
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If processing is successful, nothing is written to the log, so the file will be empty if there are no
+              errors or warnings. To include informational messages in the log, add the
+              <a class="xref" href="build-using-dita-command.html#using-command-line-tool__verbose"><span class="keyword parmname">--verbose</span></a> option (or <span class="keyword parmname">-v</span>).</div></div>
+          </dd>
         
         
           <dt class="dt pt dlterm" id="--no-color">
