@@ -45,14 +45,16 @@
   }
 
   .title {
-    padding: 16px;
-    font-size: 46px;
+    padding: 11px 16px;
+    font-size: 44px;
+    line-height: 1.15;
     border-right: none;
     border-bottom: solid 1px rgba(256, 256, 256, 80%);
   }
   .details {
-    padding: 25px;
+    padding: 16px;
     font-size: 21px;
+    line-height: 1;
   }
 
   @include media-breakpoint-up(xl) {
