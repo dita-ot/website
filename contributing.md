@@ -13,7 +13,7 @@ Before you do that, [review the open issues][1] to make sure it hasn't already b
 
 ## Community support
 
-You can help give back to the community by answering DITA-OT–related questions on the [DITA-OT Users group][5], the [DITA Users group][6] or [Stack Overflow][7].
+You can help give back to the community by answering DITA-OT–related questions on the [DITA-OT Discussions][5], the [DITA Users group][6] or [Stack Overflow][7].
 
 ## Development discussions
 
@@ -42,7 +42,7 @@ If you'd like to fix a typo or propose changes to an existing topic, you can use
 [2]: https://github.com/dita-ot/dita-ot/issues/new/choose
 [3]: https://github.com/dita-ot/docs/issues
 [4]: https://github.com/dita-ot/website/issues
-[5]: https://groups.google.com/d/forum/dita-ot-users
+[5]: https://github.com/orgs/dita-ot/discussions
 [6]: https://groups.io/g/dita-users
 [7]: http://stackoverflow.com/questions/tagged/dita-ot
 [8]: https://slack.com
