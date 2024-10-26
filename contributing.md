@@ -13,11 +13,11 @@ Before you do that, [review the open issues][1] to make sure it hasn't already b
 
 ## Community support
 
-You can help give back to the community by answering DITA-OT–related questions on the [DITA-OT Discussions][5], the [DITA Users group][6] or [Stack Overflow][7].
+You can help give back to the community by answering DITA-OT–related questions on the [DITA-OT Discussions][5] forum on GitHub, the [DITA Users][6] group, or [Stack Overflow][7].
 
 ## Development discussions
 
-We use [Slack][8] to discuss DITA-OT development and design issues, plan events and keep tabs on revisions in our GitHub repositories. Developers and vendors using the toolkit are encouraged to join the [DITA-OT Slack team][9] to discuss upcoming changes.
+We use [Slack][8] to discuss DITA-OT development and design issues, plan events and keep tabs on revisions in our GitHub repositories. Developers and vendors using the toolkit are encouraged to join the [DITA-OT Slack][9] workspace to discuss upcoming changes.
 
 To request an invitation and join the conversation, visit [slack.dita-ot.org][10].
 
@@ -25,8 +25,7 @@ To request an invitation and join the conversation, visit [slack.dita-ot.org][10
 
 _Have XSLT or Java coding skills?_
 
-You can contribute fixes to [bugs][11] or new features by sending [pull requests][12] via GitHub, the process of which is described in
-this [Contributing to the Toolkit video][15].
+You can contribute fixes to [bugs][11] or new features by sending [pull requests][12] via GitHub, the process of which is described in this [Contributing to the Toolkit video][15].
 
 ## Documentation
 
