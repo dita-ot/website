@@ -1,0 +1,38 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'The .ditaotrc configuration file'
+description: 'As of DITA-OT 4.2, new files can be used to store DITA-OT runtime configurations in multiple places to
+    support fine-grained configuration layers.'
+index: '../toc.html'
+src: 'parameters/dot-ditaotrc-file.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a><ul class="nav nav-list"><li class="active"><a href="../parameters/dot-ditaotrc-file.html">.ditaotrc</a></li><li><a href="../parameters/local-properties-file.html">local.properties</a></li><li><a href="../parameters/plugin-properties-file.html">plugin.properties</a></li><li><a href="../parameters/configuration-properties-file.html">configuration.properties</a></li><li><a href="../parameters/internal-ant-properties.html">Internal Ant properties</a></li></ul></li></ul></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">The <span class="ph filepath">.ditaotrc</span> configuration file</h1>
+  
+  
+  
+  <div class="body refbody"><p class="shortdesc">As of DITA-OT 4.2, new files can be used to store DITA-OT runtime configurations in multiple places to
+    support fine-grained configuration layers.</p>
+    <section class="section">
+      <p class="p">DITA-OT looks for <span class="ph filepath">.ditaotrc</span> configuration files in the current directory or any ancestor
+        directory first, then in the user’s home directory, and finally in the root directory of the DITA-OT
+        installation. These files are read in order and combined with the contents of the
+          <span class="ph filepath">local.properties</span> file in the toolkit directory.</p>
+      <p class="p">The first occurrence of a property takes precedence. This approach can be used to define multiple layers of
+        configuration, so personal defaults that apply to multiple projects can be stored in the home folder, with local
+        overrides in project folders.</p>
+    </section>
+    <div class="example">For example, if the current directory includes a <span class="ph filepath">.ditaotrc</span> file that sets
+      <pre class="pre codeblock language-properties"><code>pdf.formatter=fop</code></pre> and the user’s home directory has a
+        <span class="ph filepath">.ditaotrc</span> file with the following content,
+      <pre class="pre codeblock language-properties"><code>pdf.formatter=xep
+args.grammar.cache=no</code></pre> DITA-OT will be run as if the following options were set on the command line: 
+      <pre class="pre codeblock language-bash"><code>--pdf.formatter=fop --args.grammar.cache=no</code></pre>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">As of DITA-OT 4.2, any configurations in
+        <a class="xref" href="local-properties-file.html" title="A local.properties file in the root directory of the DITA-OT installation can be used to override the default values of various DITA-OT parameters."><span class="ph filepath">local.properties</span> files</a> should be migrated to
+          <span class="ph filepath">.ditaotrc</span> files.</div></div>
+    </div>
+  </div>
+</article></main>

@@ -37,7 +37,7 @@ src: 'topics/plugin-rewrite-rules.dita'
     <div class="p">
       <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:template match="node() | @*"&gt;
   &lt;xsl:copy&gt;
-    &lt;xsl:apply-template select="node() | @*"/&gt;
+    &lt;xsl:apply-templates select="node() | @*"/&gt;
   &lt;/xsl:copy&gt;
 &lt;/xsl:template&gt;
 
