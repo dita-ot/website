@@ -98,9 +98,6 @@ src: 'parameters/dita-command-arguments.dita'
            </blockquote>
         </div>
       </div>
-      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">Prior to DITA-OT 3.5, subcommands were specified with the double-hyphen option syntax,
-        which is still supported for backwards compatibility. (For example, <span class="keyword cmdname">dita</span>
-        <span class="keyword parmname">--install</span> will still work.)</div></div>
     </section>
 
     <section class="section" id="dita-command-properties__args"><h2 class="title sectiontitle">Arguments</h2>
@@ -196,8 +193,6 @@ src: 'parameters/dita-command-arguments.dita'
           <dt class="dt pt dlterm" id="install-{-id-|-url-|-file-}">
             <span class="keyword parmname">install</span>
             <var class="keyword varname">{ ID | URL | file }</var></dt>
-          <dt class="dt pt dlterm" id="--install={-id-|-url-|-file-}">
-            <span class="keyword parmname">--install</span>=<var class="keyword varname">{ ID | URL | file }</var></dt>
           <dd class="dd pd">Install a single plug-in <var class="keyword varname">ID</var> from the registry at
             <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a> (or a local registry), from a remote <var class="keyword varname">URL</var>, or a
             local ZIP <var class="keyword varname">file</var>.</dd>
@@ -217,9 +212,6 @@ src: 'parameters/dita-command-arguments.dita'
           <dt class="dt pt dlterm" id="install">
             <span class="keyword parmname">install</span>
           </dt>
-          <dt class="dt pt dlterm" id="--install">
-            <span class="keyword parmname">--install</span>
-          </dt>
           <dd class="dd pd"><span class="ph">If no <var class="keyword varname">ID</var>, <var class="keyword varname">URL</var>, or
                     <var class="keyword varname">file</var> argument is provided, the installation process reloads the current set of
                   plug-ins from the <span class="ph filepath">plugins</span> directory (or any custom locations defined via the
@@ -234,9 +226,6 @@ src: 'parameters/dita-command-arguments.dita'
             <span class="keyword parmname">uninstall</span>
             <var class="keyword varname">ID</var>
           </dt>
-          <dt class="dt pt dlterm" id="--uninstall=id">
-            <span class="keyword parmname">--uninstall</span>=<var class="keyword varname">ID</var>
-          </dt>
           <dd class="dd pd">Remove the plug-in with the specified <var class="keyword varname">ID</var>.</dd>
           <dd class="dd pd ddexpand">For a list of the currently installed plug-in IDs, use <span class="keyword cmdname">dita plugins</span>.</dd>
           <dd class="dd pd ddexpand">
@@ -249,17 +238,11 @@ src: 'parameters/dita-command-arguments.dita'
           <dt class="dt pt dlterm" id="plugins">
             <span class="keyword parmname">plugins</span>
           </dt>
-          <dt class="dt pt dlterm" id="--plugins">
-            <span class="keyword parmname">--plugins</span>
-          </dt>
           <dd class="dd pd">Show a list of the currently installed plug-ins.</dd>
         
         
           <dt class="dt pt dlterm" id="transtypes">
             <span class="keyword parmname">transtypes</span>
-          </dt>
-          <dt class="dt pt dlterm" id="--transtypes">
-            <span class="keyword parmname">--transtypes</span>
           </dt>
           <dd class="dd pd">Show a list of the available output formats (transformation types).</dd>
           <dd class="dd pd ddexpand">The entries in this list may be passed as values to the <span class="keyword parmname">--format</span> argument.</dd>
@@ -267,9 +250,6 @@ src: 'parameters/dita-command-arguments.dita'
         
           <dt class="dt pt dlterm" id="version">
             <span class="keyword parmname">version</span>
-          </dt>
-          <dt class="dt pt dlterm" id="--version">
-            <span class="keyword parmname">--version</span>
           </dt>
           <dd class="dd pd">Print version information and exit.</dd>
         
@@ -337,13 +317,17 @@ src: 'parameters/dita-command-arguments.dita'
           <dd class="dd pd">Print a list of available arguments, options, and subcommands.</dd>
         
         
-          <dt class="dt pt dlterm" id="--logfile=file">
+          <dt class="dt pt dlterm" id="dita-command-properties__logfile">
             <span class="keyword parmname">--logfile</span>=<var class="keyword varname">file</var></dt>
           <dt class="dt pt dlterm" id="-l-file">
             <span class="keyword parmname">-l</span>
             <var class="keyword varname">file</var>
           </dt>
-          <dd class="dd pd">Write logging messages to a file.</dd>
+          <dd class="dd pd">Write logging messages to a file. 
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If processing is successful, nothing is written to the log, so the file will be empty if there are no
+              errors or warnings. To include informational messages in the log, add the
+              <a class="xref" href="dita-command-arguments.html#dita-command-properties__verbose"><span class="keyword parmname">--verbose</span></a> option (or <span class="keyword parmname">-v</span>).</div></div>
+          </dd>
         
         
           <dt class="dt pt dlterm" id="--no-color">
