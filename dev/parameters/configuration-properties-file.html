@@ -5,11 +5,11 @@ title: 'The configuration.properties file'
 description: 'The configuration.properties file controls certain common properties, as well as some
     properties that control PDF processing.'
 index: '../toc.html'
-commit: 'd001d52a930a147bf997382cce7167e6d6b9d3a7'
+commit: '32e20eca104c52fd62a2121ce6fea09234abea9d'
 src: 'parameters/configuration-properties-file.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a><ul class="nav nav-list"><li><a href="../parameters/local-properties-file.html">local.properties</a></li><li><a href="../parameters/plugin-properties-file.html">plugin.properties</a></li><li class="active"><a href="../parameters/configuration-properties-file.html">configuration.properties</a></li><li><a href="../parameters/internal-ant-properties.html">Internal Ant properties</a></li></ul></li></ul></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a><ul class="nav nav-list"><li><a href="../parameters/dot-ditaotrc-file.html">.ditaotrc</a></li><li><a href="../parameters/local-properties-file.html">local.properties</a></li><li><a href="../parameters/plugin-properties-file.html">plugin.properties</a></li><li class="active"><a href="../parameters/configuration-properties-file.html">configuration.properties</a></li><li><a href="../parameters/internal-ant-properties.html">Internal Ant properties</a></li></ul></li></ul></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">The <span class="ph filepath">configuration.properties</span> file</h1>
   
   
@@ -21,6 +21,18 @@ src: 'parameters/configuration-properties-file.dita'
         configuration in the <code class="ph codeph">dost-configuration.jar</code> file when the plug-in integration process runs. The
         following properties are typically set in this file:</p>
       <dl class="dl parml">
+        
+          <dt class="dt pt dlterm" id="configuration__compatibility-keyref-treat-blank-as-empty"><span class="keyword parmname">compatibility.keyref.treat-blank-as-empty</span></dt>
+          <dd class="dd pd">
+            <p class="p">When set to <code class="ph codeph">true</code>, this property enables a compatibility mode that processes key
+              references that contain only whitespace characters like earlier versions of DITA-OT (prior to version
+              4.2.4). This behavior is not correct according to the DITA specification, but this setting ensures that
+              existing content that relies on this behavior will be processed in the same way as in earlier versions.
+              Set this property to <code class="ph codeph">false</code> to skip these references as intended in the DITA
+              specification.</p>
+            <div class="note warning note_warning"><span class="note__title">Warning:</span> <div class="note__body">This property can only be set in
+                <span class="ph filepath">configuration.properties</span>.</div></div></dd>
+        
         
           <dt class="dt pt dlterm" id="configuration__default-cascade"><span class="keyword parmname">default.cascade</span></dt>
           <dd class="dd pd">
