@@ -6,7 +6,7 @@ description: 'The pre-defined extension points can be used to add new functional
         your toolkit installation includes custom plug-ins that define additional extension points, you can add to this
         list by rebuilding the DITA-OT documentation.'
 index: '../toc.html'
-commit: 'ed3a240e9762a277396af6c717efa6c9c2109cab'
+commit: 'c6a50a08755f6b2918946a7d72a73082cc404bcd'
 src: 'extension-points/all-extension-points.dita'
 generated: true
 ---
@@ -237,7 +237,9 @@ generated: true
             <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">This extension point is still supported for backwards compatibility, but since DITA-OT 2.1,
               any new customizations should instead use the <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element in the
               <a class="xref" href="../topics/plugin-configfile.html" title="The plug-in descriptor file (plugin.xml) controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and then integrates those changes into the core DITA-OT code.">Plug-in descriptor file</a> to define a new transformation.</div></div>
-          </dd><dt class="dt dlterm" id="all-extension-points__dita.conductor.xhtml.param"><span class="keyword parmname">dita.conductor.xhtml.param</span><span class="ph"></span></dt><dd class="dd">Defined in plug-in
+          </dd><dt class="dt dlterm" id="all-extension-points__depend.validate"><span class="keyword parmname">depend.validate</span><span class="ph"></span></dt><dd class="dd">Defined in plug-in
+        <span class="xref"><code class="ph codeph">org.dita.validate</code></span>.
+      </dd><dd class="dd ddexpand" id="all-extension-points__depend.validate.desc"></dd><dt class="dt dlterm" id="all-extension-points__dita.conductor.xhtml.param"><span class="keyword parmname">dita.conductor.xhtml.param</span><span class="ph"></span></dt><dd class="dd">Defined in plug-in
         <a class="xref" href="extension-points-in-org.dita.xhtml.html" title="The org.dita.xhtml plug-in provides shared extension points that can be used to modify processing in HTML-based transformation types such as Eclipse help, HTML Help, and XHTML."><code class="ph codeph">org.dita.xhtml</code></a>.
       </dd><dd class="dd ddexpand" id="all-extension-points__dita.conductor.xhtml.param.desc">Pass
             parameters to the XHTML and Eclipse Help transformations.</dd><dt class="dt dlterm" id="all-extension-points__dita.specialization.catalog"><span class="keyword parmname">dita.specialization.catalog</span><span class="ph"></span></dt><dd class="dd">Defined in plug-in
