@@ -23,7 +23,9 @@ https://dita-ot.netlify.com/*                          https://www.dita-ot.org/:
 # Redirect old installation URL                        (linked from DITA-OT Gradle Plugin docs)
 # Fixed in DITA-OT Gradle Plugin docs source repo with https://github.com/eerohele/dita-ot-gradle/pull/22,
 # but the change was apparently never deployed to site https://eerohele.github.io/dita-ot-gradle
-/dev/getting-started/installing-client.html            /dev/topics/installing-client.html                           301!
+/dev/getting-started/installing-client.html            /dev/topics/installing.html                                  301!
+# Simplify path: drop `-client` suffix for 4.3, as there is no “server” or other variant
+/dev/topics/installing-client.html                     /dev/topics/installing.html                                  301!
 
 # Redirect spurious resource requests (Top 404s)
 /dev/user-guide/dita2markdown.html                     /dev/topics/dita2markdown.html                               301!
@@ -70,3 +72,7 @@ http://slack.dita-ot.org                               https://join.slack.com/t/
 
 # Plug-in registry SPA
 /plugins/*                                             /plugins.html                                                 200
+
+# Redirect topics merged, moved or renamed for 4.3
+/dev/topics/building-output.html                       /dev/topics/publishing.html                                  301!
+/dev/topics/adding-plugins.html                        /dev/topics/extending.html                                   301!
