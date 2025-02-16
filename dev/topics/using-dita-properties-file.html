@@ -1,25 +1,23 @@
 ---
 # Generated from DITA source
 layout: 'base'
-title: 'Setting build parameters with .properties files'
-description: 'Usually, DITA builds require setting a number of parameters that do not change frequently. You can
-    reference a set of build parameters defined in a .properties file when building output with the
-      dita command. If needed, you can override any parameter by specifying it explicitly as an
-    argument to the dita command.'
+title: 'Setting parameters with .properties files'
+description: 'DITA builds usually require a set of parameters that don’t change frequently. You can define these settings
+    in a .properties file, and reference it when building output with the dita
+    command. You can override any of the properties by specifying them as command-line arguments.'
 index: '../toc.html'
-commit: '63d8e93048bbfb1d8622ed330ff3f408ac3b4f2a'
+commit: 'd3bde7940dc9caf5ab977fcc45fd9e5814cfdb99'
 src: 'topics/using-dita-properties-file.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li class="active"><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="title topictitle1" id="ariaid-title1">Setting build parameters with <span class="ph filepath">.properties</span> files</h1>
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li class="active"><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Setting parameters with <span class="ph filepath">.properties</span> files</h1>
   
   
   
-  <div class="body taskbody"><p class="shortdesc">Usually, DITA builds require setting a number of parameters that do not change frequently. You can
-    reference a set of build parameters defined in a <span class="ph filepath">.properties</span> file when building output with the
-      <span class="keyword cmdname">dita</span> command. If needed, you can override any parameter by specifying it explicitly as an
-    argument to the <span class="keyword cmdname">dita</span> command.</p>
+  <div class="body taskbody"><p class="shortdesc">DITA builds usually require a set of parameters that don’t change frequently. You can define these settings
+    in a <span class="ph filepath">.properties</span> file, and reference it when building output with the <span class="keyword cmdname">dita</span>
+    command. You can override any of the properties by specifying them as command-line arguments.</p>
     <section class="section"><h2 class="title sectiontitle">About <span class="ph filepath">.properties</span> files</h2>
       
       <p class="p">A <span class="ph filepath">.properties</span> file is a text file that enumerates one or more name-value pairs, one per

@@ -1,26 +1,33 @@
 ---
 # Generated from DITA source
 layout: 'base'
-title: 'Migrating Ant builds to use the dita command'
-description: 'Although DITA Open Toolkit still supports Ant builds, switching to the dita command
-    offers a simpler command interface, sets all required environment variables and allows you to run DITA-OT without
-    setting up anything beforehand.'
+title: 'Migrating Ant builds to the dita command'
+description: '
+    DITA-OT still supports Ant builds, but
+      the dita command offers a simpler command
+      interface, sets all required environment variables, and allows you to run DITA-OT without setting up anything
+      beforehand.'
 index: '../toc.html'
-commit: '63d8e93048bbfb1d8622ed330ff3f408ac3b4f2a'
+commit: 'd3bde7940dc9caf5ab977fcc45fd9e5814cfdb99'
 src: 'topics/migrating-ant-to-dita.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li class="active"><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="title topictitle1" id="ariaid-title1">Migrating Ant builds to use the <span class="keyword cmdname">dita</span> command</h1>
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li class="active"><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating Ant builds to the <span class="keyword cmdname">dita</span> command</h1>
   
   
   
-  <div class="body taskbody"><p class="shortdesc">Although DITA Open Toolkit still supports Ant builds, switching to the <span class="keyword cmdname">dita</span> command
-    offers a simpler command interface, sets all required environment variables and allows you to run DITA-OT without
-    setting up anything beforehand.</p>
+  <div class="body taskbody"><p class="shortdesc">
+    <span class="ph" id="migrating-ant-to-dita__ant-caveat">DITA-OT still supports Ant builds, but
+      <a class="xref" href="build-using-dita-command.html" title="You can publish output using the dita command-line tool. Build parameters can be specified on the command line, with .properties files, or in project files that define multiple deliverables.">the <span class="keyword cmdname">dita</span> command</a> offers a simpler command
+      interface, sets all required environment variables, and allows you to run DITA-OT without setting up anything
+      beforehand.</span></p>
     <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
       <p class="p">Building output with the <span class="keyword cmdname">dita</span> command is often easier than using Ant. In particular, you can
-        use <span class="ph filepath">.properties</span> files to specify sets of DITA-OT parameters for each build.</p>
+        use
+        <a class="xref" href="using-dita-properties-file.html" title="DITA builds usually require a set of parameters that don’t change frequently. You can define these settings in a .properties file, and reference it when building output with the dita command. You can override any of the properties by specifying them as command-line arguments."><span class="ph filepath">.properties</span> files</a> to specify sets of
+        parameters for each build, or create a
+        <a class="xref" href="using-project-files.html" title="DITA-OT project files allow you to publish multiple deliverables at once. Each deliverable specifies a re-usable source context that groups the maps or topics you want to publish, an output folder, and a publication format (such as HTML, or PDF) with transformation parameters.">project file</a> that defines multiple deliverables at once.</p>
       <p class="p">You can include the <span class="keyword cmdname">dita</span> command in shell scripts to perform multiple builds.</p>
       <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">Add the absolute path for the <span class="ph filepath">bin</span> folder of the DITA-OT installation
         directory to the
@@ -44,7 +51,7 @@ src: 'topics/migrating-ant-to-dita.dita'
     <section class="example"><h2 class="title sectiontitle">Example: Ant build</h2>
       
       <p class="p">Prior to DITA-OT 2.0, an Ant build like this was typically used to define the properties for each target.</p>
-      <div class="p">Sample build file: <span class="ph filepath" id="migrating-ant-to-dita__samples-dir"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf.xml</span>
+      <div class="p">Sample build file: <span class="ph filepath">build-chm-pdf.xml</span>
         <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;project name="build-chm-pdf" default="all" basedir="."&gt;
   &lt;property name="dita.dir" location="${basedir}/../../.."/&gt;
@@ -80,7 +87,7 @@ args.gen.task.lbl = YES</code></pre></div>
         <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code>output.dir = out/pdf
 args.gen.task.lbl = YES
 args.rellinks = nofamily</code></pre></div>
-      <p class="p">Run from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>:</p>
+      <p class="p">Sample <span class="keyword cmdname">dita</span> command sequence:</p>
       <pre class="pre codeblock"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">htmlhelp</span> \
      <span class="keyword parmname">--propertyfile</span>=<span class="ph filepath">properties/chm.properties</span>
 <span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">taskbook.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">pdf</span> \
@@ -92,7 +99,7 @@ args.rellinks = nofamily</code></pre></div>
         also want the convenience of using the <span class="keyword cmdname">dita</span> command with <span class="ph filepath">.properties</span>
         files to define the parameters for each build. This can be accomplished with Ant’s <code class="keyword markupname xmlelement">&lt;exec&gt;</code>
         task.</p>
-      <p class="p">This example uses a <code class="keyword markupname xmlelement">&lt;dita-cmd&gt;</code> Ant macro defined in the <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/dita-cmd.xml</span> file:</p>
+      <p class="p">This example defines a <code class="keyword markupname xmlelement">&lt;dita-cmd&gt;</code> Ant macro:</p>
       <div class="p">
         <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;macrodef name="dita-cmd"&gt;
   &lt;attribute name="input"/&gt;
@@ -126,7 +133,7 @@ args.rellinks = nofamily</code></pre></div>
       <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The attributes defined in the Ant macro are required and must be supplied each time the task is run. To set
         optional parameters in one build (but not another), use different <span class="ph filepath">.properties</span> files for
         each build.</div></div>
-      <p class="p">Sample build file: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/ant_sample/build-chm-pdf-hybrid.xml</span></p>
+      <p class="p">Sample build file: <span class="ph filepath">build-chm-pdf-hybrid.xml</span></p>
       <div class="p">
         <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;project name="build-chm-pdf-hybrid" default="all" basedir="."&gt;

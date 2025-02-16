@@ -1,30 +1,39 @@
 ---
 # Generated from DITA source
 layout: 'base'
-title: 'Building output using the dita command'
-description: 'You can generate output using the dita command-line tool. Build parameters can be
-    specified on the command line or with .properties files.'
+title: '
+    
+    Publishing with the dita command
+  '
+description: 'You can publish output using the dita command-line tool. Build parameters can be
+    specified on the command line, with .properties files, or in project files that define multiple
+    deliverables.'
 index: '../toc.html'
-commit: '4f35bcf106b6365cafd1d2027ef19704febbc1c6'
+commit: 'd3bde7940dc9caf5ab977fcc45fd9e5814cfdb99'
 src: 'topics/build-using-dita-command.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="title topictitle1" id="ariaid-title1">Building output using the <span class="keyword cmdname">dita</span> command</h1>
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">
+    
+    <span class="ph">Publishing with the <span class="keyword cmdname">dita</span> command</span>
+  </h1>
   
   
-  <div class="body taskbody"><p class="shortdesc">You can generate output using the <span class="keyword cmdname">dita</span> command-line tool. Build parameters can be
-    specified on the command line or with <span class="ph filepath">.properties</span> files.</p>
+  <div class="body taskbody"><p class="shortdesc">You can publish output using the <span class="keyword cmdname">dita</span> command-line tool. Build parameters can be
+    specified on the command line, with <span class="ph filepath">.properties</span> files, or in project files that define multiple
+    deliverables.</p>
     
     <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="ol steps"><div class="li step p">
         <span class="ph cmd">At the command-line prompt, enter the following command:</span>
-        <div class="itemgroup info"><pre class="pre codeblock syntax-bash"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> <span class="ph">[<var class="keyword varname">options</var>]</span></code></pre>
-          <p class="p">where:</p>
-          <ul class="ul">
-            
-            <li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to
+        <div class="itemgroup info">
+          
+          <pre class="pre codeblock syntax-bash"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--input</span>=<var class="keyword varname">input-file</var> <span class="keyword parmname">--format</span>=<var class="keyword varname">format</var> [<var class="keyword varname">options</var>]</code></pre>
+          <div class="p">where:
+            <ul class="ul">
+              <li class="li"><var class="keyword varname">input-file</var> is the DITA map or DITA file that you want to
               process.</li>
-            <li class="li">
+              <li class="li">
               <p class="p">
                 <var class="keyword varname">format</var> is the output format (transformation type). This argument corresponds to the
                 common parameter <a class="xref" href="../parameters/parameters-base.html#base__transtype">transtype</a>. Use the same values as for the
@@ -44,11 +53,11 @@ src: 'topics/build-using-dita-command.dita'
                   <li class="li"><span class="keyword option">xhtml</span></li>
                 </ul>
                 <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">See
-                  <a class="xref" href="output-formats.html" title="DITA Open Toolkit ships with several core transformations that convert DITA content to different output formats. Additional formats are available from the plug-in registry at dita-ot.org/plugins.">DITA-OT transformations (output formats)</a> for sample command line syntax and more information on each
+                  <a class="xref" href="output-formats.html" title="DITA Open Toolkit ships with several core transformations that convert DITA content to different output formats. Additional formats are available from the plug-in registry at dita-ot.org/plugins.">Output formats</a> for sample command line syntax and more information on each
                   transformation. </div></div>
               </div>
             </li>
-            <li class="li">[<var class="keyword varname">options</var>] include the following optional build parameters:
+              <li class="li">[<var class="keyword varname">options</var>] include the following optional build parameters:
               <dl class="dl parml">
         
           <dt class="dt pt dlterm" id="--debug">
@@ -164,7 +173,7 @@ src: 'topics/build-using-dita-command.dita'
           <dd class="dd pd ddexpand">This option can be used by plug-in developers to measure performance. To run a conversion five times, for
             example, use <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>. The duration of each execution will appear in
             the console when the final transformation is complete.
-            <pre class="pre codeblock syntax-bash multi-platform"><code>$ <span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">docsrc/samples/sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
+            <pre class="pre codeblock syntax-bash multi-platform"><code>$ <span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">path/to/sample.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
        <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>
 1 11281ms
 2 4132ms
@@ -226,47 +235,61 @@ src: 'topics/build-using-dita-command.dita'
             values for Ant properties, input/output files, and informational messages to assist in troubleshooting.</dd>
         
       </dl></li>
-          </ul></div>
-        <div class="itemgroup stepresult">
-          <p class="p">If processing is successful, nothing is printed in the terminal window. The built output is written to the
-            specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of the current
-            directory).</p>
+            </ul>
+          </div>
+        </div>
+        <div class="itemgroup stepresult" id="using-command-line-tool__running-ditaot-results">
+          
+          <p class="p">If processing is successful, nothing is printed in the terminal window. The built output
+            is written to the specified output directory (by default, in the <span class="ph filepath">out</span> subdirectory of
+            the current directory).</p>
         </div>
       </div></div></section>
-    
     <section class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
-      <p class="p">For example, from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span>, run:</p>
+      <p class="p">For example, from <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc</span>, run:</p>
       <div class="p">
-        <pre class="pre codeblock syntax-bash multi-platform"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">sequence.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
-     <span class="keyword parmname">--output</span>=<span class="ph filepath">output/sequence</span> \
-     <span class="keyword parmname">--args.input.dir</span>=<span class="ph filepath"><var class="keyword varname">/absolute/path/to/dita-ot-dir</var>/docsrc/samples</span> \
-     <span class="keyword parmname">--propertyfile</span>=<span class="ph filepath">properties/sequence-html5.properties</span></code></pre>
+        <pre class="pre codeblock syntax-bash multi-platform"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">userguide.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
+     <span class="keyword parmname">--output</span>=<span class="ph filepath">out/docs-html5</span> \
+     <span class="keyword parmname">--args.input.dir</span>=<span class="ph filepath"><var class="keyword varname">/absolute/path/to/dita-ot-dir</var>/docsrc</span> \
+     <span class="keyword parmname">--propertyfile</span>=<span class="ph filepath">properties/docs-build-html5.properties</span></code></pre>
       </div>
-      <p class="p">This builds <span class="ph filepath">sequence.ditamap</span> to HTML5 output in <span class="ph filepath">output/sequence</span> using
-        the following additional parameters specified in the <span class="ph filepath">properties/sequence-html5.properties</span>
+      <p class="p">This builds <span class="ph filepath">userguide.ditamap</span> to HTML5 output in <span class="ph filepath">out/docs-html5</span> using
+        the following additional parameters specified in the <span class="ph filepath">properties/docs-build-html5.properties</span>
         file:</p>
       <div class="p">
-        <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code># Directory that contains the custom .css file:
-args.cssroot = ${args.input.dir}/css/
-
-# Custom .css file used to style output:
-args.css = style.css
-
-# Copy the custom .css file to the output directory:
+        <pre class="pre codeblock language-properties normalize-space show-line-numbers show-whitespace"><code># Copy the custom .css file to the output directory:
 args.copycss = yes
 
-# Location of the copied .css file relative to the output:
-args.csspath = branding
+# Custom .css file used to style output:
+args.css = dita-ot-doc.css
 
-# Generate a full navigation TOC in topic pages:
-nav-toc = full</code></pre>
+# Location of the copied .css file relative to the output:
+args.csspath = css
+
+# Directory that contains the custom .css file:
+args.cssroot = ${args.input.dir}/resources
+
+# Generate headings for sections within task topics:
+args.gen.task.lbl = YES
+
+# File that contains the running header content:
+args.hdr = ${args.input.dir}/resources/header.xml
+
+# Which related links to include in the output
+args.rellinks = noparent
+
+# Skip Table of Contents file generation:
+html5.toc.generate = no
+
+# Generate a partial navigation TOC in topic pages:
+nav-toc = partial</code></pre>
       </div>
       
     </section>
     <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
       
       <p class="p">Usually, you will want to specify a set of reusable build parameters in a
-          <span class="ph filepath">.properties</span> file.</p>
+          <span class="ph filepath">.properties</span> file, or or create a project file that defines multiple deliverables.</p>
     </section>
   </div>
-<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="using-dita-properties-file.html">Setting build parameters with .properties files</a></strong><br>Usually, DITA builds require setting a number of parameters that do not change frequently. You can     reference a set of build parameters defined in a <span class="ph filepath">.properties</span> file when building output with the       <span class="keyword cmdname">dita</span> command. If needed, you can override any parameter by specifying it explicitly as an     argument to the <span class="keyword cmdname">dita</span> command.</li><li class="link ulchildlink"><strong><a href="migrating-ant-to-dita.html">Migrating Ant builds to use the dita command</a></strong><br>Although DITA Open Toolkit still supports Ant builds, switching to the <span class="keyword cmdname">dita</span> command     offers a simpler command interface, sets all required environment variables and allows you to run DITA-OT without     setting up anything beforehand.</li><li class="link ulchildlink"><strong><a href="using-project-files.html">Publishing with project files</a></strong><br>DITA-OT 3.4 introduced project files that allow you to publish multiple deliverables at once. Each     deliverable specifies a re-usable source <code class="ph codeph">context</code> that groups the maps or topics you want to     publish, an <code class="ph codeph">output</code> folder, and a <code class="ph codeph">publication</code> format (such as HTML, or PDF) with     transformation parameters.</li></ul><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="dita-command-help.html" title="You can access a list of subcommands and supported parameters for the dita command by passing the --help option on the command line.">Accessing help for the dita command</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content. Subcommands can be used to manage plug-ins, or print information about the current configuration. A series of options are available to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></li><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="../parameters/internal-ant-properties.html" title="DITA-OT uses these Ant properties in certain internal operations. They are not intended for general use, but may be adjusted by plug-in developers to configure custom transform types.">Internal Ant properties</a></li></ul></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2015/dita-ot_day.html#Why_startcmd_is_not_your_friend" target="_blank" rel="external noopener" title="The startcmd batch script made it possible for many to easily use DITA-OT, but whether you realize it or not, it's no longer really necessary. I'll briefly explain where it came from, why it was always more of a kludge than a Feature, and how better DITA-OT designs mean it's no longer needed.">Why "startcmd" is not your friend</a></li></ul></div></nav></article></main>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="using-dita-properties-file.html">Setting parameters with .properties files</a></strong><br>DITA builds usually require a set of parameters that don’t change frequently. You can define these settings     in a <span class="ph filepath">.properties</span> file, and reference it when building output with the <span class="keyword cmdname">dita</span>     command. You can override any of the properties by specifying them as command-line arguments.</li><li class="link ulchildlink"><strong><a href="migrating-ant-to-dita.html">Migrating Ant builds to the dita command</a></strong><br>     <span class="ph">DITA-OT still supports Ant builds, but       <a class="xref" href="build-using-dita-command.html" title="You can publish output using the dita command-line tool. Build parameters can be specified on the command line, with .properties files, or in project files that define multiple deliverables.">the <span class="keyword cmdname">dita</span> command</a> offers a simpler command       interface, sets all required environment variables, and allows you to run DITA-OT without setting up anything       beforehand.</span></li><li class="link ulchildlink"><strong><a href="using-project-files.html">Publishing with project files</a></strong><br>DITA-OT project files allow you to publish multiple deliverables at once. Each deliverable specifies a     re-usable source <code class="ph codeph">context</code> that groups the maps or topics you want to publish, an      <code class="ph codeph">output</code> folder, and a <code class="ph codeph">publication</code> format (such as HTML, or PDF) with     transformation parameters.</li></ul><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="dita-command-help.html" title="You can access a list of subcommands and supported parameters for the dita command by passing the --help option on the command line.">Accessing help for the dita command</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content. Subcommands can be used to manage plug-ins, or print information about the current configuration. A series of options are available to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></li><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="../parameters/internal-ant-properties.html" title="DITA-OT uses these Ant properties in certain internal operations. They are not intended for general use, but may be adjusted by plug-in developers to configure custom transform types.">Internal Ant properties</a></li></ul></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2015/dita-ot_day.html#Why_startcmd_is_not_your_friend" target="_blank" rel="external noopener" title="The startcmd batch script made it possible for many to easily use DITA-OT, but whether you realize it or not, it's no longer really necessary. I'll briefly explain where it came from, why it was always more of a kludge than a Feature, and how better DITA-OT designs mean it's no longer needed.">Why "startcmd" is not your friend</a></li></ul></div></nav></article></main>

@@ -2,23 +2,23 @@
 # Generated from DITA source
 layout: 'base'
 title: 'Publishing with project files'
-description: 'DITA-OT 3.4 introduced project files that allow you to publish multiple deliverables at once. Each
-    deliverable specifies a re-usable source context that groups the maps or topics you want to
-    publish, an output folder, and a publication format (such as HTML, or PDF) with
+description: 'DITA-OT project files allow you to publish multiple deliverables at once. Each deliverable specifies a
+    re-usable source context that groups the maps or topics you want to publish, an
+     output folder, and a publication format (such as HTML, or PDF) with
     transformation parameters.'
 index: '../toc.html'
-commit: 'd001d52a930a147bf997382cce7167e6d6b9d3a7'
+commit: 'd3bde7940dc9caf5ab977fcc45fd9e5814cfdb99'
 src: 'topics/using-project-files.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li class="active"><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li class="active"><a href="../topics/using-project-files.html">Using a project file</a><ul class="nav nav-list"><li><a href="../topics/project-files-xml.html">XML project files</a></li><li><a href="../topics/project-files-json.html">JSON project files</a></li><li><a href="../topics/project-files-yaml.html">YAML project files</a></li></ul></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Publishing with project files</h1>
   
   
   
-  <div class="body taskbody"><p class="shortdesc">DITA-OT 3.4 introduced project files that allow you to publish multiple deliverables at once. Each
-    deliverable specifies a re-usable source <code class="ph codeph">context</code> that groups the maps or topics you want to
-    publish, an <code class="ph codeph">output</code> folder, and a <code class="ph codeph">publication</code> format (such as HTML, or PDF) with
+  <div class="body taskbody"><p class="shortdesc">DITA-OT project files allow you to publish multiple deliverables at once. Each deliverable specifies a
+    re-usable source <code class="ph codeph">context</code> that groups the maps or topics you want to publish, an
+     <code class="ph codeph">output</code> folder, and a <code class="ph codeph">publication</code> format (such as HTML, or PDF) with
     transformation parameters.</p>
     <section class="section"><h2 class="title sectiontitle">About project files</h2>
       

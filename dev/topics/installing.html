@@ -1,0 +1,71 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Installing DITA Open Toolkit'
+description: 'The DITA-OT distribution package can be installed on Linux, macOS, and Windows. It contains everything that
+    you need to run the toolkit except for Java.'
+index: '../toc.html'
+commit: 'd3bde7940dc9caf5ab977fcc45fd9e5814cfdb99'
+src: 'topics/installing.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li class="active"><a href="../topics/installing.html">Installing</a><ul class="nav nav-list"><li><a href="../topics/prerequisite-software.html">Prerequisite software</a></li><li><a href="../topics/determining-version-of-ditaot.html">Checking the version</a></li><li><a href="../topics/first-build-using-dita-command.html">First build</a></li><li><a href="../topics/installing-via-homebrew.html">Installing via Homebrew</a></li></ul></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Installing DITA Open Toolkit</h1>
+  
+  
+  
+  <div class="body taskbody"><p class="shortdesc">The DITA-OT distribution package can be installed on Linux, macOS, and Windows. It contains everything that
+    you need to run the toolkit except for Java.</p>
+    <section class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>
+      <ul class="ul">
+        <li class="li">
+          <p class="p">Ensure that you have a Java Runtime Environment (JRE) or Java Development Kit (JDK).</p>
+          <div class="p">DITA-OT <span class="keyword">4.3</span> is designed to run on Java version <span class="keyword">17</span> or later and built and tested with the Open Java Development Kit (OpenJDK).
+        Compatible Java distributions are available from multiple sources:
+        
+        
+        
+        
+        <ul class="ul">
+          <li class="li">You can download Oracle distributions from
+            <a class="xref" href="https://www.oracle.com/java/technologies/downloads/" target="_blank" rel="external noopener">oracle.com/java</a> under commercial license.</li>
+          <li class="li">Eclipse Temurin is the free OpenJDK distribution available from
+            <a class="xref" href="https://adoptium.net/temurin/releases/?version=17" target="_blank" rel="external noopener">adoptium.net</a>.</li>
+          <li class="li">Free OpenJDK distributions are also provided by
+            <a class="xref" href="https://aws.amazon.com/corretto/" target="_blank" rel="external noopener">Amazon Corretto</a>,
+            <a class="xref" href="https://www.azul.com/downloads/" target="_blank" rel="external noopener">Azul Zulu</a>, and
+            <a class="xref" href="https://developers.redhat.com/products/openjdk/download" target="_blank" rel="external noopener">Red Hat</a>.</li>
+          <li class="li">Java versions are also available via package managers such as
+            <a class="xref" href="https://chocolatey.org/" target="_blank" rel="external noopener">Chocolatey</a>,
+            <a class="xref" href="https://brew.sh" target="_blank" rel="external noopener">Homebrew</a>, or
+            <a class="xref" href="https://sdkman.io/jdks" target="_blank" rel="external noopener">SDKMAN!</a></li>
+        </ul>
+      </div></li>
+        <li class="li" data-platform="windows">If you want to generate HTML Help, ensure that you have HTML Help
+          Workshop installed.
+          <p class="p">You can download the Help Workshop from
+            <a class="xref" href="http://web.archive.org/web/20160201063255/http://download.microsoft.com/download/0/A/9/0A939EF6-E31C-430F-A3DF-DFAE7960D564/htmlhelp.exe" target="_blank" rel="external noopener">web.archive.org</a>.</p></li>
+      </ul>
+    </section>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.3</span>.zip</span>
+            package from the project website at
+            <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Extract the contents of the package to the directory where you want to install DITA-OT.</span>
+        <div class="itemgroup info">
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The documentation refers to this location as the <cite class="cite">DITA-OT installation directory</cite>, or
+              <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var></span>.</div></div></div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Add the absolute path for the <span class="ph filepath">bin</span> folder of the DITA-OT installation directory to the
+          <a class="xref" href="https://en.wikipedia.org/wiki/PATH_(variable)" target="_blank" rel="external noopener">PATH environment variable</a>.</span>
+        <div class="itemgroup stepresult">
+          <div class="note tip note_tip" id="installing__dita-in-path"><span class="note__title">Tip:</span> <div class="note__body">This defines the necessary environment variable that allows the
+              <span class="keyword cmdname">dita</span> command to be run from any location on the file system without typing the path to
+            the command.
+            
+          </div></div>
+        </div>
+      </li></ol></section>
+  </div>
+<nav role="navigation" class="related-links"><ul class="ullinks"><li class="link ulchildlink"><strong><a href="prerequisite-software.html">Prerequisite software</a></strong><br>The software that DITA-OT requires depends on the output formats you want to use.</li><li class="link ulchildlink"><strong><a href="determining-version-of-ditaot.html">Checking the DITA-OT version number</a></strong><br>You can determine the DITA Open Toolkit version number from a command prompt.</li><li class="link ulchildlink"><strong><a href="first-build-using-dita-command.html">First build with the dita command</a></strong><br>You can publish output using the <span class="keyword cmdname">dita</span> command-line tool. Build parameters can be     specified on the command line, with <span class="ph filepath">.properties</span> files, or in project files that define multiple     deliverables.</li><li class="link ulchildlink"><strong><a href="installing-via-homebrew.html">Installing DITA-OT via Homebrew</a></strong><br>An alternative installation method can be used to install DITA-OT via     <a class="xref" href="https://brew.sh" target="_blank" rel="external noopener">Homebrew</a>, one of the most popular open-source package managers on macOS and Linux.</li></ul></nav></article></main>

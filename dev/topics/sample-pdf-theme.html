@@ -7,11 +7,11 @@ description: 'Theme files can be written in either
     YAML format. The docsrc/samples/themes folder in the DITA-OT installation
     directory provides several examples.'
 index: '../toc.html'
-commit: 'bd118bfab56394600b3fbeff37718846e3440bb8'
+commit: 'd3bde7940dc9caf5ab977fcc45fd9e5814cfdb99'
 src: 'topics/sample-pdf-theme.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a><ul class="nav nav-list"><li><a href="../topics/pdf-customization-approaches.html">Customization approaches</a></li><li><a href="../topics/pdf2-creating-change-bars.html">Generating revision bars</a></li><li><a href="../topics/pdf-themes.html">PDF themes</a><ul class="nav nav-list"><li class="active"><a href="../topics/sample-pdf-theme.html">Sample theme file</a></li><li><a href="../resources/theme/Page-settings.html">Page settings</a></li><li><a href="../resources/theme/Header-and-footer.html">Header and footer</a></li><li><a href="../resources/theme/Styles.html">Styles</a></li><li><a href="../resources/theme/Variables.html">Variables</a></li><li><a href="../resources/theme/Extending-themes.html">Extending themes</a></li><li><a href="../resources/theme/Syntactic-sugar.html">Syntactic sugar</a></li></ul></li></ul></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a><ul class="nav nav-list"><li><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a><ul class="nav nav-list"><li><a href="../topics/pdf-customization-approaches.html">Customization approaches</a></li><li><a href="../topics/pdf2-creating-change-bars.html">Generating revision bars</a></li><li><a href="../topics/pdf-themes.html">PDF themes</a><ul class="nav nav-list"><li class="active"><a href="../topics/sample-pdf-theme.html">Sample theme file</a></li><li><a href="../resources/theme/Page-settings.html">Page settings</a></li><li><a href="../resources/theme/Header-and-footer.html">Header and footer</a></li><li><a href="../resources/theme/Styles.html">Styles</a></li><li><a href="../resources/theme/Variables.html">Variables</a></li><li><a href="../resources/theme/Extending-themes.html">Extending themes</a></li><li><a href="../resources/theme/Syntactic-sugar.html">Syntactic sugar</a></li></ul></li></ul></li></ul></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Sample theme file</h1>
   
   <div class="body conbody"><p class="shortdesc">Theme files can be written in either
@@ -39,9 +39,6 @@ src: 'topics/sample-pdf-theme.dita'
         
         <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>brand:
   color:
-    primary: '#1d365d'
-    secondary: '#6c757d'
-    tertiary: '#bac8d1'
     inverse: '#e9ecef'
     links: '#3563ab'
     note:
@@ -50,6 +47,9 @@ src: 'topics/sample-pdf-theme.dita'
         caution: '#f8d7da'
         info: '#dce4f0'
         tip: '#d1e7dd'
+    primary: '#1d365d'
+    secondary: '#6c757d'
+    tertiary: '#bac8d1'
     xml-domain: '#639'</code></pre></div>
       </figure>
       <p class="p">The primary and secondary brand colors defined above are used in the examples below under
@@ -67,9 +67,9 @@ src: 'topics/sample-pdf-theme.dita'
         
         <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>pdf2:
   font:
+    monospaced: 'Courier New, Courier, Arial Unicode MS, Tahoma, Batang, SimSun'
     sans: 'Helvetica, Arial Unicode MS, Tahoma, Batang, SimSun'
-    serif: 'Times New Roman, Times, Arial Unicode MS, Tahoma, Batang, SimSun'
-    monospaced: 'Courier New, Courier, Arial Unicode MS, Tahoma, Batang, SimSun'</code></pre></div>
+    serif: 'Times New Roman, Times, Arial Unicode MS, Tahoma, Batang, SimSun'</code></pre></div>
       </figure>
       <p class="p">This theme uses the default font stacks from the default <code class="ph codeph">org.dita.pdf2</code> plug-in, but the same
         approach can be used to define other font families as required by your corporate identity.</p>
@@ -84,8 +84,8 @@ src: 'topics/sample-pdf-theme.dita'
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 3. </span>Page settings in <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs-theme.yaml</span></figcaption>
         
         <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>page:
-  size: PA4
-  mirror-margins: true</code></pre></div>
+  mirror-margins: true
+  size: PA4</code></pre></div>
       </figure>
       <p class="p">The DITA-OT documentation theme uses the <code class="ph codeph">PA4</code> page size, a 21 × 28 cm transitional format 
         suitable for printing on both A4 and US Letter paper.</p>
@@ -95,7 +95,7 @@ src: 'topics/sample-pdf-theme.dita'
     <div class="example" id="ID__overrides"><h2 class="title sectiontitle">Extending and overriding themes</h2>
       
       <p class="p">You can
-        <a class="xref" href="../resources/theme/Extending-themes.html" title="A theme can extend another theme using the extends key. The value of extends is a relative path from the current theme file to the theme being extended.">extend</a> one theme with another. The samples in the DITA-OT installation
+        <a class="xref" href="../resources/theme/Extending-themes.html" title="A theme can extend another theme using the extends key.">extend</a> one theme with another. The samples in the DITA-OT installation
         directory include additional theme files that can be used to override the <code class="ph codeph">PA4</code> page size in the
         documentation theme with either A4 or Letter.</p>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 4. </span>Switching page size to A4 with <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/themes/dita-ot-docs_A4.yaml</span></figcaption>
@@ -127,16 +127,16 @@ page:
   color: $brand-color-secondary
   display-align: before
   end-indent: 10mm
+  even:
+    content: '{part-title}'
+    text-align: start
   font-family: $pdf2-font-sans
+  odd:
+    content: '{chapter-title}'
+    text-align: end
   padding-after: 6pt
   padding-before: 12pt
-  start-indent: 10mm
-  odd:
-    content: '{chapter}'
-    text-align: end
-  even:
-    content: '{title}'
-    text-align: start</code></pre></div>
+  start-indent: 10mm</code></pre></div>
       </figure>
       <p class="p">These settings use the secondary brand color for page headers (as defined above under
         <a class="xref" href="sample-pdf-theme.html#ID__colors">Setting custom colors</a>), the sans-serif font families defined above under
@@ -146,18 +146,18 @@ page:
         <div class="p"><pre class="pre codeblock language-yaml normalize-space show-whitespace"><code>footer:
   color: $brand-color-secondary
   end-indent: 10mm
+  even:
+    content: '{folio}'
+    font-weight: bold
+    text-align: start
   font-family: $pdf2-font-sans
-  padding-after: 12pt
-  padding-before: 6pt
-  start-indent: 10mm
   odd:
     content: '{folio}'
     font-weight: bold
     text-align: end
-  even:
-    content: '{folio}'
-    font-weight: bold
-    text-align: start</code></pre></div>
+  padding-after: 12pt
+  padding-before: 6pt
+  start-indent: 10mm</code></pre></div>
       </figure>
       <p class="p">These settings use the <code class="ph codeph">{folio}</code> field to place the current page number on the outside edges of
         each page footer. The <code class="ph codeph">content</code> key may include combinations of static text, or reference

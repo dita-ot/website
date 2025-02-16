@@ -2,23 +2,23 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA 2.0 preview support'
-description: 'DITA Open Toolkit 4.2 provides a preview of features for the upcoming OASIS DITA
+description: 'DITA Open Toolkit 4.3 provides a preview of features for the upcoming OASIS DITA
     2.0 specification. This preliminary processing support is provided on the basis of the latest drafts of the
     DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of 
     January 22, 2024).'
 index: '../toc.html'
-commit: '961ff6299aa2c14c3f53a761ffb8acd8c6ef999c'
+commit: 'd3bde7940dc9caf5ab977fcc45fd9e5814cfdb99'
 src: 'reference/dita-v2-0-support.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.2</a></li><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/installing-client.html">Installing DITA-OT</a></li><li><a href="../topics/building-output.html">Building output</a></li><li><a href="../topics/input-formats.html">Authoring formats</a></li><li><a href="../topics/output-formats.html">Output formats</a></li><li><a href="../parameters/index.html">Parameters</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li><li><a href="../topics/adding-plugins.html">Adding plug-ins</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../reference/dita-spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../reference/dita-v1-2-support.html">DITA 1.2 support</a></li><li><a href="../reference/dita-v1-3-support.html">DITA 1.3 support</a></li><li class="active"><a href="../reference/dita-v2-0-support.html">DITA 2.0 preview</a></li><li><a href="../reference/implementation-dependent-features.html">Implementation-dependent features</a></li><li><a href="../reference/extended-functionality.html">Codeblock extensions</a></li><li><a href="../reference/docs-dita-features.html">DITA features in docs</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../reference/markdown-formats.html">Markdown formats</a></li><li><a href="../reference/license.html">License</a></li><li><a href="../reference/glossary.html#glossary">Glossary</a></li></ul></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../reference/dita-spec-support.html">DITA specification support</a><ul class="nav nav-list"><li><a href="../reference/dita-v1-2-support.html">DITA 1.2 support</a></li><li><a href="../reference/dita-v1-3-support.html">DITA 1.3 support</a></li><li class="active"><a href="../reference/dita-v2-0-support.html">DITA 2.0 preview</a></li><li><a href="../reference/implementation-dependent-features.html">Implementation-dependent features</a></li><li><a href="../reference/extended-functionality.html">Codeblock extensions</a></li><li><a href="../reference/docs-dita-features.html">DITA features in docs</a></li></ul></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../reference/markdown-formats.html">Markdown formats</a></li><li><a href="../reference/license.html">License</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">DITA 2.0 preview support</h1>
 
   
 
   
 
-  <div class="body conbody"><p class="shortdesc">DITA Open Toolkit <span class="keyword">4.2</span> provides a preview of features for the upcoming OASIS DITA
+  <div class="body conbody"><p class="shortdesc">DITA Open Toolkit <span class="keyword">4.3</span> provides a preview of features for the upcoming OASIS DITA
     2.0 specification. This preliminary processing support is provided on the basis of the latest drafts of the
     DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of 
     <span class="keyword">January 22, 2024</span>).</p>
@@ -193,7 +193,20 @@ src: 'reference/dita-v2-0-support.dita'
         </li>
       </ul>
     </section>
-    
+    <section class="section" id="in__v4.3"><h2 class="title sectiontitle">DITA-OT 4.3</h2>
+      
+      <p class="p">DITA-OT 4.3 adds support for additional DITA 2.0 features.</p>
+      <ul class="ul" id="in__added-in-4.3">
+        <li class="li" id="in__4570">HTML5 processing now supports the <code class="keyword markupname xmlatt">@height</code> and <code class="keyword markupname xmlatt">@width</code> attributes
+          on the DITA 2.0 <code class="keyword markupname xmlelement">&lt;video&gt;</code> element to ensure that videos are scaled correctly.
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4570" target="_blank" rel="external noopener">#4570</a>
+        </li>
+        <li class="li" id="in__4571">HTML5 and PDF processing has been updated to support the new DITA 2.0 emphasis domain elements:
+            <code class="keyword markupname xmlelement">&lt;em&gt;</code> for emphasis and <code class="keyword markupname xmlelement">&lt;strong&gt;</code> for strong emphasis.
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4571" target="_blank" rel="external noopener">#4571</a>
+        </li>
+      </ul>
+    </section>
     <section class="section">
       <div class="note note note_note" id="in__more-to-come"><span class="note__title">Note:</span> <div class="note__body">Other new or revised features proposed for DITA 2.0 are not yet supported. Additional
         features will be implemented in future versions of DITA-OT as the specification evolves.</div></div>
