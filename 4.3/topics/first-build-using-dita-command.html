@@ -1,0 +1,62 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: '
+    First build with the dita command
+    
+  '
+description: 'You can publish output using the dita command-line tool. Build parameters can be
+    specified on the command line, with .properties files, or in project files that define multiple
+    deliverables.'
+index: '../toc.html'
+src: 'topics/first-build-using-dita-command.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a><ul class="nav nav-list"><li><a href="../topics/prerequisite-software.html">Prerequisite software</a></li><li><a href="../topics/determining-version-of-ditaot.html">Checking the version</a></li><li class="active"><a href="../topics/first-build-using-dita-command.html">First build</a></li><li><a href="../topics/installing-via-homebrew.html">Installing via Homebrew</a></li></ul></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">
+    <span class="ph">First build with the <span class="keyword cmdname">dita</span> command</span>
+    
+  </h1>
+  
+  
+  <div class="body taskbody"><p class="shortdesc">You can publish output using the <span class="keyword cmdname">dita</span> command-line tool. Build parameters can be
+    specified on the command line, with <span class="ph filepath">.properties</span> files, or in project files that define multiple
+    deliverables.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+      <p class="p">The DITA-OT client is a command-line tool with no graphical user interface. To verify that your installation
+        works correctly, you can build the HTML version of the documentation you are reading now.</p></section>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Open a terminal window by typing the following in the search bar:</span>
+        <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder multi-platform"><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead><tr class="sthead chhead"><th scope="col" class="stentry choptionhd" style="vertical-align:bottom;text-align:left;">Option</th><th scope="col" class="stentry chdeschd" style="vertical-align:bottom;text-align:left;">Description</th></tr></thead><tbody><tr class="strow chrow" data-platform="linux mac">
+            <th style="vertical-align:top;" scope="row" class="stentry choption">Linux or macOS&nbsp;</th>
+            <td style="vertical-align:top;" class="stentry chdesc">Type <kbd class="ph userinput">Terminal</kbd>.</td>
+          </tr><tr class="strow chrow" data-platform="windows">
+            <th style="vertical-align:top;" scope="row" class="stentry choption">Windows</th>
+            <td style="vertical-align:top;" class="stentry chdesc">Type <kbd class="ph userinput">Command Prompt</kbd>.</td>
+          </tr></tbody></table>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Change directories to the <span class="ph filepath">docsrc/samples</span> subfolder of the DITA-OT installation
+          directory:</span>
+        <div class="itemgroup info"><pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">cd</span> <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span></code></pre></div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">At the command-line prompt, enter the following command:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock syntax-bash"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword parmname">--project</span>=<var class="keyword varname">project-files/html.xml</var></code></pre>
+          
+          
+        </div>
+        <div class="itemgroup stepresult" id="using-command-line-tool__running-ditaot-results">
+          <p class="p">The HTML version of the documentation is generated in the
+              <span class="ph filepath">docsrc/samples/out</span> folder.</p>
+          
+        </div>
+      </li></ol></section>
+    
+    <section class="section postreq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">What to do next</h2></div>
+      <p class="p">Most builds require you to specify more options than are described in this topic. For
+        more information, see 
+        <a class="xref" href="build-using-dita-command.html" title="You can publish output using the dita command-line tool. Build parameters can be specified on the command line, with .properties files, or in project files that define multiple deliverables.">Publishing with the <span class="keyword cmdname">dita</span> command</a>.</p>
+      
+    </section>
+  </div>
+</article></main>

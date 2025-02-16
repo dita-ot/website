@@ -1,0 +1,64 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Adding parameters to existing XSLT steps'
+description: 'You can pass parameters from the Ant build to existing XSLT steps in both the pre-processing pipeline and
+    certain DITA-OT transformations. This can be useful if you want to make the parameters available as global
+      xsl:param values within XSLT overrides.'
+index: '../toc.html'
+src: 'topics/plugin-xsltparams.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a><ul class="nav nav-list"><li><a href="../topics/plugin-set-parameters.html">Setting parameters</a></li><li><a href="../topics/plugin-anttarget.html">Adding a new Ant target</a></li><li><a href="../topics/plugin-antpreprocess.html">Adding a pre-processing step</a></li><li><a href="../topics/plugin-newtranstype.html">Adding a new output format</a></li><li><a href="../topics/plugin-preprocess-xslt.html">Processing topics with XSLT</a></li><li class="active"><a href="../topics/plugin-xsltparams.html">Adding new parameters</a></li><li><a href="../topics/plugin-overridestyle.html">Overriding XSLT steps</a></li><li><a href="../topics/plugin-javalib.html">Adding a Java library</a></li><li><a href="../topics/plugin-messages.html">Adding new messages</a></li><li><a href="../topics/plugin-newextensions.html">New extension points</a></li><li><a href="../topics/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../topics/plugin-rewrite-rules.html">Rewriting file names</a></li><li><a href="../topics/implement-saxon-customizations.html">Saxon customizations</a></li></ul></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Adding parameters to existing XSLT steps</h1>
+  
+  
+  
+  <div class="body taskbody"><p class="shortdesc">You can pass parameters from the Ant build to existing XSLT steps in both the pre-processing pipeline and
+    certain DITA-OT transformations. This can be useful if you want to make the parameters available as global
+      <code class="keyword markupname xmlelement">&lt;xsl:param&gt;</code> values within XSLT overrides.</p>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand" id="plugin-xsltparams__create-xml-file">
+        <span class="ph cmd">Create an XML file that contains one or more Ant <code class="keyword markupname xmlelement">&lt;param&gt;</code> elements nested within a
+            <code class="keyword markupname xmlelement">&lt;dummy&gt;</code> wrapper element.</span>
+        <div class="itemgroup stepxmp">
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;dummy&gt;
+  <em class="ph i">&lt;!-- Any Ant code allowed in xslt task is possible. Example: --&gt;</em>
+  &lt;param name="paramNameinXSLT" expression="${antProperty}" 
+         if="antProperty"/&gt;
+&lt;/dummy&gt;</code></pre>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Construct a <span class="ph filepath">plugin.xml</span> file that contains the following content:</span>
+        <div class="itemgroup info"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
+  &lt;feature extension="<var class="keyword varname">extension-point</var>" file="<var class="keyword varname">file</var>"/&gt;
+&lt;/plugin&gt;</code></pre>where:
+          <ul class="ul">
+            <li class="li"><var class="keyword varname">plugin-id</var> is the plug-in identifier, for example,
+                <code class="ph codeph">com.example.newparam</code>.</li>
+            <li class="li"><var class="keyword varname">extension-point</var> is the DITA-OT extension point, for example,<code class="ph codeph">
+                dita.conductor.xhtml.param</code>. This indicates the DITA-OT processing step where the parameters
+              will be available.</li>
+            <li class="li"><var class="keyword varname">file</var> is the name of the XML file that you created in step
+              <a class="xref" href="plugin-xsltparams.html#plugin-xsltparams__create-xml-file">1</a>, for example, <span class="ph filepath">insertParameters.xml</span>.
+            </li>
+          </ul></div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Use the <span class="keyword cmdname">dita install</span> subcommand to install the plug-in.</span>
+        <div class="itemgroup info">
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">For more information, see
+            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div></div></div>
+      </li></ol></section>
+    <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>The <span class="ph filepath">plugin.xml</span> file passes the parameters to the specified transformation or
+      pre-processing module.</section>
+    <section class="example"><h2 class="title sectiontitle">Example</h2>
+      
+      <p class="p">The following plug-in passes the parameters defined in the <span class="ph filepath">insertParameters.xml</span> file as
+        input to the XHTML process. Generally, an additional XSLT override will make use of the parameters to do
+        something new with the generated content.</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="com.example.newparam"&gt;
+  &lt;feature extension="dita.conductor.xhtml.param" 
+           file="insertParameters.xml"/&gt;
+&lt;/plugin&gt;</code></pre>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../extension-points/plugin-extension-points-xslt-parameters.html" title="You can use these extension points to pass parameters into existing XSLT steps in both the pre-processing pipeline and DITA-OT transformation. The parameters generally will be available as global xsl:param values with XSLT overrides.">XSLT-parameter extension points</a></li></ul></div></nav></article></main>

@@ -7,7 +7,8 @@
     aria-expanded="false"
     id="docsDropdownMenuLink"
     >{% if page.url contains '/dev/' %}<span class="badge badge-warning mr-3">Latest</span> Dev Docs
-    {% elsif page.url contains '/4.2/' %}<span class="badge badge-success mr-2">Current</span> 4.2
+    {% elsif page.url contains '/4.3/' %}<span class="badge badge-success mr-2">Current</span> 4.3
+    {% elsif page.url contains '/4.2/' %}<span class="badge badge-secondary mr-2">Archive</span> 4.2
     {% elsif page.url contains '/4.1/' %}<span class="badge badge-secondary mr-2">Archive</span> 4.1
     {% elsif page.url contains '/4.0/' %}<span class="badge badge-secondary mr-2">Archive</span> 4.0
     {% elsif page.url contains '/3.7/' %}<span class="badge badge-secondary mr-2">Archive</span> 3.7
@@ -39,13 +40,18 @@
     <h6 class="dropdown-header">Current version</h6>
     <a
       class="dropdown-item
-      {% if page.url contains '/4.2/' %} active{% endif %}"
+      {% if page.url contains '/4.3/' %} active{% endif %}"
       href="{{ site.baseurl }}/{{ site.release }}/"
       >Release {{ site.release }}
       <span class="badge badge-success float-right my-1">Current</span>
     </a>
     <div class="dropdown-divider"></div>
     <h6 class="dropdown-header">Previous versions</h6>
+    <a
+      class="dropdown-item
+      {% if page.url contains '/4.2/' %} active{% endif %}"
+      href="{{ site.baseurl }}/4.2/"
+      >4.2</a>
     <a
       class="dropdown-item
       {% if page.url contains '/4.1/' %} active{% endif %}"
