@@ -2,7 +2,8 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.3 Release Notes'
-description: 'DITA Open Toolkit 4.3 includes new init and validate subcommands that can be used to
+description: 'DITA Open Toolkit 4.3.1 is a maintenance release that fixes issues
+      reported in DITA-OT 4.3, which includes new init and validate subcommands that can be used to
             set up projects from a template and check files for errors before publishing. You can now publish multiple
             formats on the command line at once, add raw DITA to Markdown files, and publish bookmaps with PDF
             themes.'
@@ -15,7 +16,8 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.3</span> includes <span class="ph">new <span class="keyword cmdname">init</span> and <span class="keyword cmdname">validate</span> subcommands that can be used to
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.3.1</span> is a maintenance release that fixes issues
+      reported in DITA-OT <span class="keyword">4.3</span>, which includes <span class="ph">new <span class="keyword cmdname">init</span> and <span class="keyword cmdname">validate</span> subcommands that can be used to
             set up projects from a template and check files for errors before publishing. You can now publish multiple
             formats on the command line at once, add raw DITA to Markdown files, and publish bookmaps with PDF
             themes</span>.</p>
@@ -24,7 +26,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.3</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.3.1</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div></div>
   </div>
@@ -65,8 +67,80 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v4.3">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.3</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.3.1">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.3.1</span>
+      
+    </h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">4.3.1</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v4.3.1__4564">DITA-OT 4.2 and later versions produced broken links in the navigation ToC when the
+              <code class="keyword markupname xmlatt">@copy-to</code> attribute was defined on topic references, or the
+              <span class="keyword parmname">force-unique</span> option was used. Generated temporary file names were used instead of
+            the <code class="keyword markupname xmlatt">@copy-to</code> attribute value. The <code class="keyword markupname xmlatt">@copy-to</code> attribute value is now respected
+            to ensure the correct links are written to the ToC.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4564" target="_blank" rel="external noopener">#4564</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4569" target="_blank" rel="external noopener">#4569</a>
+          </li>
+          <li class="li" id="v4.3.1__4589">DITA-OT 4.3 included a regression bug that generated output in the <span class="ph filepath">out</span>
+            subdirectory of the DITA-OT installation directory if the output location was not explicitly specified. In
+            this case, output is now generated in the <span class="ph filepath">out</span> subdirectory of the current directory as
+            in DITA-OT 4.2.4 and earlier versions.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4589" target="_blank" rel="external noopener">#4589</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4594" target="_blank" rel="external noopener">#4594</a>
+          </li>
+          <li class="li" id="v4.3.1__4590">The new <span class="keyword cmdname">validate</span> subcommand introduced in DITA-OT 4.3 can now also be run by
+            setting the <span class="keyword parmname">-f</span> or <span class="keyword parmname">--format</span> options to <code class="ph codeph">validate</code>.
+            The <span class="keyword cmdname">dita</span> command line interface has also been updated to prevent conflicts between the
+              <span class="keyword cmdname">validate</span> subcommand and the existing <span class="keyword parmname">validate</span> parameter.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4590" target="_blank" rel="external noopener">#4590</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4592" target="_blank" rel="external noopener">#4592</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4602" target="_blank" rel="external noopener">#4602</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4603" target="_blank" rel="external noopener">#4603</a>
+          </li>
+          <li class="li" id="v4.3.1__4593">DITA-OT Docker images can now be built for both 64-bit Linux AMD and ARM architectures. No
+            changes are required to benefit from this enhancement. Docker should automatically select the image that
+            corresponds to the current machine architecture.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4593" target="_blank" rel="external noopener">#4593</a>
+          </li>
+          <li class="li" id="v4.3.1__4596">Earlier versions of DITA-OT generated invalid nested paragraphs in HTML output when the
+            <code class="keyword markupname xmlelement">&lt;lines&gt;</code> element was used in a paragraph. Processing has been updated to ensure that
+            lines content is treated as a block element and rendered in separate paragraphs.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4596" target="_blank" rel="external noopener">#4596</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4599" target="_blank" rel="external noopener">#4599</a>
+          </li>
+          <li class="li" id="v4.3.1__4606">Earlier versions of DITA-OT miscalculated the base directory when publications included
+            resource-only topics that were outside of the root map directory. Resource-only topics are now ignored in
+            this process to ensure that relative paths between resources are generated correctly.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4606" target="_blank" rel="external noopener">#4606</a>
+          </li>
+          <li class="li">Several dependencies have been upgraded to include the latest utility versions and fix security issues:
+            <ul class="ul">
+              <li class="li" id="v4.3.1__4595">Ant 1.10.15
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4595" target="_blank" rel="external noopener">#4595</a>
+              </li>
+              <li class="li" id="v4.3.1__4588">Logback 1.5.17
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4588" target="_blank" rel="external noopener">#4588</a>
+              </li>
+              <li class="li">Saxon 12.5
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4595" target="_blank" rel="external noopener">#4595</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.3.1+is%3Aclosed" target="_blank" rel="external noopener">4.3.1 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/4.3...4.3.1" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.3">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">4.3</span>
       <span class="ph small text-muted"> released February 15, 2025</span>
     </h2>
     
