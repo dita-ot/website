@@ -2,7 +2,7 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.3 Release Notes'
-description: 'DITA Open Toolkit 4.3.1 is a maintenance release that fixes issues
+description: 'DITA Open Toolkit 4.3.2 is a maintenance release that fixes issues
       reported in DITA-OT 4.3, which includes new init and validate subcommands that can be used to
             set up projects from a template and check files for errors before publishing. You can now publish multiple
             formats on the command line at once, add raw DITA to Markdown files, and publish bookmaps with PDF
@@ -16,7 +16,7 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.3.1</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.3.2</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">4.3</span>, which includes <span class="ph">new <span class="keyword cmdname">init</span> and <span class="keyword cmdname">validate</span> subcommands that can be used to
             set up projects from a template and check files for errors before publishing. You can now publish multiple
             formats on the command line at once, add raw DITA to Markdown files, and publish bookmaps with PDF
@@ -26,7 +26,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.3.1</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.3.2</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div></div>
   </div>
@@ -67,14 +67,75 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.3.1">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.3.1</span>
-      
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.3.2">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.3.2</span>
+      <span class="ph small text-muted">released June 5, 2025</span>
     </h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit <span class="keyword">4.3.1</span> is a maintenance release that includes the
+        <p class="p">DITA Open Toolkit <span class="keyword">4.3.2</span> is a maintenance release that includes the
           following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v4.3.2__4609">The GitHub release workflow was updated in DITA-OT 4.3.1 to build Docker images for both
+              <code class="ph codeph">linux/amd64</code> and <code class="ph codeph">linux/arm64</code> architectures, but this caused errors in
+            GitHub Actions as reported in
+            <a class="xref" href="https://github.com/dita-ot/dita-ot-action/issues/11" target="_blank" rel="external noopener">dita-ot-action#11</a>. The&nbsp;release workflow has been updated to use the official Docker actions, which
+            support multi-platform builds and push the resulting platform-specific images to Docker Hub.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4609" target="_blank" rel="external noopener">#4609</a>
+          </li>
+          <li class="li" id="v4.3.2__4620">Table processing has been updated to improve handling for broken tables. If the
+              <code class="keyword markupname xmlatt">@morerows</code> attribute value is not an integer, strict processing mode will now report an
+            exception. If a row has fewer columns than the preceding row, processing will continue instead of failing
+            with a Java exception.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4620" target="_blank" rel="external noopener">#4620</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4628" target="_blank" rel="external noopener">#4628</a>
+          </li>
+          <li class="li" id="v4.3.2__4625">Earlier versions of the map-first pre-processing routines in <code class="ph codeph">preprocess2</code> did
+            not apply stylesheets and parameters that were passed to the <code class="ph codeph">mapref</code> processing phase by
+            custom plug-ins. The <code class="ph codeph">mapref</code> module configuration has been updated to ensure that
+              <code class="ph codeph">preprocess2</code> respects the same parameters as the original pre-processing routine.
+            <a class="xref" href="https://github.com/orgs/dita-ot/discussions/4624" target="_blank" rel="external noopener">#4624</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4625" target="_blank" rel="external noopener">#4625</a>
+          </li>
+          <li class="li">Several dependencies have been upgraded to include the latest utility versions and fix security issues in
+            bundled libraries.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4632" target="_blank" rel="external noopener">#4632</a>
+            <ul class="ul">
+              <li class="li">Apache Commons IO 2.19.0</li>
+              <li class="li">ICU4J 77.1</li>
+              <li class="li">Guava 33.4.8-jre</li>
+              <li class="li">Jackson data binding library 2.19.0</li>
+              <li class="li">Jing 20241231</li>
+              <li class="li">Logback Classic Module 1.5.18</li>
+              <li class="li">Saxon 12.7</li>
+              <li class="li">SLF4J 2.0.17</li>
+              <li class="li">XML Resolver 5.3.3</li>
+            </ul>
+          </li>
+          <li class="li" id="v4.3.2__4623">The bundled <span class="keyword">Apache™ FOP</span> version has been updated to 2.11, which includes
+            PDFBox 3 and the latest versions of the <span class="keyword">Apache Batik SVG Toolkit</span> and <span class="keyword">Apache XML Graphics Commons</span> libraries.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4623" target="_blank" rel="external noopener">#4623</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4634" target="_blank" rel="external noopener">#4634</a>
+            <p class="p">(For details on recent changes, see the
+              <a class="xref" href="https://xmlgraphics.apache.org/fop/2.11/releaseNotes_2.11.html" target="_blank" rel="external noopener">Apache FOP 2.11 Release Notes</a>.)</p>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.3.2+is%3Aclosed" target="_blank" rel="external noopener">4.3.2 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/4.3.1...4.3.2" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.3.1">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 4.3.1
+      <span class="ph small text-muted">released March 23, 2025</span>
+    </h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit 4.3.1 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           
           <li class="li" id="v4.3.1__4564">DITA-OT 4.2 and later versions produced broken links in the navigation ToC when the
@@ -139,8 +200,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.3">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">4.3</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v4.3">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT <span class="keyword">4.3</span>
       <span class="ph small text-muted"> released February 15, 2025</span>
     </h2>
     
@@ -345,12 +406,11 @@ src: 'release-notes/index.dita'
           </li>
           <li class="li">Several bundled dependencies have been upgraded to the latest versions:
             <ul class="ul">
-              <li class="li" id="v4.3__4519"><span class="keyword">Apache™ FOP</span>
-                <span class="keyword">2.10</span> (including the Apache XML Graphics and Batik libraries)
+              <li class="li" id="v4.3__4519"><span class="keyword">Apache FOP</span> 2.10 (including the <span class="keyword">Apache Batik SVG Toolkit</span> and
+                  <span class="keyword">Apache XML Graphics Commons</span> libraries)
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4519" target="_blank" rel="external noopener">#4519</a>,
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4565" target="_blank" rel="external noopener">#4565</a>
               </li>
-              
             </ul>
           </li>
         </ul>
