@@ -31,6 +31,10 @@ src: 'topics/using-docker-images.dita'
       <p class="p">When a container is stopped, any changes made within the container are lost, so source files and generated
         output should be stored outside the container. These resources are attached to the container by mounting
         directories from the host machine.</p>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If you use
+        <a class="xref" href="https://podman.io/" target="_blank" rel="external noopener">Podman</a> to manage and run your containers,
+        you can substitute <span class="keyword cmdname">podman</span> for the <span class="keyword cmdname">docker</span> command in the instructions
+        below.</div></div>
     </section>
     <section class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>
       <div class="p">To run the DITA-OT image, you will need to install Docker and be able to access the GitHub Container Registry.
@@ -69,7 +73,7 @@ src: 'topics/using-docker-images.dita'
             <span class="keyword cmdname">dita</span> command.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">docker</span> run --rm \
-  -v /Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.3.1</span> \
+  -v /Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.3.2</span> \
   -i /src/input.ditamap \
   -o /src/out \
   -f html5 -v</code></pre>
@@ -88,7 +92,7 @@ src: 'topics/using-docker-images.dita'
             <p class="p">On Windows, if your <span class="ph filepath">Users</span> directory is on the <span class="ph filepath">C:\</span> drive, use
               <span class="ph filepath">/c/Users/…</span> to map the host directory:</p>
             <pre class="pre codeblock"><code>&gt; C:\Users\username&gt; <span class="keyword cmdname">docker</span> run --rm ^
-  -v /c/Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.3.1</span> ^
+  -v /c/Users/<var class="keyword varname">username</var>/source:/src ghcr.io/dita-ot/dita-ot:<span class="keyword">4.3.2</span> ^
   -i /src/input.ditamap ^
   -o /src/out ^
   -f html5 -v</code></pre>
