@@ -20,7 +20,7 @@ src: 'topics/plugin-messages.dita'
           the XML file:</span>
         <div class="itemgroup info"><pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;messages&gt;
   <em class="ph i">&lt;!-- See resources/messages.xml for the details. --&gt;</em>
-  &lt;message id="<var class="keyword varname">Prefix</var><var class="keyword varname">Number</var><var class="keyword varname">Letter</var>" type="<var class="keyword varname">error-severity</var>"&gt;
+  &lt;message id="<var class="keyword varname">Prefix</var><var class="keyword varname">Number</var><var class="keyword varname">Letter</var>" type="<var class="keyword varname">Severity</var>"&gt;
     &lt;reason&gt;Message text&lt;/reason&gt;
     &lt;response&gt;How to resolve&lt;/response&gt;
   &lt;/message&gt;
@@ -29,32 +29,38 @@ src: 'topics/plugin-messages.dita'
             <li class="li"><var class="keyword varname">Prefix</var> is a sequence of four capital letters.<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">By convention, the toolkit
                 messages use <code class="ph codeph">DOTX</code> but any sequence can be used by plug-in developers.</div></div></li>
             <li class="li"><var class="keyword varname">Number</var> is a three-digit integer.</li>
-            <li class="li"><var class="keyword varname">Letter</var> is one of the following upper-case letters: I, W, E, F. It should match the
-              value that is specified for the <code class="keyword markupname xmlatt">@type</code> attribute.<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">As the <code class="keyword markupname xmlatt">@id</code> attribute
-                is used as a whole and not decomposed by recent versions of the toolkit, you could use any sequence as
-                the message identifier. Nevertheless, to facilitate reuse of the plug-in and make it more readable by
-                other users, we recommend following these guidelines.</div></div></li>
-            <li class="li"><var class="keyword varname">error-severity</var> specifies the severity of the error. It must be one of the following
+            <li class="li"><var class="keyword varname">Letter</var> is one of the following upper-case letters: <code class="ph codeph">I</code>,
+                <code class="ph codeph">W</code>, <code class="ph codeph">E</code>, or <code class="ph codeph">F</code>. It should match the
+                <var class="keyword varname">Severity</var> level specified for the <code class="keyword markupname xmlatt">@type</code> attribute.<div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">As the
+                  <code class="keyword markupname xmlatt">@id</code> attribute is used as a whole and not decomposed by recent versions of the toolkit,
+                you could use any sequence as the message identifier. Nevertheless, to facilitate reuse of the plug-in
+                and make it more readable by other users, we recommend following these guidelines.</div></div></li>
+            <li class="li"><var class="keyword varname">Severity</var> specifies the gravity of the error. It must be one of the following
               values:
               <dl class="dl">
         
-          <dt class="dt dlterm" id="info-(i)">Info (I)</dt>
-          <dd class="dd">Informational messages highlight the progress of transformation and call attention to conditions of which
-            you should be aware. For example, draft comments are enabled and will be rendered in the output.</dd>
+          <dt class="dt dlterm" id="info"><code class="ph codeph">INFO</code></dt>
+          <dd class="dd"><cite class="cite">Informational</cite> messages are indicated with the letter <code class="ph codeph">I</code> at the end of the
+            message ID. They highlight the progress of transformation and call attention to conditions of which you
+            should be aware. For example, draft comments are enabled and will be rendered in the output.</dd>
         
         
-          <dt class="dt dlterm" id="warning-(w)">Warning (W)</dt>
-          <dd class="dd">The toolkit encountered a problem that should be corrected. Processing will continue, but the output might
-            not be as expected.</dd>
+          <dt class="dt dlterm" id="warn"><code class="ph codeph">WARN</code></dt>
+          <dd class="dd"><cite class="cite">Warnings</cite> are issued when the toolkit encounters a problem that should be corrected.
+            Processing will continue, but the output might not be as expected. Warnings are indicated with the letter
+              <code class="ph codeph">W</code> at the end of the message ID.</dd>
         
         
-          <dt class="dt dlterm" id="error-(e)">Error (E)</dt>
-          <dd class="dd">The toolkit encountered a more severe problem, and the output is affected. For example, some content is
-            missing or invalid, or the content is not rendered in the output</dd>
+          <dt class="dt dlterm" id="error"><code class="ph codeph">ERROR</code></dt>
+          <dd class="dd"><cite class="cite">Error</cite> messages are issued when the toolkit encounters a more severe problem, and the output
+            is affected. For example, some content is missing or invalid, or the content is not rendered in the output.
+            Errors are indicated with the letter <code class="ph codeph">E</code> at the end of the message ID.</dd>
         
         
-          <dt class="dt dlterm" id="fatal-(f)">Fatal (F)</dt>
-          <dd class="dd">The toolkit encountered a severe condition, processing stopped, and no output is generated.</dd>
+          <dt class="dt dlterm" id="fatal"><code class="ph codeph">FATAL</code></dt>
+          <dd class="dd"><cite class="cite">Fatal</cite> errors appear when the toolkit encounters a severe condition, processing stops, and no
+            output is generated. Fatal errors are indicated with the letter <code class="ph codeph">F</code> at the end of the message
+            ID.</dd>
         
       </dl><div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The <code class="ph codeph">FATAL</code> value throws a fatal error message in XSLT and an exception in
                 Java.</div></div>
