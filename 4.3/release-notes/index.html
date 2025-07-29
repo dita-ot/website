@@ -80,14 +80,21 @@ src: 'release-notes/index.dita'
           <li class="li" id="v4.3.4__4478">In earlier versions, links to content outside the map directory were not generated correctly in
             HTML5 output when the <span class="keyword parmname">nav-toc</span> parameter was set to <span class="keyword option">full</span> or
               <span class="keyword option">partial</span> and the <span class="keyword parmname">generate.copy.outer</span> parameter was set to
-              <span class="keyword option">3</span> to shift the output directory. Processing has been updated to follow files to their new
-            locations and write links with correct paths regardless of any folder shifts.
-            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4478" target="_blank" rel="external noopener">#4478</a>
+              <span class="keyword option">3</span> to shift the output directory. Processing now follows topics and common stylesheets to
+            their new locations and writes links with correct paths even if the folders move.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4478" target="_blank" rel="external noopener">#4478</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4641" target="_blank" rel="external noopener">#4641</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4667" target="_blank" rel="external noopener">#4667</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4675" target="_blank" rel="external noopener">#4675</a>
           </li>
           <li class="li" id="v4.3.4__4660">Additional tests have been added to verify the correct behavior of the
               <span class="keyword parmname">nav-toc</span> parameter, and existing tests have been consolidated and parameterized for
             easier maintenance.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4660" target="_blank" rel="external noopener">#4660</a>
+          </li>
+          <li class="li" id="v4.3.4__4662">Unit tests have been updated to resolve Windows-specific issues with line endings, file path
+            separators, and temporary file mappings. 
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4662" target="_blank" rel="external noopener">#4662</a>
           </li>
         </ul>
         <p class="p">For additional information on the issues resolved since the previous release, see the
