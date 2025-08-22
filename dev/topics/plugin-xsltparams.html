@@ -6,7 +6,7 @@ description: 'You can pass parameters from the Ant build to existing XSLT steps 
     certain DITA-OT transformations. This can be useful if you want to make the parameters available as global
       xsl:param values within XSLT overrides.'
 index: '../toc.html'
-commit: 'd3bde7940dc9caf5ab977fcc45fd9e5814cfdb99'
+commit: 'd4b9d5255c0bbfb8b8b680a163cab7f0db9a72bf'
 src: 'topics/plugin-xsltparams.dita'
 ---
 
@@ -22,10 +22,10 @@ src: 'topics/plugin-xsltparams.dita'
         <span class="ph cmd">Create an XML file that contains one or more Ant <code class="keyword markupname xmlelement">&lt;param&gt;</code> elements nested within a
             <code class="keyword markupname xmlelement">&lt;dummy&gt;</code> wrapper element.</span>
         <div class="itemgroup stepxmp">
-          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;dummy&gt;
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;dummy xmlns:if="ant:if" xmlns:unless="ant:unless"&gt;
   <em class="ph i">&lt;!-- Any Ant code allowed in xslt task is possible. Example: --&gt;</em>
   &lt;param name="paramNameinXSLT" expression="${antProperty}" 
-         if="antProperty"/&gt;
+         if:set="antProperty"/&gt;
 &lt;/dummy&gt;</code></pre>
         </div>
       </li><li class="li step stepexpand">
