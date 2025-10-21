@@ -2,7 +2,7 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.3 Release Notes'
-description: 'DITA Open Toolkit 4.3.4 is a maintenance release that fixes issues
+description: 'DITA Open Toolkit 4.3.5 is a maintenance release that fixes issues
       reported in DITA-OT 4.3, which includes new init and validate subcommands that can be used to
             set up projects from a template and check files for errors before publishing. You can now publish multiple
             formats on the command line at once, add raw DITA to Markdown files, and publish bookmaps with PDF
@@ -16,7 +16,7 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.3.4</span> is a maintenance release that fixes issues
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.3.5</span> is a maintenance release that fixes issues
       reported in DITA-OT <span class="keyword">4.3</span>, which includes <span class="ph">new <span class="keyword cmdname">init</span> and <span class="keyword cmdname">validate</span> subcommands that can be used to
             set up projects from a template and check files for errors before publishing. You can now publish multiple
             formats on the command line at once, add raw DITA to Markdown files, and publish bookmaps with PDF
@@ -26,7 +26,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.3.4</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.3.5</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div></div>
   </div>
@@ -67,14 +67,39 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.3.4">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.3.4</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.3.5">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.3.5</span>
+      <span class="ph small text-muted">released October 21, 2025</span>
+    </h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">4.3.5</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v4.3.5__4701">In DITA-OT 4.3.3, filtered, flagged, or duplicated topics were not copied to the temporary
+            directory, which caused builds to fail. The merge map parser and force unique filter modules have been
+            updated to ensure that attributes are correctly applied, so the topics are processed as intended.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4701" target="_blank" rel="external noopener">#4701</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4704" target="_blank" rel="external noopener">#4704</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4708" target="_blank" rel="external noopener">#4708</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.3.5+is%3Aclosed" target="_blank" rel="external noopener">4.3.5 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/4.3.4...4.3.5" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.3.4">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 4.3.4
       <span class="ph small text-muted">released July 30, 2025</span>
     </h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit <span class="keyword">4.3.4</span> is a maintenance release that includes the
-          following bug fixes.</p>
+        <p class="p">DITA Open Toolkit 4.3.4 is a maintenance release that includes the following bug fixes.</p>
         <ul class="ul">
           
           <li class="li" id="v4.3.4__4478">In earlier versions, links to content outside the map directory were not generated correctly in
@@ -93,7 +118,7 @@ src: 'release-notes/index.dita'
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4660" target="_blank" rel="external noopener">#4660</a>
           </li>
           <li class="li" id="v4.3.4__4662">Unit tests have been updated to resolve Windows-specific issues with line endings, file path
-            separators, and temporary file mappings. 
+            separators, and temporary file mappings.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4662" target="_blank" rel="external noopener">#4662</a>
           </li>
         </ul>
@@ -105,8 +130,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.3.3">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 4.3.3
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v4.3.3">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 4.3.3
       <span class="ph small text-muted">released June 22, 2025</span>
     </h2>
     <div class="body refbody">
@@ -129,8 +154,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v4.3.2">
-    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT 4.3.2
+  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v4.3.2">
+    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT 4.3.2
       <span class="ph small text-muted">released June 5, 2025</span>
     </h2>
     <div class="body refbody">
@@ -190,8 +215,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title6" id="v4.3.1">
-    <h2 class="title topictitle2" id="ariaid-title6">DITA-OT 4.3.1
+  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="v4.3.1">
+    <h2 class="title topictitle2" id="ariaid-title7">DITA-OT 4.3.1
       <span class="ph small text-muted">released March 23, 2025</span>
     </h2>
     <div class="body refbody">
@@ -261,14 +286,14 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title7" id="v4.3">
-    <h2 class="title topictitle2" id="ariaid-title7">DITA-OT <span class="keyword">4.3</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title8" id="v4.3">
+    <h2 class="title topictitle2" id="ariaid-title8">DITA-OT <span class="keyword">4.3</span>
       <span class="ph small text-muted"> released February 15, 2025</span>
     </h2>
     
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">4.3</span> includes 
+        <p class="p">DITA Open Toolkit Release <span class="keyword">4.3</span> includes
           <span class="ph" id="v4.3__summary">new <span class="keyword cmdname">init</span> and <span class="keyword cmdname">validate</span> subcommands that can be used to
             set up projects from a template and check files for errors before publishing. You can now publish multiple
             formats on the command line at once, add raw DITA to Markdown files, and publish bookmaps with PDF
@@ -369,7 +394,7 @@ src: 'release-notes/index.dita'
           </li>
         </ul>
       </section>
-      
+
       <section class="section" id="v4.3__bookmap-themes"><h3 class="title sectiontitle">Bookmap support in PDF themes</h3>
       
       <div class="p">The PDF theme plug-in <code class="ph codeph">com.elovirta.pdf</code> has been updated to version <span class="keyword">0.8</span> for better bookmap support.
