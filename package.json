@@ -81,6 +81,6 @@
     "stylelint": "^16.25.0",
     "stylelint-config-twbs-bootstrap": "^16.1.0",
     "ts-jest": "^29.4.5",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   }
 }
