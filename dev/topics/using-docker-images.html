@@ -8,7 +8,7 @@ description: '
       3.4, the DITA-OT project provides an official Docker container image that includes everything you need to run the
       toolkit and publish DITA content from a containerized environment.'
 index: '../toc.html'
-commit: '549c6e171ac20192662317c6b91ffa058b002e49'
+commit: '215b0fa8f3ff3c66243a8e47b6fb1399fb181a82'
 src: 'topics/using-docker-images.dita'
 ---
 
@@ -32,10 +32,13 @@ src: 'topics/using-docker-images.dita'
       <p class="p">When a container is stopped, any changes made within the container are lost, so source files and generated
         output should be stored outside the container. These resources are attached to the container by mounting
         directories from the host machine.</p>
-      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If you use
+      <div class="note important note_important"><span class="note__title">Important:</span> <div class="note__body">If you use
         <a class="xref" href="https://podman.io/" target="_blank" rel="external noopener">Podman</a> to manage and run your containers,
-        you can substitute <span class="keyword cmdname">podman</span> for the <span class="keyword cmdname">docker</span> command in the instructions
-        below.</div></div>
+        <a class="xref" href="https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md#using-volumes" target="_blank" rel="external noopener">you must substitute</a>
+        <kbd class="ph userinput">podman --userns=keep-id:uid=<var class="keyword varname">UID</var>,gid=<var class="keyword varname">GID</var></kbd> for the
+          <span class="keyword cmdname">docker</span> command in the instructions below. For DITA-OT versions 4.2.3 and earlier, both
+          <var class="keyword varname">UID</var> and <var class="keyword varname">GID</var> are <kbd class="ph userinput">1000</kbd>. For all later DITA-OT
+        versions, both values are <kbd class="ph userinput">1001</kbd>.</div></div>
     </section>
     <section class="section prereq"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Before you begin</h2></div>
       <div class="p">To run the DITA-OT image, you will need to install Docker and be able to access the GitHub Container Registry.
