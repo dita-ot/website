@@ -48,3 +48,17 @@ dt {
     margin: 0;
   }
 }
+
+// Mark deprecated elements
+[data-importance="deprecated"],
+[data-importance="deprecated"] + dd,
+[data-importance="deprecated"] .parmname {
+  color: $text-muted;
+}
+
+dt[data-importance="deprecated"] .parmname::after {
+  margin-left: 0.5em;
+  content: "DEPRECATED";
+  @extend .badge;
+  @extend .badge-secondary;
+}
