@@ -9,7 +9,7 @@ description: 'You can publish output using the dita command-line tool. Build par
     specified on the command line, with .properties files, or in project files that define multiple
     deliverables.'
 index: '../toc.html'
-commit: 'd3bde7940dc9caf5ab977fcc45fd9e5814cfdb99'
+commit: '2ea0162d3b5c342f61b485aebfdccc2aceee3cd8'
 src: 'topics/build-using-dita-command.dita'
 ---
 
@@ -203,6 +203,14 @@ src: 'topics/build-using-dita-command.dita'
             use:
             <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">chapter.ditamap</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">reltables.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
           </dd>
+        
+        
+          <dt class="dt pt dlterm" id="using-command-line-tool__stacktrace">
+            <span class="keyword parmname">--stacktrace</span>
+          </dt>
+          <dd class="dd pd">When processing fails on an error condition, Java stack trace is printed for debugging. Only applies when
+            <span class="keyword parmname">--verbose</span> or <span class="keyword parmname">--debug</span> options are set.</dd>
+          <dd class="dd pd ddexpand"></dd>
         
         
           <dt class="dt pt dlterm" id="using-command-line-tool__temp">
