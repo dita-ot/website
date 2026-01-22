@@ -1,0 +1,77 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Custom schemas'
+description: 'You can create a custom plug-in to set different configuration options for Markdown parsing and conversion to DITA. Custom Markdown schema configurations can be defined using the Java ServiceLoader class.'
+index: '../../toc.html'
+commit: '1bac2afd4a91e7dfebc9be7ce5d0a93511e6df79'
+src: 'reference/markdown/Custom-schemas.md'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../../topics/installing.html">Installing</a></li><li><a href="../../topics/publishing.html">Publishing</a></li><li><a href="../../parameters/index.html">Configuring</a></li><li><a href="../../topics/extending.html">Extending</a></li><li><a href="../../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../../reference/architecture.html">DITA-OT architecture</a></li><li><a href="../../reference/dita-spec-support.html">DITA specification support</a></li><li><a href="../../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../../reference/markdown-formats.html">Markdown formats</a><ul class="nav nav-list"><li><a href="../../reference/markdown/Markdown-DITA-syntax.html#markdown-dita-syntax">Markdown DITA syntax</a></li><li><a href="../../reference/markdown/MDITA-syntax.html#mdita-syntax">MDITA syntax</a></li><li><a href="../../reference/markdown/Format-comparison.html">Format comparison</a></li><li><a href="../../reference/markdown/Markdown-schemas.html">Markdown schemas</a></li><li class="active"><a href="../../reference/markdown/Custom-schemas.html">Custom schemas</a></li></ul></li><li><a href="../../reference/license.html">License</a></li><li><a href="../../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1"><h1 class="title topictitle1" id="ariaid-title1">Custom schemas</h1><div class="body"><p class="shortdesc">You can create a custom plug-in to set different configuration options for Markdown parsing and conversion to DITA. Custom Markdown schema configurations can be defined using the <a class="xref" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ServiceLoader.html" target="_blank" rel="external noopener"><code class="ph codeph">Java ServiceLoader</code></a> class.</p><p class="p">The service type interface <a class="xref" href="https://github.com/jelovirt/org.lwdita/blob/master/src/main/java/com/elovirta/dita/markdown/SchemaProvider.java" target="_blank" rel="external noopener"><code class="ph codeph">com.elovirta.dita.markdown.SchemaProvider</code></a> has two methods:</p><ul class="ul"><li class="li"><code class="ph codeph">isSupportedSchema(URI)</code> — check whether schema URI is supported by this provider.</li><li class="li"><code class="ph codeph">createMarkdownParser(URI)</code> — create <a class="xref" href="https://github.com/jelovirt/org.lwdita/blob/master/src/main/java/com/elovirta/dita/markdown/MarkdownParser.java" target="_blank" rel="external noopener"><code class="ph codeph">MarkdownParser</code></a> instance for given schema. We suggest returning a configured <a class="xref" href="https://github.com/jelovirt/org.lwdita/blob/master/src/main/java/com/elovirta/dita/markdown/MarkdownParserImpl.java" target="_blank" rel="external noopener"><code class="ph codeph">MarkdownParserImpl</code></a> instance.</li></ul></div><nav role="navigation" class="related-links"><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="Markdown-DITA-syntax.html#markdown-dita-syntax" title="In 2015, the original DITA-OT Markdown plug-in introduced a series of conventions to convert Markdown content to DITA, and vice-versa. This Markdown flavor was called “Markdown DITA”. The markdown format adds several complementary constructs to represent DITA content in Markdown, beyond those proposed for the MDITA format in the Lightweight DITA specification drafts.">Markdown DITA syntax</a></li><li class="linklist"><a class="link" href="MDITA-syntax.html#mdita-syntax" title="In 2017, the Markdown plug-in was superseded by the LwDITA plug-in, which was bundled with DITA-OT 3.0, and added new formats for Lightweight DITA. The mdita format implements the subset of Markdown features proposed in the latest specification drafts, but differs in some ways from the original Markdown DITA format.">MDITA syntax</a></li><li class="linklist"><a class="link" href="Format-comparison.html" title="Although the original Markdown DITA format and the MDITA format for LwDITA share some common syntax, there are several differences to consider when choosing which format to use.">Format comparison</a></li><li class="linklist"><a class="link" href="Markdown-schemas.html" title="Starting with version 5.0 of the LwDITA plug-in, the MarkdownReader class supports a new $schema key in the YAML front matter block. This key can be used to define parsing options in topic files for more control over how Markdown content is converted to DITA.">Markdown schemas</a></li></ul></div></nav><article class="topic nested1" aria-labelledby="ariaid-title2" id="example"><h2 class="title topictitle2" id="ariaid-title2">Example</h2><div class="body"><p class="shortdesc">Sample customization for <code class="ph codeph">urn:acme:dita:custom</code> schema.</p><p class="p">Create a <code class="ph codeph">src/main/java/com/acme/AcmeSchemaProvider.java</code> class that extends <code class="ph codeph">SchemaProvider</code> to define a scheme and what customization options it uses:</p><pre class="pre codeblock language-java"><code>package com.acme;
+
+import com.elovirta.dita.markdown.DitaRenderer;
+import com.elovirta.dita.markdown.MarkdownParser;
+import com.elovirta.dita.markdown.MarkdownParserImpl;
+import com.elovirta.dita.markdown.SchemaProvider;
+import com.vladsch.flexmark.ext.abbreviation.AbbreviationExtension;
+import com.vladsch.flexmark.ext.anchorlink.AnchorLinkExtension;
+import com.vladsch.flexmark.ext.attributes.AttributesExtension;
+import com.vladsch.flexmark.ext.autolink.AutolinkExtension;
+import com.vladsch.flexmark.ext.definition.DefinitionExtension;
+import com.vladsch.flexmark.ext.footnotes.FootnoteExtension;
+import com.vladsch.flexmark.ext.gfm.strikethrough.StrikethroughSubscriptExtension;
+import com.vladsch.flexmark.ext.ins.InsExtension;
+import com.vladsch.flexmark.ext.jekyll.tag.JekyllTagExtension;
+import com.vladsch.flexmark.ext.superscript.SuperscriptExtension;
+import com.vladsch.flexmark.ext.tables.TablesExtension;
+import com.vladsch.flexmark.ext.yaml.front.matter.YamlFrontMatterExtension;
+import com.vladsch.flexmark.parser.Parser;
+import com.vladsch.flexmark.util.data.MutableDataSet;
+
+import java.net.URI;
+
+import static java.util.Arrays.asList;
+
+public class AcmeSchemaProvider implements SchemaProvider {
+    private static final URI SCHEMA = URI.create("urn:acme:dita:custom.xsd");
+
+    @Override
+    public boolean isSupportedSchema(URI schema) {
+        return SCHEMA.equals(schema);
+    }
+
+    @Override
+    public MarkdownParser createMarkdownParser(URI schema) {
+        return new MarkdownParserImpl(new MutableDataSet()
+                // See https://github.com/vsch/flexmark-java/wiki/Extensions
+                .set(Parser.EXTENSIONS, asList(
+                        AbbreviationExtension.create(),
+                        AnchorLinkExtension.create(),
+                        AttributesExtension.create(),
+                        FootnoteExtension.create(),
+                        InsExtension.create(),
+                        JekyllTagExtension.create(),
+                        SuperscriptExtension.create(),
+                        TablesExtension.create(),
+                        AutolinkExtension.create(),
+                        YamlFrontMatterExtension.create(),
+                        DefinitionExtension.create(),
+                        StrikethroughSubscriptExtension.create()))
+                .set(DefinitionExtension.TILDE_MARKER, false)
+                .set(TablesExtension.COLUMN_SPANS, true)
+                .set(TablesExtension.APPEND_MISSING_COLUMNS, false)
+                .set(TablesExtension.DISCARD_EXTRA_COLUMNS, true)
+                .set(TablesExtension.HEADER_SEPARATOR_COLUMN_MATCH, true)
+                // See https://github.com/jelovirt/org.lwdita/wiki/Custom-schemas
+                .set(DitaRenderer.FIX_ROOT_HEADING, false)
+                .set(DitaRenderer.SHORTDESC_PARAGRAPH, false)
+                .set(DitaRenderer.ID_FROM_YAML, false)
+                .set(DitaRenderer.LW_DITA, false)
+                .set(DitaRenderer.SPECIALIZATION, false)
+                .set(DitaRenderer.SPECIALIZATION_CONCEPT, false)
+                .set(DitaRenderer.SPECIALIZATION_TASK, false)
+                .set(DitaRenderer.SPECIALIZATION_REFERENCE, false)
+                .toImmutable());
+    }
+}</code></pre><p class="p">To make <code class="ph codeph">AcmeSchemaProvider</code> discoverable, create a provider configuration file <code class="ph codeph">src/test/resources/META-INF/services/com.elovirta.dita.markdown.SchemaProvider</code>:</p><pre class="pre codeblock"><code>com.acme.AcmeSchemaProvider</code></pre><p class="p">A sample project is available in the <a class="xref" href="https://github.com/jelovirt/org.lwdita-sample" target="_blank" rel="external noopener">org.lwdita-sample GitHub project</a> repository. It contains a Gradle build to compile the code and package it into a DITA-OT plug-in.</p><p class="p">The following configuration options can be specified in custom schemas:</p></div></article><article class="topic nested1" aria-labelledby="ariaid-title3" id="parsing"><h2 class="title topictitle2" id="ariaid-title3">Parsing</h2><div class="body"><table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="parsing__entry__1">Static Field</th><th class="entry" id="parsing__entry__2">Default</th><th class="entry" id="parsing__entry__3">Description</th></tr></thead><tbody class="tbody"><tr class="row"><td class="entry" headers="parsing__entry__1"><code class="ph codeph">DitaRenderer.FIX_ROOT_HEADING</code></td><td class="entry" headers="parsing__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="parsing__entry__3">If root heading is missing, generate based on <code class="ph codeph">title</code> key from YAML header or filename.</td></tr><tr class="row"><td class="entry" headers="parsing__entry__1"><code class="ph codeph">DitaRenderer.RAW_DITA</code></td><td class="entry" headers="parsing__entry__2"><code class="ph codeph">true</code></td><td class="entry" headers="parsing__entry__3">Support raw DITA in Markdown.</td></tr></tbody></table></div></article><article class="topic nested1" aria-labelledby="ariaid-title4" id="conversion-to-dita"><h2 class="title topictitle2" id="ariaid-title4">Conversion to DITA</h2><div class="body"><table class="table"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead"><tr class="row"><th class="entry" id="conversion-to-dita__entry__1">Static Field</th><th class="entry" id="conversion-to-dita__entry__2">Default</th><th class="entry" id="conversion-to-dita__entry__3">Description</th></tr></thead><tbody class="tbody"><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.SHORTDESC_PARAGRAPH</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Convert first paragraph to shortdesc.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.TIGHT_LIST</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">true</code></td><td class="entry" headers="conversion-to-dita__entry__3">Support tight lists.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.ID_FROM_YAML</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Use <code class="ph codeph">id</code> key from YAML header for topic @id.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.LW_DITA</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Convert to XDITA instead of DITA. Deprecated, use <code class="ph codeph">DitaRenderer.MDITA_EXTENDED_PROFILE</code> instead.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.SPECIALIZATION</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Convert to concept/task/reference if root heading has matching class.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.SPECIALIZATION_CONCEPT</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Convert to DITA concept.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.SPECIALIZATION_TASK</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Convert to DITA task.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.SPECIALIZATION_REFERENCE</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Convert to DITA concept.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.MDITA_CORE_PROFILE</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Parse as MDITA core profile and convert to XDITA.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.MDITA_EXTENDED_PROFILE</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Parse as MDITA extended profile and convert to XDITA.</td></tr><tr class="row"><td class="entry" headers="conversion-to-dita__entry__1"><code class="ph codeph">DitaRenderer.MAP</code></td><td class="entry" headers="conversion-to-dita__entry__2"><code class="ph codeph">false</code></td><td class="entry" headers="conversion-to-dita__entry__3">Convert to DITA map.</td></tr></tbody></table></div></article></article></main>

@@ -1,0 +1,38 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Migrating to release 4.1'
+description: 'DITA-OT 4.1 includes a new version of the Lightweight DITA plug-in with significant
+      enhancements to Markdown processing, and updates for the latest DITA 2.0 draft standard.'
+index: '../toc.html'
+commit: '1bac2afd4a91e7dfebc9be7ce5d0a93511e6df79'
+src: 'topics/migrating-to-4.1.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../topics/migrating-to-4.3.html">To 4.3</a></li><li><a href="../topics/migrating-to-4.2.html">To 4.2</a></li><li class="active"><a href="../topics/migrating-to-4.1.html">To 4.1</a></li><li><a href="../topics/migrating-to-4.0.html">To 4.0</a></li><li><a href="../topics/migrating-to-3.7.html">To 3.7</a></li><li><a href="../topics/migrating-to-3.6.html">To 3.6</a></li><li><a href="../topics/migrating-to-3.5.html">To 3.5</a></li><li><a href="../topics/migrating-to-3.4.html">To 3.4</a></li><li><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 4.1</h1>
+  
+
+  
+
+  <div class="body refbody"><p class="shortdesc">DITA-OT 4.1 includes <span class="ph" id="migrating-to-4.1__summary">a new version of the Lightweight DITA plug-in with significant
+      enhancements to Markdown processing, and updates for the latest DITA 2.0 draft standard</span>.</p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This topic provides a summary of changes in DITA-OT 4.1 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the
+        <a class="xref" href="https://www.dita-ot.org/4.1/release-notes/" target="_blank" rel="external noopener">DITA-OT 4.1 Release Notes</a>.</div></div>
+    </section>
+
+    <section class="section" id="migrating-to-4.1__4.1-inline-styles"><h2 class="title sectiontitle">Legacy <code class="keyword markupname xmlelement">&lt;tt&gt;</code> style attributes moved to CSS</h2>
+      
+      
+      <p class="p">The HTML5 plug-in has been updated to remove the remaining inline style attributes that prevented custom
+        plug-ins from overriding the monospace font presentation of teletype <code class="keyword markupname xmlelement">&lt;tt&gt;</code> elements.</p>
+      <p class="p">These changes move the default teletype styling to CSS to allow users to override the presentation in custom
+        stylesheets. The output is visually equivalent to the results generated by previous toolkit versions.</p>
+      <div class="note important note_important"><span class="note__title">Important:</span> <div class="note__body">In publishing environments that do not use the default CSS files, these styles may need to
+        be implemented in custom stylesheets.</div></div>
+    </section>
+  </div>
+</article></main>

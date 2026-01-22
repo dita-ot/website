@@ -1,0 +1,48 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Rebuilding the DITA-OT documentation'
+description: 'When you add or remove plug-ins, you can rebuild the documentation to update the information on the
+    extension points, messages, and parameters that are available in your environment.'
+index: '../toc.html'
+commit: '1bac2afd4a91e7dfebc9be7ce5d0a93511e6df79'
+src: 'topics/rebuilding-docs.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a></li><li class="active"><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Rebuilding the DITA-OT documentation</h1>
+  
+  
+  
+  <div class="body taskbody"><p class="shortdesc">When you add or remove plug-ins, you can rebuild the documentation to update the information on the
+    extension points, messages, and parameters that are available in your environment.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+      <p class="p">DITA-OT ships with a <a href="https://gradle.org" target="_blank" rel="external noopener"><span class="keyword">Gradle</span></a> build script that enables you to rebuild the toolkit
+        documentation. The build script reads the toolkit’s plug-in configuration and automatically regenerates topics
+        and properties file templates based on the extension points, messages, and parameters provided by the installed
+        plug-ins.</p>
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">If you have installed new plug-ins, you may need to add the corresponding generated topics
+        to the DITA maps to include the new information in the output.</div></div></section>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Change to the <span class="ph filepath">docsrc/</span> subdirectory of the DITA-OT installation.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Run one of the following commands.</span>
+        <ul class="ul choices">
+          <li class="li choice" data-platform="linux mac">On Linux and macOS:
+            <pre class="pre codeblock"><code>./gradlew <var class="keyword varname">target</var></code></pre></li>
+          <li class="li choice" data-platform="windows">On Windows: <pre class="pre codeblock"><code>gradlew.bat <var class="keyword varname">target</var></code></pre></li>
+        </ul>
+        <div class="itemgroup info">
+          <div class="p">The <var class="keyword varname">target</var> parameter is optional and specifies a transformation type. It takes the
+            following values:
+            <ul class="ul">
+              <li class="li"><span class="keyword option">html</span></li>
+              <li class="li"><span class="keyword option">htmlhelp</span></li>
+              <li class="li"><span class="keyword option">pdf</span></li>
+            </ul>
+          </div>
+          <p class="p">If you do not specify a target, HTML5 and PDF output is generated.</p>
+        </div>
+      </li></ol></section>
+  </div>
+</article></main>

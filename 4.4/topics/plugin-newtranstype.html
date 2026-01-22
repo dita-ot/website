@@ -1,0 +1,95 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Adding a new transformation type'
+description: 'Plug-ins can add an entirely new transformation type. The new transformation type can be very simple, such
+    as an HTML build that creates an additional control file; it also can be very complex, adding any number of new
+    processing steps.'
+index: '../toc.html'
+commit: '1bac2afd4a91e7dfebc9be7ce5d0a93511e6df79'
+src: 'topics/plugin-newtranstype.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a><ul class="nav nav-list"><li><a href="../topics/plugin-set-parameters.html">Setting parameters</a></li><li><a href="../topics/plugin-anttarget.html">Adding a new Ant target</a></li><li><a href="../topics/plugin-antpreprocess.html">Adding a pre-processing step</a></li><li class="active"><a href="../topics/plugin-newtranstype.html">Adding a new output format</a></li><li><a href="../topics/plugin-preprocess-xslt.html">Processing topics with XSLT</a></li><li><a href="../topics/plugin-xsltparams.html">Adding new parameters</a></li><li><a href="../topics/plugin-overridestyle.html">Overriding XSLT steps</a></li><li><a href="../topics/plugin-javalib.html">Adding a Java library</a></li><li><a href="../topics/plugin-messages.html">Adding new messages</a></li><li><a href="../topics/plugin-newextensions.html">New extension points</a></li><li><a href="../topics/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../topics/plugin-rewrite-rules.html">Rewriting file names</a></li><li><a href="../topics/implement-saxon-customizations.html">Saxon customizations</a></li></ul></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Adding a new transformation type</h1>
+  
+  
+  
+  <div class="body taskbody"><p class="shortdesc">Plug-ins can add an entirely new transformation type. The new transformation type can be very simple, such
+    as an HTML build that creates an additional control file; it also can be very complex, adding any number of new
+    processing steps.</p>
+    <section class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">About this task</h2></div>
+      <p class="p">You can use the <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element to define a new transformation type with any new
+        custom parameters that are supported.</p>
+      <p class="p">When a transformation type is defined, the build expects Ant code to be integrated to define the transformation
+        process. The Ant code must define a target based on the name of the transformation type; if the transformation
+        type is "new-transform", the Ant code must define a target named <span class="keyword parmname">dita2new-transform</span>.</p>
+    </section>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Create an Ant project file for the new transformation. This project file must define a target named
+            "dita2<var class="keyword varname">new-transtype</var>," where <var class="keyword varname">new-transtype</var> is the name of the new
+          transformation type. </span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Create a <span class="ph filepath">plugin.xml</span> with the following content:</span>
+        <div class="itemgroup info">
+          <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;plugin id="<var class="keyword varname">plugin-id</var>"&gt;
+  &lt;transtype name="<var class="keyword varname">new-transtype</var>"/&gt;
+  <strong class="ph b">&lt;feature extension="dita.transtype.print" value="<var class="keyword varname">new-transtype</var>"/&gt;</strong>
+  &lt;feature extension="ant.import" file="<var class="keyword varname">ant-file</var>"/&gt;
+&lt;/plugin&gt;</code></pre>
+          <p class="p">where:</p>
+          <ul class="ul">
+            <li class="li"><var class="keyword varname">plugin-id </var> is the plug-in identifier, for example, com.dita-ot.pdf.</li>
+            <li class="li"><var class="keyword varname">new-transtype</var> is the name of the new transformation, for example, dita-ot-pdf.</li>
+            <li class="li"><var class="keyword varname">ant-file</var> is the name of the Ant file, for example,
+                <span class="ph filepath">build-dita-ot-pdf.xml</span>.</li>
+          </ul>
+          <p class="p">Exclude the content that is highlighted in bold if the transformation is not intended for print.</p>
+        </div>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Use the <span class="keyword cmdname">dita install</span> subcommand to install the plug-in.</span>
+        <div class="itemgroup info">
+          <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">For more information, see
+            <a class="xref" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a>.</div></div></div>
+      </li></ol></section>
+    <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>You now can use the new transformation.</section>
+    <section class="example"><h2 class="title sectiontitle">Examples</h2>
+      
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Creating a new print transformation</figcaption>
+        
+        <p class="p">The following <span class="ph filepath">plugin.xml</span> file defines a new transformation type named "print-pdf"; it
+          also defines the transformation type to be a print type. The build will look for a
+            <span class="keyword parmname">dita2print-pdf</span> target.</p>
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"?&gt;
+
+&lt;plugin id="com.example.print-pdf"&gt;
+  &lt;require plugin="org.dita.pdf2"/&gt;
+  &lt;transtype name="print-pdf" extends="pdf" desc="PDF on A4 paper"/&gt;
+  &lt;feature extension="dita.transtype.print" value="print-pdf"/&gt;
+  &lt;feature extension="ant.import" file="integrator.xml"/&gt;
+&lt;/plugin&gt;</code></pre>
+        <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For a complete sample plug-in with all required code, see
+          <a class="xref" href="pdf-customization-example.html" title="This scenario walks through the process of creating a very simple plug-in (com.example.print-pdf) that creates a new transformation type: print-pdf.">Example: Creating a simple PDF plug-in</a>.</div></div>
+      </figure>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 2. </span>Defining new parameters</figcaption>
+        
+        <p class="p">If your custom transformation type supports custom parameters, they can be defined in nested
+            <code class="keyword markupname xmlelement">&lt;param&gt;</code> elements within the <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element.</p>
+        <p class="p">While the <span class="ph filepath">org.dita.html5</span> plug-in was separated from <code class="ph codeph">common-html</code> in
+          version 2.4, the following example shows how earlier versions of that plug-in used the
+            <code class="keyword markupname xmlelement">&lt;transtype&gt;</code> element to extend the common HTML transformation with a new
+            <span class="keyword option">html5</span> transformation type and define a new <span class="keyword parmname">nav-toc</span> parameter with
+          three possible values:</p>
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code><strong class="ph b">&lt;transtype name="html5" extends="common-html" desc="HTML5"&gt;</strong>
+  &lt;param name="nav-toc" type="enum" 
+         desc="Specifies whether to generate navigation in topic pages."&gt;
+    &lt;val default="true" desc="No TOC"&gt;none&lt;/val&gt;
+    &lt;val desc="Partial TOC that shows the current topic"&gt;partial&lt;/val&gt;
+    &lt;val desc="Full TOC"&gt;full&lt;/val&gt;
+  &lt;/param&gt;
+&lt;/transtype&gt;</code></pre>
+      </figure>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="plugins-installing.html" title="Use the dita install subcommand to install plug-ins.">Installing plug-ins</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../extension-points/plugin-extension-points-general.html" title="These extension points enable you to extend DITA-OT. You can add Ant targets or imports; add a Java library to the classpath parameter; add a new transformation type; extend a catalog file; add new diagnostic messages, and more.">General extension points</a></li><li class="linklist"><a class="link" href="plugin-configfile.html" title="The plug-in descriptor file (plugin.xml) controls all aspects of a plug-in, making each extension visible to the rest of the toolkit. The file uses pre-defined extension points to locate changes, and then integrates those changes into the core DITA-OT code.">Plug-in descriptor file</a></li></ul></div></nav></article></main>

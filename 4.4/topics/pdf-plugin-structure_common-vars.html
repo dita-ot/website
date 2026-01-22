@@ -1,0 +1,38 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Variable overrides'
+description: 'The common/vars folder houses custom variable definitions that override the standard
+    definitions in org.dita.pdf2/cfg/common/vars.'
+index: '../toc.html'
+commit: '1bac2afd4a91e7dfebc9be7ce5d0a93511e6df79'
+src: 'topics/pdf-plugin-structure_common-vars.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a><ul class="nav nav-list"><li><a href="../topics/pdf-customization-plugin-types.html">Types of PDF plug-ins</a></li><li><a href="../topics/pdf-plugin-structure.html">PDF plug-in structure</a><ul class="nav nav-list"><li><a href="../topics/pdf-plugin-structure_common-artwork.html">Custom artwork</a></li><li><a href="../topics/pdf-plugin-structure_common-index.html">Index configuration</a></li><li class="active"><a href="../topics/pdf-plugin-structure_common-vars.html">Variable overrides</a></li><li><a href="../topics/pdf-plugin-structure_fo-attrs.html">Custom attributes</a></li><li><a href="../topics/pdf-plugin-structure_fo-i18n.html">Internationalization</a></li><li><a href="../topics/pdf-plugin-structure_fo-xsl.html">Custom stylesheets</a></li></ul></li><li><a href="../topics/pdf-customization-example.html">Simple PDF plug-in</a></li><li><a href="../topics/pdf-customization-resources.html">PDF plug-in resources</a></li></ul></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Variable overrides</h1>
+  
+  
+  <div class="body"><p class="shortdesc">The <span class="ph filepath">common/vars</span> folder houses custom variable definitions that override the standard
+    definitions in <span class="ph filepath">org.dita.pdf2/cfg/common/vars</span>.</p>
+    <p class="p">As with index configuration, each file contains data for a single language, and should take that language’s ISO
+      639-1 language designator as its name.</p>
+    <p class="p">Variable files contain a set of <code class="keyword markupname xmlelement">&lt;variable&gt;</code> elements, identified by their
+        <code class="keyword markupname xmlatt">@id</code> attribute. The variable definitions are used to store static text that is used as part of
+      the published outputs. For example, page headers, hyperlinks, etc. The id attribute for each variable should make
+      it clear how the variable text is being used.</p>
+    <p class="p">Some variables contain <code class="keyword markupname xmlelement">&lt;param&gt;</code> elements which indicate parameter values that are
+      substituted at publish time by the XSL. For example, a page number that is being generated as part of the
+      publishing process might be identified by <code class="ph codeph">&lt;param ref-name="number"/&gt;</code> When editing or translating a
+      variable file, these should be included in the translation, though they can be moved and rearranged within the
+        <code class="keyword markupname xmlelement">&lt;variable&gt;</code> content as needed.</p>
+    <p class="p">The best way to start editing a custom variables file is by making a copy of the original from
+        <span class="ph filepath">org.dita.pdf2/cfg/common/vars</span> and making changes as desired. When adding a new language,
+      start from an existing language’s list of variables and translate each entry as needed.</p>
+    <p class="p">Note that unchanged <code class="keyword markupname xmlelement">&lt;variable&gt;</code> elements can be omitted: the custom variables file need
+      only include those <code class="keyword markupname xmlelement">&lt;variable&gt;</code> elements which you have modified. Variables not found in the
+      custom file will are taken from the standard variable files.</p>
+    <p class="p">Applying a custom variable does not require modifying the <span class="ph filepath">catalog.xml</span> file. The publishing
+      process will automatically use any custom variables definitions in place of the original ones.</p>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="plugin-addgeneratedtext.html" title="Generated text is the term for strings that are automatically added by the build process, such as the word “Note” before the contents of a note element.">How to add or modify generated text strings</a></li></ul></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="pdf-plugin-structure_common-artwork.html" title="The common/artwork folder houses custom artwork files that override the standard icons in org.dita.pdf2/cfg/common/artwork.">Custom artwork</a></li><li class="linklist"><a class="link" href="pdf-plugin-structure_common-index.html" title="The common/index folder houses custom index definition files that override the standard definitions in org.dita.pdf2/cfg/common/index.">Index configuration</a></li><li class="linklist"><a class="link" href="pdf-plugin-structure_fo-attrs.html" title="The fo/attrs folder houses custom attribute configuration files that override the standard attributes in org.dita.pdf2/cfg/fo/attrs.">Custom attributes</a></li><li class="linklist"><a class="link" href="pdf-plugin-structure_fo-i18n.html" title="The fo/i18n folder houses custom internationalization files that override the standard configurations in org.dita.pdf2/cfg/fo/i18n.">Internationalization configuration</a></li><li class="linklist"><a class="link" href="pdf-plugin-structure_fo-xsl.html" title="The fo/xsl folder houses custom stylesheet files that override the default stylesheets in org.dita.pdf2/xsl/fo.">Custom stylesheets</a></li></ul></div></nav></article></main>

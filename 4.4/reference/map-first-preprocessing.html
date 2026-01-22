@@ -1,0 +1,116 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Map-first pre-processing'
+description: 'DITA-OT provides a map-first pre-processing option as an alternative to the
+      default preprocess operation. The method, which was introduced in DITA-OT 2.5 as an experimental
+      feature, has since been improved and is ready for use in production scenarios. Map-first pre-processing provides
+      the same functionality as the default preprocess, but takes a different
+    approach.'
+index: '../toc.html'
+commit: '1bac2afd4a91e7dfebc9be7ce5d0a93511e6df79'
+src: 'reference/map-first-preprocessing.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a><ul class="nav nav-list"><li><a href="../reference/architecture.html">DITA-OT architecture</a><ul class="nav nav-list"><li><a href="../reference/processing-structure.html">Processing structure</a></li><li class="active"><a href="../reference/map-first-preprocessing.html">Map-first pre-processing</a></li><li><a href="../reference/processing-pipeline-modules.html">Processing modules</a></li><li><a href="../reference/processing-order.html">Processing order</a></li><li><a href="../reference/store-api.html">Store API</a></li><li><a href="../reference/preprocessing.html">Pre-processing modules</a></li><li><a href="../reference/html-based-processing.html">HTML-based processing modules</a></li><li><a href="../reference/pdf-transform.html">PDF processing modules</a></li></ul></li><li><a href="../reference/dita-spec-support.html">DITA specification support</a></li><li><a href="../extension-points/plugin-extension-points.html">Extension points</a></li><li><a href="../reference/markdown-formats.html">Markdown formats</a></li><li><a href="../reference/license.html">License</a></li><li><a href="../topics/dita-and-dita-ot-resources.html">Resources</a></li></ul></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Map-first pre-processing</h1>
+  
+  
+  
+  <div class="body conbody"><p class="shortdesc"><span class="ph" id="ID__map-first-preproc-desc">DITA-OT provides a map-first pre-processing option as an alternative to the
+      default <code class="ph codeph">preprocess</code> operation. The method, which was introduced in DITA-OT 2.5 as an experimental
+      feature, has since been improved and is ready for use in production scenarios. Map-first pre-processing provides
+      the same functionality as the default <code class="ph codeph">preprocess</code>, but takes a different
+    approach.</span></p>
+    <p class="p" id="ID__map-first-preproc-gain">Whereas the default pre-processing routine handles both maps and topics at the same
+      time, often switching back and forth between map operations and topic operations, the map-first approach only
+      begins processing topics after nearly all map processing is complete. This simplifies the processing logic and
+      creates cleaner module responsibilities, which makes it easier to process only those topics that are actually
+      referenced after filtering, for example, or to only process the map to validate the map structure.</p>
+    <p class="p">The current pre-processing architecture was established during the DITA 1.0 era when there were fewer DITA
+      features that operated on the map level. Initially, the difference between processing modes was not that great.
+      DITA 1.2 and 1.3 introduced many more map-level features, such as keys and key scopes, that make it difficult to
+      reliably work with topics before all map features have been resolved. </p>
+    <p class="p">The original pre-processing operation already handles many map operations first, but this was not the original
+      design and requires regular refactoring to handle edge cases. The new map-first pre-processing is designed with
+      this model in mind, improving the overall processing flow and making it more formal about the map-first model. The
+      new model also takes advantage of hashed topic file names in the temporary directory, which simplifies many
+      processing steps, and is better able to handle topics referenced outside of the map directory (that case has
+      resulted in a variety of issues with the original model).</p>
+    <p class="p">As of DITA-OT 4.2, the map-first pre-processing pipeline also supports additional subject scheme features.</p>
+    <div class="note note note_note" id="ID__map-first-preproc-note"><span class="note__title">Note:</span> <div class="note__body">The map-first pre-processing option is enabled by default in DITA-OT 3.0 for PDF
+      and HTML Help. These formats were chosen because they generate a compiled result file, so temporarily hashed file
+      names should all be invisible to the build. After further testing and feedback, the new option has been enabled
+      for HTML5 output as of DITA-OT 4.2.</div></div>
+    <section class="section"><h2 class="title sectiontitle">How to use map-first pre-processing</h2>
+      
+      <p class="p">To use (or test) map-first pre-processing, call the <code class="ph codeph">preprocess2</code> Ant target in your custom
+        transformation types instead of the <code class="ph codeph">preprocess</code> target.</p>
+      <p class="p">For example, if you have a custom HTML5 transformation type named "myhtml", then you may have a plug-in
+        extension that looks this:</p>
+      <pre class="pre codeblock language-xml"><code>&lt;!-- Simple variant: set properties and call default HTML5 --&gt;
+&lt;target name="dita2myhtml" depends="myhtml.init,dita2html5"/&gt;
+</code></pre>
+      <p class="p">This type of extension is quite common, and is used to set default properties for your environment followed by
+        a normal build to use those properties. As of DITA-OT 4.2, this approach will inherit the map-first
+        pre-processing routine from the HTML5 transformation.</p>
+      <p class="p">In earlier versions, you’d need to replace <code class="ph codeph">dita2html5</code> with the normal HTML5 steps, swapping
+        out <code class="ph codeph">preprocess</code> for <code class="ph codeph">preprocess2</code>:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;!-- Simple variant: set properties and call default HTML5 --&gt;
+&lt;target name="dita2myhtml" 
+        depends="myhtml.init,
+                 html5.init,
+                 build-init,
+                 <strong class="ph b">preprocess2,</strong>
+                 html5.topic,
+                 html5.map,
+                 html5.css"/&gt;</code></pre>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If you use this simple method for customized PDF or HTML Help builds, you will automatically be using
+          <code class="ph codeph">preprocess2</code>.</div></div>
+      <p class="p">Some custom transformation types already require you to repeat the default dependencies, in which case you
+        should already call <code class="ph codeph">preprocess</code> directly, as in the following:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;!-- More complex variant: add processing steps to default HTML5 --&gt;
+&lt;target name="dita2myhtml"
+        depends="myhtml.init,
+                 build-init,
+                 preprocess,
+                 local-extensions-after-preprocess,
+                 html5.topic,
+                 html5.map,
+                 html5.css"/&gt;</code></pre>
+      <p class="p">In such cases, the modification is much easier – simply add a <code class="ph codeph">2</code> to the existing
+          <code class="ph codeph">preprocess</code> target.</p>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">How to test in a production environment</h2>
+      
+      <p class="p">In some cases, you may be responsible for maintaining transformation types that are actually run by many people
+        on your team or around a company. In this case, you likely need to maintain your existing transformation types
+        based on the backwards-compatible <code class="ph codeph">preprocess</code> modules, but also want to provide your colleagues
+        with a way to test their own documents using <code class="ph codeph">preprocess2</code>.</p>
+      <p class="p">There are several ways to do this. One fairly straightforward approach would be to create a new custom
+        transformation type that is exactly the same, except for pre-processing. For example, if you have a local HTML
+        variant called <code class="ph codeph">myhtml</code> as above, instead of modifying that transformation directly, you could
+        create a second transformation type called <code class="ph codeph">myhtml-beta</code> that provides exactly the same support,
+        but with the new map-first pre-processing:</p>
+      <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code><em class="ph i">&lt;!-- Original "myhtml" is not modified, used for production --&gt;</em>
+&lt;target name="dita2myhtml5" depends="myhtml.init,dita2html5"/&gt;
+
+<em class="ph i">&lt;!-- "myhtml-beta" used to test and provide feedback on preprocess2 --&gt;</em>
+&lt;target name="dita2myhtml-beta" 
+        depends="myhtml.init,
+                 html5.init,
+                 build-init,
+                 <strong class="ph b">preprocess2,</strong>
+                 html5.topic,
+                 html5.map,
+                 html5.css"/&gt;</code></pre>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">Known limitations</h2>
+      
+      <p class="p">The internal extension points that run before or after individual steps in the
+        original <code class="ph codeph">preprocess</code> pipeline (<code class="ph codeph">preprocess.*.pre/preprocess.*.post</code>) are not
+        available in the newer map-first pre-processing pipeline (<code class="ph codeph">preprocess2</code>), which is used in the PDF
+        and HTML Help transformations as of DITA-OT 3.0, and in HTML5 and Normalized DITA output as of DITA-OT 4.2.</p>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://www.oxygenxml.com/events/2017/dita-ot_day.html#preprocess_2" target="_blank" rel="external noopener" title="Overview of preprocess2, the replacement module for the original preprocessing routines. This session explains the new approach, why we developed it, and why should you care.">We shall call it preprocess2</a></li></ul></div></nav></article></main>

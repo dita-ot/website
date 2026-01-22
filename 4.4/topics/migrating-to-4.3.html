@@ -1,0 +1,74 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Migrating to release 4.3'
+description: 'DITA-OT 4.3 includes new init and validate
+      subcommands that can be used to set up projects from a template and check files for errors before publishing. You
+      can now publish multiple formats on the command line at once, add raw DITA to Markdown files, and publish bookmaps
+      with PDF themes.'
+index: '../toc.html'
+commit: '1bac2afd4a91e7dfebc9be7ce5d0a93511e6df79'
+src: 'topics/migrating-to-4.3.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li class="active"><a href="../topics/migrating-to-4.3.html">To 4.3</a></li><li><a href="../topics/migrating-to-4.2.html">To 4.2</a></li><li><a href="../topics/migrating-to-4.1.html">To 4.1</a></li><li><a href="../topics/migrating-to-4.0.html">To 4.0</a></li><li><a href="../topics/migrating-to-3.7.html">To 3.7</a></li><li><a href="../topics/migrating-to-3.6.html">To 3.6</a></li><li><a href="../topics/migrating-to-3.5.html">To 3.5</a></li><li><a href="../topics/migrating-to-3.4.html">To 3.4</a></li><li><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 4.3</h1>
+  
+
+  
+
+  <div class="body refbody"><p class="shortdesc">DITA-OT 4.3 includes <span class="ph" id="migrating-to-4.3__summary">new <span class="keyword cmdname">init</span> and <span class="keyword cmdname">validate</span>
+      subcommands that can be used to set up projects from a template and check files for errors before publishing. You
+      can now publish multiple formats on the command line at once, add raw DITA to Markdown files, and publish bookmaps
+      with PDF themes</span>.</p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This topic provides a summary of changes in DITA-OT 4.3 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the
+        <a class="xref" href="https://www.dita-ot.org/4.3/release-notes/" target="_blank" rel="external noopener">DITA-OT 4.3 Release Notes</a>.</div></div>
+    </section>
+
+    <section class="section" id="migrating-to-4.3__bookmap-themes"><h2 class="title sectiontitle">Bookmap support in PDF themes</h2>
+      
+      <div class="p">The PDF theme plug-in <code class="ph codeph">com.elovirta.pdf</code> has been updated to version <span class="keyword">0.8</span> for better bookmap support.
+        <a class="xref" href="https://github.com/jelovirt/pdf-generator/pull/111" target="_blank" rel="external noopener">#111</a>
+        You&nbsp;can&nbsp;now style the following bookmap elements in a YAML or JSON theme without building a custom PDF plug-in:
+        <ul class="ul">
+          <li class="li"><code class="keyword markupname xmlelement">&lt;part&gt;</code></li>
+          <li class="li"><code class="keyword markupname xmlelement">&lt;chapter&gt;</code></li>
+          <li class="li"><code class="keyword markupname xmlelement">&lt;appendix&gt;</code></li>
+          <li class="li"><code class="keyword markupname xmlelement">&lt;index&gt;</code></li>
+        </ul>
+      </div>
+      <p class="p">Table of contents (ToC) styles have moved to the root <code class="ph codeph">style</code> key. ToC styling has also been
+        extended for better bookmap support, so you can now specify styles for each level with dedicated keys such as
+          <code class="ph codeph">style-toc-part</code>, <code class="ph codeph">style-toc-chapter</code>, etc.</p>
+      <p class="p">Parts and chapters now also support their own local contents listings, which you can enable by setting the
+        corresponding layout key, for example <code class="ph codeph">chapter-layout: MINITOC</code>. You can then define styling for
+        each level via keys like <code class="ph codeph">style-part-toc-chapter</code>, or <code class="ph codeph">style-chapter-toc-1</code>.</p>
+      <p class="p">A new <code class="ph codeph">default</code> theme provides basic styling such as font settings, indentation, and title
+        numbering for a range of commonly used elements. This theme is not intended for publishing as is, but can serve
+        as a foundation for custom themes, and reduce the number of elements you need to style yourself. To use the
+        default theme as the baseline for your own custom theme, add <code class="ph codeph">extends: default</code> to your theme
+        file.
+        <a class="xref" href="https://github.com/jelovirt/pdf-generator/pull/112" target="_blank" rel="external noopener">#112</a>,
+        <a class="xref" href="https://github.com/jelovirt/pdf-generator/pull/114" target="_blank" rel="external noopener">#114</a>
+      </p>
+    </section>
+
+    <section class="section" id="migrating-to-4.3__legacy-samples"><h2 class="title sectiontitle">Legacy sample files removed</h2>
+      
+      
+      
+      
+      
+      
+      <div class="p" id="migrating-to-4.3__restoring-samples">The legacy Ant samples and garage sample files have been removed from the
+          <span class="ph filepath">docsrc/samples</span> subfolder of the installation directory. If your workflow relies on these
+        files, you can restore them to the original location with the new <span class="keyword cmdname">init</span> subcommand:
+        <pre class="pre codeblock"><code><span class="ph filepath"><span class="keyword cmdname">dita</span></span> <span class="keyword cmdname">init</span> samples <span class="ph filepath"><var class="keyword varname">path/to/dita-ot-dir</var>/docsrc/samples</span></code></pre>
+      </div>
+    </section>
+
+  </div>
+</article></main>

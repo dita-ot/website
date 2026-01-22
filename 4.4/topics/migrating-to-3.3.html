@@ -1,0 +1,107 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Migrating to release 3.3'
+description: 'DITA-OT 3.3 includes new attribute sets for HTML5 customization, support for custom
+      integration processing, rotated table cells in PDF output, and hazard statements in HTML output.'
+index: '../toc.html'
+commit: '1bac2afd4a91e7dfebc9be7ce5d0a93511e6df79'
+src: 'topics/migrating-to-3.3.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a><ul class="nav nav-list"><li><a href="../topics/migrating-to-4.3.html">To 4.3</a></li><li><a href="../topics/migrating-to-4.2.html">To 4.2</a></li><li><a href="../topics/migrating-to-4.1.html">To 4.1</a></li><li><a href="../topics/migrating-to-4.0.html">To 4.0</a></li><li><a href="../topics/migrating-to-3.7.html">To 3.7</a></li><li><a href="../topics/migrating-to-3.6.html">To 3.6</a></li><li><a href="../topics/migrating-to-3.5.html">To 3.5</a></li><li><a href="../topics/migrating-to-3.4.html">To 3.4</a></li><li class="active"><a href="../topics/migrating-to-3.3.html">To 3.3</a></li><li><a href="../topics/migrating-to-3.2.html">To 3.2</a></li><li><a href="../topics/migrating-to-3.1.html">To 3.1</a></li><li><a href="../topics/migrating-to-3.0.html">To 3.0</a></li><li><a href="../topics/migrating-to-2.5.html">To 2.5</a></li><li><a href="../topics/migrating-to-2.4.html">To 2.4</a></li><li><a href="../topics/migrating-to-2.3.html">To 2.3</a></li><li><a href="../topics/migrating-to-2.2.html">To 2.2</a></li><li><a href="../topics/migrating-to-2.1.html">To 2.1</a></li><li><a href="../topics/migrating-to-2.0.html">To 2.0</a></li><li><a href="../topics/migrating-to-1.8.html">To 1.8</a></li><li><a href="../topics/migrating-to-1.7.html">To 1.7</a></li><li><a href="../topics/migrating-to-1.6.html">To 1.6</a></li><li><a href="../topics/migrating-to-1.5.4.html">To 1.5.4</a></li></ul></li></ul></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+
+  <h1 class="title topictitle1" id="ariaid-title1">Migrating to release 3.3</h1>
+  
+
+  
+  
+  <div class="body refbody"><p class="shortdesc">DITA-OT 3.3 includes <span class="ph" id="migrating-to-3.3__summary">new attribute sets for HTML5 customization, support for custom
+      integration processing, rotated table cells in PDF output, and hazard statements in HTML output</span>.</p>
+    <section class="section">
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">This topic provides a summary of changes in DITA-OT 3.3 that may require modifications to custom stylesheets
+        or plug-ins. For more information on changes in this release, see the
+        <a class="xref" href="https://www.dita-ot.org/3.3/release-notes/" target="_blank" rel="external noopener">DITA-OT 3.3 Release Notes</a>.</div></div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Secure connections to the plug-in registry</h2>
+      
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">To ensure data integrity during the plug-in installation process, Transport Layer Security
+        (TLS) will soon be required to access the plug-in registry. If you are using DITA-OT 3.3, 3.2, or 3.2.1 and are
+        unable to upgrade to the latest version, modify the <code class="ph codeph">registry</code> key in the
+          <span class="ph filepath">config/configuration.properties</span> file to switch the URI schema to
+          <code class="ph codeph">http<strong class="ph b">s</strong>://</code>, so the entry reads <code class="ph codeph">https://plugins.dita-ot.org/</code>.</div></div>
+      <p class="p">For more information, see
+        <a class="xref" href="plugins-registry.html" title="DITA-OT supports a plug-in registry that makes it easier to discover and install new plug-ins. The registry provides a searchable list of plug-ins at dita-ot.org/plugins.">Adding plug-ins via the registry</a>.</p>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Base plug-in files moved to <span class="ph filepath">plugins</span> directory</h2>
+      
+      
+      
+      <p class="p">Various XSLT files and other resources have been moved from the root of the DITA-OT installation directory to
+        the base plug-in directory <span class="ph filepath">plugins/org.dita.base</span>.</p>
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">There is no longer an <span class="ph filepath">xsl/</span> directory in the installation root.</div></div>
+      <p class="p">If your plug-ins use the <code class="ph codeph">plugin</code> URI scheme as recommended in the
+        <a class="xref" href="plugin-coding-conventions.html" title="To ensure custom plug-ins work well with the core toolkit code and remain compatible with future releases, the DITA Open Toolkit project recommends that plug-ins use modern development practices and common coding patterns.">Plug-in coding conventions</a>, this change should not require any modifications to custom plug-in
+        code:</p>
+      <blockquote class="lq">
+        <p class="p">In XSLT, use the <code class="ph codeph">plugin</code> URI scheme in <code class="keyword markupname xmlelement">&lt;xsl:import&gt;</code> and
+            <code class="keyword markupname xmlelement">&lt;xsl:include&gt;</code> to reference files in other plug-ins.</p>
+        <p class="p">Instead of:</p>
+        <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="../../org.dita.base/xsl/common/output-message.xsl"/&gt;</code></pre></div>
+        <p class="p">use:</p>
+        <div class="p"><pre class="pre codeblock language-xml"><code>&lt;xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/&gt;</code></pre></div>
+        <p class="p">As with the plug-in directory property in Ant, this allows plug-ins to resolve to the correct directory even
+          when a plug-in moves to a new location. The plug-in is referenced using the syntax
+              <code class="ph codeph">plugin:<var class="keyword varname">plugin-id</var>:<var class="keyword varname">path/within/plugin/file.xsl</var></code>.</p>
+      </blockquote>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Relocated catalog</h2>
+      
+      
+      
+      <p class="p">
+        <span class="ph" id="migrating-to-3.3__catalog">Along with the other base plug-in files, the <span class="ph filepath">catalog-dita.xml</span> file has
+          been moved from the root of the DITA-OT installation directory to <span class="ph filepath">plugins/org.dita.base</span>.
+          External systems that rely on this catalog should be updated with the new location. Ant scripts and DITA-OT
+          plug-ins should use the plug-in directory property to refer to the file as
+            <code class="ph codeph">${dita.plugin.org.dita.base.dir}/catalog-dita.xml</code>. A placeholder with a
+            <code class="keyword markupname xmlelement">&lt;nextCatalog&gt;</code> entry is provided in the original location for backwards compatibility,
+          but this file may be removed in an upcoming release.</span></p>
+      <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Legacy catalog placeholder content</figcaption>
+        
+        <pre class="pre codeblock language-xml"><code>&lt;nextCatalog catalog="plugins/org.dita.base/catalog-dita.xml"/&gt;</code></pre>
+      </figure>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">Deprecated properties</h2>
+      
+      
+      
+      <p class="p"><span class="ph" id="migrating-to-3.3__templates">The <code class="ph codeph">templates</code> key in configuration properties has been deprecated in favor
+          of the <code class="keyword markupname xmlelement">&lt;template&gt;</code> element in <span class="ph filepath">plugin.xml</span>.</span></p>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">New attribute sets for HTML5 customization</h2>
+      
+      
+      
+      
+      <div class="p" id="migrating-to-3.3__html5-att-sets">A series of new attribute sets has been added to the default HTML5 transformation to
+        facilitate customization with additional ARIA roles, attributes, or CSS classes. Attribute sets are provided
+        for:
+        <ul class="ul">
+          <li class="li"><code class="ph codeph">article</code></li>
+          <li class="li"><code class="ph codeph">banner</code></li>
+          <li class="li"><code class="ph codeph">footer</code></li>
+          <li class="li"><code class="ph codeph">main</code></li>
+          <li class="li"><code class="ph codeph">navigation</code></li>
+          <li class="li"><code class="ph codeph">toc</code></li>
+        </ul>If you have previously copied XSL templates (or template modes) to custom plug-ins only to add classes
+        required by web frameworks such as Bootstrap or Foundation (or your company CSS), you may be able to simplify
+        your customizations by using the new attribute sets instead of overriding the default templates.</div>
+    </section>
+  </div>
+</article></main>
