@@ -5,7 +5,7 @@ title: 'Installing plug-ins in a Docker image'
 description: 'To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own
       Dockerfile and specify the official DITA-OT image as the basis for your image.'
 index: '../toc.html'
-commit: '3c49fa851374449ec45a7f596247c7acda9317fd'
+commit: 'c024ba2051d515c8da4a667a1ab9b623d5b05ba4'
 src: 'topics/creating-docker-images.dita'
 ---
 
@@ -27,7 +27,7 @@ src: 'topics/creating-docker-images.dita'
           <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
 FROM ghcr.io/dita-ot/dita-ot:4.4</code></pre>
         </div>
-      </li><li class="li step stepexpand"><strong>Optional: </strong>
+      </li><li class="li step stepexpand" data-importance="optional"><strong>Optional: </strong>
         <span class="ph cmd">You can extend your image with a <code class="ph codeph">RUN</code> declaration that runs the <span class="keyword cmdname">dita</span>
           command from the container to install a custom plug-in, and specify the filename or URL of the plug-in’s
           distribution ZIP file.</span>
@@ -35,7 +35,7 @@ FROM ghcr.io/dita-ot/dita-ot:4.4</code></pre>
           <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Install a custom plug-in from a remote location:
 RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip</code></pre>
         </div>
-      </li><li class="li step stepexpand"><strong>Optional: </strong>
+      </li><li class="li step stepexpand" data-importance="optional"><strong>Optional: </strong>
         <span class="ph cmd">You can also install custom plug-ins from the main DITA-OT plug-in registry at
           <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a>, or from your company plug-in registry.</span>
         <div class="itemgroup stepxmp">

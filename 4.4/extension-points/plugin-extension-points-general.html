@@ -6,7 +6,7 @@ description: 'These extension points enable you to extend DITA-OT. You can add A
     to the classpath parameter; add a new transformation type; extend a catalog file; add new
     diagnostic messages, and more.'
 index: '../toc.html'
-commit: '3c49fa851374449ec45a7f596247c7acda9317fd'
+commit: 'c024ba2051d515c8da4a667a1ab9b623d5b05ba4'
 src: 'extension-points/plugin-extension-points-general.dita'
 ---
 
@@ -29,7 +29,7 @@ src: 'extension-points/plugin-extension-points-general.dita'
             library to the DITA-OT classpath.</dd>
         
         
-          <dt class="dt dlterm" id="dita.conductor.target"><span class="keyword parmname">dita.conductor.target</span></dt>
+          <dt class="dt dlterm" id="dita.conductor.target" data-importance="deprecated"><span class="keyword parmname">dita.conductor.target</span></dt>
           <dd class="dd">Adds an Ant
             import to the main Ant build file.
             <div class="p">
@@ -57,8 +57,8 @@ src: 'extension-points/plugin-extension-points-general.dita'
           </dd>
         
         
-          <dt class="dt dlterm" id="dita.specialization.catalog"><span class="keyword parmname">dita.specialization.catalog</span></dt>
-          <dd class="dd">Adds the
+          <dt class="dt dlterm" data-importance="deprecated" id="dita.specialization.catalog"><span class="keyword parmname">dita.specialization.catalog</span></dt>
+          <dd class="dd" data-importance="deprecated">Adds the
             content of a catalog file to the main DITA-OT catalog file. <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">This extension point is
               deprecated; use <code class="ph codeph">dita.specialization.catalog.relative</code> instead.</div></div></dd>
         
