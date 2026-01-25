@@ -2,12 +2,11 @@
 # Generated from DITA source
 layout: 'base'
 title: 'DITA Open Toolkit 4.4 Release Notes'
-description: 'DITA Open Toolkit 4.4 includes support for additional
-            features in the upcoming DITA 2.0 standard, including the keytext and
-              linktitle elements, new class attributes for navtitle,
-            and new chunking code.'
+description: 'DITA Open Toolkit 4.4 provides a new JSON log option and support for additional features in the upcoming DITA 2.0 standard,
+            including the keytext and linktitle elements, new class
+            attributes for navtitle, and new chunking code.'
 index: '../toc.html'
-commit: 'b39fa9b7139fb991aa21fe20bacdcbec38a5dc8b'
+commit: '070c86bfcc66126adbaa210d8d4f0a6034136d51'
 src: 'release-notes/index.dita'
 ---
 
@@ -16,10 +15,9 @@ src: 'release-notes/index.dita'
   
 
   <div class="abstract">
-    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.4</span> includes <span class="ph">support for additional
-            features in the upcoming DITA 2.0 standard, including the <code class="keyword markupname xmlelement">&lt;keytext&gt;</code> and
-              <code class="keyword markupname xmlelement">&lt;linktitle&gt;</code> elements, new class attributes for <code class="keyword markupname xmlelement">&lt;navtitle&gt;</code>,
-            and new chunking code</span>.</p>
+    <p class="shortdesc">DITA Open Toolkit <span class="keyword">4.4</span> provides <span class="ph">a new JSON log option and support for additional features in the upcoming DITA 2.0 standard,
+            including the <code class="keyword markupname xmlelement">&lt;keytext&gt;</code> and <code class="keyword markupname xmlelement">&lt;linktitle&gt;</code> elements, new class
+            attributes for <code class="keyword markupname xmlelement">&lt;navtitle&gt;</code>, and new chunking code</span>.</p>
     <p class="p">DITA-OT releases follow
         <a class="xref" href="https://semver.org" target="_blank" rel="external noopener">semantic versioning</a> guidelines. Version numbers use the <var class="keyword varname">major.minor.patch</var> syntax, where
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
@@ -73,10 +71,10 @@ src: 'release-notes/index.dita'
     
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit Release <span class="keyword">4.4</span> includes <span class="ph" id="v4.4__summary">support for additional
-            features in the upcoming DITA 2.0 standard, including the <code class="keyword markupname xmlelement">&lt;keytext&gt;</code> and
-              <code class="keyword markupname xmlelement">&lt;linktitle&gt;</code> elements, new class attributes for <code class="keyword markupname xmlelement">&lt;navtitle&gt;</code>,
-            and new chunking code</span>.</p>
+        <p class="p">DITA Open Toolkit Release <span class="keyword">4.4</span> provides 
+          <span class="ph" id="v4.4__summary">a new JSON log option and support for additional features in the upcoming DITA 2.0 standard,
+            including the <code class="keyword markupname xmlelement">&lt;keytext&gt;</code> and <code class="keyword markupname xmlelement">&lt;linktitle&gt;</code> elements, new class
+            attributes for <code class="keyword markupname xmlelement">&lt;navtitle&gt;</code>, and new chunking code</span>.</p>
       </section>
 
       
@@ -84,8 +82,8 @@ src: 'release-notes/index.dita'
       <section class="section" id="v4.4__dita-2-0-preview"><h3 class="title sectiontitle"><strong class="ph b badge badge-primary">Preview</strong> DITA 2.0 updates</h3>
         
         <p class="p">In addition to the
-          <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 4.4 provides a preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest drafts of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of January 22, 2024).">DITA 2.0 preview support</a> provided in DITA-OT 3.5 – 4.3, this release includes updated processing for
-          the latest draft versions of the DITA 2.0 grammar files from OASIS (as of <span class="keyword">January 22, 2024</span>).</p>
+          <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 4.4 provides a preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest drafts of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of January 25, 2026).">DITA 2.0 preview support</a> provided in DITA-OT 3.5 – 4.3, this release includes updated processing for
+          the latest draft versions of the DITA 2.0 grammar files from OASIS.</p>
         <ul class="ul">
         <li class="li">
           <p class="p" id="v4.4__4644">DITA-OT now supports the DITA 2.0 <code class="keyword markupname xmlelement">&lt;keytext&gt;</code> element and implements the
@@ -136,11 +134,41 @@ src: 'release-notes/index.dita'
             these new elements.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4734" target="_blank" rel="external noopener">#4734</a>
           </p></li>
+        <li class="li">
+          <p class="p" id="v4.4__4744">DITA 2.0 grammar files have been updated to the latest draft versions from OASIS (as of <span class="keyword">January 25, 2026</span>). This update removes the <code class="keyword markupname xmlelement">&lt;state&gt;</code> and
+              <code class="keyword markupname xmlelement">&lt;unknown&gt;</code> elements from the base grammar, changes the new
+              <code class="keyword markupname xmlatt">@outputclass</code> attribute in DITAVAL to <code class="keyword markupname xmlatt">@add-outputclass</code>, and modifies how
+            default values are set for <code class="keyword markupname xmlatt">@title-role</code> in the Alternative Titles RNG module, for improved
+            editing experience.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4744" target="_blank" rel="external noopener">#4744</a>
+          </p>
+          <div class="p">In the technical content grammar, several elements have been removed from the Glossary Entry module:
+            <ul class="ul">
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossAbbreviation&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossAlternateFor&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossPartOfSpeech&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossProperty&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossScopeNote&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossShortForm&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossStatus&gt;</code></li>
+            </ul>
+          </div></li>
       </ul>
         <p class="p">DITA documents that reference the draft grammar files can be parsed, and where features
       overlap with DITA 1.3, those features will work as expected.</p>
         <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">Other new or revised features proposed for DITA 2.0 are not yet supported. Additional
         features will be implemented in future versions of DITA-OT as the specification evolves.</div></div>
+      </section>
+
+      <section class="section" id="v4.4__4581"><h3 class="title sectiontitle">JSON logging</h3>
+        
+        <p class="p">A new <span class="keyword parmname">--logger=json</span> option enables structured JSON log output for easier log processing
+          and analysis.
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4581" target="_blank" rel="external noopener">#4581</a>
+        </p>
+        <p class="p">When logging to standard output, each line is a separate JSON object. When logging to a file, the output is
+          formatted as a JSON array. This structured format simplifies integration with log aggregation tools and
+          automated build pipelines that need to parse DITA-OT output programmatically.</p>
       </section>
 
       <section class="section" id="v4.4__4716"><h3 class="title sectiontitle">URI dependency tracking</h3>
@@ -152,6 +180,9 @@ src: 'release-notes/index.dita'
           tracking between files and topics. The new <code class="ph codeph">Graph</code> and <code class="ph codeph">UriGraph</code> classes enable
           DITA-OT to model and traverse relationships between resources, which will support future enhancements to
           content processing and validation.</p>
+        <p class="p" id="v4.4__4685">A generic rose tree data structure has also been added to replace earlier ad hoc implementations.
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4685" target="_blank" rel="external noopener">#4685</a>
+        </p>
       </section>
 
       <section class="section" id="v4.4__enhancements"><h3 class="title sectiontitle">Enhancements and changes</h3>
@@ -202,6 +233,16 @@ src: 'release-notes/index.dita'
           </li>
           <li class="li">Several bundled dependencies have been upgraded to the latest versions:
             <ul class="ul">
+              <li class="li">Gradle has been updated to version 9.3.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4727" target="_blank" rel="external noopener">#4727</a>,
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4740" target="_blank" rel="external noopener">#4740</a>
+              </li>
+              <li class="li">JUnit has been updated to version 6.0.2.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4740" target="_blank" rel="external noopener">#4740</a>
+              </li>
+              <li class="li">Logback core has been updated to 1.5.19 to address a security vulnerability.
+                <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4743" target="_blank" rel="external noopener">#4743</a>
+              </li>
               <li class="li">Saxon has been updated to version 12.9, which includes minor bug fixes.
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4712" target="_blank" rel="external noopener">#4712</a>,
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4739" target="_blank" rel="external noopener">#4739</a>
@@ -316,6 +357,11 @@ src: 'release-notes/index.dita'
             modify section title color along with other headings and text.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4731" target="_blank" rel="external noopener">#4731</a>
           </li>
+          <li class="li" id="v4.4__4732">The PDF2 parameter <span class="keyword parmname">outputFile.base</span> has been marked as deprecated. (Use
+              <span class="keyword parmname">args.output.base</span> instead.)
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4732" target="_blank" rel="external noopener">#4732</a>,
+            <a class="xref" href="https://github.com/dita-ot/docs/issues/648" target="_blank" rel="external noopener">dita-ot/docs#648</a>
+          </li>
           <li class="li" id="v4.4__4733">A stale reference to the deprecated <span class="keyword parmname">args.logdir</span> parameter has been removed
             from test code. This parameter was deprecated in DITA-OT 2.5 and removed in 3.4.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4733" target="_blank" rel="external noopener">#4733</a>
@@ -353,7 +399,7 @@ src: 'release-notes/index.dita'
           <li class="li">
             <a class="xref" href="../parameters/dita-command-arguments.html" title="The dita command takes mandatory arguments to process DITA content. Subcommands can be used to manage plug-ins, or print information about the current configuration. A series of options are available to modify the command behavior or specify additional configuration parameters.">Arguments and options for the dita command</a></li>
           <li class="li">
-            <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 4.4 provides a preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest drafts of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of January 22, 2024).">DITA 2.0 preview support</a></li>
+            <a class="xref" href="../reference/dita-v2-0-support.html" title="DITA Open Toolkit 4.4 provides a preview of features for the upcoming OASIS DITA 2.0 specification. This preliminary processing support is provided on the basis of the latest drafts of the DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of January 25, 2026).">DITA 2.0 preview support</a></li>
           <li class="li">
             <a class="xref" href="../topics/dita-ot-day-videos-intro-2025.html" title="February 16, 2025 in Copenhagen, Denmark.">DITA-OT Day 2025 videos</a></li>
           <li class="li">

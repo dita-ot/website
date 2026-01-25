@@ -5,9 +5,9 @@ title: 'DITA 2.0 preview support'
 description: 'DITA Open Toolkit 4.4 provides a preview of features for the upcoming OASIS DITA
     2.0 specification. This preliminary processing support is provided on the basis of the latest drafts of the
     DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of 
-    January 22, 2024).'
+    January 25, 2026).'
 index: '../toc.html'
-commit: 'b39fa9b7139fb991aa21fe20bacdcbec38a5dc8b'
+commit: '070c86bfcc66126adbaa210d8d4f0a6034136d51'
 src: 'reference/dita-v2-0-support.dita'
 ---
 
@@ -21,7 +21,7 @@ src: 'reference/dita-v2-0-support.dita'
   <div class="body conbody"><p class="shortdesc">DITA Open Toolkit <span class="keyword">4.4</span> provides a preview of features for the upcoming OASIS DITA
     2.0 specification. This preliminary processing support is provided on the basis of the latest drafts of the
     DITA 2.0 DTD and RELAX&nbsp;NG grammar files from OASIS (as of 
-    <span class="keyword">January 22, 2024</span>).</p>
+    <span class="keyword">January 25, 2026</span>).</p>
     <p class="p" id="in__grammar-files">DITA documents that reference the draft grammar files can be parsed, and where features
       overlap with DITA 1.3, those features will work as expected.</p>
     <section class="section" id="in__v3.5"><h2 class="title sectiontitle">DITA-OT 3.5
@@ -272,6 +272,25 @@ src: 'reference/dita-v2-0-support.dita'
             these new elements.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4734" target="_blank" rel="external noopener">#4734</a>
           </p></li>
+        <li class="li">
+          <p class="p" id="in__4744">DITA 2.0 grammar files have been updated to the latest draft versions from OASIS (as of <span class="keyword">January 25, 2026</span>). This update removes the <code class="keyword markupname xmlelement">&lt;state&gt;</code> and
+              <code class="keyword markupname xmlelement">&lt;unknown&gt;</code> elements from the base grammar, changes the new
+              <code class="keyword markupname xmlatt">@outputclass</code> attribute in DITAVAL to <code class="keyword markupname xmlatt">@add-outputclass</code>, and modifies how
+            default values are set for <code class="keyword markupname xmlatt">@title-role</code> in the Alternative Titles RNG module, for improved
+            editing experience.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4744" target="_blank" rel="external noopener">#4744</a>
+          </p>
+          <div class="p">In the technical content grammar, several elements have been removed from the Glossary Entry module:
+            <ul class="ul">
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossAbbreviation&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossAlternateFor&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossPartOfSpeech&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossProperty&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossScopeNote&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossShortForm&gt;</code></li>
+              <li class="li"><code class="keyword markupname xmlelement">&lt;glossStatus&gt;</code></li>
+            </ul>
+          </div></li>
       </ul>
     </section>
     <section class="section">
