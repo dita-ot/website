@@ -6,7 +6,7 @@ description: 'DITA Open Toolkit 4.4 provides a new JSON log option and support f
             including the keytext and linktitle elements, new class
             attributes for navtitle, and new chunking code.'
 index: '../toc.html'
-commit: '070c86bfcc66126adbaa210d8d4f0a6034136d51'
+commit: '3f69e5244f9ad3bb7803f9aec1404f38f3569342'
 src: 'release-notes/index.dita'
 ---
 
@@ -171,20 +171,6 @@ src: 'release-notes/index.dita'
           automated build pipelines that need to parse DITA-OT output programmatically.</p>
       </section>
 
-      <section class="section" id="v4.4__4716"><h3 class="title sectiontitle">URI dependency tracking</h3>
-        
-        <p class="p">A new directed graph data structure has been added to track dependencies between resources identified by URI.
-          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4716" target="_blank" rel="external noopener">#4716</a>
-        </p>
-        <p class="p">This internal infrastructure improvement provides a foundation for more sophisticated link and dependency
-          tracking between files and topics. The new <code class="ph codeph">Graph</code> and <code class="ph codeph">UriGraph</code> classes enable
-          DITA-OT to model and traverse relationships between resources, which will support future enhancements to
-          content processing and validation.</p>
-        <p class="p" id="v4.4__4685">A generic rose tree data structure has also been added to replace earlier ad hoc implementations.
-          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4685" target="_blank" rel="external noopener">#4685</a>
-        </p>
-      </section>
-
       <section class="section" id="v4.4__enhancements"><h3 class="title sectiontitle">Enhancements and changes</h3>
         
         
@@ -289,6 +275,17 @@ src: 'release-notes/index.dita'
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4718" target="_blank" rel="external noopener">#4718</a>,
                 <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4724" target="_blank" rel="external noopener">#4724</a>
               </li>
+              <li class="li" id="v4.4__4685">
+                <p class="p">A new directed graph data structure has been added to track dependencies between resources identified
+                  by URI. A generic rose tree data structure has also been added to replace earlier ad hoc
+                  implementations.
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4685" target="_blank" rel="external noopener">#4685</a>,
+                  <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4716" target="_blank" rel="external noopener">#4716</a></p>
+                <p class="p" id="v4.4__4716">These internal infrastructure improvements provide a foundation for more sophisticated link
+                  and dependency tracking between files and topics. The new <code class="ph codeph">Graph</code> and
+                    <code class="ph codeph">UriGraph</code> classes enable DITA-OT to model and traverse relationships between
+                  resources, which will support future enhancements to content processing and validation.</p>
+              </li>
             </ul>
           </li>
         </ul>
@@ -379,7 +376,7 @@ src: 'release-notes/index.dita'
           <li class="li">Jarno Elovirta</li>
           <li class="li">Dávid Bertalan</li>
           <li class="li">Roger Sheen</li>
-          <li class="li">Robert D Anderson</li>
+          <li class="li">Robert D. Anderson</li>
           <li class="li">Chris Papademetrious</li>
           <li class="li">Joshua Johnson</li>
           <li class="li">Julien Lacour</li>
