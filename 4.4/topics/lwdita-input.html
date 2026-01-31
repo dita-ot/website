@@ -1,0 +1,108 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Preview support for Lightweight DITA'
+description: 'DITA-OT provides preview support for the authoring formats proposed for
+    Lightweight DITA, or “LwDITA”. The XDITA, MDITA and HDITA
+    formats are alternative representations of DITA content in XML, Markdown and HTML5.'
+index: '../toc.html'
+src: 'topics/lwdita-input.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a><ul class="nav nav-list"><li><a href="../release-notes/index.html">Release Notes</a></li><li><a href="../topics/input-formats.html">Authoring formats</a><ul class="nav nav-list"><li><a href="../topics/dita-xml-input.html">Standard DITA XML</a></li><li><a href="../topics/markdown-input.html">Markdown input</a></li><li class="active"><a href="../topics/lwdita-input.html">Lightweight DITA</a></li></ul></li><li><a href="../topics/output-formats.html">Output formats</a></li></ul></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Preview support for Lightweight DITA</h1>
+  
+  
+  
+
+  <div class="body"><p class="shortdesc">DITA-OT provides preview support for the authoring formats proposed for
+    <a class="xref" href="http://docs.oasis-open.org/dita/LwDITA/v1.0/cn01/LwDITA-v1.0-cn01.pdf" target="_blank" rel="external noopener">Lightweight DITA</a>, or “<dfn class="term">LwDITA</dfn>”. The <dfn class="term">XDITA</dfn>, <dfn class="term">MDITA</dfn> and <dfn class="term">HDITA</dfn>
+    formats are alternative representations of DITA content in XML, Markdown and HTML5.</p>
+    <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">Since
+      <a class="xref" href="http://docs.oasis-open.org/dita/LwDITA/v1.0/cn01/LwDITA-v1.0-cn01.pdf" target="_blank" rel="external noopener">Lightweight DITA</a> has not yet been released as a formal specification, the implementation for
+        <dfn class="term">XDITA</dfn>, <dfn class="term">MDITA</dfn> and <dfn class="term">HDITA</dfn> authoring formats is subject to change. Future
+      versions of DITA Open Toolkit will be updated as LwDITA evolves.</div></div>
+    <section class="section"><h2 class="title sectiontitle">XDITA</h2>
+      
+      <p class="p"><dfn class="term">XDITA</dfn> is the LwDITA authoring format that uses XML to structure information. XDITA is a subset of
+        DITA, with new multimedia element types added to support interoperability with HTML5. XDITA is designed for
+        users who want to write DITA content but who do not want (or need) the full power of DITA.</p>
+      <p class="p">The XDITA parser included in the <code class="ph codeph">org.lwdita</code> plug-in provides preliminary support for XDITA
+        maps and XDITA topics.</p>
+      <p class="p">To apply XDITA-specific processing to topics in an XDITA map or a full DITA 1.3 map, set the
+          <code class="keyword markupname xmlatt">@format</code> attribute on a <code class="keyword markupname xmlelement">&lt;topicref&gt;</code> to <code class="ph codeph">xdita</code>:</p>
+      <div class="p">
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;map&gt;
+  &lt;topicref href="xdita-topic.xml" <strong class="ph b">format="xdita"</strong>/&gt;
+&lt;/map&gt;</code></pre>
+      </div>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For examples of cross-format content sharing between topics in <dfn class="term">XDITA</dfn>,
+          <dfn class="term">HDITA</dfn>, extended-profile <dfn class="term">MDITA</dfn>, and DITA 1.3, see the LwDITA sample files in the
+        DITA-OT installation directory under <span class="ph filepath">plugins/org.oasis-open.xdita.v0_2_2/samples</span>.</div></div>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">MDITA</h2>
+      
+      <p class="p"><dfn class="term">MDITA</dfn> is the LwDITA authoring format based on Markdown. It is designed for users who want to write
+        structured content with the minimum of overhead, but who also want to take advantage of the reuse mechanisms
+        associated with the DITA standard and the multi-channel publishing afforded by standard DITA tooling.</p>
+      <p class="p">Recent proposals for LwDITA include two profiles for authoring MDITA topics:</p>
+      <ul class="ul">
+        <li class="li">The “<dfn class="term">Core profile</dfn>” is based on
+          <a class="xref" href="https://github.github.com/gfm/" target="_blank" rel="external noopener">GitHub-Flavored Markdown</a> and includes elements that are common to many other Markdown implementations.</li>
+        <li class="li">The “<dfn class="term">Extended profile</dfn>” borrows additional features from other flavors of Markdown to represent
+          a broader range of DITA content with existing plain-text syntax conventions.</li>
+      </ul>
+      <p class="p">The MDITA parser included in the <code class="ph codeph">org.lwdita</code> plug-in provides preliminary support for these
+        profiles and additional Markdown constructs as described in the
+        <a class="xref" href="../reference/markdown/MDITA-syntax.html" title="In 2017, the Markdown plug-in was superseded by the LwDITA plug-in, which was bundled with DITA-OT 3.0, and added new formats for Lightweight DITA. The mdita format implements the subset of Markdown features proposed in the latest specification drafts, but differs in some ways from the original Markdown DITA format.">MDITA syntax</a>.</p>
+      <p class="p">To apply the stricter LwDITA-specific processing to Markdown topics, set the <code class="keyword markupname xmlatt">@format</code> attribute
+        to <code class="ph codeph">mdita</code>:</p>
+      <div class="p">
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;map&gt;
+  &lt;topicref href="mdita-topic.md" <strong class="ph b">format="mdita"</strong>/&gt;
+&lt;/map&gt;</code></pre>
+      </div>
+      <p class="p">In this case, the first paragraph in the topic will be treated as a short description, for example, and
+        additional metadata can be specified for the topic via a YAML front matter block.</p>
+      <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">For details on the differences in
+        <a class="xref" href="../reference/markdown-formats.html" title="The following topics show how DITA XML constructs are represented in Markdown and MDITA, provide details on common syntax, differences between the markdown and mdita formats, and describe additional configuration options.">Markdown formats</a>, see
+        <a class="xref" href="../reference/markdown/Markdown-DITA-syntax.html" title="In 2015, the original DITA-OT Markdown plug-in introduced a series of conventions to convert Markdown content to DITA, and vice-versa. This Markdown flavor was called “Markdown DITA”. The markdown format adds several complementary constructs to represent DITA content in Markdown, beyond those proposed for the MDITA format in the Lightweight DITA specification drafts.">Markdown DITA syntax</a>,
+        <a class="xref" href="../reference/markdown/MDITA-syntax.html" title="In 2017, the Markdown plug-in was superseded by the LwDITA plug-in, which was bundled with DITA-OT 3.0, and added new formats for Lightweight DITA. The mdita format implements the subset of Markdown features proposed in the latest specification drafts, but differs in some ways from the original Markdown DITA format.">MDITA syntax</a>, and
+        <a class="xref" href="../reference/markdown/Format-comparison.html" title="Although the original Markdown DITA format and the MDITA format for LwDITA share some common syntax, there are several differences to consider when choosing which format to use.">Format comparison</a>.</div></div>
+    </section>
+
+    <section class="section"><h2 class="title sectiontitle">HDITA</h2>
+      
+      <p class="p"><dfn class="term">HDITA</dfn> is the LwDITA authoring format based on HTML5, which is intended to support structured
+        content authoring with tools designed for HTML authoring. HDITA also uses custom data attributes to provide
+        interoperability with DITA.</p>
+      <p class="p">The HDITA parser included in the <code class="ph codeph">org.lwdita</code> plug-in provides preliminary support for these
+        constructs.</p>
+      <p class="p">To apply LwDITA-specific processing to HTML topics, set the <code class="keyword markupname xmlatt">@format</code> attribute to
+          <code class="ph codeph">hdita</code>:</p>
+      <div class="p">
+        <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;map&gt;
+  &lt;topicref href="hdita-topic.html" <strong class="ph b">format="hdita"</strong>/&gt;
+&lt;/map&gt;</code></pre>
+      </div>
+      <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">The HDITA map format is not yet supported. To include HDITA content, use an XDITA map or a
+        DITA 1.3 map.</div></div>
+    </section>
+    <section class="section" id="lwdita-input__conditional-processing"><h2 class="title sectiontitle">Using conditional processing in MDITA and HDITA</h2>
+      
+      <p class="p">When you set up conditional processing in MDITA and HDITA, use the <code class="keyword markupname xmlatt">@data-props</code> attribute in the
+        element that will have the conditional processing applied. In the <span class="ph filepath">.ditaval</span> file, however,
+        use the <code class="keyword markupname xmlatt">@props</code> attribute.</p>
+    </section>
+    <section class="section"><h2 class="title sectiontitle">Converting lightweight formats to DITA XML</h2>
+      
+      <p class="p">When you add LwDITA topics to a DITA publication, the content is temporarily converted to DITA in the
+        background when generating other output formats like HTML or PDF, but the source files remain unchanged.</p>
+      <p class="p">If you prefer to maintain this content in DITA in the future, you can generate DITA output by passing the
+          <span class="keyword parmname">--format</span>=<span class="keyword option">dita</span> option on the command line.</p>
+      <p class="p">This converts all input files (both LwDITA formats and DITA XML) to
+        <a class="xref" href="dita2dita.html" title="The dita transformation generates normalized topics and maps from DITA input. The normalized output includes the results of DITA Open Toolkit pre-processing operations, which resolve map references, keys, content references, code references and push metadata back and forth between maps and topics.">Normalized DITA</a>. You can then copy the generated DITA files from the output
+        folder to your project and replace references to the lightweight topics with their DITA equivalents.</p>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="dita-xml-input.html" title="DITA Open Toolkit supports all released versions of the OASIS DITA specification, including 1.0, 1.1, 1.2, and 1.3. As of release 4.4, DITA-OT also provides an initial preview of features for the latest draft of the upcoming DITA 2.0 standard.">Standard DITA XML</a></li><li class="linklist"><a class="link" href="markdown-input.html" title="Markdown is a lightweight markup language that allows you to write using an easy-to-read plain text format and convert to structurally valid markup as necessary.">Markdown input</a></li><li class="linklist"><a class="link" href="../reference/markdown/MDITA-syntax.html" title="In 2017, the Markdown plug-in was superseded by the LwDITA plug-in, which was bundled with DITA-OT 3.0, and added new formats for Lightweight DITA. The mdita format implements the subset of Markdown features proposed in the latest specification drafts, but differs in some ways from the original Markdown DITA format.">MDITA syntax</a></li></ul></div></nav></article></main>

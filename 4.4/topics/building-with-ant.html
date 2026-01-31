@@ -1,0 +1,47 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Building output using Ant'
+description: 'You can build output with an Ant build script that provides the DITA-OT parameters.'
+index: '../toc.html'
+src: 'topics/building-with-ant.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a><ul class="nav nav-list"><li><a href="../topics/ant.html">Apache Ant</a></li><li class="active"><a href="../topics/building-with-ant.html">Building output using Ant</a></li><li><a href="../topics/creating-an-ant-build-script.html">Creating an Ant build script</a></li></ul></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Building output using Ant</h1>
+  
+  
+  <div class="body taskbody"><p class="shortdesc">You can build output with an Ant build script that provides the DITA-OT parameters.</p>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand">
+        <span class="ph cmd">Open a command prompt or terminal session.</span>
+      </li><li class="li step stepexpand">
+        <span class="ph cmd">Issue the following command:</span>
+        <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder multi-platform"><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead><tr class="sthead chhead"><th scope="col" class="stentry choptionhd" style="vertical-align:bottom;text-align:left;">Option</th><th scope="col" class="stentry chdeschd" style="vertical-align:bottom;text-align:left;">Description</th></tr></thead><tbody><tr class="strow chrow" data-platform="linux mac">
+            <th style="vertical-align:top;" scope="row" class="stentry choption">Linux or macOS&nbsp;</th>
+            <td style="vertical-align:top;" class="stentry chdesc">
+              <span class="keyword cmdname">bin/ant</span>
+              <span class="keyword option">-f</span>
+              <code class="ph codeph"><var class="keyword varname">build-script</var>
+                <var class="keyword varname">target</var></code>
+            </td>
+          </tr><tr class="strow chrow" data-platform="windows">
+            <th style="vertical-align:top;" scope="row" class="stentry choption">Windows</th>
+            <td style="vertical-align:top;" class="stentry chdesc">
+              <span class="keyword cmdname">bin\ant</span>
+              <span class="keyword option">-f</span>
+              <code class="ph codeph"><var class="keyword varname">build-script</var>
+                <var class="keyword varname">target</var></code>
+            </td>
+          </tr></tbody></table>
+        <div class="itemgroup info"> where:
+          <ul class="ul">
+            <li class="li"><var class="keyword varname">build-script</var> is name of the Ant build script.</li>
+            <li class="li"><var class="keyword varname">target</var> is an optional switch that specifies the name of the Ant target that you want
+              to run.
+              <p class="p">If you do not specify a target, the value of the <code class="keyword markupname xmlatt">@default</code> attribute for the Ant project
+                is used.</p>
+            </li>
+          </ul></div>
+      </li></ol></section>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist relconcepts"><strong>Related concepts</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="ant.html" title="Apache Ant is a Java-based, open-source build tool provided by the Apache Foundation. It can be used to declare a sequence of build actions. It is well suited for both development and document builds. The toolkit ships with a copy of Ant.">Apache Ant</a></li></ul></div><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="creating-an-ant-build-script.html" title="Instead of typing the DITA-OT parameters at the command prompt, you might want to create an Ant build script that contains all of the parameters.">Creating an Ant build script</a></li><li class="linklist"><a class="link" href="migrating-ant-to-dita.html" title="DITA-OT still supports Ant builds, but the dita command offers a simpler command interface, sets all required environment variables, and allows you to run DITA-OT without setting up anything beforehand.">Migrating Ant builds to the dita command</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../parameters/parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="http://ant.apache.org/manual" target="_blank" rel="external noopener">Apache Ant documentation</a></li></ul></div></nav></article></main>

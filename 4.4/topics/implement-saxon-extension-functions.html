@@ -1,0 +1,53 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Implementing Saxon extension functions'
+description: 'Plug-ins can contribute Saxon extension functions for use in XSLT transformations run by DITA Open
+    Toolkit.'
+index: '../toc.html'
+src: 'topics/implement-saxon-extension-functions.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a><ul class="nav nav-list"><li><a href="../topics/plugins-installing.html">Installing plug-ins</a></li><li><a href="../topics/plugins-removing.html">Removing plug-ins</a></li><li><a href="../topics/plugins-registry.html">Plug-in registry</a></li><li><a href="../topics/custom-plugins.html">Creating plug-ins</a><ul class="nav nav-list"><li><a href="../topics/plugin-benefits.html">Plug-in benefits</a></li><li><a href="../topics/plugin-configfile.html">Plug-in descriptor file</a></li><li><a href="../topics/plugin-coding-conventions.html">Coding conventions</a></li><li><a href="../topics/plugin-dependencies.html">Plug-in dependencies</a></li><li><a href="../topics/plugin-use-cases.html">Plug-in use cases</a><ul class="nav nav-list"><li><a href="../topics/plugin-set-parameters.html">Setting parameters</a></li><li><a href="../topics/plugin-anttarget.html">Adding a new Ant target</a></li><li><a href="../topics/plugin-antpreprocess.html">Adding a pre-processing step</a></li><li><a href="../topics/plugin-newtranstype.html">Adding a new output format</a></li><li><a href="../topics/plugin-preprocess-xslt.html">Processing topics with XSLT</a></li><li><a href="../topics/plugin-xsltparams.html">Adding new parameters</a></li><li><a href="../topics/plugin-overridestyle.html">Overriding XSLT steps</a></li><li><a href="../topics/plugin-javalib.html">Adding a Java library</a></li><li><a href="../topics/plugin-messages.html">Adding new messages</a></li><li><a href="../topics/plugin-newextensions.html">New extension points</a></li><li><a href="../topics/plugin-xmlcatalog.html">Extending an XML catalog file</a></li><li><a href="../topics/plugin-rewrite-rules.html">Rewriting file names</a></li><li><a href="../topics/implement-saxon-customizations.html">Saxon customizations</a><ul class="nav nav-list"><li class="active"><a href="../topics/implement-saxon-extension-functions.html">Saxon extensions</a></li><li><a href="../topics/implement-saxon-collation-uri-resolvers.html">Custom collation URI resolvers</a></li></ul></li></ul></li><li><a href="../topics/html-customization-plugins.html">Custom HTML plug-ins</a></li><li><a href="../topics/pdf-customization-plugins.html">Custom PDF plug-ins</a></li><li><a href="../topics/globalization.html">Globalizing DITA content</a></li><li><a href="../topics/migration.html">Migrating customizations</a></li></ul></li><li><a href="../topics/rebuilding-docs.html">Rebuilding documentation</a></li></ul></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Implementing Saxon extension functions</h1>
+  
+  
+  
+  <div class="body"><p class="shortdesc">Plug-ins can contribute Saxon extension functions for use in XSLT transformations run by DITA Open
+    Toolkit.</p>
+    <p class="p">Starting with Saxon 9.2, the mechanism for implementing extension functions has changed such that Saxon HE, in
+      particular, can no longer use the older “reflexive” mechanism for finding Java extension functions using a magic
+      URL. Instead, you implement extension functions and then register them directly on the Saxon Configuration object.
+      DITA-OT provides a dynamic mechanism to perform this registration for plug-in-provided extension functions.</p>
+    <div class="p">To implement extension functions, you must do the following:
+      <ol class="ol">
+        <li class="li">Add your plug-in’s JAR file in the DITA-OT class path as described in
+          <a class="xref" href="plugin-javalib.html" title="You can use the dita.conductor.lib.import extension point to add an additional Java library to the DITA-OT classpath parameter.">Adding a Java library to the classpath</a>.</li>
+        <li class="li">For each function, implement a class that extends
+            <code class="ph codeph">net.sf.saxon.lib.ExtensionFunctionDefinition</code>. This class provides the namespace name and
+          function name for the function as well as details about its arguments and so on. See
+          <a class="xref" href="http://www.saxonica.com/html/documentation9.8/extensibility/integratedfunctions" target="_blank" rel="external noopener">Integrated extension functions</a> in the Saxon documentation.</li>
+        <li class="li">Include a file named <span class="ph filepath">net.sf.saxon.lib.ExtensionFunctionDefinition</span> in the directory
+            <span class="ph filepath">META-INF/services</span> in the compiled JAR that your plug-in provides. Each line of the file
+          must be the name of a class that implements <code class="ph codeph">net.sf.saxon.lib.ExtensionFunctionDefinition</code>: <pre class="pre codeblock"><code>com.example.saxon.functions.Add
+com.example.saxon.functions.Subtract</code></pre>
+          <div class="p">You can create the file using <code class="keyword markupname xmlelement">&lt;service&gt;</code> elements in an Ant
+              <code class="keyword markupname xmlelement">&lt;jar&gt;</code>
+            task:<pre class="pre codeblock language-xml"><code>&lt;jar destfile="${basedir}/target/lib/example-saxon.jar"&gt;
+  [...]
+  &lt;service type="net.sf.saxon.lib.ExtensionFunctionDefinition"&gt;
+    &lt;provider classname="com.example.saxon.functions.Add"/&gt;
+    &lt;provider classname="com.example.saxon.functions.Subtract"/&gt;
+  &lt;/service&gt;
+  [...]
+&lt;/jar&gt;</code></pre></div></li>
+        <li class="li">In your XSLT transformations, declare the namespace the functions are bound
+          to:<pre class="pre codeblock language-xml"><code>&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                <strong class="ph b">xmlns:eg="http://example.com/saxon-extensions"</strong>
+                version="2.0"&gt;</code></pre></li>
+      </ol></div>
+    <div class="p">You should then be able to use the extension functions as you would any other
+      function:<pre class="pre codeblock language-xml"><code>&lt;xsl:variable name="test" select="<strong class="ph b">eg:add(1, 2)</strong>"/&gt;</code></pre></div>
+  </div>
+</article></main>

@@ -1,0 +1,531 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Arguments and options for the dita command'
+description: 'The dita command takes mandatory arguments to process DITA content. Subcommands can be
+    used to manage plug-ins, or print information about the current configuration. A series of options are available to
+    modify the command behavior or specify additional configuration parameters.'
+index: '../toc.html'
+src: 'parameters/dita-command-arguments.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a><ul class="nav nav-list"><li class="active"><a href="../parameters/dita-command-arguments.html">DITA command arguments</a></li><li><a href="../parameters/parameters_intro.html">DITA-OT parameters</a></li><li><a href="../parameters/configuration-properties.html">Configuration properties</a></li><li><a href="../topics/html-customization.html">Customizing HTML</a></li><li><a href="../topics/pdf-customization.html">Customizing PDF</a></li></ul></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Arguments and options for the <span class="keyword cmdname">dita</span> command</h1>
+  
+  
+  
+  <div class="body refbody"><p class="shortdesc">The <span class="keyword cmdname">dita</span> command takes mandatory arguments to process DITA content. Subcommands can be
+    used to manage plug-ins, or print information about the current configuration. A series of options are available to
+    modify the command behavior or specify additional configuration parameters.</p>
+    <section class="section"><h2 class="title sectiontitle">Usage</h2>
+      
+      <p class="p">To convert content from one format to another, specify the file to transform and the desired output format. If
+        necessary, you can set additional configuration parameters with options.</p>
+      <div class="fig syntaxdiagram">
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>--input</b></kbd>
+            <kbd class="ph oper">=</kbd>
+            <var>file</var>
+            <kbd><b>--format</b></kbd>
+            <kbd class="ph oper">=</kbd>
+            <var>name</var>
+             [ 
+              <var>options</var>
+             ] 
+           </blockquote>
+        </div>
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>--project</b></kbd>
+            <kbd class="ph oper">=</kbd>
+            <var>file</var>
+             [ 
+              <var>options</var>
+             ] 
+           </blockquote>
+        </div>
+      </div>
+      <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">Most <span class="keyword cmdname">dita</span> command options support several syntax alternatives. All options can be
+        specified with a GNU-style option keyword preceded by two hyphens. In many cases, Unix-style single-letter
+        options (preceded by a single hyphen) are also available for brevity and backwards compatibility.</div></div>
+      <p class="p">The <span class="keyword cmdname">dita</span> command also supports a series of subcommands that can be used to manage plug-ins,
+        or print information about the current configuration or version.</p>
+      <div class="fig syntaxdiagram">
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>deliverables</b></kbd>
+            <var>file</var>
+           </blockquote>
+        </div>
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>init</b></kbd>
+            <var>template</var>
+             [ 
+              <kbd><b>--output</b></kbd>
+              <kbd class="ph oper">=</kbd>
+              <var>dir</var>
+             ] 
+             [ 
+              <var>options</var>
+             ] 
+           </blockquote>
+        </div>
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>install</b></kbd>
+             [ { 
+              <var>ID</var>
+              <var> | URL</var>
+              <var> | file</var>
+             } ] 
+           </blockquote>
+        </div>
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>plugins</b></kbd>
+           </blockquote>
+        </div>
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>transtypes</b></kbd>
+           </blockquote>
+        </div>
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>uninstall</b></kbd>
+            <var>ID</var>
+           </blockquote>
+        </div>
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>validate</b></kbd>
+            <kbd><b>--input</b></kbd>
+            <kbd class="ph oper">=</kbd>
+            <var>file</var>
+             [ 
+              <var>options</var>
+             ] 
+           </blockquote>
+        </div>
+        <div><a name=""></a>
+          <blockquote> 
+            <kbd><b>dita</b></kbd>
+            <kbd><b>version</b></kbd>
+           </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="dita-command-properties__args"><h2 class="title sectiontitle">Arguments</h2>
+      
+      
+      
+      
+      
+      <p class="p">Each transformation requires you to specify at least the file to transform and the desired output format.</p>
+      <dl class="dl parml">
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__input">
+            <span class="keyword parmname">--input</span>=<var class="keyword varname">file</var></dt>
+          <dt class="dt pt dlterm" id="-i-file">
+            <span class="keyword parmname">-i</span>
+            <var class="keyword varname">file</var>
+          </dt>
+          <dd class="dd pd">Specifies the main file for your documentation project.</dd>
+          <dd class="dd pd ddexpand">This argument corresponds to the common parameter
+            <a class="xref" href="parameters-base.html#base__args.input">args.input</a>.</dd>
+          <dd class="dd pd ddexpand">Typically this is a DITA map, however it also can be a DITA topic if you want to transform a single DITA
+            file. The path can be absolute, relative to <span class="keyword parmname">args.input.dir</span>, or relative to the current
+            directory if <span class="keyword parmname">args.input.dir</span> is not defined.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__format">
+            <span class="keyword parmname">--format</span>=<var class="keyword varname">name</var></dt>
+          <dt class="dt pt dlterm" id="-f-name">
+            <span class="keyword parmname">-f</span>
+            <var class="keyword varname">name</var>
+          </dt>
+          <dd class="dd pd">Specifies the output format (transformation type).</dd>
+          <dd class="dd pd ddexpand">This argument corresponds to the common parameter 
+            <a class="xref" href="parameters-base.html#base__transtype">transtype</a>.</dd>
+          <dd class="dd pd ddexpand">To list the formats that are currently available in your environment, use <span class="keyword cmdname">dita
+              transtypes</span>.</dd>
+          <dd class="dd pd ddexpand">
+            <div class="p">You can create plug-ins to add new output formats; by default, the following values are
+                available:
+                
+                <ul class="ul">
+                  <li class="li"><span class="keyword option">dita</span></li>
+                  <li class="li"><span class="keyword option">eclipsehelp</span></li>
+                  <li class="li"><span class="keyword option">html5</span></li>
+                  <li class="li" data-platform="windows"><span class="keyword option">htmlhelp</span></li>
+                  <li class="li"><span class="keyword option">markdown</span>, <span class="keyword option">markdown_gitbook</span>, and
+                    <span class="keyword option">markdown_github</span></li>
+                  <li class="li"><span class="keyword option">pdf</span></li>
+                  <li class="li"><span class="keyword option">xhtml</span></li>
+                </ul>
+                <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">See
+                  <a class="xref" href="../topics/output-formats.html" title="DITA Open Toolkit ships with several core transformations that convert DITA content to different output formats. Additional formats are available from the plug-in registry at dita-ot.org/plugins.">Output formats</a> for sample command line syntax and more information on each
+                  transformation. </div></div>
+              </div>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__project">
+            <span class="keyword parmname">--project</span>=<var class="keyword varname">file</var>
+          </dt>
+          <dd class="dd pd">Publish a project file with multiple deliverables.</dd>
+          <dd class="dd pd ddexpand">You can add the <span class="keyword parmname">--deliverable</span> option to specify a single deliverable in the
+            project.</dd>
+          <dd class="dd pd ddexpand">For more information, see
+            <a class="xref" href="../topics/using-project-files.html" title="DITA-OT project files allow you to publish multiple deliverables at once. Each deliverable specifies a re-usable source context that groups the maps or topics you want to publish, an output folder, and a publication format (such as HTML, or PDF) with transformation parameters.">Publishing with project files</a>.</dd>
+        
+      </dl>
+    </section>
+
+    <section class="section" id="dita-command-properties__subcommands"><h2 class="title sectiontitle">Subcommands</h2>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <dl class="dl parml">
+        
+          <dt class="dt pt dlterm" id="deliverables-file">
+            <span class="keyword parmname">deliverables</span>
+            <var class="keyword varname">file</var></dt>
+          <dd class="dd pd">Show a list of the available deliverables in the specified project <var class="keyword varname">file</var>.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="init-template">
+            <span class="keyword parmname">init</span>
+            <var class="keyword varname">template</var>
+          </dt>
+          <dd class="dd pd">Initialize a project with files from the specified template.</dd>
+          <dd class="dd pd ddexpand">
+            <span class="ph" id="dita-command-properties__init-desc">The folder hierarchy in the template will be copied to the current working directory by
+              default. To write the files to a different location, add the <span class="keyword parmname">--output</span> option and
+              specify the desired path. The directory will be created if it doesn’t exist. If any of the template files
+              are already present, an error will appear.</span></dd>
+        
+        
+          <dt class="dt pt dlterm" id="init---list">
+            <span class="keyword parmname">init</span>
+            <span class="keyword parmname">--list</span>
+          </dt>
+          <dd class="dd pd">Show a list of the available project templates.</dd>
+          <dd class="dd pd ddexpand">The entries in this list may be passed as arguments to the <span class="keyword parmname">init</span> subcommand.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="install-{-id-|-url-|-file-}">
+            <span class="keyword parmname">install</span>
+            <var class="keyword varname">{ ID | URL | file }</var></dt>
+          <dd class="dd pd">Install a single plug-in <var class="keyword varname">ID</var> from the registry at
+            <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a> (or a local registry), from a remote <var class="keyword varname">URL</var>, or a
+            local ZIP <var class="keyword varname">file</var>.</dd>
+          <dd class="dd pd ddexpand">
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">The <span class="keyword parmname">--force</span> option can be passed as an additional option to the installation
+              subcommand to force-install an existing plug-in: <span class="keyword cmdname">dita
+                install</span>&nbsp;<var class="keyword varname">plug-in-zip</var>&nbsp;<span class="keyword parmname">--force</span>.</div></div></dd>
+          <dd class="dd pd ddexpand">
+            <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">The <span class="keyword cmdname">dita install</span> command uses a network connection to install plug-ins
+              from the configured registry or process remote referenced resources. In environments where an HTTP proxy
+              is used to establish a network connection, you can provide the proxy configuration via the
+                <code class="ph codeph">ANT_OPTS</code> environment variable. For more information, see
+              <a class="xref" href="../topics/configuring-proxies.html" title="Certain commands, for example, the dita install command, use a network connection to install plug-ins from the configured registry or process remote referenced resources. In environments where an HTTP proxy is used to establish a network connection, you can provide the proxy configuration via the ANT_OPTS environment variable.">Configuring proxies</a>.</div></div>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="install">
+            <span class="keyword parmname">install</span>
+          </dt>
+          <dd class="dd pd"><span class="ph">If no <var class="keyword varname">ID</var>, <var class="keyword varname">URL</var>, or
+                    <var class="keyword varname">file</var> argument is provided, the installation process reloads the current set of
+                  plug-ins from the <span class="ph filepath">plugins</span> directory (or any custom locations defined via the
+                    <span class="keyword parmname">pluginsdir</span> property in the <span class="ph filepath">configuration.properties</span> file
+                  in the <span class="ph filepath">config</span> directory). This approach can be used to add or remove multiple
+                  plug-ins at once, or any individual plug-ins you have already copied to (or removed from) the plug-in
+                  directories. Any plug-ins added or removed in the process will be listed by their plug-in
+                ID.</span></dd>
+        
+        
+          <dt class="dt pt dlterm" id="plugins">
+            <span class="keyword parmname">plugins</span>
+          </dt>
+          <dd class="dd pd">Show a list of the currently installed plug-ins.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="transtypes">
+            <span class="keyword parmname">transtypes</span>
+          </dt>
+          <dd class="dd pd">Show a list of the available output formats (transformation types).</dd>
+          <dd class="dd pd ddexpand">The entries in this list may be passed as values to the <span class="keyword parmname">--format</span> argument.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="uninstall-id">
+            <span class="keyword parmname">uninstall</span>
+            <var class="keyword varname">ID</var>
+          </dt>
+          <dd class="dd pd">Remove the plug-in with the specified <var class="keyword varname">ID</var>.</dd>
+          <dd class="dd pd ddexpand">For a list of the currently installed plug-in IDs, use <span class="keyword cmdname">dita plugins</span>.</dd>
+          <dd class="dd pd ddexpand">
+            <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">The <span class="keyword cmdname">uninstall</span> subcommand also
+                  removes the corresponding plug-in directory from the <span class="ph filepath">plugins</span> folder.
+                  </div></div>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="validate">
+            <span class="keyword parmname">validate</span>
+          </dt>
+          <dd class="dd pd">Validate input file. No output is generated.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="version">
+            <span class="keyword parmname">version</span>
+          </dt>
+          <dd class="dd pd">Print version information and exit.</dd>
+        
+      </dl>
+    </section>
+    <section class="section" id="dita-command-properties__options"><h2 class="title sectiontitle">Options</h2>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <dl class="dl parml" id="dita-command-properties__dita_build_options">
+        
+          <dt class="dt pt dlterm" id="--debug">
+            <span class="keyword parmname">--debug</span></dt>
+          <dt class="dt pt dlterm" id="-d">
+            <span class="keyword parmname">-d</span>
+          </dt>
+          <dd class="dd pd">Debug logging prints considerably more additional information. The debug log includes all information from
+            the verbose log, plus details on Java classes, additional Ant properties and overrides, pre-processing
+            filters, parameters, and stages, and the complete build sequence. Debug logging requires additional
+            resources and can slow down the build process, so it should only be enabled when further details are
+            required to diagnose problems.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="--filter=files">
+            <span class="keyword parmname">--filter</span>=<var class="keyword varname">files</var>
+          </dt>
+          <dd class="dd pd">
+            
+            <p class="p">Specifies filter file(s) used to include, exclude, or flag content. Relative paths are resolved against
+              the current directory and internally converted to absolute paths.</p>
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">
+              <p class="p">To specify multiple filter files, use the system path separator character to delimit individual file
+                paths (semicolon ‘<code class="ph codeph">;</code>’ on Windows, and colon ‘<code class="ph codeph">:</code>’ on macOS and Linux) and
+                wrap the value in quotes:</p>
+              <p class="p"><code class="ph codeph">--filter="filter1.ditaval;filter2.ditaval;filter3.ditaval"</code></p>
+              <p class="p">As of DITA-OT 3.6, the <span class="keyword parmname">--filter</span> option can also be passed multiple times:</p>
+              <p class="p"><code class="ph codeph">--filter=filter1.ditaval --filter=filter2.ditaval --filter=filter3.ditaval</code></p>
+              <p class="p">DITAVAL files are evaluated in the order specified, so conditions specified in the first file take
+                precedence over matching conditions specified in later files, just as conditions at the start of a
+                DITAVAL document take precedence over matching conditions later in the same document.</p>
+            </div></div>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="--help">
+            <span class="keyword parmname">--help</span></dt>
+          <dt class="dt pt dlterm" id="-h">
+            <span class="keyword parmname">-h</span>
+          </dt>
+          <dd class="dd pd">Print a list of available arguments, options, and subcommands.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__logfile">
+            <span class="keyword parmname">--logfile</span>=<var class="keyword varname">file</var></dt>
+          <dt class="dt pt dlterm" id="-l-file">
+            <span class="keyword parmname">-l</span>
+            <var class="keyword varname">file</var>
+          </dt>
+          <dd class="dd pd">Write logging messages to a file. 
+            <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If processing is successful, nothing is written to the log, so the file will be empty if there are no
+              errors or warnings. To include informational messages in the log, add the
+              <a class="xref" href="dita-command-arguments.html#dita-command-properties__verbose"><span class="keyword parmname">--verbose</span></a> option (or <span class="keyword parmname">-v</span>).</div></div>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__logger">
+            <span class="keyword parmname">--logger</span>=<var class="keyword varname">json</var>
+          </dt>
+          <dd class="dd pd">
+            <p class="p">Generate a structured log in JSON format. Each log message generates a JSON object on its own line. JSON
+              logging disables colored output.</p>
+            <p class="p">If log is written to a file with <span class="keyword parmname">--logfile</span>, the log will be generated as a JSON array
+            where each log message is a JSON object as an array item.</p>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="--no-color">
+            <span class="keyword parmname">--no-color</span>
+          </dt>
+          <dd class="dd pd">By default, DITA-OT prints certain log messages to the console in color. In terminal environments that do
+            not support colored output, the ANSI color escape codes will be shown instead. To deactivate colored output,
+            pass the <span class="keyword parmname">--no-color</span> option to the <span class="keyword cmdname">dita</span> command, or set the
+              <code class="ph codeph">TERM=dumb</code> or <code class="ph codeph">NO_COLOR</code> environment variables.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__output">
+            <span class="keyword parmname">--output</span>=<var class="keyword varname">dir</var></dt>
+          <dt class="dt pt dlterm" id="-o-dir">
+            <span class="keyword parmname">-o</span>
+            <var class="keyword varname">dir</var>
+          </dt>
+          <dd class="dd pd">
+            <p class="p">Specifies the path of the output directory; the path can be absolute or relative to the current
+              directory.</p>
+            <p class="p">This option corresponds to the common parameter
+              <a class="xref" href="parameters-base.html#base__output.dir">output.dir</a>.</p>
+            <p class="p">By default, the output is written to the <span class="ph filepath">out</span> subdirectory of the current
+              directory.</p>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="--parameter=value">
+            <span class="keyword parmname">--parameter</span>=<var class="keyword varname">value</var></dt>
+          <dt class="dt pt dlterm" id="-dparameter=value">
+            <span class="keyword parmname">-D</span><var class="keyword varname">parameter</var>=<var class="keyword varname">value</var>
+          </dt>
+          <dd class="dd pd">Specify a value for a DITA-OT or Ant build parameter.</dd>
+          <dd class="dd pd ddexpand">The GNU-style <span class="keyword parmname">--parameter</span>=<var class="keyword varname">value</var> form is only available for
+            parameters that are configured in the plug-in configuration file; the Java-style <span class="keyword parmname">-D</span>
+            form can also be used to specify additional non-configured parameters or set system properties.</dd>
+          <dd class="dd pd ddexpand">Parameters not implemented by the specified transformation type or referenced in a
+              <span class="ph filepath">.properties</span> file are ignored. <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">If you are building in different environments where the location of the input
+        files is not consistent, set <span class="keyword option">args.input.dir</span> with the <span class="keyword cmdname">dita</span> command and
+        reference its value with <code class="ph codeph">${args.input.dir}</code> in your <span class="ph filepath">.properties</span> file.
+        
+        
+      </div></div>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="--propertyfile=file">
+            <span class="keyword parmname">--propertyfile</span>=<var class="keyword varname">file</var>
+          </dt>
+          <dd class="dd pd">Use build parameters defined in the referenced <span class="ph filepath">.properties</span> file.</dd>
+          <dd class="dd pd ddexpand">Build parameters specified on the command line override those set in the <span class="ph filepath">.properties</span>
+            file.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="--repeat=n">
+            <span class="keyword parmname">--repeat</span>=<var class="keyword varname">N</var>
+          </dt>
+          <dd class="dd pd">Repeat the transformation <var class="keyword varname">N</var> number of times.</dd>
+          <dd class="dd pd ddexpand">This option can be used by plug-in developers to measure performance. To run a conversion five times, for
+            example, use <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>. The duration of each execution will appear in
+            the console when the final transformation is complete.
+            <pre class="pre codeblock syntax-bash multi-platform"><code>$ <span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">path/to/sample.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span> \
+       <span class="keyword parmname">--repeat</span>=<span class="keyword option">5</span>
+1 11281ms
+2 4132ms
+3 3690ms
+4 4337ms
+5 3634ms</code></pre>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__resource">
+            <span class="keyword parmname">--resource</span>=<var class="keyword varname">file</var>
+          </dt>
+          <dt class="dt pt dlterm" id="-r-file">
+            <span class="keyword parmname">-r</span>
+            <var class="keyword varname">file</var>
+          </dt>
+          <dd class="dd pd">Specifies resource files.</dd>
+          <dd class="dd pd ddexpand">This argument corresponds to the common parameter 
+            <a class="xref" href="parameters-base.html#base__args.resources">args.resources</a>.</dd>
+          <dd class="dd pd ddexpand">Resource files can be used to convert partial documentation sets by processing input with additional
+            information.</dd>
+          <dd class="dd pd ddexpand">For example, to process a single topic file with a map that contains key definitions, use a command like
+            this:
+            <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">topic.dita</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">keys.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+          </dd>
+          <dd class="dd pd ddexpand">To convert a chapter map to HTML5 and insert related links from relationship tables in a separate map,
+            use:
+            <pre class="pre codeblock syntax-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span>=<span class="ph filepath">chapter.ditamap</span> <span class="keyword parmname">--resource</span>=<span class="ph filepath">reltables.ditamap</span> <span class="keyword parmname">--format</span>=<span class="keyword option">html5</span></code></pre>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__stacktrace">
+            <span class="keyword parmname">--stacktrace</span>
+          </dt>
+          <dd class="dd pd">When processing fails on an error condition, Java stack trace is printed for debugging. Only applies when
+            <span class="keyword parmname">--verbose</span> or <span class="keyword parmname">--debug</span> options are set.</dd>
+          <dd class="dd pd ddexpand"></dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__temp">
+            <span class="keyword parmname">--temp</span>=<var class="keyword varname">dir</var></dt>
+          <dt class="dt pt dlterm" id="-t-dir">
+            <span class="keyword parmname">-t</span>
+            <var class="keyword varname">dir</var>
+          </dt>
+          <dd class="dd pd">Specifies the location of the temporary directory.</dd>
+          <dd class="dd pd ddexpand">This option corresponds to the common parameter 
+            <a class="xref" href="parameters-base.html#base__dita.temp.dir">dita.temp.dir</a>.</dd>
+          <dd class="dd pd ddexpand">The temporary directory is where DITA-OT writes intermediate files that are generated during the
+            transformation process.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__theme">
+            <span class="keyword parmname">--theme</span>=<var class="keyword varname">file</var>
+          </dt>
+          <dd class="dd pd">Publish PDF output with a theme configuration file.</dd>
+          <dd class="dd pd ddexpand">For more information, see
+            <a class="xref" href="../topics/pdf-themes.html" title="DITA-OT 4.0 includes the com.elovirta.pdf plug-in, which extends the default PDF2 plug-in with a new theme parameter. The --theme option takes a path to a theme file and changes the styling of the PDF output without requiring changes to XSLT stylesheets.">PDF themes</a>.</dd>
+        
+        
+          <dt class="dt pt dlterm" id="dita-command-properties__verbose">
+            <span class="keyword parmname">--verbose</span></dt>
+          <dt class="dt pt dlterm" id="-v">
+            <span class="keyword parmname">-v</span>
+          </dt>
+          <dd class="dd pd">Verbose logging prints additional information to the console, including directory settings, effective
+            values for Ant properties, input/output files, and informational messages to assist in troubleshooting.</dd>
+        
+      </dl>
+    </section>
+  </div>
+<nav role="navigation" class="related-links"><div class="linklist reltasks"><strong>Related tasks</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="../topics/build-using-dita-command.html" title="You can publish output using the dita command-line tool. Build parameters can be specified on the command line, with .properties files, or in project files that define multiple deliverables.">Publishing with the dita command</a></li><li class="linklist"><a class="link" href="../topics/using-dita-properties-file.html" title="DITA builds usually require a set of parameters that don’t change frequently. You can define these settings in a .properties file, and reference it when building output with the dita command. You can override any of the properties by specifying them as command-line arguments.">Setting parameters with .properties files</a></li><li class="linklist"><a class="link" href="../topics/dita-command-help.html" title="You can access a list of subcommands and supported parameters for the dita command by passing the --help option on the command line.">Accessing help for the dita command</a></li></ul></div><div class="linklist relref"><strong>Related reference</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="parameters_intro.html" title="Certain parameters apply to all DITA-OT transformations. Other parameters are common to the HTML-based transformations. Some parameters apply only to specific transformation types. These parameters can be passed as options to the dita command using the --parameter=value syntax or included in build scripts as Ant properties.">DITA-OT parameters</a></li><li class="linklist"><a class="link" href="internal-ant-properties.html" title="DITA-OT uses these Ant properties in certain internal operations. They are not intended for general use, but may be adjusted by plug-in developers to configure custom transform types.">Internal Ant properties</a></li></ul></div></nav></article></main>

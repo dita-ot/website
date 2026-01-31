@@ -16,9 +16,9 @@ sass:
   sass_dir: css
 
 # Major & minor release version (2 digits)
-release: '4.3'
+release: '4.4'
 # Maintenance version (normally 3 digits, 2 for initial major/minor releases)
-version: '4.3.5'
+version: '4.4'
 
 # Exclude directories and/or files from the conversion
 exclude:
