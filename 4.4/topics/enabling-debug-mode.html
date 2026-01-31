@@ -1,0 +1,38 @@
+---
+# Generated from DITA source
+layout: 'base'
+title: 'Enabling debug mode'
+description: 'Debug logging prints considerably more additional information. The debug log includes all information from
+    the verbose log, plus details on Java classes, additional Ant properties and overrides, pre-processing filters,
+    parameters, and stages, and the complete build sequence. The debug log can help you determine the root cause of a
+    problem.'
+index: '../toc.html'
+src: 'topics/enabling-debug-mode.dita'
+---
+
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li><a href="../topics/logging.html">Logging</a></li><li class="active"><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/error-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Command line help</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Speeding up builds</a></li><li><a href="../topics/configuring-proxies.html">Configuring proxies</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Enabling debug mode</h1>
+  
+  
+  <div class="body taskbody"><p class="shortdesc">Debug logging prints considerably more additional information. The debug log includes all information from
+    the verbose log, plus details on Java classes, additional Ant properties and overrides, pre-processing filters,
+    parameters, and stages, and the complete build sequence. The debug log can help you determine the root cause of a
+    problem.</p>
+    <section><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><div class="ol steps"><div class="li step p">
+        <span class="ph cmd">From the command prompt, add the following parameters:</span>
+        <table border="1" frame="hsides" rules="rows" cellpadding="4" cellspacing="0" summary="" class="simpletable choicetable choicetableborder"><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr class="sthead chhead"><th scope="col" class="stentry choptionhd" style="vertical-align:bottom;text-align:left;">Application</th><th scope="col" class="stentry chdeschd" style="vertical-align:bottom;text-align:left;">Parameters</th></tr></thead><tbody><tr class="strow chrow">
+            <th style="vertical-align:top;" scope="row" class="stentry choption"><span class="keyword cmdname">dita</span> command</th>
+            <td style="vertical-align:top;" class="stentry chdesc"><span class="keyword parmname">--debug</span>, <span class="keyword parmname">-debug</span>, or <span class="keyword parmname">-d</span></td>
+          </tr><tr class="strow chrow">
+            <th style="vertical-align:top;" scope="row" class="stentry choption">Ant</th>
+            <td style="vertical-align:top;" class="stentry chdesc"><code class="ph codeph">-v -Dargs.debug=yes</code></td>
+          </tr></tbody></table>
+        <div class="itemgroup info">
+          <div class="p">You also can add a <code class="keyword markupname xmlelement">&lt;property&gt;</code> element to an Ant target in your build file, for
+            example: <pre class="pre codeblock language-xml"><code>&lt;property name="args.debug" value="yes"/&gt;</code></pre></div>
+          <div class="note attention note_attention"><span class="note__title">Attention:</span> <div class="note__body">Debug logging requires additional resources and can slow down the build process, so it
+            should only be enabled when further details are required to diagnose problems.</div></div>
+        </div>
+      </div></div></section>
+  </div>
+</article></main>
