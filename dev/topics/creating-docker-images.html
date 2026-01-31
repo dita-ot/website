@@ -5,11 +5,11 @@ title: 'Installing plug-ins in a Docker image'
 description: 'To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own
       Dockerfile and specify the official DITA-OT image as the basis for your image.'
 index: '../toc.html'
-commit: '549c6e171ac20192662317c6b91ffa058b002e49'
+commit: '640302e34bda043893c21b0f6ae3801f3b526b3b'
 src: 'topics/creating-docker-images.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li class="active"><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a><ul class="nav nav-list"><li><a href="../topics/build-using-dita-command.html">Using the dita command</a></li><li><a href="../topics/using-docker-images.html">Using Docker images</a><ul class="nav nav-list"><li class="active"><a href="../topics/creating-docker-images.html">Custom images</a></li></ul></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Installing plug-ins in a Docker image</h1>
   
   
@@ -25,9 +25,9 @@ src: 'topics/creating-docker-images.dita'
             <span class="ph filepath">FROM</span> directive.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
-FROM ghcr.io/dita-ot/dita-ot:4.3.5</code></pre>
+FROM ghcr.io/dita-ot/dita-ot:4.4</code></pre>
         </div>
-      </li><li class="li step stepexpand"><strong>Optional: </strong>
+      </li><li class="li step stepexpand" data-importance="optional"><strong>Optional: </strong>
         <span class="ph cmd">You can extend your image with a <code class="ph codeph">RUN</code> declaration that runs the <span class="keyword cmdname">dita</span>
           command from the container to install a custom plug-in, and specify the filename or URL of the plug-in’s
           distribution ZIP file.</span>
@@ -35,7 +35,7 @@ FROM ghcr.io/dita-ot/dita-ot:4.3.5</code></pre>
           <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Install a custom plug-in from a remote location:
 RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip</code></pre>
         </div>
-      </li><li class="li step stepexpand"><strong>Optional: </strong>
+      </li><li class="li step stepexpand" data-importance="optional"><strong>Optional: </strong>
         <span class="ph cmd">You can also install custom plug-ins from the main DITA-OT plug-in registry at
           <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a>, or from your company plug-in registry.</span>
         <div class="itemgroup stepxmp">
@@ -49,7 +49,7 @@ RUN dita --install org.dita-community.pdf-page-break</code></pre>
       <figure class="fig fignone"><figcaption><span class="fig--title-label">Figure 1. </span>Sample Dockerfile with custom plug-ins: <span class="ph filepath"><var class="keyword varname">dita-ot-dir</var>/docsrc/samples</span><span class="ph filepath">/docker/Dockerfile</span></figcaption>
         
         <pre class="pre codeblock language-dockerfile normalize-space show-line-numbers show-whitespace"><code># Use the latest DITA-OT image ↓ as parent:
-FROM ghcr.io/dita-ot/dita-ot:4.3.5
+FROM ghcr.io/dita-ot/dita-ot:4.4
 
 # Install a custom plug-in from a remote location:
 RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
@@ -67,9 +67,9 @@ RUN dita --install org.dita-community.pdf-page-break</code></pre>
  =&gt; =&gt; transferring dockerfile: 367B                                                                                                                                          0.0s
  =&gt; [internal] load .dockerignore                                                                                                                                             0.0s
  =&gt; =&gt; transferring context: 2B                                                                                                                                               0.0s
- =&gt; [internal] load metadata for ghcr.io/dita-ot/dita-ot:<span class="keyword">4.3.5</span>
- =&gt; [1/3] FROM ghcr.io/dita-ot/dita-ot:<span class="keyword">4.3.5</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
- =&gt; =&gt; resolve ghcr.io/dita-ot/dita-ot:<span class="keyword">4.3.5</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
+ =&gt; [internal] load metadata for ghcr.io/dita-ot/dita-ot:<span class="keyword">4.4</span>
+ =&gt; [1/3] FROM ghcr.io/dita-ot/dita-ot:<span class="keyword">4.4</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
+ =&gt; =&gt; resolve ghcr.io/dita-ot/dita-ot:<span class="keyword">4.4</span>@sha256:<var class="keyword varname">&lt;hash&gt;</var>
 Step 2/3 : RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
  ---&gt; Running in d510f874cae0
 Added net.infotexture.dita-bootstrap

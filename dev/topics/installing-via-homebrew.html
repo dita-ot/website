@@ -5,11 +5,11 @@ title: 'Installing DITA-OT via Homebrew'
 description: 'An alternative installation method can be used to install DITA-OT via
     Homebrew, one of the most popular open-source package managers on macOS and Linux.'
 index: '../toc.html'
-commit: '549c6e171ac20192662317c6b91ffa058b002e49'
+commit: '640302e34bda043893c21b0f6ae3801f3b526b3b'
 src: 'topics/installing-via-homebrew.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a><ul class="nav nav-list"><li><a href="../topics/prerequisite-software.html">Prerequisite software</a></li><li><a href="../topics/determining-version-of-ditaot.html">Checking the version</a></li><li><a href="../topics/first-build-using-dita-command.html">First build</a></li><li class="active"><a href="../topics/installing-via-homebrew.html">Installing via Homebrew</a></li></ul></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a><ul class="nav nav-list"><li><a href="../topics/prerequisite-software.html">Prerequisite software</a></li><li><a href="../topics/determining-version-of-ditaot.html">Checking the version</a></li><li><a href="../topics/first-build-using-dita-command.html">First build</a></li><li class="active"><a href="../topics/installing-via-homebrew.html">Installing via Homebrew</a></li></ul></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Installing DITA-OT via Homebrew</h1>
   
   
@@ -31,13 +31,13 @@ src: 'topics/installing-via-homebrew.dita'
 Already up-to-date.</code></pre></div>
         <div class="itemgroup stepresult">
           <p class="p">Homebrew responds with a list of any new or updated formulæ.</p></div>
-      </li><li class="li step stepexpand"><strong>Optional: </strong>
+      </li><li class="li step stepexpand" data-importance="optional"><strong>Optional: </strong>
         <span class="ph cmd">Check the version of DITA-OT that is available from Homebrew:</span>
         <div class="itemgroup stepxmp"><pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">brew info dita-ot</span>
-<samp class="ph systemoutput sysout">dita-ot: stable <span class="keyword">4.3.5</span>
+<samp class="ph systemoutput sysout">dita-ot: stable <span class="keyword">4.4</span>
 DITA Open Toolkit is an implementation of the OASIS DITA specification
 https://www.dita-ot.org/
-/opt/homebrew/Cellar/dita-ot/<span class="keyword">4.3.5</span> (<var class="keyword varname">number of files</var>, <var class="keyword varname">package size</var>) *
+/opt/homebrew/Cellar/dita-ot/<span class="keyword">4.4</span> (<var class="keyword varname">number of files</var>, <var class="keyword varname">package size</var>) *
   Poured from bottle using the formulae.brew.sh API on <var class="keyword varname">YYYY-MM-DD</var> at <var class="keyword varname">hh:mm:ss</var>
 From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/dita-ot.rb
 License: Apache-2.0
@@ -55,16 +55,16 @@ Required: openjdk ✔</samp>
             local package Cellar and symlink the <span class="keyword cmdname">dita</span> command to the <span class="ph filepath">bin</span>
             subfolder of the Homebrew installation directory.</p>
         </div>
-      </li><li class="li step stepexpand"><strong>Optional: </strong>
+      </li><li class="li step stepexpand" data-importance="optional"><strong>Optional: </strong>
         <span class="ph cmd">Verify the installation:</span>
         <div class="itemgroup stepxmp"><pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">which dita</span>
 <samp class="ph systemoutput sysout">/opt/homebrew/bin/dita</samp></code></pre></div>
         <div class="itemgroup stepresult">
           <p class="p">The response confirms that the system will use the Homebrew-installed version of DITA-OT.</p></div>
-      </li><li class="li step stepexpand"><strong>Optional: </strong>
+      </li><li class="li step stepexpand" data-importance="optional"><strong>Optional: </strong>
         <span class="ph cmd">Check the DITA-OT version number:</span>
         <div class="itemgroup stepxmp"><pre class="pre codeblock syntax-bash"><code>$ <span class="keyword cmdname">dita</span> <span class="keyword parmname">--version</span>
-<samp class="ph systemoutput sysout">DITA-OT version <span class="keyword">4.3.5</span></samp></code></pre></div>
+<samp class="ph systemoutput sysout">DITA-OT version <span class="keyword">4.4</span></samp></code></pre></div>
         <div class="itemgroup stepresult">The DITA-OT version number appears on the console.</div>
       </li></ol></section>
     <section class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>

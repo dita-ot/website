@@ -6,11 +6,11 @@ description: 'When you run DITA-OT, key information is logged on the screen. Thi
     log file. If you encounter a problem, you can analyze this information to determine the source of the problem and
     then take action to resolve it.'
 index: '../toc.html'
-commit: '423676979bd6d48960031f3b41d3f134204cc857'
+commit: '640302e34bda043893c21b0f6ae3801f3b526b3b'
 src: 'topics/logging.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li class="active"><a href="../topics/logging.html">Logging</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/error-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Command line help</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Speeding up builds</a></li><li><a href="../topics/configuring-proxies.html">Configuring proxies</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a><ul class="nav nav-list"><li class="active"><a href="../topics/logging.html">Logging</a></li><li><a href="../topics/enabling-debug-mode.html">Enabling debug mode</a></li><li><a href="../topics/error-messages.html">DITA-OT error messages</a></li><li><a href="../topics/other-errors.html">Other error messages</a></li><li><a href="../topics/dita-command-help.html">Command line help</a></li><li><a href="../topics/increasing-the-jvm.html">Increasing Java memory</a></li><li><a href="../topics/reducing-processing-time.html">Speeding up builds</a></li><li><a href="../topics/configuring-proxies.html">Configuring proxies</a></li></ul></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">Logging build information</h1>
   
   
@@ -46,6 +46,11 @@ src: 'topics/logging.dita'
                 <span class="keyword parmname">--logfile</span>=<var class="keyword varname">file</var> and specify the path to the log file.</p>
               <p class="p">Unless an absolute path is specified, the value will be interpreted relative to the current
                 directory.</p></li>
+            <li class="li">Use <span class="keyword cmdname">dita</span>
+              <span class="keyword parmname">--logger</span>=<var class="keyword varname">json</var> to generate a structured log in JSON format. Each
+              log message generates a JSON object on its own line.
+              <p class="p">If log is written to a file with <span class="keyword parmname">--logfile</span>, the log will be generated as a JSON
+                array where each log message is a JSON object as an array item.</p></li>
           </ul></dd>
       
       

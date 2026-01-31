@@ -9,11 +9,11 @@ description: 'You can publish output using the dita command-line tool. Build par
     specified on the command line, with .properties files, or in project files that define multiple
     deliverables.'
 index: '../toc.html'
-commit: '2ea0162d3b5c342f61b485aebfdccc2aceee3cd8'
+commit: '640302e34bda043893c21b0f6ae3801f3b526b3b'
 src: 'topics/build-using-dita-command.dita'
 ---
 
-<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.3</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+<nav class="col-lg-3 toc" role="navigation"><ul><li><a href="../index.html">DITA Open Toolkit 4.4</a></li><li><a href="../topics/installing.html">Installing</a></li><li><a href="../topics/publishing.html">Publishing</a><ul class="nav nav-list"><li class="active"><a href="../topics/build-using-dita-command.html">Using the dita command</a><ul class="nav nav-list"><li><a href="../topics/using-dita-properties-file.html">Using a properties file</a></li><li><a href="../topics/migrating-ant-to-dita.html">Migrating Ant builds</a></li><li><a href="../topics/using-project-files.html">Using a project file</a></li></ul></li><li><a href="../topics/using-docker-images.html">Using Docker images</a></li><li><a href="../topics/using-github-actions.html">Using GitHub Actions</a></li><li><a href="../topics/publishing-with-ant.html">Using Ant</a></li><li><a href="../reference/java-api.html">Using the Java API</a></li></ul></li><li><a href="../parameters/index.html">Configuring</a></li><li><a href="../topics/extending.html">Extending</a></li><li><a href="../topics/troubleshooting-overview.html">Troubleshooting</a></li><li><a href="../reference/index.html">Reference</a></li></ul></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title topictitle1" id="ariaid-title1">
     
     <span class="ph">Publishing with the <span class="keyword cmdname">dita</span> command</span>
@@ -111,6 +111,17 @@ src: 'topics/build-using-dita-command.dita'
             <div class="note note note_note"><span class="note__title">Note:</span> <div class="note__body">If processing is successful, nothing is written to the log, so the file will be empty if there are no
               errors or warnings. To include informational messages in the log, add the
               <a class="xref" href="build-using-dita-command.html#using-command-line-tool__verbose"><span class="keyword parmname">--verbose</span></a> option (or <span class="keyword parmname">-v</span>).</div></div>
+          </dd>
+        
+        
+          <dt class="dt pt dlterm" id="using-command-line-tool__logger">
+            <span class="keyword parmname">--logger</span>=<var class="keyword varname">json</var>
+          </dt>
+          <dd class="dd pd">
+            <p class="p">Generate a structured log in JSON format. Each log message generates a JSON object on its own line. JSON
+              logging disables colored output.</p>
+            <p class="p">If log is written to a file with <span class="keyword parmname">--logfile</span>, the log will be generated as a JSON array
+            where each log message is a JSON object as an array item.</p>
           </dd>
         
         
