@@ -4,7 +4,7 @@ layout: 'base'
 title: 'Adding new languages'
 description: 'Extend the toolkit’s generated text capabilities by adding new language files.'
 index: '../toc.html'
-commit: '640302e34bda043893c21b0f6ae3801f3b526b3b'
+commit: 'f193f37e31bfd67b74a9e037ae1057041f26f7db'
 src: 'topics/adding-new-languages.dita'
 ---
 
@@ -36,7 +36,7 @@ src: 'topics/adding-new-languages.dita'
         </div>
       </li><li class="li step stepexpand" id="adding-new-languages__copy-strings">
         <span class="ph cmd">Copy this file to your plug-in into the same directory as step
-          <a class="xref" href="adding-new-languages.html#adding-new-languages__copy-strings-xml">1</a>.</span>
+          <a class="xref" href="#adding-new-languages__copy-strings-xml">1</a>.</span>
         <ul class="ul choices">
           <li class="li choice">non-PDF output: <span class="ph filepath">plugins/org.dita.base/xsl/common/strings-en-us.xml</span></li>
           <li class="li choice">PDF output: <span class="ph filepath">plugins/org.dita.pdf2/cfg/common/vars/en.xml</span></li>
@@ -58,8 +58,8 @@ src: 'topics/adding-new-languages.dita'
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Repeat step
-          <a class="xref" href="adding-new-languages.html#adding-new-languages__copy-strings">3</a> to step
-          <a class="xref" href="adding-new-languages.html#adding-new-languages__replace-strings">5</a> for each language.</span>
+          <a class="xref" href="#adding-new-languages__copy-strings">3</a> to step
+          <a class="xref" href="#adding-new-languages__replace-strings">5</a> for each language.</span>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Update your <span class="ph filepath">plugin.xml</span> file to extend the strings available.</span>
         <div class="itemgroup info">
@@ -71,7 +71,7 @@ src: 'topics/adding-new-languages.dita'
           context where the <code class="keyword markupname xmlatt">@xml:lang</code> value is <code class="ph codeph">vi-VN</code>, the following call returns
             <cite class="cite">“Chủ đề tiếp theo”</cite> because it was defined as the text for the variable with
             <code class="keyword markupname xmlatt">@id</code> value of <code class="ph codeph">Next topic</code> in step
-          <a class="xref" href="adding-new-languages.html#adding-new-languages__replace-strings">5</a>.
+          <a class="xref" href="#adding-new-languages__replace-strings">5</a>.
           <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
   &lt;xsl:with-param name="id" select="'Next topic'"/&gt;
 &lt;/xsl:call-template&gt;</code></pre>

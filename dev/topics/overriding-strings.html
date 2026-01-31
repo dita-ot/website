@@ -6,7 +6,7 @@ description: 'Override the default strings in the toolkit when you want to repla
     own; for example, it could be used to reset the English string “Figure” to 
         “Fig.”'
 index: '../toc.html'
-commit: '640302e34bda043893c21b0f6ae3801f3b526b3b'
+commit: 'f193f37e31bfd67b74a9e037ae1057041f26f7db'
 src: 'topics/overriding-strings.dita'
 ---
 
@@ -74,7 +74,7 @@ src: 'topics/overriding-strings.dita'
             <code class="keyword markupname xmlatt">@xml:lang</code> value is <code class="ph codeph">en-US</code>, the following call returns <cite class="cite">“Fig.”</cite>,
           because it was defined as the text for the variable with <code class="keyword markupname xmlatt">@id</code> value of <code class="ph codeph">Figure</code>
           in step
-          <a class="xref" href="overriding-strings.html#overriding-strings__change-strings">5</a>, which overrides the default text found in <strong class="ph b">org.dita.base</strong>.
+          <a class="xref" href="#overriding-strings__change-strings">5</a>, which overrides the default text found in <strong class="ph b">org.dita.base</strong>.
           <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
   &lt;xsl:with-param name="id" select="Figure"/&gt;
 &lt;/xsl:call-template&gt;</code></pre>
