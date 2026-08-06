@@ -95,6 +95,14 @@ src: 'release-notes/index.dita'
             against the DITA 2.0 preview grammar should update to pick up these changes.
             <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4781" target="_blank" rel="external noopener">#4781</a>
           </li>
+          <li class="li" id="v4.4.1__4747">In earlier versions, HTML5 templates in the <code class="ph codeph">related-links:result-group</code> mode
+            declared a return type of <code class="ph codeph">element()</code>, even though the underlying logic could return no
+            results. When a topic had no related links to display, this caused a runtime failure during processing.
+            The template signatures in the concept, task, and related-links stylesheets have been corrected to
+            <code class="ph codeph">element()?</code> to allow an empty result, so processing no longer fails when there are no
+            related links to render.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/4747" target="_blank" rel="external noopener">#4747</a>
+          </li>
         </ul>
         <p class="p">For additional information on the issues resolved since the previous release, see the
           <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.4.1+is%3Aclosed" target="_blank" rel="external noopener">4.4.1 milestone</a> and
