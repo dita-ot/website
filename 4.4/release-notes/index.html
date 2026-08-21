@@ -22,7 +22,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.4</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.4.1</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div></div>
   </div>
@@ -63,9 +63,58 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title3" id="v4.4">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.4</span>
-      <span class="ph small text-muted">released January 31, 2026</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.4.1">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.4.1</span>
+      
+    </h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">4.4.1</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v4.4.1__2962">In earlier versions, table entries with a <code class="keyword markupname xmlatt">@scope</code> attribute set to
+            <code class="ph codeph">row</code> or <code class="ph codeph">col</code> were not rendered as header cells (<code class="keyword markupname xmlelement">&lt;th&gt;</code>) in HTML5 output, and the <code class="keyword markupname xmlatt">@scope</code> value itself was not carried through to
+            the generated markup. The table templates have been updated to promote these entries to header cells and
+            preserve the <code class="keyword markupname xmlatt">@scope</code> value, improving accessibility for complex tables that rely on explicit
+            header associations.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/2962" target="_blank" rel="external noopener">#2962</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4776" target="_blank" rel="external noopener">#4776</a>
+          </li>
+          <li class="li" id="v4.4.1__4777">Several bundled dependencies have been updated to address reported CVEs. Jackson has been
+            updated to version 2.21.4 to address <a class="xref" href="https://nvd.nist.gov/vuln/detail/CVE-2026-54512" target="_blank" rel="external noopener">CVE-2026-54512</a>, and Logback and SLF4J have been updated to versions 1.5.37 and 2.0.18 to address
+            <a class="xref" href="https://nvd.nist.gov/vuln/detail/CVE-2026-13006" target="_blank" rel="external noopener">CVE-2026-13006</a>. DITA-OT is not known to be affected by either vulnerability, but the dependencies
+            have been updated proactively so they are no longer flagged by CVE scanners.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4777" target="_blank" rel="external noopener">#4777</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4778" target="_blank" rel="external noopener">#4778</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4779" target="_blank" rel="external noopener">#4779</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4780" target="_blank" rel="external noopener">#4780</a>
+          </li>
+          <li class="li" id="v4.4.1__4781">The pre-release DITA 2.0 grammar files have been updated to the latest draft published by
+            OASIS, which includes fixes and minor updates since the previous update. Anyone building or testing content
+            against the DITA 2.0 preview grammar should update to pick up these changes.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4781" target="_blank" rel="external noopener">#4781</a>
+          </li>
+          <li class="li" id="v4.4.1__4747">In earlier versions, HTML5 templates in the <code class="ph codeph">related-links:result-group</code> mode
+            declared a return type of <code class="ph codeph">element()</code>, even though the underlying logic could return no
+            results. When a topic had no related links to display, this caused a runtime failure during processing.
+            The template signatures in the concept, task, and related-links stylesheets have been corrected to
+            <code class="ph codeph">element()?</code> to allow an empty result, so processing no longer fails when there are no
+            related links to render.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/4747" target="_blank" rel="external noopener">#4747</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.4.1+is%3Aclosed" target="_blank" rel="external noopener">4.4.1 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/4.4...4.4.1" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.4">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">4.4</span>
+      <span class="ph small text-muted"> released January 31, 2026</span>
     </h2>
     
     <div class="body refbody">

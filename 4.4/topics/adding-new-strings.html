@@ -60,8 +60,8 @@ src: 'topics/adding-new-strings.dita'
         </div>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Repeat step
-          <a class="xref" href="adding-new-strings.html#adding_new_strings__copy-strings">3</a> and step
-          <a class="xref" href="adding-new-strings.html#adding_new_strings__create-strings">4</a> for each language.</span>
+          <a class="xref" href="#adding_new_strings__copy-strings">3</a> and step
+          <a class="xref" href="#adding_new_strings__create-strings">4</a> for each language.</span>
       </li><li class="li step stepexpand">
         <span class="ph cmd">Update your <span class="ph filepath">plugin.xml</span> file to extend the strings available.</span>
         <div class="itemgroup info">
@@ -73,7 +73,7 @@ src: 'topics/adding-new-strings.dita'
           the <code class="keyword markupname xmlatt">@xml:lang</code> value is <code class="ph codeph">en-US</code>, the following call returns <cite class="cite">“Another
             string in English”</cite> because it was defined as the text for the variable with <code class="keyword markupname xmlatt">@id</code> value
           of <code class="ph codeph">Another String</code> in step
-          <a class="xref" href="adding-new-strings.html#adding_new_strings__create-strings">4</a>.
+          <a class="xref" href="#adding_new_strings__create-strings">4</a>.
           <pre class="pre codeblock language-xml normalize-space show-line-numbers show-whitespace"><code>&lt;xsl:call-template name="getVariable"&gt;
   &lt;xsl:with-param name="id" select="'Another String'"/&gt;
 &lt;/xsl:call-template&gt;</code></pre>
