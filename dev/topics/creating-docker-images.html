@@ -5,7 +5,7 @@ title: 'Installing plug-ins in a Docker image'
 description: 'To install custom plug-ins or make other changes based on the DITA-OT parent image, you can create your own
       Dockerfile and specify the official DITA-OT image as the basis for your image.'
 index: '../toc.html'
-commit: '5672c3913d76c65aa4ce8a1be6873dddb7fe744a'
+commit: '6ee7c0034bca6e31489cbec2e74954ed7ff432ec'
 src: 'topics/creating-docker-images.dita'
 ---
 
@@ -33,14 +33,14 @@ FROM ghcr.io/dita-ot/dita-ot:4.4.1</code></pre>
           distribution ZIP file.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Install a custom plug-in from a remote location:
-RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip</code></pre>
+RUN dita install https://github.com/dita-bootstrap/dita-bootstrap.html/archive/master.zip</code></pre>
         </div>
       </li><li class="li step stepexpand" data-importance="optional"><strong>Optional: </strong>
         <span class="ph cmd">You can also install custom plug-ins from the main DITA-OT plug-in registry at
           <a class="xref" href="https://www.dita-ot.org/plugins" target="_blank" rel="external noopener">dita-ot.org/plugins</a>, or from your company plug-in registry.</span>
         <div class="itemgroup stepxmp">
           <pre class="pre codeblock language-dockerfile normalize-space show-whitespace"><code># Install from the registry at dita-ot.org/plugins:
-RUN dita --install org.dita-community.pdf-page-break</code></pre>
+RUN dita install org.dita-community.pdf-page-break</code></pre>
         </div>
       </li></ol></section>
     <section class="example"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Example</h2></div>
@@ -52,10 +52,10 @@ RUN dita --install org.dita-community.pdf-page-break</code></pre>
 FROM ghcr.io/dita-ot/dita-ot:4.4.1
 
 # Install a custom plug-in from a remote location:
-RUN dita --install https://github.com/infotexture/dita-bootstrap/archive/master.zip
+RUN dita install https://github.com/dita-bootstrap/dita-bootstrap.html/archive/master.zip
 
 # Install from the registry at dita-ot.org/plugins:
-RUN dita --install org.dita-community.pdf-page-break</code></pre>
+RUN dita install org.dita-community.pdf-page-break</code></pre>
       </figure>
     </section>
     <section class="example"><h2 class="title sectiontitle">Building a new image</h2>
