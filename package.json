@@ -19,21 +19,24 @@
     "format:script": "prettier --write \"**/*.{js,ts}\"",
     "format:style": "prettier --write \"**/*.scss\"",
     "install": "PARCEL_WORKERS=0 parcel build _js/plugins.js _js/main.js --dist-dir js --public-url /js",
-    "lint-staged": "lint-staged",
-    "prepare": "husky",
+    "nano-staged": "nano-staged",
+    "prepare": "simple-git-hooks",
     "prettier": "prettier --write \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
     "prettier-check": "prettier --check \"**/*.{html,js,json,md,scss,ts,yaml,yml}\"",
     "stylelint": "stylelint \"css/*.scss\"",
     "test": "jest && npm run test:script && npm run stylelint",
     "test:script": "npx eslint --ignore-path .prettierignore \"**/*.{js,ts}\""
   },
-  "lint-staged": {
+  "nano-staged": {
     "*.{html,js,json,md,scss,yaml,yml}": [
       "prettier --write"
     ],
     "*.{css,scss}": [
       "stylelint"
     ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx nano-staged"
   },
   "stylelint": {
     "extends": [
@@ -70,14 +73,14 @@
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "5.5.5",
-    "husky": "^9.1.7",
     "jest": "^30.2.0",
-    "lint-staged": "16.2.7",
+    "nano-staged": "^1.0.2",
     "object.values": "^1.2.1",
     "parcel": "^2.14.1",
-    "prettier": "3.8.1",
+    "prettier": "3.9.10",
     "prismjs": "^1.29.0",
     "process": "^0.11.10",
+    "simple-git-hooks": "^2.14.0",
     "stylelint": "^16.26.1",
     "stylelint-config-twbs-bootstrap": "^16.1.0",
     "ts-jest": "^29.4.6",
