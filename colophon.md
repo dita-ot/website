@@ -21,7 +21,7 @@ Site output is built with [Gradle][12] using the settings in the [site][13] buil
 
 A continuous integration process based on [GitHub Actions][15] automatically republishes the latest [development version][9] of the documentation on the project website whenever changes are pushed to the `develop` branch of the [dita-ot/docs][10] repository.
 
-Documentation and website source files are formatted with [Prettier][16]. Git hooks configured with [Husky][17] and [lint-staged][18] ensure that Prettier runs on all staged changes to format content consistently before committing.
+Documentation and website source files are formatted with [Prettier][16]. Git hooks configured with [simple-git-hooks][17] and [nano-staged][18] ensure that Prettier runs on all staged changes to format content consistently before committing.
 
 The development docs are indexed by [Algolia DocSearch][19], which provides the full text search capabilities available via the search form in the navigation bar.
 
@@ -43,7 +43,7 @@ The pages in the development documentation include **Edit this page** links that
 [14]: https://github.com/eerohele/dita-ot-gradle
 [15]: https://github.com/features/actions
 [16]: https://prettier.io
-[17]: https://github.com/typicode/husky
-[18]: https://github.com/okonet/lint-staged
+[17]: https://github.com/toplenboren/simple-git-hooks
+[18]: https://github.com/usmanyunusov/nano-staged
 [19]: https://docsearch.algolia.com
 [20]: https://www.oxygenxml.com/webauthor/

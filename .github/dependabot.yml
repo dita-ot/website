@@ -10,9 +10,6 @@ updates:
       - dependency-name: gulp-babel
         versions:
           - '>= 8.a, < 9'
-      - dependency-name: husky
-        versions:
-          - '>= 2.7.0.a, < 2.7.1'
       - dependency-name: prettier
         versions:
           - '>= 1.14.3.a, < 1.14.4'
