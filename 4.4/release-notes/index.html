@@ -22,7 +22,7 @@ src: 'release-notes/index.dita'
           <var class="keyword varname">major</var> versions may include incompatible API changes, <var class="keyword varname">minor</var> versions add
         functionality in a backwards-compatible manner and <var class="keyword varname">patch</var> versions are maintenance releases
         that include backwards-compatible bug fixes.</p>
-    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.4.1</span>.zip</span>
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body"><span class="ph">Download the <span class="ph filepath">dita-ot-<span class="keyword">4.4.2</span>.zip</span>
             package from the project website at
             <a class="xref" href="https://www.dita-ot.org/download" target="_blank" rel="external noopener">dita-ot.org/download</a>.</span></div></div>
   </div>
@@ -63,13 +63,75 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.4.1">
-    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.4.1</span>
+  <article class="topic reference nested1 mark" aria-labelledby="ariaid-title3" id="v4.4.2">
+    <h2 class="title topictitle2" id="ariaid-title3">DITA-OT <span class="keyword">4.4.2</span>
+      
+    </h2>
+    <div class="body refbody">
+      <section class="section">
+        <p class="p">DITA Open Toolkit <span class="keyword">4.4.2</span> is a maintenance release that includes the
+          following bug fixes.</p>
+        <ul class="ul">
+          
+          <li class="li" id="v4.4.2__4563">In earlier versions, specializations of the <code class="keyword markupname xmlatt">@props</code> attribute, such as
+            <code class="keyword markupname xmlatt">@deliveryTarget</code>, were not cascaded within maps. When a <code class="keyword markupname xmlelement">&lt;topicgroup&gt;</code>
+            or other map element set a value for one of these attributes, the value was lost when the group was
+            unwrapped during preprocessing, so DITAVAL <code class="ph codeph">passthrough</code> actions did not produce the
+            expected output for nested topic references. Specializations of <code class="keyword markupname xmlatt">@props</code> are now cascaded
+            within maps as required by the DITA specification. Cascading from maps to topics is not yet covered by this
+            change.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4563" target="_blank" rel="external noopener">#4563</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4640" target="_blank" rel="external noopener">#4640</a>
+          </li>
+          <li class="li" id="v4.4.2__4794">In DITA-OT 4.4 and 4.4.1, builds failed with an error from
+            <code class="ph codeph">dita-ot:relativize.strip-and-prefix()</code> when content pulled in with a same-file
+            <code class="keyword markupname xmlatt">@conref</code> contained a cross-reference to a fragment-only URL, such as
+            <code class="ph codeph">href="#topic-id"</code>. This pattern worked in DITA-OT 3.x. URL handling for same-file
+            references has been corrected so that these builds succeed and the cross-reference is written to the output
+            as a same-file link.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4794" target="_blank" rel="external noopener">#4794</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4815" target="_blank" rel="external noopener">#4815</a>
+          </li>
+          <li class="li" id="v4.4.2__4807">In earlier versions, DITA-OT filtered and flagged each element using only the profiling
+            attribute values authored on that element. The DITA specification requires the <code class="keyword markupname xmlatt">@audience</code>,
+            <code class="keyword markupname xmlatt">@platform</code>, <code class="keyword markupname xmlatt">@product</code>, <code class="keyword markupname xmlatt">@otherprops</code>, <code class="keyword markupname xmlatt">@rev</code>, and
+            <code class="keyword markupname xmlatt">@props</code> attributes (and specializations of <code class="keyword markupname xmlatt">@props</code>) to cascade, so filtering
+            and flagging now use the cascaded values. With the default <code class="ph codeph">cascade="merge"</code> setting, a
+            child element is evaluated using its own values together with those of its ancestors, so content that was
+            previously filtered out can now remain in the output. For example, if a parent has
+            <code class="ph codeph">product="x y"</code>, a child has <code class="ph codeph">product="x"</code>, and a DITAVAL file excludes
+            <code class="ph codeph">x</code>, the child is now retained because its effective value includes <code class="ph codeph">y</code>. To
+            restore the earlier behavior, set <code class="ph codeph">default.cascade = nomerge</code> in the
+            <span class="ph filepath">configuration.properties</span> file and remove any <code class="ph codeph">cascade="merge"</code> settings
+            from source maps, or set <code class="ph codeph">cascade="nomerge"</code> on individual maps.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4807" target="_blank" rel="external noopener">#4807</a>,
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/issues/4808" target="_blank" rel="external noopener">#4808</a>
+          </li>
+          <li class="li" id="v4.4.2__4816">The pre-release DITA 2.0 grammar files have been updated to the latest beta files published by
+            OASIS. The <code class="keyword markupname xmlatt">@status</code> and <code class="keyword markupname xmlatt">@importance</code> attributes have been added to the
+              <code class="keyword markupname xmlelement">&lt;title&gt;</code> element in the base grammar and to specializations of
+              <code class="keyword markupname xmlelement">&lt;title&gt;</code> in the technical content grammar files. In addition, the default values of
+            the <code class="keyword markupname xmlatt">@format</code> and <code class="keyword markupname xmlatt">@processing-role</code> attributes on the
+              <code class="keyword markupname xmlelement">&lt;ditavalref&gt;</code> element are now fixed values. Anyone building or testing content
+            against the DITA 2.0 preview grammar should update to pick up these changes.
+            <a class="xref" href="https://github.com/dita-ot/dita-ot/pull/4816" target="_blank" rel="external noopener">#4816</a>
+          </li>
+        </ul>
+        <p class="p">For additional information on the issues resolved since the previous release, see the
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/issues?q=milestone%3A4.4.2+is%3Aclosed" target="_blank" rel="external noopener">4.4.2 milestone</a> and
+          <a class="xref" href="https://github.com/dita-ot/dita-ot/compare/4.4.1...4.4.2" target="_blank" rel="external noopener">
+            changelog</a> on GitHub.</p>
+      </section>
+    </div>
+  </article>
+
+  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.4.1">
+    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT 4.4.1
       <span class="ph small text-muted">released August 21, 2026</span>
     </h2>
     <div class="body refbody">
       <section class="section">
-        <p class="p">DITA Open Toolkit <span class="keyword">4.4.1</span> is a maintenance release that includes the
+        <p class="p">DITA Open Toolkit <span class="keyword">4.4.2</span> is a maintenance release that includes the
           following bug fixes.</p>
         <ul class="ul">
           
@@ -112,8 +174,8 @@ src: 'release-notes/index.dita'
     </div>
   </article>
 
-  <article class="topic reference nested1" aria-labelledby="ariaid-title4" id="v4.4">
-    <h2 class="title topictitle2" id="ariaid-title4">DITA-OT <span class="keyword">4.4</span>
+  <article class="topic reference nested1" aria-labelledby="ariaid-title5" id="v4.4">
+    <h2 class="title topictitle2" id="ariaid-title5">DITA-OT <span class="keyword">4.4</span>
       <span class="ph small text-muted"> released January 31, 2026</span>
     </h2>
     
