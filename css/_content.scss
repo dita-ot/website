@@ -29,3 +29,8 @@ main#content {
 .anchor-link-container:hover .anchor-link {
   opacity: 0.5;
 }
+
+// Highlight the current #fragment target
+:target {
+  @extend .mark;
+}
